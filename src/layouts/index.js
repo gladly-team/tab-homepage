@@ -8,7 +8,7 @@ import { MuiThemeProvider } from 'material-ui/styles'
 import theme from '../themes/theme'
 
 const Layout = ({ children, data }) => (
-  <MuiThemeProvider theme={theme}>
+  <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
     <div>
       <Helmet
         title={data.site.siteMetadata.title}
