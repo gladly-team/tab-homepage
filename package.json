@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "tab-homepage",
+  "description": "Homepage for Tab for a Cause (https://tab.gladly.io)",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "The Tab for a Cause Team",
   "dependencies": {
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
@@ -12,10 +12,8 @@
     "material-ui": "^1.0.0-beta.41",
     "react-helmet": "^5.2.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "keywords": ["tab", "cause", "extension", "charity"],
+  "license": "MPL-2.0",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -35,16 +33,12 @@
     "react-test-renderer": "^15.5.0"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
     "testPathIgnorePatterns": [
       "<rootDir>[/\\\\](build|dist|docs|public|node_modules|.cache)[/\\\\]"
     ],
     "testEnvironment": "node",
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ]
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"]
   }
 }
