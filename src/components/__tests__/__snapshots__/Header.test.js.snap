@@ -4,39 +4,24 @@ exports[`Header matches expected snapshot 1`] = `
 <div
   style={
     Object {
-      "background": "rebeccapurple",
-      "marginBottom": "1.45rem",
+      "paddingBottom": 20,
+      "paddingLeft": 40,
+      "paddingRight": 40,
+      "paddingTop": 20,
     }
   }
 >
-  <div
-    style={
-      Object {
-        "margin": "0 auto",
-        "maxWidth": 960,
-        "padding": "1.45rem 1.0875rem",
-      }
-    }
+  <GatsbyLink
+    to="/"
   >
-    <h1
+    <img
+      src="test-file-stub"
       style={
         Object {
-          "margin": 0,
+          "height": 40,
         }
       }
-    >
-      <GatsbyLink
-        style={
-          Object {
-            "color": "white",
-            "textDecoration": "none",
-          }
-        }
-        to="/"
-      >
-        Some Title
-      </GatsbyLink>
-    </h1>
-  </div>
+    />
+  </GatsbyLink>
 </div>
 `;
