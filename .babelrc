@@ -9,7 +9,8 @@
       "alias": {
         "components": "./src/components",
         "img": "./src/img",
-        "utils": "./src/utils"
+        "utils": "./src/utils",
+        "themes": "./src/themes"
       }
     }]
   ]
