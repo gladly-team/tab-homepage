@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Button from 'material-ui/Button'
+
+import InstallButton from '../components/InstallButton'
 
 const IndexPage = () => (
   <div>
@@ -9,9 +10,7 @@ const IndexPage = () => (
     <p>Now go build something great.</p>
     <Link to="/page-2/">Go to page 2</Link>
     <div>
-      <Button variant="raised" color="primary">
-        Hello World
-      </Button>
+      <InstallButton />
     </div>
   </div>
 )

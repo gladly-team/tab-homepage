@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InstallButton matches expected snapshot 1`] = `
+<WithStyles(Button)
+  color="primary"
+  onClick={[Function]}
+  variant="raised"
+>
+  Add to Chrome
+</WithStyles(Button)>
+`;
