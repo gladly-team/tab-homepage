@@ -33,7 +33,9 @@ exports[`Header matches expected snapshot 1`] = `
           }
         }
         to="/"
-      />
+      >
+        Some Title
+      </GatsbyLink>
     </h1>
   </div>
 </div>
