@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import InstallButton from '../components/InstallButton'
+import InstallButton from 'components/InstallButton'
 
 const IndexPage = () => (
   <div>

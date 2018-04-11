@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import logoWithText from '../img/logo-with-text.svg'
+import logoWithText from 'img/logo-with-text.svg'
 
 const Header = () => (
   <div

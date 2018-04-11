@@ -2,5 +2,15 @@
   "presets": [
     "react",
     "env"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": {
+        "components": "./src/components",
+        "img": "./src/img",
+        "utils": "./src/utils"
+      }
+    }]
   ]
 }
