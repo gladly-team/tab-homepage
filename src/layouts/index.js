@@ -1,3 +1,10 @@
+/* globals graphql */
+// Eventually will have eslint rules for Gatsby:
+// https://github.com/gatsbyjs/gatsby/issues/2446
+// Currently using linting recommendations from eslint,
+// Prettier, and React:
+// https://prettier.io/docs/en/eslint.html#why-not-both
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
@@ -34,6 +41,7 @@ const Layout = ({ children, data }) => (
 
 Layout.propTypes = {
   children: PropTypes.func,
+  data: PropTypes.object,
 }
 
 export default Layout

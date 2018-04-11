@@ -17,17 +17,23 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write 'src/**/*.js'",
-    "test": "jest"
+    "format": "eslint --fix 'src/**/*.js'",
+    "lint": "eslint 'src/**/*.js'",
+    "test": "yarn run lint && jest"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
     "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-15": "^1.0.5",
     "enzyme-to-json": "^3.3.3",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.3",
     "prettier": "^1.11.1",
     "react-test-renderer": "^15.5.0"

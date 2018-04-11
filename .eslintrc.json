@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
+  ],
+  "globals": {
+    "window": true,
+    "console": true
+  },
+  "env": {
+    "es6": true
+  }
+}
