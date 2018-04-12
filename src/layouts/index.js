@@ -9,7 +9,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from 'components/header'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 import { MuiThemeProvider } from 'material-ui/styles'
 import theme from '../themes/theme'
@@ -32,7 +33,7 @@ const Layout = ({ children, data }) => (
       >
         {children()}
       </div>
-      <div>TODO: footer goes here</div>
+      <Footer />
     </div>
   </MuiThemeProvider>
 )

@@ -2,11 +2,22 @@ import { createMuiTheme } from 'material-ui/styles'
 
 // Text on white background
 export const textColor = 'rgba(33, 33, 33, 1)'
-export const lighterTextColor = 'rgba(33, 33, 33, 0.56)'
-export const lightestTextColor = 'rgba(33, 33, 33, 0.22)'
+
+// On white, equivalent to 'rgba(33, 33, 33, 0.56)'
+export const lighterTextColor = '#838383'
+
+// On white, equivalent to 'rgba(33, 33, 33, 0.22)'
+export const lightestTextColor = '#cecece'
 
 // Shading
-export const lightShadingColor = 'rgba(128, 128, 128, 0.14)'
+
+// On white, equivalent to #838383
+export const lightShadingColor = 'rgba(33, 33, 33, 1)'
+
+// On white, equivalent to #ededed
+export const lighterShadingColor = 'rgba(128, 128, 128, 0.14)'
+
+// On white, equivalent to #fafafa
 export const lightestShadingColor = 'rgba(128, 128, 128, 0.04)'
 
 // Theme
@@ -40,6 +51,11 @@ const theme = createMuiTheme({
       // Name of the styleSheet
       root: {
         fontWeight: '500',
+      },
+    },
+    MuiDivider: {
+      root: {
+        backgroundColor: lighterShadingColor,
       },
     },
   },
