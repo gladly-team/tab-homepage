@@ -11,7 +11,8 @@
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-typography": "^1.7.18",
     "material-ui": "^1.0.0-beta.41",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-responsive": "^4.1.0"
   },
   "keywords": ["tab", "cause", "extension", "charity"],
   "license": "MPL-2.0",

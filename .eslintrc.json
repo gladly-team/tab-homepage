@@ -11,7 +11,8 @@
     "module": true
   },
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "react/no-unescaped-entities": "off"
   },
   "env": {
     "es6": true

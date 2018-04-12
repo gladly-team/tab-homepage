@@ -6,7 +6,8 @@ export const lighterTextColor = 'rgba(33, 33, 33, 0.56)'
 export const lightestTextColor = 'rgba(33, 33, 33, 0.22)'
 
 // Shading
-export const lightShadingColor = 'rgba(128, 128, 128, 0.06)'
+export const lightShadingColor = 'rgba(128, 128, 128, 0.14)'
+export const lightestShadingColor = 'rgba(128, 128, 128, 0.04)'
 
 // Theme
 export const primaryMainColor = '#9d4ba3'
@@ -33,6 +34,14 @@ const theme = createMuiTheme({
   typography: {
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     fontSize: baseFontSize,
+  },
+  overrides: {
+    MuiButton: {
+      // Name of the styleSheet
+      root: {
+        fontWeight: '500',
+      },
+    },
   },
 })
 

@@ -66,6 +66,7 @@ class InstallButton extends React.Component {
         variant="raised"
         color="primary"
         onClick={this.onClick.bind(this)}
+        size="large"
       >
         {buttonText}
       </Button>

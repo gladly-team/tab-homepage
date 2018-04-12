@@ -32,6 +32,7 @@ const Layout = ({ children, data }) => (
       >
         {children()}
       </div>
+      <div>TODO: footer goes here</div>
     </div>
   </MuiThemeProvider>
 )
