@@ -15,25 +15,39 @@ import Footer from 'components/Footer'
 import { MuiThemeProvider } from 'material-ui/styles'
 import theme from '../themes/theme'
 
+// Use flexbox to make sure the footer sticks to the bottom of the page:
+// https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-3
 const Layout = ({ children, data }) => (
   <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
-    <div>
-      <Helmet
-        title={data.site.siteMetadata.title}
-        meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' },
-        ]}
-      />
-      <Header siteTitle={data.site.siteMetadata.title} />
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100vh',
+      }}
+    >
       <div
         style={{
-          paddingTop: 0,
+          flex: '1 0 auto',
         }}
       >
-        {children()}
+        <Helmet
+          title={data.site.siteMetadata.title}
+          meta={[
+            { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'sample, something' },
+          ]}
+        />
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <div
+          style={{
+            paddingTop: 0,
+          }}
+        >
+          {children()}
+        </div>
       </div>
-      <Footer />
+      <Footer style={{ flexShrink: 0 }} />
     </div>
   </MuiThemeProvider>
 )

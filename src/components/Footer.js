@@ -59,15 +59,20 @@ FooterLink.propTypes = {
 
 class Footer extends React.Component {
   render() {
+    const { style } = this.props
     return (
       <div
-        style={{
-          background: lightestShadingColor,
-          paddingTop: 1,
-          paddingBottom: 20,
-          paddingLeft: 40,
-          paddingRight: 40,
-        }}
+        style={Object.assign(
+          {},
+          {
+            background: lightestShadingColor,
+            paddingTop: 1,
+            paddingBottom: 20,
+            paddingLeft: 40,
+            paddingRight: 40,
+          },
+          style
+        )}
       >
         <Divider style={{ width: '100%', marginBottom: 20 }} />
         <div
@@ -99,6 +104,14 @@ class Footer extends React.Component {
       </div>
     )
   }
+}
+
+Footer.propTypes = {
+  style: PropTypes.object,
+}
+
+Footer.defaultProps = {
+  style: {},
 }
 
 export default Footer
