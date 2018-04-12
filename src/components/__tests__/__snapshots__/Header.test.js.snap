@@ -11,17 +11,9 @@ exports[`Header matches expected snapshot 1`] = `
     }
   }
 >
-  <GatsbyLink
-    to="/"
-  >
-    <img
-      src="test-file-stub"
-      style={
-        Object {
-          "height": 40,
-        }
-      }
-    />
-  </GatsbyLink>
+  <MediaQuery
+    maxWidth={760}
+    values={Object {}}
+  />
 </div>
 `;
