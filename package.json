@@ -10,6 +10,8 @@
     "gatsby-plugin-jss": "^1.5.12",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-typography": "^1.7.18",
+    "gatsby-source-filesystem": "^1.5.34",
+    "gatsby-transformer-yaml": "^1.5.16",
     "material-ui": "^1.0.0-beta.41",
     "react-helmet": "^5.2.0",
     "react-responsive": "^4.1.0"
