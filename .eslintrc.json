@@ -8,7 +8,8 @@
   "globals": {
     "window": true,
     "console": true,
-    "module": true
+    "module": true,
+    "graphql": true
   },
   "rules": {
     "no-console": "off",
