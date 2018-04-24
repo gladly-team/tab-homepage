@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import Divider from 'material-ui/Divider'
 import PropTypes from 'prop-types'
 
@@ -9,57 +8,26 @@ import {
   lighterTextColor,
   lightestTextColor,
 } from 'themes/theme'
-
-class FooterLink extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      hover: false,
-    }
-  }
-
-  onHover() {
-    this.setState({
-      hover: true,
-    })
-  }
-
-  onHoverEnd() {
-    this.setState({
-      hover: false,
-    })
-  }
-
-  render() {
-    const footerLinkStyle = {
-      color: this.state.hover ? lighterTextColor : lightestTextColor,
-      fontSize: 12,
-      margin: 20,
-    }
-    return (
-      <Link
-        to="/"
-        style={footerLinkStyle}
-        onMouseOver={this.onHover.bind(this)}
-        onMouseLeave={this.onHoverEnd.bind(this)}
-      >
-        {this.props.children}
-      </Link>
-    )
-  }
-}
-
-FooterLink.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
-  to: PropTypes.string.isRequired,
-}
+import {
+  helpURL,
+  financialsURL,
+  termsURL,
+  privacyPolicyURL,
+  teamURL,
+} from 'utils/navigation'
+import Link from 'components/Link'
 
 class Footer extends React.Component {
   render() {
     const { style } = this.props
+    const footerLinkStyle = {
+      color: lightestTextColor,
+      fontSize: 12,
+      margin: 20,
+    }
+    const hoverLinkStyle = {
+      color: lighterTextColor,
+    }
     return (
       <div
         style={Object.assign(
@@ -94,11 +62,41 @@ class Footer extends React.Component {
               justifyContent: 'flex-start',
             }}
           >
-            <FooterLink to="/">Help</FooterLink>
-            <FooterLink to="/">Financials</FooterLink>
-            <FooterLink to="/">Terms</FooterLink>
-            <FooterLink to="/">Privacy</FooterLink>
-            <FooterLink to="/">Team</FooterLink>
+            <Link
+              to={helpURL}
+              style={footerLinkStyle}
+              hoverStyle={hoverLinkStyle}
+            >
+              Help
+            </Link>
+            <Link
+              to={financialsURL}
+              style={footerLinkStyle}
+              hoverStyle={hoverLinkStyle}
+            >
+              Financials
+            </Link>
+            <Link
+              to={termsURL}
+              style={footerLinkStyle}
+              hoverStyle={hoverLinkStyle}
+            >
+              Terms
+            </Link>
+            <Link
+              to={privacyPolicyURL}
+              style={footerLinkStyle}
+              hoverStyle={hoverLinkStyle}
+            >
+              Privacy
+            </Link>
+            <Link
+              to={teamURL}
+              style={footerLinkStyle}
+              hoverStyle={hoverLinkStyle}
+            >
+              Team
+            </Link>
           </div>
         </div>
       </div>

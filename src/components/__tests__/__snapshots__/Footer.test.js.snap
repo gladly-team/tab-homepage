@@ -30,7 +30,9 @@ exports[`Footer matches expected snapshot 1`] = `
       }
     }
   >
-    <GatsbyLink
+    <Link
+      hoverStyle={Object {}}
+      style={Object {}}
       to="/"
     >
       <img
@@ -41,7 +43,7 @@ exports[`Footer matches expected snapshot 1`] = `
           }
         }
       />
-    </GatsbyLink>
+    </Link>
     <div
       style={
         Object {
@@ -52,31 +54,91 @@ exports[`Footer matches expected snapshot 1`] = `
         }
       }
     >
-      <FooterLink
-        to="/"
+      <Link
+        hoverStyle={
+          Object {
+            "color": "#838383",
+          }
+        }
+        style={
+          Object {
+            "color": "#cecece",
+            "fontSize": 12,
+            "margin": 20,
+          }
+        }
+        to="https://gladly.zendesk.com/hc/en-us/categories/201939608-Tab-for-a-Cause"
       >
         Help
-      </FooterLink>
-      <FooterLink
-        to="/"
+      </Link>
+      <Link
+        hoverStyle={
+          Object {
+            "color": "#838383",
+          }
+        }
+        style={
+          Object {
+            "color": "#cecece",
+            "fontSize": 12,
+            "margin": 20,
+          }
+        }
+        to="/financials/"
       >
         Financials
-      </FooterLink>
-      <FooterLink
-        to="/"
+      </Link>
+      <Link
+        hoverStyle={
+          Object {
+            "color": "#838383",
+          }
+        }
+        style={
+          Object {
+            "color": "#cecece",
+            "fontSize": 12,
+            "margin": 20,
+          }
+        }
+        to="/terms/"
       >
         Terms
-      </FooterLink>
-      <FooterLink
-        to="/"
+      </Link>
+      <Link
+        hoverStyle={
+          Object {
+            "color": "#838383",
+          }
+        }
+        style={
+          Object {
+            "color": "#cecece",
+            "fontSize": 12,
+            "margin": 20,
+          }
+        }
+        to="/privacy-policy/"
       >
         Privacy
-      </FooterLink>
-      <FooterLink
-        to="/"
+      </Link>
+      <Link
+        hoverStyle={
+          Object {
+            "color": "#838383",
+          }
+        }
+        style={
+          Object {
+            "color": "#cecece",
+            "fontSize": 12,
+            "margin": 20,
+          }
+        }
+        to="https://gladly.io/team/"
       >
         Team
-      </FooterLink>
+      </Link>
     </div>
   </div>
 </div>
