@@ -16,7 +16,12 @@
     "react-helmet": "^5.2.0",
     "react-responsive": "^4.1.0"
   },
-  "keywords": ["tab", "cause", "extension", "charity"],
+  "keywords": [
+    "tab",
+    "cause",
+    "extension",
+    "charity"
+  ],
   "license": "MPL-2.0",
   "scripts": {
     "build": "gatsby build",
@@ -45,10 +50,11 @@
     "react-test-renderer": "^15.5.0"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     },
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
@@ -56,6 +62,8 @@
       "<rootDir>[/\\\\](build|dist|docs|public|node_modules|.cache)[/\\\\]"
     ],
     "testEnvironment": "node",
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"]
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ]
   }
 }
