@@ -9,7 +9,7 @@ class TextPageContent extends React.Component {
         style={Object.assign(
           {},
           {
-            maxWidth: 800,
+            maxWidth: 760,
             width: '100%',
             margin: '0px auto',
             padding: 20,
