@@ -2,9 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Paper from 'material-ui/Paper'
 import TextPageContent from 'components/TextPageContent'
+import { orderBy } from 'lodash/collection'
 
 const FinancialsPage = ({ data }) => {
-  const quarterlyFinancialsEdges = data.allFinancialsYaml.edges
+  const financialsEdges = data.allFinancialsYaml.edges
+  const sortedFinancialsEdges = orderBy(
+    financialsEdges,
+    ['node.year', 'node.quarter'],
+    ['desc', 'desc']
+  )
   return (
     <div>
       <TextPageContent>
@@ -16,7 +22,7 @@ const FinancialsPage = ({ data }) => {
             justifyContent: 'flex-start',
           }}
         >
-          {quarterlyFinancialsEdges.map(quarter => {
+          {sortedFinancialsEdges.map(quarter => {
             return (
               <a
                 href={quarter.node.pdfUrl}
