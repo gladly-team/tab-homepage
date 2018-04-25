@@ -135,7 +135,7 @@ exports[`Footer matches expected snapshot 1`] = `
             "margin": 20,
           }
         }
-        to="https://gladly.io/team/"
+        to="/team/"
       >
         Team
       </Link>
