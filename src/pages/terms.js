@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
 import Divider from 'material-ui/Divider'
@@ -10,6 +11,7 @@ const indentationPx = 24
 
 const TermsPage = () => (
   <div>
+    <Helmet title={'Terms'} />
     <TextPageContent>
       <TextPageHeader>Terms of Service</TextPageHeader>
       <h2>

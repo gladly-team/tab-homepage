@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
 import Divider from 'material-ui/Divider'
@@ -8,6 +9,7 @@ import { lightestTextColor } from 'themes/theme'
 
 const PrivacyPolicyPage = () => (
   <div>
+    <Helmet title={'Privacy Policy'} />
     <TextPageContent>
       <TextPageHeader>Privacy Policy</TextPageHeader>
       <p>

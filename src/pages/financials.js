@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
 import { orderBy } from 'lodash/collection'
@@ -14,6 +15,7 @@ const FinancialsPage = ({ data }) => {
   )
   return (
     <div>
+      <Helmet title={'Financials'} />
       <TextPageContent>
         <TextPageHeader>Financials</TextPageHeader>
         <div

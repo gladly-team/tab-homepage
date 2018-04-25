@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
 import { secondaryMainColor } from 'themes/theme'
@@ -20,6 +21,7 @@ const TeamPage = () => {
   ]
   return (
     <div>
+      <Helmet title={'Team'} />
       <TextPageContent>
         <TextPageHeader>Team</TextPageHeader>
         <p>
