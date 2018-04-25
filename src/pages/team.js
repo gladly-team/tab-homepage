@@ -22,6 +22,11 @@ const TeamPage = () => {
     <div>
       <TextPageContent>
         <TextPageHeader>Team</TextPageHeader>
+        <p>
+          Hi there! We're a small team working in sunny Palo Alto, California.
+          We're humbled by the Tab for a Cause community and are thrilled that
+          we get to spend our time helping it grow.
+        </p>
         <span
           style={{
             display: 'flex',
