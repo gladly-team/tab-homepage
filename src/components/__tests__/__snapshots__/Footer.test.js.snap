@@ -23,122 +23,191 @@ exports[`Footer matches expected snapshot 1`] = `
   <div
     style={
       Object {
-        "alignItems": "center",
         "display": "flex",
-        "flexWrap": "nowrap",
-        "justifyContent": "flex-start",
+        "justifyContent": "space-between",
       }
     }
   >
-    <Link
-      hoverStyle={Object {}}
-      style={Object {}}
-      to="/"
-    >
-      <img
-        src="test-file-stub"
-        style={
-          Object {
-            "height": 43,
-          }
-        }
-      />
-    </Link>
     <div
       style={
         Object {
+          "alignItems": "center",
           "display": "flex",
-          "flexWrap": "wrap",
+          "flexWrap": "nowrap",
           "justifyContent": "flex-start",
-          "marginLeft": 30,
         }
       }
     >
       <Link
-        hoverStyle={
-          Object {
-            "color": "#838383",
+        hoverStyle={Object {}}
+        style={Object {}}
+        to="/"
+      >
+        <img
+          src="test-file-stub"
+          style={
+            Object {
+              "height": 43,
+            }
           }
-        }
+        />
+      </Link>
+      <div
         style={
           Object {
-            "color": "#cecece",
-            "fontSize": 12,
-            "margin": 20,
+            "display": "flex",
+            "flexWrap": "wrap",
+            "justifyContent": "flex-start",
+            "marginLeft": 30,
           }
         }
-        to="https://gladly.zendesk.com/hc/en-us/categories/201939608-Tab-for-a-Cause"
       >
-        Help
-      </Link>
-      <Link
-        hoverStyle={
-          Object {
-            "color": "#838383",
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
           }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="https://gladly.zendesk.com/hc/en-us/categories/201939608-Tab-for-a-Cause"
+        >
+          Help
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="/financials/"
+        >
+          Financials
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="/terms/"
+        >
+          Terms
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="/privacy-policy/"
+        >
+          Privacy
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="/team/"
+        >
+          Team
+        </Link>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "paddingTop": 4,
         }
+      }
+    >
+      <a
+        href="https://www.facebook.com/TabForACause"
         style={
           Object {
-            "color": "#cecece",
-            "fontSize": 12,
-            "margin": 20,
+            "margin": 12,
           }
         }
-        to="/financials/"
       >
-        Financials
-      </Link>
-      <Link
-        hoverStyle={
-          Object {
-            "color": "#838383",
+        <IconWrapper
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
           }
-        }
+          style={
+            Object {
+              "color": "#cecece",
+              "height": 20,
+              "width": 20,
+            }
+          }
+        >
+          <Component />
+        </IconWrapper>
+      </a>
+      <a
+        href="https://twitter.com/TabForACause"
         style={
           Object {
-            "color": "#cecece",
-            "fontSize": 12,
-            "margin": 20,
+            "margin": 12,
           }
         }
-        to="/terms/"
       >
-        Terms
-      </Link>
-      <Link
-        hoverStyle={
-          Object {
-            "color": "#838383",
+        <IconWrapper
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
           }
-        }
-        style={
-          Object {
-            "color": "#cecece",
-            "fontSize": 12,
-            "margin": 20,
+          style={
+            Object {
+              "color": "#cecece",
+              "height": 20,
+              "width": 20,
+            }
           }
-        }
-        to="/privacy-policy/"
-      >
-        Privacy
-      </Link>
-      <Link
-        hoverStyle={
-          Object {
-            "color": "#838383",
-          }
-        }
-        style={
-          Object {
-            "color": "#cecece",
-            "fontSize": 12,
-            "margin": 20,
-          }
-        }
-        to="/team/"
-      >
-        Team
-      </Link>
+        >
+          <Component />
+        </IconWrapper>
+      </a>
     </div>
   </div>
 </div>
