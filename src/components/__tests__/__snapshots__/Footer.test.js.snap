@@ -158,13 +158,14 @@ exports[`Footer matches expected snapshot 1`] = `
         }
       }
     >
-      <a
-        href="https://www.facebook.com/TabForACause"
+      <Link
+        hoverStyle={Object {}}
         style={
           Object {
             "margin": 12,
           }
         }
+        to="https://www.facebook.com/TabForACause"
       >
         <IconWrapper
           hoverStyle={
@@ -182,14 +183,15 @@ exports[`Footer matches expected snapshot 1`] = `
         >
           <Component />
         </IconWrapper>
-      </a>
-      <a
-        href="https://twitter.com/TabForACause"
+      </Link>
+      <Link
+        hoverStyle={Object {}}
         style={
           Object {
             "margin": 12,
           }
         }
+        to="https://twitter.com/TabForACause"
       >
         <IconWrapper
           hoverStyle={
@@ -207,7 +209,7 @@ exports[`Footer matches expected snapshot 1`] = `
         >
           <Component />
         </IconWrapper>
-      </a>
+      </Link>
     </div>
   </div>
 </div>

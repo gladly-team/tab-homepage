@@ -118,22 +118,22 @@ class Footer extends React.Component {
             </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', paddingTop: 4 }}>
-            <a href={facebookPageURL} style={{ margin: 12 }}>
+            <Link to={facebookPageURL} style={{ margin: 12 }}>
               <IconWrapper
                 style={socialIconStyle}
                 hoverStyle={socialIconHoverStyle}
               >
                 <FacebookBox />
               </IconWrapper>
-            </a>
-            <a href={twitterPageURL} style={{ margin: 12 }}>
+            </Link>
+            <Link to={twitterPageURL} style={{ margin: 12 }}>
               <IconWrapper
                 style={socialIconStyle}
                 hoverStyle={socialIconHoverStyle}
               >
                 <Twitter />
               </IconWrapper>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

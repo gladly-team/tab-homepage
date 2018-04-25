@@ -2,6 +2,7 @@ import React from 'react'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
 import Divider from 'material-ui/Divider'
+import Link from 'components/Link'
 import { contactUsURL } from 'utils/navigation'
 import { lightestTextColor } from 'themes/theme'
 
@@ -24,7 +25,7 @@ const TermsPage = () => (
         to Tab for a Cause ("Tab for a Cause", "us", "our", or "we"), and by
         using the Website in any way, you agree to these Terms in their
         entirety. If you have any questions, please{' '}
-        <a href={contactUsURL}>contact the Tab for a Cause Team</a>.
+        <Link to={contactUsURL}>contact the Tab for a Cause Team</Link>.
       </p>
 
       <h2>1. Payments to Causes</h2>

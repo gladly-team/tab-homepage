@@ -2,6 +2,7 @@ import React from 'react'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
 import Divider from 'material-ui/Divider'
+import Link from 'components/Link'
 import { contactUsURL, termsURL } from 'utils/navigation'
 import { lightestTextColor } from 'themes/theme'
 
@@ -28,13 +29,14 @@ const PrivacyPolicyPage = () => (
         Below is our privacy policy which incorporates these principles. This
         document applies to Tab for a Cause ("Tab for a Cause", "us", "our", or
         "we") and is part of Tab for a Cause's{' '}
-        <a href={termsURL}>Terms of Service</a>. By using tab.gladly.io (the
+        <Link to={termsURL}>Terms of Service</Link>. By using tab.gladly.io (the
         "Website"), you agree to the terms of this Privacy Policy and the Terms
         of Service. We collectively refer to the Website and its related
         services, apps, and websites as our "Services".
       </p>
       <p>
-        If you have any questions, please <a href={contactUsURL}>contact us</a>.
+        If you have any questions, please{' '}
+        <Link to={contactUsURL}>contact us</Link>.
       </p>
 
       <h2>Data Collected</h2>
@@ -70,10 +72,10 @@ const PrivacyPolicyPage = () => (
           among other things, deliver targeted advertisements that they believe
           will be of most interest to you. You can opt out of interest-based
           targeted advertising for some advertising partners{' '}
-          <a href="http://optout.networkadvertising.org/">here</a>. This Privacy
-          Policy covers the use of cookies and local browser data storage by the
-          Website and does not cover the use of cookies and local browser data
-          storage by any advertising partners.
+          <Link to="http://optout.networkadvertising.org/">here</Link>. This
+          Privacy Policy covers the use of cookies and local browser data
+          storage by the Website and does not cover the use of cookies and local
+          browser data storage by any advertising partners.
         </li>
         <li>
           <b>Data from contracted partners: </b>
@@ -85,8 +87,8 @@ const PrivacyPolicyPage = () => (
       <p>
         You are able to request we delete your account and remove any personal
         information associated with your account. To do so, please{' '}
-        <a href={contactUsURL}>contact us</a> and we will follow up as soon as
-        possible.
+        <Link to={contactUsURL}>contact us</Link> and we will follow up as soon
+        as possible.
       </p>
 
       <h2>Use of the Data</h2>
@@ -153,7 +155,7 @@ const PrivacyPolicyPage = () => (
       </p>
       <p>
         If you have any questions or concerns, please{' '}
-        <a href={contactUsURL}>contact us</a>.
+        <Link to={contactUsURL}>contact us</Link>.
       </p>
       <Divider style={{ marginBottom: 10 }} />
       <p style={{ fontSize: 12, color: lightestTextColor }}>
