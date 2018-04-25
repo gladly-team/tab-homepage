@@ -99,7 +99,6 @@ class Layout extends React.Component {
               }}
             >
               {this.props.children()}
-              }
             </div>
           </div>
           <Footer style={{ flexShrink: 0 }} />
