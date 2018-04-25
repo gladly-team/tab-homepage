@@ -15,6 +15,10 @@ import Footer from 'components/Footer'
 import { MuiThemeProvider } from 'material-ui/styles'
 import theme from '../themes/theme'
 
+// TODO: meta tag with dynamic route
+// <link rel="canonical" href={``} />
+// https://github.com/gatsbyjs/gatsby/issues/3449#issuecomment-365370644
+
 // Use flexbox to make sure the footer sticks to the bottom of the page:
 // https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-3
 const Layout = ({ children, data }) => (
@@ -33,11 +37,53 @@ const Layout = ({ children, data }) => (
       >
         <Helmet
           title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        />
+          defaultTitle={data.site.siteMetadata.title}
+        >
+          <meta
+            name="description"
+            content={data.site.siteMetadata.descriptionLong}
+          />
+          <meta name="keywords" content={data.site.siteMetadata.keywords} />
+          <meta
+            property="og:url"
+            content={`https://${data.site.siteMetadata.domain}/`} // FIXME: dynamic route
+          />
+          <meta
+            property="og:title"
+            content={data.site.siteMetadata.metaTagCallToAction}
+          />
+          <meta
+            property="og:description"
+            content={data.site.siteMetadata.descriptionShort}
+          />
+          <meta
+            property="og:image"
+            content={data.site.siteMetadata.metaTagImage}
+          />
+          <meta
+            name="twitter:title"
+            content={data.site.siteMetadata.metaTagCallToAction}
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:description"
+            content={data.site.siteMetadata.descriptionShort}
+          />
+          <meta
+            name="twitter:site"
+            content={data.site.siteMetadata.twitterHandle}
+          />
+          <meta
+            name="twitter:creator"
+            content={data.site.siteMetadata.twitterHandle}
+          />
+          <meta
+            name="twitter:image:src"
+            content={data.site.siteMetadata.metaTagImage}
+          />
+          <meta name="twitter:domain" content={data.site.siteMetadata.domain} />
+        </Helmet>
+
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
@@ -45,6 +91,7 @@ const Layout = ({ children, data }) => (
           }}
         >
           {children()}
+          }
         </div>
       </div>
       <Footer style={{ flexShrink: 0 }} />
@@ -57,7 +104,14 @@ Layout.propTypes = {
   data: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
+        domain: PropTypes.string.isRequired,
+        descriptionLong: PropTypes.string.isRequired,
+        descriptionShort: PropTypes.string.isRequired,
+        keywords: PropTypes.string.isRequired,
+        metaTagCallToAction: PropTypes.string.isRequired,
+        metaTagImage: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
+        twitterHandle: PropTypes.string.isRequired,
       }),
     }),
   }),
@@ -69,7 +123,14 @@ export const query = graphql`
   query SiteTitleQuery {
     site {
       siteMetadata {
+        domain
+        descriptionLong
+        descriptionShort
+        keywords
+        metaTagCallToAction
+        metaTagImage
         title
+        twitterHandle
       }
     }
   }
