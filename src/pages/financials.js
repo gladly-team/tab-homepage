@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Paper from 'material-ui/Paper'
 import TextPageContent from 'components/TextPageContent'
 import { orderBy } from 'lodash/collection'
+import FinancialsQuarterButton from 'components/FinancialsQuarterButton'
 
 const FinancialsPage = ({ data }) => {
   const financialsEdges = data.allFinancialsYaml.edges
@@ -24,23 +24,10 @@ const FinancialsPage = ({ data }) => {
         >
           {sortedFinancialsEdges.map(quarter => {
             return (
-              <a
-                href={quarter.node.pdfUrl}
+              <FinancialsQuarterButton
                 key={`Q${quarter.node.quarter}${quarter.node.year}`}
-                style={{ margin: 14 }}
-              >
-                <Paper
-                  style={{
-                    width: 140,
-                    height: 140,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  {`Q${quarter.node.quarter} ${quarter.node.year}`}
-                </Paper>
-              </a>
+                quarterData={quarter.node}
+              />
             )
           })}
         </div>
