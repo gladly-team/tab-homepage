@@ -1,5 +1,6 @@
 import React from 'react'
 import TextPageContent from 'components/TextPageContent'
+import TextPageHeader from 'components/TextPageHeader'
 import Divider from 'material-ui/Divider'
 import { contactUsURL, termsURL } from 'utils/navigation'
 import { lightestTextColor } from 'themes/theme'
@@ -7,7 +8,7 @@ import { lightestTextColor } from 'themes/theme'
 const PrivacyPolicyPage = () => (
   <div>
     <TextPageContent>
-      <h1>Privacy Policy</h1>
+      <TextPageHeader>Privacy Policy</TextPageHeader>
       <p>
         Your privacy is very important to us. At Tab for a Cause, we have a few
         fundamental principles:

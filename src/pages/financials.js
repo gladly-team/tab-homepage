@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import TextPageContent from 'components/TextPageContent'
+import TextPageHeader from 'components/TextPageHeader'
 import { orderBy } from 'lodash/collection'
 import FinancialsQuarterButton from 'components/FinancialsQuarterButton'
 
@@ -14,7 +15,7 @@ const FinancialsPage = ({ data }) => {
   return (
     <div>
       <TextPageContent>
-        <h1>Financials</h1>
+        <TextPageHeader>Financials</TextPageHeader>
         <div
           style={{
             display: 'flex',

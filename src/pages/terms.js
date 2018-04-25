@@ -1,5 +1,6 @@
 import React from 'react'
 import TextPageContent from 'components/TextPageContent'
+import TextPageHeader from 'components/TextPageHeader'
 import Divider from 'material-ui/Divider'
 import { contactUsURL } from 'utils/navigation'
 import { lightestTextColor } from 'themes/theme'
@@ -9,7 +10,7 @@ const indentationPx = 24
 const TermsPage = () => (
   <div>
     <TextPageContent>
-      <h1>Terms of Service</h1>
+      <TextPageHeader>Terms of Service</TextPageHeader>
       <h2>
         The Tab for a Cause Team strives to maintain a website that is clear,
         honest, and easy to use.
