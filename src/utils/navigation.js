@@ -5,7 +5,7 @@ export const contactUsURL = 'https://gladly.zendesk.com/hc/en-us/requests/new'
 export const financialsURL = '/financials/'
 export const termsURL = '/terms/'
 export const privacyPolicyURL = '/privacy-policy/'
-export const teamURL = 'https://gladly.io/team/'
+export const teamURL = '/team/'
 
 // Social
 export const facebookPageURL = 'https://www.facebook.com/TabForACause'
