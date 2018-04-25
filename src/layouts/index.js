@@ -14,6 +14,7 @@ import Footer from 'components/Footer'
 
 import { MuiThemeProvider } from 'material-ui/styles'
 import theme from '../themes/theme'
+import Favicon from 'img/logo32x32.png'
 
 // Note that layouts will be deprecated in Gatsby V2:
 // https://github.com/gatsbyjs/gatsby/issues/3830
@@ -50,6 +51,7 @@ class Layout extends React.Component {
               />
               <meta name="keywords" content={data.site.siteMetadata.keywords} />
               <link rel="canonical" href={absoluteUrl} />
+              <link rel="icon" href={Favicon} />
               <meta property="og:url" content={absoluteUrl} />
               <meta
                 property="og:title"
