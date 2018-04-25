@@ -60,7 +60,7 @@ describe('Link', () => {
     const wrapper = shallow(
       <Link to={'/'} style={someStyle} hoverStyle={{ color: 'red' }} />
     )
-    wrapper.find(GatsbyLink).simulate('mouseover')
+    wrapper.find(GatsbyLink).simulate('mouseenter')
     expect(wrapper.find(GatsbyLink).props().style).toEqual({
       fontSize: 12,
       color: 'red',
@@ -77,7 +77,7 @@ describe('Link', () => {
         hoverStyle={{ color: 'red' }}
       />
     )
-    wrapper.find('a').simulate('mouseover')
+    wrapper.find('a').simulate('mouseenter')
     expect(wrapper.find('a').props().style).toEqual({
       fontSize: 12,
       color: 'red',
