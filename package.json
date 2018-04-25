@@ -31,6 +31,7 @@
     "develop": "gatsby develop",
     "format": "eslint --fix 'src/**/*.js'",
     "lint": "eslint 'src/**/*.js'",
+    "serve": "gatsby serve",
     "test": "yarn run lint && jest --env=jsdom"
   },
   "devDependencies": {
