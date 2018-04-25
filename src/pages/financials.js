@@ -20,7 +20,7 @@ const FinancialsPage = ({ data }) => {
           style={{
             display: 'flex',
             flexWrap: 'wrap',
-            justifyContent: 'flex-start',
+            justifyContent: 'center',
           }}
         >
           {sortedFinancialsEdges.map(quarter => {
