@@ -3,6 +3,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Paper from 'material-ui/Paper'
+import Link from 'components/Link'
 
 describe('FinancialsQuarterButton', () => {
   it('renders without error', () => {
@@ -27,9 +28,12 @@ describe('FinancialsQuarterButton', () => {
     const wrapper = shallow(
       <FinancialsQuarterButton quarterData={quarterData} />
     )
-    expect(wrapper.find('a').prop('href')).toBe(
-      'https://example.com/some-link/q2.pdf'
-    )
+    expect(
+      wrapper
+        .find(Link)
+        .first()
+        .prop('to')
+    ).toBe('https://example.com/some-link/q2.pdf')
   })
 
   it('displays the correct name', () => {
@@ -76,7 +80,10 @@ describe('FinancialsQuarterButton', () => {
       <FinancialsQuarterButton quarterData={quarterData} />
     )
     expect(wrapper.find(Paper).prop('style').transform).toBeUndefined()
-    wrapper.find('a').simulate('mouseenter')
+    wrapper
+      .find('div')
+      .first()
+      .simulate('mouseenter')
     expect(wrapper.find(Paper).prop('style').transform).toContain('scale(1.')
   })
 })
