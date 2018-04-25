@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Paper from 'material-ui/Paper'
+import Link from 'components/Link'
 import { lighterTextColor } from 'themes/theme'
 
 class FinancialsQuarterButton extends React.Component {
@@ -14,35 +15,36 @@ class FinancialsQuarterButton extends React.Component {
   render() {
     const { quarterData } = this.props
     return (
-      <a
-        href={quarterData.pdfUrl}
+      <div
         style={{ margin: 14 }}
         onMouseEnter={() => this.setState({ hover: true })}
         onMouseLeave={() => this.setState({ hover: false })}
       >
-        <Paper
-          elevation={this.state.hover ? 2 : 1}
-          style={Object.assign(
-            {
-              width: 140,
-              height: 140,
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              transition: 'transform .1s ease-in-out',
-            },
-            this.state.hover
-              ? {
-                  transform: 'scale(1.06)',
-                }
-              : null
-          )}
-        >
-          <span style={{ color: lighterTextColor }}>{`Q${quarterData.quarter} ${
-            quarterData.year
-          }`}</span>
-        </Paper>
-      </a>
+        <Link to={quarterData.pdfUrl}>
+          <Paper
+            elevation={this.state.hover ? 2 : 1}
+            style={Object.assign(
+              {
+                width: 140,
+                height: 140,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                transition: 'transform .1s ease-in-out',
+              },
+              this.state.hover
+                ? {
+                    transform: 'scale(1.06)',
+                  }
+                : null
+            )}
+          >
+            <span style={{ color: lighterTextColor }}>{`Q${
+              quarterData.quarter
+            } ${quarterData.year}`}</span>
+          </Paper>
+        </Link>
+      </div>
     )
   }
 }
