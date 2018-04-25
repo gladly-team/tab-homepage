@@ -12,7 +12,7 @@ export const lightestTextColor = '#cecece'
 // Shading
 
 // On white, equivalent to #838383
-export const lightShadingColor = 'rgba(33, 33, 33, 1)'
+export const lightShadingColor = 'rgba(128, 128, 128, 0.40)'
 
 // On white, equivalent to #ededed
 export const lighterShadingColor = 'rgba(128, 128, 128, 0.14)'

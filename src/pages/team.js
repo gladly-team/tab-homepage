@@ -1,6 +1,7 @@
 import React from 'react'
 import TextPageContent from 'components/TextPageContent'
-import { secondaryMainColor } from 'themes/theme'
+import Divider from 'material-ui/Divider'
+import { secondaryMainColor, lightestTextColor } from 'themes/theme'
 import imgAlex from 'img/team/alex.jpg'
 import imgKevin from 'img/team/kevin.jpg'
 
@@ -20,7 +21,10 @@ const TeamPage = () => {
   return (
     <div>
       <TextPageContent>
-        <h1>Team</h1>
+        <h1 style={{ marginBottom: 8 }}>Team</h1>
+        <Divider
+          style={{ backgroundColor: lightestTextColor, marginBottom: 16 }}
+        />
         <span
           style={{
             display: 'flex',
