@@ -1,7 +1,7 @@
 import { createMuiTheme } from 'material-ui/styles'
 
 // Text on white background
-export const textColor = 'rgba(33, 33, 33, 1)'
+export const textColor = 'rgba(33, 33, 33, 0.82)'
 
 // On white, equivalent to 'rgba(33, 33, 33, 0.56)'
 export const lighterTextColor = '#838383'
