@@ -41,7 +41,7 @@ Section.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-  fullWidth: PropTypes.boolean,
+  fullWidth: PropTypes.bool,
   style: PropTypes.object,
   wrap: PropTypes.oneOf(['normal', 'reverse']),
 }
