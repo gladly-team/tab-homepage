@@ -44,6 +44,7 @@ const IndexPage = () => (
     </Section>
     <Section
       background={'dark'}
+      fullWidth={true}
       style={{ flexDirection: 'row', justifyContent: 'center', padding: 80 }}
     >
       <div style={{ textAlign: 'center' }}>
@@ -121,6 +122,7 @@ const IndexPage = () => (
     </Section>
     <Section
       background={'dark'}
+      fullWidth={true}
       style={{ flexDirection: 'column', justifyContent: 'center', padding: 80 }}
     >
       <div style={{ textAlign: 'center', flex: 1 }}>

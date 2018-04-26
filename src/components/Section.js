@@ -5,7 +5,7 @@ import { lightestShadingColor } from 'themes/theme'
 
 class Section extends React.Component {
   render() {
-    const { background, style, wrap } = this.props
+    const { background, fullWidth, style, wrap } = this.props
     return (
       <div
         style={Object.assign(
@@ -13,7 +13,6 @@ class Section extends React.Component {
           {
             background: background === 'light' ? '#fff' : lightestShadingColor,
             width: '100%',
-            maxWidth: 1600,
             margin: '0px auto',
             paddingTop: 40,
             paddingBottom: 40,
@@ -22,6 +21,11 @@ class Section extends React.Component {
             justifyContent: wrap === 'normal' ? 'flex-end' : 'flex-start',
             flexWrap: wrap === 'normal' ? 'wrap' : 'wrap-reverse',
           },
+          fullWidth
+            ? null
+            : {
+                maxWidth: 1600,
+              },
           style
         )}
       >
@@ -37,11 +41,13 @@ Section.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  fullWidth: PropTypes.boolean,
   style: PropTypes.object,
   wrap: PropTypes.oneOf(['normal', 'reverse']),
 }
 
 Section.defaultProps = {
+  fullWidth: false,
   background: 'light',
   style: {},
   wrap: 'normal',
