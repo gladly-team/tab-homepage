@@ -46,11 +46,8 @@ const IndexPage = () => (
           marginRight: 60,
         }}
       >
-        <h1>Surf the web, save the world</h1>
-        <p>
-          Raise money for charity every time you open a new browser tab. It
-          doesn't cost you a thing.
-        </p>
+        <h1>Raise money for charity every time you open a new browser tab</h1>
+        <p>It doesn't cost you a thing.</p>
         <div>
           <InstallButton />
         </div>
