@@ -2,6 +2,20 @@ import React from 'react'
 
 import Section from 'components/Section'
 import InstallButton from 'components/InstallButton'
+import Link from 'components/Link'
+import {
+  githubTabRepoURL,
+  githubTabExtensionsRepoURL,
+  githubTabHomepageRepoURL,
+  pressHuffingtonPostURL,
+  pressLATimesURL,
+  pressMashableURL,
+  pressUSATodayURL,
+} from 'utils/navigation'
+import logoHuffingtonPost from 'img/press/huffington-post-grey.svg'
+import logoUSAToday from 'img/press/usa-today-grey.svg'
+import logoLATimes from 'img/press/los-angeles-times-grey.svg'
+import logoMashable from 'img/press/mashable-grey.svg'
 
 const IndexPage = () => (
   <div>
@@ -66,10 +80,10 @@ const IndexPage = () => (
           marginRight: 60,
         }}
       >
-        <h1>Read some additional info here</h1>
+        <h1>A new tab you'll fall in love with</h1>
         <p>
-          And even more detail in this text, which makes you understand Tab for
-          a Cause.
+          Browse better with gorgeous photos, notes, to-do lists, and more, all
+          just a new tab away.
         </p>
       </div>
       <div
@@ -113,10 +127,12 @@ const IndexPage = () => (
           marginRight: 60,
         }}
       >
-        <h1>You can even peruse this point</h1>
+        <h1>Support your favorite cause, effortlessly</h1>
         <p>
-          And hopefully, after reading it, you'll be even more informed and
-          excited."
+          Every tab you open raises money to do good, whether it's plant trees,
+          feed children, build libraries, provide emergency aid, educate youth,
+          preserve oceans, prevent disease, build wells, protect human rights...
+          You choose what you support.
         </p>
       </div>
     </Section>
@@ -126,59 +142,69 @@ const IndexPage = () => (
       style={{ flexDirection: 'column', justifyContent: 'center', padding: 80 }}
     >
       <div style={{ textAlign: 'center', flex: 1 }}>
-        <h1>"Your browser tabs will help empower commmunities"</h1>
-        <p>- The Huffington Post</p>
+        {/* Or: "Your browser tabs will help empower commmunities" -The Huffington Post  */}
+        <h1>"One of the simplest ways to raise money"</h1>
+        <p>- USA Today</p>
       </div>
       <div
         style={{
           display: 'flex',
           flexDirection: 'row',
+          flexWrap: 'wrap',
           justifyContent: 'space-evenly',
+          alignItems: 'center',
           padding: 40,
         }}
       >
-        <div
-          style={{
-            width: 80,
-            height: 60,
-            background: '#ccc',
-            margin: 20,
-          }}
-        />
-        <div
-          style={{
-            width: 80,
-            height: 60,
-            background: '#ccc',
-            margin: 20,
-          }}
-        />
-        <div
-          style={{
-            width: 80,
-            height: 60,
-            background: '#ccc',
-            margin: 20,
-          }}
-        />
-        <div
-          style={{
-            width: 80,
-            height: 60,
-            background: '#ccc',
-            margin: 20,
-          }}
-        />
+        <Link to={pressHuffingtonPostURL}>
+          <img
+            src={logoHuffingtonPost}
+            style={{
+              width: 144,
+              margin: 20,
+            }}
+          />
+        </Link>
+        <Link to={pressUSATodayURL}>
+          <img
+            src={logoUSAToday}
+            style={{
+              height: 60,
+              margin: 20,
+            }}
+          />
+        </Link>
+        <Link to={pressLATimesURL}>
+          <img
+            src={logoLATimes}
+            style={{
+              height: 64,
+              margin: 20,
+            }}
+          />
+        </Link>
+        <Link to={pressMashableURL}>
+          <img
+            src={logoMashable}
+            style={{
+              width: 134,
+              margin: 20,
+            }}
+          />
+        </Link>
       </div>
     </Section>
     <Section
       style={{ flexDirection: 'row', justifyContent: 'center', padding: 80 }}
     >
-      <div style={{ textAlign: 'center' }}>
-        <h1>Some other information here</h1>
-        <p>
-          One fish two fish red fish blue fish. One fish two fish red fish blue
-          fish!
+      <div style={{ textAlign: 'center', maxWidth: 760, padding: 10 }}>
+        <h1>Psst, we're open source!</h1>
+        <p style={{ maxWidth: 680 }}>
+          The code for our <Link to={githubTabRepoURL}>new tab page</Link>,{' '}
+          <Link to={githubTabExtensionsRepoURL}>browser extensions</Link>
+          , and even <Link to={githubTabHomepageRepoURL}>this webpage</Link> are
+          open source, so you can rest easy knowing that we have our community's
+          best interests at heart.
         </p>
       </div>
     </Section>
