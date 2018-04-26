@@ -153,7 +153,7 @@ const IndexPage = () => (
           flexWrap: 'wrap',
           justifyContent: 'space-evenly',
           alignItems: 'center',
-          padding: 40,
+          padding: 30,
         }}
       >
         <Link to={pressHuffingtonPostURL}>
