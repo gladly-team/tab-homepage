@@ -3,6 +3,8 @@ sudo: false
 node_js:
 - '8'
 cache: yarn
+before_deploy:
+  - yarn run build
 deploy:
   provider: s3
   access_key_id:
