@@ -60,11 +60,66 @@ const IndexPage = () => (
     <Section
       background={'dark'}
       fullWidth={true}
-      style={{ flexDirection: 'row', justifyContent: 'center', padding: 80 }}
+      style={{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        paddingTop: 80,
+        paddingBottom: 40,
+        paddingLeft: 80,
+        paddingRight: 80,
+      }}
     >
-      <div style={{ textAlign: 'center' }}>
-        <h1>$504,300.29</h1>
-        <p>raised for charity</p>
+      <div style={{ textAlign: 'center', flex: 1 }}>
+        {/* Or: "Your browser tabs will help empower commmunities" -The Huffington Post  */}
+        <h1>"One of the simplest ways to raise money"</h1>
+        <p>- USA Today</p>
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'space-evenly',
+          alignItems: 'center',
+          padding: 30,
+        }}
+      >
+        <Link to={pressHuffingtonPostURL}>
+          <img
+            src={logoHuffingtonPost}
+            style={{
+              width: 144,
+              margin: 20,
+            }}
+          />
+        </Link>
+        <Link to={pressUSATodayURL}>
+          <img
+            src={logoUSAToday}
+            style={{
+              height: 60,
+              margin: 20,
+            }}
+          />
+        </Link>
+        <Link to={pressLATimesURL}>
+          <img
+            src={logoLATimes}
+            style={{
+              height: 64,
+              margin: 20,
+            }}
+          />
+        </Link>
+        <Link to={pressMashableURL}>
+          <img
+            src={logoMashable}
+            style={{
+              width: 134,
+              margin: 20,
+            }}
+          />
+        </Link>
       </div>
     </Section>
     <Section>
@@ -141,71 +196,26 @@ const IndexPage = () => (
     <Section
       background={'dark'}
       fullWidth={true}
-      style={{ flexDirection: 'column', justifyContent: 'center', padding: 80 }}
-    >
-      <div style={{ textAlign: 'center', flex: 1 }}>
-        {/* Or: "Your browser tabs will help empower commmunities" -The Huffington Post  */}
-        <h1>"One of the simplest ways to raise money"</h1>
-        <p>- USA Today</p>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-          justifyContent: 'space-evenly',
-          alignItems: 'center',
-          padding: 30,
-        }}
-      >
-        <Link to={pressHuffingtonPostURL}>
-          <img
-            src={logoHuffingtonPost}
-            style={{
-              width: 144,
-              margin: 20,
-            }}
-          />
-        </Link>
-        <Link to={pressUSATodayURL}>
-          <img
-            src={logoUSAToday}
-            style={{
-              height: 60,
-              margin: 20,
-            }}
-          />
-        </Link>
-        <Link to={pressLATimesURL}>
-          <img
-            src={logoLATimes}
-            style={{
-              height: 64,
-              margin: 20,
-            }}
-          />
-        </Link>
-        <Link to={pressMashableURL}>
-          <img
-            src={logoMashable}
-            style={{
-              width: 134,
-              margin: 20,
-            }}
-          />
-        </Link>
-      </div>
-    </Section>
-    <Section
-      background={'dark'}
-      fullWidth={true}
       style={{
         flexDirection: 'column',
         justifyContent: 'center',
         overflow: 'hidden',
         position: 'relative',
+        paddingTop: 60,
+        paddingBottom: 60,
       }}
     >
+      <h1
+        style={{
+          textAlign: 'center',
+          marginTop: 0,
+          marginBottom: 40,
+          marginLeft: 40,
+          marginRight: 40,
+        }}
+      >
+        Here's what people have to say:
+      </h1>
       <ReviewCarousel>
         <Review name="Lucas Norr" imgUrl={imgKevin} starCount={5}>
           Awesome way to give back while browsing, with absolutely no effort on
