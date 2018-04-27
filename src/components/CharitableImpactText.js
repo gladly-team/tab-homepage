@@ -83,7 +83,16 @@ class CharitableImpactText extends React.Component {
               exitActive: styles['impact-text-exit-active'],
             }}
           >
-            <span style={{ position: 'absolute', left: 0, top: 0 }}>
+            <span
+              style={{
+                position: 'absolute',
+                margin: 'auto',
+                top: 0,
+                left: 0,
+                bottom: 0,
+                right: 0,
+              }}
+            >
               {impactText}
             </span>
           </CSSTransition>
