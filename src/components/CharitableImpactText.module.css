@@ -1,0 +1,19 @@
+.impact-text-appear,
+.impact-text-enter {
+  transform: translateY(1.2em);
+}
+
+.impact-text-appear.impact-text-appear-active,
+.impact-text-enter.impact-text-enter-active {
+  transform: translateY(0em);
+  transition: transform 140ms linear;
+}
+
+.impact-text-exit {
+  transform: translateY(0em);
+}
+
+.impact-text-exit.impact-text-exit-active {
+  transform: translateY(-1.2em);
+  transition: transform 140ms linear;
+}

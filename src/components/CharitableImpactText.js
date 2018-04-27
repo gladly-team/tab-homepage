@@ -1,7 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { primaryMainColor } from 'themes/theme'
 import impactTexts from 'utils/impactTexts'
+
+// Using with CSSTransition:
+// https://github.com/css-modules/css-modules/issues/84#issuecomment-226731145
+// https://reactcommunity.org/react-transition-group/
+import styles from 'components/CharitableImpactText.module.css'
 
 class CharitableImpactText extends React.Component {
   constructor(props) {
@@ -40,27 +46,58 @@ class CharitableImpactText extends React.Component {
     const { capitalize, style } = this.props
     const text = impactTexts[this.state.textIndex]
     const impactText = capitalize ? this.capitalize(text) : text
+    const key = `key-${this.state.textIndex}`
     return (
       <span
         style={Object.assign(
           {},
           {
             display: 'inline-block',
-            minWidth: 180,
+            minWidth: '10em',
             color: primaryMainColor,
             borderBottomColor: primaryMainColor,
             paddingBottom: 1,
-            borderBottomWidth: 1,
+            borderBottomWidth: '0.07em',
             borderBottomStyle: 'solid',
             whiteSpace: 'nowrap',
             textAlign: 'center',
             marginLeft: 2,
             marginRight: 2,
+            position: 'relative',
+            overflow: 'hidden',
+            height: '1.4em',
+            verticalAlign: 'top',
           },
           style
         )}
       >
-        {impactText}
+        <TransitionGroup component={'span'}>
+          <CSSTransition
+            key={key}
+            timeout={140}
+            classNames={{
+              appear: styles['impact-text-appear'],
+              appearActive: styles['impact-text-appear-active'],
+              enter: styles['impact-text-enter'],
+              enterActive: styles['impact-text-enter-active'],
+              exit: styles['impact-text-exit'],
+              exitActive: styles['impact-text-exit-active'],
+            }}
+          >
+            <span
+              style={{
+                position: 'absolute',
+                margin: 'auto',
+                top: 0,
+                left: 0,
+                bottom: 0,
+                right: 0,
+              }}
+            >
+              {impactText}
+            </span>
+          </CSSTransition>
+        </TransitionGroup>
       </span>
     )
   }
