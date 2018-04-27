@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { lightestShadingColor } from 'themes/theme'
-import { Card, Avatar, Paper } from 'material-ui';
+import { Avatar, Paper } from 'material-ui'
 import Star from '@material-ui/icons/Star'
 import { range } from 'lodash/util'
+
 class Review extends React.Component {
   render() {
-    const { name, imgUrl, text, starCount, style } = this.props
-    const stars = range(0, starCount).map(i => <Star/>)
+    const { name, imgUrl, starCount, style } = this.props
+    const stars = range(0, starCount).map(i => <Star key={`star-${i}`} />)
     return (
       <Paper
         style={Object.assign(
@@ -30,11 +30,26 @@ class Review extends React.Component {
           style
         )}
       >
-        <Avatar src={imgUrl} alt={name}/>
-        <div style={{display: 'flex', flexDirection: 'column', marginLeft: '10px'}}>
-          <div style={{display: 'flex', flexDirection: 'row'}}>
-            <div style={{flex: 2}}>{name}</div>
-            <div style={{flex: 1, display: 'flex', flexDirection: 'row', flexWrap: 'none' }}>{stars}</div>
+        <Avatar src={imgUrl} alt={name} />
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            marginLeft: '10px',
+          }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div style={{ flex: 2 }}>{name}</div>
+            <div
+              style={{
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'none',
+              }}
+            >
+              {stars}
+            </div>
           </div>
           <p>{this.props.children}</p>
           <p>From the Chrome Store</p>
@@ -45,6 +60,10 @@ class Review extends React.Component {
 }
 
 Review.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
   name: PropTypes.string.isRequired,
   imgUrl: PropTypes.string.isRequired,
   starCount: PropTypes.number.isRequired,

@@ -211,26 +211,30 @@ const IndexPage = () => (
           padding: 0,
         }}
       >
-        <Review name="Lucas Norr" imgUrl={imgKevin} starCount={5} >
-          Awesome way to give back while browsing, with absolutely no effort on your end!
+        <Review name="Lucas Norr" imgUrl={imgKevin} starCount={5}>
+          Awesome way to give back while browsing, with absolutely no effort on
+          your end!
         </Review>
-        <Review name="Shayne Walton" imgUrl={imgKevin} starCount={5} >
-          FANTASTIC app that lets you do a lot of good things while doing your day to day work,
-          studying for finals, or just surfing the web!
+        <Review name="Shayne Walton" imgUrl={imgKevin} starCount={5}>
+          FANTASTIC app that lets you do a lot of good things while doing your
+          day to day work, studying for finals, or just surfing the web!
         </Review>
-        <Review name="Benjamin King" imgUrl={imgKevin} starCount={5} >
+        <Review name="Benjamin King" imgUrl={imgKevin} starCount={5}>
           Raise money for charity by browsing the internet. Perfectly executed!
         </Review>
-        <Review name="Jonathon Buchanan" imgUrl={imgKevin} starCount={5} >
-          Love that this gives me, a fool with no money, a way to donate to charity. :)
+        <Review name="Jonathon Buchanan" imgUrl={imgKevin} starCount={5}>
+          Love that this gives me, a fool with no money, a way to donate to
+          charity. :)
         </Review>
-        <Review name="Abby Hill" imgUrl={imgKevin} starCount={5} >
-          Wonderful and thoughtful idea for an extension! Helping save the world one tab at a time.
+        <Review name="Abby Hill" imgUrl={imgKevin} starCount={5}>
+          Wonderful and thoughtful idea for an extension! Helping save the world
+          one tab at a time.
         </Review>
-        <Review name="Chase Rosen" imgUrl={imgKevin} starCount={5} >
-          It's wonderful. Unobtrusive, useful, well designed, easy to navigate, and actually pretty fun!
-          There is no reason to not have this extension. It has not affected performance and is never
-          an inconvenience.
+        <Review name="Chase Rosen" imgUrl={imgKevin} starCount={5}>
+          It's wonderful. Unobtrusive, useful, well designed, easy to navigate,
+          and actually pretty fun! There is no reason to not have this
+          extension. It has not affected performance and is never an
+          inconvenience.
         </Review>
       </div>
     </Section>
