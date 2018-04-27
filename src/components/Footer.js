@@ -1,7 +1,8 @@
 import React from 'react'
 import Divider from 'material-ui/Divider'
 import PropTypes from 'prop-types'
-import { FacebookBox, Twitter } from 'mdi-material-ui'
+import FacebookBox from 'mdi-material-ui/FacebookBox'
+import Twitter from 'mdi-material-ui/Twitter'
 
 import logoGrey from 'img/logo-grey.svg'
 import {
