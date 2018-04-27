@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from 'material-ui/Button'
 
 import Section from 'components/Section'
 import ReviewCarousel from 'components/ReviewCarousel'
@@ -7,6 +8,7 @@ import InstallButton from 'components/InstallButton'
 import CharitableImpactText from 'components/CharitableImpactText'
 import Link from 'components/Link'
 import {
+  financialsURL,
   githubTabRepoURL,
   githubTabExtensionsRepoURL,
   githubTabHomepageRepoURL,
@@ -263,14 +265,28 @@ const IndexPage = () => (
       style={{ flexDirection: 'row', justifyContent: 'center', padding: 80 }}
     >
       <div style={{ textAlign: 'center', maxWidth: 760, padding: 10 }}>
-        <h1>Psst, we're open source!</h1>
-        <p style={{ maxWidth: 680 }}>
-          The code for our <Link to={githubTabRepoURL}>new tab page</Link>,{' '}
-          <Link to={githubTabExtensionsRepoURL}>browser extensions</Link>
-          , and even <Link to={githubTabHomepageRepoURL}>this webpage</Link> are
-          open source, so you can rest easy knowing that we have our community's
-          best interests at heart.
-        </p>
+        <h1>We show our work</h1>
+        <div style={{ maxWidth: 560 }}>
+          <p>
+            We know that trust must be earned. That's why the code for our{' '}
+            <Link to={githubTabRepoURL}>new tab page</Link>,{' '}
+            <Link to={githubTabExtensionsRepoURL}>browser extensions</Link>
+            , and even <Link to={githubTabHomepageRepoURL}>
+              this webpage
+            </Link>{' '}
+            are open source.
+          </p>
+          <p>
+            Even better, we publish quarterly financial reports, so you can see
+            exactly how much we give to each charity and what our other costs
+            are.
+          </p>
+          <Link to={financialsURL}>
+            <Button variant="raised" color="primary">
+              See our financials
+            </Button>
+          </Link>
+        </div>
       </div>
     </Section>
   </div>
