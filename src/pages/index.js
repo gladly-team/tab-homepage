@@ -189,7 +189,7 @@ const IndexPage = () => (
           goes.
         </p>
         <p>
-          Open tabs to <CharitableImpactText cycleSpeedMs={3000} />
+          Open tabs to <CharitableImpactText cycleSpeedMs={2600} />
         </p>
       </div>
     </Section>
