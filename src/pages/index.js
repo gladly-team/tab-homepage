@@ -2,6 +2,7 @@ import React from 'react'
 
 import Section from 'components/Section'
 import InstallButton from 'components/InstallButton'
+import CharitableImpactText from 'components/CharitableImpactText'
 import Link from 'components/Link'
 import {
   githubTabRepoURL,
@@ -126,10 +127,11 @@ const IndexPage = () => (
       >
         <h1>Support your favorite cause, effortlessly</h1>
         <p>
-          Every tab you open raises money to do good, whether it's plant trees,
-          feed children, build libraries, provide emergency aid, educate youth,
-          preserve oceans, prevent disease, build wells, protect human rights...
-          You choose what you support.
+          Ads on the new tab page raise money, and you tell us where the money
+          goes.
+        </p>
+        <p>
+          Open tabs to <CharitableImpactText />
         </p>
       </div>
     </Section>
