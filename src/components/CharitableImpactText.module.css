@@ -1,0 +1,19 @@
+.impact-text-appear,
+.impact-text-enter {
+  opacity: 0.01;
+}
+
+.impact-text-appear.impact-text-appear-active,
+.impact-text-enter.impact-text-enter-active {
+  opacity: 1;
+  transition: opacity 400ms ease-in;
+}
+
+.impact-text-exit {
+  opacity: 1;
+}
+
+.impact-text-exit.impact-text-exit-active {
+  opacity: 0.01;
+  transition: opacity 400ms ease-in;
+}

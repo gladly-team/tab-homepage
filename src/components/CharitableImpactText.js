@@ -1,7 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { primaryMainColor } from 'themes/theme'
 import impactTexts from 'utils/impactTexts'
+
+// Using with CSSTransition:
+// https://github.com/css-modules/css-modules/issues/84#issuecomment-226731145
+// https://reactcommunity.org/react-transition-group/
+import styles from 'components/CharitableImpactText.module.css'
 
 class CharitableImpactText extends React.Component {
   constructor(props) {
@@ -40,6 +46,7 @@ class CharitableImpactText extends React.Component {
     const { capitalize, style } = this.props
     const text = impactTexts[this.state.textIndex]
     const impactText = capitalize ? this.capitalize(text) : text
+    const key = `key-${this.state.textIndex}`
     return (
       <span
         style={Object.assign(
@@ -60,7 +67,23 @@ class CharitableImpactText extends React.Component {
           style
         )}
       >
-        {impactText}
+        <TransitionGroup component={'span'}>
+          <CSSTransition
+            key={key}
+            timeout={400}
+            classNames={{
+              appear: styles['impact-text-appear'],
+              appearActive: styles['impact-text-appear-active'],
+              enter: styles['impact-text-enter'],
+              enterActive: styles['impact-text-enter-active'],
+              exit: styles['impact-text-exit'],
+              exitActive: styles['impact-text-exit-active'],
+            }}
+            // unmountOnExit={true}
+          >
+            <span>{impactText}</span>
+          </CSSTransition>
+        </TransitionGroup>
       </span>
     )
   }
