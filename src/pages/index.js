@@ -20,6 +20,9 @@ import logoUSAToday from 'img/press/usa-today-grey.svg'
 import logoLATimes from 'img/press/los-angeles-times-grey.svg'
 import logoMashable from 'img/press/mashable-grey.svg'
 import imgKevin from 'img/team/kevin.jpg'
+import Star from '@material-ui/icons/Star'
+import StarHalf from '@material-ui/icons/StarHalf'
+import { lightestTextColor } from 'themes/theme'
 
 const IndexPage = () => (
   <div>
@@ -54,6 +57,18 @@ const IndexPage = () => (
         <p>It doesn't cost you a thing.</p>
         <div>
           <InstallButton />
+        </div>
+        <div style={{ marginTop: 40, marginBottom: 20 }}>
+          <div>
+            <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+            <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+            <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+            <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+            <StarHalf style={{ color: '#ffc533', width: 18, height: 18 }} />
+          </div>
+          <p style={{ fontSize: 12, color: lightestTextColor }}>
+            170,000+ people are Tabbing on Chrome
+          </p>
         </div>
       </div>
     </Section>
