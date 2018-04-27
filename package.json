@@ -18,7 +18,9 @@
     "mdi-material-ui": "^4.0.0",
     "react-helmet": "^5.2.0",
     "react-responsive": "^4.1.0",
-    "react-transition-group": "^2.3.1"
+    "react-slick": "^0.23.1",
+    "react-transition-group": "^2.3.1",
+    "slick-carousel": "^1.8.1"
   },
   "keywords": [
     "tab",

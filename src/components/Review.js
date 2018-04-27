@@ -13,64 +13,72 @@ class Review extends React.Component {
       <Star key={`star-${i}`} style={{ width: 16, height: 16 }} />
     ))
     return (
-      <Paper
-        style={Object.assign(
-          {},
-          {
-            flexBasis: '50vw',
-            flexShrink: 0,
-            minHeight: 240,
-            minWidth: 380,
-            maxWidth: 560,
-            margin: '10px 5px',
-            paddingTop: 40,
-            paddingBottom: 40,
-            paddingLeft: 20,
-            paddingRight: 20,
-            display: 'flex',
-            flexDirection: 'row',
-            alignContent: 'center',
-            flexWrap: 'nowrap',
-          },
-          style
-        )}
-      >
-        <Avatar src={imgUrl} alt={name} />
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            marginLeft: '10px',
-            justifyContent: 'space-between',
-          }}
+      <div style={{ padding: 10, display: 'flex' }}>
+        <Paper
+          style={Object.assign(
+            {},
+            {
+              minHeight: 280,
+              width: 'auto',
+              paddingTop: 40,
+              paddingBottom: 40,
+              paddingLeft: 20,
+              paddingRight: 20,
+            },
+            style
+          )}
         >
-          <div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              flexWrap: 'nowrap',
+              height: '100%',
+            }}
+          >
+            <Avatar src={imgUrl} alt={name} />
             <div
               style={{
                 display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
+                flexDirection: 'column',
+                marginLeft: '10px',
+                justifyContent: 'flex-start',
               }}
             >
-              <div style={{ marginRight: 20 }}>{name}</div>
               <div
                 style={{
-                  flex: 1,
                   display: 'flex',
                   flexDirection: 'row',
-                  flexWrap: 'none',
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
                 }}
               >
-                {stars}
+                <div style={{ marginRight: 20 }}>{name}</div>
+                <div
+                  style={{
+                    flex: 1,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'nowrap',
+                  }}
+                >
+                  {stars}
+                </div>
               </div>
+              <p style={{ marginTop: 8 }}>{this.props.children}</p>
+              <p
+                style={{
+                  margin: 0,
+                  marginTop: 'auto', // justify at flex-end
+                  color: lightestTextColor,
+                }}
+              >
+                From the Chrome Store
+              </p>
             </div>
-            <p style={{ marginTop: 8 }}>{this.props.children}</p>
           </div>
-          <p style={{ margin: 0, color: lightestTextColor }}>
-            From the Chrome Store
-          </p>
-        </div>
-      </Paper>
+        </Paper>
+      </div>
     )
   }
 }
