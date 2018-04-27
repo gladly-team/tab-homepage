@@ -53,16 +53,19 @@ class CharitableImpactText extends React.Component {
           {},
           {
             display: 'inline-block',
-            minWidth: 180,
+            minWidth: '10em',
             color: primaryMainColor,
             borderBottomColor: primaryMainColor,
             paddingBottom: 1,
-            borderBottomWidth: 1,
+            borderBottomWidth: '0.07em',
             borderBottomStyle: 'solid',
             whiteSpace: 'nowrap',
             textAlign: 'center',
             marginLeft: 2,
             marginRight: 2,
+            position: 'relative',
+            height: '1.4em',
+            verticalAlign: 'top',
           },
           style
         )}
@@ -79,9 +82,10 @@ class CharitableImpactText extends React.Component {
               exit: styles['impact-text-exit'],
               exitActive: styles['impact-text-exit-active'],
             }}
-            // unmountOnExit={true}
           >
-            <span>{impactText}</span>
+            <span style={{ position: 'absolute', left: 0, top: 0 }}>
+              {impactText}
+            </span>
           </CSSTransition>
         </TransitionGroup>
       </span>
