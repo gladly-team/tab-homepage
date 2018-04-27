@@ -31,7 +31,7 @@ describe('CharitableImpactText', () => {
     expect(
       wrapper
         .find('span')
-        .first()
+        .last()
         .text()
     ).toBe(impactTexts[0])
     jest.advanceTimersByTime(5000)
@@ -39,7 +39,7 @@ describe('CharitableImpactText', () => {
     expect(
       wrapper
         .find('span')
-        .first()
+        .last()
         .text()
     ).toBe(impactTexts[1])
   })
@@ -51,7 +51,7 @@ describe('CharitableImpactText', () => {
     expect(
       wrapper
         .find('span')
-        .first()
+        .last()
         .text()
     ).toBe(impactTexts[0])
     jest.advanceTimersByTime(60)
@@ -59,7 +59,7 @@ describe('CharitableImpactText', () => {
     expect(
       wrapper
         .find('span')
-        .first()
+        .last()
         .text()
     ).toBe(impactTexts[1])
   })
@@ -71,7 +71,7 @@ describe('CharitableImpactText', () => {
     expect(
       wrapper
         .find('span')
-        .first()
+        .last()
         .text()
     ).toBe('Preserve oceans')
   })
