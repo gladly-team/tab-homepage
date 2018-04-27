@@ -64,6 +64,7 @@ class CharitableImpactText extends React.Component {
             marginLeft: 2,
             marginRight: 2,
             position: 'relative',
+            overflow: 'hidden',
             height: '1.4em',
             verticalAlign: 'top',
           },
@@ -73,7 +74,7 @@ class CharitableImpactText extends React.Component {
         <TransitionGroup component={'span'}>
           <CSSTransition
             key={key}
-            timeout={400}
+            timeout={140}
             classNames={{
               appear: styles['impact-text-appear'],
               appearActive: styles['impact-text-appear-active'],
