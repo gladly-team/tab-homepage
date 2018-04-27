@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Section from 'components/Section'
+import ReviewCarousel from 'components/ReviewCarousel'
 import Review from 'components/Review'
 import InstallButton from 'components/InstallButton'
 import CharitableImpactText from 'components/CharitableImpactText'
@@ -198,18 +199,14 @@ const IndexPage = () => (
     <Section
       background={'dark'}
       fullWidth={true}
-      style={{ flexDirection: 'column', justifyContent: 'center' }}
+      style={{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        overflow: 'hidden',
+        position: 'relative',
+      }}
     >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: 'nowrap',
-          alignItems: 'center',
-          overflow: 'scroll',
-          padding: 0,
-        }}
-      >
+      <ReviewCarousel>
         <Review name="Lucas Norr" imgUrl={imgKevin} starCount={5}>
           Awesome way to give back while browsing, with absolutely no effort on
           your end!
@@ -235,7 +232,7 @@ const IndexPage = () => (
           extension. It has not affected performance and is never an
           inconvenience.
         </Review>
-      </div>
+      </ReviewCarousel>
     </Section>
     <Section
       style={{ flexDirection: 'row', justifyContent: 'center', padding: 80 }}
