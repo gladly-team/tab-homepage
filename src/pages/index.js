@@ -205,7 +205,6 @@ const IndexPage = () => (
           display: 'flex',
           flexDirection: 'row',
           flexWrap: 'nowrap',
-          // justifyContent: 'space-evenly',
           alignItems: 'center',
           overflow: 'scroll',
           padding: 0,

@@ -4,11 +4,14 @@ import PropTypes from 'prop-types'
 import { Avatar, Paper } from 'material-ui'
 import Star from '@material-ui/icons/Star'
 import { range } from 'lodash/util'
+import { lightestTextColor } from 'themes/theme'
 
 class Review extends React.Component {
   render() {
     const { name, imgUrl, starCount, style } = this.props
-    const stars = range(0, starCount).map(i => <Star key={`star-${i}`} />)
+    const stars = range(0, starCount).map(i => (
+      <Star key={`star-${i}`} style={{ width: 16, height: 16 }} />
+    ))
     return (
       <Paper
         style={Object.assign(
@@ -16,7 +19,9 @@ class Review extends React.Component {
           {
             flexBasis: '50vw',
             flexShrink: 0,
-            height: '220px',
+            minHeight: 240,
+            minWidth: 380,
+            maxWidth: 560,
             margin: '10px 5px',
             paddingTop: 40,
             paddingBottom: 40,
@@ -36,23 +41,34 @@ class Review extends React.Component {
             display: 'flex',
             flexDirection: 'column',
             marginLeft: '10px',
+            justifyContent: 'space-between',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <div style={{ flex: 2 }}>{name}</div>
+          <div>
             <div
               style={{
-                flex: 1,
                 display: 'flex',
                 flexDirection: 'row',
-                flexWrap: 'none',
+                alignItems: 'center',
               }}
             >
-              {stars}
+              <div style={{ marginRight: 20 }}>{name}</div>
+              <div
+                style={{
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'row',
+                  flexWrap: 'none',
+                }}
+              >
+                {stars}
+              </div>
             </div>
+            <p style={{ marginTop: 8 }}>{this.props.children}</p>
           </div>
-          <p>{this.props.children}</p>
-          <p>From the Chrome Store</p>
+          <p style={{ margin: 0, color: lightestTextColor }}>
+            From the Chrome Store
+          </p>
         </div>
       </Paper>
     )
