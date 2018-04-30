@@ -25,18 +25,18 @@ import imgKevin from 'img/team/kevin.jpg'
 import Star from '@material-ui/icons/Star'
 import StarHalf from '@material-ui/icons/StarHalf'
 import { lightestTextColor } from 'themes/theme'
+import placholderImgYellow from 'img/placeholder-yellow.png'
+import placholderImgPink from 'img/placeholder-pink.png'
 
 const IndexPage = () => (
   <div>
     <Section wrap={'reverse'}>
-      <div
+      <img
+        src={placholderImgYellow}
         style={{
-          // Placeholder for image
-          background: '#ffeebf',
           width: '67%',
           maxWidth: 700,
           height: '67%',
-          minHeight: 500, // probably remove after adding content
           marginTop: 20,
           marginRight: 20,
           marginBottom: 20,
@@ -177,14 +177,12 @@ const IndexPage = () => (
           just a new tab away.
         </p>
       </div>
-      <div
+      <img
+        src={placholderImgPink}
         style={{
-          // Placeholder for image
-          background: '#ffbfd1',
           width: '60%',
           maxWidth: 700,
           height: '60%',
-          minHeight: 450, // probably remove after adding content
           marginTop: 20,
           marginLeft: 20,
           marginBottom: 20,
@@ -192,14 +190,12 @@ const IndexPage = () => (
       />
     </Section>
     <Section wrap={'reverse'}>
-      <div
+      <img
+        src={placholderImgPink}
         style={{
-          // Placeholder for image
-          background: '#ffbfd1',
           width: '60%',
           maxWidth: 700,
           height: '60%',
-          minHeight: 450, // probably remove after adding content
           marginTop: 20,
           marginRight: 20,
           marginBottom: 20,
