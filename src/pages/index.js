@@ -57,10 +57,10 @@ const IndexPage = () => (
       >
         <h1>Raise money for charity every time you open a new browser tab</h1>
         <p>It doesn't cost you a thing.</p>
-        <div>
+        <div style={{ marginTop: 20, marginBottom: 10 }}>
           <InstallButton />
         </div>
-        <div style={{ marginTop: 40, marginBottom: 20 }}>
+        <div style={{ marginTop: 6, marginBottom: 6 }}>
           <div>
             <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
             <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
