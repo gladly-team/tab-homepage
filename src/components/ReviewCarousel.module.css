@@ -1,3 +1,10 @@
 :global(.slick-slide) {
   outline: none;
 }
+/* Use pointer cursor for next/previous slides but not current */
+:global(.slick-slide.slick-active) {
+  cursor: pointer;
+}
+:global(.slick-slide.slick-active.slick-current) {
+  cursor: default;
+}
