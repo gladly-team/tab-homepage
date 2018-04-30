@@ -81,6 +81,7 @@ const IndexPage = () => (
           minHeight: 84, // height as header
           padding: '20px 40px', // same as header
           display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
         }}
