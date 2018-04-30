@@ -4,6 +4,7 @@ import MediaQuery from 'react-responsive'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import './ReviewCarousel.module.css'
 
 class ReviewCarousel extends React.Component {
   render() {
@@ -18,6 +19,8 @@ class ReviewCarousel extends React.Component {
               style={Object.assign(
                 {
                   paddingBottom: 20,
+                  outline: 0,
+                  userSelect: 'none',
                 },
                 isSmallerScreen
                   ? null
