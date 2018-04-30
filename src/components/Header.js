@@ -22,8 +22,7 @@ const Header = () => (
             <div
               style={{
                 display: 'flex',
-                // 'center' if logo should be top-center on mobile
-                justifyContent: 'flex-start',
+                justifyContent: 'center',
               }}
             >
               <Link to="/">
