@@ -73,6 +73,23 @@ const IndexPage = () => (
           </p>
         </div>
       </div>
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          minHeight: 84, // height as header
+          padding: '20px 40px', // same as header
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <p style={{ margin: 0 }}>$504,300.29</p>
+        <p style={{ margin: 0, fontSize: 12, color: lightestTextColor }}>
+          raised for charity
+        </p>
+      </div>
     </Section>
     <Section
       background={'dark'}
