@@ -51,8 +51,8 @@ const IndexPage = () => (
           minWidth: 220,
           marginTop: 20,
           marginBottom: 80,
-          marginLeft: 80,
-          marginRight: 60,
+          marginLeft: 60,
+          marginRight: 40,
         }}
       >
         <h1>Raise money for charity every time you open a new browser tab</h1>
@@ -100,8 +100,8 @@ const IndexPage = () => (
         justifyContent: 'center',
         paddingTop: 80,
         paddingBottom: 40,
-        paddingLeft: 80,
-        paddingRight: 80,
+        paddingLeft: 60,
+        paddingRight: 60,
       }}
     >
       <div style={{ textAlign: 'center', flex: 1 }}>
@@ -280,7 +280,7 @@ const IndexPage = () => (
       </ReviewCarousel>
     </Section>
     <Section
-      style={{ flexDirection: 'row', justifyContent: 'center', padding: 80 }}
+      style={{ flexDirection: 'row', justifyContent: 'center', padding: 60 }}
     >
       <div style={{ textAlign: 'center', maxWidth: 760, padding: 10 }}>
         <h1>We show our work</h1>
