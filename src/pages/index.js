@@ -25,14 +25,14 @@ import imgKevin from 'img/team/kevin.jpg'
 import Star from '@material-ui/icons/Star'
 import StarHalf from '@material-ui/icons/StarHalf'
 import { lightestTextColor } from 'themes/theme'
-import placholderImgYellow from 'img/placeholder-yellow.png'
+import browserLandingPageImg from 'img/browser-landing-page-cut-off.png'
 import placholderImgPink from 'img/placeholder-pink.png'
 
 const IndexPage = () => (
   <div>
     <Section wrap={'reverse'}>
       <img
-        src={placholderImgYellow}
+        src={browserLandingPageImg}
         style={{
           width: '67%',
           maxWidth: 700,
@@ -50,13 +50,16 @@ const IndexPage = () => (
           justifyContent: 'center',
           minWidth: 220,
           marginTop: 20,
-          marginBottom: 80,
+          marginBottom: 40,
           marginLeft: 60,
           marginRight: 40,
         }}
       >
         <h1>Raise money for charity every time you open a new browser tab</h1>
-        <p>It doesn't cost you a thing.</p>
+        <p>
+          It's easier than putting on socks—and unlike socks, it warms your
+          heart.
+        </p>
         <div style={{ marginTop: 20, marginBottom: 10 }}>
           <InstallButton />
         </div>
