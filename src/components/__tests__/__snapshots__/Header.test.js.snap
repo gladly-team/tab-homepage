@@ -1,41 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header matches expected snapshot 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "paddingBottom": 20,
+      "paddingLeft": 40,
+      "paddingRight": 40,
+      "paddingTop": 20,
+    }
+  }
+>
   <div
     style={
       Object {
-        "paddingBottom": 20,
-        "paddingLeft": 40,
-        "paddingRight": 40,
-        "paddingTop": 20,
+        "display": "flex",
+        "justifyContent": "flex-start",
       }
     }
   >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "justifyContent": "flex-start",
-        }
-      }
+    <GatsbyLink
+      to="/"
     >
-      <GatsbyLink
-        to="/"
-      >
-        <img
-          src="test-file-stub"
-          style={
-            Object {
-              "height": 40,
-            }
+      <img
+        src="test-file-stub"
+        style={
+          Object {
+            "height": 40,
           }
-        />
-      </GatsbyLink>
-    </div>
-    <span>
-      Tab for a Cause
-    </span>
+        }
+      />
+    </GatsbyLink>
   </div>
 </div>
 `;
