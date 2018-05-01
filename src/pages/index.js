@@ -264,34 +264,9 @@ const IndexPage = () => (
         Here's what people have to say:
       </h1>
       <ReviewCarousel>
-        <Review name="Lucas Norr" imgUrl={reviewImgLucasN} starCount={5}>
-          Awesome way to give back while browsing, with absolutely no effort on
-          your end!
-        </Review>
         <Review name="Shayne Walton" imgUrl={reviewImgShayneW} starCount={5}>
           FANTASTIC app that lets you do a lot of good things while doing your
           day to day work, studying for finals, or just surfing the web!
-        </Review>
-        <Review name="Benjamin King" imgUrl={reviewImgBenjaminK} starCount={5}>
-          Raise money for charity by browsing the internet. Perfectly executed!
-        </Review>
-        <Review
-          name="Jonathon Buchanan"
-          imgUrl={reviewImgJohnathanB}
-          starCount={5}
-        >
-          Love that this gives me, a fool with no money, a way to donate to
-          charity. :)
-        </Review>
-        <Review name="Abby Hill" imgUrl={reviewImgAbbyH} starCount={5}>
-          Wonderful and thoughtful idea for an extension! Helping save the world
-          one tab at a time.
-        </Review>
-        <Review name="Chase Rosen" imgUrl={reviewImgChaseR} starCount={5}>
-          It's wonderful. Unobtrusive, useful, well designed, easy to navigate,
-          and actually pretty fun! There is no reason to not have this
-          extension. It has not affected performance and is never an
-          inconvenience.
         </Review>
         <Review
           name="Cameron Brohier-Wood"
@@ -302,15 +277,28 @@ const IndexPage = () => (
           time.. its great to know that my procrastination can be of some use!
           Great app, brilliant idea
         </Review>
+        <Review name="Chase Rosen" imgUrl={reviewImgChaseR} starCount={5}>
+          It's wonderful. Unobtrusive, useful, well designed, easy to navigate,
+          and actually pretty fun! There is no reason to not have this
+          extension. It has not affected performance and is never an
+          inconvenience.
+        </Review>
+        <Review
+          name="Jonathon Buchanan"
+          imgUrl={reviewImgJohnathanB}
+          starCount={5}
+        >
+          Love that this gives me, a fool with no money, a way to donate to
+          charity. :)
+        </Review>
         <Review name="Ana Logstic" imgUrl={reviewImgAnaL} starCount={5}>
           It's a great way to raise money for charity when you don't have a lot
           of money and don't have the time to go out and try to raise money on
           your own. Plus I can decide what charity to donate to, and do it on my
           own time. I love it!
         </Review>
-        <Review name="Toby Strange" imgUrl={reviewImgTobyS} starCount={5}>
-          Amazing extension. Such an awesome idea to use ad revenue from
-          people's new tab to donate to charity. I'd rate 6 stars if I could.
+        <Review name="Benjamin King" imgUrl={reviewImgBenjaminK} starCount={5}>
+          Raise money for charity by browsing the internet. Perfectly executed!
         </Review>
         <Review name="Alfonzo Ginibi" imgUrl={reviewImgAlfonzoG} starCount={5}>
           Wonderful service that does great things for people in need, and all
@@ -318,6 +306,18 @@ const IndexPage = () => (
           a plus their new UI is really attractive and useful as well. Way
           better than the default chrome new tab page. So what do you have to
           lose?
+        </Review>
+        <Review name="Lucas Norr" imgUrl={reviewImgLucasN} starCount={5}>
+          Awesome way to give back while browsing, with absolutely no effort on
+          your end!
+        </Review>
+        <Review name="Abby Hill" imgUrl={reviewImgAbbyH} starCount={5}>
+          Wonderful and thoughtful idea for an extension! Helping save the world
+          one tab at a time.
+        </Review>
+        <Review name="Toby Strange" imgUrl={reviewImgTobyS} starCount={5}>
+          Amazing extension. Such an awesome idea to use ad revenue from
+          people's new tab to donate to charity. I'd rate 6 stars if I could.
         </Review>
       </ReviewCarousel>
     </Section>
