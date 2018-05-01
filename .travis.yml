@@ -3,11 +3,12 @@ sudo: false
 node_js:
 - '8'
 cache: yarn
-before_deploy:
-  - yarn run build
+before_install:
   # AWS CLI
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
+before_deploy:
+  - yarn run build
 deploy:
   # S3 deployment with fine-grained cache control not yet supported by TravisCI
   # https://github.com/travis-ci/dpl/issues/486
