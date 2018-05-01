@@ -1,0 +1,9 @@
+@media (max-width: 760px) {
+  .review-container {
+    font-size: 15px !important;
+  }
+  .review-paper {
+    /* To make heights even when some reviews are long */
+    min-height: 338px !important;
+  }
+}

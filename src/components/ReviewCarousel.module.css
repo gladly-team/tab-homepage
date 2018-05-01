@@ -8,3 +8,10 @@
 :global(.slick-slide.slick-active.slick-current) {
   cursor: default;
 }
+
+@media (min-width: 1040px) {
+  .carousel-container {
+    margin-left: -20% !important;
+    width: 140% !important;
+  }
+}

@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import MediaQuery from 'react-responsive'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import './ReviewCarousel.module.css'
+import styles from './ReviewCarousel.module.css'
 
 class ReviewCarousel extends React.Component {
   render() {
@@ -12,44 +11,31 @@ class ReviewCarousel extends React.Component {
     // on a wide screen without showing more than one full
     // review.
     return (
-      <MediaQuery maxWidth={1040}>
-        {isSmallerScreen => {
-          return (
-            <div
-              style={Object.assign(
-                {
-                  paddingBottom: 20,
-                  outline: 0,
-                  userSelect: 'none',
-                },
-                isSmallerScreen
-                  ? null
-                  : {
-                      marginLeft: '-20%',
-                      width: '140%',
-                    }
-              )}
-            >
-              <Slider
-                centerMode={true}
-                dots={true}
-                focusOnSelect={true}
-                slidesToShow={3}
-                responsive={[
-                  {
-                    breakpoint: 1040,
-                    settings: {
-                      slidesToShow: 1,
-                    },
-                  },
-                ]}
-              >
-                {this.props.children}
-              </Slider>
-            </div>
-          )
+      <div
+        className={styles['carousel-container']} // responsive styling
+        style={{
+          paddingBottom: 20,
+          outline: 0,
+          userSelect: 'none',
         }}
-      </MediaQuery>
+      >
+        <Slider
+          centerMode={true}
+          dots={true}
+          focusOnSelect={true}
+          slidesToShow={3}
+          responsive={[
+            {
+              breakpoint: 1040,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ]}
+        >
+          {this.props.children}
+        </Slider>
+      </div>
     )
   }
 }
