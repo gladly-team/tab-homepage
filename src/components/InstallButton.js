@@ -9,8 +9,9 @@ class InstallButton extends React.Component {
       // One of: 'chrome', 'firefox', or 'other'
       browser: 'other',
       mobile: false,
-      // Hide the button until we know the browser/device
-      show: false,
+      // true when we are done detecting the browser and OS
+      // in a client environment
+      clientReady: false,
     }
   }
 
@@ -19,7 +20,7 @@ class InstallButton extends React.Component {
     // is a static site:
     // https://reactjs.org/docs/react-dom.html#hydrate
     this.detectBrowser(() => {
-      this.setState({ show: true })
+      this.setState({ clientReady: true })
     })
   }
 
@@ -78,7 +79,7 @@ class InstallButton extends React.Component {
         onClick={this.onClick.bind(this)}
         size="large"
         style={{
-          visibility: this.state.show ? 'visible' : 'hidden',
+          minWidth: 200,
         }}
       >
         {buttonText}
