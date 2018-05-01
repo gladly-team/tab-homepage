@@ -251,8 +251,11 @@ const IndexPage = () => (
       background={'dark'}
       fullWidth={true}
       style={{
-        flexDirection: 'column',
-        justifyContent: 'center',
+        display: 'block',
+        flexDirection: 'unset',
+        justifyContent: 'unset',
+        alignContent: 'unset',
+        flexWrap: 'unset',
         overflow: 'hidden',
         position: 'relative',
         paddingTop: 60,
