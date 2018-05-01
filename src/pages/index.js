@@ -17,16 +17,29 @@ import {
   pressMashableURL,
   pressUSATodayURL,
 } from 'utils/navigation'
-import logoHuffingtonPost from 'img/press/huffington-post-grey.svg'
-import logoUSAToday from 'img/press/usa-today-grey.svg'
-import logoLATimes from 'img/press/los-angeles-times-grey.svg'
-import logoMashable from 'img/press/mashable-grey.svg'
-import imgKevin from 'img/team/kevin.jpg'
 import Star from '@material-ui/icons/Star'
 import StarHalf from '@material-ui/icons/StarHalf'
 import { lightestTextColor } from 'themes/theme'
 import browserLandingPageImg from 'img/browser-landing-page-cut-off.png'
 import placholderImgPink from 'img/placeholder-pink.png'
+
+// Press logos
+import logoHuffingtonPost from 'img/press/huffington-post-grey.svg'
+import logoUSAToday from 'img/press/usa-today-grey.svg'
+import logoLATimes from 'img/press/los-angeles-times-grey.svg'
+import logoMashable from 'img/press/mashable-grey.svg'
+
+// Reviewer images
+import reviewImgAbbyH from 'img/reviews/abby_h.png'
+import reviewImgAlfonzoG from 'img/reviews/alfonzo_g.png'
+import reviewImgAnaL from 'img/reviews/ana_l.png'
+import reviewImgBenjaminK from 'img/reviews/benjamin_k.png'
+import reviewImgCameronB from 'img/reviews/cameron_b.png'
+import reviewImgChaseR from 'img/reviews/chase_r.png'
+import reviewImgJohnathanB from 'img/reviews/johnathan_b.png'
+import reviewImgLucasN from 'img/reviews/lucas_n.png'
+import reviewImgShayneW from 'img/reviews/shayne_w.png'
+import reviewImgTobyS from 'img/reviews/toby_s.png'
 
 const IndexPage = () => (
   <div>
@@ -251,30 +264,60 @@ const IndexPage = () => (
         Here's what people have to say:
       </h1>
       <ReviewCarousel>
-        <Review name="Lucas Norr" imgUrl={imgKevin} starCount={5}>
+        <Review name="Lucas Norr" imgUrl={reviewImgLucasN} starCount={5}>
           Awesome way to give back while browsing, with absolutely no effort on
           your end!
         </Review>
-        <Review name="Shayne Walton" imgUrl={imgKevin} starCount={5}>
+        <Review name="Shayne Walton" imgUrl={reviewImgShayneW} starCount={5}>
           FANTASTIC app that lets you do a lot of good things while doing your
           day to day work, studying for finals, or just surfing the web!
         </Review>
-        <Review name="Benjamin King" imgUrl={imgKevin} starCount={5}>
+        <Review name="Benjamin King" imgUrl={reviewImgBenjaminK} starCount={5}>
           Raise money for charity by browsing the internet. Perfectly executed!
         </Review>
-        <Review name="Jonathon Buchanan" imgUrl={imgKevin} starCount={5}>
+        <Review
+          name="Jonathon Buchanan"
+          imgUrl={reviewImgJohnathanB}
+          starCount={5}
+        >
           Love that this gives me, a fool with no money, a way to donate to
           charity. :)
         </Review>
-        <Review name="Abby Hill" imgUrl={imgKevin} starCount={5}>
+        <Review name="Abby Hill" imgUrl={reviewImgAbbyH} starCount={5}>
           Wonderful and thoughtful idea for an extension! Helping save the world
           one tab at a time.
         </Review>
-        <Review name="Chase Rosen" imgUrl={imgKevin} starCount={5}>
+        <Review name="Chase Rosen" imgUrl={reviewImgChaseR} starCount={5}>
           It's wonderful. Unobtrusive, useful, well designed, easy to navigate,
           and actually pretty fun! There is no reason to not have this
           extension. It has not affected performance and is never an
           inconvenience.
+        </Review>
+        <Review
+          name="Cameron Brohier-Wood"
+          imgUrl={reviewImgCameronB}
+          starCount={5}
+        >
+          As a person who frequently enters wikipedia holes opening 20 tabs at a
+          time.. its great to know that my procrastination can be of some use!
+          Great app, brilliant idea
+        </Review>
+        <Review name="Ana Logstic" imgUrl={reviewImgAnaL} starCount={5}>
+          It's a great way to raise money for charity when you don't have a lot
+          of money and don't have the time to go out and try to raise money on
+          your own. Plus I can decide what charity to donate to, and do it on my
+          own time. I love it!
+        </Review>
+        <Review name="Toby Strange" imgUrl={reviewImgTobyS} starCount={5}>
+          Amazing extension. Such an awesome idea to use ad revenue from
+          people's new tab to donate to charity. I'd rate 6 stars if I could.
+        </Review>
+        <Review name="Alfonzo Ginibi" imgUrl={reviewImgAlfonzoG} starCount={5}>
+          Wonderful service that does great things for people in need, and all
+          you have to do is click a button. So really it's a no brainer, AND as
+          a plus their new UI is really attractive and useful as well. Way
+          better than the default chrome new tab page. So what do you have to
+          lose?
         </Review>
       </ReviewCarousel>
     </Section>
