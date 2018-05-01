@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import { Avatar, Paper } from 'material-ui'
 import Star from '@material-ui/icons/Star'
 import { range } from 'lodash/util'
+import MediaQuery from 'react-responsive'
+import { skinnyScreenWidth } from 'utils/layout'
 import { lightestTextColor } from 'themes/theme'
 
 class Review extends React.Component {
@@ -13,72 +15,86 @@ class Review extends React.Component {
       <Star key={`star-${i}`} style={{ width: 16, height: 16 }} />
     ))
     return (
-      <div style={{ padding: 10, display: 'flex' }}>
-        <Paper
-          style={Object.assign(
-            {},
-            {
-              minHeight: 280,
-              width: 'auto',
-              paddingTop: 40,
-              paddingBottom: 40,
-              paddingLeft: 20,
-              paddingRight: 20,
-            },
-            style
-          )}
-        >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              flexWrap: 'nowrap',
-              height: '100%',
-            }}
-          >
-            <Avatar src={imgUrl} alt={name} />
+      <MediaQuery maxWidth={skinnyScreenWidth}>
+        {isSkinnyScreen => {
+          return (
             <div
               style={{
+                padding: 10,
                 display: 'flex',
-                flexDirection: 'column',
-                marginLeft: '10px',
-                justifyContent: 'flex-start',
+                // To handle fitting long review text
+                fontSize: isSkinnyScreen ? 15 : 16,
               }}
             >
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  flexWrap: 'wrap',
-                }}
+              <Paper
+                style={Object.assign(
+                  {},
+                  {
+                    // To make heights even when some reviews are long
+                    minHeight: isSkinnyScreen ? 338 : 280,
+                    width: 'auto',
+                    paddingTop: 40,
+                    paddingBottom: 40,
+                    paddingLeft: 20,
+                    paddingRight: 20,
+                  },
+                  style
+                )}
               >
-                <div style={{ marginRight: 20 }}>{name}</div>
                 <div
                   style={{
-                    flex: 1,
                     display: 'flex',
                     flexDirection: 'row',
                     flexWrap: 'nowrap',
+                    height: '100%',
                   }}
                 >
-                  {stars}
+                  <Avatar src={imgUrl} alt={name} />
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      marginLeft: '10px',
+                      justifyContent: 'flex-start',
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        flexWrap: 'wrap',
+                      }}
+                    >
+                      <div style={{ marginRight: 20 }}>{name}</div>
+                      <div
+                        style={{
+                          flex: 1,
+                          display: 'flex',
+                          flexDirection: 'row',
+                          flexWrap: 'nowrap',
+                        }}
+                      >
+                        {stars}
+                      </div>
+                    </div>
+                    <p style={{ marginTop: 8 }}>{this.props.children}</p>
+                    <p
+                      style={{
+                        margin: 0,
+                        marginTop: 'auto', // justify at flex-end
+                        color: lightestTextColor,
+                      }}
+                    >
+                      From the Chrome Store
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <p style={{ marginTop: 8 }}>{this.props.children}</p>
-              <p
-                style={{
-                  margin: 0,
-                  marginTop: 'auto', // justify at flex-end
-                  color: lightestTextColor,
-                }}
-              >
-                From the Chrome Store
-              </p>
+              </Paper>
             </div>
-          </div>
-        </Paper>
-      </div>
+          )
+        }}
+      </MediaQuery>
     )
   }
 }
