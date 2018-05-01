@@ -12,7 +12,12 @@ class InstallButton extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    // Client-specific code must run after mounting because this
+    // is a static site:
+    // https://reactjs.org/docs/react-dom.html#hydrate
+    // We may want to only make the button visible after browser
+    // detection.
     this.detectBrowser()
   }
 
