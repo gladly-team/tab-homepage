@@ -351,7 +351,7 @@ const IndexPage = () => (
             style={{
               flexDirection: 'row',
               justifyContent: 'center',
-              padding: 60,
+              padding: '80px 40px',
             }}
           >
             <div style={{ textAlign: 'center', maxWidth: 760, padding: 10 }}>
