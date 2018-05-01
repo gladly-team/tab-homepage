@@ -3,26 +3,23 @@ import Link from 'gatsby-link'
 import logoWithText from 'img/logo-with-text.svg'
 
 const Header = () => (
-  <div>
+  <div
+    style={{
+      paddingTop: 20,
+      paddingBottom: 20,
+      paddingLeft: 40,
+      paddingRight: 40,
+    }}
+  >
     <div
       style={{
-        paddingTop: 20,
-        paddingBottom: 20,
-        paddingLeft: 40,
-        paddingRight: 40,
+        display: 'flex',
+        justifyContent: 'flex-start',
       }}
     >
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'flex-start',
-        }}
-      >
-        <Link to="/">
-          <img src={logoWithText} style={{ height: 40 }} />
-        </Link>
-      </div>
-      <span>Tab for a Cause</span>
+      <Link to="/">
+        <img src={logoWithText} style={{ height: 40 }} />
+      </Link>
     </div>
   </div>
 )
