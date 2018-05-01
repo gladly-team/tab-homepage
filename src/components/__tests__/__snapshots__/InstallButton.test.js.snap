@@ -5,6 +5,11 @@ exports[`InstallButton matches expected snapshot 1`] = `
   color="primary"
   onClick={[Function]}
   size="large"
+  style={
+    Object {
+      "visibility": "visible",
+    }
+  }
   variant="raised"
 >
   Add to Chrome
