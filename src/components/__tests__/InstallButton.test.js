@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { mount, shallow } from 'enzyme'
-import toJson from 'enzyme-to-json'
 
 jest.mock('browser-detect')
 
@@ -27,15 +26,6 @@ describe('InstallButton', () => {
 
     const InstallButton = require('../InstallButton').default
     shallow(<InstallButton />)
-  })
-
-  it('matches expected snapshot', function() {
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo())
-
-    const InstallButton = require('../InstallButton').default
-    const wrapper = shallow(<InstallButton />)
-    expect(toJson(wrapper)).toMatchSnapshot()
   })
 
   it('has correct text for desktop Chrome', () => {
