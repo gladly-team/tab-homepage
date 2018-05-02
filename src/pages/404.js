@@ -4,8 +4,7 @@ import Button from 'material-ui/Button'
 import Link from 'components/Link'
 import { homeURL } from 'utils/navigation'
 import { withTheme } from 'material-ui/styles'
-import Cake from '@material-ui/icons/Cake'
-import { secondaryMainColor } from 'themes/theme'
+import styles from './404.module.css'
 
 // We're running into one of these problems or a related
 // problem:
@@ -49,16 +48,8 @@ class NotFoundPage extends React.Component {
           <h1>Oops! Nothing here.</h1>
           <p style={{ marginBottom: 0, padding: '0px 20px' }}>
             Sorry about that! You probably weren't looking for cake, but have
-            some cake anyway.
+            some cake anyway <span className={styles['cake-emoji']} />
           </p>
-          <Cake
-            style={{
-              height: 40,
-              width: 40,
-              margin: 10,
-              color: secondaryMainColor,
-            }}
-          />
           <Link to={homeURL} style={{ margin: 18 }}>
             <Button variant="raised" color="primary" size="large">
               Head back home
