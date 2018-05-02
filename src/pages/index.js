@@ -8,7 +8,9 @@ import InstallButton from 'components/InstallButton'
 import CharitableImpactText from 'components/CharitableImpactText'
 import Link from 'components/Link'
 import {
+  chromeExtensionURL,
   financialsURL,
+  firefoxExtensionURL,
   githubTabRepoURL,
   githubTabExtensionsRepoURL,
   githubTabHomepageRepoURL,
@@ -19,7 +21,9 @@ import {
 } from 'utils/navigation'
 import Star from '@material-ui/icons/Star'
 import StarHalf from '@material-ui/icons/StarHalf'
-import { lightestTextColor } from 'themes/theme'
+import { lighterTextColor, lightestTextColor } from 'themes/theme'
+import Firefox from 'mdi-material-ui/Firefox'
+import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 
 // Images
 import browserLandingPageImg from 'img/browser-landing-page-cut-off.png'
@@ -69,7 +73,7 @@ const IndexPage = () => (
           minWidth: 220,
           marginTop: 20,
           marginBottom: 40,
-          marginLeft: 60,
+          marginLeft: 50,
           marginRight: 40,
         }}
       >
@@ -78,10 +82,10 @@ const IndexPage = () => (
           It's easier than putting on socks—and unlike socks, it warms your
           heart.
         </p>
-        <div style={{ marginTop: 20, marginBottom: 10 }}>
+        <div style={{ marginTop: 20, marginBottom: 20 }}>
           <InstallButton />
         </div>
-        <div style={{ marginTop: 6, marginBottom: 6 }}>
+        <div style={{ margin: 0 }}>
           <div>
             <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
             <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
@@ -89,9 +93,55 @@ const IndexPage = () => (
             <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
             <StarHalf style={{ color: '#ffc533', width: 18, height: 18 }} />
           </div>
-          <p style={{ fontSize: 12, color: lightestTextColor }}>
+          <p
+            style={{ fontSize: 12, color: lightestTextColor, marginBottom: 0 }}
+          >
             170,000+ people are Tabbing on Chrome
           </p>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+          >
+            <p
+              style={{
+                fontSize: 12,
+                color: lightestTextColor,
+                marginRight: 6,
+                marginBottom: 0,
+              }}
+            >
+              Available on:
+            </p>
+            <Link
+              to={chromeExtensionURL}
+              style={{ color: lightestTextColor }}
+              hoverStyle={{ color: lighterTextColor }}
+            >
+              <GoogleChrome
+                style={{
+                  margin: '0px 2px',
+                  width: 20,
+                  height: 20,
+                }}
+              />
+            </Link>
+            <Link
+              to={firefoxExtensionURL}
+              style={{ color: lightestTextColor }}
+              hoverStyle={{ color: lighterTextColor }}
+            >
+              <Firefox
+                style={{
+                  margin: '0px 2px',
+                  width: 20,
+                  height: 20,
+                }}
+              />
+            </Link>
+          </div>
         </div>
       </div>
       <div

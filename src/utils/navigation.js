@@ -33,3 +33,9 @@ export const pressFastCompanyURL =
   'https://www.fastcompany.com/3065808/let-your-compulsion-to-open-hundreds-of-browser-tabs-do-some-good'
 export const pressMashableURL =
   'https://mashable.com/2014/11/04/chrome-extensions-charity/#LMtNgZ4lUZqp'
+
+// Extensions
+export const chromeExtensionURL =
+  'https://chrome.google.com/webstore/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
+export const firefoxExtensionURL =
+  'https://addons.mozilla.org/en-US/firefox/addon/tab-for-a-cause/'
