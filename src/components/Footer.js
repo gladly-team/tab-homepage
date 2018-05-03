@@ -11,7 +11,7 @@ import {
   lightestTextColor,
 } from 'themes/theme'
 import {
-  helpURL,
+  externalHelpURL,
   facebookPageURL,
   financialsURL,
   termsURL,
@@ -82,7 +82,7 @@ class Footer extends React.Component {
               }}
             >
               <Link
-                to={helpURL}
+                to={externalHelpURL}
                 style={footerLinkStyle}
                 hoverStyle={hoverLinkStyle}
               >
