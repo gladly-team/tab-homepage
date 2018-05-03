@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Tab for a Cause',
     domain: 'tab.gladly.io',
+    siteUrl: 'https://tab.gladly.io',
     keywords:
       'tab for a cause, charity, tab, cause, giving, extension, browser, advertising',
     descriptionLong:
@@ -33,5 +34,8 @@ module.exports = {
       },
     },
     `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+    },
   ],
 }
