@@ -1,0 +1,155 @@
+<!--
+https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanced-conditional-redirects
+-->
+<RoutingRules>
+
+  <!-- Zendesk (use temporary redirects) -->
+
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>more/contact/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith>hc/en-us/requests/new/</ReplaceKeyWith>
+      <HostName>gladly.zendesk.com</HostName>
+      <Protocol>https</Protocol>
+      <HttpRedirectCode>307</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>contact/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith>hc/en-us/requests/new/</ReplaceKeyWith>
+      <HostName>gladly.zendesk.com</HostName>
+      <Protocol>https</Protocol>
+      <HttpRedirectCode>307</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>help/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith>hc/en-us/categories/201939608-Tab-for-a-Cause/</ReplaceKeyWith>
+      <HostName>gladly.zendesk.com</HostName>
+      <Protocol>https</Protocol>
+      <HttpRedirectCode>307</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+
+  <!-- Old routes -->
+
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>more/meet_the_team/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith>team/</ReplaceKeyWith>
+      <HostName>tab.gladly.io</HostName>
+      <Protocol>https</Protocol>
+      <HttpRedirectCode>301</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>more/financials/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith>financials/</ReplaceKeyWith>
+      <HostName>tab.gladly.io</HostName>
+      <Protocol>https</Protocol>
+      <HttpRedirectCode>301</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>more/privacy_policy/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith>privacy/</ReplaceKeyWith>
+      <HostName>tab.gladly.io</HostName>
+      <Protocol>https</Protocol>
+      <HttpRedirectCode>301</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>more/terms/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith>terms/</ReplaceKeyWith>
+      <HostName>tab.gladly.io</HostName>
+      <Protocol>https</Protocol>
+      <HttpRedirectCode>301</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>more/advertiser_info/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith></ReplaceKeyWith>
+      <HostName>tab.gladly.io</HostName>
+      <Protocol>https</Protocol>
+      <HttpRedirectCode>301</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>more/adblockers/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith>adblockers</ReplaceKeyWith>
+      <HostName>tab.gladly.io</HostName>
+      <Protocol>https</Protocol>
+      <HttpRedirectCode>301</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>blog/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith></ReplaceKeyWith>
+      <HostName>tab.gladly.io</HostName>
+      <Protocol>https</Protocol>
+      <HttpRedirectCode>301</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>events/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith></ReplaceKeyWith>
+      <HostName>tab.gladly.io</HostName>
+      <Protocol>https</Protocol>
+      <HttpRedirectCode>301</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>charity-challenge/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith></ReplaceKeyWith>
+      <HostName>tab.gladly.io</HostName>
+      <Protocol>https</Protocol>
+      <HttpRedirectCode>301</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+</RoutingRules>
