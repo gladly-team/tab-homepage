@@ -16,6 +16,8 @@ import { MuiThemeProvider } from 'material-ui/styles'
 import theme from '../themes/theme'
 import Favicon from 'img/logo32x32.png'
 
+import { CHROME_WEB_STORE_HREF } from 'utils/constants'
+
 // Note that layouts will be deprecated in Gatsby V2:
 // https://github.com/gatsbyjs/gatsby/issues/3830
 
@@ -51,6 +53,7 @@ class Layout extends React.Component {
               />
               <meta name="keywords" content={data.site.siteMetadata.keywords} />
               <link rel="canonical" href={absoluteUrl} />
+              <link rel="chrome-webstore-item" href={CHROME_WEB_STORE_HREF} />
               <link rel="icon" href={Favicon} />
               <meta property="og:url" content={absoluteUrl} />
               <meta

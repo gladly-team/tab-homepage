@@ -5,9 +5,16 @@ import {
   CHROME_BROWSER,
   FIREFOX_BROWSER,
   UNSUPPORTED_BROWSER,
+  CHROME_WEB_STORE_HREF,
+  CHROME_WEB_STORE_VERIFIED_DOMAIN,
 } from 'utils/constants'
 import { chromeExtensionURL, firefoxExtensionURL } from 'utils/navigation'
+import redirect from 'utils/redirect'
+import { getLocation } from 'utils/location'
 
+// For Chrome inline installation, requires the page to have a
+// <link> elem pointing to the Chrome Web Store page:
+// https://developer.chrome.com/webstore/inline_installation
 class InstallButton extends React.Component {
   constructor(props) {
     super(props)
@@ -57,29 +64,64 @@ class InstallButton extends React.Component {
     )
   }
 
-  addToFirefox() {
-    window.location = firefoxExtensionURL
+  installFirefoxExtension() {
+    redirect(firefoxExtensionURL)
   }
 
-  addToChrome() {
-    window.location = chromeExtensionURL
+  // If inline install fails, redirect the user to the Chrome Web Store.
+  installChromeExtensionFallback() {
+    redirect(chromeExtensionURL)
+  }
+
+  // Whether we'll be able to use inline installation for the
+  // Chrome extension. To do so, we need to be on the domain or
+  // subdomain of the domain verified with Google.
+  chromeCanInlineInstall() {
+    const windowLocation = getLocation()
+    return windowLocation.hostname.endsWith(CHROME_WEB_STORE_VERIFIED_DOMAIN)
+  }
+
+  chromeInstallSuccess() {
+    console.log('Successfully installed Chrome extension')
+  }
+
+  chromeInstallFailure(e) {
+    console.error(e)
+    this.installChromeExtensionFallback()
+  }
+
+  installChromeExtension() {
+    if (!this.chromeCanInlineInstall()) {
+      this.installChromeExtensionFallback()
+      return
+    }
+    try {
+      // eslint-disable-next-line no-undef
+      chrome.webstore.install(
+        CHROME_WEB_STORE_HREF,
+        this.chromeInstallSuccess.bind(this),
+        this.chromeInstallFailure.bind(this)
+      )
+    } catch (e) {
+      this.installChromeExtensionFallback()
+    }
   }
 
   onClick() {
     if (this.state.mobile) {
-      console.log(
+      console.info(
         'Cannot add Tab for a Cause extension: this is a mobile device'
       )
     } else {
       switch (this.state.browser) {
         case CHROME_BROWSER:
-          this.addToChrome()
+          this.installChromeExtension()
           break
         case FIREFOX_BROWSER:
-          this.addToFirefox()
+          this.installFirefoxExtension()
           break
         default:
-          console.log(
+          console.info(
             'Cannot add Tab for a Cause extension: this browser is not supported'
           )
           break

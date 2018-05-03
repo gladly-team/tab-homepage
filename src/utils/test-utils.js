@@ -7,3 +7,33 @@
 export const getTestIdSelector = testId => {
   return `[data-test-id="${testId}"]`
 }
+
+/**
+ * Return a mock window.location object.
+ * @param {string} host - The host to use
+ * @param {object} overrides - Object of values to change in the
+ *   default mock.
+ * @return {object} The mock window.location
+ */
+export const mockWindowLocation = (host = null, overrides = {}) => {
+  const hostToUse = host ? host : 'example.com'
+  return Object.assign(
+    {},
+    {
+      ancestorOrigins: {},
+      assign: () => {},
+      hash: '',
+      href: `https://${hostToUse}/`,
+      host: hostToUse,
+      hostname: hostToUse,
+      origin: `https://${hostToUse}`,
+      pathname: '/',
+      port: '',
+      protocol: 'https:',
+      reload: () => {},
+      replace: () => {},
+      search: '',
+    },
+    overrides
+  )
+}

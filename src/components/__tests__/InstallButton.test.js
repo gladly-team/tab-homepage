@@ -2,8 +2,18 @@
 
 import React from 'react'
 import { mount, shallow } from 'enzyme'
+import { mockWindowLocation } from 'utils/test-utils'
 
 jest.mock('browser-detect')
+jest.mock('utils/location')
+jest.mock('utils/redirect')
+
+// Mock chrome.webstore API
+window.chrome = {
+  webstore: {
+    install: jest.fn(),
+  },
+}
 
 const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
   return {
@@ -15,8 +25,17 @@ const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
   }
 }
 
+// Helper to simulate a click on the button, given the Enzyme wrapper
+const clickButton = wrapper => {
+  wrapper
+    .find('button')
+    .first()
+    .simulate('click')
+}
+
 afterEach(() => {
   jest.resetModules()
+  jest.clearAllMocks()
 })
 
 describe('InstallButton', () => {
@@ -82,5 +101,91 @@ describe('InstallButton', () => {
         .first()
         .text()
     ).toEqual('Get it Now')
+  })
+
+  it('navigates to the Firefox Addons page on click (on Firefox desktop browser)', () => {
+    const detectBrowser = require('browser-detect').default
+    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('firefox', false))
+    const redirect = require('utils/redirect').default
+
+    const InstallButton = require('../InstallButton').default
+    const wrapper = mount(<InstallButton />)
+    clickButton(wrapper)
+    expect(redirect).toHaveBeenCalledWith(
+      'https://addons.mozilla.org/en-US/firefox/addon/tab-for-a-cause/'
+    )
+  })
+
+  it('calls the Chrome Web Store inline install API on click when on the tab.gladly.io domain (on Chrome desktop browser)', () => {
+    const detectBrowser = require('browser-detect').default
+    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
+
+    // Mock that we're on a tab.gladly.io page
+    const getLocation = require('utils/location').getLocation
+    getLocation.mockImplementationOnce(() =>
+      mockWindowLocation('tab.gladly.io')
+    )
+
+    const InstallButton = require('../InstallButton').default
+    const wrapper = mount(<InstallButton />)
+    clickButton(wrapper)
+    expect(window.chrome.webstore.install).toHaveBeenCalled()
+    expect(window.chrome.webstore.install.mock.calls[0][0]).toBe(
+      'https://chrome.google.com/webstore/detail/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
+    )
+  })
+
+  it('redirects to the Chrome Web Store when not on a verified domain for inline install (on Chrome desktop browser)', () => {
+    const detectBrowser = require('browser-detect').default
+    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
+
+    // Mock that we're on some non-verified page
+    const getLocation = require('utils/location').getLocation
+    getLocation.mockImplementationOnce(() => mockWindowLocation('example.com'))
+
+    const redirect = require('utils/redirect').default
+
+    const InstallButton = require('../InstallButton').default
+    const wrapper = mount(<InstallButton />)
+    clickButton(wrapper)
+    expect(window.chrome.webstore.install).not.toHaveBeenCalled()
+    expect(redirect).toHaveBeenCalledWith(
+      'https://chrome.google.com/webstore/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
+    )
+  })
+
+  it('redirects to the Chrome Web Store when inline install fails (on Chrome desktop browser)', () => {
+    const detectBrowser = require('browser-detect').default
+    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
+
+    // Mock that we're on a tab.gladly.io page
+    const getLocation = require('utils/location').getLocation
+    getLocation.mockImplementationOnce(() =>
+      mockWindowLocation('tab.gladly.io')
+    )
+
+    // Mock the chrome.webstore so we can access the callback functions
+    var chromeWebStoreFailureCallback
+    window.chrome.webstore.install.mockImplementationOnce(
+      (_, __, failureCallback) => {
+        chromeWebStoreFailureCallback = failureCallback
+      }
+    )
+
+    // Silence expected console error
+    jest.spyOn(console, 'error').mockImplementationOnce(() => {})
+
+    const redirect = require('utils/redirect').default
+
+    const InstallButton = require('../InstallButton').default
+    const wrapper = mount(<InstallButton />)
+    clickButton(wrapper)
+
+    // Mock a chrome.webstore failure
+    chromeWebStoreFailureCallback()
+
+    expect(redirect).toHaveBeenCalledWith(
+      'https://chrome.google.com/webstore/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
+    )
   })
 })
