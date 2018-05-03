@@ -1,8 +1,10 @@
+const domain = 'tab.gladly.io'
+
 module.exports = {
   siteMetadata: {
     title: 'Tab for a Cause',
-    domain: 'tab.gladly.io',
-    siteUrl: 'https://tab.gladly.io',
+    domain: `${domain}`,
+    siteUrl: `https://${domain}`,
     keywords:
       'tab for a cause, charity, tab, cause, giving, extension, browser, advertising',
     descriptionLong:
@@ -36,6 +38,14 @@ module.exports = {
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-plugin-sitemap`,
+    },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `https://${domain}`,
+        sitemap: `https://${domain}/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
     },
   ],
 }

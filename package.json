@@ -10,6 +10,7 @@
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-jss": "^1.5.12",
     "gatsby-plugin-react-helmet": "^2.0.10",
+    "gatsby-plugin-robots-txt": "^1.0.2",
     "gatsby-plugin-sitemap": "^1.2.23",
     "gatsby-plugin-typography": "^1.7.18",
     "gatsby-source-filesystem": "^1.5.34",
