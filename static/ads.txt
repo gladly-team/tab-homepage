@@ -1,0 +1,143 @@
+# A9
+aps.amazon.com, 3397, DIRECT
+
+# Adsense
+google.com, pub-1918626353776886, DIRECT, f08c47fec0942fa0
+
+# AOL
+adtech.com, 10559, DIRECT
+aolcloud.net, 10559, DIRECT
+
+# AppNexus
+appnexus.com, 7707, DIRECT
+
+# brealtime
+EMXDGT.com, 298, DIRECT, 1e1d41537f7cad7f
+Appnexus.com, 1356, DIRECT, f5ab79cb980f11d1
+Google.com, pub-5995202563537249, DIRECT, f08c47fec0942fa0
+
+# DistrictM
+districtm.io, 100390, DIRECT
+appnexus.com, 1908, RESELLER
+
+# OpenX
+openx.com, 537145035, DIRECT, 6a698e2ec38604c6
+
+# PulsePoint
+contextweb.com, 560174, DIRECT
+
+# RhythmOne
+rhythmone.com, 1398004509, DIRECT, a670c89d4a324e47
+rhythmone.com, 3781572624, DIRECT, a670c89d4a324e47
+
+# Sonobi
+sonobi.com, 5695c92f04, DIRECT
+rhythmone.com, 1059622079, RESELLER
+contextweb.com, 560606, RESELLER
+
+# Sovrn
+sovrn.com, 240713, DIRECT, fafdf38b16bf6b2b
+lijit.com, 240713, DIRECT, fafdf38b16bf6b2b
+gumgum.com, 11645, RESELLER, ffdef49475d318a9
+openx.com, 537120960, RESELLER
+openx.com, 83499, RESELLER
+openx.com, 538959099, RESELLER
+pubmatic.com, 137711, RESELLER
+pubmatic.com, 156212, RESELLER
+pubmatic.com, 62483, RESELLER
+contextweb.com, 558511, RESELLER
+
+# Synacor Media (via Sonobi)
+Synacor.com, 80161, RESELLER #Synacor Media
+google.com, pub-9242135695870166, RESELLER, f08c47fec0942fa0 #Ad Exchange
+adblade.com, 39600, RESELLER #AdBlade
+advertising.com, 19623, RESELLER #AdapTV
+google.com, pub-4983172728561290, RESELLER, f08c47fec0942fa0 #Anyclip
+openx.com, 537139983, RESELLER, 6a698e2ec38604c6 #Anyclip
+appnexus.com, 2720, RESELLER #Anyclip
+tremorhub.com, 0kq41, RESELLER, 1a4e959a1b50034a #Anyclip
+spotxchange.com, 74844, RESELLER, 7842df1d2fe2db34 #Anyclip
+contextweb.com, 559971, RESELLER, 89ff185a4c4e857c #Anyclip
+advertising.com, 3500, RESELLER #Anyclip
+pubmatic.com, 156610, RESELLER, 5d62403b186f2ace #Anyclip
+springserve.com, 316, RESELLER, a24eb641fc82e93d #Anyclip
+anyclip-media.com, 5666a6fd2a61260002000001, DIRECT #Anyclip
+freewheel.tv, 106841, RESELLER #Anyclip
+freewheel.tv, 106849, RESELLER #Anyclip
+spotx.tv, 74844, RESELLER, 7842df1d2fe2db34 #Anyclip
+adtech.com, 9446, RESELLER #AOL
+aolcloud.net, 9446, RESELLER #AOL
+adtech.com, 10529, RESELLER #AOL
+aolcloud.net, 10529, RESELLER #AOL
+coxmt.com, 2000067907202, RESELLER #AOL
+openx.com, 537143344, RESELLER #AOL
+indexexchange.com, 175407, RESELLER #AOL
+appnexus.com, 310, RESELLER, f5ab79cb980f11d1 #AppNexus
+appnexus.com, 9316, RESELLER, f5ab79cb980f11d1 #AppNexus
+adtech.com, 10871, RESELLER #Blue Water Ads
+smartadserver.com, 2313, RESELLER #Blue Water Ads
+pilotx.tv, 3018, RESELLER #Blue Water Ads
+freewheel.tv, 470641, RESELLER #Blue Water Ads
+advertising.com, 3597, RESELLER #Blue Water Ads
+fyber.com, 87e6c205797b093531996432a6e2f16a, RESELLER #Blue Water Ads
+coxmt.com, 2000068000102, RESELLER #Cox
+indexexchange.com, 186669, RESELLER #Index Exchange
+indexexchange.com, 181630, RESELLER #Index Exchange
+smartadserver.com, 2148, RESELLER #Media 122
+pubmatic.com, 93940, RESELLER #Media 122
+openx.com, 537141118, RESELLER, 6a698e2ec38604c6 #Media 122
+contextweb.com, 560175, RESELLER, 89ff185a4c4e857c #Media 122
+fyber.com, 8d80fd4af47abb757a868ecef9f98df7, RESELLER #Media 122
+advertising.com, 10162, RESELLER #Media 122
+adtech.com, 10162, RESELLER #Media 122
+openx.com, 537139680, RESELLER, 6a698e2ec38604c6 #OpenX
+pubmatic.com, 6846, RESELLER, 5d62403b186f2ace #Pubmatic
+pubmatic.com, 156344, RESELLER, 5d62403b186f2ace #Pubmatic
+google.com, pub-9148265802523938, RESELLER, f08c47fec0942fa0 #Rhythm One
+google.com, pub-7620071422727774, RESELLER, f08c47fec0942fa0 #Rhythm One
+google.com, pub-5278973888786334, RESELLER, f08c47fec0942fa0 #Rhythm One
+districtm.io, 100885, RESELLER #Rhythm One
+appnexus.com, 1908, RESELLER #Rhythm One
+appnexus.com, 7944, RESELLER #Rhythm One
+rhythmone.com, 2497923403, RESELLER, a670c89d4a324e47 #Rhythm One
+rockyou.net, ry303642, RESELLER #RockYou
+advertising.com, 3531, RESELLER #RockYou
+spotx.tv, 75574, RESELLER, 7842df1d2fe2db34 #RockYou
+spotxchange.com, 75574, RESELLER, 7842df1d2fe2db34 #RockYou
+tremorhub.com, 5sqfs-bqeuv, RESELLER, 1a4e959a1b50034a #RockYou
+tremorhub.com, 5sqfs-fip7t, RESELLER, 1a4e959a1b50034a #RockYou
+tremorhub.com, 5sqfs-qre5s, RESELLER, 1a4e959a1b50034a #RockYou
+tremorhub.com, n29gi, RESELLER, 1a4e959a1b50034a #RockYou
+tremorhub.com, qmw7q, RESELLER, 1a4e959a1b50034a #RockYou
+tremorhub.com, yt4p2, RESELLER, 1a4e959a1b50034a #RockYou
+rubiconproject.com, 13344, RESELLER, 0bfd66d529a55807 #Rubicon
+spotxchange.com, 122116, RESELLER, 7842df1d2fe2db34 #SpotX
+spotx.tv, 122116, RESELLER, 7842df1d2fe2db34 #SpotX
+aralego.com, par-488A3E6BD8D997D0ED8B3BD34D8BA4B, RESELLER #ucFunnel
+springserve.com, 1, RESELLER, a24eb641fc82e93d #YellowHammer
+tremorhub.com, cdgfn, RESELLER, 1a4e959a1b50034a #YellowHammer
+google.com, pub-6512936480753445, RESELLER, f08c47fec0942fa0 #YellowHammer
+spotx.tv, 111271, RESELLER #YellowHammer
+spotxchange.com, 111271, RESELLER #YellowHammer
+spotxchange.com, 147949, RESELLER, 7842df1d2fe2db34 #YellowHammer
+appnexus.com, 926, RESELLER #YellowHammer
+appnexus.com, 1538, RESELLER #YellowHammer
+advertising.com, 3531, RESELLER #YellowHammer
+advertising.com, 9008, RESELLER #YellowHammer
+freewheel.tv, 208505, RESELLER #YellowHammer
+freewheel.tv, 327377, RESELLER #YellowHammer
+freewheel.tv, 482721, RESELLER #YellowHammer
+freewheel.tv, 482689, RESELLER #YellowHammer
+freewheel.tv, 482753, RESELLER #YellowHammer
+freewheel.tv, 482785, RESELLER #YellowHammer
+contextweb.com, 560580, RESELLER #YellowHammer
+contextweb.com, 561503, RESELLER, 89ff185a4c4e857c #YellowHammer
+pubmatic.com, 156108, RESELLER, 5d62403b186f2ace #YellowHammer
+pubmatic.com, 156410, RESELLER, 5d62403b186f2ace #YellowHammer
+pubmatic.com, 93915, RESELLER, 5d62403b186f2ace #YellowHammer
+beachfront.com, 4969, RESELLER #YellowHammer
+rockyou.com, ry303642, RESELLER #YellowHammer
+rockyou.net, ry303642, RESELLER #YellowHammer
+openx.com, 537141219, RESELLER, 6a698e2ec38604c6 #YellowHammer
+rubiconproject.com, 14410, RESELLER, 0bfd66d529a55807 #YellowHammer
+gumgum.com, 12932, RESELLER, ffdef49475d318a9 #YellowHammer
