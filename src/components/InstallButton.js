@@ -1,13 +1,18 @@
 import React from 'react'
 import Button from 'material-ui/Button'
 import detectBrowser from 'browser-detect'
+import {
+  CHROME_BROWSER,
+  FIREFOX_BROWSER,
+  UNSUPPORTED_BROWSER,
+} from 'utils/constants'
 
 class InstallButton extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       // One of: 'chrome', 'firefox', or 'other'
-      browser: 'other',
+      browser: UNSUPPORTED_BROWSER,
       mobile: false,
       // true when we are done detecting the browser and OS
       // in a client environment
@@ -29,15 +34,16 @@ class InstallButton extends React.Component {
     var browser = 'other'
     switch (browserInfo.name) {
       case 'chrome':
-        browser = 'chrome'
+        browser = CHROME_BROWSER
         break
       case 'chromium':
-        browser = 'chrome'
+        browser = CHROME_BROWSER
         break
       case 'firefox':
-        browser = 'firefox'
+        browser = FIREFOX_BROWSER
         break
       default:
+        browser = UNSUPPORTED_BROWSER
         break
     }
     const mobile = browserInfo.mobile ? true : false
@@ -60,9 +66,9 @@ class InstallButton extends React.Component {
       return 'Get it Now'
     } else {
       switch (this.state.browser) {
-        case 'chrome':
+        case CHROME_BROWSER:
           return 'Add to Chrome'
-        case 'firefox':
+        case FIREFOX_BROWSER:
           return 'Add to Firefox'
         default:
           return 'Get it Now'
