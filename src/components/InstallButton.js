@@ -6,6 +6,7 @@ import {
   FIREFOX_BROWSER,
   UNSUPPORTED_BROWSER,
 } from 'utils/constants'
+import { chromeExtensionURL, firefoxExtensionURL } from 'utils/navigation'
 
 class InstallButton extends React.Component {
   constructor(props) {
@@ -56,8 +57,34 @@ class InstallButton extends React.Component {
     )
   }
 
+  addToFirefox() {
+    window.location = firefoxExtensionURL
+  }
+
+  addToChrome() {
+    window.location = chromeExtensionURL
+  }
+
   onClick() {
-    console.log('Button clicked')
+    if (this.state.mobile) {
+      console.log(
+        'Cannot add Tab for a Cause extension: this is a mobile device'
+      )
+    } else {
+      switch (this.state.browser) {
+        case CHROME_BROWSER:
+          this.addToChrome()
+          break
+        case FIREFOX_BROWSER:
+          this.addToFirefox()
+          break
+        default:
+          console.log(
+            'Cannot add Tab for a Cause extension: this browser is not supported'
+          )
+          break
+      }
+    }
   }
 
   getButtonText() {
