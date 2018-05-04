@@ -23,7 +23,7 @@ class ChromeInstallReconsiderScreen extends React.Component {
           left: 0,
         }}
       >
-        <Header />
+        <Header onHeaderLogoClick={this.close.bind(this)} />
         <TextPageContent>
           <TextPageHeader>Unsure about getting Tab for a Cause?</TextPageHeader>
           <div>TODO: info goes here!</div>

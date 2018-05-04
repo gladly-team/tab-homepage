@@ -20,6 +20,7 @@ exports[`Header matches expected snapshot 1`] = `
     }
   >
     <GatsbyLink
+      onClick={[Function]}
       to="/"
     >
       <img
