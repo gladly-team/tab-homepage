@@ -20,7 +20,7 @@ class ChromeInstallInProgressScreen extends React.Component {
         <div
           style={{
             position: 'absolute',
-            top: 260,
+            top: 270,
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
@@ -28,7 +28,7 @@ class ChromeInstallInProgressScreen extends React.Component {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'baseline' }}>
-            <h1 style={{ fontSize: 23 }}>
+            <h1 style={{ fontSize: 22 }}>
               Click{' '}
               <span style={{ color: primaryMainColor }}>"Add extension"</span>
             </h1>
