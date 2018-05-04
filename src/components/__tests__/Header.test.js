@@ -28,11 +28,11 @@ describe('Header', () => {
     ).toEqual('/')
   })
 
-  it('calls onHeaderIconClick on header icon click', () => {
+  it('calls onHeaderLogoClick on header icon click', () => {
     const Header = require('../Header').default
-    const mockOnHeaderIconClick = jest.fn()
+    const mockOnHeaderLogoClick = jest.fn()
     const wrapper = shallow(
-      <Header onHeaderIconClick={mockOnHeaderIconClick} />
+      <Header onHeaderLogoClick={mockOnHeaderLogoClick} />
     )
     const mockPreventDefault = jest.fn()
     wrapper
@@ -43,7 +43,7 @@ describe('Header', () => {
     // Make sure we prevent the default Link from navigating
     expect(mockPreventDefault).toHaveBeenCalled()
 
-    expect(mockOnHeaderIconClick).toHaveBeenCalled()
+    expect(mockOnHeaderLogoClick).toHaveBeenCalled()
   })
 
   it('matches expected snapshot', function() {
