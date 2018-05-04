@@ -85,9 +85,23 @@ class InstallButton extends React.Component {
     console.log('Successfully installed Chrome extension')
   }
 
-  chromeInstallFailure(e) {
-    console.error(e)
-    this.installChromeExtensionFallback()
+  chromeInstallFailure(failureDetail) {
+    // If install failed because the user canceled, show a page with
+    // additional information. If it failed for another reason, send
+    // the user the Chrome Web Store.
+    // The value of failureDetail will likely be:
+    //   - "User cancelled install" if the user clicked cancel
+    //   - "Installs can only be initiated by one of the Chrome Web Store
+    //     item's verified sites." if the site can't do inline install
+    // Google says we "should not rely on specific strings" here, but
+    // we'll rely on it. In the worst case, we'll send the user to the
+    // Web Store, which is acceptable.
+    // https://developer.chrome.com/webstore/inline_installation#triggering
+    if (failureDetail === 'User cancelled install') {
+      // TODO: onChromeInstallCanceled callback
+    } else {
+      this.installChromeExtensionFallback()
+    }
   }
 
   installChromeExtension() {
@@ -121,6 +135,9 @@ class InstallButton extends React.Component {
           this.installFirefoxExtension()
           break
         default:
+          // TODO:
+          // call onUnsupportedBrowserInstallClick callback to
+          // show modal with info and links to Firefox/Chrome extensions
           console.info(
             'Cannot add Tab for a Cause extension: this browser is not supported'
           )
@@ -162,5 +179,11 @@ class InstallButton extends React.Component {
     )
   }
 }
+
+// TODO props:
+// onChromeInstallBegin
+// onChromeInstallCanceled
+// onChromeInstallSuccess
+// onUnsupportedBrowserInstallClick
 
 export default InstallButton
