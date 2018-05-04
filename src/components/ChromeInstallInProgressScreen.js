@@ -46,7 +46,7 @@ class ChromeInstallInProgressScreen extends React.Component {
         <div
           style={{
             position: 'absolute',
-            top: 244,
+            top: 254,
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
