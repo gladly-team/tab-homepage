@@ -58,27 +58,56 @@ class IndexPage extends React.Component {
     super(props)
     this.state = {
       chromeInstallInProgress: false,
-      chromeReconsideringInstall: false,
+      isReconsideringInstall: false,
     }
   }
 
-  goToInstallReconsiderPage() {
+  // When modals are open, prevent scroll.
+  changeBodyScrollable(shouldScroll) {
+    const className = styles['body-unscrollable']
+    if (shouldScroll) {
+      try {
+        window.document.body.classList.remove(className)
+      } catch (e) {
+        console.error(e)
+      }
+    } else {
+      try {
+        window.document.body.classList.add(className)
+      } catch (e) {
+        console.error(e)
+      }
+    }
+  }
+
+  showReconsideringInstallScreen() {
     this.setState({
       chromeInstallInProgress: false,
-      chromeReconsideringInstall: true,
+      isReconsideringInstall: true,
     })
+    this.changeBodyScrollable(false)
+  }
+
+  hideInstallReconsiderScreen() {
+    this.setState({
+      isReconsideringInstall: false,
+    })
+    this.changeBodyScrollable(true)
   }
 
   showChromeInstallPrompt() {
     this.setState({
       chromeInstallInProgress: true,
+      isReconsideringInstall: false,
     })
+    this.changeBodyScrollable(false)
   }
 
   hideChromeInstallPrompt() {
     this.setState({
       chromeInstallInProgress: false,
     })
+    this.changeBodyScrollable(true)
   }
 
   // TODO
@@ -125,7 +154,7 @@ class IndexPage extends React.Component {
             <div style={{ marginTop: 20, marginBottom: 20 }}>
               <InstallButton
                 onChromeInstallBegin={this.showChromeInstallPrompt.bind(this)}
-                onChromeInstallCanceled={this.goToInstallReconsiderPage.bind(
+                onChromeInstallCanceled={this.showReconsideringInstallScreen.bind(
                   this
                 )}
                 onChromeInstallSuccess={this.hideChromeInstallPrompt.bind(this)}
@@ -483,8 +512,10 @@ class IndexPage extends React.Component {
         {this.state.chromeInstallInProgress ? (
           <ChromeInstallInProgressScreen />
         ) : null}
-        {this.state.chromeReconsideringInstall ? (
-          <ChromeInstallReconsiderScreen />
+        {this.state.isReconsideringInstall ? (
+          <ChromeInstallReconsiderScreen
+            onCloseClick={this.hideInstallReconsiderScreen.bind(this)}
+          />
         ) : null}
       </div>
     )

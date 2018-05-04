@@ -2,34 +2,8 @@ import React from 'react'
 import ArrowTopRight from 'mdi-material-ui/ArrowTopRight'
 import Header from 'components/Header'
 import { primaryMainColor, textColor } from 'themes/theme'
-import style from './ChromeInstallInProgressScreen.module.css'
 
 class ChromeInstallInProgressScreen extends React.Component {
-  changeBodyScrollable(shouldScroll) {
-    const className = style['unscrollable']
-    if (shouldScroll) {
-      try {
-        window.document.body.classList.remove(className)
-      } catch (e) {
-        console.error(e)
-      }
-    } else {
-      try {
-        window.document.body.classList.add(className)
-      } catch (e) {
-        console.error(e)
-      }
-    }
-  }
-
-  componentDidMount() {
-    this.changeBodyScrollable(false)
-  }
-
-  componentWillUnmount() {
-    this.changeBodyScrollable(true)
-  }
-
   render() {
     return (
       <div

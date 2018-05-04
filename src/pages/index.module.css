@@ -4,3 +4,7 @@
     height: 90% !important;
   }
 }
+
+.body-unscrollable {
+  overflow: hidden;
+}
