@@ -71,8 +71,9 @@ class ChromeInstallInProgressScreen extends React.Component {
               />
             </div>
             <p>
-              We only use the extension to make your new tab charitable and
-              beautiful.
+              We use the extension{' '}
+              <span style={{ fontStyle: 'italic' }}>only</span> to make your new
+              tab charitable and beautiful.
             </p>
           </div>
           <div
