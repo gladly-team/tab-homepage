@@ -19,6 +19,7 @@ export const lighterShadingColor = 'rgba(128, 128, 128, 0.14)'
 
 // On white, equivalent to #fafafa
 export const lightestShadingColor = 'rgba(128, 128, 128, 0.04)'
+export const lightestShadingColorNoOpacity = '#fafafa'
 
 // Theme
 export const primaryMainColor = '#9d4ba3'
