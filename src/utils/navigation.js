@@ -5,6 +5,7 @@ export const financialsURL = '/financials/'
 export const termsURL = '/terms/'
 export const privacyPolicyURL = '/privacy/'
 export const teamURL = '/team/'
+export const reconsiderInstallURL = '/reconsider/'
 
 // Zendesk
 export const externalHelpURL =

@@ -18,10 +18,14 @@ import {
   pressLATimesURL,
   pressMashableURL,
   pressUSATodayURL,
+  reconsiderInstallURL,
 } from 'utils/navigation'
+import { navigateTo } from 'gatsby-link'
+import { lighterTextColor, lightestTextColor } from 'themes/theme'
+
+// Icons
 import Star from '@material-ui/icons/Star'
 import StarHalf from '@material-ui/icons/StarHalf'
-import { lighterTextColor, lightestTextColor } from 'themes/theme'
 import Firefox from 'mdi-material-ui/Firefox'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 
@@ -50,11 +54,11 @@ import reviewImgTobyS from 'img/reviews/toby_s.png'
 import styles from './index.module.css'
 
 class IndexPage extends React.Component {
-  // TODO
   goToInstallReconsiderPage() {
-    console.log('Called goToInstallReconsiderPage')
+    navigateTo(reconsiderInstallURL)
   }
 
+  // TODO
   showChromeInstallPrompt() {
     console.log('Called showChromeInstallPrompt')
   }
