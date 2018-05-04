@@ -108,10 +108,12 @@ class InstallButton extends React.Component {
   }
 
   installChromeExtension() {
+    const { onChromeInstallBegin } = this.props
     if (!this.chromeCanInlineInstall()) {
       this.installChromeExtensionFallback()
       return
     }
+    onChromeInstallBegin()
     try {
       // eslint-disable-next-line no-undef
       chrome.webstore.install(
@@ -125,10 +127,8 @@ class InstallButton extends React.Component {
   }
 
   onClick() {
-    const {
-      onChromeInstallBegin,
-      onUnsupportedBrowserInstallClick,
-    } = this.props
+    const { onUnsupportedBrowserInstallClick } = this.props
+
     if (this.state.mobile) {
       console.info(
         'Cannot add Tab for a Cause extension: this is a mobile device'
@@ -137,7 +137,6 @@ class InstallButton extends React.Component {
     } else {
       switch (this.state.browser) {
         case CHROME_BROWSER:
-          onChromeInstallBegin()
           this.installChromeExtension()
           break
         case FIREFOX_BROWSER:
