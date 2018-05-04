@@ -27,7 +27,6 @@ class Review extends React.Component {
           style={Object.assign(
             {},
             {
-              minHeight: 280,
               width: 'auto',
               paddingTop: 40,
               paddingBottom: 40,
