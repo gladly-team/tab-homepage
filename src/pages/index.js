@@ -6,6 +6,7 @@ import ReviewCarousel from 'components/ReviewCarousel'
 import Review from 'components/Review'
 import InstallButton from 'components/InstallButton'
 import CharitableImpactText from 'components/CharitableImpactText'
+import ChromeInstallInProgressScreen from 'components/ChromeInstallInProgressScreen'
 import Link from 'components/Link'
 import {
   chromeExtensionURL,
@@ -54,19 +55,31 @@ import reviewImgTobyS from 'img/reviews/toby_s.png'
 import styles from './index.module.css'
 
 class IndexPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      chromeInstallInProgress: false,
+    }
+  }
+
   goToInstallReconsiderPage() {
+    this.hideChromeInstallPrompt()
     navigateTo(reconsiderInstallURL)
   }
 
-  // TODO
   showChromeInstallPrompt() {
-    console.log('Called showChromeInstallPrompt')
+    this.setState({
+      chromeInstallInProgress: true,
+    })
   }
 
   hideChromeInstallPrompt() {
-    console.log('Called hideChromeInstallPrompt')
+    this.setState({
+      chromeInstallInProgress: false,
+    })
   }
 
+  // TODO
   showUnsupportedBrowserMessage() {
     console.log('Called showUnsupportedBrowserMessage')
   }
@@ -465,6 +478,9 @@ class IndexPage extends React.Component {
             </div>
           </div>
         </Section>
+        {this.state.chromeInstallInProgress ? (
+          <ChromeInstallInProgressScreen />
+        ) : null}
       </div>
     )
   }
