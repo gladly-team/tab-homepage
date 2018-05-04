@@ -12,6 +12,10 @@ class ChromeInstallReconsiderScreen extends React.Component {
     onCloseClick()
   }
 
+  restartInstallClick() {
+    this.props.onRestartInstall()
+  }
+
   render() {
     return (
       <div
@@ -60,7 +64,9 @@ class ChromeInstallReconsiderScreen extends React.Component {
               </li>
             </ul>
             <p>As one user put it, "There is no reason to not have this".</p>
-            <InstallButton />
+            <InstallButton
+              onChromeInstallBegin={this.restartInstallClick.bind(this)}
+            />
           </div>
         </Section>
       </div>
@@ -70,10 +76,12 @@ class ChromeInstallReconsiderScreen extends React.Component {
 
 ChromeInstallReconsiderScreen.propTypes = {
   onCloseClick: PropTypes.func,
+  onRestartInstall: PropTypes.func,
 }
 
 ChromeInstallReconsiderScreen.defaultProps = {
   onCloseClick: () => {},
+  onRestartInstall: () => {},
 }
 
 export default ChromeInstallReconsiderScreen

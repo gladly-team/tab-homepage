@@ -515,6 +515,7 @@ class IndexPage extends React.Component {
         {this.state.isReconsideringInstall ? (
           <ChromeInstallReconsiderScreen
             onCloseClick={this.hideInstallReconsiderScreen.bind(this)}
+            onRestartInstall={this.showChromeInstallPrompt.bind(this)}
           />
         ) : null}
       </div>
