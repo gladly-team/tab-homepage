@@ -7,6 +7,7 @@ import Review from 'components/Review'
 import InstallButton from 'components/InstallButton'
 import CharitableImpactText from 'components/CharitableImpactText'
 import ChromeInstallInProgressScreen from 'components/ChromeInstallInProgressScreen'
+import ChromeInstallReconsiderScreen from 'components/ChromeInstallReconsiderScreen'
 import Link from 'components/Link'
 import {
   chromeExtensionURL,
@@ -19,9 +20,7 @@ import {
   pressLATimesURL,
   pressMashableURL,
   pressUSATodayURL,
-  reconsiderInstallURL,
 } from 'utils/navigation'
-import { navigateTo } from 'gatsby-link'
 import { lighterTextColor, lightestTextColor } from 'themes/theme'
 
 // Icons
@@ -59,12 +58,15 @@ class IndexPage extends React.Component {
     super(props)
     this.state = {
       chromeInstallInProgress: false,
+      chromeReconsideringInstall: false,
     }
   }
 
   goToInstallReconsiderPage() {
-    this.hideChromeInstallPrompt()
-    navigateTo(reconsiderInstallURL)
+    this.setState({
+      chromeInstallInProgress: false,
+      chromeReconsideringInstall: true,
+    })
   }
 
   showChromeInstallPrompt() {
@@ -480,6 +482,9 @@ class IndexPage extends React.Component {
         </Section>
         {this.state.chromeInstallInProgress ? (
           <ChromeInstallInProgressScreen />
+        ) : null}
+        {this.state.chromeReconsideringInstall ? (
+          <ChromeInstallReconsiderScreen />
         ) : null}
       </div>
     )
