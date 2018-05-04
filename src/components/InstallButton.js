@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Button from 'material-ui/Button'
 import detectBrowser from 'browser-detect'
 import {
@@ -82,10 +83,12 @@ class InstallButton extends React.Component {
   }
 
   chromeInstallSuccess() {
-    console.log('Successfully installed Chrome extension')
+    const { onChromeInstallSuccess } = this.props
+    onChromeInstallSuccess()
   }
 
   chromeInstallFailure(failureDetail) {
+    const { onChromeInstallCanceled } = this.props
     // If install failed because the user canceled, show a page with
     // additional information. If it failed for another reason, send
     // the user the Chrome Web Store.
@@ -98,7 +101,7 @@ class InstallButton extends React.Component {
     // Web Store, which is acceptable.
     // https://developer.chrome.com/webstore/inline_installation#triggering
     if (failureDetail === 'User cancelled install') {
-      // TODO: onChromeInstallCanceled callback
+      onChromeInstallCanceled()
     } else {
       this.installChromeExtensionFallback()
     }
@@ -122,25 +125,29 @@ class InstallButton extends React.Component {
   }
 
   onClick() {
+    const {
+      onChromeInstallBegin,
+      onUnsupportedBrowserInstallClick,
+    } = this.props
     if (this.state.mobile) {
       console.info(
         'Cannot add Tab for a Cause extension: this is a mobile device'
       )
+      onUnsupportedBrowserInstallClick()
     } else {
       switch (this.state.browser) {
         case CHROME_BROWSER:
+          onChromeInstallBegin()
           this.installChromeExtension()
           break
         case FIREFOX_BROWSER:
           this.installFirefoxExtension()
           break
         default:
-          // TODO:
-          // call onUnsupportedBrowserInstallClick callback to
-          // show modal with info and links to Firefox/Chrome extensions
           console.info(
             'Cannot add Tab for a Cause extension: this browser is not supported'
           )
+          onUnsupportedBrowserInstallClick()
           break
       }
     }
@@ -180,10 +187,18 @@ class InstallButton extends React.Component {
   }
 }
 
-// TODO props:
-// onChromeInstallBegin
-// onChromeInstallCanceled
-// onChromeInstallSuccess
-// onUnsupportedBrowserInstallClick
+InstallButton.propTypes = {
+  onChromeInstallBegin: PropTypes.func,
+  onChromeInstallCanceled: PropTypes.func,
+  onChromeInstallSuccess: PropTypes.func,
+  onUnsupportedBrowserInstallClick: PropTypes.func,
+}
+
+InstallButton.defaultProps = {
+  onChromeInstallBegin: () => {},
+  onChromeInstallCanceled: () => {},
+  onChromeInstallSuccess: () => {},
+  onUnsupportedBrowserInstallClick: () => {},
+}
 
 export default InstallButton
