@@ -6,6 +6,9 @@ import Section from 'components/Section'
 import Review from 'components/Review'
 import reviewImgChaseR from 'img/reviews/chase_r.png'
 
+// TODO: tests
+// FIXME: Canceling install breaks the second time. Pass down install button
+// as prop?
 class ChromeInstallReconsiderScreen extends React.Component {
   close() {
     const { onCloseClick } = this.props
