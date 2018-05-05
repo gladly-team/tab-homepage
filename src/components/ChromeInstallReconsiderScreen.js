@@ -30,7 +30,7 @@ class ChromeInstallReconsiderScreen extends React.Component {
       >
         <Header onHeaderLogoClick={this.close.bind(this)} />
         <Section style={{ justifyContent: 'center' }}>
-          <div style={{ flex: 1, maxWidth: 500, minWidth: 200 }}>
+          <div style={{ flex: 1, maxWidth: 500, minWidth: 300 }}>
             <Review
               name="Chase Rosen"
               imgUrl={reviewImgChaseR}
@@ -50,7 +50,7 @@ class ChromeInstallReconsiderScreen extends React.Component {
               paddingLeft: 40,
               paddingRight: 40,
               maxWidth: 500,
-              minWidth: 200,
+              minWidth: 300,
             }}
           >
             <h1>Not sure yet?</h1>
