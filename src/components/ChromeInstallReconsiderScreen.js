@@ -1,25 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Header from 'components/Header'
-import InstallButton from 'components/InstallButton'
 import Section from 'components/Section'
 import Review from 'components/Review'
 import reviewImgChaseR from 'img/reviews/chase_r.png'
 
 // TODO: tests
-// FIXME: Canceling install breaks the second time. Pass down install button
-// as prop?
 class ChromeInstallReconsiderScreen extends React.Component {
   close() {
     const { onCloseClick } = this.props
     onCloseClick()
   }
 
-  restartInstallClick() {
-    this.props.onRestartInstall()
-  }
-
   render() {
+    const { installButton } = this.props
     return (
       <div
         style={{
@@ -67,9 +61,7 @@ class ChromeInstallReconsiderScreen extends React.Component {
               </li>
             </ul>
             <p>As one user put it, "There is no reason to not have this".</p>
-            <InstallButton
-              onChromeInstallBegin={this.restartInstallClick.bind(this)}
-            />
+            {installButton}
           </div>
         </Section>
       </div>
@@ -79,12 +71,11 @@ class ChromeInstallReconsiderScreen extends React.Component {
 
 ChromeInstallReconsiderScreen.propTypes = {
   onCloseClick: PropTypes.func,
-  onRestartInstall: PropTypes.func,
+  installButton: PropTypes.element.isRequired,
 }
 
 ChromeInstallReconsiderScreen.defaultProps = {
   onCloseClick: () => {},
-  onRestartInstall: () => {},
 }
 
 export default ChromeInstallReconsiderScreen

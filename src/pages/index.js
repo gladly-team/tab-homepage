@@ -116,6 +116,16 @@ class IndexPage extends React.Component {
   }
 
   render() {
+    const installButton = (
+      <InstallButton
+        onChromeInstallBegin={this.showChromeInstallPrompt.bind(this)}
+        onChromeInstallCanceled={this.showReconsideringInstallScreen.bind(this)}
+        onChromeInstallSuccess={this.hideChromeInstallPrompt.bind(this)}
+        onUnsupportedBrowserInstallClick={this.showUnsupportedBrowserMessage.bind(
+          this
+        )}
+      />
+    )
     return (
       <div>
         <Section wrap={'reverse'}>
@@ -152,16 +162,7 @@ class IndexPage extends React.Component {
               heart.
             </p>
             <div style={{ marginTop: 20, marginBottom: 20 }}>
-              <InstallButton
-                onChromeInstallBegin={this.showChromeInstallPrompt.bind(this)}
-                onChromeInstallCanceled={this.showReconsideringInstallScreen.bind(
-                  this
-                )}
-                onChromeInstallSuccess={this.hideChromeInstallPrompt.bind(this)}
-                onUnsupportedBrowserInstallClick={this.showUnsupportedBrowserMessage.bind(
-                  this
-                )}
-              />
+              {installButton}
             </div>
             <div style={{ margin: 0 }}>
               <div>
@@ -515,7 +516,7 @@ class IndexPage extends React.Component {
         {this.state.isReconsideringInstall ? (
           <ChromeInstallReconsiderScreen
             onCloseClick={this.hideInstallReconsiderScreen.bind(this)}
-            onRestartInstall={this.showChromeInstallPrompt.bind(this)}
+            installButton={installButton}
           />
         ) : null}
       </div>
