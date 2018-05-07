@@ -16,6 +16,7 @@ import {
   githubTabRepoURL,
   githubTabExtensionsRepoURL,
   githubTabHomepageRepoURL,
+  newTabPageURL,
   pressHuffingtonPostURL,
   pressLATimesURL,
   pressMashableURL,
@@ -23,6 +24,7 @@ import {
 } from 'utils/navigation'
 import { lighterTextColor, lightestTextColor } from 'themes/theme'
 import UnsupportedBrowserDialog from 'components/UnsupportedBrowserDialog'
+import redirect from 'utils/redirect'
 
 // Icons
 import Star from '@material-ui/icons/Star'
@@ -112,6 +114,10 @@ class IndexPage extends React.Component {
     this.changeBodyScrollable(true)
   }
 
+  handleChromeInstallSuccess() {
+    redirect(newTabPageURL)
+  }
+
   showUnsupportedBrowserMessage() {
     console.log('Called showUnsupportedBrowserMessage')
     this.setState({
@@ -130,7 +136,7 @@ class IndexPage extends React.Component {
       <InstallButton
         onChromeInstallBegin={this.showChromeInstallPrompt.bind(this)}
         onChromeInstallCanceled={this.showReconsideringInstallScreen.bind(this)}
-        onChromeInstallSuccess={this.hideChromeInstallPrompt.bind(this)}
+        onChromeInstallSuccess={this.handleChromeInstallSuccess.bind(this)}
         onUnsupportedBrowserInstallClick={this.showUnsupportedBrowserMessage.bind(
           this
         )}

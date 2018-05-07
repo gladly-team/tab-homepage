@@ -1,3 +1,7 @@
+const domain = 'tab.gladly.io'
+const protocol = 'https'
+const baseURL = `${protocol}://${domain}`
+
 export const homeURL = '/'
 export const helpURL = '/help/'
 export const contactUsURL = '/contact/'
@@ -5,6 +9,8 @@ export const financialsURL = '/financials/'
 export const termsURL = '/terms/'
 export const privacyPolicyURL = '/privacy/'
 export const teamURL = '/team/'
+// Absolute because it's outside of this Gatsby app
+export const newTabPageURL = `${baseURL}/newtab/`
 
 // Zendesk
 export const externalHelpURL =
