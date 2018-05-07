@@ -22,6 +22,7 @@ import {
   pressUSATodayURL,
 } from 'utils/navigation'
 import { lighterTextColor, lightestTextColor } from 'themes/theme'
+import UnsupportedBrowserDialog from 'components/UnsupportedBrowserDialog'
 
 // Icons
 import Star from '@material-ui/icons/Star'
@@ -59,6 +60,7 @@ class IndexPage extends React.Component {
     this.state = {
       chromeInstallInProgress: false,
       isReconsideringInstall: false,
+      showUnsupportedBrowserMessage: false,
     }
   }
 
@@ -110,9 +112,17 @@ class IndexPage extends React.Component {
     this.changeBodyScrollable(true)
   }
 
-  // TODO
   showUnsupportedBrowserMessage() {
     console.log('Called showUnsupportedBrowserMessage')
+    this.setState({
+      showUnsupportedBrowserMessage: true,
+    })
+  }
+
+  hideUnsupportedBrowserMessage() {
+    this.setState({
+      showUnsupportedBrowserMessage: false,
+    })
   }
 
   render() {
@@ -519,6 +529,10 @@ class IndexPage extends React.Component {
             installButton={installButton}
           />
         ) : null}
+        <UnsupportedBrowserDialog
+          open={this.state.showUnsupportedBrowserMessage}
+          onClose={this.hideUnsupportedBrowserMessage.bind(this)}
+        />
       </div>
     )
   }
