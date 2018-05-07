@@ -5,13 +5,7 @@ import Section from 'components/Section'
 import Review from 'components/Review'
 import reviewImgChaseR from 'img/reviews/chase_r.png'
 
-// TODO: tests
 class ChromeInstallReconsiderScreen extends React.Component {
-  close() {
-    const { onCloseClick } = this.props
-    onCloseClick()
-  }
-
   render() {
     const { installButton } = this.props
     return (
@@ -25,7 +19,7 @@ class ChromeInstallReconsiderScreen extends React.Component {
           left: 0,
         }}
       >
-        <Header onHeaderLogoClick={this.close.bind(this)} />
+        <Header onHeaderLogoClick={this.props.onCloseClick} />
         <Section style={{ justifyContent: 'center' }}>
           <div style={{ flex: 1, maxWidth: 500, minWidth: 300 }}>
             <Review
