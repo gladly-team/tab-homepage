@@ -255,11 +255,6 @@ const TermsPage = () => (
         use of this site after any change in these Terms will constitute your
         acceptance of such change.
       </p>
-      <Divider style={{ marginBottom: 10 }} />
-      <p style={{ fontSize: 12, color: lightestTextColor }}>
-        This Privacy Policy is available under a Creative Commons Sharealike
-        license.
-      </p>
     </TextPageContent>
   </div>
 )

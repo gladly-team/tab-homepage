@@ -193,11 +193,6 @@ const PrivacyPolicyPage = () => (
         If you have any questions or concerns, please{' '}
         <Link to={contactUsURL}>contact us</Link>.
       </p>
-      <Divider style={{ marginBottom: 10 }} />
-      <p style={{ fontSize: 12, color: lightestTextColor }}>
-        This Privacy Policy is available under a Creative Commons Sharealike
-        license.
-      </p>
     </TextPageContent>
   </div>
 )
