@@ -21,7 +21,7 @@ const TermsPage = () => (
       <p>
         Below are our Terms and Conditions of Use ("Terms") that govern Tab for
         a Cause's relationship with its users and others who interact with
-        tab.gladly.io (the “Website”) and any information, text, graphics,
+        tab.gladly.io (the "Website") and any information, text, graphics,
         photos or other materials uploaded, downloaded or appearing on the
         Website (collectively referred to as "Content"). This document applies
         to Tab for a Cause ("Tab for a Cause", "us", "our", or "we"), and by
@@ -48,10 +48,10 @@ const TermsPage = () => (
       </p>
       <p>
         Tab for a Cause's payments to Causes are made within 120 days of the end
-        of every fiscal quarter. Any displayed dollar amount "Raised",
-        "Given",or "Earned" simply indicates that Tab for a Cause has designated
-        funds for payment to a particular cause, and in no way reflects when the
-        cause actually receives these funds.
+        of every fiscal quarter. Any displayed dollar amount "Raised", "Given",
+        or "Earned" simply indicates that Tab for a Cause has designated funds
+        for payment to a particular cause, and in no way reflects when the cause
+        actually receives these funds.
       </p>
       <p>
         All dollar amounts listed on the Website represent United States
@@ -143,12 +143,12 @@ const TermsPage = () => (
 
       <h2>4. Referral Program</h2>
       <p>
-        For the Referral Program, Tab for a Cause will distribute “Referral
-        Links” to the Tab for a Cause community. A “Referral Link” is a unique
+        For the Referral Program, Tab for a Cause will distribute "Referral
+        Links" to the Tab for a Cause community. A "Referral Link" is a unique
         url for you to distribute to eligible friends, family and other third
-        parties (each, a “Referred User”). If a Referred User uses your Referral
+        parties (each, a "Referred User"). If a Referred User uses your Referral
         Link to sign up and become a user of Tab for a Cause, then the Referred
-        User shall be considered a “Qualifying User” and you will be eligible
+        User shall be considered a "Qualifying User" and you will be eligible
         for the referral reward. Tab for a Cause will at its sole discretion
         determine which Referred Users are approved as Qualifying Users on Tab
         for a Cause.
@@ -168,7 +168,7 @@ const TermsPage = () => (
         Please read this section carefully because it limits the liability of
         Tab for a Cause and its parents, subsidiaries, affiliates, related
         companies, officers, directors, employees, agents, representatives,
-        partners, and licensors (collectively, the “Tab for a Cause Entities”).
+        partners, and licensors (collectively, the "Tab for a Cause Entities").
         Each of the subsections below only applies up to the maximum extent
         permitted under applicable law. Some jurisdictions do not allow the
         disclaimer of implied warranties or the limitation of liability in
