@@ -54,14 +54,8 @@ const TermsPage = () => (
         cause actually receives these funds.
       </p>
       <p>
-        For administrative reasons, Tab for a Cause will make a payment to a
-        Cause only at the end of quarters in which a specific Cause's balance
-        reaches or exceeds an outstanding balance of $40. If at the end of any
-        given quarter a specific cause or Cause's account has yet to reach the
-        minimum payment threshold, Tab for a Cause shall carry the balance into
-        the following quarter and will make a payment when the specific Cause's
-        account reaches or exceeds an outstanding balance of $40. All dollar
-        amounts listed on the Website represent United States Dollars.
+        All dollar amounts listed on the Website represent United States
+        Dollars.
       </p>
       <p>
         Although Tab for a Cause makes payments of user-generated funds to the
@@ -165,9 +159,7 @@ const TermsPage = () => (
         <p>
           Referrals Links should only be used for personal and non-commercial
           purposes, and only shared with personal connections that will
-          appreciate receiving these invitations. Referral Links should not be
-          published or distributed where there is no reasonable basis for
-          believing that all or most of the recipients are personal friends.
+          appreciate receiving these invitations.
         </p>
       </div>
 

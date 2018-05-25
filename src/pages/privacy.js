@@ -41,6 +41,16 @@ const PrivacyPolicyPage = () => (
         <Link to={contactUsURL}>contact us</Link>.
       </p>
 
+      <h2>Basis to Collect and Use Personal Data</h2>
+      <p>
+        We process personal data consistent with our disclosures in this Privacy
+        Policy. We process personal data on the following legal bases: (1) with
+        your consent; (2) as necessary to perform our agreement to provide
+        Services; and (3) as necessary for our legitimate interests in providing
+        the Services where those interests do not override your fundamental
+        rights and freedoms related to data privacy.
+      </p>
+
       <h2>Data Collected</h2>
       <p>We may collect and store different types of data:</p>
       <ul>
@@ -50,7 +60,8 @@ const PrivacyPolicyPage = () => (
           traffic and fix bugs. For example, we collect information like web
           requests, the data sent in response to such requests, the Internet
           Protocol address, the browser type, device information, and a
-          timestamp for the request.
+          timestamp for the request. This data is collected with legitimate
+          interest to maintain and develop our product.
         </li>
         <li>
           <b>Information you provide to us: </b>
@@ -60,7 +71,8 @@ const PrivacyPolicyPage = () => (
           settings, and the users you refer to Tab for a Cause. In order to be
           able to save your profile and the settings associated with it, we ask
           you to log in and provide certain personal information, such as an
-          email address.
+          email address. These are all essential data for providing our
+          Services.
         </li>
         <li>
           <b>Cookie and local browser storage: </b>
@@ -68,42 +80,64 @@ const PrivacyPolicyPage = () => (
           to store session information. You can block or delete cookies and
           local browser data storage and still use Tab for a Cause, although you
           may then be asked for your username and password each time you open
-          our page. Additionally, ads appearing on the Website may be delivered
-          to users by advertising partners, who may set cookies and local
-          browser data storage. This information allows advertising partners to,
-          among other things, deliver targeted advertisements that they believe
-          will be of most interest to you. You can opt out of interest-based
-          targeted advertising for some advertising partners{' '}
-          <Link to="http://optout.networkadvertising.org/">here</Link>. This
-          Privacy Policy covers the use of cookies and local browser data
-          storage by the Website and does not cover the use of cookies and local
-          browser data storage by any advertising partners.
+          our page.
+        </li>
+        <li>
+          <p>
+            <b>Ad Targeting, Selection, and Delivery: </b>
+            When you use our Services, third parties that provide advertising,
+            to the Services, may collect or receive information about you
+            including through the use of cookies. These third parties may use
+            your information to provide you with advertising that is based on
+            your interests and to measure and analyze ad performance, on our
+            Services or other websites or platforms, and combine it with
+            information collected across different websites, online services,
+            and other devices. These third parties' use of your information will
+            be based on their own privacy policies. You can opt out of
+            interest-based targeted advertising for some advertising partners{' '}
+            <Link to="http://optout.networkadvertising.org/">here</Link>.
+          </p>
+          <p>
+            If you are a resident of the EEA or Switzerland you will see a
+            personal data processing disclosure and consent interface (a
+            persistent banner at the middle of the screen) upon every visit to
+            the website, until and unless the user selects either "I accept" or
+            "I do not accept" in the interface. Only those EEA Users who have
+            selected "I accept" in this interface will have their personal data
+            processed for the purpose of ad targeting, selection, and delivery.
+            For any EEA User who either selects "I do not accept" or does not
+            make a selection, we will only serve non-personalized and
+            non-programmatic advertising, which may be targeted using coarse
+            (country-level) location.
+          </p>
         </li>
         <li>
           <b>Data from contracted partners: </b>
           We work with partners who provide hardware and software services, such
           as as cloud storage and server services. We may store data collected
-          by third party companies with whom we have contracted.
+          by third party companies with whom we have contracted when it is with
+          legitimate interest to maintain and develop our product.
         </li>
       </ul>
       <p>
         You are able to request we delete your account and remove any personal
-        information associated with your account. To do so, please{' '}
+        data associated with your account. To do so, please{' '}
         <Link to={contactUsURL}>contact us</Link> and we will follow up as soon
         as possible.
       </p>
 
-      <h2>Use of the Data</h2>
-      <p>We use the data we collect to:</p>
-      <ul>
-        <li>provide you with the Services</li>
-        <li>communicate with you about the Services</li>
-        <li>improve, operate, and promote the Services</li>
-      </ul>
+      <h2>Children's Information </h2>
       <p>
-        Tab for a Cause is operated from the United States. If you are visiting
-        the Website from outside the United States, you agree to any processing
-        of any personal information you provide us according to this policy.
+        The Services are not intended for children under 13 years of age. Tab
+        for a Cause does not knowingly collect personal information from
+        children under 13 years of age. If you are under 13 years of age, do not
+        provide personal information to Tab for a Cause without providing us
+        with consent from your parents. If we discovers that a child under the
+        age of 13 has provided us with personal information and we do not have
+        parental consent, we will immediately delete that child's information.
+        If you believe that company has been provided with the personal
+        information of a child under the age of 13 without parental consent,
+        please notify us immediately.
       </p>
 
       <h2>Sharing of Data</h2>
