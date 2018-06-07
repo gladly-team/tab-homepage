@@ -174,8 +174,8 @@ class IndexPage extends React.Component {
               Raise money for charity every time you open a new browser tab
             </h1>
             <p>
-              It's easier than putting on socks—and unlike socks, it warms your
-              heart.
+              It's free and incredibly easy. Transform your tabs into a force
+              for good in 30 seconds.
             </p>
             <div style={{ marginTop: 20, marginBottom: 20 }}>
               {installButton}
