@@ -33,7 +33,7 @@ import Firefox from 'mdi-material-ui/Firefox'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 
 // Images
-import browserLandingPageImg from 'img/browser-landing-page-cut-off.png'
+import browserLandingPageImg from 'img/browser-rain-trees.png'
 import placholderImgPink from 'img/placeholder-pink.png'
 
 // Press logos
@@ -150,10 +150,10 @@ class IndexPage extends React.Component {
             className={styles['homepage-img']} // responsive styling
             style={{
               width: '67%',
-              maxWidth: 720,
+              maxWidth: 740,
               height: '67%',
               marginTop: 20,
-              marginRight: 20,
+              marginRight: 0,
               marginBottom: 20,
             }}
           />
@@ -164,9 +164,9 @@ class IndexPage extends React.Component {
               flexDirection: 'column',
               justifyContent: 'center',
               minWidth: 220,
-              marginTop: 20,
+              marginTop: 10,
               marginBottom: 40,
-              marginLeft: 50,
+              marginLeft: 30,
               marginRight: 40,
             }}
           >
