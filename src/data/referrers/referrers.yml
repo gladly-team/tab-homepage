@@ -1,0 +1,12 @@
+# Do not modify existing referrers that have been shared
+# publicly. The "path" key sets the URL path, so avoid
+# generic names that we might want to use for our own pages,
+# like "team", "youtube", "charity", etc.
+# If a path is not provided, a vanity URL page will not be
+# created, but that referrer can still use a link with the "r"
+# URL parameter set to its referrer ID.
+- path: something
+  referrerId: 246
+- referrerId: 123
+- path: anotherref
+  referrerId: 987

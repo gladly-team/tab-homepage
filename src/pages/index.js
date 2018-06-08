@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Button from 'material-ui/Button'
 
 import Section from 'components/Section'
@@ -66,6 +67,16 @@ class IndexPage extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const { pathContext } = this.props
+    if (pathContext && pathContext.referrer) {
+      const refId = pathContext.referrer.id
+      // TODO: store the referrer ID
+      // TODO: also check "r" URL parameter
+      console.log('This is referrer with ID: ', refId)
+    }
+  }
+
   // When modals are open, prevent scroll.
   changeBodyScrollable(shouldScroll) {
     const className = styles['body-unscrollable']
@@ -119,7 +130,6 @@ class IndexPage extends React.Component {
   }
 
   showUnsupportedBrowserMessage() {
-    console.log('Called showUnsupportedBrowserMessage')
     this.setState({
       showUnsupportedBrowserMessage: true,
     })
@@ -142,6 +152,7 @@ class IndexPage extends React.Component {
         )}
       />
     )
+    // TODO: set canonical URL to homepage even when there's a referrer
     return (
       <div>
         <Section wrap={'reverse'}>
@@ -543,6 +554,14 @@ class IndexPage extends React.Component {
       </div>
     )
   }
+}
+
+IndexPage.propTypes = {
+  pathContext: PropTypes.shape({
+    referrer: PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  }),
 }
 
 export default IndexPage
