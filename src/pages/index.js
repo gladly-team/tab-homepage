@@ -26,6 +26,8 @@ import {
 import { lighterTextColor, lightestTextColor } from 'themes/theme'
 import UnsupportedBrowserDialog from 'components/UnsupportedBrowserDialog'
 import redirect from 'utils/redirect'
+import localStorageMgr from 'utils/local-storage'
+import { STORAGE_REFERRAL_DATA_REFERRING_CHANNEL } from 'utils/constants'
 
 // Icons
 import Star from '@material-ui/icons/Star'
@@ -68,13 +70,24 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
+    this.checkForReferringChannel()
+  }
+
+  // Checks if the user came from referring channel (a non-user
+  // referral source) and stores the referrer.
+  checkForReferringChannel() {
     const { pathContext } = this.props
     if (pathContext && pathContext.referrer) {
       const refId = pathContext.referrer.id
-      // TODO: store the referrer ID
       // TODO: also check "r" URL parameter
-      console.log('This is referrer with ID: ', refId)
+      this.storeReferringChannel(refId)
     }
+  }
+
+  // Store the referring channel ID in local storage.
+  storeReferringChannel(referrerId) {
+    // console.log('This is referrer with ID: ', referrerId)
+    localStorageMgr.setItem(STORAGE_REFERRAL_DATA_REFERRING_CHANNEL, referrerId)
   }
 
   // When modals are open, prevent scroll.
