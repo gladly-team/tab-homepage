@@ -3,6 +3,9 @@
     width: 96% !important;
     height: 96% !important;
   }
+  .homepage-main-text {
+    margin-left: 30px !important;
+  }
 }
 
 .body-unscrollable {

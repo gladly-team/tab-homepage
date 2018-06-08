@@ -158,15 +158,16 @@ class IndexPage extends React.Component {
             }}
           />
           <div
+            className={styles['homepage-main-text']} // responsive styling
             style={{
               flex: 1,
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              justifyContent: 'flex-start',
               minWidth: 220,
-              marginTop: 10,
+              marginTop: 20,
               marginBottom: 40,
-              marginLeft: 30,
+              marginLeft: 0,
               marginRight: 40,
             }}
           >
