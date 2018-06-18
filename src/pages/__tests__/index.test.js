@@ -3,9 +3,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import localStorageMgr from 'utils/local-storage'
+import { getAbsoluteURL } from 'utils/navigation'
 
 jest.mock('utils/local-storage')
 jest.mock('utils/location')
+jest.mock('utils/navigation')
 
 afterEach(() => {
   jest.clearAllMocks()
@@ -67,5 +69,14 @@ describe('index page', () => {
 
     shallow(<IndexPage />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
+  })
+
+  it('sets the canonical URL', () => {
+    const IndexPage = require('../index').default
+    getAbsoluteURL.mockReturnValue('https://somewebsite.com/')
+    const wrapper = shallow(<IndexPage />)
+    const elem = wrapper.find('link[rel="canonical"]')
+    expect(elem.exists()).toBe(true)
+    expect(elem.prop('href')).toBe('https://somewebsite.com/')
   })
 })

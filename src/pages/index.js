@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Button from 'material-ui/Button'
+import Helmet from 'react-helmet'
 
 import Section from 'components/Section'
 import ReviewCarousel from 'components/ReviewCarousel'
@@ -11,12 +12,14 @@ import ChromeInstallInProgressScreen from 'components/ChromeInstallInProgressScr
 import ChromeInstallReconsiderScreen from 'components/ChromeInstallReconsiderScreen'
 import Link from 'components/Link'
 import {
+  getAbsoluteURL,
   chromeExtensionURL,
   financialsURL,
   firefoxExtensionURL,
   githubTabRepoURL,
   githubTabExtensionsRepoURL,
   githubTabHomepageRepoURL,
+  homeURL,
   newTabPageURL,
   pressHuffingtonPostURL,
   pressLATimesURL,
@@ -197,9 +200,17 @@ class IndexPage extends React.Component {
         )}
       />
     )
-    // TODO: set canonical URL to homepage even when there's a referrer
+
+    // Always set the canonical URL to the homepage, which will
+    // consolidate any pages using vanity URL paths or referral
+    // parameters. Change this if any parameters or paths serve
+    // substantially different content.
+    const canonicalURL = getAbsoluteURL(homeURL)
     return (
       <div>
+        <Helmet>
+          <link rel="canonical" href={canonicalURL} />
+        </Helmet>
         <Section wrap={'reverse'}>
           <img
             src={browserLandingPageImg}
