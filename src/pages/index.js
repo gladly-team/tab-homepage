@@ -1,5 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Button from 'material-ui/Button'
+import Helmet from 'react-helmet'
 
 import Section from 'components/Section'
 import ReviewCarousel from 'components/ReviewCarousel'
@@ -10,12 +12,14 @@ import ChromeInstallInProgressScreen from 'components/ChromeInstallInProgressScr
 import ChromeInstallReconsiderScreen from 'components/ChromeInstallReconsiderScreen'
 import Link from 'components/Link'
 import {
+  getAbsoluteURL,
   chromeExtensionURL,
   financialsURL,
   firefoxExtensionURL,
   githubTabRepoURL,
   githubTabExtensionsRepoURL,
   githubTabHomepageRepoURL,
+  homeURL,
   newTabPageURL,
   pressHuffingtonPostURL,
   pressLATimesURL,
@@ -25,6 +29,9 @@ import {
 import { lighterTextColor, lightestTextColor } from 'themes/theme'
 import UnsupportedBrowserDialog from 'components/UnsupportedBrowserDialog'
 import redirect from 'utils/redirect'
+import localStorageMgr from 'utils/local-storage'
+import { STORAGE_REFERRAL_DATA_REFERRING_CHANNEL } from 'utils/constants'
+import { getUrlParameterValue } from 'utils/location'
 
 // Icons
 import Star from '@material-ui/icons/Star'
@@ -64,6 +71,58 @@ class IndexPage extends React.Component {
       isReconsideringInstall: false,
       showUnsupportedBrowserMessage: false,
     }
+  }
+
+  componentDidMount() {
+    // Check if the user came from referring channel (a non-user
+    // referral source); if so, and store the referrer ID.
+    if (this.isReferralFromChannel()) {
+      const refId = this.getReferringChannelId()
+      this.storeReferringChannel(refId)
+    }
+  }
+
+  /**
+   * Return the referring channel ID (a non-user referral source)
+   * if it exists, or null.
+   * @return {integer|null} The referrer ID
+   */
+  getReferringChannelId() {
+    const { pathContext } = this.props
+    let referrerId = null
+
+    // Check for a referrer's vanity URL.
+    if (pathContext && pathContext.referrer) {
+      referrerId = pathContext.referrer.id
+    } else {
+      // Check for a referrer's URL parameter.
+      try {
+        const paramRefId = parseInt(getUrlParameterValue('r'))
+        if (!isNaN(paramRefId)) {
+          referrerId = paramRefId
+        }
+        /* eslint-disable-next-line no-empty */
+      } catch (e) {}
+    }
+    return referrerId
+  }
+
+  /**
+   * Return whether this user arrived from a referral channel.
+   * @return {Boolean} Whether this is a non-user referral
+   */
+  isReferralFromChannel() {
+    const refId = this.getReferringChannelId()
+    return refId !== null && refId !== undefined
+  }
+
+  /**
+   * Store the referring channel ID in local storage.
+   * @return {undefined}
+   */
+  storeReferringChannel(referrerId) {
+    // console.log('This is referrer with ID: ', referrerId)
+    localStorageMgr.setItem(STORAGE_REFERRAL_DATA_REFERRING_CHANNEL, referrerId)
   }
 
   // When modals are open, prevent scroll.
@@ -119,7 +178,6 @@ class IndexPage extends React.Component {
   }
 
   showUnsupportedBrowserMessage() {
-    console.log('Called showUnsupportedBrowserMessage')
     this.setState({
       showUnsupportedBrowserMessage: true,
     })
@@ -142,8 +200,17 @@ class IndexPage extends React.Component {
         )}
       />
     )
+
+    // Always set the canonical URL to the homepage, which will
+    // consolidate any pages using vanity URL paths or referral
+    // parameters. Change this if any parameters or paths serve
+    // substantially different content.
+    const canonicalURL = getAbsoluteURL(homeURL)
     return (
       <div>
+        <Helmet>
+          <link rel="canonical" href={canonicalURL} />
+        </Helmet>
         <Section wrap={'reverse'}>
           <img
             src={browserLandingPageImg}
@@ -543,6 +610,14 @@ class IndexPage extends React.Component {
       </div>
     )
   }
+}
+
+IndexPage.propTypes = {
+  pathContext: PropTypes.shape({
+    referrer: PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  }),
 }
 
 export default IndexPage

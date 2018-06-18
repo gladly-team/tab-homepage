@@ -112,7 +112,7 @@ class Layout extends React.Component {
 }
 
 Layout.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.func.isRequired,
   data: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({

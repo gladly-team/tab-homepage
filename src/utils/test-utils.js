@@ -17,13 +17,14 @@ export const getTestIdSelector = testId => {
  */
 export const mockWindowLocation = (host = null, overrides = {}) => {
   const hostToUse = host ? host : 'example.com'
+  const urlParamStr = overrides.search || ''
   return Object.assign(
     {},
     {
       ancestorOrigins: {},
       assign: () => {},
       hash: '',
-      href: `https://${hostToUse}/`,
+      href: `https://${hostToUse}/${urlParamStr}`,
       host: hostToUse,
       hostname: hostToUse,
       origin: `https://${hostToUse}`,

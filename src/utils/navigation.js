@@ -50,3 +50,17 @@ export const chromeExtensionURL =
   'https://chrome.google.com/webstore/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
 export const firefoxExtensionURL =
   'https://addons.mozilla.org/en-US/firefox/addon/tab-for-a-cause/'
+
+/**
+ * Append the protocol and domain to return the
+ * absolute URL of a path.
+ * @return {string} The absolute URL
+ */
+export const getAbsoluteURL = path => {
+  // If the passed path is already an absolute URL,
+  // just return it.
+  if (path.startsWith(baseURL)) {
+    return path
+  }
+  return `${baseURL}${path}`
+}

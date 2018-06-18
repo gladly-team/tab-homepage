@@ -8,10 +8,6 @@ import Dialog, {
 import Button from 'material-ui/Button'
 
 class UnsupportedBrowserDialog extends React.Component {
-  handleOk = () => {
-    this.props.onClose()
-  }
-
   render() {
     const { onClose, ...other } = this.props
 
