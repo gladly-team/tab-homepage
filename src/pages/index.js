@@ -28,6 +28,7 @@ import UnsupportedBrowserDialog from 'components/UnsupportedBrowserDialog'
 import redirect from 'utils/redirect'
 import localStorageMgr from 'utils/local-storage'
 import { STORAGE_REFERRAL_DATA_REFERRING_CHANNEL } from 'utils/constants'
+import { getUrlParameterValue } from 'utils/location'
 
 // Icons
 import Star from '@material-ui/icons/Star'
@@ -77,10 +78,21 @@ class IndexPage extends React.Component {
   // referral source) and stores the referrer.
   checkForReferringChannel() {
     const { pathContext } = this.props
+
+    // Check for a referrer's vanity URL.
     if (pathContext && pathContext.referrer) {
       const refId = pathContext.referrer.id
-      // TODO: also check "r" URL parameter
       this.storeReferringChannel(refId)
+
+      // Check for a referrer's URL parameter.
+    } else if (getUrlParameterValue('r')) {
+      try {
+        const refId = parseInt(getUrlParameterValue('r'), 10)
+        if (!isNaN(refId)) {
+          this.storeReferringChannel(refId)
+        }
+        /* eslint-disable-next-line no-empty */
+      } catch (e) {}
     }
   }
 
