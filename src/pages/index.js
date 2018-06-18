@@ -71,32 +71,52 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
-    this.checkForReferringChannel()
+    // Check if the user came from referring channel (a non-user
+    // referral source); if so, and store the referrer ID.
+    if (this.isReferralFromChannel()) {
+      const refId = this.getReferringChannelId()
+      this.storeReferringChannel(refId)
+    }
   }
 
-  // Checks if the user came from referring channel (a non-user
-  // referral source) and stores the referrer.
-  checkForReferringChannel() {
+  /**
+   * Return the referring channel ID (a non-user referral source)
+   * if it exists, or null.
+   * @return {integer|null} The referrer ID
+   */
+  getReferringChannelId() {
     const { pathContext } = this.props
+    let referrerId = null
 
     // Check for a referrer's vanity URL.
     if (pathContext && pathContext.referrer) {
-      const refId = pathContext.referrer.id
-      this.storeReferringChannel(refId)
-
+      referrerId = pathContext.referrer.id
+    } else {
       // Check for a referrer's URL parameter.
-    } else if (getUrlParameterValue('r')) {
       try {
-        const refId = parseInt(getUrlParameterValue('r'), 10)
-        if (!isNaN(refId)) {
-          this.storeReferringChannel(refId)
+        const paramRefId = parseInt(getUrlParameterValue('r'))
+        if (!isNaN(paramRefId)) {
+          referrerId = paramRefId
         }
         /* eslint-disable-next-line no-empty */
       } catch (e) {}
     }
+    return referrerId
   }
 
-  // Store the referring channel ID in local storage.
+  /**
+   * Return whether this user arrived from a referral channel.
+   * @return {Boolean} Whether this is a non-user referral
+   */
+  isReferralFromChannel() {
+    const refId = this.getReferringChannelId()
+    return refId !== null && refId !== undefined
+  }
+
+  /**
+   * Store the referring channel ID in local storage.
+   * @return {undefined}
+   */
   storeReferringChannel(referrerId) {
     // console.log('This is referrer with ID: ', referrerId)
     localStorageMgr.setItem(STORAGE_REFERRAL_DATA_REFERRING_CHANNEL, referrerId)
