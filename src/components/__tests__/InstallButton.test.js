@@ -1,4 +1,5 @@
 /* eslint-env jest */
+/* globals setImmediate */
 
 import React from 'react'
 import { mount, shallow } from 'enzyme'
@@ -7,6 +8,7 @@ import { mockWindowLocation } from 'utils/test-utils'
 jest.mock('browser-detect')
 jest.mock('utils/location')
 jest.mock('utils/redirect')
+jest.mock('utils/analytics/logEvent')
 
 // Mock chrome.webstore API
 window.chrome = {
@@ -26,11 +28,14 @@ const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
 }
 
 // Helper to simulate a click on the button, given the Enzyme wrapper
-const clickButton = wrapper => {
+const clickButton = async wrapper => {
   wrapper
     .find('button')
     .first()
     .simulate('click')
+
+  // Flush all promises
+  await new Promise(resolve => setImmediate(resolve))
 }
 
 afterEach(() => {
@@ -103,20 +108,24 @@ describe('InstallButton', () => {
     ).toEqual('Get it Now')
   })
 
-  it('navigates to the Firefox Addons page on click (on Firefox desktop browser)', () => {
+  it('navigates to the Firefox Addons page on click (on Firefox desktop browser)', async () => {
+    expect.assertions(1)
+
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('firefox', false))
     const redirect = require('utils/redirect').default
 
     const InstallButton = require('../InstallButton').default
     const wrapper = mount(<InstallButton />)
-    clickButton(wrapper)
+    await clickButton(wrapper)
     expect(redirect).toHaveBeenCalledWith(
       'https://addons.mozilla.org/en-US/firefox/addon/tab-for-a-cause/'
     )
   })
 
-  it('calls the onChromeInstallBegin prop on click (on Chrome desktop browser)', () => {
+  it('calls the onChromeInstallBegin prop on click (on Chrome desktop browser)', async () => {
+    expect.assertions(1)
+
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
 
@@ -131,11 +140,13 @@ describe('InstallButton', () => {
     const wrapper = mount(
       <InstallButton onChromeInstallBegin={mockOnChromeInstallBegin} />
     )
-    clickButton(wrapper)
+    await clickButton(wrapper)
     expect(mockOnChromeInstallBegin).toHaveBeenCalled()
   })
 
-  it('calls the Chrome Web Store inline install API on click when on the tab.gladly.io domain (on Chrome desktop browser)', () => {
+  it('calls the Chrome Web Store inline install API on click when on the tab.gladly.io domain (on Chrome desktop browser)', async () => {
+    expect.assertions(2)
+
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
 
@@ -147,14 +158,16 @@ describe('InstallButton', () => {
 
     const InstallButton = require('../InstallButton').default
     const wrapper = mount(<InstallButton />)
-    clickButton(wrapper)
+    await clickButton(wrapper)
     expect(window.chrome.webstore.install).toHaveBeenCalled()
     expect(window.chrome.webstore.install.mock.calls[0][0]).toBe(
       'https://chrome.google.com/webstore/detail/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
     )
   })
 
-  it('calls the onChromeInstallSuccess prop when the Chrome install succeeds', () => {
+  it('calls the onChromeInstallSuccess prop when the Chrome install succeeds', async () => {
+    expect.assertions(1)
+
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
 
@@ -177,14 +190,16 @@ describe('InstallButton', () => {
     const wrapper = mount(
       <InstallButton onChromeInstallSuccess={mockOnChromeInstallSuccess} />
     )
-    clickButton(wrapper)
+    await clickButton(wrapper)
 
     // Mock a chrome.webstore failure
     chromeWebStoreSuccessCallback()
     expect(mockOnChromeInstallSuccess).toHaveBeenCalled()
   })
 
-  it('redirects to the Chrome Web Store when not on a verified domain for inline install (on Chrome desktop browser)', () => {
+  it('redirects to the Chrome Web Store when not on a verified domain for inline install (on Chrome desktop browser)', async () => {
+    expect.assertions(2)
+
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
 
@@ -196,14 +211,16 @@ describe('InstallButton', () => {
 
     const InstallButton = require('../InstallButton').default
     const wrapper = mount(<InstallButton />)
-    clickButton(wrapper)
+    await clickButton(wrapper)
     expect(window.chrome.webstore.install).not.toHaveBeenCalled()
     expect(redirect).toHaveBeenCalledWith(
       'https://chrome.google.com/webstore/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
     )
   })
 
-  it('redirects to the Chrome Web Store when inline install fails (on Chrome desktop browser)', () => {
+  it('redirects to the Chrome Web Store when inline install fails (on Chrome desktop browser)', async () => {
+    expect.assertions(1)
+
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
 
@@ -228,7 +245,7 @@ describe('InstallButton', () => {
 
     const InstallButton = require('../InstallButton').default
     const wrapper = mount(<InstallButton />)
-    clickButton(wrapper)
+    await clickButton(wrapper)
 
     // Mock a chrome.webstore failure
     chromeWebStoreFailureCallback(
@@ -240,7 +257,9 @@ describe('InstallButton', () => {
     )
   })
 
-  it('calls the onChromeInstallCanceled prop when the user cancels install (on Chrome desktop browser)', () => {
+  it('calls the onChromeInstallCanceled prop when the user cancels install (on Chrome desktop browser)', async () => {
+    expect.assertions(3)
+
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
 
@@ -272,7 +291,7 @@ describe('InstallButton', () => {
         onChromeInstallSuccess={mockOnChromeInstallSuccess}
       />
     )
-    clickButton(wrapper)
+    await clickButton(wrapper)
 
     // Mock a chrome.webstore failure
     chromeWebStoreFailureCallback('User cancelled install')
@@ -284,7 +303,9 @@ describe('InstallButton', () => {
     expect(mockOnChromeInstallSuccess).not.toHaveBeenCalled()
   })
 
-  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with an unsupported desktop browser', () => {
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with an unsupported desktop browser', async () => {
+    expect.assertions(1)
+
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('safari', false))
 
@@ -298,12 +319,14 @@ describe('InstallButton', () => {
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    clickButton(wrapper)
+    await clickButton(wrapper)
 
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
 
-  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install on mobile', () => {
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install on mobile', async () => {
+    expect.assertions(1)
+
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', true))
 
@@ -317,8 +340,22 @@ describe('InstallButton', () => {
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    clickButton(wrapper)
+    await clickButton(wrapper)
 
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
+  })
+
+  it('calls downloadButtonClick analytics event on click', async () => {
+    expect.assertions(1)
+
+    const downloadButtonClick = require('utils/analytics/logEvent')
+      .downloadButtonClick
+    const InstallButton = require('../InstallButton').default
+    const mockOnChromeInstallBegin = jest.fn()
+    const wrapper = mount(
+      <InstallButton onChromeInstallBegin={mockOnChromeInstallBegin} />
+    )
+    await clickButton(wrapper)
+    expect(downloadButtonClick).toHaveBeenCalled()
   })
 })

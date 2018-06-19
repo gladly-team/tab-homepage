@@ -5,6 +5,7 @@
   "author": "The Tab for a Cause Team",
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.43",
+    "babel-polyfill": "^6.26.0",
     "browser-detect": "^0.2.26",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
