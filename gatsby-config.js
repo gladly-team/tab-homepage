@@ -56,13 +56,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-facebook-analytics`,
+      resolve: `gatsby-plugin-facebook-pixel`,
       options: {
-        appId: '1813501258922708',
-        // Include facebook analytics in development.
-        includeInDevelopment: false,
-        // Can select your language, default will load english
-        language: 'en_US',
+        pixelId: '1813501258922708',
       },
     },
   ],
