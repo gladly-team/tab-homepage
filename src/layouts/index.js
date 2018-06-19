@@ -55,6 +55,7 @@ class Layout extends React.Component {
               <link rel="canonical" href={absoluteUrl} />
               <link rel="chrome-webstore-item" href={CHROME_WEB_STORE_HREF} />
               <link rel="icon" href={Favicon} />
+              <meta property="og:type" content="website" />
               <meta property="og:url" content={absoluteUrl} />
               <meta
                 property="og:title"
