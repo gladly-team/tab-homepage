@@ -12,6 +12,7 @@ import {
 import { chromeExtensionURL, firefoxExtensionURL } from 'utils/navigation'
 import redirect from 'utils/redirect'
 import { getLocation } from 'utils/location'
+import { downloadButtonClick } from 'utils/analytics/logEvent'
 
 // For Chrome inline installation, requires the page to have a
 // <link> elem pointing to the Chrome Web Store page:
@@ -126,8 +127,13 @@ class InstallButton extends React.Component {
     }
   }
 
-  onClick() {
+  async onClick() {
     const { onUnsupportedBrowserInstallClick } = this.props
+
+    // Log the analytics event for a download click. Wait
+    // for it to finish before continuing because we may
+    // redirect away from the page.
+    await downloadButtonClick()
 
     if (this.state.mobile) {
       console.info(
