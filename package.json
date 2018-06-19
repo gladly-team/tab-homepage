@@ -8,6 +8,7 @@
     "browser-detect": "^0.2.26",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
+    "gatsby-plugin-facebook-analytics": "^1.0.3",
     "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-jss": "^1.5.12",
     "gatsby-plugin-react-helmet": "^2.0.10",
