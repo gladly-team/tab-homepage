@@ -30,6 +30,7 @@ describe('index page', () => {
       'tab.referralData.referringChannel',
       123
     )
+    expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
 
   it('does not store a referrer ID in local storage when it is not a vanity URL', () => {
@@ -42,13 +43,21 @@ describe('index page', () => {
     const IndexPage = require('../index').default
 
     const getUrlParameterValue = require('utils/location').getUrlParameterValue
-    getUrlParameterValue.mockReturnValue('234')
+    getUrlParameterValue.mockImplementation(param => {
+      switch (param) {
+        case 'r':
+          return '234'
+        default:
+          return null
+      }
+    })
 
     shallow(<IndexPage />)
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'tab.referralData.referringChannel',
       234
     )
+    expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
 
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
@@ -65,7 +74,14 @@ describe('index page', () => {
     const IndexPage = require('../index').default
 
     const getUrlParameterValue = require('utils/location').getUrlParameterValue
-    getUrlParameterValue.mockReturnValue('hello')
+    getUrlParameterValue.mockImplementation(param => {
+      switch (param) {
+        case 'r':
+          return 'hello'
+        default:
+          return null
+      }
+    })
 
     shallow(<IndexPage />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
@@ -78,5 +94,34 @@ describe('index page', () => {
     const elem = wrapper.find('link[rel="canonical"]')
     expect(elem.exists()).toBe(true)
     expect(elem.prop('href')).toBe('https://somewebsite.com/')
+  })
+
+  it('stores the referring user in local storage when it is included as a URL parameter', () => {
+    const IndexPage = require('../index').default
+    const getUrlParameterValue = require('utils/location').getUrlParameterValue
+    getUrlParameterValue.mockImplementation(param => {
+      switch (param) {
+        case 'u':
+          return 'bobert'
+        default:
+          return null
+      }
+    })
+
+    shallow(<IndexPage />)
+    expect(localStorageMgr.setItem).toHaveBeenCalledWith(
+      'tab.referralData.referringUser',
+      'bobert'
+    )
+    expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
+  })
+
+  it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
+    const IndexPage = require('../index').default
+    const getUrlParameterValue = require('utils/location').getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+
+    shallow(<IndexPage />)
+    expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 })
