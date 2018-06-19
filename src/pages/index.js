@@ -30,7 +30,10 @@ import { lighterTextColor, lightestTextColor } from 'themes/theme'
 import UnsupportedBrowserDialog from 'components/UnsupportedBrowserDialog'
 import redirect from 'utils/redirect'
 import localStorageMgr from 'utils/local-storage'
-import { STORAGE_REFERRAL_DATA_REFERRING_CHANNEL } from 'utils/constants'
+import {
+  STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
+  STORAGE_REFERRAL_DATA_REFERRING_USER,
+} from 'utils/constants'
 import { getUrlParameterValue } from 'utils/location'
 
 // Icons
@@ -80,6 +83,13 @@ class IndexPage extends React.Component {
       const refId = this.getReferringChannelId()
       this.storeReferringChannel(refId)
     }
+
+    // Check if user came from a user referral and store the
+    // referrer's user ID.
+    const referringUser = this.getReferringUserUsername()
+    if (referringUser !== null && referringUser !== undefined) {
+      this.storeReferringUser(referringUser)
+    }
   }
 
   /**
@@ -121,8 +131,24 @@ class IndexPage extends React.Component {
    * @return {undefined}
    */
   storeReferringChannel(referrerId) {
-    // console.log('This is referrer with ID: ', referrerId)
     localStorageMgr.setItem(STORAGE_REFERRAL_DATA_REFERRING_CHANNEL, referrerId)
+  }
+
+  /**
+   * Return the referring user's username (from URL param)
+   * if it exists, or null.
+   * @return {string|null} The referring user's username
+   */
+  getReferringUserUsername() {
+    return getUrlParameterValue('u')
+  }
+
+  /**
+   * Store the referring username in local storage.
+   * @return {undefined}
+   */
+  storeReferringUser(referringUser) {
+    localStorageMgr.setItem(STORAGE_REFERRAL_DATA_REFERRING_USER, referringUser)
   }
 
   // When modals are open, prevent scroll.
