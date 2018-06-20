@@ -15,7 +15,7 @@ const FinancialsPage = ({ data }) => {
   )
   const openGraphTitle = 'Financials - Tab for a Cause'
   const openGraphDescription =
-    'See our expenses and how much money Tabbers have raised for each charity'
+    'See our expenses and how much money Tabbers have raised for each charity.'
   return (
     <div>
       <Helmet title={'Financials'}>
