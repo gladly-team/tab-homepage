@@ -56,6 +56,7 @@ class Layout extends React.Component {
               <link rel="chrome-webstore-item" href={CHROME_WEB_STORE_HREF} />
               <link rel="icon" href={Favicon} />
               <meta property="og:type" content="website" />
+              <meta property="fb:app_id" content="774381839264847" />
               <meta property="og:url" content={absoluteUrl} />
               <meta
                 property="og:title"
