@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Button from 'material-ui/Button'
+import Helmet from 'react-helmet'
 import Link from 'components/Link'
 import { homeURL } from 'utils/navigation'
 import { withTheme } from 'material-ui/styles'
@@ -25,6 +26,8 @@ class NotFoundPage extends React.Component {
     if (!this.props.theme.palette) {
       return null
     }
+    const openGraphTitle = 'Oops! No page here.'
+    const openGraphDescription = 'This page seems to be missing.'
     return (
       <div
         style={{
@@ -34,6 +37,12 @@ class NotFoundPage extends React.Component {
           alignItems: 'center',
         }}
       >
+        <Helmet title={'Missing page'}>
+          <meta property="og:title" content={openGraphTitle} />
+          <meta property="og:description" content={openGraphDescription} />
+          <meta name="twitter:title" content={openGraphTitle} />
+          <meta name="twitter:description" content={openGraphDescription} />
+        </Helmet>
         <div
           style={{
             display: 'flex',
