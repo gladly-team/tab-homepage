@@ -4,6 +4,8 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
 
+jest.mock('img/opengraph-img.png', () => '/static/some-image.png')
+
 const props = {
   children: () => {},
   data: {
@@ -14,7 +16,6 @@ const props = {
         descriptionShort: 'A shorter description',
         keywords: 'here, are, keywords',
         metaTagCallToAction: 'Check this out!',
-        metaTagImage: 'https://example.com/thing.png',
         title: 'My Example Site',
         twitterHandle: '@example',
       },
@@ -63,6 +64,6 @@ describe('index layout page', () => {
     const IndexLayout = require('../index').default
     const wrapper = shallow(<IndexLayout {...props} />)
     const elem = wrapper.find('meta[property="og:image"]')
-    expect(elem.prop('content')).toBe('https://example.com/thing.png')
+    expect(elem.prop('content')).toBe('/static/some-image.png')
   })
 })
