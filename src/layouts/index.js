@@ -85,7 +85,7 @@ class Layout extends React.Component {
                 name="twitter:creator"
                 content={data.site.siteMetadata.twitterHandle}
               />
-              <meta name="twitter:image:src" content={metaTagImage} />
+              <meta name="twitter:image" content={metaTagImage} />
               <meta
                 name="twitter:domain"
                 content={data.site.siteMetadata.domain}
