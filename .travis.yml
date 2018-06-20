@@ -13,7 +13,7 @@ jobs:
       - yarn run build
       - pip install --user awscli
       - export PATH=$PATH:$HOME/.local/bin
-      - bash ./scripts/deploy.sh
+      - bash ./scripts/deploy.sh s3://dev-tab-website
       env:
         - GATSBY_DOMAIN=dev-tab-website.gladly.io
 env:
