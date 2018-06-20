@@ -13,9 +13,17 @@ const FinancialsPage = ({ data }) => {
     ['node.year', 'node.quarter'],
     ['desc', 'desc']
   )
+  const openGraphTitle = 'Financials - Tab for a Cause'
+  const openGraphDescription =
+    'See our expenses and how much money Tabbers have raised for each charity'
   return (
     <div>
-      <Helmet title={'Financials'} />
+      <Helmet title={'Financials'}>
+        <meta property="og:title" content={openGraphTitle} />
+        <meta property="og:description" content={openGraphDescription} />
+        <meta name="twitter:title" content={openGraphTitle} />
+        <meta name="twitter:description" content={openGraphDescription} />
+      </Helmet>
       <TextPageContent>
         <TextPageHeader>Financials</TextPageHeader>
         <div
