@@ -1,4 +1,5 @@
-const domain = 'tab.gladly.io'
+/* globals process */
+const domain = process.env.DOMAIN || 'tab.gladly.io'
 const protocol = 'https'
 const baseURL = `${protocol}://${domain}`
 
@@ -59,7 +60,7 @@ export const firefoxExtensionURL =
 export const getAbsoluteURL = path => {
   // If the passed path is already an absolute URL,
   // just return it.
-  if (path.startsWith(baseURL)) {
+  if (path.startsWith('http://') || path.startsWith('https://')) {
     return path
   }
   return `${baseURL}${path}`
