@@ -12,8 +12,6 @@ module.exports = {
     descriptionShort:
       'Raise money for charity with every browser tab you open.',
     metaTagCallToAction: 'Join me on Tab for a Cause!',
-    // TODO: need image
-    metaTagImage: 'https://tab.gladly.io/share/image/',
     twitterHandle: '@TabForACause',
   },
   plugins: [

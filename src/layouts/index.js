@@ -15,6 +15,7 @@ import Footer from 'components/Footer'
 import { MuiThemeProvider } from 'material-ui/styles'
 import theme from '../themes/theme'
 import Favicon from 'img/logo32x32.png'
+import metaTagImage from 'img/opengraph-img.png'
 
 import { CHROME_WEB_STORE_HREF } from 'utils/constants'
 
@@ -66,10 +67,7 @@ class Layout extends React.Component {
                 property="og:description"
                 content={data.site.siteMetadata.descriptionShort}
               />
-              <meta
-                property="og:image"
-                content={data.site.siteMetadata.metaTagImage}
-              />
+              <meta property="og:image" content={metaTagImage} />
               <meta
                 name="twitter:title"
                 content={data.site.siteMetadata.metaTagCallToAction}
@@ -87,10 +85,7 @@ class Layout extends React.Component {
                 name="twitter:creator"
                 content={data.site.siteMetadata.twitterHandle}
               />
-              <meta
-                name="twitter:image:src"
-                content={data.site.siteMetadata.metaTagImage}
-              />
+              <meta name="twitter:image:src" content={metaTagImage} />
               <meta
                 name="twitter:domain"
                 content={data.site.siteMetadata.domain}
@@ -123,7 +118,6 @@ Layout.propTypes = {
         descriptionShort: PropTypes.string.isRequired,
         keywords: PropTypes.string.isRequired,
         metaTagCallToAction: PropTypes.string.isRequired,
-        metaTagImage: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         twitterHandle: PropTypes.string.isRequired,
       }),
@@ -145,7 +139,6 @@ export const query = graphql`
         descriptionShort
         keywords
         metaTagCallToAction
-        metaTagImage
         title
         twitterHandle
       }
