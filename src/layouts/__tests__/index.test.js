@@ -3,10 +3,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
-import { getLocation } from 'utils/location'
-import { mockWindowLocation } from 'utils/test-utils'
-
-jest.mock('utils/location')
 
 jest.mock('img/opengraph-img.png', () => '/static/some-image.png')
 
@@ -37,9 +33,6 @@ describe('index layout page', () => {
   })
 
   it('sets the canonical URL', () => {
-    // Mock the location.
-    getLocation.mockReturnValue(mockWindowLocation('example.com'))
-
     const IndexLayout = require('../index').default
     const wrapper = shallow(<IndexLayout {...props} />)
     const elem = wrapper.find('link[rel="canonical"]')
@@ -68,14 +61,9 @@ describe('index layout page', () => {
   })
 
   it('sets the open graph image', () => {
-    // Mock the location.
-    getLocation.mockReturnValue(mockWindowLocation('example.com'))
-
     const IndexLayout = require('../index').default
     const wrapper = shallow(<IndexLayout {...props} />)
     const elem = wrapper.find('meta[property="og:image"]')
-    expect(elem.prop('content')).toBe(
-      'https://example.com/static/some-image.png'
-    )
+    expect(elem.prop('content')).toBe('/static/some-image.png')
   })
 })
