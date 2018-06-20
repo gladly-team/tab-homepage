@@ -1,3 +1,5 @@
+import { getLocation } from 'utils/location'
+
 const domain = 'tab.gladly.io'
 const protocol = 'https'
 const baseURL = `${protocol}://${domain}`
@@ -59,8 +61,14 @@ export const firefoxExtensionURL =
 export const getAbsoluteURL = path => {
   // If the passed path is already an absolute URL,
   // just return it.
-  if (path.startsWith(baseURL)) {
+  if (path.startsWith('http://') || path.startsWith('https://')) {
     return path
   }
-  return `${baseURL}${path}`
+  try {
+    const currentLocation = getLocation()
+    return new window.URL(path, currentLocation.href).href
+  } catch (e) {
+    // Fall back on hardcoded production domain.
+    return `${baseURL}${path}`
+  }
 }
