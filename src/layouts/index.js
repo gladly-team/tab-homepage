@@ -16,7 +16,7 @@ import { MuiThemeProvider } from 'material-ui/styles'
 import theme from '../themes/theme'
 import Favicon from 'img/logo32x32.png'
 import openGraphImg from 'img/opengraph-img.png'
-import { getAbsoluteURL } from 'utils/navigation'
+import { domain, getAbsoluteURL } from 'utils/navigation'
 
 import { CHROME_WEB_STORE_HREF } from 'utils/constants'
 
@@ -86,10 +86,7 @@ class Layout extends React.Component {
                 content={data.site.siteMetadata.twitterHandle}
               />
               <meta name="twitter:image" content={openGraphImgAbsolutePath} />
-              <meta
-                name="twitter:domain"
-                content={data.site.siteMetadata.domain}
-              />
+              <meta name="twitter:domain" content={domain} />
             </Helmet>
 
             <Header siteTitle={data.site.siteMetadata.title} />
@@ -113,7 +110,6 @@ Layout.propTypes = {
   data: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
-        domain: PropTypes.string.isRequired,
         descriptionLong: PropTypes.string.isRequired,
         descriptionShort: PropTypes.string.isRequired,
         keywords: PropTypes.string.isRequired,
@@ -134,7 +130,6 @@ export const query = graphql`
   query SiteTitleQuery {
     site {
       siteMetadata {
-        domain
         descriptionLong
         descriptionShort
         keywords

@@ -1,4 +1,7 @@
-const domain = 'tab.gladly.io'
+/* globals process */
+var domain = process.env.GATSBY_DOMAIN || 'tab.gladly.io'
+var protocol = 'https'
+var baseURL = `${protocol}://${domain}`
 
 module.exports = {
   siteMetadata: {
@@ -40,8 +43,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: `https://${domain}`,
-        sitemap: `https://${domain}/sitemap.xml`,
+        host: baseURL,
+        sitemap: `${baseURL}/sitemap.xml`,
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
