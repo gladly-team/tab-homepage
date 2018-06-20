@@ -5,9 +5,18 @@ import TextPageHeader from 'components/TextPageHeader'
 import Link from 'components/Link'
 import { contactUsURL, termsURL } from 'utils/navigation'
 
+const openGraphTitle = 'Privacy Policy - Tab for a Cause'
+const openGraphDescription =
+  'Read our Privacy Policy. Tab for a Cause raises money for charity with every browser tab you open.'
+
 const PrivacyPolicyPage = () => (
   <div>
-    <Helmet title={'Privacy Policy'} />
+    <Helmet title={'Privacy Policy'}>
+      <meta property="og:title" content={openGraphTitle} />
+      <meta property="og:description" content={openGraphDescription} />
+      <meta name="twitter:title" content={openGraphTitle} />
+      <meta name="twitter:description" content={openGraphDescription} />
+    </Helmet>
     <TextPageContent>
       <TextPageHeader>Privacy Policy</TextPageHeader>
       <p>

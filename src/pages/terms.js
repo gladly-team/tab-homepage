@@ -6,10 +6,18 @@ import Link from 'components/Link'
 import { contactUsURL } from 'utils/navigation'
 
 const indentationPx = 24
+const openGraphTitle = 'Terms of Service - Tab for a Cause'
+const openGraphDescription =
+  'Read our Terms of Service. Tab for a Cause raises money for charity with every browser tab you open.'
 
 const TermsPage = () => (
   <div>
-    <Helmet title={'Terms'} />
+    <Helmet title={'Terms'}>
+      <meta property="og:title" content={openGraphTitle} />
+      <meta property="og:description" content={openGraphDescription} />
+      <meta name="twitter:title" content={openGraphTitle} />
+      <meta name="twitter:description" content={openGraphDescription} />
+    </Helmet>
     <TextPageContent>
       <TextPageHeader>Terms of Service</TextPageHeader>
       <h2>
