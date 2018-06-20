@@ -19,9 +19,16 @@ const TeamPage = () => {
       title: 'Co-Founder & CTO',
     },
   ]
+  const openGraphTitle = 'Our Team - Tab for a Cause'
+  const openGraphDescription = 'Meet the team behind Tab for a Cause.'
   return (
     <div>
-      <Helmet title={'Team'} />
+      <Helmet title={'Team'}>
+        <meta property="og:title" content={openGraphTitle} />
+        <meta property="og:description" content={openGraphDescription} />
+        <meta name="twitter:title" content={openGraphTitle} />
+        <meta name="twitter:description" content={openGraphDescription} />
+      </Helmet>
       <TextPageContent>
         <TextPageHeader>Team</TextPageHeader>
         <p>
