@@ -15,7 +15,8 @@ import Footer from 'components/Footer'
 import { MuiThemeProvider } from 'material-ui/styles'
 import theme from '../themes/theme'
 import Favicon from 'img/logo32x32.png'
-import metaTagImage from 'img/opengraph-img.png'
+import openGraphImg from 'img/opengraph-img.png'
+import { getAbsoluteURL } from 'utils/navigation'
 
 import { CHROME_WEB_STORE_HREF } from 'utils/constants'
 
@@ -27,9 +28,8 @@ import { CHROME_WEB_STORE_HREF } from 'utils/constants'
 class Layout extends React.Component {
   render() {
     const { data, location } = this.props
-    const absoluteUrl = `https://${data.site.siteMetadata.domain}${
-      location.pathname
-    }`
+    const absoluteUrl = getAbsoluteURL(location.pathname)
+    const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
     return (
       <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
         <div
@@ -67,7 +67,7 @@ class Layout extends React.Component {
                 property="og:description"
                 content={data.site.siteMetadata.descriptionShort}
               />
-              <meta property="og:image" content={metaTagImage} />
+              <meta property="og:image" content={openGraphImgAbsolutePath} />
               <meta
                 name="twitter:title"
                 content={data.site.siteMetadata.metaTagCallToAction}
@@ -85,7 +85,7 @@ class Layout extends React.Component {
                 name="twitter:creator"
                 content={data.site.siteMetadata.twitterHandle}
               />
-              <meta name="twitter:image" content={metaTagImage} />
+              <meta name="twitter:image" content={openGraphImgAbsolutePath} />
               <meta
                 name="twitter:domain"
                 content={data.site.siteMetadata.domain}

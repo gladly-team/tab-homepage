@@ -3,7 +3,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
-
 jest.mock('img/opengraph-img.png', () => '/static/some-image.png')
 
 const props = {
@@ -36,7 +35,7 @@ describe('index layout page', () => {
     const IndexLayout = require('../index').default
     const wrapper = shallow(<IndexLayout {...props} />)
     const elem = wrapper.find('link[rel="canonical"]')
-    expect(elem.prop('href')).toBe('https://example.com/')
+    expect(elem.prop('href')).toBe('https://tab.gladly.io/')
   })
 
   it('sets the default page title using Helmet', () => {
@@ -64,6 +63,8 @@ describe('index layout page', () => {
     const IndexLayout = require('../index').default
     const wrapper = shallow(<IndexLayout {...props} />)
     const elem = wrapper.find('meta[property="og:image"]')
-    expect(elem.prop('content')).toBe('/static/some-image.png')
+    expect(elem.prop('content')).toBe(
+      'https://tab.gladly.io/static/some-image.png'
+    )
   })
 })
