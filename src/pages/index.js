@@ -44,7 +44,8 @@ import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 
 // Images
 import browserLandingPageImg from 'img/browser-rain-trees.png'
-import placholderImgPink from 'img/placeholder-pink.png'
+import laptopImg from 'img/laptop.png'
+import waterImg from 'img/water.jpg'
 
 // Press logos
 import logoHuffingtonPost from 'img/press/huffington-post-grey.svg'
@@ -442,7 +443,7 @@ class IndexPage extends React.Component {
             </p>
           </div>
           <img
-            src={placholderImgPink}
+            src={laptopImg}
             className={styles['homepage-img']} // responsive styling
             style={{
               width: '60%',
@@ -456,7 +457,7 @@ class IndexPage extends React.Component {
         </Section>
         <Section wrap={'reverse'}>
           <img
-            src={placholderImgPink}
+            src={waterImg}
             className={styles['homepage-img']} // responsive styling
             style={{
               width: '60%',
@@ -465,6 +466,8 @@ class IndexPage extends React.Component {
               marginTop: 20,
               marginRight: 20,
               marginBottom: 20,
+              borderTopRightRadius: 3,
+              borderBottomRightRadius: 3,
             }}
           />
           <div
