@@ -10,6 +10,7 @@ export const financialsURL = '/financials/'
 export const termsURL = '/terms/'
 export const privacyPolicyURL = '/privacy/'
 export const teamURL = '/team/'
+export const jobsURL = '/jobs/'
 // Absolute because it's outside of this Gatsby app
 export const newTabPageURL = `${baseURL}/newtab/`
 

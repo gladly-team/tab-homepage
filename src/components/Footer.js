@@ -14,10 +14,11 @@ import {
   externalHelpURL,
   facebookPageURL,
   financialsURL,
-  termsURL,
-  twitterPageURL,
+  jobsURL,
   privacyPolicyURL,
   teamURL,
+  termsURL,
+  twitterPageURL,
 } from 'utils/navigation'
 import Link from 'components/Link'
 import IconWrapper from 'components/IconWrapper'
@@ -115,6 +116,13 @@ class Footer extends React.Component {
                 hoverStyle={hoverLinkStyle}
               >
                 Team
+              </Link>
+              <Link
+                to={jobsURL}
+                style={footerLinkStyle}
+                hoverStyle={hoverLinkStyle}
+              >
+                Jobs
               </Link>
             </div>
           </div>
