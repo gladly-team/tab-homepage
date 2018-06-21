@@ -92,6 +92,23 @@ exports[`Footer matches expected snapshot 1`] = `
               "margin": 20,
             }
           }
+          to="/adblockers/"
+        >
+          Adblockers
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
           to="/financials/"
         >
           Financials
@@ -146,6 +163,23 @@ exports[`Footer matches expected snapshot 1`] = `
           to="/team/"
         >
           Team
+        </Link>
+        <Link
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "fontSize": 12,
+              "margin": 20,
+            }
+          }
+          to="/jobs/"
+        >
+          Jobs
         </Link>
       </div>
     </div>
