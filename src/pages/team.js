@@ -2,6 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
+import Link from 'components/Link'
+import { jobsURL } from 'utils/navigation'
 import { secondaryMainColor } from 'themes/theme'
 import imgAlex from 'img/team/alex.jpg'
 import imgKevin from 'img/team/kevin.jpg'
@@ -35,6 +37,9 @@ const TeamPage = () => {
           Hi there! We're a small team working in sunny Palo Alto, California.
           We're humbled by the Tab for a Cause community and are thrilled that
           we get to spend our time helping it grow.
+        </p>
+        <p>
+          Want to join in? Check out our <Link to={jobsURL}>open jobs</Link>.
         </p>
         <span
           style={{
