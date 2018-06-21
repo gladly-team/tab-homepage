@@ -11,6 +11,7 @@ import {
   lightestTextColor,
 } from 'themes/theme'
 import {
+  adblockerWhitelistingURL,
   externalHelpURL,
   facebookPageURL,
   financialsURL,
@@ -90,6 +91,13 @@ class Footer extends React.Component {
                 Help
               </Link>
               <Link
+                to={adblockerWhitelistingURL}
+                style={footerLinkStyle}
+                hoverStyle={hoverLinkStyle}
+              >
+                Adblockers
+              </Link>
+              <Link
                 to={financialsURL}
                 style={footerLinkStyle}
                 hoverStyle={hoverLinkStyle}
@@ -135,6 +143,7 @@ class Footer extends React.Component {
                 <FacebookBox />
               </IconWrapper>
             </Link>
+
             <Link to={twitterPageURL} style={{ margin: 12 }}>
               <IconWrapper
                 style={socialIconStyle}
