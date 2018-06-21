@@ -3,7 +3,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Paper from 'material-ui/Paper'
-import Link from 'components/Link'
 
 describe('FinancialsQuarterButton', () => {
   it('renders without error', () => {
@@ -30,9 +29,9 @@ describe('FinancialsQuarterButton', () => {
     )
     expect(
       wrapper
-        .find(Link)
+        .find('a')
         .first()
-        .prop('to')
+        .prop('href')
     ).toBe('https://example.com/some-link/q2.pdf')
   })
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Paper from 'material-ui/Paper'
-import Link from 'components/Link'
 import { lighterTextColor } from 'themes/theme'
 
 class FinancialsQuarterButton extends React.Component {
@@ -20,7 +19,8 @@ class FinancialsQuarterButton extends React.Component {
         onMouseEnter={() => this.setState({ hover: true })}
         onMouseLeave={() => this.setState({ hover: false })}
       >
-        <Link to={quarterData.pdfUrl}>
+        {/* PDF is outside of Gatsby, so don't use a Link component */}
+        <a href={quarterData.pdfUrl}>
           <Paper
             elevation={this.state.hover ? 2 : 1}
             style={Object.assign(
@@ -43,7 +43,7 @@ class FinancialsQuarterButton extends React.Component {
               quarterData.quarter
             } ${quarterData.year}`}</span>
           </Paper>
-        </Link>
+        </a>
       </div>
     )
   }
