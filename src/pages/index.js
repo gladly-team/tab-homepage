@@ -28,7 +28,7 @@ import {
 } from 'utils/navigation'
 import { lighterTextColor, lightestTextColor } from 'themes/theme'
 import UnsupportedBrowserDialog from 'components/UnsupportedBrowserDialog'
-import MoneyRaised from 'components/MoneyRaised'
+import MoneyRaisedDisplay from 'components/MoneyRaisedDisplay'
 import redirect from 'utils/redirect'
 import localStorageMgr from 'utils/local-storage'
 import {
@@ -352,12 +352,7 @@ class IndexPage extends React.Component {
               alignItems: 'center',
             }}
           >
-            <p style={{ margin: 0 }}>
-              <MoneyRaised />
-            </p>
-            <p style={{ margin: 0, fontSize: 12, color: lightestTextColor }}>
-              raised for charity
-            </p>
+            <MoneyRaisedDisplay />
           </div>
         </Section>
         <Section

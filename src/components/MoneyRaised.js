@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import moment from 'moment'
 import { commaFormatted, currencyFormatted } from 'utils/formatting'
 
@@ -45,10 +46,14 @@ class MoneyRaised extends React.Component {
     const secondsInDay = 60 * 60 * 24
     // Recalculate based on time that elapsed since the base amount.
     const secondsPerPenny = secondsInDay / DOLLARS_PER_DAY_RATE / 100
-
-    this.setState({
-      moneyRaised: this.calculateMoneyRaised(),
-    })
+    this.setState(
+      {
+        moneyRaised: this.calculateMoneyRaised(),
+      },
+      () => {
+        this.props.onLoaded()
+      }
+    )
 
     // Set an interval to add a penny to the money raised.
     if (!(secondsPerPenny <= 0)) {
@@ -70,6 +75,14 @@ class MoneyRaised extends React.Component {
     )}`
     return <span>{moneyRaisedFormatted}</span>
   }
+}
+
+MoneyRaised.propTypes = {
+  onLoaded: PropTypes.func,
+}
+
+MoneyRaised.defaultProps = {
+  onLoaded: () => {},
 }
 
 export default MoneyRaised
