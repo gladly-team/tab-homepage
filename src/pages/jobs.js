@@ -70,12 +70,14 @@ class JobsPage extends React.Component {
         <TextPageHeader>Jobs</TextPageHeader>
         <div style={{ marginBottom: 30 }}>
           <p>
-            We are a small team that values collaboration, positivity, work-life
-            balance, and social impact (we've given over $500,000 to charity!).
-            We're striving to make both ourselves and the world a little better.
+            We are a small team that prioritizes collaboration, positivity,
+            work-life balance, and social impact (we've given over $500,000 to
+            charity!). We're striving to make both ourselves and the world a
+            little better.
           </p>
         </div>
         <h2>Our Values</h2>
+        <p>Our team's values drive how we work and what we work on.</p>
         <div
           style={{
             display: 'flex',
