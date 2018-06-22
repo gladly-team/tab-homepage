@@ -2,9 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
-import Divider from 'material-ui/Divider'
-import { lightestTextColor } from 'themes/theme'
 import Button from 'material-ui/Button'
+import Paper from 'material-ui/Paper'
 import { secondaryMainColor, secondaryContrastTextColor } from 'themes/theme'
 
 const adblockers = [
@@ -93,10 +92,17 @@ const adblockers = [
     instructionsElem: (
       <div>
         <h3>Chrome</h3>
-        <div>
+        <Paper
+          style={{
+            padding: 20,
+            marginBottom: 20,
+            color: '#a94442',
+            background: '#f2dede',
+          }}
+        >
           A bug in Ghostery makes it impossible to whitelist Tab for a Cause on
           Chrome. We're talking with Ghostery to resolve this.
-        </div>
+        </Paper>
         <p>
           In the meantime, you can switch ad blockers (<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en">
             uBlock Origin
@@ -161,22 +167,17 @@ class AdblockersPage extends React.Component {
           <meta name="twitter:description" content={openGraphDescription} />
         </Helmet>
         <TextPageHeader>Whitelisting Your Adblocker</TextPageHeader>
-        <p>
-          Tab for a Cause uses ads to raise money for charity. If you have an ad
-          blocker, you will likely need to whitelist Tab for a Cause to allow
-          ads to show.
-        </p>
-        <p>
-          <span style={{ fontWeight: 'bold ' }}>Having trouble?</span> Please
-          email us at contact@gladly.io
-        </p>
-        <Divider
-          style={{
-            backgroundColor: lightestTextColor,
-            marginTop: 30,
-            marginBottom: 30,
-          }}
-        />
+        <Paper style={{ padding: 20 }}>
+          <p>
+            Tab for a Cause uses ads to raise money for charity. If you have an
+            ad blocker, you will likely need to whitelist Tab for a Cause to
+            allow ads to show.
+          </p>
+          <p style={{ marginBottom: 0 }}>
+            <span style={{ fontWeight: 'bold' }}>Having trouble?</span> Please
+            email us at contact@gladly.io
+          </p>
+        </Paper>
         <div style={{ marginTop: 30, marginBottom: 30 }}>
           <h2>What ad blocker do you use?</h2>
           {adblockers.map(adblocker => {
