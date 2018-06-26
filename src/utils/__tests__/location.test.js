@@ -40,4 +40,11 @@ describe('location utils', () => {
     )
     expect(location.getUrlParameterValue('blah')).toBeNull()
   })
+
+  test('getUrlParameterValue returns null if the URL throws an error', () => {
+    jest.spyOn(window, 'URL').mockImplementationOnce(() => {
+      throw new Error('Problem with URL!')
+    })
+    expect(location.getUrlParameterValue('blah')).toBeNull()
+  })
 })
