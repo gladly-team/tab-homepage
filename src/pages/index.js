@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from 'material-ui/Button'
 import Helmet from 'react-helmet'
 
 import Section from 'components/Section'
