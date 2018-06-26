@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from 'material-ui/Button'
 import Helmet from 'react-helmet'
 
 import Section from 'components/Section'
@@ -609,15 +608,12 @@ class IndexPage extends React.Component {
                 source.
               </p>
               <p>
-                Even better, we publish quarterly financial reports, so you can
+                Even better, we publish quarterly{' '}
+                <Link to={financialsURL}>financial reports</Link>, so you can
                 see exactly how much we give to each charity and what our other
                 costs are.
               </p>
-              <Link to={financialsURL}>
-                <Button variant="raised" color="primary">
-                  See our financials
-                </Button>
-              </Link>
+              {installButton}
             </div>
           </div>
         </Section>
