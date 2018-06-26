@@ -14,7 +14,7 @@ jobs:
       - export PATH=$PATH:$HOME/.local/bin
       - bash ./scripts/deploy.sh s3://dev-tab-website
       env:
-        - GATSBY_DOMAIN=dev-tab-website.gladly.io
+        - GATSBY_DOMAIN=dev-tab2017.gladly.io
     - stage: production deploy
       if: branch = master
       script:
