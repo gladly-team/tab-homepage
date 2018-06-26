@@ -11,6 +11,7 @@ import Helmet from 'react-helmet'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import ReactfulSnippet from 'components/ReactfulSnippet'
 
 import { MuiThemeProvider } from 'material-ui/styles'
 import theme from '../themes/theme'
@@ -98,6 +99,7 @@ class Layout extends React.Component {
               {this.props.children()}
             </div>
           </div>
+          <ReactfulSnippet />
           <Footer style={{ flexShrink: 0 }} />
         </div>
       </MuiThemeProvider>
