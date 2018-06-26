@@ -609,15 +609,12 @@ class IndexPage extends React.Component {
                 source.
               </p>
               <p>
-                Even better, we publish quarterly financial reports, so you can
+                Even better, we publish quarterly{' '}
+                <Link to={financialsURL}>financial reports</Link>, so you can
                 see exactly how much we give to each charity and what our other
                 costs are.
               </p>
-              <Link to={financialsURL}>
-                <Button variant="raised" color="primary">
-                  See our financials
-                </Button>
-              </Link>
+              {installButton}
             </div>
           </div>
         </Section>
