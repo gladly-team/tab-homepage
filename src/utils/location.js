@@ -14,9 +14,13 @@ const getLocation = () => {
  * @return {string|null} The value of the URL parameter
  */
 const getUrlParameterValue = paramName => {
-  const urlStr = exports.getLocation().href
-  const url = new window.URL(urlStr)
-  return url.searchParams.get(paramName)
+  try {
+    const urlStr = exports.getLocation().href
+    const url = new window.URL(urlStr)
+    return url.searchParams.get(paramName)
+  } catch (e) {
+    return null
+  }
 }
 
 // To make this module more testable by mocking
