@@ -8,6 +8,7 @@ jobs:
     - stage: unit test
       script: yarn test
     - stage: development deploy
+      if: NOT type = pull_request
       script:
       - yarn run build
       - pip install --user awscli
@@ -16,7 +17,7 @@ jobs:
       env:
         - GATSBY_DOMAIN=dev-tab2017.gladly.io
     - stage: production deploy
-      if: branch = master
+      if: branch = master AND NOT type = pull_request
       script:
       - yarn run build
       - pip install --user awscli
