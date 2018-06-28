@@ -142,3 +142,11 @@
   path: redditad
 - referrerId: 99
   path: isaacarthur
+- referrerId: 100
+  path: redditad2
+- referrerId: 101
+  path: redditad3
+- referrerId: 102
+  path: redditad4
+- referrerId: 103
+  path: redditad5
