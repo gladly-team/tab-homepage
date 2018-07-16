@@ -39,6 +39,10 @@ module.exports = {
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-plugin-sitemap`,
+      options: {
+        // Exclude pages that just redirect.
+        exclude: ['/help', '/contact'],
+      },
     },
     {
       resolve: `gatsby-plugin-robots-txt`,
