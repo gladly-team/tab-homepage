@@ -6,17 +6,11 @@ import {
   CHROME_BROWSER,
   FIREFOX_BROWSER,
   UNSUPPORTED_BROWSER,
-  CHROME_WEB_STORE_HREF,
-  CHROME_WEB_STORE_VERIFIED_DOMAIN,
 } from 'utils/constants'
 import { chromeExtensionURL, firefoxExtensionURL } from 'utils/navigation'
 import redirect from 'utils/redirect'
-import { getLocation } from 'utils/location'
 import { downloadButtonClick } from 'utils/analytics/logEvent'
 
-// For Chrome inline installation, requires the page to have a
-// <link> elem pointing to the Chrome Web Store page:
-// https://developer.chrome.com/webstore/inline_installation
 class InstallButton extends React.Component {
   constructor(props) {
     super(props)
@@ -70,61 +64,8 @@ class InstallButton extends React.Component {
     redirect(firefoxExtensionURL)
   }
 
-  // If inline install fails, redirect the user to the Chrome Web Store.
-  installChromeExtensionFallback() {
-    redirect(chromeExtensionURL)
-  }
-
-  // Whether we'll be able to use inline installation for the
-  // Chrome extension. To do so, we need to be on the domain or
-  // subdomain of the domain verified with Google.
-  chromeCanInlineInstall() {
-    const windowLocation = getLocation()
-    return windowLocation.hostname.endsWith(CHROME_WEB_STORE_VERIFIED_DOMAIN)
-  }
-
-  chromeInstallSuccess() {
-    const { onChromeInstallSuccess } = this.props
-    onChromeInstallSuccess()
-  }
-
-  chromeInstallFailure(failureDetail) {
-    const { onChromeInstallCanceled } = this.props
-    // If install failed because the user canceled, show a page with
-    // additional information. If it failed for another reason, send
-    // the user the Chrome Web Store.
-    // The value of failureDetail will likely be:
-    //   - "User cancelled install" if the user clicked cancel
-    //   - "Installs can only be initiated by one of the Chrome Web Store
-    //     item's verified sites." if the site can't do inline install
-    // Google says we "should not rely on specific strings" here, but
-    // we'll rely on it. In the worst case, we'll send the user to the
-    // Web Store, which is acceptable.
-    // https://developer.chrome.com/webstore/inline_installation#triggering
-    if (failureDetail === 'User cancelled install') {
-      onChromeInstallCanceled()
-    } else {
-      this.installChromeExtensionFallback()
-    }
-  }
-
   installChromeExtension() {
-    const { onChromeInstallBegin } = this.props
-    if (!this.chromeCanInlineInstall()) {
-      this.installChromeExtensionFallback()
-      return
-    }
-    onChromeInstallBegin()
-    try {
-      // eslint-disable-next-line no-undef
-      chrome.webstore.install(
-        CHROME_WEB_STORE_HREF,
-        this.chromeInstallSuccess.bind(this),
-        this.chromeInstallFailure.bind(this)
-      )
-    } catch (e) {
-      this.installChromeExtensionFallback()
-    }
+    redirect(chromeExtensionURL)
   }
 
   async onClick() {
@@ -193,16 +134,10 @@ class InstallButton extends React.Component {
 }
 
 InstallButton.propTypes = {
-  onChromeInstallBegin: PropTypes.func,
-  onChromeInstallCanceled: PropTypes.func,
-  onChromeInstallSuccess: PropTypes.func,
   onUnsupportedBrowserInstallClick: PropTypes.func,
 }
 
 InstallButton.defaultProps = {
-  onChromeInstallBegin: () => {},
-  onChromeInstallCanceled: () => {},
-  onChromeInstallSuccess: () => {},
   onUnsupportedBrowserInstallClick: () => {},
 }
 

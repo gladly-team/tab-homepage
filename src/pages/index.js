@@ -7,8 +7,6 @@ import ReviewCarousel from 'components/ReviewCarousel'
 import Review from 'components/Review'
 import InstallButton from 'components/InstallButton'
 import CharitableImpactText from 'components/CharitableImpactText'
-import ChromeInstallInProgressScreen from 'components/ChromeInstallInProgressScreen'
-import ChromeInstallReconsiderScreen from 'components/ChromeInstallReconsiderScreen'
 import Link from 'components/Link'
 import {
   getAbsoluteURL,
@@ -19,7 +17,6 @@ import {
   githubTabExtensionsRepoURL,
   githubTabHomepageRepoURL,
   homeURL,
-  newTabPageURL,
   pressHuffingtonPostURL,
   pressLATimesURL,
   pressMashableURL,
@@ -28,7 +25,6 @@ import {
 import { lighterTextColor, lightestTextColor } from 'themes/theme'
 import UnsupportedBrowserDialog from 'components/UnsupportedBrowserDialog'
 import MoneyRaisedDisplay from 'components/MoneyRaisedDisplay'
-import redirect from 'utils/redirect'
 import localStorageMgr from 'utils/local-storage'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
@@ -71,8 +67,6 @@ class IndexPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      chromeInstallInProgress: false,
-      isReconsideringInstall: false,
       showUnsupportedBrowserMessage: false,
     }
   }
@@ -152,58 +146,6 @@ class IndexPage extends React.Component {
     localStorageMgr.setItem(STORAGE_REFERRAL_DATA_REFERRING_USER, referringUser)
   }
 
-  // When modals are open, prevent scroll.
-  changeBodyScrollable(shouldScroll) {
-    const className = styles['body-unscrollable']
-    if (shouldScroll) {
-      try {
-        window.document.body.classList.remove(className)
-      } catch (e) {
-        console.error(e)
-      }
-    } else {
-      try {
-        window.document.body.classList.add(className)
-      } catch (e) {
-        console.error(e)
-      }
-    }
-  }
-
-  showReconsideringInstallScreen() {
-    this.setState({
-      chromeInstallInProgress: false,
-      isReconsideringInstall: true,
-    })
-    this.changeBodyScrollable(false)
-  }
-
-  hideInstallReconsiderScreen() {
-    this.setState({
-      isReconsideringInstall: false,
-    })
-    this.changeBodyScrollable(true)
-  }
-
-  showChromeInstallPrompt() {
-    this.setState({
-      chromeInstallInProgress: true,
-      isReconsideringInstall: false,
-    })
-    this.changeBodyScrollable(false)
-  }
-
-  hideChromeInstallPrompt() {
-    this.setState({
-      chromeInstallInProgress: false,
-    })
-    this.changeBodyScrollable(true)
-  }
-
-  handleChromeInstallSuccess() {
-    redirect(newTabPageURL)
-  }
-
   showUnsupportedBrowserMessage() {
     this.setState({
       showUnsupportedBrowserMessage: true,
@@ -219,9 +161,6 @@ class IndexPage extends React.Component {
   render() {
     const installButton = (
       <InstallButton
-        onChromeInstallBegin={this.showChromeInstallPrompt.bind(this)}
-        onChromeInstallCanceled={this.showReconsideringInstallScreen.bind(this)}
-        onChromeInstallSuccess={this.handleChromeInstallSuccess.bind(this)}
         onUnsupportedBrowserInstallClick={this.showUnsupportedBrowserMessage.bind(
           this
         )}
@@ -617,15 +556,6 @@ class IndexPage extends React.Component {
             </div>
           </div>
         </Section>
-        {this.state.chromeInstallInProgress ? (
-          <ChromeInstallInProgressScreen />
-        ) : null}
-        {this.state.isReconsideringInstall ? (
-          <ChromeInstallReconsiderScreen
-            onCloseClick={this.hideInstallReconsiderScreen.bind(this)}
-            installButton={installButton}
-          />
-        ) : null}
         <UnsupportedBrowserDialog
           open={this.state.showUnsupportedBrowserMessage}
           onClose={this.hideUnsupportedBrowserMessage.bind(this)}
