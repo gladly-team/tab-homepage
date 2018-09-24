@@ -53,6 +53,16 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        // Global site tag (gtag.js) - AdWords: 1013744060
+        id: 'AW-1013744060',
+        includeInDevelopment: false,
+      },
+    },
+    // TODO: replace analytics with new gtag above:
+    // https://developers.google.com/analytics/devguides/collection/gtagjs/migration
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-24159386-1',

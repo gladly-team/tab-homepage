@@ -11,6 +11,7 @@
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-facebook-pixel": "^1.0.3",
     "gatsby-plugin-google-analytics": "^1.0.31",
+    "gatsby-plugin-google-tagmanager": "^2.0.5",
     "gatsby-plugin-jss": "^1.5.12",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-robots-txt": "^1.0.2",
