@@ -32,8 +32,9 @@ rhythmone.com, 3781572624, DIRECT, a670c89d4a324e47
 
 # Sonobi
 sonobi.com, 5695c92f04, DIRECT
-rhythmone.com, 1059622079, RESELLER
-contextweb.com, 560606, RESELLER
+rhythmone.com, 1059622079, RESELLER, a670c89d4a324e47
+contextweb.com, 560606, RESELLER, 89ff185a4c4e857c
+coxmt.com, 2000067997702, RESELLER
 
 # Sovrn
 sovrn.com, 240713, DIRECT, fafdf38b16bf6b2b
@@ -46,23 +47,3 @@ pubmatic.com, 137711, RESELLER
 pubmatic.com, 156212, RESELLER
 pubmatic.com, 62483, RESELLER
 contextweb.com, 558511, RESELLER
-
-# Consumable (via Sonobi)
-adtech.com, 10947, RESELLER #client-side
-aolcloud.net, 10947, RESELLER #s2s
-appnexus.com, 1356, RESELLER #brealtime
-appnexus.com, 7556, RESELLER
-appnexus.com, 1908, RESELLER, f5ab79cb980f11d1
-districtm.io, 100919, RESELLER
-emxdgt.com, 20, RESELLER, 1e1d41537f7cad7f #brealtime
-google.com, pub-6694481294649483, RESELLER
-indexexchange.com, 184914, RESELLER
-indexexchange.com, 186248, RESELLER, 50b1c356f2c5c8fc #ebda
-openx.com, 537150004, RESELLER
-openx.com, 539699341, RESELLER, 6a698e2ec38604c6 #ebda
-pubmatic.com, 156319, RESELLER
-pubmatic.com, 157367, RESELLER #ebda
-rubiconproject.com, 17632, RESELLER, 0bfd66d529a55807
-rubiconproject.com, 18890, RESELLER, 0bfd66d529a55807 #ebda
-sonobi.com, e55fb5d7c2, RESELLER
-sovrn.com, 248396, RESELLER
