@@ -12,6 +12,7 @@ import {
 } from 'themes/theme'
 import {
   adblockerWhitelistingURL,
+  contactUsURL,
   externalHelpURL,
   facebookPageURL,
   financialsURL,
@@ -124,6 +125,13 @@ class Footer extends React.Component {
                 hoverStyle={hoverLinkStyle}
               >
                 Team
+              </Link>
+              <Link
+                to={contactUsURL}
+                style={footerLinkStyle}
+                hoverStyle={hoverLinkStyle}
+              >
+                Contact
               </Link>
               <Link
                 to={jobsURL}
