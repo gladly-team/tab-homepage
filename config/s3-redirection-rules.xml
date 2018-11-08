@@ -3,8 +3,6 @@ https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanc
 -->
 <RoutingRules>
 
-  <!-- Zendesk (use temporary redirects) -->
-
   <RoutingRule>
     <Condition>
       <KeyPrefixEquals>more/contact/</KeyPrefixEquals>
@@ -17,6 +15,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanc
     </Redirect>
   </RoutingRule>
 
+  <!-- Zendesk (use temporary redirects) -->
   <RoutingRule>
     <Condition>
       <KeyPrefixEquals>help/</KeyPrefixEquals>
