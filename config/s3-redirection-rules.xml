@@ -3,32 +3,19 @@ https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanc
 -->
 <RoutingRules>
 
-  <!-- Zendesk (use temporary redirects) -->
-
   <RoutingRule>
     <Condition>
       <KeyPrefixEquals>more/contact/</KeyPrefixEquals>
     </Condition>
     <Redirect>
-      <ReplaceKeyWith>hc/en-us/requests/new/</ReplaceKeyWith>
-      <HostName>gladly.zendesk.com</HostName>
+      <ReplaceKeyWith>contact/</ReplaceKeyWith>
+      <HostName>tab.gladly.io</HostName>
       <Protocol>https</Protocol>
-      <HttpRedirectCode>307</HttpRedirectCode>
+      <HttpRedirectCode>301</HttpRedirectCode>
     </Redirect>
   </RoutingRule>
 
-  <RoutingRule>
-    <Condition>
-      <KeyPrefixEquals>contact/</KeyPrefixEquals>
-    </Condition>
-    <Redirect>
-      <ReplaceKeyWith>hc/en-us/requests/new/</ReplaceKeyWith>
-      <HostName>gladly.zendesk.com</HostName>
-      <Protocol>https</Protocol>
-      <HttpRedirectCode>307</HttpRedirectCode>
-    </Redirect>
-  </RoutingRule>
-
+  <!-- Zendesk (use temporary redirects) -->
   <RoutingRule>
     <Condition>
       <KeyPrefixEquals>help/</KeyPrefixEquals>
