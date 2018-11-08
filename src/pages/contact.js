@@ -1,5 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import Divider from 'material-ui/Divider'
+import { lightestTextColor } from 'themes/theme'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
 import Link from 'components/Link'
@@ -17,6 +19,8 @@ const ContactPage = () => {
   const openGraphDescription = 'Get in touch with Tab for a Cause.'
   const addressStyle = {
     margin: 0,
+    fontStyle: 'italic',
+    fontSize: 12,
   }
   return (
     <div>
@@ -50,11 +54,19 @@ const ContactPage = () => {
           If you have questions, feedback, or tasty cookie recipe suggestions,
           feel free to email us at contact@tabforacause.org.
         </p>
-        <h2>The Real World</h2>
-        <p>Tab for a Cause is built with love at:</p>
-        <p style={addressStyle}>Gladly</p>
-        <p style={addressStyle}>3165 Loma Verde Place</p>
-        <p style={addressStyle}>Palo Alto, CA 94303</p>
+        <Divider
+          style={{ backgroundColor: lightestTextColor, marginBottom: 20 }}
+        />
+        <div>
+          <div>
+            <p style={Object.assign({}, addressStyle, { marginBottom: 10 })}>
+              Tab for a Cause is built with love at:
+            </p>
+            <p style={addressStyle}>Gladly</p>
+            <p style={addressStyle}>3165 Loma Verde Place</p>
+            <p style={addressStyle}>Palo Alto, CA 94303</p>
+          </div>
+        </div>
         <p />
       </TextPageContent>
     </div>
