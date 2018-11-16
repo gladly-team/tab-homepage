@@ -46,38 +46,4 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
   } catch (e) {
     throw e
   }
-
-  // Create landing page variants for charities.
-  try {
-    const response = await graphql(`
-      {
-        allCharitiesYaml(limit: 100) {
-          edges {
-            node {
-              name
-              path
-              impactImgPath
-            }
-          }
-        }
-      }
-    `)
-    response.data.allCharitiesYaml.edges.forEach(({ node }) => {
-      if (!node.path) {
-        return
-      }
-      createPage({
-        path: `${node.path}/`,
-        component: homepage,
-        context: {
-          charity: {
-            name: node.name,
-            impactImgPath: node.impactImgPath,
-          },
-        },
-      })
-    })
-  } catch (e) {
-    throw e
-  }
 }

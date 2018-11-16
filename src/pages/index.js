@@ -159,7 +159,6 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    const { pathContext: { charity } = {} } = this.props
     const installButton = (
       <InstallButton
         onUnsupportedBrowserInstallClick={this.showUnsupportedBrowserMessage.bind(
@@ -206,10 +205,7 @@ class IndexPage extends React.Component {
             }}
           >
             <h1>
-              {`Raise money for ${
-                charity ? charity.name : 'charity'
-              } every time you
-              open a new browser tab`}
+              Raise money for charity every time you open a new browser tab
             </h1>
             <p>
               It's free and incredibly easy. Transform your tabs into a force
@@ -397,7 +393,7 @@ class IndexPage extends React.Component {
         </Section>
         <Section wrap={'reverse'}>
           <img
-            src={charity ? charity.impactImgPath : waterImg}
+            src={waterImg}
             className={styles['homepage-img']} // responsive styling
             style={{
               width: '60%',
@@ -573,10 +569,6 @@ IndexPage.propTypes = {
   pathContext: PropTypes.shape({
     referrer: PropTypes.shape({
       id: PropTypes.number,
-    }),
-    charity: PropTypes.shape({
-      name: PropTypes.string,
-      impactImgPath: PropTypes.string,
     }),
   }),
 }
