@@ -159,7 +159,7 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    const { charity } = this.props.pathContext
+    const { pathContext: { charity } = {} } = this.props
     const installButton = (
       <InstallButton
         onUnsupportedBrowserInstallClick={this.showUnsupportedBrowserMessage.bind(
