@@ -1,0 +1,3 @@
+# Used to generate charity-specific landing pages.
+- name: GiveDirectly
+  path: give-directly

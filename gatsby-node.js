@@ -14,7 +14,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
   // Create landing page variants for referrers.
-  const blogPostTemplate = path.resolve(`src/pages/index.js`)
+  const homepage = path.resolve(`src/pages/index.js`)
   try {
     const response = await graphql(`
       {
@@ -35,10 +35,42 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
       }
       createPage({
         path: `${node.path}/`,
-        component: blogPostTemplate,
+        component: homepage,
         context: {
           referrer: {
             id: node.referrerId,
+          },
+        },
+      })
+    })
+  } catch (e) {
+    throw e
+  }
+
+  // Create landing page variants for charities.
+  try {
+    const response = await graphql(`
+      {
+        allCharitiesYaml(limit: 100) {
+          edges {
+            node {
+              name
+              path
+            }
+          }
+        }
+      }
+    `)
+    response.data.allCharitiesYaml.edges.forEach(({ node }) => {
+      if (!node.path) {
+        return
+      }
+      createPage({
+        path: `${node.path}/`,
+        component: homepage,
+        context: {
+          charity: {
+            name: node.name,
           },
         },
       })
