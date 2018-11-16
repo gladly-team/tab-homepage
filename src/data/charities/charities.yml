@@ -1,3 +1,7 @@
 # Used to generate charity-specific landing pages.
 - name: GiveDirectly
   path: give-directly
+  # This is a quick hack. See:
+  # https://www.gatsbyjs.org/docs/adding-images-fonts-files/#query-for-file-in-graphql-queries-using-gatsby-source-filesystem
+  # https://github.com/gatsbyjs/gatsby/issues/2817#issuecomment-342319515
+  impactImgPath: /charities/givedirectly.jpg

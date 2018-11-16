@@ -397,7 +397,7 @@ class IndexPage extends React.Component {
         </Section>
         <Section wrap={'reverse'}>
           <img
-            src={waterImg}
+            src={charity ? charity.impactImgPath : waterImg}
             className={styles['homepage-img']} // responsive styling
             style={{
               width: '60%',
@@ -576,6 +576,7 @@ IndexPage.propTypes = {
     }),
     charity: PropTypes.shape({
       name: PropTypes.string,
+      impactImgPath: PropTypes.string,
     }),
   }),
 }

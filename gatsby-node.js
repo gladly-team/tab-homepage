@@ -56,6 +56,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
             node {
               name
               path
+              impactImgPath
             }
           }
         }
@@ -71,6 +72,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
         context: {
           charity: {
             name: node.name,
+            impactImgPath: node.impactImgPath,
           },
         },
       })
