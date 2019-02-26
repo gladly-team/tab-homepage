@@ -5,9 +5,9 @@ import { commaFormatted, currencyFormatted } from 'utils/formatting'
 
 // These must match the new tab page's numbers.
 // Eventually call the API instead of hard-coding.
-const MONEY_RAISED = 499945.74
-const MONEY_RAISED_UPDATE_TIME = moment('2018-03-19 16:39:00Z')
-const DOLLARS_PER_DAY_RATE = 600.0
+const MONEY_RAISED = 678810.0
+const MONEY_RAISED_UPDATE_TIME = moment('2019-01-11T18:02:00.000Z')
+const DOLLARS_PER_DAY_RATE = 450.0
 
 class MoneyRaised extends React.Component {
   constructor(props) {
