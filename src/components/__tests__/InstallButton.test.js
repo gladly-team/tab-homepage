@@ -142,7 +142,7 @@ describe('InstallButton', () => {
     expect(mockOnUnsupportedBrowserInstallClick).not.toHaveBeenCalled()
   })
 
-  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with an unsupported desktop browser', async () => {
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Safari desktop browser', async () => {
     expect.assertions(1)
 
     const detectBrowser = require('browser-detect').default
@@ -159,7 +159,46 @@ describe('InstallButton', () => {
       />
     )
     await clickButton(wrapper)
+    expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
+  })
 
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Opera desktop browser', async () => {
+    expect.assertions(1)
+
+    const detectBrowser = require('browser-detect').default
+    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('opera', false))
+
+    // Silence expected console.info log
+    jest.spyOn(console, 'info').mockImplementationOnce(() => {})
+
+    const mockOnUnsupportedBrowserInstallClick = jest.fn()
+    const InstallButton = require('../InstallButton').default
+    const wrapper = mount(
+      <InstallButton
+        onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
+      />
+    )
+    await clickButton(wrapper)
+    expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
+  })
+
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Edge desktop browser', async () => {
+    expect.assertions(1)
+
+    const detectBrowser = require('browser-detect').default
+    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('edge', false))
+
+    // Silence expected console.info log
+    jest.spyOn(console, 'info').mockImplementationOnce(() => {})
+
+    const mockOnUnsupportedBrowserInstallClick = jest.fn()
+    const InstallButton = require('../InstallButton').default
+    const wrapper = mount(
+      <InstallButton
+        onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
+      />
+    )
+    await clickButton(wrapper)
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
 
@@ -226,7 +265,7 @@ describe('InstallButton', () => {
     expect(mockOnUnsupportedBrowserInstallClick).not.toHaveBeenCalled()
   })
 
-  it('calls the onUnsupportedBrowserInstallClick prop when the user is on an unsupported browser (on mobile)', async () => {
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Safari mobile browser', async () => {
     expect.assertions(1)
 
     const detectBrowser = require('browser-detect').default
@@ -243,7 +282,46 @@ describe('InstallButton', () => {
       />
     )
     await clickButton(wrapper)
+    expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
+  })
 
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Opera mobile browser', async () => {
+    expect.assertions(1)
+
+    const detectBrowser = require('browser-detect').default
+    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('opera', true))
+
+    // Silence expected console.info log
+    jest.spyOn(console, 'info').mockImplementationOnce(() => {})
+
+    const mockOnUnsupportedBrowserInstallClick = jest.fn()
+    const InstallButton = require('../InstallButton').default
+    const wrapper = mount(
+      <InstallButton
+        onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
+      />
+    )
+    await clickButton(wrapper)
+    expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
+  })
+
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Edge mobile browser', async () => {
+    expect.assertions(1)
+
+    const detectBrowser = require('browser-detect').default
+    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('edge', true))
+
+    // Silence expected console.info log
+    jest.spyOn(console, 'info').mockImplementationOnce(() => {})
+
+    const mockOnUnsupportedBrowserInstallClick = jest.fn()
+    const InstallButton = require('../InstallButton').default
+    const wrapper = mount(
+      <InstallButton
+        onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
+      />
+    )
+    await clickButton(wrapper)
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
 
