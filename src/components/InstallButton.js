@@ -43,6 +43,9 @@ class InstallButton extends React.Component {
       case 'chromium':
         browser = CHROME_BROWSER
         break
+      case 'crios':
+        browser = CHROME_BROWSER
+        break
       case 'firefox':
         browser = FIREFOX_BROWSER
         break
@@ -76,26 +79,19 @@ class InstallButton extends React.Component {
     // redirect away from the page.
     await downloadButtonClick()
 
-    if (this.state.mobile) {
-      console.info(
-        'Cannot add Tab for a Cause extension: this is a mobile device'
-      )
-      onUnsupportedBrowserInstallClick()
-    } else {
-      switch (this.state.browser) {
-        case CHROME_BROWSER:
-          this.installChromeExtension()
-          break
-        case FIREFOX_BROWSER:
-          this.installFirefoxExtension()
-          break
-        default:
-          console.info(
-            'Cannot add Tab for a Cause extension: this browser is not supported'
-          )
-          onUnsupportedBrowserInstallClick()
-          break
-      }
+    switch (this.state.browser) {
+      case CHROME_BROWSER:
+        this.installChromeExtension()
+        break
+      case FIREFOX_BROWSER:
+        this.installFirefoxExtension()
+        break
+      default:
+        console.info(
+          'Cannot add Tab for a Cause extension: this browser is not supported'
+        )
+        onUnsupportedBrowserInstallClick()
+        break
     }
   }
 
