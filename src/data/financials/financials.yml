@@ -92,3 +92,6 @@
 - quarter: 3
   year: 2018
   pdfUrl: '/financials/2018-Q3.pdf'
+- quarter: 4
+  year: 2018
+  pdfUrl: '/financials/2018-Q4.pdf'
