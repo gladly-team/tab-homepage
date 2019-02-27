@@ -205,6 +205,27 @@ describe('InstallButton', () => {
     expect(mockOnUnsupportedBrowserInstallClick).not.toHaveBeenCalled()
   })
 
+  it('navigates to the Chrome Web Store page on click (on Chrome iOS browser)', async () => {
+    expect.assertions(2)
+
+    const detectBrowser = require('browser-detect').default
+    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('crios', true))
+    const redirect = require('utils/redirect').default
+
+    const InstallButton = require('../InstallButton').default
+    const mockOnUnsupportedBrowserInstallClick = jest.fn()
+    const wrapper = mount(
+      <InstallButton
+        onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
+      />
+    )
+    await clickButton(wrapper)
+    expect(redirect).toHaveBeenCalledWith(
+      'https://chrome.google.com/webstore/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
+    )
+    expect(mockOnUnsupportedBrowserInstallClick).not.toHaveBeenCalled()
+  })
+
   it('calls the onUnsupportedBrowserInstallClick prop when the user is on an unsupported browser (on mobile)', async () => {
     expect.assertions(1)
 

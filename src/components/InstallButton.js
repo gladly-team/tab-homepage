@@ -43,6 +43,9 @@ class InstallButton extends React.Component {
       case 'chromium':
         browser = CHROME_BROWSER
         break
+      case 'crios':
+        browser = CHROME_BROWSER
+        break
       case 'firefox':
         browser = FIREFOX_BROWSER
         break
