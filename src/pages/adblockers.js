@@ -12,18 +12,6 @@ const adblockers = [
     code: 'adblock-plus',
     instructionsElem: (
       <div>
-        <h3>Chrome</h3>
-        <ul>
-          <li>
-            <b>
-              On <em>this</em> page (not a new tab)
-            </b>, click the AdBlock Plus icon (a stop sign with "ABP") on the
-            top right of your browser
-          </li>
-          <li>Click the blue switch next to "Block ads on tab.gladly.io"</li>
-        </ul>
-
-        <h3>Firefox</h3>
         <ul>
           <li>
             <b>
@@ -41,18 +29,6 @@ const adblockers = [
     code: 'ublock',
     instructionsElem: (
       <div>
-        <h3>Chrome</h3>
-        <ul>
-          <li>
-            <b>
-              On a new tab (<em>not</em> this page)
-            </b>, click on the uBlock Origin icon (maroon shield) on the top
-            right of your browser
-          </li>
-          <li>Click the "power" button</li>
-        </ul>
-
-        <h3>Firefox</h3>
         <ul>
           <li>
             <b>
@@ -101,16 +77,6 @@ const adblockers = [
     code: 'ghostery',
     instructionsElem: (
       <div>
-        <h3>Chrome</h3>
-        <ul>
-          <li>
-            Click on the Ghostery icon (a ghost) on the top right of your
-            browser
-          </li>
-          <li>Click "Trust Site"</li>
-        </ul>
-
-        <h3>Firefox</h3>
         <ul>
           <li>
             Click on the Ghostery icon (a ghost) on the top right of your
