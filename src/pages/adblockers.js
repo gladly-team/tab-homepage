@@ -17,12 +17,10 @@ const adblockers = [
           <li>
             <b>
               On <em>this</em> page (not a new tab)
-            </b>, click on the AdBlock Plus icon (stop sign) on the top right of
-            your browser
+            </b>, click the AdBlock Plus icon (a stop sign with "ABP") on the
+            top right of your browser
           </li>
-          <li>
-            Click "Enabled on this site" until you see "Disabled on this site"
-          </li>
+          <li>Click the blue switch next to "Block ads on tab.gladly.io"</li>
         </ul>
 
         <h3>Firefox</h3>
@@ -30,10 +28,10 @@ const adblockers = [
           <li>
             <b>
               On <em>this</em> page (not a new tab)
-            </b>, click the AdBlock Plus icon (stop sign) on the top right of
-            your browser
+            </b>, click the AdBlock Plus icon (a stop sign with "ABP") on the
+            top right of your browser
           </li>
-          <li>Click "Disable on tab.gladly.io"</li>
+          <li>Click the blue switch next to "Block ads on tab.gladly.io"</li>
         </ul>
       </div>
     ),
@@ -48,8 +46,8 @@ const adblockers = [
           <li>
             <b>
               On a new tab (<em>not</em> this page)
-            </b>, click on the uBlock Origin icon (red shield) on the top right
-            of your browser
+            </b>, click on the uBlock Origin icon (maroon shield) on the top
+            right of your browser
           </li>
           <li>Click the "power" button</li>
         </ul>
@@ -59,8 +57,8 @@ const adblockers = [
           <li>
             <b>
               On a new tab (<em>not</em> this page)
-            </b>, click on the uBlock Origin icon (red shield) on the top right
-            of your browser
+            </b>, click on the uBlock Origin icon (maroon shield) on the top
+            right of your browser
           </li>
           <li>Click the "power" button</li>
         </ul>
@@ -77,10 +75,22 @@ const adblockers = [
           <li>
             <b>
               On <em>this</em> page (not a new tab)
-            </b>, click on the Adblock icon (a hand) on the top right corner of
-            your browser
+            </b>, click on the Adblock icon (a stop sign with a hand in it) on
+            the top right corner of your browser
           </li>
           <li>Click "Don't run on pages on this domain"</li>
+          <li>Click "Exclude"</li>
+        </ul>
+
+        <h3>Firefox</h3>
+        <ul>
+          <li>
+            <b>
+              On <em>this</em> page (not a new tab)
+            </b>, click on the Adblock icon (a stop sign with a hand in it) on
+            the top right corner of your browser
+          </li>
+          <li>Click "Don't run on pages on this site"</li>
           <li>Click "Exclude"</li>
         </ul>
       </div>
@@ -92,23 +102,13 @@ const adblockers = [
     instructionsElem: (
       <div>
         <h3>Chrome</h3>
-        <Paper
-          style={{
-            padding: 20,
-            marginBottom: 20,
-            color: '#a94442',
-            background: '#f2dede',
-          }}
-        >
-          A bug in Ghostery makes it impossible to whitelist Tab for a Cause on
-          Chrome. We're talking with Ghostery to resolve this.
-        </Paper>
-        <p>
-          In the meantime, you can switch ad blockers (<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en">
-            uBlock Origin
-          </a>{' '}
-          is a good open-source option) or disable Ghostery altogether.
-        </p>
+        <ul>
+          <li>
+            Click on the Ghostery icon (a ghost) on the top right of your
+            browser
+          </li>
+          <li>Click "Trust Site"</li>
+        </ul>
 
         <h3>Firefox</h3>
         <ul>
