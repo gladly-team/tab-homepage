@@ -14,10 +14,8 @@ const adblockers = [
       <div>
         <ul>
           <li>
-            <b>
-              On <em>this</em> page (not a new tab)
-            </b>, click the AdBlock Plus icon (a stop sign with "ABP") on the
-            top right of your browser
+            Click the AdBlock Plus icon (a stop sign with "ABP") on the top
+            right of your browser
           </li>
           <li>Click the blue switch next to "Block ads on tab.gladly.io"</li>
         </ul>
@@ -31,10 +29,8 @@ const adblockers = [
       <div>
         <ul>
           <li>
-            <b>
-              On a new tab (<em>not</em> this page)
-            </b>, click on the uBlock Origin icon (maroon shield) on the top
-            right of your browser
+            Click on the uBlock Origin icon (maroon shield) on the top right of
+            your browser
           </li>
           <li>Click the "power" button</li>
         </ul>
@@ -49,10 +45,8 @@ const adblockers = [
         <h3>Chrome</h3>
         <ul>
           <li>
-            <b>
-              On <em>this</em> page (not a new tab)
-            </b>, click on the Adblock icon (a stop sign with a hand in it) on
-            the top right corner of your browser
+            Click on the Adblock icon (a stop sign with a hand in it) on the top
+            right corner of your browser
           </li>
           <li>Click "Don't run on pages on this domain"</li>
           <li>Click "Exclude"</li>
@@ -61,10 +55,8 @@ const adblockers = [
         <h3>Firefox</h3>
         <ul>
           <li>
-            <b>
-              On <em>this</em> page (not a new tab)
-            </b>, click on the Adblock icon (a stop sign with a hand in it) on
-            the top right corner of your browser
+            Click on the Adblock icon (a stop sign with a hand in it) on the top
+            right corner of your browser
           </li>
           <li>Click "Don't run on pages on this site"</li>
           <li>Click "Exclude"</li>
@@ -135,9 +127,9 @@ class AdblockersPage extends React.Component {
         <TextPageHeader>Whitelisting Your Adblocker</TextPageHeader>
         <Paper style={{ padding: 20 }}>
           <p>
-            Tab for a Cause uses ads to raise money for charity. If you have an
-            ad blocker, you will likely need to whitelist Tab for a Cause to
-            allow ads to show.
+            Search for a Cause uses ads to raise money for charity. If you have
+            an ad blocker, you will likely need to whitelist Search for a Cause
+            to allow ads to show.
           </p>
           <p style={{ marginBottom: 0 }}>
             <span style={{ fontWeight: 'bold' }}>Having trouble?</span> Please
