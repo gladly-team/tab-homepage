@@ -20,6 +20,10 @@ Google.com, pub-5995202563537249, DIRECT, f08c47fec0942fa0
 districtm.io, 100390, DIRECT
 appnexus.com, 1908, RESELLER
 
+# Index Exchange
+indexexchange.com, 189509, DIRECT
+indexexchange.com, 189508, DIRECT
+
 # OpenX
 openx.com, 537145035, DIRECT, 6a698e2ec38604c6
 
