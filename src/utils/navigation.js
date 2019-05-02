@@ -54,6 +54,9 @@ export const chromeExtensionURL =
 export const firefoxExtensionURL =
   'https://addons.mozilla.org/en-US/firefox/addon/tab-for-a-cause/'
 
+// Advertising
+export const advertisingSelfServeURL = 'https://orders.gladly.io'
+
 /**
  * Append the protocol and domain to return the
  * absolute URL of a path.

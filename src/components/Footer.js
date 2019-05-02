@@ -12,6 +12,7 @@ import {
 } from 'themes/theme'
 import {
   adblockerWhitelistingURL,
+  advertisingSelfServeURL,
   contactUsURL,
   externalHelpURL,
   facebookPageURL,
@@ -139,6 +140,13 @@ class Footer extends React.Component {
                 hoverStyle={hoverLinkStyle}
               >
                 Jobs
+              </Link>
+              <Link
+                to={advertisingSelfServeURL}
+                style={footerLinkStyle}
+                hoverStyle={hoverLinkStyle}
+              >
+                Advertisers
               </Link>
             </div>
           </div>
