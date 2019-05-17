@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Layout from 'components/layout'
+// FIXME: there's some bug with this component
+// import Layout from 'components/layout'
 import Section from 'components/Section'
 import ReviewCarousel from 'components/ReviewCarousel'
 import Review from 'components/Review'
@@ -175,7 +176,7 @@ class IndexPage extends React.Component {
     // substantially different content.
     const canonicalURL = getAbsoluteURL(homeURL)
     return (
-      <Layout location={location}>
+      <div>
         <div>
           <Helmet>
             <link rel="canonical" href={canonicalURL} />
@@ -568,7 +569,7 @@ class IndexPage extends React.Component {
             onClose={this.hideUnsupportedBrowserMessage.bind(this)}
           />
         </div>
-      </Layout>
+      </div>
     )
   }
 }
