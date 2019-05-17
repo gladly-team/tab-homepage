@@ -5,6 +5,7 @@
   "author": "The Tab for a Cause Team",
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.43",
+    "@reach/router": "^1.1.1",
     "babel-polyfill": "^6.26.0",
     "browser-detect": "^0.2.26",
     "common-tags": "^1.8.0",
@@ -29,7 +30,9 @@
     "react-helmet": "^5.2.0",
     "react-slick": "^0.23.1",
     "react-transition-group": "^2.3.1",
-    "slick-carousel": "^1.8.1"
+    "react-typography": "^0.16.19",
+    "slick-carousel": "^1.8.1",
+    "typography": "^0.16.19"
   },
   "keywords": [
     "tab",
