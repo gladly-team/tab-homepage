@@ -2,8 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
-import Button from 'material-ui/Button'
-import Paper from 'material-ui/Paper'
+import Button from '@material-ui/core/Button'
+import Paper from '@material-ui/core/Paper'
 import { secondaryMainColor, secondaryContrastTextColor } from 'themes/theme'
 
 const adblockers = [

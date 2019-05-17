@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import Paper from 'material-ui/Paper'
+import Paper from '@material-ui/core/Paper'
 
 describe('FinancialsQuarterButton', () => {
   it('renders without error', () => {

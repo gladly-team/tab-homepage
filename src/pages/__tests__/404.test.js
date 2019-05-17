@@ -2,7 +2,7 @@
 
 import React from 'react'
 // import { shallow } from 'enzyme'
-import { createShallow } from 'material-ui/test-utils'
+import { createShallow } from '@material-ui/core/test-utils'
 import Helmet from 'react-helmet'
 
 const props = {

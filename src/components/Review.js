@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Avatar, Paper } from 'material-ui'
+import Paper from '@material-ui/core/Paper'
+import Avatar from '@material-ui/core/Avatar'
 import Star from '@material-ui/icons/Star'
 import { range } from 'lodash/util'
 import { lightestTextColor } from 'themes/theme'

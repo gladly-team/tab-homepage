@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Divider from 'material-ui/Divider'
+import Divider from '@material-ui/core/Divider'
 import { lightestTextColor } from 'themes/theme'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'

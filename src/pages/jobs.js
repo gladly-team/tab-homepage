@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
-import Paper from 'material-ui/Paper'
+import Paper from '@material-ui/core/Paper'
 import {
   lighterTextColor,
   secondaryMainColor,

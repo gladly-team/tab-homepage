@@ -13,7 +13,7 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 import ReactfulSnippet from 'components/ReactfulSnippet'
 
-import { MuiThemeProvider } from 'material-ui/styles'
+import { MuiThemeProvider } from '@material-ui/core/styles'
 import theme from '../themes/theme'
 import Favicon from 'img/logo32x32.png'
 import openGraphImg from 'img/opengraph-img.png'
