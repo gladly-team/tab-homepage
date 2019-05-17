@@ -1,7 +1,7 @@
 {
   "presets": [
-    "react",
-    "env"
+    "@babel/preset-react",
+    "@babel/preset-env"
   ],
   "plugins": [
     ["module-resolver", {
@@ -12,6 +12,11 @@
         "utils": "./src/utils",
         "themes": "./src/themes"
       }
-    }]
+    }],
+    ["@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
   ]
 }
