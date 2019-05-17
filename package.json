@@ -24,6 +24,8 @@
     "material-ui": "^1.0.0-beta.41",
     "mdi-material-ui": "^4.0.0",
     "moment": "^2.22.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-slick": "^0.23.1",
     "react-transition-group": "^2.3.1",
