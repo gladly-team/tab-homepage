@@ -8,16 +8,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { MuiThemeProvider } from 'material-ui/styles'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 import ReactfulSnippet from 'components/ReactfulSnippet'
-
-import { MuiThemeProvider } from 'material-ui/styles'
-import theme from '../themes/theme'
+import defaultTheme from '../themes/theme'
 import Favicon from 'img/logo32x32.png'
 import openGraphImg from 'img/opengraph-img.png'
 import { domain, getAbsoluteURL } from 'utils/navigation'
+
+const theme = getMuiTheme(defaultTheme)
 
 // Use flexbox to make sure the footer sticks to the bottom of the page:
 // https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-3
