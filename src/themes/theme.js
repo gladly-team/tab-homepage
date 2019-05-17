@@ -1,3 +1,5 @@
+import { createMuiTheme } from 'material-ui/styles'
+
 // Text on white background
 export const textColor = 'rgba(33, 33, 33, 0.82)'
 
@@ -26,7 +28,7 @@ export const secondaryMainColor = '#4a90e2'
 export const secondaryContrastTextColor = '#fff'
 export const baseFontSize = 16
 
-const theme = {
+const theme = createMuiTheme({
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,
@@ -58,6 +60,6 @@ const theme = {
       },
     },
   },
-}
+})
 
 export default theme
