@@ -1,5 +1,5 @@
 import React from 'react'
-import GatsbyLink from 'gatsby-link'
+import { Link as GatsbyLink } from 'gatsby'
 import PropTypes from 'prop-types'
 
 // To handle both internal and external links
@@ -38,7 +38,7 @@ class Link extends React.Component {
     // with exactly one slash, and that anything else is external.
     const internal = /^\/(?!\/)/.test(to)
 
-    // Use gatsby-link for internal links, and <a> for others
+    // Use Gatsby's Link for internal links, and <a> for others
     if (internal) {
       return (
         <GatsbyLink
