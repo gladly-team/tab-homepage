@@ -94,12 +94,12 @@ class IndexPage extends React.Component {
    * @return {integer|null} The referrer ID
    */
   getReferringChannelId() {
-    const { pathContext } = this.props
+    const { pageContext } = this.props
     let referrerId = null
 
     // Check for a referrer's vanity URL.
-    if (pathContext && pathContext.referrer) {
-      referrerId = pathContext.referrer.id
+    if (pageContext && pageContext.referrer) {
+      referrerId = pageContext.referrer.id
     } else {
       // Check for a referrer's URL parameter.
       try {
@@ -574,7 +574,7 @@ class IndexPage extends React.Component {
 }
 
 IndexPage.propTypes = {
-  pathContext: PropTypes.shape({
+  pageContext: PropTypes.shape({
     referrer: PropTypes.shape({
       id: PropTypes.number,
     }),

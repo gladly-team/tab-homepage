@@ -23,9 +23,9 @@ describe('index page', () => {
   it('stores the referrer ID in local storage when it is a vanity URL', () => {
     const IndexPage = require('../index').default
 
-    // Gatsby will pass a referrer in the pathContext prop if it's
+    // Gatsby will pass a referrer in the pageContext prop if it's
     // a page created for a vanity referrer URL.
-    shallow(<IndexPage pathContext={{ referrer: { id: 123 } }} />)
+    shallow(<IndexPage pageContext={{ referrer: { id: 123 } }} />)
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'tab.referralData.referringChannel',
       123
@@ -35,7 +35,7 @@ describe('index page', () => {
 
   it('does not store a referrer ID in local storage when it is not a vanity URL', () => {
     const IndexPage = require('../index').default
-    shallow(<IndexPage pathContext={{}} />)
+    shallow(<IndexPage pageContext={{}} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 

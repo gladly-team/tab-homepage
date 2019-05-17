@@ -10,8 +10,8 @@ const path = require('path')
 
 // Implement the Gatsby API "createPages". This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
-exports.createPages = async ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage } = actions
 
   // Create landing page variants for referrers.
   const homepage = path.resolve(`src/pages/index.js`)
