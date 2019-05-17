@@ -541,10 +541,9 @@ class IndexPage extends React.Component {
               <p>
                 We know that trust must be earned. That's why the code for our{' '}
                 <Link to={githubTabRepoURL}>new tab page</Link>,{' '}
-                <Link to={githubTabExtensionsRepoURL}>browser extensions</Link>
-                , and even{' '}
-                <Link to={githubTabHomepageRepoURL}>this webpage</Link> are open
-                source.
+                <Link to={githubTabExtensionsRepoURL}>browser extensions</Link>,
+                and even <Link to={githubTabHomepageRepoURL}>this webpage</Link>{' '}
+                are open source.
               </p>
               <p>
                 Even better, we publish quarterly{' '}

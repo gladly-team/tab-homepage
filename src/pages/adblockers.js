@@ -16,8 +16,9 @@ const adblockers = [
           <li>
             <b>
               On <em>this</em> page (not a new tab)
-            </b>, click the AdBlock Plus icon (a stop sign with "ABP") on the
-            top right of your browser
+            </b>
+            , click the AdBlock Plus icon (a stop sign with "ABP") on the top
+            right of your browser
           </li>
           <li>Click the blue switch next to "Block ads on tab.gladly.io"</li>
         </ul>
@@ -33,8 +34,9 @@ const adblockers = [
           <li>
             <b>
               On a new tab (<em>not</em> this page)
-            </b>, click on the uBlock Origin icon (maroon shield) on the top
-            right of your browser
+            </b>
+            , click on the uBlock Origin icon (maroon shield) on the top right
+            of your browser
           </li>
           <li>Click the "power" button</li>
         </ul>
@@ -51,8 +53,9 @@ const adblockers = [
           <li>
             <b>
               On <em>this</em> page (not a new tab)
-            </b>, click on the Adblock icon (a stop sign with a hand in it) on
-            the top right corner of your browser
+            </b>
+            , click on the Adblock icon (a stop sign with a hand in it) on the
+            top right corner of your browser
           </li>
           <li>Click "Don't run on pages on this domain"</li>
           <li>Click "Exclude"</li>
@@ -63,8 +66,9 @@ const adblockers = [
           <li>
             <b>
               On <em>this</em> page (not a new tab)
-            </b>, click on the Adblock icon (a stop sign with a hand in it) on
-            the top right corner of your browser
+            </b>
+            , click on the Adblock icon (a stop sign with a hand in it) on the
+            top right corner of your browser
           </li>
           <li>Click "Don't run on pages on this site"</li>
           <li>Click "Exclude"</li>
