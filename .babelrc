@@ -1,7 +1,15 @@
 {
   "presets": [
     "@babel/preset-react",
-    "@babel/preset-env"
+    "@babel/preset-env",
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": [">0.25%", "not dead"]
+        }
+      }
+    ]
   ],
   "plugins": [
     ["module-resolver", {
@@ -18,6 +26,5 @@
         "regenerator": true
       }
     ],
-    ["@babel/plugin-proposal-class-properties"]
   ]
 }
