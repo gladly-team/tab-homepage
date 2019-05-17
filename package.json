@@ -41,11 +41,11 @@
   ],
   "license": "MPL-2.0",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "GATSBY_TELEMETRY_DISABLED=1 gatsby build",
+    "develop": "GATSBY_TELEMETRY_DISABLED=1 gatsby develop",
     "format": "eslint --fix 'src/**/*.js'",
     "lint": "eslint 'src/**/*.js'",
-    "serve": "gatsby serve",
+    "serve": "GATSBY_TELEMETRY_DISABLED=1 gatsby serve",
     "test": "yarn run lint && jest --env=jsdom",
     "test:watch": "jest --env=jsdom --watch"
   },
