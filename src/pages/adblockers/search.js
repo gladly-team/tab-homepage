@@ -150,7 +150,7 @@ class AdblockersPage extends React.Component {
               return (
                 <Button
                   key={adblocker.code}
-                  variant="flat"
+                  variant="text"
                   color="secondary"
                   onClick={this.changeSelectedAdblocker.bind(
                     this,
