@@ -8,25 +8,8 @@ import { withTheme } from '@material-ui/core/styles'
 import styles from './404.module.css'
 import Layout from 'src/components/Layout'
 
-// We're running into one of these problems or a related
-// problem:
-// "404 page component not mounted"
-//   https://github.com/gatsbyjs/gatsby/issues/2223
-// "404 page renders only html"
-//   https://github.com/gatsbyjs/gatsby/issues/2878
-//
-// It looks like Gatsby routing might mount the 404
-// component before the parent index.js layout:
-// https://github.com/gatsbyjs/gatsby/issues/2223#issuecomment-383410514
-// This breaks material-ui components that expect the
-// MUI theme to exist at the root of the tree.
-// To work around this, we check if the MUI theme exists
-// before rendering.
 class NotFoundPage extends React.Component {
   render() {
-    if (!this.props.theme.palette) {
-      return null
-    }
     const { location } = this.props
     const openGraphTitle = 'Oops! No page here.'
     const openGraphDescription = 'This page seems to be missing.'
@@ -63,7 +46,7 @@ class NotFoundPage extends React.Component {
               some cake anyway <span className={styles.cakeEmoji} />
             </p>
             <Link to={homeURL} style={{ margin: 18 }}>
-              <Button variant="raised" color="primary" size="large">
+              <Button variant="contained" color="primary" size="large">
                 Head back home
               </Button>
             </Link>
