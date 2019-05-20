@@ -115,7 +115,7 @@ class InstallButton extends React.Component {
     const buttonText = this.getButtonText()
     return (
       <Button
-        variant="raised"
+        variant="contained"
         color="primary"
         onClick={this.onClick.bind(this)}
         size="large"
