@@ -596,6 +596,9 @@ class IndexPage extends React.Component {
 }
 
 IndexPage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }),
   pageContext: PropTypes.shape({
     referrer: PropTypes.shape({
       id: PropTypes.number,
