@@ -21,7 +21,7 @@ import { domain, getAbsoluteURL } from 'utils/navigation'
 // Use flexbox to make sure the footer sticks to the bottom of the page:
 // https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-3
 export const LayoutContent = props => {
-  const { data, location } = props
+  const { children, data, location } = props
   const absoluteUrl = getAbsoluteURL(location.pathname)
   const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
   return (
@@ -88,7 +88,7 @@ export const LayoutContent = props => {
               paddingTop: 0,
             }}
           >
-            {props.children}
+            {children}
           </div>
         </div>
         <Footer style={{ flexShrink: 0 }} />

@@ -9,6 +9,13 @@ jest.mock('utils/local-storage')
 jest.mock('utils/location')
 jest.mock('utils/navigation')
 
+const getMockProps = () => ({
+  location: {
+    pathname: '/',
+  },
+  pageContext: {},
+})
+
 afterEach(() => {
   jest.clearAllMocks()
   localStorageMgr.clear()
@@ -17,7 +24,7 @@ afterEach(() => {
 describe('index page', () => {
   it('renders without error', () => {
     const IndexPage = require('../index').default
-    shallow(<IndexPage />)
+    shallow(<IndexPage {...getMockProps()} />)
   })
 
   it('stores the referrer ID in local storage when it is a vanity URL', () => {
@@ -25,7 +32,9 @@ describe('index page', () => {
 
     // Gatsby will pass a referrer in the pageContext prop if it's
     // a page created for a vanity referrer URL.
-    shallow(<IndexPage pageContext={{ referrer: { id: 123 } }} />)
+    const mockProps = getMockProps()
+    mockProps.pageContext = { referrer: { id: 123 } }
+    shallow(<IndexPage {...mockProps} />)
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'tab.referralData.referringChannel',
       123
@@ -35,7 +44,9 @@ describe('index page', () => {
 
   it('does not store a referrer ID in local storage when it is not a vanity URL', () => {
     const IndexPage = require('../index').default
-    shallow(<IndexPage pageContext={{}} />)
+    const mockProps = getMockProps()
+    mockProps.pageContext = {}
+    shallow(<IndexPage {...mockProps} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
@@ -52,7 +63,7 @@ describe('index page', () => {
       }
     })
 
-    shallow(<IndexPage />)
+    shallow(<IndexPage {...getMockProps()} />)
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'tab.referralData.referringChannel',
       234
@@ -66,7 +77,7 @@ describe('index page', () => {
     const getUrlParameterValue = require('utils/location').getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
-    shallow(<IndexPage />)
+    shallow(<IndexPage {...getMockProps()} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
@@ -83,14 +94,14 @@ describe('index page', () => {
       }
     })
 
-    shallow(<IndexPage />)
+    shallow(<IndexPage {...getMockProps()} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
   it('sets the canonical URL', () => {
     const IndexPage = require('../index').default
     getAbsoluteURL.mockReturnValue('https://somewebsite.com/')
-    const wrapper = shallow(<IndexPage />)
+    const wrapper = shallow(<IndexPage {...getMockProps()} />)
     const elem = wrapper.find('link[rel="canonical"]')
     expect(elem.exists()).toBe(true)
     expect(elem.prop('href')).toBe('https://somewebsite.com/')
@@ -108,7 +119,7 @@ describe('index page', () => {
       }
     })
 
-    shallow(<IndexPage />)
+    shallow(<IndexPage {...getMockProps()} />)
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'tab.referralData.referringUser',
       'bobert'
@@ -121,7 +132,7 @@ describe('index page', () => {
     const getUrlParameterValue = require('utils/location').getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
-    shallow(<IndexPage />)
+    shallow(<IndexPage {...getMockProps()} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 })

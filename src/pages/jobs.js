@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
@@ -14,6 +15,7 @@ import Lock from '@material-ui/icons/Lock'
 import Restaurant from '@material-ui/icons/Restaurant'
 import SentimentVerySatisfied from '@material-ui/icons/SentimentVerySatisfied'
 import ShowChart from '@material-ui/icons/ShowChart'
+import Layout from 'components/Layout'
 
 const teamValues = [
   {
@@ -56,105 +58,116 @@ const teamValues = [
 
 class JobsPage extends React.Component {
   render() {
+    const { location } = this.props
     const openGraphTitle = 'Jobs at Tab for a Cause'
     const openGraphDescription =
       'Check out open jobs at a purpose-driven, challenging, and fun startup!'
     return (
-      <TextPageContent>
-        <Helmet title={'Jobs'}>
-          <meta property="og:title" content={openGraphTitle} />
-          <meta property="og:description" content={openGraphDescription} />
-          <meta name="twitter:title" content={openGraphTitle} />
-          <meta name="twitter:description" content={openGraphDescription} />
-        </Helmet>
-        <TextPageHeader>Jobs</TextPageHeader>
-        <div style={{ marginBottom: 30 }}>
-          <p>
-            We are a small team that prioritizes collaboration, positivity,
-            work-life balance, and social impact (we've given over $500,000 to
-            charity!). We're striving to make both ourselves and the world a
-            little better.
-          </p>
-        </div>
-        <h2>Our Values</h2>
-        <p>Our team's values drive how we work and what we work on.</p>
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            marginBottom: 20,
-          }}
-        >
-          {teamValues.map(teamValue => {
-            return (
-              <Paper
-                key={teamValue.name}
-                elevation={1}
-                style={{
-                  maxWidth: 300,
-                  // display: 'flex',
-                  // flexDirection: 'column',
-                  // justifyContent: 'center',
-                  // alignItems: 'center',
-                  textAlign: 'center',
-                  margin: 20,
-                }}
-              >
-                <span>
-                  <span
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      marginBottom: 10,
-                      background: secondaryMainColor,
-                      padding: 10,
-                    }}
-                  >
-                    {teamValue.iconComponent ? (
-                      <teamValue.iconComponent
-                        style={{
-                          color: secondaryContrastTextColor,
-                          width: 28,
-                          height: 28,
-                        }}
-                      />
-                    ) : null}
-                    <h3
+      <Layout location={location}>
+        <TextPageContent>
+          <Helmet title={'Jobs'}>
+            <meta property="og:title" content={openGraphTitle} />
+            <meta property="og:description" content={openGraphDescription} />
+            <meta name="twitter:title" content={openGraphTitle} />
+            <meta name="twitter:description" content={openGraphDescription} />
+          </Helmet>
+          <TextPageHeader>Jobs</TextPageHeader>
+          <div style={{ marginBottom: 30 }}>
+            <p>
+              We are a small team that prioritizes collaboration, positivity,
+              work-life balance, and social impact (we've given over $500,000 to
+              charity!). We're striving to make both ourselves and the world a
+              little better.
+            </p>
+          </div>
+          <h2>Our Values</h2>
+          <p>Our team's values drive how we work and what we work on.</p>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              marginBottom: 20,
+            }}
+          >
+            {teamValues.map(teamValue => {
+              return (
+                <Paper
+                  key={teamValue.name}
+                  elevation={1}
+                  style={{
+                    maxWidth: 300,
+                    // display: 'flex',
+                    // flexDirection: 'column',
+                    // justifyContent: 'center',
+                    // alignItems: 'center',
+                    textAlign: 'center',
+                    margin: 20,
+                  }}
+                >
+                  <span>
+                    <span
                       style={{
-                        color: secondaryContrastTextColor,
-                        marginBottom: 0,
-                        marginLeft: 10,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        marginBottom: 10,
+                        background: secondaryMainColor,
+                        padding: 10,
                       }}
                     >
-                      {teamValue.name}
-                    </h3>
+                      {teamValue.iconComponent ? (
+                        <teamValue.iconComponent
+                          style={{
+                            color: secondaryContrastTextColor,
+                            width: 28,
+                            height: 28,
+                          }}
+                        />
+                      ) : null}
+                      <h3
+                        style={{
+                          color: secondaryContrastTextColor,
+                          marginBottom: 0,
+                          marginLeft: 10,
+                        }}
+                      >
+                        {teamValue.name}
+                      </h3>
+                    </span>
+                    <p
+                      style={{
+                        fontSize: 14,
+                        color: lighterTextColor,
+                        margin: 20,
+                      }}
+                    >
+                      {teamValue.description}
+                    </p>
                   </span>
-                  <p
-                    style={{
-                      fontSize: 14,
-                      color: lighterTextColor,
-                      margin: 20,
-                    }}
-                  >
-                    {teamValue.description}
-                  </p>
-                </span>
-              </Paper>
-            )
-          })}
-        </div>
-        <h2>Positions</h2>
-        <div style={{ marginBottom: 30 }}>
-          <p>
-            We don't have any open jobs at this time. Interested in
-            volunteering, or think you'd be a fit for a job we haven't listed?
-            Email us at: jobs@gladly.io
-          </p>
-        </div>
-      </TextPageContent>
+                </Paper>
+              )
+            })}
+          </div>
+          <h2>Positions</h2>
+          <div style={{ marginBottom: 30 }}>
+            <p>
+              We don't have any open jobs at this time. Interested in
+              volunteering, or think you'd be a fit for a job we haven't listed?
+              Email us at: jobs@gladly.io
+            </p>
+          </div>
+        </TextPageContent>
+      </Layout>
     )
   }
 }
+
+JobsPage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+}
+
+JobsPage.displayName = 'JobsPage'
 
 export default JobsPage

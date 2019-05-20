@@ -5,8 +5,9 @@ import TextPageContent from 'components/TextPageContent'
 import TextPageHeader from 'components/TextPageHeader'
 import { orderBy } from 'lodash/collection'
 import FinancialsQuarterButton from 'components/FinancialsQuarterButton'
+import Layout from 'components/Layout'
 
-const FinancialsPage = ({ data }) => {
+const FinancialsPage = ({ data, location }) => {
   const financialsEdges = data.allFinancialsYaml.edges
   const sortedFinancialsEdges = orderBy(
     financialsEdges,
@@ -17,37 +18,42 @@ const FinancialsPage = ({ data }) => {
   const openGraphDescription =
     'See our expenses and how much money Tabbers have raised for each charity.'
   return (
-    <div>
-      <Helmet title={'Financials'}>
-        <meta property="og:title" content={openGraphTitle} />
-        <meta property="og:description" content={openGraphDescription} />
-        <meta name="twitter:title" content={openGraphTitle} />
-        <meta name="twitter:description" content={openGraphDescription} />
-      </Helmet>
-      <TextPageContent>
-        <TextPageHeader>Financials</TextPageHeader>
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-          }}
-        >
-          {sortedFinancialsEdges.map(quarter => {
-            return (
-              <FinancialsQuarterButton
-                key={`Q${quarter.node.quarter}${quarter.node.year}`}
-                quarterData={quarter.node}
-              />
-            )
-          })}
-        </div>
-      </TextPageContent>
-    </div>
+    <Layout location={location}>
+      <div>
+        <Helmet title={'Financials'}>
+          <meta property="og:title" content={openGraphTitle} />
+          <meta property="og:description" content={openGraphDescription} />
+          <meta name="twitter:title" content={openGraphTitle} />
+          <meta name="twitter:description" content={openGraphDescription} />
+        </Helmet>
+        <TextPageContent>
+          <TextPageHeader>Financials</TextPageHeader>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+            }}
+          >
+            {sortedFinancialsEdges.map(quarter => {
+              return (
+                <FinancialsQuarterButton
+                  key={`Q${quarter.node.quarter}${quarter.node.year}`}
+                  quarterData={quarter.node}
+                />
+              )
+            })}
+          </div>
+        </TextPageContent>
+      </div>
+    </Layout>
   )
 }
 
 FinancialsPage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
   data: PropTypes.shape({
     allFinancialsYaml: PropTypes.shape({
       edges: PropTypes.arrayOf(
