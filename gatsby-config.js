@@ -19,6 +19,18 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    // Handle server-side rendering MaterialUI styles:
+    // https://github.com/hupe1980/gatsby-plugin-material-ui/tree/master
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        theme: {
+          typography: {
+            useNextVariants: true,
+          },
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
