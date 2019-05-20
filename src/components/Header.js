@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import logoWithText from 'img/logo-with-text.svg'
+import logoWithText from 'src/img/logo-with-text.svg'
 
 class Header extends React.Component {
   headerLogoClick(e) {

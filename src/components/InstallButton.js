@@ -6,10 +6,10 @@ import {
   CHROME_BROWSER,
   FIREFOX_BROWSER,
   UNSUPPORTED_BROWSER,
-} from 'utils/constants'
-import { chromeExtensionURL, firefoxExtensionURL } from 'utils/navigation'
-import redirect from 'utils/redirect'
-import { downloadButtonClick } from 'utils/analytics/logEvent'
+} from 'src/utils/constants'
+import { chromeExtensionURL, firefoxExtensionURL } from 'src/utils/navigation'
+import redirect from 'src/utils/redirect'
+import { downloadButtonClick } from 'src/utils/analytics/logEvent'
 
 class InstallButton extends React.Component {
   constructor(props) {

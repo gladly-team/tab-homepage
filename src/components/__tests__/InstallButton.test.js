@@ -5,9 +5,9 @@ import React from 'react'
 import { mount, shallow } from 'enzyme'
 
 jest.mock('browser-detect')
-jest.mock('utils/location')
-jest.mock('utils/redirect')
-jest.mock('utils/analytics/logEvent')
+jest.mock('src/utils/location')
+jest.mock('src/utils/redirect')
+jest.mock('src/utils/analytics/logEvent')
 
 const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
   return {
@@ -105,7 +105,7 @@ describe('InstallButton', () => {
 
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('firefox', false))
-    const redirect = require('utils/redirect').default
+    const redirect = require('src/utils/redirect').default
 
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
@@ -126,7 +126,7 @@ describe('InstallButton', () => {
 
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
-    const redirect = require('utils/redirect').default
+    const redirect = require('src/utils/redirect').default
 
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
@@ -207,7 +207,7 @@ describe('InstallButton', () => {
 
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('firefox', true))
-    const redirect = require('utils/redirect').default
+    const redirect = require('src/utils/redirect').default
 
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
@@ -228,7 +228,7 @@ describe('InstallButton', () => {
 
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', true))
-    const redirect = require('utils/redirect').default
+    const redirect = require('src/utils/redirect').default
 
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
@@ -249,7 +249,7 @@ describe('InstallButton', () => {
 
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('crios', true))
-    const redirect = require('utils/redirect').default
+    const redirect = require('src/utils/redirect').default
 
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
@@ -328,7 +328,7 @@ describe('InstallButton', () => {
   it('calls downloadButtonClick analytics event on click', async () => {
     expect.assertions(1)
 
-    const downloadButtonClick = require('utils/analytics/logEvent')
+    const downloadButtonClick = require('src/utils/analytics/logEvent')
       .downloadButtonClick
     const InstallButton = require('../InstallButton').default
     const wrapper = mount(<InstallButton />)

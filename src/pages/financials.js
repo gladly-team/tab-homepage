@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import TextPageContent from 'components/TextPageContent'
-import TextPageHeader from 'components/TextPageHeader'
+import TextPageContent from 'src/components/TextPageContent'
+import TextPageHeader from 'src/components/TextPageHeader'
 import { orderBy } from 'lodash/collection'
-import FinancialsQuarterButton from 'components/FinancialsQuarterButton'
-import Layout from 'components/Layout'
+import FinancialsQuarterButton from 'src/components/FinancialsQuarterButton'
+import Layout from 'src/components/Layout'
 
 const FinancialsPage = ({ data, location }) => {
   const financialsEdges = data.allFinancialsYaml.edges

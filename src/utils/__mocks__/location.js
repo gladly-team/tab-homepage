@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { mockWindowLocation } from 'utils/test-utils'
+import { mockWindowLocation } from 'src/utils/test-utils'
 
 const mockLocationUtils = jest.genMockFromModule('../location')
 

@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Button from '@material-ui/core/Button'
 import Helmet from 'react-helmet'
-import Link from 'components/Link'
-import { homeURL } from 'utils/navigation'
+import Link from 'src/components/Link'
+import { homeURL } from 'src/utils/navigation'
 import { withTheme } from '@material-ui/core/styles'
 import styles from './404.module.css'
-import Layout from 'components/Layout'
+import Layout from 'src/components/Layout'
 
 // We're running into one of these problems or a related
 // problem:

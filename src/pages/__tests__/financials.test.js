@@ -3,7 +3,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
-import FinancialsQuarterButton from 'components/FinancialsQuarterButton'
+import FinancialsQuarterButton from 'src/components/FinancialsQuarterButton'
 
 const getMockProps = () => ({
   data: {

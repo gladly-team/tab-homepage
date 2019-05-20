@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { lightestShadingColor } from 'themes/theme'
+import { lightestShadingColor } from 'src/themes/theme'
 
 class Section extends React.Component {
   render() {

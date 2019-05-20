@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Layout from 'components/Layout'
-import Section from 'components/Section'
-import ReviewCarousel from 'components/ReviewCarousel'
-import Review from 'components/Review'
-import InstallButton from 'components/InstallButton'
-import CharitableImpactText from 'components/CharitableImpactText'
-import Link from 'components/Link'
+import Layout from 'src/components/Layout'
+import Section from 'src/components/Section'
+import ReviewCarousel from 'src/components/ReviewCarousel'
+import Review from 'src/components/Review'
+import InstallButton from 'src/components/InstallButton'
+import CharitableImpactText from 'src/components/CharitableImpactText'
+import Link from 'src/components/Link'
 import {
   getAbsoluteURL,
   chromeExtensionURL,
@@ -22,16 +22,16 @@ import {
   pressLATimesURL,
   pressMashableURL,
   pressUSATodayURL,
-} from 'utils/navigation'
-import { lighterTextColor, lightestTextColor } from 'themes/theme'
-import UnsupportedBrowserDialog from 'components/UnsupportedBrowserDialog'
-import MoneyRaisedDisplay from 'components/MoneyRaisedDisplay'
-import localStorageMgr from 'utils/local-storage'
+} from 'src/utils/navigation'
+import { lighterTextColor, lightestTextColor } from 'src/themes/theme'
+import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
+import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
+import localStorageMgr from 'src/utils/local-storage'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
-} from 'utils/constants'
-import { getUrlParameterValue } from 'utils/location'
+} from 'src/utils/constants'
+import { getUrlParameterValue } from 'src/utils/location'
 
 // Icons
 import Star from '@material-ui/icons/Star'
@@ -40,27 +40,27 @@ import Firefox from 'mdi-material-ui/Firefox'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 
 // Images
-import browserLandingPageImg from 'img/browser-rain-trees.png'
-import laptopImg from 'img/laptop.png'
-import waterImg from 'img/water.jpg'
+import browserLandingPageImg from 'src/img/browser-rain-trees.png'
+import laptopImg from 'src/img/laptop.png'
+import waterImg from 'src/img/water.jpg'
 
 // Press logos
-import logoHuffingtonPost from 'img/press/huffington-post-grey.svg'
-import logoUSAToday from 'img/press/usa-today-grey.svg'
-import logoLATimes from 'img/press/los-angeles-times-grey.svg'
-import logoMashable from 'img/press/mashable-grey.svg'
+import logoHuffingtonPost from 'src/img/press/huffington-post-grey.svg'
+import logoUSAToday from 'src/img/press/usa-today-grey.svg'
+import logoLATimes from 'src/img/press/los-angeles-times-grey.svg'
+import logoMashable from 'src/img/press/mashable-grey.svg'
 
 // Reviewer images
-import reviewImgAbbyH from 'img/reviews/abby_h.png'
-import reviewImgAlfonzoG from 'img/reviews/alfonzo_g.png'
-import reviewImgAnaL from 'img/reviews/ana_l.png'
-import reviewImgBenjaminK from 'img/reviews/benjamin_k.png'
-import reviewImgCameronB from 'img/reviews/cameron_b.png'
-import reviewImgChaseR from 'img/reviews/chase_r.png'
-import reviewImgJohnathanB from 'img/reviews/johnathan_b.png'
-import reviewImgLucasN from 'img/reviews/lucas_n.png'
-import reviewImgShayneW from 'img/reviews/shayne_w.png'
-import reviewImgTobyS from 'img/reviews/toby_s.png'
+import reviewImgAbbyH from 'src/img/reviews/abby_h.png'
+import reviewImgAlfonzoG from 'src/img/reviews/alfonzo_g.png'
+import reviewImgAnaL from 'src/img/reviews/ana_l.png'
+import reviewImgBenjaminK from 'src/img/reviews/benjamin_k.png'
+import reviewImgCameronB from 'src/img/reviews/cameron_b.png'
+import reviewImgChaseR from 'src/img/reviews/chase_r.png'
+import reviewImgJohnathanB from 'src/img/reviews/johnathan_b.png'
+import reviewImgLucasN from 'src/img/reviews/lucas_n.png'
+import reviewImgShayneW from 'src/img/reviews/shayne_w.png'
+import reviewImgTobyS from 'src/img/reviews/toby_s.png'
 
 import styles from './index.module.css'
 

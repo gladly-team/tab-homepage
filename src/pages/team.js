@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import TextPageContent from 'components/TextPageContent'
-import TextPageHeader from 'components/TextPageHeader'
-import Link from 'components/Link'
-import { jobsURL } from 'utils/navigation'
-import { secondaryMainColor } from 'themes/theme'
-import imgAlex from 'img/team/alex.jpg'
-import imgKevin from 'img/team/kevin.jpg'
-import Layout from 'components/Layout'
+import TextPageContent from 'src/components/TextPageContent'
+import TextPageHeader from 'src/components/TextPageHeader'
+import Link from 'src/components/Link'
+import { jobsURL } from 'src/utils/navigation'
+import { secondaryMainColor } from 'src/themes/theme'
+import imgAlex from 'src/img/team/alex.jpg'
+import imgKevin from 'src/img/team/kevin.jpg'
+import Layout from 'src/components/Layout'
 
 const TeamPage = ({ location }) => {
   const team = [

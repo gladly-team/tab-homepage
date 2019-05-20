@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { primaryMainColor } from 'themes/theme'
-import impactTexts from 'utils/impactTexts'
+import { primaryMainColor } from 'src/themes/theme'
+import impactTexts from 'src/utils/impactTexts'
 
 // Using with CSSTransition:
 // https://github.com/css-modules/css-modules/issues/84#issuecomment-226731145
 // https://reactcommunity.org/react-transition-group/
-import styles from 'components/CharitableImpactText.module.css'
+import styles from 'src/components/CharitableImpactText.module.css'
 
 class CharitableImpactText extends React.Component {
   constructor(props) {

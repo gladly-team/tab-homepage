@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import TextPageContent from 'components/TextPageContent'
-import TextPageHeader from 'components/TextPageHeader'
-import Link from 'components/Link'
-import { contactUsURL, termsURL } from 'utils/navigation'
-import Layout from 'components/Layout'
+import TextPageContent from 'src/components/TextPageContent'
+import TextPageHeader from 'src/components/TextPageHeader'
+import Link from 'src/components/Link'
+import { contactUsURL, termsURL } from 'src/utils/navigation'
+import Layout from 'src/components/Layout'
 
 const openGraphTitle = 'Privacy Policy - Tab for a Cause'
 const openGraphDescription =

@@ -2,18 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Divider from '@material-ui/core/Divider'
-import { lightestTextColor } from 'themes/theme'
-import TextPageContent from 'components/TextPageContent'
-import TextPageHeader from 'components/TextPageHeader'
-import Link from 'components/Link'
+import { lightestTextColor } from 'src/themes/theme'
+import TextPageContent from 'src/components/TextPageContent'
+import TextPageHeader from 'src/components/TextPageHeader'
+import Link from 'src/components/Link'
 import {
   adblockerWhitelistingURL,
   externalContactUsURL,
   financialsURL,
   facebookPageURL,
   twitterPageURL,
-} from 'utils/navigation'
-import Layout from 'components/Layout'
+} from 'src/utils/navigation'
+import Layout from 'src/components/Layout'
 
 const ContactPage = ({ location }) => {
   const pageTitle = 'Contact Us'

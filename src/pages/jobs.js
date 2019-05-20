@@ -1,21 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import TextPageContent from 'components/TextPageContent'
-import TextPageHeader from 'components/TextPageHeader'
+import TextPageContent from 'src/components/TextPageContent'
+import TextPageHeader from 'src/components/TextPageHeader'
 import Paper from '@material-ui/core/Paper'
 import {
   lighterTextColor,
   secondaryMainColor,
   secondaryContrastTextColor,
-} from 'themes/theme'
+} from 'src/themes/theme'
 import Explore from '@material-ui/icons/Explore'
 import Favorite from '@material-ui/icons/Favorite'
 import Lock from '@material-ui/icons/Lock'
 import Restaurant from '@material-ui/icons/Restaurant'
 import SentimentVerySatisfied from '@material-ui/icons/SentimentVerySatisfied'
 import ShowChart from '@material-ui/icons/ShowChart'
-import Layout from 'components/Layout'
+import Layout from 'src/components/Layout'
 
 const teamValues = [
   {
