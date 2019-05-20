@@ -13,7 +13,7 @@ import Header from 'src/components/Header'
 import Footer from 'src/components/Footer'
 
 import { MuiThemeProvider } from '@material-ui/core/styles'
-import defaultTheme from '../themes/theme'
+import defaultTheme from 'src/themes/theme'
 import Favicon from 'src/img/logo32x32.png'
 import openGraphImg from 'src/img/opengraph-img.png'
 import { domain, getAbsoluteURL } from 'src/utils/navigation'
