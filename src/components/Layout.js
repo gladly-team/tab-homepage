@@ -11,7 +11,6 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
-import ReactfulSnippet from 'components/ReactfulSnippet'
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import defaultTheme from '../themes/theme'
@@ -94,7 +93,6 @@ const LayoutContent = props => {
             {this.props.children}
           </div>
         </div>
-        <ReactfulSnippet />
         <Footer style={{ flexShrink: 0 }} />
       </div>
     </MuiThemeProvider>
