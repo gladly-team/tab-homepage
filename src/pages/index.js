@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Layout from 'components/layout'
+import Layout from 'components/Layout'
 import Section from 'components/Section'
 import ReviewCarousel from 'components/ReviewCarousel'
 import Review from 'components/Review'
