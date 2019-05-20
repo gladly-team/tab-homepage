@@ -25,7 +25,7 @@ export const LayoutContent = props => {
   const absoluteUrl = getAbsoluteURL(location.pathname)
   const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
   return (
-    <MuiThemeProvider theme={defaultTheme} sheetsManager={new Map()}>
+    <MuiThemeProvider theme={defaultTheme}>
       <div
         style={{
           display: 'flex',
