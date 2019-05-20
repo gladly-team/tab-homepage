@@ -90,7 +90,7 @@ const LayoutContent = props => {
               paddingTop: 0,
             }}
           >
-            {this.props.children}
+            {props.children}
           </div>
         </div>
         <Footer style={{ flexShrink: 0 }} />
@@ -100,7 +100,10 @@ const LayoutContent = props => {
 }
 
 LayoutContent.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
   data: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
@@ -134,9 +137,23 @@ const Layout = props => (
         }
       }
     `}
-    render={data => <Layout data={data} {...props} />}
+    render={data => (
+      <Layout data={data} {...props}>
+        {props.children}
+      </Layout>
+    )}
   />
 )
+
+Layout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+}
 
 Layout.displayName = 'Layout'
 
