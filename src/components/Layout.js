@@ -136,9 +136,9 @@ const Layout = props => (
       }
     `}
     render={data => (
-      <Layout data={data} {...props}>
+      <LayoutContent data={data} {...props}>
         {props.children}
-      </Layout>
+      </LayoutContent>
     )}
   />
 )
