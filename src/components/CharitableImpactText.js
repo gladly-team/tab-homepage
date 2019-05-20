@@ -76,12 +76,12 @@ class CharitableImpactText extends React.Component {
             key={key}
             timeout={140}
             classNames={{
-              appear: styles['impact-text-appear'],
-              appearActive: styles['impact-text-appear-active'],
-              enter: styles['impact-text-enter'],
-              enterActive: styles['impact-text-enter-active'],
-              exit: styles['impact-text-exit'],
-              exitActive: styles['impact-text-exit-active'],
+              appear: styles.impactTextAppear,
+              appearActive: styles.impactTextAppearActive,
+              enter: styles.impactTextEnter,
+              enterActive: styles.impactTextEnterActive,
+              exit: styles.impactTextExit,
+              exitActive: styles.impactTextExitActive,
             }}
           >
             <span

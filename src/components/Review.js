@@ -16,7 +16,7 @@ class Review extends React.Component {
     ))
     return (
       <div
-        className={styles['review-container']} // responsive styling
+        className={styles.reviewContainer} // responsive styling
         style={{
           padding: 10,
           display: 'flex',
@@ -24,7 +24,7 @@ class Review extends React.Component {
         }}
       >
         <Paper
-          className={styles['review-paper']} // responsive styling
+          className={styles.reviewPaper} // responsive styling
           style={Object.assign(
             {},
             {

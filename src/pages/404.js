@@ -60,7 +60,7 @@ class NotFoundPage extends React.Component {
             <h1>Oops! Nothing here.</h1>
             <p style={{ marginBottom: 0, padding: '0px 20px' }}>
               Sorry about that! You probably weren't looking for cake, but have
-              some cake anyway <span className={styles['cake-emoji']} />
+              some cake anyway <span className={styles.cakeEmoji} />
             </p>
             <Link to={homeURL} style={{ margin: 18 }}>
               <Button variant="raised" color="primary" size="large">

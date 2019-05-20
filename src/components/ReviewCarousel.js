@@ -12,7 +12,7 @@ class ReviewCarousel extends React.Component {
     // review.
     return (
       <div
-        className={styles['carousel-container']} // responsive styling
+        className={styles.carouselContainer} // responsive styling
         style={{
           display: 'block',
           paddingBottom: 20,
