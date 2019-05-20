@@ -66,6 +66,7 @@ module.exports = {
         pixelId: '1813501258922708',
       },
     },
+    // TODO: reenable before deploying to prod
     // {
     //   resolve: 'gatsby-plugin-sentry',
     //   options: {
