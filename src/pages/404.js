@@ -70,4 +70,4 @@ NotFoundPage.defaultProps = {
   theme: {},
 }
 
-export default withTheme()(NotFoundPage)
+export default withTheme(NotFoundPage)
