@@ -31,6 +31,7 @@ export const LayoutContent = props => {
           display: 'flex',
           flexDirection: 'column',
           height: '100vh',
+          background: '#fff',
         }}
       >
         <div

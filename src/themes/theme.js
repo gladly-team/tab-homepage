@@ -30,6 +30,11 @@ export const baseFontSize = 16
 
 const theme = createMuiTheme({
   palette: {
+    background: {
+      // This value changes the HTML background color:
+      // https://material-ui.com/api/css-baseline/
+      default: '#fff',
+    },
     primary: {
       // light: will be calculated from palette.primary.main,
       main: primaryMainColor,
