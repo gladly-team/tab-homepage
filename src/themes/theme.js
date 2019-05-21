@@ -48,6 +48,9 @@ const theme = createMuiTheme({
       contrastText: secondaryContrastTextColor,
     },
   },
+  shape: {
+    borderRadius: 2,
+  },
   typography: {
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     fontSize: baseFontSize,
