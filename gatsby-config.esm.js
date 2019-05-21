@@ -68,12 +68,11 @@ module.exports = {
         pixelId: '1813501258922708',
       },
     },
-    // TODO: reenable before deploying to prod
-    // {
-    //   resolve: 'gatsby-plugin-sentry',
-    //   options: {
-    //     dsn: 'https://8cb64ec80165437b98905b07296ddc3f@sentry.io/1232334',
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: 'https://8cb64ec80165437b98905b07296ddc3f@sentry.io/1232334',
+      },
+    },
   ],
 }
