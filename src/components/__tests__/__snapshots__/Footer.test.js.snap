@@ -12,7 +12,7 @@ exports[`Footer matches expected snapshot 1`] = `
     }
   }
 >
-  <WithStyles(Divider)
+  <WithStyles(ForwardRef(Divider))
     style={
       Object {
         "marginBottom": 20,
