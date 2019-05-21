@@ -12,7 +12,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Header from 'src/components/Header'
 import Footer from 'src/components/Footer'
 
-import { MuiThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider } from '@material-ui/styles'
 import defaultTheme from 'src/themes/theme'
 import Favicon from 'src/img/logo32x32.png'
 import openGraphImg from 'src/img/opengraph-img.png'
@@ -25,7 +25,7 @@ export const LayoutContent = props => {
   const absoluteUrl = getAbsoluteURL(location.pathname)
   const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
   return (
-    <MuiThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={defaultTheme}>
       <div
         style={{
           display: 'flex',
@@ -94,7 +94,7 @@ export const LayoutContent = props => {
         </div>
         <Footer style={{ flexShrink: 0 }} />
       </div>
-    </MuiThemeProvider>
+    </ThemeProvider>
   )
 }
 
