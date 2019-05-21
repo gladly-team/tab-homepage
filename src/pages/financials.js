@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
