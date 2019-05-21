@@ -21,6 +21,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    // FIXME: the theme is still imperfect. May want to use MUI v4 and "next"
+    //   version of this plugin.
     // Handle server-side rendering MaterialUI styles:
     // https://github.com/hupe1980/gatsby-plugin-material-ui/tree/master
     {
