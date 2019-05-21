@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button'
 import Helmet from 'react-helmet'
 import Link from 'src/components/Link'
 import { homeURL } from 'src/utils/navigation'
-import { withTheme } from '@material-ui/core/styles'
+import { withTheme } from '@material-ui/styles'
 import styles from './404.module.css'
 import Layout from 'src/components/Layout'
 
@@ -70,4 +70,4 @@ NotFoundPage.defaultProps = {
   theme: {},
 }
 
-export default withTheme()(NotFoundPage)
+export default withTheme(NotFoundPage)

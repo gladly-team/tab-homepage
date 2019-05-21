@@ -2,12 +2,14 @@
 /* globals setImmediate */
 
 import React from 'react'
-import { mount, shallow } from 'enzyme'
+import { shallow } from 'enzyme'
+import Button from '@material-ui/core/Button'
 
 jest.mock('browser-detect')
 jest.mock('src/utils/location')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/analytics/logEvent')
+jest.mock('@material-ui/core/Button')
 
 const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
   return {
@@ -19,7 +21,11 @@ const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
   }
 }
 
-// Helper to simulate a click on the button, given the Enzyme wrapper
+// Helper to simulate a click on a button rendered with `mount`.
+// Note: Enzyme 3.9.0 apparently doesn't support `mount` with
+// hooks, and MUI v4 uses hooks. Instead of mounting, our tests
+// currently just call the Button component's "onClick" prop.
+// eslint-disable-next-line no-unused-vars
 const clickButton = async wrapper => {
   wrapper
     .find('button')
@@ -30,8 +36,15 @@ const clickButton = async wrapper => {
   await new Promise(resolve => setImmediate(resolve))
 }
 
+// Helper to simulate a click on a shallow-rendered button.
+const clickButtonShallow = async wrapper => {
+  wrapper.find(Button).prop('onClick')()
+
+  // Flush all promises
+  await new Promise(resolve => setImmediate(resolve))
+}
+
 afterEach(() => {
-  jest.resetModules()
   jest.clearAllMocks()
 })
 
@@ -49,10 +62,10 @@ describe('InstallButton', () => {
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
 
     const InstallButton = require('../InstallButton').default
-    const wrapper = mount(<InstallButton />)
+    const wrapper = shallow(<InstallButton />)
     expect(
       wrapper
-        .find('button')
+        .find(Button)
         .first()
         .text()
     ).toEqual('Add to Chrome')
@@ -63,10 +76,10 @@ describe('InstallButton', () => {
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('firefox', false))
 
     const InstallButton = require('../InstallButton').default
-    const wrapper = mount(<InstallButton />)
+    const wrapper = shallow(<InstallButton />)
     expect(
       wrapper
-        .find('button')
+        .find(Button)
         .first()
         .text()
     ).toEqual('Add to Firefox')
@@ -77,10 +90,10 @@ describe('InstallButton', () => {
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('other', false))
 
     const InstallButton = require('../InstallButton').default
-    const wrapper = mount(<InstallButton />)
+    const wrapper = shallow(<InstallButton />)
     expect(
       wrapper
-        .find('button')
+        .find(Button)
         .first()
         .text()
     ).toEqual('Get it Now')
@@ -91,10 +104,10 @@ describe('InstallButton', () => {
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', true))
 
     const InstallButton = require('../InstallButton').default
-    const wrapper = mount(<InstallButton />)
+    const wrapper = shallow(<InstallButton />)
     expect(
       wrapper
-        .find('button')
+        .find(Button)
         .first()
         .text()
     ).toEqual('Get it Now')
@@ -109,12 +122,12 @@ describe('InstallButton', () => {
 
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
-    const wrapper = mount(
+    const wrapper = shallow(
       <InstallButton
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    await clickButton(wrapper)
+    await clickButtonShallow(wrapper)
     expect(redirect).toHaveBeenCalledWith(
       'https://addons.mozilla.org/en-US/firefox/addon/tab-for-a-cause/'
     )
@@ -130,12 +143,12 @@ describe('InstallButton', () => {
 
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
-    const wrapper = mount(
+    const wrapper = shallow(
       <InstallButton
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    await clickButton(wrapper)
+    await clickButtonShallow(wrapper)
     expect(redirect).toHaveBeenCalledWith(
       'https://chrome.google.com/webstore/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
     )
@@ -153,12 +166,12 @@ describe('InstallButton', () => {
 
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
     const InstallButton = require('../InstallButton').default
-    const wrapper = mount(
+    const wrapper = shallow(
       <InstallButton
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    await clickButton(wrapper)
+    await clickButtonShallow(wrapper)
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
 
@@ -173,12 +186,12 @@ describe('InstallButton', () => {
 
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
     const InstallButton = require('../InstallButton').default
-    const wrapper = mount(
+    const wrapper = shallow(
       <InstallButton
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    await clickButton(wrapper)
+    await clickButtonShallow(wrapper)
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
 
@@ -193,12 +206,12 @@ describe('InstallButton', () => {
 
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
     const InstallButton = require('../InstallButton').default
-    const wrapper = mount(
+    const wrapper = shallow(
       <InstallButton
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    await clickButton(wrapper)
+    await clickButtonShallow(wrapper)
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
 
@@ -211,12 +224,12 @@ describe('InstallButton', () => {
 
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
-    const wrapper = mount(
+    const wrapper = shallow(
       <InstallButton
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    await clickButton(wrapper)
+    await clickButtonShallow(wrapper)
     expect(redirect).toHaveBeenCalledWith(
       'https://addons.mozilla.org/en-US/firefox/addon/tab-for-a-cause/'
     )
@@ -232,12 +245,12 @@ describe('InstallButton', () => {
 
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
-    const wrapper = mount(
+    const wrapper = shallow(
       <InstallButton
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    await clickButton(wrapper)
+    await clickButtonShallow(wrapper)
     expect(redirect).toHaveBeenCalledWith(
       'https://chrome.google.com/webstore/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
     )
@@ -253,12 +266,12 @@ describe('InstallButton', () => {
 
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
-    const wrapper = mount(
+    const wrapper = shallow(
       <InstallButton
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    await clickButton(wrapper)
+    await clickButtonShallow(wrapper)
     expect(redirect).toHaveBeenCalledWith(
       'https://chrome.google.com/webstore/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
     )
@@ -276,12 +289,12 @@ describe('InstallButton', () => {
 
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
     const InstallButton = require('../InstallButton').default
-    const wrapper = mount(
+    const wrapper = shallow(
       <InstallButton
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    await clickButton(wrapper)
+    await clickButtonShallow(wrapper)
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
 
@@ -296,12 +309,12 @@ describe('InstallButton', () => {
 
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
     const InstallButton = require('../InstallButton').default
-    const wrapper = mount(
+    const wrapper = shallow(
       <InstallButton
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    await clickButton(wrapper)
+    await clickButtonShallow(wrapper)
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
 
@@ -316,12 +329,12 @@ describe('InstallButton', () => {
 
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
     const InstallButton = require('../InstallButton').default
-    const wrapper = mount(
+    const wrapper = shallow(
       <InstallButton
         onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
       />
     )
-    await clickButton(wrapper)
+    await clickButtonShallow(wrapper)
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
 
@@ -331,8 +344,8 @@ describe('InstallButton', () => {
     const downloadButtonClick = require('src/utils/analytics/logEvent')
       .downloadButtonClick
     const InstallButton = require('../InstallButton').default
-    const wrapper = mount(<InstallButton />)
-    await clickButton(wrapper)
+    const wrapper = shallow(<InstallButton />)
+    await clickButtonShallow(wrapper)
     expect(downloadButtonClick).toHaveBeenCalled()
   })
 })
