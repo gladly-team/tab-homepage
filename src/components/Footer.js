@@ -1,15 +1,15 @@
 import React from 'react'
-import Divider from 'material-ui/Divider'
+import Divider from '@material-ui/core/Divider'
 import PropTypes from 'prop-types'
 import FacebookBox from 'mdi-material-ui/FacebookBox'
 import Twitter from 'mdi-material-ui/Twitter'
 
-import logoGrey from 'img/logo-grey.svg'
+import logoGrey from 'src/img/logo-grey.svg'
 import {
   lightestShadingColor,
   lighterTextColor,
   lightestTextColor,
-} from 'themes/theme'
+} from 'src/themes/theme'
 import {
   adblockerWhitelistingURL,
   advertisingSelfServeURL,
@@ -22,9 +22,9 @@ import {
   teamURL,
   termsURL,
   twitterPageURL,
-} from 'utils/navigation'
-import Link from 'components/Link'
-import IconWrapper from 'components/IconWrapper'
+} from 'src/utils/navigation'
+import Link from 'src/components/Link'
+import IconWrapper from 'src/components/IconWrapper'
 
 class Footer extends React.Component {
   render() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
-import { commaFormatted, currencyFormatted } from 'utils/formatting'
+import { commaFormatted, currencyFormatted } from 'src/utils/formatting'
 
 // These must match the new tab page's numbers.
 // Eventually call the API instead of hard-coding.

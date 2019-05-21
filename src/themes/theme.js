@@ -1,4 +1,4 @@
-import { createMuiTheme } from 'material-ui/styles'
+import { createMuiTheme } from '@material-ui/core/styles'
 
 // Text on white background
 export const textColor = 'rgba(33, 33, 33, 0.82)'
@@ -30,6 +30,11 @@ export const baseFontSize = 16
 
 const theme = createMuiTheme({
   palette: {
+    background: {
+      // This value changes the HTML background color:
+      // https://material-ui.com/api/css-baseline/
+      default: '#fff',
+    },
     primary: {
       // light: will be calculated from palette.primary.main,
       main: primaryMainColor,
@@ -43,9 +48,13 @@ const theme = createMuiTheme({
       contrastText: secondaryContrastTextColor,
     },
   },
+  shape: {
+    borderRadius: 2,
+  },
   typography: {
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     fontSize: baseFontSize,
+    useNextVariants: true,
   },
   overrides: {
     MuiButton: {

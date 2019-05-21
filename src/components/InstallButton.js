@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from 'material-ui/Button'
+import Button from '@material-ui/core/Button'
 import detectBrowser from 'browser-detect'
 import {
   CHROME_BROWSER,
   FIREFOX_BROWSER,
   UNSUPPORTED_BROWSER,
-} from 'utils/constants'
-import { chromeExtensionURL, firefoxExtensionURL } from 'utils/navigation'
-import redirect from 'utils/redirect'
-import { downloadButtonClick } from 'utils/analytics/logEvent'
+} from 'src/utils/constants'
+import { chromeExtensionURL, firefoxExtensionURL } from 'src/utils/navigation'
+import redirect from 'src/utils/redirect'
+import { downloadButtonClick } from 'src/utils/analytics/logEvent'
 
 class InstallButton extends React.Component {
   constructor(props) {
@@ -115,7 +115,7 @@ class InstallButton extends React.Component {
     const buttonText = this.getButtonText()
     return (
       <Button
-        variant="raised"
+        variant="contained"
         color="primary"
         onClick={this.onClick.bind(this)}
         size="large"

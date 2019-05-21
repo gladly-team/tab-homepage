@@ -19,7 +19,7 @@ exports[`Header matches expected snapshot 1`] = `
       }
     }
   >
-    <GatsbyLink
+    <mockConstructor
       onClick={[Function]}
       to="/"
     >
@@ -31,7 +31,7 @@ exports[`Header matches expected snapshot 1`] = `
           }
         }
       />
-    </GatsbyLink>
+    </mockConstructor>
   </div>
 </div>
 `;

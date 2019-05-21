@@ -1,4 +1,4 @@
-/* globals exports process */
+/* globals process */
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
  *
@@ -10,7 +10,7 @@ import { oneLine } from 'common-tags'
 
 // Google GST (gtag.js):
 // https://github.com/gatsbyjs/gatsby/issues/8341
-exports.onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents }) => {
   const GST_ID = 'AW-1013744060'
   if (process.env.NODE_ENV === `production`) {
     setHeadComponents([

@@ -1,17 +1,27 @@
 {
   "presets": [
-    "react",
-    "env"
+    "@babel/preset-react",
+    "@babel/preset-env",
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": [">0.25%", "not dead"]
+        }
+      }
+    ]
   ],
   "plugins": [
     ["module-resolver", {
       "root": ["./"],
       "alias": {
-        "components": "./src/components",
-        "img": "./src/img",
-        "utils": "./src/utils",
-        "themes": "./src/themes"
+        "src": "./src/"
       }
-    }]
+    }],
+    ["@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ],
   ]
 }

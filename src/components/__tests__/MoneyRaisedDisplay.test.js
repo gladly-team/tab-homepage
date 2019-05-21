@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import MoneyRaised from 'components/MoneyRaised'
-jest.mock('components/MoneyRaised')
+import MoneyRaised from 'src/components/MoneyRaised'
+jest.mock('src/components/MoneyRaised')
 
 describe('MoneyRaisedDisplay', () => {
   it('renders without error', () => {

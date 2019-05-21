@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { primaryMainColor } from 'themes/theme'
-import impactTexts from 'utils/impactTexts'
+import { primaryMainColor } from 'src/themes/theme'
+import impactTexts from 'src/utils/impactTexts'
 
 // Using with CSSTransition:
 // https://github.com/css-modules/css-modules/issues/84#issuecomment-226731145
 // https://reactcommunity.org/react-transition-group/
-import styles from 'components/CharitableImpactText.module.css'
+import styles from 'src/components/CharitableImpactText.module.css'
 
 class CharitableImpactText extends React.Component {
   constructor(props) {
@@ -76,12 +76,12 @@ class CharitableImpactText extends React.Component {
             key={key}
             timeout={140}
             classNames={{
-              appear: styles['impact-text-appear'],
-              appearActive: styles['impact-text-appear-active'],
-              enter: styles['impact-text-enter'],
-              enterActive: styles['impact-text-enter-active'],
-              exit: styles['impact-text-exit'],
-              exitActive: styles['impact-text-exit-active'],
+              appear: styles.impactTextAppear,
+              appearActive: styles.impactTextAppearActive,
+              enter: styles.impactTextEnter,
+              enterActive: styles.impactTextEnterActive,
+              exit: styles.impactTextExit,
+              exitActive: styles.impactTextExitActive,
             }}
           >
             <span

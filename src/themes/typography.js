@@ -53,4 +53,7 @@ const typography = new Typography({
   }),
 })
 
+// https://www.gatsbyjs.org/docs/migrating-from-v1-to-v2/#typographyjs-plugin-config-changes
+export const { rhythm, scale } = typography
+
 export default typography

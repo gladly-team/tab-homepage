@@ -3,9 +3,9 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 
-jest.mock('gatsby-link')
+jest.mock('gatsby')
 
 afterEach(() => {
   jest.clearAllMocks()

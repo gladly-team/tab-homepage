@@ -1,6 +1,6 @@
 import React from 'react'
-import MoneyRaised from 'components/MoneyRaised'
-import { lightestTextColor } from 'themes/theme'
+import MoneyRaised from 'src/components/MoneyRaised'
+import { lightestTextColor } from 'src/themes/theme'
 
 class MoneyRaisedDisplay extends React.Component {
   constructor(props) {

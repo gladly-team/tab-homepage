@@ -2,9 +2,9 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import impactTexts from 'utils/impactTexts'
+import impactTexts from 'src/utils/impactTexts'
 
-jest.mock('utils/impactTexts', () => {
+jest.mock('src/utils/impactTexts', () => {
   return [
     'preserve oceans',
     'feed children',

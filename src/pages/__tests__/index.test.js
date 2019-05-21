@@ -2,12 +2,19 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import localStorageMgr from 'utils/local-storage'
-import { getAbsoluteURL } from 'utils/navigation'
+import localStorageMgr from 'src/utils/local-storage'
+import { getAbsoluteURL } from 'src/utils/navigation'
 
-jest.mock('utils/local-storage')
-jest.mock('utils/location')
-jest.mock('utils/navigation')
+jest.mock('src/utils/local-storage')
+jest.mock('src/utils/location')
+jest.mock('src/utils/navigation')
+
+const getMockProps = () => ({
+  location: {
+    pathname: '/',
+  },
+  pageContext: {},
+})
 
 afterEach(() => {
   jest.clearAllMocks()
@@ -17,15 +24,17 @@ afterEach(() => {
 describe('index page', () => {
   it('renders without error', () => {
     const IndexPage = require('../index').default
-    shallow(<IndexPage />)
+    shallow(<IndexPage {...getMockProps()} />)
   })
 
   it('stores the referrer ID in local storage when it is a vanity URL', () => {
     const IndexPage = require('../index').default
 
-    // Gatsby will pass a referrer in the pathContext prop if it's
+    // Gatsby will pass a referrer in the pageContext prop if it's
     // a page created for a vanity referrer URL.
-    shallow(<IndexPage pathContext={{ referrer: { id: 123 } }} />)
+    const mockProps = getMockProps()
+    mockProps.pageContext = { referrer: { id: 123 } }
+    shallow(<IndexPage {...mockProps} />)
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'tab.referralData.referringChannel',
       123
@@ -35,14 +44,17 @@ describe('index page', () => {
 
   it('does not store a referrer ID in local storage when it is not a vanity URL', () => {
     const IndexPage = require('../index').default
-    shallow(<IndexPage pathContext={{}} />)
+    const mockProps = getMockProps()
+    mockProps.pageContext = {}
+    shallow(<IndexPage {...mockProps} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
   it('stores the referrer ID in local storage when it is included as a URL parameter', () => {
     const IndexPage = require('../index').default
 
-    const getUrlParameterValue = require('utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation(param => {
       switch (param) {
         case 'r':
@@ -52,7 +64,7 @@ describe('index page', () => {
       }
     })
 
-    shallow(<IndexPage />)
+    shallow(<IndexPage {...getMockProps()} />)
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'tab.referralData.referringChannel',
       234
@@ -63,17 +75,19 @@ describe('index page', () => {
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const IndexPage = require('../index').default
 
-    const getUrlParameterValue = require('utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
-    shallow(<IndexPage />)
+    shallow(<IndexPage {...getMockProps()} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
   it('does not store a referrer ID in local storage when the URL param referrer ID value is not an integer', () => {
     const IndexPage = require('../index').default
 
-    const getUrlParameterValue = require('utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation(param => {
       switch (param) {
         case 'r':
@@ -83,14 +97,14 @@ describe('index page', () => {
       }
     })
 
-    shallow(<IndexPage />)
+    shallow(<IndexPage {...getMockProps()} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
   it('sets the canonical URL', () => {
     const IndexPage = require('../index').default
     getAbsoluteURL.mockReturnValue('https://somewebsite.com/')
-    const wrapper = shallow(<IndexPage />)
+    const wrapper = shallow(<IndexPage {...getMockProps()} />)
     const elem = wrapper.find('link[rel="canonical"]')
     expect(elem.exists()).toBe(true)
     expect(elem.prop('href')).toBe('https://somewebsite.com/')
@@ -98,7 +112,8 @@ describe('index page', () => {
 
   it('stores the referring user in local storage when it is included as a URL parameter', () => {
     const IndexPage = require('../index').default
-    const getUrlParameterValue = require('utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation(param => {
       switch (param) {
         case 'u':
@@ -108,7 +123,7 @@ describe('index page', () => {
       }
     })
 
-    shallow(<IndexPage />)
+    shallow(<IndexPage {...getMockProps()} />)
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'tab.referralData.referringUser',
       'bobert'
@@ -118,10 +133,11 @@ describe('index page', () => {
 
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const IndexPage = require('../index').default
-    const getUrlParameterValue = require('utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
-    shallow(<IndexPage />)
+    shallow(<IndexPage {...getMockProps()} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 })

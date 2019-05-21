@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Divider from 'material-ui/Divider'
-import { lightestTextColor } from 'themes/theme'
+import Divider from '@material-ui/core/Divider'
+import { lightestTextColor } from 'src/themes/theme'
 
 class TextPageHeader extends React.Component {
   render() {

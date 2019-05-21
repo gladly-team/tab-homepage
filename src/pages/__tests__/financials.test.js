@@ -3,9 +3,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
-import FinancialsQuarterButton from 'components/FinancialsQuarterButton'
+import FinancialsQuarterButton from 'src/components/FinancialsQuarterButton'
 
-const props = {
+const getMockProps = () => ({
   data: {
     allFinancialsYaml: {
       edges: [
@@ -26,31 +26,34 @@ const props = {
       ],
     },
   },
-}
+  location: {
+    pathname: '/foo/',
+  },
+})
 
 describe('financials page', () => {
   it('renders without error', () => {
     const FinancialsPage = require('../financials').default
-    shallow(<FinancialsPage {...props} />)
+    shallow(<FinancialsPage {...getMockProps()} />)
   })
 
   it('sets the page title using Helmet', () => {
     const FinancialsPage = require('../financials').default
-    const wrapper = shallow(<FinancialsPage {...props} />)
+    const wrapper = shallow(<FinancialsPage {...getMockProps()} />)
     const elem = wrapper.find(Helmet)
     expect(elem.prop('title')).toBe('Financials')
   })
 
   it('sets the open graph title', () => {
     const FinancialsPage = require('../financials').default
-    const wrapper = shallow(<FinancialsPage {...props} />)
+    const wrapper = shallow(<FinancialsPage {...getMockProps()} />)
     const elem = wrapper.find('meta[property="og:title"]')
     expect(elem.prop('content')).toBe('Financials - Tab for a Cause')
   })
 
   it('sets the open graph description', () => {
     const FinancialsPage = require('../financials').default
-    const wrapper = shallow(<FinancialsPage {...props} />)
+    const wrapper = shallow(<FinancialsPage {...getMockProps()} />)
     const elem = wrapper.find('meta[property="og:description"]')
     expect(elem.prop('content')).toBe(
       'See our expenses and how much money Tabbers have raised for each charity.'
@@ -59,7 +62,7 @@ describe('financials page', () => {
 
   it('renders two FinancialsQuarterButtons', () => {
     const FinancialsPage = require('../financials').default
-    const wrapper = shallow(<FinancialsPage {...props} />)
+    const wrapper = shallow(<FinancialsPage {...getMockProps()} />)
     expect(wrapper.find(FinancialsQuarterButton).length).toBe(2)
   })
 })

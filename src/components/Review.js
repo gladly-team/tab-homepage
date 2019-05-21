@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Avatar, Paper } from 'material-ui'
+import Paper from '@material-ui/core/Paper'
+import Avatar from '@material-ui/core/Avatar'
 import Star from '@material-ui/icons/Star'
 import { range } from 'lodash/util'
-import { lightestTextColor } from 'themes/theme'
+import { lightestTextColor } from 'src/themes/theme'
 import styles from './Review.module.css'
 
 class Review extends React.Component {
@@ -15,7 +16,7 @@ class Review extends React.Component {
     ))
     return (
       <div
-        className={styles['review-container']} // responsive styling
+        className={styles.reviewContainer} // responsive styling
         style={{
           padding: 10,
           display: 'flex',
@@ -23,7 +24,7 @@ class Review extends React.Component {
         }}
       >
         <Paper
-          className={styles['review-paper']} // responsive styling
+          className={styles.reviewPaper} // responsive styling
           style={Object.assign(
             {},
             {
