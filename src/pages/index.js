@@ -234,7 +234,7 @@ class IndexPage extends React.Component {
                     marginBottom: 0,
                   }}
                 >
-                  170,000+ people are Tabbing on Chrome
+                  215,000+ people are Tabbing on Chrome
                 </p>
                 <div
                   style={{
