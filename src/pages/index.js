@@ -380,7 +380,7 @@ class IndexPage extends React.Component {
               <h1>A new tab you'll fall in love with</h1>
               <p>
                 Browse better with gorgeous photos, notes, to-do lists, and
-                more, all just a new tab away.
+                more—all just a new tab away.
               </p>
             </div>
             <img
