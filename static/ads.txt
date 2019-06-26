@@ -50,11 +50,11 @@ coxmt.com, 2000067997702, RESELLER
 # Sovrn
 sovrn.com, 240713, DIRECT, fafdf38b16bf6b2b
 lijit.com, 240713, DIRECT, fafdf38b16bf6b2b
+appnexus.com, 1360, RESELLER, f5ab79cb980f11d1
 gumgum.com, 11645, RESELLER, ffdef49475d318a9
-openx.com, 537120960, RESELLER
-openx.com, 83499, RESELLER
-openx.com, 538959099, RESELLER
-pubmatic.com, 137711, RESELLER
-pubmatic.com, 156212, RESELLER
-pubmatic.com, 62483, RESELLER
-contextweb.com, 558511, RESELLER
+openx.com, 538959099, RESELLER, 6a698e2ec38604c6
+openx.com, 539924617, RESELLER, 6a698e2ec38604c6
+pubmatic.com, 137711, RESELLER, 5d62403b186f2ace
+pubmatic.com, 156212, RESELLER, 5d62403b186f2ace
+pubmatic.com, 156700, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 17960, RESELLER, 0bfd66d529a55807
