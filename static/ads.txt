@@ -1,5 +1,5 @@
 # Adsense
-google.com, pub-1918626353776886, DIRECT, f08c47fec0942fa0
+google.com,pub-1918626353776886,DIRECT,f08c47fec0942fa0
 
 # Amazon
 aps.amazon.com,ea374841-51b0-4335-9960-99200427f7c8,DIRECT
@@ -12,49 +12,49 @@ districtm.io,100962,RESELLER
 rhythmone.com,1654642120,RESELLER,a670c89d4a324e47
 
 # AOL
-adtech.com, 10559, DIRECT
-aolcloud.net, 10559, DIRECT
+adtech.com,10559,DIRECT
+aolcloud.net,10559,DIRECT
 
 # AppNexus
-appnexus.com, 7707, DIRECT
+appnexus.com,7707,DIRECT
 
 # brealtime
-EMXDGT.com, 298, DIRECT, 1e1d41537f7cad7f
-Appnexus.com, 1356, DIRECT, f5ab79cb980f11d1
-Google.com, pub-5995202563537249, DIRECT, f08c47fec0942fa0
+EMXDGT.com,298,DIRECT,1e1d41537f7cad7f
+Appnexus.com,1356,DIRECT,f5ab79cb980f11d1
+Google.com,pub-5995202563537249,DIRECT,f08c47fec0942fa0
 
 # DistrictM
-districtm.io, 100390, DIRECT
-appnexus.com, 1908, RESELLER
+districtm.io,100390,DIRECT
+appnexus.com,1908,RESELLER
 
 # Index Exchange
-indexexchange.com, 189509, DIRECT
-indexexchange.com, 189508, DIRECT
+indexexchange.com,189509,DIRECT
+indexexchange.com,189508,DIRECT
 
 # OpenX
-openx.com, 537145035, DIRECT, 6a698e2ec38604c6
+openx.com,537145035,DIRECT,6a698e2ec38604c6
 
 # PulsePoint
-contextweb.com, 560174, DIRECT
+contextweb.com,560174,DIRECT
 
 # RhythmOne
-rhythmone.com, 1398004509, DIRECT, a670c89d4a324e47
-rhythmone.com, 3781572624, DIRECT, a670c89d4a324e47
+rhythmone.com,1398004509,DIRECT,a670c89d4a324e47
+rhythmone.com,3781572624,DIRECT,a670c89d4a324e47
 
 # Sonobi
-sonobi.com, 5695c92f04, DIRECT
-rhythmone.com, 1059622079, RESELLER, a670c89d4a324e47
-contextweb.com, 560606, RESELLER, 89ff185a4c4e857c
-coxmt.com, 2000067997702, RESELLER
+sonobi.com,5695c92f04,DIRECT
+rhythmone.com,1059622079,RESELLER,a670c89d4a324e47
+contextweb.com,560606,RESELLER,89ff185a4c4e857c
+coxmt.com,2000067997702,RESELLER
 
 # Sovrn
-sovrn.com, 240713, DIRECT, fafdf38b16bf6b2b
-lijit.com, 240713, DIRECT, fafdf38b16bf6b2b
-appnexus.com, 1360, RESELLER, f5ab79cb980f11d1
-gumgum.com, 11645, RESELLER, ffdef49475d318a9
-openx.com, 538959099, RESELLER, 6a698e2ec38604c6
-openx.com, 539924617, RESELLER, 6a698e2ec38604c6
-pubmatic.com, 137711, RESELLER, 5d62403b186f2ace
-pubmatic.com, 156212, RESELLER, 5d62403b186f2ace
-pubmatic.com, 156700, RESELLER, 5d62403b186f2ace
-rubiconproject.com, 17960, RESELLER, 0bfd66d529a55807
+sovrn.com,240713,DIRECT,fafdf38b16bf6b2b
+lijit.com,240713,DIRECT,fafdf38b16bf6b2b
+appnexus.com,1360,RESELLER,f5ab79cb980f11d1
+gumgum.com,11645,RESELLER,ffdef49475d318a9
+openx.com,538959099,RESELLER,6a698e2ec38604c6
+openx.com,539924617,RESELLER,6a698e2ec38604c6
+pubmatic.com,137711,RESELLER,5d62403b186f2ace
+pubmatic.com,156212,RESELLER,5d62403b186f2ace
+pubmatic.com,156700,RESELLER,5d62403b186f2ace
+rubiconproject.com,17960,RESELLER,0bfd66d529a55807
