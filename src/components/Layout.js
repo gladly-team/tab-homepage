@@ -21,7 +21,7 @@ import { domain, getAbsoluteURL } from 'src/utils/navigation'
 // Use flexbox to make sure the footer sticks to the bottom of the page:
 // https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-3
 export const LayoutContent = props => {
-  const { children, data, location } = props
+  const { brand, children, data, location } = props
   const absoluteUrl = getAbsoluteURL(location.pathname)
   const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
   return (
@@ -83,7 +83,7 @@ export const LayoutContent = props => {
             <meta name="twitter:domain" content={domain} />
           </Helmet>
 
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header siteTitle={data.site.siteMetadata.title} brand={brand} />
           <div
             style={{
               paddingTop: 0,
@@ -99,6 +99,7 @@ export const LayoutContent = props => {
 }
 
 LayoutContent.propTypes = {
+  brand: PropTypes.oneOf(['tab', 'search', 'all']).isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -147,6 +148,7 @@ const Layout = props => (
 )
 
 Layout.propTypes = {
+  brand: PropTypes.oneOf(['tab', 'search', 'all']),
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -154,6 +156,10 @@ Layout.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
+}
+
+Layout.defaultProps = {
+  brand: 'tab',
 }
 
 Layout.displayName = 'Layout'

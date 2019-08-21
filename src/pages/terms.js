@@ -13,7 +13,7 @@ const openGraphDescription =
   'Read our Terms of Service. Tab for a Cause raises money for charity with every browser tab you open.'
 
 const TermsPage = ({ location }) => (
-  <Layout location={location}>
+  <Layout brand={'all'} location={location}>
     <div>
       <Helmet title={'Terms'}>
         <meta property="og:title" content={openGraphTitle} />
