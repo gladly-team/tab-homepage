@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 jest.mock('src/img/opengraph-img.png', () => '/static/some-image.png')
 
 const getMockProps = () => ({
+  brand: 'tab',
   children: null,
   data: {
     site: {
