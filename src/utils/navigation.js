@@ -15,6 +15,9 @@ export const adblockerWhitelistingURL = '/adblockers/'
 // Absolute because it's outside of this Gatsby app
 export const newTabPageURL = `${baseURL}/newtab/`
 
+// Search
+export const searchHomeURL = 'https://search.gladly.io'
+
 // Zendesk
 export const externalHelpURL =
   'https://gladly.zendesk.com/hc/en-us/categories/201939608-Tab-for-a-Cause'
