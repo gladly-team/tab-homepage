@@ -65,9 +65,9 @@ const ContactPage = ({ location }) => {
               <p style={Object.assign({}, addressStyle, { marginBottom: 10 })}>
                 Tab for a Cause is built with love at:
               </p>
-              <p style={addressStyle}>Gladly</p>
-              <p style={addressStyle}>3165 Loma Verde Place</p>
-              <p style={addressStyle}>Palo Alto, CA 94303</p>
+              <p style={addressStyle}>Gladly, Inc.</p>
+              <p style={addressStyle}>400 Concar Dr.</p>
+              <p style={addressStyle}>San Mateo, CA 94402</p>
             </div>
           </div>
           <p />
