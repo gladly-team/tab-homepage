@@ -1,43 +1,34 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import logoWithText from 'src/img/logo-with-text.svg'
+import { homeURL } from 'src/utils/navigation'
 
-class Header extends React.Component {
-  headerLogoClick(e) {
-    if (this.props.onHeaderLogoClick) {
-      e.preventDefault()
-      this.props.onHeaderLogoClick()
-    }
-  }
-
-  render() {
-    return (
+const Header = () => {
+  return (
+    <div
+      style={{
+        paddingTop: 20,
+        paddingBottom: 20,
+        paddingLeft: 40,
+        paddingRight: 40,
+      }}
+    >
       <div
         style={{
-          paddingTop: 20,
-          paddingBottom: 20,
-          paddingLeft: 40,
-          paddingRight: 40,
+          display: 'flex',
+          justifyContent: 'flex-start',
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'flex-start',
-          }}
-        >
-          <Link to="/" onClick={this.headerLogoClick.bind(this)}>
-            <img src={logoWithText} style={{ height: 40 }} />
-          </Link>
-        </div>
+        <Link to={homeURL}>
+          <img src={logoWithText} style={{ height: 40 }} />
+        </Link>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
-Header.propTypes = {
-  onHeaderLogoClick: PropTypes.func,
-}
+Header.propTypes = {}
+Header.defaultProps = {}
 
 export default Header
