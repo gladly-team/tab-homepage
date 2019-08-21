@@ -2,9 +2,9 @@
 
 import React from 'react'
 import { mount, shallow } from 'enzyme'
-import { Link } from 'gatsby'
+import Link from 'src/components/Link'
 
-jest.mock('gatsby')
+jest.mock('src/components/Link')
 
 afterEach(() => {
   jest.clearAllMocks()

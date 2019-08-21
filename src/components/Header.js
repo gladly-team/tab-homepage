@@ -1,6 +1,6 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import Link from 'src/components/Link'
 import logoWithText from 'src/img/logo-with-text.svg'
 import { homeURL } from 'src/utils/navigation'
 
