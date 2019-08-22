@@ -3,6 +3,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
+import Header from 'src/components/Header'
+import Footer from 'src/components/Footer'
 jest.mock('src/img/opengraph-img.png', () => '/static/some-image.png')
 
 const getMockProps = () => ({
@@ -67,5 +69,27 @@ describe('index layout page', () => {
     expect(elem.prop('content')).toBe(
       'https://tab.gladly.io/static/some-image.png'
     )
+  })
+
+  it('renders the Header component', () => {
+    const { LayoutContent } = require('../Layout')
+    const wrapper = shallow(<LayoutContent {...getMockProps()} />)
+    expect(wrapper.find(Header).exists()).toBe(true)
+  })
+
+  it('passes the "brand" value to the Header component', () => {
+    const { LayoutContent } = require('../Layout')
+    const mockProps = getMockProps()
+    mockProps.brand = 'tab'
+    const wrapper = shallow(<LayoutContent {...mockProps} />)
+    expect(wrapper.find(Header).prop('brand')).toEqual('tab')
+    wrapper.setProps({ brand: 'search' })
+    expect(wrapper.find(Header).prop('brand')).toEqual('search')
+  })
+
+  it('renders the Footer component', () => {
+    const { LayoutContent } = require('../Layout')
+    const wrapper = shallow(<LayoutContent {...getMockProps()} />)
+    expect(wrapper.find(Footer).exists()).toBe(true)
   })
 })
