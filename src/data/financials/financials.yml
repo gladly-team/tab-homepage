@@ -99,3 +99,6 @@
 - quarter: 1
   year: 2019
   pdfUrl: '/financials/2019-Q1.pdf'
+- quarter: 2
+  year: 2019
+  pdfUrl: '/financials/2019-Q2.pdf'
