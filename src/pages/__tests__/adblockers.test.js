@@ -5,6 +5,7 @@ import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
 import { getTestIdSelector } from 'src/utils/test-utils'
 import Button from '@material-ui/core/Button'
+import Layout from 'src/components/Layout'
 
 const getMockProps = () => ({
   location: {
@@ -39,6 +40,12 @@ describe('adblockers whitelisting page', () => {
     expect(elem.prop('content')).toBe(
       'Learn how to whitelist your adblocker to raise money for charity with every browser tab you open.'
     )
+  })
+
+  it('renders the Layout component with "brand=tab"', () => {
+    const AdblockersPage = require('../adblockers').default
+    const wrapper = shallow(<AdblockersPage {...getMockProps()} />)
+    expect(wrapper.find(Layout).prop('brand')).toEqual('tab')
   })
 
   it('shows the expected number of adblocker buttons', () => {
