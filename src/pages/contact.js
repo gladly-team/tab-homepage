@@ -25,7 +25,7 @@ const ContactPage = ({ location }) => {
     fontSize: 12,
   }
   return (
-    <Layout location={location}>
+    <Layout brand={'all'} location={location}>
       <div>
         <Helmet title={pageTitle}>
           <meta property="og:title" content={openGraphTitle} />

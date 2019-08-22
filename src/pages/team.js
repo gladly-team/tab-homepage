@@ -26,7 +26,7 @@ const TeamPage = ({ location }) => {
   const openGraphTitle = 'Our Team - Tab for a Cause'
   const openGraphDescription = 'Meet the team behind Tab for a Cause.'
   return (
-    <Layout location={location}>
+    <Layout brand={'all'} location={location}>
       <div>
         <Helmet title={'Team'}>
           <meta property="og:title" content={openGraphTitle} />

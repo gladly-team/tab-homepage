@@ -12,7 +12,7 @@ const openGraphDescription =
   'Read our Privacy Policy. Tab for a Cause raises money for charity with every browser tab you open.'
 
 const PrivacyPolicyPage = ({ location }) => (
-  <Layout location={location}>
+  <Layout brand={'all'} location={location}>
     <div>
       <Helmet title={'Privacy Policy'}>
         <meta property="og:title" content={openGraphTitle} />

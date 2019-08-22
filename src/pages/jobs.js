@@ -63,7 +63,7 @@ class JobsPage extends React.Component {
     const openGraphDescription =
       'Check out open jobs at a purpose-driven, challenging, and fun startup!'
     return (
-      <Layout location={location}>
+      <Layout brand={'all'} location={location}>
         <TextPageContent>
           <Helmet title={'Jobs'}>
             <meta property="og:title" content={openGraphTitle} />
