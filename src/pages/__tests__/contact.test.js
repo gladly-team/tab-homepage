@@ -42,7 +42,7 @@ describe('jobs page', () => {
     const wrapper = shallow(<ContactPage {...getMockProps()} />)
     const elem = wrapper
       .find('p')
-      .filterWhere(n => n.text() === '3165 Loma Verde Place')
+      .filterWhere(n => n.text().indexOf('400 Concar') > -1)
     expect(elem.length).toBe(1)
   })
 })
