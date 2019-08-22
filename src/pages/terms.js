@@ -34,7 +34,7 @@ const TermsPage = ({ location }) => (
         <p>
           Below are our Terms and Conditions of Use ("Terms") that govern
           Gladly's relationship with its users and others who interact with
-          gladly.io, tab.gladly.io, search.gladly.io, and other *.gladly.io
+          gladly.io, tab.gladly.io, search.gladly.io, or other *.gladly.io
           subdomains (collectively, the "Website") and any information, text,
           graphics, photos or other materials uploaded, downloaded or appearing
           on the Website (collectively referred to as "Content"). This document
