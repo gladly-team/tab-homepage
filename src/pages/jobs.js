@@ -72,12 +72,20 @@ class JobsPage extends React.Component {
             <meta name="twitter:description" content={openGraphDescription} />
           </Helmet>
           <TextPageHeader>Jobs</TextPageHeader>
-          <div style={{ marginBottom: 30 }}>
+          <div style={{ marginBottom: 50 }}>
             <p>
               We are a small team that prioritizes collaboration, positivity,
               work-life balance, and social impact (we've given over $750,000 to
               charity!). We're striving to make both ourselves and the world a
               little better.
+            </p>
+          </div>
+          <h2>Positions</h2>
+          <div style={{ marginBottom: 50 }}>
+            <p>
+              We don't have any open jobs at this time. Interested in
+              volunteering, or think you'd be a fit for a job we haven't listed?
+              Email us at: jobs@gladly.io
             </p>
           </div>
           <h2>Our Values</h2>
@@ -86,7 +94,7 @@ class JobsPage extends React.Component {
             style={{
               display: 'flex',
               flexWrap: 'wrap',
-              marginBottom: 20,
+              marginBottom: 40,
             }}
           >
             {teamValues.map(teamValue => {
@@ -147,14 +155,6 @@ class JobsPage extends React.Component {
                 </Paper>
               )
             })}
-          </div>
-          <h2>Positions</h2>
-          <div style={{ marginBottom: 30 }}>
-            <p>
-              We don't have any open jobs at this time. Interested in
-              volunteering, or think you'd be a fit for a job we haven't listed?
-              Email us at: jobs@gladly.io
-            </p>
           </div>
         </TextPageContent>
       </Layout>
