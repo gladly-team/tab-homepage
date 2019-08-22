@@ -3,6 +3,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
+import Layout from 'src/components/Layout'
 
 const getMockProps = () => ({
   location: {
@@ -37,5 +38,11 @@ describe('jobs page', () => {
     expect(elem.prop('content')).toBe(
       'Check out open jobs at a purpose-driven, challenging, and fun startup!'
     )
+  })
+
+  it('renders the Layout component with "brand=all"', () => {
+    const JobsPage = require('../jobs').default
+    const wrapper = shallow(<JobsPage {...getMockProps()} />)
+    expect(wrapper.find(Layout).prop('brand')).toEqual('all')
   })
 })

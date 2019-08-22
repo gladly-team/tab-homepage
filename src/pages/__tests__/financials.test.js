@@ -4,6 +4,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
 import FinancialsQuarterButton from 'src/components/FinancialsQuarterButton'
+import Layout from 'src/components/Layout'
 
 const getMockProps = () => ({
   data: {
@@ -64,5 +65,11 @@ describe('financials page', () => {
     const FinancialsPage = require('../financials').default
     const wrapper = shallow(<FinancialsPage {...getMockProps()} />)
     expect(wrapper.find(FinancialsQuarterButton).length).toBe(2)
+  })
+
+  it('renders the Layout component with "brand=all"', () => {
+    const FinancialsPage = require('../financials').default
+    const wrapper = shallow(<FinancialsPage {...getMockProps()} />)
+    expect(wrapper.find(Layout).prop('brand')).toEqual('all')
   })
 })

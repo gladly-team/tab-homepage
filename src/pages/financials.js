@@ -19,7 +19,7 @@ const FinancialsPage = ({ data, location }) => {
   const openGraphDescription =
     'See our expenses and how much money Tabbers have raised for each charity.'
   return (
-    <Layout location={location}>
+    <Layout brand={'all'} location={location}>
       <div>
         <Helmet title={'Financials'}>
           <meta property="og:title" content={openGraphTitle} />

@@ -26,7 +26,7 @@ const TeamPage = ({ location }) => {
   const openGraphTitle = 'Our Team - Tab for a Cause'
   const openGraphDescription = 'Meet the team behind Tab for a Cause.'
   return (
-    <Layout location={location}>
+    <Layout brand={'all'} location={location}>
       <div>
         <Helmet title={'Team'}>
           <meta property="og:title" content={openGraphTitle} />
@@ -37,9 +37,10 @@ const TeamPage = ({ location }) => {
         <TextPageContent>
           <TextPageHeader>Team</TextPageHeader>
           <p>
-            Hi there! We're a small team working in sunny Palo Alto, California.
-            We're humbled by the Tab for a Cause community and are thrilled that
-            we get to spend our time helping it grow.
+            Hi there! We're a small team working in the sunny San Francisco Bay
+            Area, California. We're humbled by the Tab for a Cause and Search
+            for a Cause communities and are thrilled that we get to spend our
+            time helping them grow.
           </p>
           <p>
             Want to join in? Check out our <Link to={jobsURL}>open jobs</Link>.

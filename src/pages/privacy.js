@@ -12,7 +12,7 @@ const openGraphDescription =
   'Read our Privacy Policy. Tab for a Cause raises money for charity with every browser tab you open.'
 
 const PrivacyPolicyPage = ({ location }) => (
-  <Layout location={location}>
+  <Layout brand={'all'} location={location}>
     <div>
       <Helmet title={'Privacy Policy'}>
         <meta property="og:title" content={openGraphTitle} />
@@ -23,8 +23,12 @@ const PrivacyPolicyPage = ({ location }) => (
       <TextPageContent>
         <TextPageHeader>Privacy Policy</TextPageHeader>
         <p>
-          Your privacy is very important to us. At Tab for a Cause, we have a
-          few fundamental principles:
+          Gladly is the creator and owner of Tab for a Cause and Search for a
+          Cause (collectively, "Gladly").
+        </p>
+        <p>
+          Your privacy is very important to us. At Gladly, we have a few
+          fundamental principles:
         </p>
         <ul>
           <li>We don't ask you for personal information we don't need.</li>
@@ -39,12 +43,13 @@ const PrivacyPolicyPage = ({ location }) => (
         </ul>
         <p>
           Below is our privacy policy which incorporates these principles. This
-          document applies to Tab for a Cause ("Tab for a Cause", "us", "our",
-          or "we") and is part of Tab for a Cause's{' '}
-          <Link to={termsURL}>Terms of Service</Link>. By using tab.gladly.io
-          (the "Website"), you agree to the terms of this Privacy Policy and the
-          Terms of Service. We collectively refer to the Website and its related
-          services, apps, and websites as our "Services".
+          document applies to Gladly ("Gladly", Tab for a Cause", "Search for a
+          Cause", "us", "our", or "we") and is part of Gladly's{' '}
+          <Link to={termsURL}>Terms of Service</Link>. By using gladly.io,
+          tab.gladly.io, search.gladly.io, or other *.gladly.io subdomains
+          (collectively, the "Website"), you agree to the terms of this Privacy
+          Policy and the Terms of Service. We collectively refer to the Website
+          and its related services, apps, and websites as our "Services".
         </p>
         <p>
           If you have any questions, please{' '}
@@ -75,22 +80,21 @@ const PrivacyPolicyPage = ({ location }) => (
           </li>
           <li>
             <b>Information you provide to us: </b>
-            We save information related to your behavior on Tab for a Cause,
-            such as the the number tabs you open, which charity partners you
-            support, the information you store in widgets on the new tab page,
-            your account settings, and the users you refer to Tab for a Cause.
-            In order to be able to save your profile and the settings associated
-            with it, we ask you to log in and provide certain personal
-            information, such as an email address. These are all essential data
-            for providing our Services.
+            We save information related to your behavior on Gladly, such as the
+            the number tabs you open with Tab for a Cause, which charity
+            partners you support, your account settings, and the users you refer
+            to Tab for a Cause or Search for a Cause. In order to be able to
+            save your profile and the settings associated with it, we ask you to
+            log in and provide certain personal information, such as an email
+            address. These are all essential data for providing our Services.
           </li>
           <li>
             <b>Cookie and local browser storage: </b>
             To allow login features, we use cookies and local browser data
             storage to store session information. You can block or delete
-            cookies and local browser data storage and still use Tab for a
-            Cause, although you may then be asked for your username and password
-            each time you open our page.
+            cookies and local browser data storage and still use the Website,
+            although you may then be asked for your username and password each
+            time you open our page.
           </li>
           <li>
             <p>
@@ -138,16 +142,16 @@ const PrivacyPolicyPage = ({ location }) => (
 
         <h2>Children's Information </h2>
         <p>
-          The Services are not intended for children under 13 years of age. Tab
-          for a Cause does not knowingly collect personal information from
-          children under 13 years of age. If you are under 13 years of age, do
-          not provide personal information to Tab for a Cause without providing
-          us with consent from your parents. If we discovers that a child under
-          the age of 13 has provided us with personal information and we do not
-          have parental consent, we will immediately delete that child's
-          information. If you believe that company has been provided with the
-          personal information of a child under the age of 13 without parental
-          consent, please notify us immediately.
+          The Services are not intended for children under 13 years of age.
+          Gladly does not knowingly collect personal information from children
+          under 13 years of age. If you are under 13 years of age, do not
+          provide personal information to Gladly without providing us with
+          consent from your parents. If we discover that a child under the age
+          of 13 has provided us with personal information and we do not have
+          parental consent, we will immediately delete that child's information.
+          If you believe that company has been provided with the personal
+          information of a child under the age of 13 without parental consent,
+          please notify us immediately.
         </p>
 
         <h2>Sharing of Data</h2>
@@ -159,12 +163,12 @@ const PrivacyPolicyPage = ({ location }) => (
           <li>doing so is appropriate to carry out your own request</li>
           <li>doing so helps us provide our Services</li>
           <li>
-            we believe it's needed to enforce our Terms of Service, or that is
+            we believe it's needed to enforce our Terms of Service, or that it's
             legally required
           </li>
           <li>
-            we believe it's needed to detect, prevent or address fraud, security
-            or technical issues
+            we believe it's needed to detect, prevent or address fraud,
+            security, or technical issues
           </li>
           <li>
             otherwise protect our property, legal rights, or that of others.

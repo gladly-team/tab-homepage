@@ -123,7 +123,7 @@ class AdblockersPage extends React.Component {
       }
     }
     return (
-      <Layout location={location}>
+      <Layout brand={'search'} location={location}>
         <TextPageContent>
           <Helmet title={'Whitelisting Your Adblocker'}>
             <meta property="og:title" content={openGraphTitle} />

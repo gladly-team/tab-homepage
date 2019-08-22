@@ -8,7 +8,7 @@ import TextPageHeader from 'src/components/TextPageHeader'
 import Link from 'src/components/Link'
 import {
   adblockerWhitelistingURL,
-  externalContactUsURL,
+  externalHelpAllAppsURL,
   financialsURL,
   facebookPageURL,
   twitterPageURL,
@@ -25,7 +25,7 @@ const ContactPage = ({ location }) => {
     fontSize: 12,
   }
   return (
-    <Layout location={location}>
+    <Layout brand={'all'} location={location}>
       <div>
         <Helmet title={pageTitle}>
           <meta property="og:title" content={openGraphTitle} />
@@ -38,8 +38,8 @@ const ContactPage = ({ location }) => {
           <h2>Need help?</h2>
           <p>
             Hello! If you have questions or need help, check out our{' '}
-            <Link to={externalContactUsURL}>help center</Link>, where we tackle
-            common questions and troubleshooting.
+            <Link to={externalHelpAllAppsURL}>help center</Link>, where we
+            tackle common questions and troubleshooting.
           </p>
           <p>
             You might be curious about our charitable impact—you can find our{' '}
@@ -55,7 +55,7 @@ const ContactPage = ({ location }) => {
           </p>
           <p>
             If you have questions, feedback, or tasty cookie recipe suggestions,
-            feel free to email us at contact@tabforacause.org.
+            feel free to email us at contact@gladly.io.
           </p>
           <Divider
             style={{ backgroundColor: lightestTextColor, marginBottom: 20 }}
@@ -65,9 +65,9 @@ const ContactPage = ({ location }) => {
               <p style={Object.assign({}, addressStyle, { marginBottom: 10 })}>
                 Tab for a Cause is built with love at:
               </p>
-              <p style={addressStyle}>Gladly</p>
-              <p style={addressStyle}>3165 Loma Verde Place</p>
-              <p style={addressStyle}>Palo Alto, CA 94303</p>
+              <p style={addressStyle}>Gladly, Inc.</p>
+              <p style={addressStyle}>400 Concar Dr.</p>
+              <p style={addressStyle}>San Mateo, CA 94402</p>
             </div>
           </div>
           <p />
