@@ -55,7 +55,7 @@ const ContactPage = ({ location }) => {
           </p>
           <p>
             If you have questions, feedback, or tasty cookie recipe suggestions,
-            feel free to email us at contact@tabforacause.org.
+            feel free to email us at contact@gladly.io.
           </p>
           <Divider
             style={{ backgroundColor: lightestTextColor, marginBottom: 20 }}
