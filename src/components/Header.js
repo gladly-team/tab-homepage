@@ -17,6 +17,7 @@ const Header = props => {
       }}
     >
       <div
+        data-test-id={'logo-container'}
         style={{
           display: 'flex',
           justifyContent: 'flex-start',
@@ -25,7 +26,11 @@ const Header = props => {
       >
         {brand === 'tab' || brand === 'all' ? (
           <Link to={homeURL}>
-            <img src={logoWithText} style={{ height: 40 }} />
+            <img
+              data-test-id={'tab-logo-with-text'}
+              src={logoWithText}
+              style={{ height: 40 }}
+            />
           </Link>
         ) : null}
         {brand === 'all' ? (
@@ -33,7 +38,11 @@ const Header = props => {
         ) : null}
         {brand === 'search' || brand === 'all' ? (
           <Link to={searchHomeURL}>
-            <img src={searchLogoWithText} style={{ height: 40 }} />
+            <img
+              data-test-id={'search-logo-with-text'}
+              src={searchLogoWithText}
+              style={{ height: 40 }}
+            />
           </Link>
         ) : null}
       </div>
