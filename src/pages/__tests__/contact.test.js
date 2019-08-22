@@ -4,6 +4,8 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
 import Layout from 'src/components/Layout'
+import Link from 'src/components/Link'
+import { externalHelpAllAppsURL } from 'src/utils/navigation'
 
 const getMockProps = () => ({
   location: {
@@ -51,5 +53,15 @@ describe('jobs page', () => {
     const ContactPage = require('../contact').default
     const wrapper = shallow(<ContactPage {...getMockProps()} />)
     expect(wrapper.find(Layout).prop('brand')).toEqual('all')
+  })
+
+  it('links to the help center', () => {
+    const ContactPage = require('../contact').default
+    const wrapper = shallow(<ContactPage {...getMockProps()} />)
+    const helpCenterLink = wrapper
+      .find(Link)
+      .filterWhere(e => e.render().text() === 'help center')
+    expect(helpCenterLink.exists()).toBe(true)
+    expect(helpCenterLink.prop('to')).toEqual(externalHelpAllAppsURL)
   })
 })

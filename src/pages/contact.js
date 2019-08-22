@@ -8,7 +8,7 @@ import TextPageHeader from 'src/components/TextPageHeader'
 import Link from 'src/components/Link'
 import {
   adblockerWhitelistingURL,
-  externalHelpURL,
+  externalHelpAllAppsURL,
   financialsURL,
   facebookPageURL,
   twitterPageURL,
@@ -38,8 +38,8 @@ const ContactPage = ({ location }) => {
           <h2>Need help?</h2>
           <p>
             Hello! If you have questions or need help, check out our{' '}
-            <Link to={externalHelpURL}>help center</Link>, where we tackle
-            common questions and troubleshooting.
+            <Link to={externalHelpAllAppsURL}>help center</Link>, where we
+            tackle common questions and troubleshooting.
           </p>
           <p>
             You might be curious about our charitable impact—you can find our{' '}
