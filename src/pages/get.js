@@ -19,7 +19,8 @@ class GetExtensionRedirectPage extends React.Component {
     // const { location } = this.props
     // console.log(location)
 
-    this.detectBrowser(({ browser }) => {
+    try {
+      const browser = this.detectBrowser()
       switch (browser) {
         case CHROME_BROWSER:
           redirect(chromeExtensionURL)
@@ -31,10 +32,13 @@ class GetExtensionRedirectPage extends React.Component {
           redirect(homeURL)
           break
       }
-    })
+    } catch (e) {
+      console.error(e)
+      redirect(homeURL)
+    }
   }
 
-  detectBrowser(callback = () => {}) {
+  detectBrowser() {
     const browserInfo = detectBrowser()
     var browser = 'other'
     switch (browserInfo.name) {
@@ -54,7 +58,7 @@ class GetExtensionRedirectPage extends React.Component {
         browser = UNSUPPORTED_BROWSER
         break
     }
-    callback({ browser })
+    return browser
   }
 
   render() {
