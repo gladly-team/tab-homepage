@@ -64,7 +64,7 @@ class GetExtensionRedirectPage extends React.Component {
 
 GetExtensionRedirectPage.propTypes = {
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
+    search: PropTypes.string.isRequired,
   }).isRequired,
 }
 
