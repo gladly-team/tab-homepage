@@ -17,6 +17,10 @@ export const newTabPageURL = `${baseURL}/newtab/`
 
 // Search
 export const searchHomeURL = 'https://search.gladly.io'
+export const searchFirefoxExtensionPage =
+  'https://addons.mozilla.org/en-US/firefox/addon/search-for-a-cause/'
+export const searchChromeExtensionPage =
+  'https://chrome.google.com/webstore/detail/search-for-a-cause/eeiiknnphladbapfamiamfimnnnodife/'
 
 // Zendesk
 export const externalHelpAllAppsURL = 'https://gladly.zendesk.com/hc/en-us'
