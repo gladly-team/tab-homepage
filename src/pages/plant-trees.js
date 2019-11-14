@@ -4,16 +4,37 @@ import Helmet from 'react-helmet'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
 import Layout from 'src/components/Layout'
+import InstallButton from 'src/components/InstallButton'
+import redirect from 'src/utils/redirect'
+import { homeURL } from 'src/utils/navigation'
+
+const installButtonBlock = (
+  <div
+    style={{
+      display: 'flex',
+      padding: '30px 0px',
+      justifyContent: 'center',
+    }}
+  >
+    <InstallButton
+      size={'medium'}
+      onUnsupportedBrowserInstallClick={() => {
+        redirect(homeURL)
+      }}
+    />
+  </div>
+)
 
 const faqs = [
   {
     question: 'How do I plant a tree?',
     answerElem: (
       <div>
-        <p>
+        <p style={{ marginBottom: 0 }}>
           We'll plant a tree for every person who joins Tab for a Cause—so join
           on in!
         </p>
+        {installButtonBlock}
         <p>
           If you're already using Tab for a Cause, refer a friend using your
           referral URL, and we'll plant another tree.
@@ -149,11 +170,12 @@ const PlantTreesPage = props => {
             Tab for a Cause is already one of the easiest ways to do good every
             day, for free. Now, your new tab page is getting a little greener!
           </p>
-          <p style={{ fontWeight: 'bold' }}>
+          <p style={{ fontWeight: 'bold', marginBottom: 0 }}>
             Tab for a Cause has partnered with Eden Reforestation Projects to
             plant a tree for every person that signs up for Tab for a Cause this
             holiday season!
           </p>
+          {installButtonBlock}
           <p>
             Trees are amazing plants that fight climate change through carbon
             sequestration, guard land against erosion, provide habitat for

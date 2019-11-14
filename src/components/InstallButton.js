@@ -112,16 +112,21 @@ class InstallButton extends React.Component {
   }
 
   render() {
+    const {
+      onUnsupportedBrowserInstallClick, // eslint-disable-line no-unused-vars
+      ...otherProps
+    } = this.props
     const buttonText = this.getButtonText()
     return (
       <Button
         variant="contained"
         color="primary"
-        onClick={this.onClick.bind(this)}
         size="large"
         style={{
           minWidth: 200,
         }}
+        {...otherProps}
+        onClick={this.onClick.bind(this)}
       >
         {buttonText}
       </Button>

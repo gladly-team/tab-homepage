@@ -4,6 +4,12 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
 import Layout from 'src/components/Layout'
+import InstallButton from 'src/components/InstallButton'
+import redirect from 'src/utils/redirect'
+import { homeURL } from 'src/utils/navigation'
+
+jest.mock('src/components/InstallButton')
+jest.mock('src/utils/redirect')
 
 const getMockProps = () => ({
   location: {
@@ -44,5 +50,22 @@ describe('"plant trees" page', () => {
     const PlantTreesPage = require('../plant-trees').default
     const wrapper = shallow(<PlantTreesPage {...getMockProps()} />)
     expect(wrapper.find(Layout).prop('brand')).toEqual('tab')
+  })
+
+  it('includes two install buttons', () => {
+    const PlantTreesPage = require('../plant-trees').default
+    const wrapper = shallow(<PlantTreesPage {...getMockProps()} />)
+    expect(wrapper.find(InstallButton).length).toEqual(2)
+  })
+
+  it('the InstallButton onUnsupportedBrowserInstallClick sends the user to the homepage', () => {
+    const PlantTreesPage = require('../plant-trees').default
+    const wrapper = shallow(<PlantTreesPage {...getMockProps()} />)
+    const callback = wrapper
+      .find(InstallButton)
+      .first()
+      .prop('onUnsupportedBrowserInstallClick')
+    callback()
+    expect(redirect).toHaveBeenCalledWith(homeURL)
   })
 })
