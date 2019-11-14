@@ -284,11 +284,7 @@ const PlantTreesPage = props => {
               ]}
             >
               {photos.map(photo => (
-                <div
-                  key={photo.src}
-                  // TODO
-                  // style={{ background: 'black', height: '100%' }}
-                >
+                <div key={photo.src}>
                   <img
                     // TODO
                     // alt={'An area before and after planting trees.'}
