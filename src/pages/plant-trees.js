@@ -8,12 +8,12 @@ import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
 import edenPhotoBeforeAfter from 'src/img/eden-project/before-after.jpg'
-import edenPhotoTwoPeoplePlanting from 'src/img/eden-project/two-people-planting.jpg'
+import edenPhotoTwoPeoplePlanting from 'src/img/eden-project/two-people-planting-resized.jpg'
 import edenPhotoPersonHoldingSeedlings from 'src/img/eden-project/person-holding-seedlings.jpg'
 import edenPhotoEmployees from 'src/img/eden-project/eden-employees.jpg'
-import edenPhotoCritter from 'src/img/eden-project/critter.jpg'
-import edenPhotoIndonesiaGiantMangrove from 'src/img/eden-project/indonesia-giant-mangrove.jpg'
-import edenPhotoPersonPlanting from 'src/img/eden-project/person-planting.jpg'
+import edenPhotoCritter from 'src/img/eden-project/critter-resized.jpg'
+import edenPhotoIndonesiaGiantMangrove from 'src/img/eden-project/indonesia-giant-mangrove-resized.jpg'
+import edenPhotoPersonPlanting from 'src/img/eden-project/person-planting-resized.jpg'
 import edenPhotoNepalNurseryDirector from 'src/img/eden-project/nepal-nursery-director.jpg'
 
 import Slider from 'react-slick'
@@ -171,10 +171,10 @@ const photos = [
   },
   { src: edenPhotoEmployees },
   { src: edenPhotoCritter },
+  { src: edenPhotoPersonPlanting },
   {
     src: edenPhotoIndonesiaGiantMangrove,
   },
-  { src: edenPhotoPersonPlanting },
   { src: edenPhotoNepalNurseryDirector },
 ]
 
