@@ -8,6 +8,17 @@ import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
 import edenPhotoBeforeAfter from 'src/img/eden-project/before-after.jpg'
+import edenPhotoTwoPeoplePlanting from 'src/img/eden-project/two-people-planting.jpg'
+import edenPhotoPersonHoldingSeedlings from 'src/img/eden-project/person-holding-seedlings.jpg'
+import edenPhotoEmployees from 'src/img/eden-project/eden-employees.jpg'
+import edenPhotoCritter from 'src/img/eden-project/critter.jpg'
+import edenPhotoIndonesiaGiantMangrove from 'src/img/eden-project/indonesia-giant-mangrove.jpg'
+import edenPhotoPersonPlanting from 'src/img/eden-project/person-planting.jpg'
+import edenPhotoNepalNurseryDirector from 'src/img/eden-project/nepal-nursery-director.jpg'
+
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const installButtonBlock = (
   <div
@@ -151,6 +162,22 @@ const faqs = [
   },
 ]
 
+const photos = [
+  {
+    src: edenPhotoTwoPeoplePlanting,
+  },
+  {
+    src: edenPhotoPersonHoldingSeedlings,
+  },
+  { src: edenPhotoEmployees },
+  { src: edenPhotoCritter },
+  {
+    src: edenPhotoIndonesiaGiantMangrove,
+  },
+  { src: edenPhotoPersonPlanting },
+  { src: edenPhotoNepalNurseryDirector },
+]
+
 const PlantTreesPage = props => {
   const { location } = props
   const openGraphTitle = 'Plant Trees for Free'
@@ -206,6 +233,51 @@ const PlantTreesPage = props => {
             amazing nonprofits. Now is the perfect time to get your friends to
             join you in turning internet browsing into a charitable act.
           </p>
+        </div>
+        <div
+          style={{
+            marginTop: 30,
+            marginBottom: 40,
+            // Full page width CSS
+            display: 'block',
+            width: '100vw',
+            position: 'relative',
+            left: '50%',
+            right: '50%',
+            marginLeft: '-50vw',
+            marginRight: '-50vw',
+            // End full page width CSS
+          }}
+        >
+          <div style={{ display: 'block' }}>
+            <Slider
+              dots
+              focusOnSelect
+              slidesToShow={3}
+              responsive={[
+                {
+                  breakpoint: 1040,
+                  settings: {
+                    slidesToShow: 1,
+                  },
+                },
+              ]}
+            >
+              {photos.map(photo => (
+                <div
+                  key={photo.src}
+                  // TODO
+                  // style={{ background: 'black', height: '100%' }}
+                >
+                  <img
+                    // TODO
+                    // alt={'An area before and after planting trees.'}
+                    src={photo.src}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
         <div style={{ padding: '12px 0px' }}>
           <h2>FAQ</h2>
