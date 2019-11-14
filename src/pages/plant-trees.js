@@ -206,7 +206,8 @@ const PlantTreesPage = props => {
           {installButtonBlock}
           <div
             style={{
-              marginBottom: 20,
+              marginTop: 10,
+              marginBottom: 40,
               // Full page width CSS
               display: 'block',
               width: '100vw',
