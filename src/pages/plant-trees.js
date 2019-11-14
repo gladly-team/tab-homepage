@@ -247,9 +247,15 @@ const PlantTreesPage = props => {
             marginLeft: '-50vw',
             marginRight: '-50vw',
             // End full page width CSS
+            overflow: 'hidden', // preventing horizontal page scroll
+            paddingBottom: 30, // show dot sliders
           }}
         >
-          <div style={{ display: 'block' }}>
+          <div
+            style={{
+              display: 'block',
+            }}
+          >
             <Slider
               dots
               focusOnSelect
