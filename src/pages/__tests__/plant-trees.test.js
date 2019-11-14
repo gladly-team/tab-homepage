@@ -21,14 +21,14 @@ describe('"plant trees" page', () => {
     const PlantTreesPage = require('../plant-trees').default
     const wrapper = shallow(<PlantTreesPage {...getMockProps()} />)
     const elem = wrapper.find(Helmet)
-    expect(elem.prop('title')).toBe('Plant Trees with Tab for a Cause')
+    expect(elem.prop('title')).toBe('Plant Trees for Free')
   })
 
   it('sets the open graph title', () => {
     const PlantTreesPage = require('../plant-trees').default
     const wrapper = shallow(<PlantTreesPage {...getMockProps()} />)
     const elem = wrapper.find('meta[property="og:title"]')
-    expect(elem.prop('content')).toBe('Plant Trees with Tab for a Cause')
+    expect(elem.prop('content')).toBe('Plant Trees for Free')
   })
 
   it('sets the open graph description', () => {
