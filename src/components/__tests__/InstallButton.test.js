@@ -58,7 +58,6 @@ describe('InstallButton', () => {
   })
 
   it('allows overriding Button props', () => {
-    const detectBrowser = require('browser-detect').default
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(
       <InstallButton size={'small'} color={'secondary'} />
@@ -69,8 +68,6 @@ describe('InstallButton', () => {
   })
 
   it('does not allow overriding the onClick prop', () => {
-    const detectBrowser = require('browser-detect').default
-
     const mockOnClick = jest.fn()
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton onClick={mockOnClick} />)
