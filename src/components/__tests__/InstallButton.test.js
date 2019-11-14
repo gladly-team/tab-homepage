@@ -57,6 +57,24 @@ describe('InstallButton', () => {
     shallow(<InstallButton />)
   })
 
+  it('allows overriding Button props', () => {
+    const InstallButton = require('../InstallButton').default
+    const wrapper = shallow(
+      <InstallButton size={'small'} color={'secondary'} />
+    )
+    const elem = wrapper.find(Button).first()
+    expect(elem.prop('size')).toEqual('small')
+    expect(elem.prop('color')).toEqual('secondary')
+  })
+
+  it('does not allow overriding the onClick prop', () => {
+    const mockOnClick = jest.fn()
+    const InstallButton = require('../InstallButton').default
+    const wrapper = shallow(<InstallButton onClick={mockOnClick} />)
+    const elem = wrapper.find(Button).first()
+    expect(elem.prop('onClick')).not.toEqual(mockOnClick)
+  })
+
   it('has correct text for desktop Chrome', () => {
     const detectBrowser = require('browser-detect').default
     detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
