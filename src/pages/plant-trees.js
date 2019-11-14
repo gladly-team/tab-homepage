@@ -7,6 +7,7 @@ import Layout from 'src/components/Layout'
 import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
+import edenPhotoBeforeAfter from 'src/img/eden-project/before-after.jpg'
 
 const installButtonBlock = (
   <div
@@ -176,6 +177,13 @@ const PlantTreesPage = props => {
             holiday season!
           </p>
           {installButtonBlock}
+          <img
+            alt={'An area before and after planting trees.'}
+            src={edenPhotoBeforeAfter}
+            style={{
+              marginBottom: 20,
+            }}
+          />
           <p>
             Trees are amazing plants that fight climate change through carbon
             sequestration, guard land against erosion, provide habitat for
