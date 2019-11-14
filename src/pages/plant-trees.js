@@ -204,13 +204,26 @@ const PlantTreesPage = props => {
             holiday season!
           </p>
           {installButtonBlock}
-          <img
-            alt={'An area before and after planting trees.'}
-            src={edenPhotoBeforeAfter}
+          <div
             style={{
               marginBottom: 20,
+              // Full page width CSS
+              display: 'block',
+              width: '100vw',
+              position: 'relative',
+              left: '50%',
+              right: '50%',
+              marginLeft: '-50vw',
+              marginRight: '-50vw',
+              // End full page width CSS
             }}
-          />
+          >
+            <img
+              alt={'An area before and after planting trees.'}
+              src={edenPhotoBeforeAfter}
+            />
+          </div>
+
           <p>
             Trees are amazing plants that fight climate change through carbon
             sequestration, guard land against erosion, provide habitat for
