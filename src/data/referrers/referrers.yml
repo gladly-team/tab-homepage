@@ -469,3 +469,5 @@
   path: goodnewspaper
 - referrerId: 311
   path: goodnewsletter
+- referrerId: 312
+  path: cynical
