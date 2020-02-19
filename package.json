@@ -61,7 +61,7 @@
     "babel-jest": "^24.8.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-gatsby": "^0.1.11",
-    "codecov": "^3.5.0",
+    "codecov": "^3.6.5",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",
     "enzyme-to-json": "^3.3.5",
