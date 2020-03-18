@@ -26,7 +26,7 @@ class Link extends React.Component {
   }
 
   render() {
-    const { children, to, style, hoverStyle } = this.props
+    const { children, to, style, hoverStyle, ...otherProps } = this.props
 
     const linkStyle = Object.assign(
       {},
@@ -57,6 +57,7 @@ class Link extends React.Component {
         style={linkStyle}
         onMouseEnter={this.onHover.bind(this)}
         onMouseLeave={this.onHoverEnd.bind(this)}
+        {...otherProps}
       >
         {children}
       </a>

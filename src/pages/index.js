@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import Container from '@material-ui/core/Container'
+import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
 
 import Layout from 'src/components/Layout'
 import Section from 'src/components/Section'
@@ -169,6 +172,45 @@ class IndexPage extends React.Component {
       />
     )
 
+    const UrgentNotification = (
+      <div
+        style={{
+          position: 'absolute',
+          width: '100vw',
+          top: 10,
+          zIndex: 10,
+          boxSizing: 'border-box',
+        }}
+      >
+        <Container
+          style={{
+            maxWidth: 900,
+            boxSizing: 'border-box',
+          }}
+        >
+          <Paper style={{ background: '#d82138', padding: 16 }}>
+            <Typography
+              variant="body2"
+              style={{ color: 'white' }}
+              align="center"
+            >
+              <span style={{ fontWeight: 'bold' }}>Update:</span> to support
+              COVID-19 relief, we are raising money for the WHO's{' '}
+              <Link
+                to="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate"
+                style={{ color: 'white', textDecoration: 'underline' }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Solidarity Response Fund
+              </Link>
+              .
+            </Typography>
+          </Paper>
+        </Container>
+      </div>
+    )
+
     // Always set the canonical URL to the homepage, which will
     // consolidate any pages using vanity URL paths or referral
     // parameters. Change this if any parameters or paths serve
@@ -180,6 +222,7 @@ class IndexPage extends React.Component {
           <Helmet>
             <link rel="canonical" href={canonicalURL} />
           </Helmet>
+          {UrgentNotification}
           <Section wrap={'reverse'}>
             <img
               src={browserLandingPageImg}
