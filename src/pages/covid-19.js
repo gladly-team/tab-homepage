@@ -178,7 +178,7 @@ const photos = [
   { src: edenPhotoNepalNurseryDirector },
 ]
 
-const PlantTreesPage = props => {
+const Covid19 = props => {
   const { location } = props
   const openGraphTitle = 'Plant Trees for Free'
   const openGraphDescription =
@@ -311,12 +311,12 @@ const PlantTreesPage = props => {
   )
 }
 
-PlantTreesPage.propTypes = {
+Covid19.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
 }
 
-PlantTreesPage.displayName = 'PlantTreesPage'
+Covid19.displayName = 'Covid19'
 
-export default PlantTreesPage
+export default Covid19
