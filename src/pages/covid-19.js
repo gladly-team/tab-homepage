@@ -7,18 +7,8 @@ import Layout from 'src/components/Layout'
 import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
-import edenPhotoBeforeAfter from 'src/img/eden-project/before-after.jpg'
-import edenPhotoTwoPeoplePlanting from 'src/img/eden-project/two-people-planting-resized.jpg'
-import edenPhotoPersonHoldingSeedlings from 'src/img/eden-project/person-holding-seedlings.jpg'
-import edenPhotoEmployees from 'src/img/eden-project/eden-employees-resized.jpg'
-import edenPhotoCritter from 'src/img/eden-project/critter-resized.jpg'
-import edenPhotoIndonesiaGiantMangrove from 'src/img/eden-project/indonesia-giant-mangrove-resized.jpg'
-import edenPhotoPersonPlanting from 'src/img/eden-project/person-planting-resized.jpg'
-import edenPhotoNepalNurseryDirector from 'src/img/eden-project/nepal-nursery-director-resized.jpg'
-
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import WHOPhoto from 'src/img/covid-19/who-covid-19.png'
+import foodBankNYCPhoto from 'src/img/covid-19/food-bank-for-nyc-covid-19.png'
 
 const installButtonBlock = (
   <div
@@ -162,27 +152,21 @@ const faqs = [
   },
 ]
 
-const photos = [
-  {
-    src: edenPhotoTwoPeoplePlanting,
-  },
-  {
-    src: edenPhotoPersonHoldingSeedlings,
-  },
-  { src: edenPhotoEmployees },
-  { src: edenPhotoCritter },
-  { src: edenPhotoPersonPlanting },
-  {
-    src: edenPhotoIndonesiaGiantMangrove,
-  },
-  { src: edenPhotoNepalNurseryDirector },
-]
-
 const Covid19 = props => {
   const { location } = props
-  const openGraphTitle = 'Plant Trees for Free'
+  const openGraphTitle = 'Support COVID-19 Relief for Free'
   const openGraphDescription =
-    'We are planting a tree for every person who joins Tab for a Cause from now until January 10, 2020.'
+    'To support COVID-19 relief, we are raising money for organizations who can help those affected.'
+
+  const campaignLabelStyle = {
+    color: 'white',
+    background: '#d82138',
+    padding: '6px 12px',
+    borderRadius: 3,
+    display: 'inline-block',
+    marginTop: 10,
+    marginBottom: 10,
+  }
   return (
     <Layout brand={'tab'} location={location}>
       <TextPageContent>
@@ -192,21 +176,63 @@ const Covid19 = props => {
           <meta name="twitter:title" content={openGraphTitle} />
           <meta name="twitter:description" content={openGraphDescription} />
         </Helmet>
-        <TextPageHeader>Plant Trees for Free!</TextPageHeader>
+        <TextPageHeader>Support COVID-19 Relief for Free</TextPageHeader>
         <div style={{ padding: '12px 0px' }}>
           <p>
-            Tab for a Cause is already one of the easiest ways to do good every
-            day, for free. Now, your new tab page is getting a little greener!
+            The spread of COVID-19 has been swift and destructive. We need a
+            global response to support the health systems working to keep us all
+            safe.
           </p>
-          <p style={{ fontWeight: 'bold', marginBottom: 0 }}>
-            Tab for a Cause has partnered with Eden Reforestation Projects to
-            plant a tree for every person that signs up for Tab for a Cause this
-            holiday season!
+          <p
+            style={{
+              marginBottom: 0,
+            }}
+          >
+            Tab for a Cause is a free, simple, and at-home way to raise money
+            for important causes, and we are running special campaigns during
+            the crisis to raise funds for response efforts.
           </p>
           {installButtonBlock}
+          <p>
+            Join Tab for a Cause now to support the fight against COVID-19.
+            Thank you, and stay safe.
+          </p>
           <div
             style={{
-              marginTop: 10,
+              marginTop: 40,
+              marginBottom: 40,
+            }}
+          >
+            <h5 style={campaignLabelStyle}>Campaign #1: March 17 – April 1</h5>
+
+            <h2 style={{ fontSize: '1.8rem' }}>
+              Supporting the{' '}
+              <a
+                href={
+                  'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate'
+                }
+              >
+                WHO COVID-19 Solidarity Fund
+              </a>
+            </h2>
+            <p>
+              The Tab for a Cause community raised thousands of dollars for the
+              World Health Organization's{' '}
+              <a
+                href={
+                  'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate'
+                }
+              >
+                COVID-19 Solidarity Fund
+              </a>{' '}
+              and their partners in a massive effort to help countries prevent,
+              detect, and manage the novel coronavirus—particularly those where
+              the needs are the greatest.
+            </p>
+          </div>
+          <div
+            style={{
+              marginTop: 40,
               marginBottom: 40,
               // Full page width CSS
               display: 'block',
@@ -220,79 +246,10 @@ const Covid19 = props => {
             }}
           >
             <img
-              alt={'An area before and after planting trees.'}
-              src={edenPhotoBeforeAfter}
+              alt={"Information on the World Health Organization's impact"}
+              src={WHOPhoto}
+              style={{ width: '100%' }}
             />
-          </div>
-
-          <p>
-            Trees are amazing plants that fight climate change through carbon
-            sequestration, guard land against erosion, provide habitat for
-            countless organisms, and provide economic resources for surrounding
-            communities. Unfortunately, deforestation has wiped out tree
-            populations across the globe, so we need to reinvest in one of
-            nature's amazing organisms and replant our forests.
-          </p>
-          <p>
-            To do our part,{' '}
-            <span style={{ fontWeight: 'bold' }}>
-              Tab for a Cause will plant a tree for each new Tabber from
-              November 14, 2019 to January 10, 2020
-            </span>
-            . If you are a current Tabber, you can plant a tree right now by
-            getting one friend or family member to start Tabbing.
-          </p>
-          <p>
-            It's incredibly simple to turn your tabs into support for some
-            amazing nonprofits. Now is the perfect time to get your friends to
-            join you in turning internet browsing into a charitable act.
-          </p>
-        </div>
-        <div
-          style={{
-            marginTop: 30,
-            marginBottom: 40,
-            // Full page width CSS
-            display: 'block',
-            width: '100vw',
-            position: 'relative',
-            left: '50%',
-            right: '50%',
-            marginLeft: '-50vw',
-            marginRight: '-50vw',
-            // End full page width CSS
-            overflow: 'hidden', // preventing horizontal page scroll
-            paddingBottom: 30, // show dot sliders
-          }}
-        >
-          <div
-            style={{
-              display: 'block',
-            }}
-          >
-            <Slider
-              dots
-              focusOnSelect
-              slidesToShow={3}
-              responsive={[
-                {
-                  breakpoint: 1040,
-                  settings: {
-                    slidesToShow: 1,
-                  },
-                },
-              ]}
-            >
-              {photos.map(photo => (
-                <div key={photo.src}>
-                  <img
-                    // TODO
-                    // alt={'An area before and after planting trees.'}
-                    src={photo.src}
-                  />
-                </div>
-              ))}
-            </Slider>
           </div>
         </div>
         <div style={{ padding: '12px 0px' }}>

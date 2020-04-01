@@ -12,7 +12,7 @@ import {
 const typography = new Typography({
   baseFontSize: `${baseFontSize}px`,
   scaleRatio: 2.2,
-  baseLineHeight: 1.3,
+  baseLineHeight: 1.36,
   headerFontFamily: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
   bodyFontFamily: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
   headerWeight: 'normal',
