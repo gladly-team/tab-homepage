@@ -78,7 +78,7 @@ const Covid19 = props => {
   const { location } = props
   const openGraphTitle = 'Support COVID-19 Relief for Free'
   const openGraphDescription =
-    'To support COVID-19 relief, we are raising money for organizations who can help those affected.'
+    'To support COVID-19 relief, we are raising money for organizations that help those affected.'
 
   const campaignLabelStyle = {
     color: 'white',
