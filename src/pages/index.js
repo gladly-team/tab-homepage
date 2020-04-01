@@ -195,14 +195,14 @@ class IndexPage extends React.Component {
               align="center"
             >
               <span style={{ fontWeight: 'bold' }}>Update:</span> to support
-              COVID-19 relief, we are raising money for the{' '}
+              COVID-19 relief, we are{' '}
               <Link
-                to="https://www.foodbanknyc.org/covid-19/"
+                to="/covid-19/"
                 style={{ color: 'white', textDecoration: 'underline' }}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Food Bank for NYC
+                raising money for the Food Bank for NYC
               </Link>
               .
             </Typography>
