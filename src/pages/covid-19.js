@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import Divider from '@material-ui/core/Divider'
+import { lightestTextColor } from 'src/themes/theme'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
 import Layout from 'src/components/Layout'
@@ -161,7 +163,7 @@ const Covid19 = props => {
   const campaignLabelStyle = {
     color: 'white',
     background: '#d82138',
-    padding: '6px 12px',
+    padding: '6px 14px',
     borderRadius: 3,
     display: 'inline-block',
     marginTop: 10,
@@ -177,26 +179,35 @@ const Covid19 = props => {
           <meta name="twitter:description" content={openGraphDescription} />
         </Helmet>
         <TextPageHeader>Support COVID-19 Relief for Free</TextPageHeader>
-        <div style={{ padding: '12px 0px' }}>
-          <p>
-            The spread of COVID-19 has been swift and destructive. We need a
-            global response to support the health systems working to keep us all
-            safe.
-          </p>
-          <p
+        <div style={{ paddingTop: 8 }}>
+          <div
             style={{
-              marginBottom: 0,
+              marginBottom: 40,
             }}
           >
-            Tab for a Cause is a free, simple, and at-home way to raise money
-            for important causes, and we are raising funds for critical response
-            efforts.
-          </p>
-          {installButtonBlock}
-          <p>
-            Join Tab for a Cause now to support the fight against COVID-19.
-            Thank you, and stay safe.
-          </p>
+            <p>
+              The spread of COVID-19 has been swift and destructive. We need a
+              global response to support the health systems working to keep us
+              all safe.
+            </p>
+            <p
+              style={{
+                marginBottom: 0,
+              }}
+            >
+              Tab for a Cause is a free, simple, and at-home way to raise money
+              for important causes, and we are raising funds for critical
+              response efforts.
+            </p>
+            {installButtonBlock}
+            <p>
+              Join Tab for a Cause now to support the fight against COVID-19.
+              Thank you, and stay safe.
+            </p>
+            <Divider
+              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
+            />
+          </div>
           <div
             style={{
               marginTop: 40,
@@ -216,8 +227,8 @@ const Covid19 = props => {
               </a>
             </h2>
             <p>
-              The Tab for a Cause community raised thousands of dollars for the
-              World Health Organization's{' '}
+              Our community raised thousands of dollars for the World Health
+              Organization's{' '}
               <a
                 href={
                   'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate'
@@ -235,7 +246,8 @@ const Covid19 = props => {
               marginTop: 40,
               marginBottom: 40,
               // Full page width CSS
-              display: 'block',
+              display: 'flex',
+              justifyContent: 'center',
               width: '100vw',
               position: 'relative',
               left: '50%',
@@ -248,7 +260,7 @@ const Covid19 = props => {
             <img
               alt={"Information on the World Health Organization's impact"}
               src={WHOPhoto}
-              style={{ width: '100%' }}
+              style={{ width: '100%', maxWidth: 1000 }}
             />
           </div>
         </div>
@@ -288,7 +300,8 @@ const Covid19 = props => {
             marginTop: 40,
             marginBottom: 40,
             // Full page width CSS
-            display: 'block',
+            display: 'flex',
+            justifyContent: 'center',
             width: '100vw',
             position: 'relative',
             left: '50%',
@@ -301,7 +314,7 @@ const Covid19 = props => {
           <img
             alt={"Information on the World Health Organization's impact"}
             src={foodBankNYCPhoto}
-            style={{ width: '100%' }}
+            style={{ width: '100%', maxWidth: 1000 }}
           />
         </div>
 
