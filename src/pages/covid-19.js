@@ -128,6 +128,64 @@ const Covid19 = props => {
               style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
             />
           </div>
+
+          <div>
+            <div
+              style={{
+                marginTop: 60,
+                marginBottom: 40,
+              }}
+            >
+              <h5 style={campaignLabelStyle}>Campaign #2: April 1 – ongoing</h5>
+
+              <h2 style={{ fontSize: '1.8rem' }}>
+                Giving 10,000 Meals to Families in Need
+              </h2>
+              <p>
+                COVID-19 has strained the ability of food banks to take care of
+                people in need. This phase of our support helps the{' '}
+                <a href={'https://www.foodbanknyc.org/covid-19/'}>
+                  Food Bank for New York City
+                </a>{' '}
+                keep families fed during this crisis.
+              </p>
+              <p>
+                Right now, tabs you open are providing meals for our fellow
+                humans in NYC. Our goal is to provide over 10,000 meals in the
+                next few days.
+              </p>
+              <p>
+                Together, we can feed thousands of people in need—so please open
+                a few tabs to help out.
+              </p>
+            </div>
+            <div
+              style={{
+                marginTop: 40,
+                marginBottom: 40,
+                // Full page width CSS
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100vw',
+                position: 'relative',
+                left: '50%',
+                right: '50%',
+                marginLeft: '-50vw',
+                marginRight: '-50vw',
+                // End full page width CSS
+              }}
+            >
+              <img
+                alt={"Information on the World Health Organization's impact"}
+                src={foodBankNYCPhoto}
+                style={{ width: '100%', maxWidth: 1000 }}
+              />
+            </div>
+            <Divider
+              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
+            />
+          </div>
+
           <div
             style={{
               marginTop: 60,
@@ -181,64 +239,6 @@ const Covid19 = props => {
             <img
               alt={"Information on the World Health Organization's impact"}
               src={WHOPhoto}
-              style={{ width: '100%', maxWidth: 1000 }}
-            />
-          </div>
-          <Divider
-            style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-          />
-        </div>
-
-        <div>
-          <div
-            style={{
-              marginTop: 60,
-              marginBottom: 40,
-            }}
-          >
-            <h5 style={campaignLabelStyle}>Campaign #2: April 1 – ongoing</h5>
-
-            <h2 style={{ fontSize: '1.8rem' }}>
-              Helping to Feed Families in Need
-            </h2>
-            <p>
-              COVID-19 has strained the ability of food banks to take care of
-              people in need. This phase of our support helps the{' '}
-              <a href={'https://www.foodbanknyc.org/covid-19/'}>
-                Food Bank for New York City
-              </a>{' '}
-              keep families fed during this crisis.
-            </p>
-            <p>
-              Right now, tabs you open are providing meals for our fellow humans
-              in NYC. Our goal is to provide over 10,000 meals in the next few
-              days.
-            </p>
-            <p>
-              Together, we can feed thousands of people in need—so please open a
-              few tabs to help out.
-            </p>
-            {installButtonBlock}
-          </div>
-          <div
-            style={{
-              marginTop: 40,
-              marginBottom: 40,
-              // Full page width CSS
-              display: 'flex',
-              justifyContent: 'center',
-              width: '100vw',
-              position: 'relative',
-              left: '50%',
-              right: '50%',
-              marginLeft: '-50vw',
-              marginRight: '-50vw',
-              // End full page width CSS
-            }}
-          >
-            <img
-              alt={"Information on the World Health Organization's impact"}
-              src={foodBankNYCPhoto}
               style={{ width: '100%', maxWidth: 1000 }}
             />
           </div>
