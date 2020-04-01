@@ -130,7 +130,7 @@ const Covid19 = props => {
           </div>
           <div
             style={{
-              marginTop: 40,
+              marginTop: 60,
               marginBottom: 40,
             }}
           >
@@ -160,6 +160,7 @@ const Covid19 = props => {
               detect, and manage the novel coronavirus—particularly those where
               the needs are the greatest.
             </p>
+            {installButtonBlock}
           </div>
           <div
             style={{
@@ -191,7 +192,7 @@ const Covid19 = props => {
         <div>
           <div
             style={{
-              marginTop: 40,
+              marginTop: 60,
               marginBottom: 40,
             }}
           >
@@ -246,7 +247,7 @@ const Covid19 = props => {
           />
         </div>
 
-        <div style={{ marginTop: 40, padding: '12px 0px' }}>
+        <div style={{ marginTop: 60 }}>
           <h2>FAQ</h2>
           {faqs.map(faq => {
             return (
