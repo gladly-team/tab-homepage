@@ -106,9 +106,9 @@ const Covid19 = props => {
             }}
           >
             <p>
-              The spread of COVID-19 has been swift and destructive. We need a
-              global response to support the health systems and community
-              organizations working to keep us all safe.
+              <b>April, 2020 – </b>The spread of COVID-19 has been swift and
+              destructive. We need a global response to support the health
+              systems and community organizations working to keep us all safe.
             </p>
             <p
               style={{
@@ -215,8 +215,8 @@ const Covid19 = props => {
                 COVID-19 Solidarity Fund
               </a>{' '}
               and their partners in a massive effort to help countries prevent,
-              detect, and manage the novel coronavirus—particularly those where
-              the needs are the greatest.
+              detect, and manage the novel coronavirus, particularly where the
+              needs are the greatest.
             </p>
             {installButtonBlock}
           </div>
