@@ -11,6 +11,7 @@ import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
 import WHOPhoto from 'src/img/covid-19/who-covid-19.png'
 import foodBankNYCPhoto from 'src/img/covid-19/food-bank-for-nyc-covid-19.png'
+import EvidenceActionPhoto from 'src/img/covid-19/chlorine-dispenser.jpg'
 
 const installButtonBlock = (
   <div
@@ -136,7 +137,72 @@ const Covid19 = props => {
                 marginBottom: 40,
               }}
             >
-              <h5 style={campaignLabelStyle}>Campaign #2: April 1 – ongoing</h5>
+              <h5 style={campaignLabelStyle}>Campaign #3: April 8 – ongoing</h5>
+
+              <h2 style={{ fontSize: '1.8rem' }}>
+                Giving 2,000 People Access to Clean Water
+              </h2>
+              <p>
+                The pandemic's impact on low-income countries will likely be
+                devastating, especially where people do not have access to clean
+                water, soap, or an adequate health system.
+              </p>
+              <p>
+                This phase of our relief efforts supports{' '}
+                <a
+                  href={
+                    'https://www.evidenceaction.org/responding-to-covid-19/'
+                  }
+                >
+                  Evidence Action
+                </a>{' '}
+                as they rapidly provide access to clean water and sanitation to
+                people who need it most.
+              </p>
+            </div>
+            <div
+              style={{
+                marginTop: 40,
+                marginBottom: 6,
+                // Full page width CSS
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100vw',
+                position: 'relative',
+                left: '50%',
+                right: '50%',
+                marginLeft: '-50vw',
+                marginRight: '-50vw',
+                // End full page width CSS
+              }}
+            >
+              <img
+                alt={"Information on the World Health Organization's impact"}
+                src={EvidenceActionPhoto}
+                style={{ width: '100%', maxWidth: 1000 }}
+              />
+            </div>
+            <p style={{ marginBottom: 40 }}>
+              Photo Credit:{' '}
+              <a
+                href={'https://www.evidenceaction.org/responding-to-covid-19/'}
+              >
+                Evidence Action
+              </a>
+            </p>
+            <Divider
+              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
+            />
+          </div>
+
+          <div>
+            <div
+              style={{
+                marginTop: 60,
+                marginBottom: 40,
+              }}
+            >
+              <h5 style={campaignLabelStyle}>Campaign #2: April 1 – April 8</h5>
 
               <h2 style={{ fontSize: '1.8rem' }}>
                 Giving 10,000 Meals to Families in Need
