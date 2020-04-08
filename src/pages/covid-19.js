@@ -107,9 +107,9 @@ const Covid19 = props => {
             }}
           >
             <p>
-              <b>April, 2020 – </b>The spread of COVID-19 has been swift and
-              destructive. We need a global response to support the health
-              systems and community organizations working to keep us all safe.
+              The spread of COVID-19 has been swift and destructive. We need a
+              global response to support the health systems and community
+              organizations working to keep us all safe.
             </p>
             <p
               style={{
@@ -118,12 +118,17 @@ const Covid19 = props => {
             >
               Tab for a Cause is a free, simple, and at-home way to raise money
               for important causes, and we are raising funds for critical relief
-              efforts.
+              efforts. Join in to support the fight against COVID-19:
             </p>
             {installButtonBlock}
             <p>
-              Join Tab for a Cause now to support the fight against COVID-19.
-              Thank you, and stay safe.
+              So far, we have given 10,000 meals to families in need and
+              thousands of dollars to the World Health Organization. Now, we're
+              aiming to give{' '}
+              <span style={{ fontWeight: 'bold' }}>
+                2,000 people access to clean water
+              </span>
+              .
             </p>
             <Divider
               style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
@@ -159,6 +164,16 @@ const Covid19 = props => {
                 as they rapidly provide access to clean water and sanitation to
                 people who need it most.
               </p>
+              <p>
+                Our goal is to give{' '}
+                <span style={{ fontWeight: 'bold' }}>
+                  2,000 people access to clean water
+                </span>{' '}
+                for one year, helping vulnerable communities to bolster their
+                efforts against COVID-19.
+              </p>
+              <p>Can you help out? Join in:</p>
+              {installButtonBlock}
             </div>
             <div
               style={{
@@ -182,7 +197,7 @@ const Covid19 = props => {
                 style={{ width: '100%', maxWidth: 1000 }}
               />
             </div>
-            <p style={{ marginBottom: 40 }}>
+            <p style={{ marginBottom: 60 }}>
               Photo Credit:{' '}
               <a
                 href={'https://www.evidenceaction.org/responding-to-covid-19/'}
@@ -209,26 +224,22 @@ const Covid19 = props => {
               </h2>
               <p>
                 COVID-19 has strained the ability of food banks to take care of
-                people in need. This phase of our support helps the{' '}
+                people in need. We highlighted the work of the{' '}
                 <a href={'https://www.foodbanknyc.org/covid-19/'}>
                   Food Bank for New York City
-                </a>{' '}
-                keep families fed during this crisis.
+                </a>
+                , which is keeping families fed during this crisis.
               </p>
               <p>
-                Right now, tabs you open are providing meals for our fellow
-                humans in NYC. Our goal is to provide over 10,000 meals in the
-                next few days.
-              </p>
-              <p>
-                Together, we can feed thousands of people in need—so please open
-                a few tabs to help out.
+                Our community{' '}
+                <span style={{ fontWeight: 'bold' }}>gave 10,000 meals</span> to
+                people in NYC who need it most—just by opening tabs.
               </p>
             </div>
             <div
               style={{
                 marginTop: 40,
-                marginBottom: 40,
+                marginBottom: 60,
                 // Full page width CSS
                 display: 'flex',
                 justifyContent: 'center',
@@ -261,18 +272,14 @@ const Covid19 = props => {
             <h5 style={campaignLabelStyle}>Campaign #1: March 17 – April 1</h5>
 
             <h2 style={{ fontSize: '1.8rem' }}>
-              Supporting the{' '}
-              <a
-                href={
-                  'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate'
-                }
-              >
-                WHO COVID-19 Solidarity Fund
-              </a>
+              Supporting the WHO COVID-19 Solidarity Fund
             </h2>
             <p>
-              Our community raised thousands of dollars for the World Health
-              Organization's{' '}
+              Our community{' '}
+              <span style={{ fontWeight: 'bold' }}>
+                raised thousands of dollars
+              </span>{' '}
+              for the World Health Organization's{' '}
               <a
                 href={
                   'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate'
@@ -284,7 +291,6 @@ const Covid19 = props => {
               detect, and manage the novel coronavirus, particularly where the
               needs are the greatest.
             </p>
-            {installButtonBlock}
           </div>
           <div
             style={{
