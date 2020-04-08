@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Divider from '@material-ui/core/Divider'
+import { TwitterTweetEmbed } from 'react-twitter-embed'
 import { lightestTextColor } from 'src/themes/theme'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
@@ -177,7 +178,7 @@ const Covid19 = props => {
             </div>
             <div
               style={{
-                marginTop: 40,
+                marginTop: 30,
                 marginBottom: 6,
                 // Full page width CSS
                 display: 'flex',
@@ -224,7 +225,7 @@ const Covid19 = props => {
               </h2>
               <p>
                 COVID-19 has strained the ability of food banks to take care of
-                people in need. We highlighted the work of the{' '}
+                people in need. We supported the work of the{' '}
                 <a href={'https://www.foodbanknyc.org/covid-19/'}>
                   Food Bank for New York City
                 </a>
@@ -235,6 +236,14 @@ const Covid19 = props => {
                 <span style={{ fontWeight: 'bold' }}>gave 10,000 meals</span> to
                 people in NYC who need it most—just by opening tabs.
               </p>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <TwitterTweetEmbed tweetId={'1245467268345200641'} />
+              </div>
             </div>
             <div
               style={{

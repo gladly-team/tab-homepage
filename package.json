@@ -30,6 +30,7 @@
     "react-helmet": "^5.2.1",
     "react-slick": "^0.24.0",
     "react-transition-group": "^4.0.1",
+    "react-twitter-embed": "^3.0.3",
     "react-typography": "^0.16.19",
     "slick-carousel": "^1.8.1",
     "typography": "^0.16.19"
