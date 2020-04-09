@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Divider from '@material-ui/core/Divider'
+import { TwitterTweetEmbed } from 'react-twitter-embed'
 import { lightestTextColor } from 'src/themes/theme'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
@@ -11,6 +12,7 @@ import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
 import WHOPhoto from 'src/img/covid-19/who-covid-19.png'
 import foodBankNYCPhoto from 'src/img/covid-19/food-bank-for-nyc-covid-19.png'
+import EvidenceActionPhoto from 'src/img/covid-19/chlorine-dispenser.jpg'
 
 const installButtonBlock = (
   <div
@@ -106,9 +108,9 @@ const Covid19 = props => {
             }}
           >
             <p>
-              <b>April, 2020 – </b>The spread of COVID-19 has been swift and
-              destructive. We need a global response to support the health
-              systems and community organizations working to keep us all safe.
+              The spread of COVID-19 has been swift and destructive. We need a
+              global response to support the health systems and community
+              organizations working to keep us all safe.
             </p>
             <p
               style={{
@@ -117,12 +119,17 @@ const Covid19 = props => {
             >
               Tab for a Cause is a free, simple, and at-home way to raise money
               for important causes, and we are raising funds for critical relief
-              efforts.
+              efforts. Join in to support the fight against COVID-19:
             </p>
             {installButtonBlock}
             <p>
-              Join Tab for a Cause now to support the fight against COVID-19.
-              Thank you, and stay safe.
+              So far, we have given 10,000 meals to families in need and
+              thousands of dollars to the World Health Organization. Now, we're
+              aiming to give{' '}
+              <span style={{ fontWeight: 'bold' }}>
+                2,000 people access to clean water
+              </span>
+              .
             </p>
             <Divider
               style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
@@ -136,33 +143,112 @@ const Covid19 = props => {
                 marginBottom: 40,
               }}
             >
-              <h5 style={campaignLabelStyle}>Campaign #2: April 1 – ongoing</h5>
+              <h5 style={campaignLabelStyle}>Campaign #3: April 8 – ongoing</h5>
+
+              <h2 style={{ fontSize: '1.8rem' }}>
+                Giving 2,000 People Access to Clean Water
+              </h2>
+              <p>
+                The pandemic's impact on low-income countries will likely be
+                devastating, especially where people do not have access to clean
+                water, soap, or an adequate health system.
+              </p>
+              <p>
+                This phase of our relief efforts supports{' '}
+                <a
+                  href={
+                    'https://www.evidenceaction.org/responding-to-covid-19/'
+                  }
+                >
+                  Evidence Action
+                </a>{' '}
+                as they rapidly provide access to clean water and sanitation to
+                people who need it most.
+              </p>
+              <p>
+                Our goal is to give{' '}
+                <span style={{ fontWeight: 'bold' }}>
+                  2,000 people access to clean water
+                </span>{' '}
+                for one year, helping vulnerable communities to bolster their
+                efforts against COVID-19.
+              </p>
+              <p>Can you help out? Join in:</p>
+              {installButtonBlock}
+            </div>
+            <div
+              style={{
+                marginTop: 30,
+                marginBottom: 6,
+                // Full page width CSS
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100vw',
+                position: 'relative',
+                left: '50%',
+                right: '50%',
+                marginLeft: '-50vw',
+                marginRight: '-50vw',
+                // End full page width CSS
+              }}
+            >
+              <img
+                alt={"Information on the World Health Organization's impact"}
+                src={EvidenceActionPhoto}
+                style={{ width: '100%', maxWidth: 1000 }}
+              />
+            </div>
+            <p style={{ marginBottom: 60 }}>
+              Photo Credit:{' '}
+              <a
+                href={'https://www.evidenceaction.org/responding-to-covid-19/'}
+              >
+                Evidence Action
+              </a>
+            </p>
+            <Divider
+              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
+            />
+          </div>
+
+          <div>
+            <div
+              style={{
+                marginTop: 60,
+                marginBottom: 40,
+              }}
+            >
+              <h5 style={campaignLabelStyle}>Campaign #2: April 1 – April 8</h5>
 
               <h2 style={{ fontSize: '1.8rem' }}>
                 Giving 10,000 Meals to Families in Need
               </h2>
               <p>
                 COVID-19 has strained the ability of food banks to take care of
-                people in need. This phase of our support helps the{' '}
+                people in need. We supported the work of the{' '}
                 <a href={'https://www.foodbanknyc.org/covid-19/'}>
                   Food Bank for New York City
-                </a>{' '}
-                keep families fed during this crisis.
+                </a>
+                , which is keeping families fed during this crisis.
               </p>
               <p>
-                Right now, tabs you open are providing meals for our fellow
-                humans in NYC. Our goal is to provide over 10,000 meals in the
-                next few days.
+                Our community{' '}
+                <span style={{ fontWeight: 'bold' }}>gave 10,000 meals</span> to
+                people in NYC who need it most—just by opening tabs.
               </p>
-              <p>
-                Together, we can feed thousands of people in need—so please open
-                a few tabs to help out.
-              </p>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <TwitterTweetEmbed tweetId={'1245467268345200641'} />
+              </div>
             </div>
             <div
               style={{
                 marginTop: 40,
-                marginBottom: 40,
+                marginBottom: 60,
                 // Full page width CSS
                 display: 'flex',
                 justifyContent: 'center',
@@ -195,18 +281,14 @@ const Covid19 = props => {
             <h5 style={campaignLabelStyle}>Campaign #1: March 17 – April 1</h5>
 
             <h2 style={{ fontSize: '1.8rem' }}>
-              Supporting the{' '}
-              <a
-                href={
-                  'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate'
-                }
-              >
-                WHO COVID-19 Solidarity Fund
-              </a>
+              Supporting the WHO COVID-19 Solidarity Fund
             </h2>
             <p>
-              Our community raised thousands of dollars for the World Health
-              Organization's{' '}
+              Our community{' '}
+              <span style={{ fontWeight: 'bold' }}>
+                raised thousands of dollars
+              </span>{' '}
+              for the World Health Organization's{' '}
               <a
                 href={
                   'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate'
@@ -218,7 +300,6 @@ const Covid19 = props => {
               detect, and manage the novel coronavirus, particularly where the
               needs are the greatest.
             </p>
-            {installButtonBlock}
           </div>
           <div
             style={{

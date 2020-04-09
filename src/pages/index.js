@@ -202,7 +202,7 @@ class IndexPage extends React.Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                raising money for the Food Bank for NYC
+                giving clean water to vulnerable commmunities
               </Link>
               .
             </Typography>
