@@ -74,6 +74,24 @@ const faqs = [
       </div>
     ),
   },
+  {
+    question: "Why can't I donate my hearts to these causes?",
+    answerElem: (
+      <div>
+        <p>
+          For some of these campaigns, we're trying something a little
+          different: we're automatically giving the money we’re raising to the
+          featured non-profit—no hearts donation required. In this case, all you
+          have to do is open tabs.
+        </p>
+        <p>
+          This approach allows us to know more quickly how much money we're
+          raising for the non-profit, so we can give the money urgently and
+          better demonstrate the tangible impact our community is having.
+        </p>
+      </div>
+    ),
+  },
 ]
 
 const Covid19 = props => {
