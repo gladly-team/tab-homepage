@@ -141,13 +141,13 @@ const Covid19 = props => {
             </p>
             {installButtonBlock}
             <p>
-              So far, we have given 10,000 meals to families in need and
-              thousands of dollars to the World Health Organization. Now, we're
-              aiming to give{' '}
+              So far, we have given 2,000 people access to clean water, 10,000
+              meals to families in need, and thousands of dollars to the World
+              Health Organization. Now, we're aiming to give{' '}
               <span style={{ fontWeight: 'bold' }}>
-                2,000 people access to clean water
-              </span>
-              .
+                25,000 meals to vulnerable kids
+              </span>{' '}
+              across the United States.
             </p>
             <Divider
               style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
@@ -161,7 +161,81 @@ const Covid19 = props => {
                 marginBottom: 40,
               }}
             >
-              <h5 style={campaignLabelStyle}>Campaign #3: April 8 – ongoing</h5>
+              <h5 style={campaignLabelStyle}>
+                Campaign #4: April 17 – ongoing
+              </h5>
+
+              <h2 style={{ fontSize: '1.8rem' }}>
+                Providing 25,000 Meals to Hungry Children
+              </h2>
+              <p>
+                Nearly 22 million low-income kids rely on the free and
+                reduced-price meals they receive at school. With schools closed
+                in districts nationwide, children may be left without that
+                critical lifeline to healthy meals.
+              </p>
+              <p>
+                To help combat this, we are supporting{' '}
+                <a href={'https://www.nokidhungry.org/coronavirus'}>
+                  No Kid Hungry
+                </a>{' '}
+                in their efforts to make sure all children have access to
+                nutritious meals throughout the crisis.
+              </p>
+              <p>
+                Our goal is to give{' '}
+                <span style={{ fontWeight: 'bold' }}>
+                  25,000 meals to kids in need
+                </span>
+                . Can you help out? Join in:
+              </p>
+              {installButtonBlock}
+            </div>
+            <div
+              style={{
+                marginTop: 30,
+                marginBottom: 6,
+                // Full page width CSS
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100vw',
+                position: 'relative',
+                left: '50%',
+                right: '50%',
+                marginLeft: '-50vw',
+                marginRight: '-50vw',
+                // End full page width CSS
+              }}
+            >
+              <img
+                alt={"Information on the World Health Organization's impact"}
+                src={EvidenceActionPhoto}
+                style={{ width: '100%', maxWidth: 1000 }}
+              />
+            </div>
+            <p style={{ marginBottom: 60 }}>
+              Photo Credit:{' '}
+              <a
+                href={'https://www.evidenceaction.org/responding-to-covid-19/'}
+              >
+                Evidence Action
+              </a>
+            </p>
+            <Divider
+              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
+            />
+          </div>
+
+          <div>
+            <div
+              style={{
+                marginTop: 60,
+                marginBottom: 40,
+              }}
+            >
+              <h5 style={campaignLabelStyle}>
+                Campaign #3: April 8 – April 17
+              </h5>
 
               <h2 style={{ fontSize: '1.8rem' }}>
                 Giving 2,000 People Access to Clean Water
@@ -172,7 +246,7 @@ const Covid19 = props => {
                 water, soap, or an adequate health system.
               </p>
               <p>
-                This phase of our relief efforts supports{' '}
+                Our community raised money for{' '}
                 <a
                   href={
                     'https://www.evidenceaction.org/responding-to-covid-19/'
@@ -184,15 +258,13 @@ const Covid19 = props => {
                 people who need it most.
               </p>
               <p>
-                Our goal is to give{' '}
+                Together, we gave{' '}
                 <span style={{ fontWeight: 'bold' }}>
                   2,000 people access to clean water
                 </span>{' '}
                 for one year, helping vulnerable communities to bolster their
                 efforts against COVID-19.
               </p>
-              <p>Can you help out? Join in:</p>
-              {installButtonBlock}
             </div>
             <div
               style={{
