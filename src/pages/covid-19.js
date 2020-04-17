@@ -169,10 +169,10 @@ const Covid19 = props => {
                 Providing 25,000 Meals to Hungry Children
               </h2>
               <p>
-                Nearly 22 million low-income kids rely on the free and
-                reduced-price meals they receive at school. With schools closed
-                in districts nationwide, children may be left without that
-                critical lifeline to healthy meals.
+                Nearly 22 million low-income kids in the United States rely on
+                the free and reduced-price meals they receive at school. With
+                schools closed in districts nationwide, children may be left
+                without that critical lifeline to healthy meals.
               </p>
               <p>
                 To help combat this, we are supporting{' '}
@@ -215,10 +215,8 @@ const Covid19 = props => {
             </div>
             <p style={{ marginBottom: 60 }}>
               Photo Credit:{' '}
-              <a
-                href={'https://www.evidenceaction.org/responding-to-covid-19/'}
-              >
-                Evidence Action
+              <a href={'https://www.nokidhungry.org/coronavirus'}>
+                No Kid Hungry
               </a>
             </p>
             <Divider
