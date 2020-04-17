@@ -13,6 +13,7 @@ import { homeURL } from 'src/utils/navigation'
 import WHOPhoto from 'src/img/covid-19/who-covid-19.png'
 import foodBankNYCPhoto from 'src/img/covid-19/food-bank-for-nyc-covid-19.png'
 import EvidenceActionPhoto from 'src/img/covid-19/chlorine-dispenser.jpg'
+import NoKidHungryPhoto from 'src/img/covid-19/no-kid-hungry.png'
 
 const installButtonBlock = (
   <div
@@ -209,7 +210,7 @@ const Covid19 = props => {
             >
               <img
                 alt={"Information on the World Health Organization's impact"}
-                src={EvidenceActionPhoto}
+                src={NoKidHungryPhoto}
                 style={{ width: '100%', maxWidth: 1000 }}
               />
             </div>
