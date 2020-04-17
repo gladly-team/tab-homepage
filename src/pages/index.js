@@ -202,7 +202,7 @@ class IndexPage extends React.Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                giving clean water to vulnerable commmunities
+                giving meals to vulnerable kids
               </Link>
               .
             </Typography>
