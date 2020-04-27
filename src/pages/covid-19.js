@@ -14,6 +14,7 @@ import WHOPhoto from 'src/img/covid-19/who-covid-19.png'
 import foodBankNYCPhoto from 'src/img/covid-19/food-bank-for-nyc-covid-19.png'
 import EvidenceActionPhoto from 'src/img/covid-19/chlorine-dispenser.jpg'
 import NoKidHungryPhoto from 'src/img/covid-19/no-kid-hungry.png'
+import DoctorsWithoutBordersImg from 'src/img/covid-19/msf.png'
 
 const installButtonBlock = (
   <div
@@ -142,13 +143,14 @@ const Covid19 = props => {
             </p>
             {installButtonBlock}
             <p>
-              So far, we have given 2,000 people access to clean water, 10,000
-              meals to families in need, and thousands of dollars to the World
-              Health Organization. Now, we're aiming to give{' '}
+              So far, we've given 25,000 meals to food banks, 2,000 people
+              access to clean water, 10,000 meals to families in New York City,
+              and thousands of dollars to the World Health Organization. Now,
+              we're supporting{' '}
               <span style={{ fontWeight: 'bold' }}>
-                25,000 meals to vulnerable kids
-              </span>{' '}
-              across the United States.
+                the critical work of Doctors Without Borders
+              </span>
+              .
             </p>
             <Divider
               style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
@@ -163,33 +165,30 @@ const Covid19 = props => {
               }}
             >
               <h5 style={campaignLabelStyle}>
-                Campaign #4: April 17 – ongoing
+                Campaign #5: April 27 – ongoing
               </h5>
 
               <h2 style={{ fontSize: '1.8rem' }}>
-                Providing 25,000 Meals to Hungry Children
+                Supporting Global Healthcare Systems
               </h2>
               <p>
-                Nearly 22 million low-income kids in the United States rely on
-                the free and reduced-price meals they receive at school. With
-                schools closed in districts nationwide, children may be left
-                without that critical lifeline to healthy meals.
-              </p>
-              <p>
-                To help combat this, we are supporting{' '}
-                <a href={'https://www.nokidhungry.org/coronavirus'}>
-                  No Kid Hungry
+                As COVID-19 continues to spread, it will stress health systems
+                around the globe. In this phase of our relief efforts, we’re
+                supporting{' '}
+                <a href={'https://www.doctorswithoutborders.org/covid19'}>
+                  Doctors Without Borders
                 </a>{' '}
-                in their efforts to make sure all children have access to
-                nutritious meals throughout the crisis.
+                and their efforts to ensure access to quality healthcare around
+                the world.
               </p>
               <p>
-                Our goal is to give{' '}
-                <span style={{ fontWeight: 'bold' }}>
-                  25,000 meals to kids in need
-                </span>
-                . Can you help out? Join in:
+                In response to COVID-19, Doctors Without Borders is fighting on
+                multiple fronts—caring for patients, offering health education
+                and mental health support, and providing training for vital
+                infection control measures in health facilities around the
+                world.
               </p>
+              <p>Will you support doctors around the world? Join in:</p>
               {installButtonBlock}
             </div>
             <div
@@ -209,7 +208,76 @@ const Covid19 = props => {
               }}
             >
               <img
-                alt={"Information on the World Health Organization's impact"}
+                alt={'Doctors Without Borders in action'}
+                src={DoctorsWithoutBordersImg}
+                style={{ width: '100%', maxWidth: 1000 }}
+              />
+            </div>
+            <p style={{ marginBottom: 60 }}>
+              Photo Credit:{' '}
+              <a href={'https://www.doctorswithoutborders.org'}>
+                Doctors Without Borders
+              </a>
+            </p>
+            <Divider
+              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
+            />
+          </div>
+
+          <div>
+            <div
+              style={{
+                marginTop: 60,
+                marginBottom: 40,
+              }}
+            >
+              <h5 style={campaignLabelStyle}>
+                Campaign #4: April 17 – April 27
+              </h5>
+
+              <h2 style={{ fontSize: '1.8rem' }}>
+                Providing 25,000 Meals to Hungry Children
+              </h2>
+              <p>
+                Nearly 22 million low-income kids in the United States rely on
+                the free and reduced-price meals they receive at school. With
+                schools closed in districts nationwide, children may be left
+                without that critical lifeline to healthy meals.
+              </p>
+              <p>
+                To help combat this, we supported{' '}
+                <a href={'https://www.nokidhungry.org/coronavirus'}>
+                  No Kid Hungry
+                </a>{' '}
+                in their efforts to make sure all children have access to
+                nutritious meals throughout the crisis.
+              </p>
+              <p>
+                Together, we successfully gave{' '}
+                <span style={{ fontWeight: 'bold' }}>
+                  25,000 meals to kids in need
+                </span>
+                . Thank you!
+              </p>
+            </div>
+            <div
+              style={{
+                marginTop: 30,
+                marginBottom: 6,
+                // Full page width CSS
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100vw',
+                position: 'relative',
+                left: '50%',
+                right: '50%',
+                marginLeft: '-50vw',
+                marginRight: '-50vw',
+                // End full page width CSS
+              }}
+            >
+              <img
+                alt={'A food bank'}
                 src={NoKidHungryPhoto}
                 style={{ width: '100%', maxWidth: 1000 }}
               />
@@ -282,7 +350,7 @@ const Covid19 = props => {
               }}
             >
               <img
-                alt={"Information on the World Health Organization's impact"}
+                alt={"Evidence Action's work in the field"}
                 src={EvidenceActionPhoto}
                 style={{ width: '100%', maxWidth: 1000 }}
               />
@@ -351,7 +419,7 @@ const Covid19 = props => {
               }}
             >
               <img
-                alt={"Information on the World Health Organization's impact"}
+                alt={'A food bank'}
                 src={foodBankNYCPhoto}
                 style={{ width: '100%', maxWidth: 1000 }}
               />
