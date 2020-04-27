@@ -40,11 +40,19 @@ openx.com,537145035,DIRECT,6a698e2ec38604c6
 contextweb.com,560174,DIRECT
 
 # RhythmOne
-#   Direct:
+#   Direct relationship:
 rhythmone.com,1398004509,DIRECT,a670c89d4a324e47
 video.unrulymedia.com,1398004509,DIRECT
 rhythmone.com,3781572624,DIRECT,a670c89d4a324e47
-#   Via Amazon:
+indexexchange.com,182257,RESELLER
+appnexus.com,6849,RESELLER
+rubiconproject.com,15268,RESELLER
+spotxchange.com,285547,RESELLER,7842df1d2fe2db34
+spotx.tv,285547,RESELLER,7842df1d2fe2db34
+pubmatic.com,159277,RESELLER,<5d62403b186f2ace>
+advertising.com,28605,RESELLER
+improvedigital.com,1699,RESELLER
+#   RhythmOne via Amazon:
 rhythmone.com,4155644243,DIRECT,a670c89d4a324e47
 
 # Sonobi
