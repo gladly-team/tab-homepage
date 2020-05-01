@@ -143,10 +143,10 @@ const Covid19 = props => {
             </p>
             {installButtonBlock}
             <p>
-              So far, we've given 25,000 meals to food banks, 2,000 people
-              access to clean water, 10,000 meals to families in New York City,
-              and thousands of dollars to the World Health Organization. Now,
-              we're supporting{' '}
+              So far, we've given meals to hungry kids, 2,000 people access to
+              clean water, 10,000 meals to families in New York City, and
+              thousands of dollars to the World Health Organization. Now, we're
+              supporting{' '}
               <span style={{ fontWeight: 'bold' }}>
                 the critical work of Doctors Without Borders
               </span>
@@ -236,7 +236,7 @@ const Covid19 = props => {
               </h5>
 
               <h2 style={{ fontSize: '1.8rem' }}>
-                Providing 25,000 Meals to Hungry Children
+                Providing Meals to Hungry Children
               </h2>
               <p>
                 Nearly 22 million low-income kids in the United States rely on
@@ -253,9 +253,9 @@ const Covid19 = props => {
                 nutritious meals throughout the crisis.
               </p>
               <p>
-                Together, we successfully gave{' '}
+                Together, we helped{' '}
                 <span style={{ fontWeight: 'bold' }}>
-                  25,000 meals to kids in need
+                  provide meals to kids in need
                 </span>
                 . Thank you!
               </p>
