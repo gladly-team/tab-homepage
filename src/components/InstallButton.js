@@ -72,12 +72,17 @@ class InstallButton extends React.Component {
   }
 
   async onClick() {
-    const { onUnsupportedBrowserInstallClick } = this.props
+    const { onBeforeInstall, onUnsupportedBrowserInstallClick } = this.props
 
     // Log the analytics event for a download click. Wait
     // for it to finish before continuing because we may
     // redirect away from the page.
     await downloadButtonClick()
+
+    if (onBeforeInstall) {
+      const response = onBeforeInstall()
+      await Promise.resolve(response)
+    }
 
     switch (this.state.browser) {
       case CHROME_BROWSER:
@@ -113,6 +118,7 @@ class InstallButton extends React.Component {
 
   render() {
     const {
+      onBeforeInstall, // eslint-disable-line no-unused-vars
       onUnsupportedBrowserInstallClick, // eslint-disable-line no-unused-vars
       ...otherProps
     } = this.props
@@ -135,10 +141,12 @@ class InstallButton extends React.Component {
 }
 
 InstallButton.propTypes = {
+  onBeforeInstall: PropTypes.func,
   onUnsupportedBrowserInstallClick: PropTypes.func,
 }
 
 InstallButton.defaultProps = {
+  onBeforeInstall: null,
   onUnsupportedBrowserInstallClick: () => {},
 }
 
