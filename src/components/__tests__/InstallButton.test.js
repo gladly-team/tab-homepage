@@ -356,6 +356,18 @@ describe('InstallButton', () => {
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
 
+  it('calls the onBeforeInstall prop on click', async () => {
+    expect.assertions(2)
+    const mockOnBeforeInstall = jest.fn(() => Promise.resolve())
+    const InstallButton = require('../InstallButton').default
+    const wrapper = shallow(
+      <InstallButton onBeforeInstall={mockOnBeforeInstall} />
+    )
+    expect(mockOnBeforeInstall).not.toHaveBeenCalled()
+    await clickButtonShallow(wrapper)
+    expect(mockOnBeforeInstall).toHaveBeenCalled()
+  })
+
   it('calls downloadButtonClick analytics event on click', async () => {
     expect.assertions(1)
 
