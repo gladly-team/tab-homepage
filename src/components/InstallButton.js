@@ -80,7 +80,8 @@ class InstallButton extends React.Component {
     await downloadButtonClick()
 
     if (onBeforeInstall) {
-      await onBeforeInstall()
+      const response = onBeforeInstall()
+      await Promise.resolve(response)
     }
 
     switch (this.state.browser) {
@@ -140,7 +141,7 @@ class InstallButton extends React.Component {
 }
 
 InstallButton.propTypes = {
-  onBeforeInstall: PropTypes.func, // optional async function
+  onBeforeInstall: PropTypes.func,
   onUnsupportedBrowserInstallClick: PropTypes.func,
 }
 
