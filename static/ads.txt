@@ -1,5 +1,6 @@
-# Adsense
+# Google AdSense & AdX
 google.com,pub-1918626353776886,DIRECT,f08c47fec0942fa0
+google.com,pub-5930411933708598,DIRECT,f08c47fec0942fa0
 
 # Amazon
 aps.amazon.com,ea374841-51b0-4335-9960-99200427f7c8,DIRECT
