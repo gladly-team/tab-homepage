@@ -143,14 +143,11 @@ const Covid19 = props => {
             </p>
             {installButtonBlock}
             <p>
-              So far, we've given meals to hungry kids, 2,000 people access to
-              clean water, 10,000 meals to families in New York City, and
-              thousands of dollars to the World Health Organization. Now, we're
-              supporting{' '}
-              <span style={{ fontWeight: 'bold' }}>
-                the critical work of Doctors Without Borders
-              </span>
-              .
+              So far, we've raised thousands of dollars to Doctors Without
+              Borders, given meals to hungry kids, provided 2,000 people with
+              access to clean water, given 10,000 meals to families in New York
+              City, and raised thousands of dollars to the World Health
+              Organization.
             </p>
             <Divider
               style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
@@ -164,17 +161,14 @@ const Covid19 = props => {
                 marginBottom: 40,
               }}
             >
-              <h5 style={campaignLabelStyle}>
-                Campaign #5: April 27 – ongoing
-              </h5>
+              <h5 style={campaignLabelStyle}>Campaign #5: April 27 – June 2</h5>
 
               <h2 style={{ fontSize: '1.8rem' }}>
                 Supporting Global Healthcare Systems
               </h2>
               <p>
                 As COVID-19 continues to spread, it will stress health systems
-                around the globe. In this phase of our relief efforts, we’re
-                supporting{' '}
+                around the globe. We supported{' '}
                 <a href={'https://www.doctorswithoutborders.org/covid19'}>
                   Doctors Without Borders
                 </a>{' '}
@@ -188,8 +182,6 @@ const Covid19 = props => {
                 infection control measures in health facilities around the
                 world.
               </p>
-              <p>Will you support doctors around the world? Join in:</p>
-              {installButtonBlock}
             </div>
             <div
               style={{

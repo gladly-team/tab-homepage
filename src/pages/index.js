@@ -172,44 +172,45 @@ class IndexPage extends React.Component {
       />
     )
 
-    const UrgentNotification = (
-      <div
-        style={{
-          position: 'absolute',
-          width: '100vw',
-          top: 10,
-          zIndex: 10,
-          boxSizing: 'border-box',
-        }}
-      >
-        <Container
-          style={{
-            maxWidth: 900,
-            boxSizing: 'border-box',
-          }}
-        >
-          <Paper style={{ background: '#d82138', padding: 16 }}>
-            <Typography
-              variant="body2"
-              style={{ color: 'white' }}
-              align="center"
-            >
-              <span style={{ fontWeight: 'bold' }}>Update:</span> to support
-              COVID-19 relief, we are{' '}
-              <Link
-                to="/covid-19/"
-                style={{ color: 'white', textDecoration: 'underline' }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                supporting doctors around the world
-              </Link>
-              .
-            </Typography>
-          </Paper>
-        </Container>
-      </div>
-    )
+    const UrgentNotification = null
+    // const UrgentNotification = (
+    //   <div
+    //     style={{
+    //       position: 'absolute',
+    //       width: '100vw',
+    //       top: 10,
+    //       zIndex: 10,
+    //       boxSizing: 'border-box',
+    //     }}
+    //   >
+    //     <Container
+    //       style={{
+    //         maxWidth: 900,
+    //         boxSizing: 'border-box',
+    //       }}
+    //     >
+    //       <Paper style={{ background: '#d82138', padding: 16 }}>
+    //         <Typography
+    //           variant="body2"
+    //           style={{ color: 'white' }}
+    //           align="center"
+    //         >
+    //           <span style={{ fontWeight: 'bold' }}>Update:</span> to support
+    //           COVID-19 relief, we are{' '}
+    //           <Link
+    //             to="/covid-19/"
+    //             style={{ color: 'white', textDecoration: 'underline' }}
+    //             target="_blank"
+    //             rel="noopener noreferrer"
+    //           >
+    //             supporting doctors around the world
+    //           </Link>
+    //           .
+    //         </Typography>
+    //       </Paper>
+    //     </Container>
+    //   </div>
+    // )
 
     // Always set the canonical URL to the homepage, which will
     // consolidate any pages using vanity URL paths or referral
