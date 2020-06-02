@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Container from '@material-ui/core/Container'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
+// import Container from '@material-ui/core/Container'
+// import Paper from '@material-ui/core/Paper'
+// import Typography from '@material-ui/core/Typography'
 
 import Layout from 'src/components/Layout'
 import Section from 'src/components/Section'
