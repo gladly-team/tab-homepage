@@ -52,10 +52,10 @@ describe('"COVID-19" page', () => {
     expect(wrapper.find(Layout).prop('brand')).toEqual('tab')
   })
 
-  it('includes three install buttons', () => {
+  it('includes two install buttons', () => {
     const Covid19Page = require('../covid-19').default
     const wrapper = shallow(<Covid19Page {...getMockProps()} />)
-    expect(wrapper.find(InstallButton).length).toEqual(3)
+    expect(wrapper.find(InstallButton).length).toEqual(2)
   })
 
   it('the InstallButton onUnsupportedBrowserInstallClick sends the user to the homepage', () => {
