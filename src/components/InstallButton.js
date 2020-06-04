@@ -1,15 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Button from '@material-ui/core/Button'
-import detectBrowser from 'browser-detect'
 import {
   CHROME_BROWSER,
+  EDGE_BROWSER,
   FIREFOX_BROWSER,
   UNSUPPORTED_BROWSER,
 } from 'src/utils/constants'
-import { chromeExtensionURL, firefoxExtensionURL } from 'src/utils/navigation'
+import {
+  chromeExtensionURL,
+  edgeExtensionURL,
+  firefoxExtensionURL,
+} from 'src/utils/navigation'
 import redirect from 'src/utils/redirect'
 import { downloadButtonClick } from 'src/utils/analytics/logEvent'
+import getBrowserInfo from 'src/utils/browserDetection'
 
 class InstallButton extends React.Component {
   constructor(props) {
@@ -34,26 +39,18 @@ class InstallButton extends React.Component {
   }
 
   detectBrowser(callback = () => {}) {
-    const browserInfo = detectBrowser()
-    var browser = 'other'
-    switch (browserInfo.name) {
-      case 'chrome':
-        browser = CHROME_BROWSER
-        break
-      case 'chromium':
-        browser = CHROME_BROWSER
-        break
-      case 'crios':
-        browser = CHROME_BROWSER
-        break
-      case 'firefox':
-        browser = FIREFOX_BROWSER
-        break
-      default:
-        browser = UNSUPPORTED_BROWSER
-        break
+    const browserInfo = getBrowserInfo()
+    let browser
+    if (browserInfo.isChrome()) {
+      browser = CHROME_BROWSER
+    } else if (browserInfo.isFirefox()) {
+      browser = FIREFOX_BROWSER
+    } else if (browserInfo.isEdge()) {
+      browser = EDGE_BROWSER
+    } else {
+      browser = UNSUPPORTED_BROWSER
     }
-    const mobile = browserInfo.mobile ? true : false
+    const mobile = browserInfo.isMobile()
     this.setState(
       {
         browser: browser,
@@ -61,14 +58,6 @@ class InstallButton extends React.Component {
       },
       callback
     )
-  }
-
-  installFirefoxExtension() {
-    redirect(firefoxExtensionURL)
-  }
-
-  installChromeExtension() {
-    redirect(chromeExtensionURL)
   }
 
   async onClick() {
@@ -86,10 +75,13 @@ class InstallButton extends React.Component {
 
     switch (this.state.browser) {
       case CHROME_BROWSER:
-        this.installChromeExtension()
+        redirect(chromeExtensionURL)
+        break
+      case EDGE_BROWSER:
+        redirect(edgeExtensionURL)
         break
       case FIREFOX_BROWSER:
-        this.installFirefoxExtension()
+        redirect(firefoxExtensionURL)
         break
       default:
         console.info(
@@ -108,6 +100,8 @@ class InstallButton extends React.Component {
       switch (this.state.browser) {
         case CHROME_BROWSER:
           return 'Add to Chrome'
+        case EDGE_BROWSER:
+          return 'Add to Edge'
         case FIREFOX_BROWSER:
           return 'Add to Firefox'
         default:

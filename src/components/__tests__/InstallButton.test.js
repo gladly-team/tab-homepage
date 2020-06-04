@@ -4,8 +4,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Button from '@material-ui/core/Button'
+import getBrowserInfo from 'src/utils/browserDetection'
 
-jest.mock('browser-detect')
+jest.mock('src/utils/browserDetection')
 jest.mock('src/utils/location')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/analytics/logEvent')
@@ -13,11 +14,10 @@ jest.mock('@material-ui/core/Button')
 
 const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
   return {
-    name: browser,
-    version: '58.0.3029',
-    versionNumber: 58.03029,
-    mobile: mobile,
-    os: 'Windows NT 10.0',
+    isChrome: () => browser === 'chrome',
+    isEdge: () => browser === 'edge',
+    isFirefox: () => browser === 'firefox',
+    isMobile: () => mobile,
   }
 }
 
@@ -44,15 +44,16 @@ const clickButtonShallow = async wrapper => {
   await new Promise(resolve => setImmediate(resolve))
 }
 
+beforeEach(() => {
+  getBrowserInfo.mockReturnValue(createMockBrowserInfo())
+})
+
 afterEach(() => {
   jest.clearAllMocks()
 })
 
 describe('InstallButton', () => {
   it('renders without error', () => {
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo())
-
     const InstallButton = require('../InstallButton').default
     shallow(<InstallButton />)
   })
@@ -76,9 +77,7 @@ describe('InstallButton', () => {
   })
 
   it('has correct text for desktop Chrome', () => {
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', false))
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
     expect(
@@ -90,9 +89,7 @@ describe('InstallButton', () => {
   })
 
   it('has correct text for desktop Firefox', () => {
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('firefox', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', false))
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
     expect(
@@ -103,10 +100,20 @@ describe('InstallButton', () => {
     ).toEqual('Add to Firefox')
   })
 
-  it('has correct text for desktop unsupported browser', () => {
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('other', false))
+  it('has correct text for desktop Edge', () => {
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('edge', false))
+    const InstallButton = require('../InstallButton').default
+    const wrapper = shallow(<InstallButton />)
+    expect(
+      wrapper
+        .find(Button)
+        .first()
+        .text()
+    ).toEqual('Add to Edge')
+  })
 
+  it('has correct text for desktop unsupported browser', () => {
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('other', false))
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
     expect(
@@ -118,9 +125,7 @@ describe('InstallButton', () => {
   })
 
   it('has correct text for mobile browser', () => {
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', true))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', true))
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
     expect(
@@ -133,11 +138,8 @@ describe('InstallButton', () => {
 
   it('navigates to the Firefox Addons page on click (on Firefox desktop browser)', async () => {
     expect.assertions(2)
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('firefox', false))
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', false))
     const redirect = require('src/utils/redirect').default
-
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
     const wrapper = shallow(
@@ -154,11 +156,8 @@ describe('InstallButton', () => {
 
   it('navigates to the Chrome Web Store page on click (on Chrome desktop browser)', async () => {
     expect.assertions(2)
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', false))
     const redirect = require('src/utils/redirect').default
-
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
     const wrapper = shallow(
@@ -173,11 +172,27 @@ describe('InstallButton', () => {
     expect(mockOnUnsupportedBrowserInstallClick).not.toHaveBeenCalled()
   })
 
+  it('navigates to the Edge Addons page on click (on Edge desktop browser)', async () => {
+    expect.assertions(2)
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('edge', false))
+    const redirect = require('src/utils/redirect').default
+    const InstallButton = require('../InstallButton').default
+    const mockOnUnsupportedBrowserInstallClick = jest.fn()
+    const wrapper = shallow(
+      <InstallButton
+        onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
+      />
+    )
+    await clickButtonShallow(wrapper)
+    expect(redirect).toHaveBeenCalledWith(
+      'https://microsoftedge.microsoft.com/addons/detail/hmiiajmhelfgiaoboffbjpjdckbmnddg'
+    )
+    expect(mockOnUnsupportedBrowserInstallClick).not.toHaveBeenCalled()
+  })
+
   it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Safari desktop browser', async () => {
     expect.assertions(1)
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('safari', false))
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('safari', false))
 
     // Silence expected console.info log
     jest.spyOn(console, 'info').mockImplementationOnce(() => {})
@@ -195,29 +210,7 @@ describe('InstallButton', () => {
 
   it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Opera desktop browser', async () => {
     expect.assertions(1)
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('opera', false))
-
-    // Silence expected console.info log
-    jest.spyOn(console, 'info').mockImplementationOnce(() => {})
-
-    const mockOnUnsupportedBrowserInstallClick = jest.fn()
-    const InstallButton = require('../InstallButton').default
-    const wrapper = shallow(
-      <InstallButton
-        onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
-      />
-    )
-    await clickButtonShallow(wrapper)
-    expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
-  })
-
-  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Edge desktop browser', async () => {
-    expect.assertions(1)
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('edge', false))
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('opera', false))
 
     // Silence expected console.info log
     jest.spyOn(console, 'info').mockImplementationOnce(() => {})
@@ -235,9 +228,7 @@ describe('InstallButton', () => {
 
   it('navigates to the Firefox Addons page on click (on Firefox mobile browser)', async () => {
     expect.assertions(2)
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('firefox', true))
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', true))
     const redirect = require('src/utils/redirect').default
 
     const InstallButton = require('../InstallButton').default
@@ -256,9 +247,7 @@ describe('InstallButton', () => {
 
   it('navigates to the Chrome Web Store page on click (on Chrome mobile browser)', async () => {
     expect.assertions(2)
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', true))
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', true))
     const redirect = require('src/utils/redirect').default
 
     const InstallButton = require('../InstallButton').default
@@ -275,11 +264,9 @@ describe('InstallButton', () => {
     expect(mockOnUnsupportedBrowserInstallClick).not.toHaveBeenCalled()
   })
 
-  it('navigates to the Chrome Web Store page on click (on Chrome iOS browser)', async () => {
+  it('navigates to the Edge Addons page on click (on Edge mobile browser)', async () => {
     expect.assertions(2)
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('crios', true))
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('edge', true))
     const redirect = require('src/utils/redirect').default
 
     const InstallButton = require('../InstallButton').default
@@ -291,16 +278,14 @@ describe('InstallButton', () => {
     )
     await clickButtonShallow(wrapper)
     expect(redirect).toHaveBeenCalledWith(
-      'https://chrome.google.com/webstore/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
+      'https://microsoftedge.microsoft.com/addons/detail/hmiiajmhelfgiaoboffbjpjdckbmnddg'
     )
     expect(mockOnUnsupportedBrowserInstallClick).not.toHaveBeenCalled()
   })
 
   it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Safari mobile browser', async () => {
     expect.assertions(1)
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('safari', true))
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('safari', true))
 
     // Silence expected console.info log
     jest.spyOn(console, 'info').mockImplementationOnce(() => {})
@@ -318,29 +303,7 @@ describe('InstallButton', () => {
 
   it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Opera mobile browser', async () => {
     expect.assertions(1)
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('opera', true))
-
-    // Silence expected console.info log
-    jest.spyOn(console, 'info').mockImplementationOnce(() => {})
-
-    const mockOnUnsupportedBrowserInstallClick = jest.fn()
-    const InstallButton = require('../InstallButton').default
-    const wrapper = shallow(
-      <InstallButton
-        onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
-      />
-    )
-    await clickButtonShallow(wrapper)
-    expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
-  })
-
-  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Edge mobile browser', async () => {
-    expect.assertions(1)
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('edge', true))
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('opera', true))
 
     // Silence expected console.info log
     jest.spyOn(console, 'info').mockImplementationOnce(() => {})
