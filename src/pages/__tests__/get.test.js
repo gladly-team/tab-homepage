@@ -5,22 +5,23 @@ import redirect from 'src/utils/redirect'
 import {
   chromeExtensionURL,
   homeURL,
+  edgeExtensionURL,
   firefoxExtensionURL,
 } from 'src/utils/navigation'
 import localStorageMgr from 'src/utils/local-storage'
 import { STORAGE_REFERRAL_DATA_REFERRING_CHANNEL } from 'src/utils/constants'
+import getBrowserInfo from 'src/utils/browserDetection'
 
-jest.mock('browser-detect')
+jest.mock('src/utils/browserDetection')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/local-storage')
 
 const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
   return {
-    name: browser,
-    version: '58.0.3029',
-    versionNumber: 58.03029,
-    mobile: mobile,
-    os: 'Windows NT 10.0',
+    isChrome: () => browser === 'chrome',
+    isEdge: () => browser === 'edge',
+    isFirefox: () => browser === 'firefox',
+    isMobile: () => mobile,
   }
 }
 
@@ -30,15 +31,17 @@ const getMockProps = () => ({
   },
 })
 
+beforeEach(() => {
+  getBrowserInfo.mockReturnValue(createMockBrowserInfo())
+})
+
 afterEach(() => {
   jest.clearAllMocks()
 })
 
 describe('GetExtensionRedirectPage', () => {
   it('renders without error', () => {
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo())
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo())
     const GetExtensionRedirectPage = require('../get').default
     const mockProps = getMockProps()
     shallow(<GetExtensionRedirectPage {...mockProps} />)
@@ -46,9 +49,7 @@ describe('GetExtensionRedirectPage', () => {
 
   it('redirects to the Chrome Web Store when the browser is Chrome on desktop', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', false))
     const GetExtensionRedirectPage = require('../get').default
     const mockProps = getMockProps()
     shallow(<GetExtensionRedirectPage {...mockProps} />)
@@ -57,31 +58,7 @@ describe('GetExtensionRedirectPage', () => {
 
   it('redirects to the Chrome Web Store when the browser is Chrome on mobile', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', true))
-
-    const GetExtensionRedirectPage = require('../get').default
-    const mockProps = getMockProps()
-    shallow(<GetExtensionRedirectPage {...mockProps} />)
-    expect(redirect).toHaveBeenCalledWith(chromeExtensionURL)
-  })
-
-  it('redirects to the Chrome Web Store when the browser is Chrome on iOS', () => {
-    expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('crios', true))
-
-    const GetExtensionRedirectPage = require('../get').default
-    const mockProps = getMockProps()
-    shallow(<GetExtensionRedirectPage {...mockProps} />)
-    expect(redirect).toHaveBeenCalledWith(chromeExtensionURL)
-  })
-
-  it('redirects to the Chrome Web Store when the browser is a Chromium browser', () => {
-    expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chromium', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', true))
     const GetExtensionRedirectPage = require('../get').default
     const mockProps = getMockProps()
     shallow(<GetExtensionRedirectPage {...mockProps} />)
@@ -90,9 +67,7 @@ describe('GetExtensionRedirectPage', () => {
 
   it('redirects to the Firefox Add-ons page when the browser is Firefox on desktop', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('firefox', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', false))
     const GetExtensionRedirectPage = require('../get').default
     const mockProps = getMockProps()
     shallow(<GetExtensionRedirectPage {...mockProps} />)
@@ -101,20 +76,34 @@ describe('GetExtensionRedirectPage', () => {
 
   it('redirects to the Firefox Add-ons page when the browser is Firefox on mobile', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('firefox', true))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', true))
     const GetExtensionRedirectPage = require('../get').default
     const mockProps = getMockProps()
     shallow(<GetExtensionRedirectPage {...mockProps} />)
     expect(redirect).toHaveBeenCalledWith(firefoxExtensionURL)
   })
 
+  it('redirects to the Edge Add-ons page when the browser is Edge on desktop', () => {
+    expect.assertions(1)
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('edge', false))
+    const GetExtensionRedirectPage = require('../get').default
+    const mockProps = getMockProps()
+    shallow(<GetExtensionRedirectPage {...mockProps} />)
+    expect(redirect).toHaveBeenCalledWith(edgeExtensionURL)
+  })
+
+  it('redirects to the Edge Add-ons page when the browser is Edge on mobile', () => {
+    expect.assertions(1)
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('edge', true))
+    const GetExtensionRedirectPage = require('../get').default
+    const mockProps = getMockProps()
+    shallow(<GetExtensionRedirectPage {...mockProps} />)
+    expect(redirect).toHaveBeenCalledWith(edgeExtensionURL)
+  })
+
   it('redirects to the homepage when it is an unsupported browser', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('safari', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('safari', false))
     const GetExtensionRedirectPage = require('../get').default
     const mockProps = getMockProps()
     shallow(<GetExtensionRedirectPage {...mockProps} />)
@@ -123,9 +112,7 @@ describe('GetExtensionRedirectPage', () => {
 
   it('redirects to the homepage when the browser value is null', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo(null, false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo(null, false))
     const GetExtensionRedirectPage = require('../get').default
     const mockProps = getMockProps()
     shallow(<GetExtensionRedirectPage {...mockProps} />)
@@ -134,15 +121,9 @@ describe('GetExtensionRedirectPage', () => {
 
   it('redirects to the homepage if browser detection throws an error', () => {
     expect.assertions(1)
-
-    // Suppress expected console error.
-    jest.spyOn(console, 'error').mockImplementationOnce(() => {})
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockImplementationOnce(() => {
-      throw new Error('I am a bad detective :(')
+    getBrowserInfo.mockImplementation(() => {
+      throw new Error('I could not browse browser :(')
     })
-
     const GetExtensionRedirectPage = require('../get').default
     const mockProps = getMockProps()
     shallow(<GetExtensionRedirectPage {...mockProps} />)
@@ -151,9 +132,7 @@ describe('GetExtensionRedirectPage', () => {
 
   it('stores the referrer ID in local storage if it exists', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', false))
     const GetExtensionRedirectPage = require('../get').default
     const mockProps = getMockProps()
     mockProps.location.search = '?src=hi&r=1357&foo'
@@ -166,9 +145,7 @@ describe('GetExtensionRedirectPage', () => {
 
   it('does not call local storage if there is no referrer ID', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', false))
     const GetExtensionRedirectPage = require('../get').default
     const mockProps = getMockProps()
     mockProps.location.search = '?foo=bar'
@@ -178,9 +155,7 @@ describe('GetExtensionRedirectPage', () => {
 
   it('does not call local storage if the referrer ID is not a number', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', false))
     const GetExtensionRedirectPage = require('../get').default
     const mockProps = getMockProps()
     mockProps.location.search = '?r=hello'
