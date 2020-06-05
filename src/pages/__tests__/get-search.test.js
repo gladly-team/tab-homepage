@@ -8,25 +8,28 @@ import {
   searchFirefoxExtensionPage,
 } from 'src/utils/navigation'
 import localStorageMgr from 'src/utils/local-storage'
+import getBrowserInfo from 'src/utils/browserDetection'
 
-jest.mock('browser-detect')
+jest.mock('src/utils/browserDetection')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/local-storage')
 
 const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
   return {
-    name: browser,
-    version: '58.0.3029',
-    versionNumber: 58.03029,
-    mobile: mobile,
-    os: 'Windows NT 10.0',
+    isChrome: () => browser === 'chrome',
+    isEdge: () => browser === 'edge',
+    isFirefox: () => browser === 'firefox',
+    isMobile: () => mobile,
   }
 }
-
 const getMockProps = () => ({
   location: {
     search: '',
   },
+})
+
+beforeEach(() => {
+  getBrowserInfo.mockReturnValue(createMockBrowserInfo())
 })
 
 afterEach(() => {
@@ -35,9 +38,7 @@ afterEach(() => {
 
 describe('GetSearchExtensionRedirectPage', () => {
   it('renders without error', () => {
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo())
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo())
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
@@ -45,9 +46,7 @@ describe('GetSearchExtensionRedirectPage', () => {
 
   it('redirects to the Chrome Web Store when the browser is Chrome on desktop', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', false))
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
@@ -56,31 +55,7 @@ describe('GetSearchExtensionRedirectPage', () => {
 
   it('redirects to the Chrome Web Store when the browser is Chrome on mobile', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', true))
-
-    const GetSearchExtensionRedirectPage = require('../get-search').default
-    const mockProps = getMockProps()
-    shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
-    expect(redirect).toHaveBeenCalledWith(searchChromeExtensionPage)
-  })
-
-  it('redirects to the Chrome Web Store when the browser is Chrome on iOS', () => {
-    expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('crios', true))
-
-    const GetSearchExtensionRedirectPage = require('../get-search').default
-    const mockProps = getMockProps()
-    shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
-    expect(redirect).toHaveBeenCalledWith(searchChromeExtensionPage)
-  })
-
-  it('redirects to the Chrome Web Store when the browser is a Chromium browser', () => {
-    expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chromium', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', true))
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
@@ -89,9 +64,7 @@ describe('GetSearchExtensionRedirectPage', () => {
 
   it('redirects to the Firefox Add-ons page when the browser is Firefox on desktop', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('firefox', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', false))
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
@@ -100,9 +73,7 @@ describe('GetSearchExtensionRedirectPage', () => {
 
   it('redirects to the Firefox Add-ons page when the browser is Firefox on mobile', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('firefox', true))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', true))
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
@@ -111,9 +82,7 @@ describe('GetSearchExtensionRedirectPage', () => {
 
   it('redirects to the homepage when it is an unsupported browser', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('safari', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('safari', false))
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
@@ -122,9 +91,7 @@ describe('GetSearchExtensionRedirectPage', () => {
 
   it('redirects to the homepage when the browser value is null', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo(null, false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo(null, false))
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
@@ -136,10 +103,8 @@ describe('GetSearchExtensionRedirectPage', () => {
 
     // Suppress expected console error.
     jest.spyOn(console, 'error').mockImplementationOnce(() => {})
-
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockImplementationOnce(() => {
-      throw new Error('I am a bad detective :(')
+    getBrowserInfo.mockImplementation(() => {
+      throw new Error('Could not detect.')
     })
 
     const GetSearchExtensionRedirectPage = require('../get-search').default
@@ -150,9 +115,7 @@ describe('GetSearchExtensionRedirectPage', () => {
 
   it('stores the referrer ID in local storage if it exists', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', false))
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     mockProps.location.search = '?src=hi&r=1357&foo'
@@ -165,9 +128,7 @@ describe('GetSearchExtensionRedirectPage', () => {
 
   it('does not call local storage if there is no referrer ID', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', false))
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     mockProps.location.search = '?foo=bar'
@@ -177,9 +138,7 @@ describe('GetSearchExtensionRedirectPage', () => {
 
   it('does not call local storage if the referrer ID is not a number', () => {
     expect.assertions(1)
-    const detectBrowser = require('browser-detect').default
-    detectBrowser.mockReturnValueOnce(createMockBrowserInfo('chrome', false))
-
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', false))
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     mockProps.location.search = '?r=hello'

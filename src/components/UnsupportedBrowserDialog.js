@@ -26,7 +26,7 @@ class UnsupportedBrowserDialog extends React.Component {
           </Typography>
         </DialogTitle>
         <DialogContent>
-          Tab for a Cause is for Chrome and Firefox browsers on desktop
+          Tab for a Cause is for Chrome, Firefox, and Edge browsers on desktop
           computers. Please switch browsers to get a better new tab page!
         </DialogContent>
         <DialogActions>

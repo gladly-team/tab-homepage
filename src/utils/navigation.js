@@ -59,6 +59,8 @@ export const pressMashableURL =
 // Extensions
 export const chromeExtensionURL =
   'https://chrome.google.com/webstore/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'
+export const edgeExtensionURL =
+  'https://microsoftedge.microsoft.com/addons/detail/hmiiajmhelfgiaoboffbjpjdckbmnddg'
 export const firefoxExtensionURL =
   'https://addons.mozilla.org/en-US/firefox/addon/tab-for-a-cause/'
 

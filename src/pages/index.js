@@ -15,6 +15,7 @@ import Link from 'src/components/Link'
 import {
   getAbsoluteURL,
   chromeExtensionURL,
+  edgeExtensionURL,
   financialsURL,
   firefoxExtensionURL,
   githubTabRepoURL,
@@ -41,6 +42,7 @@ import Star from '@material-ui/icons/Star'
 import StarHalf from '@material-ui/icons/StarHalf'
 import Firefox from 'mdi-material-ui/Firefox'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
+import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
 
 // Images
 import browserLandingPageImg from 'src/img/browser-rain-trees.png'
@@ -316,6 +318,19 @@ class IndexPage extends React.Component {
                     hoverStyle={{ color: lighterTextColor }}
                   >
                     <Firefox
+                      style={{
+                        margin: '0px 2px',
+                        width: 20,
+                        height: 20,
+                      }}
+                    />
+                  </Link>
+                  <Link
+                    to={edgeExtensionURL}
+                    style={{ color: lightestTextColor }}
+                    hoverStyle={{ color: lighterTextColor }}
+                  >
+                    <MicrosoftEdge
                       style={{
                         margin: '0px 2px',
                         width: 20,

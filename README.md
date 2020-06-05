@@ -2,4 +2,4 @@
 [![codecov](https://codecov.io/gh/gladly-team/tab-homepage/branch/master/graph/badge.svg)](https://codecov.io/gh/gladly-team/tab-homepage)
 
 # tab-homepage
-The homepage for [Tab for a Cause](https://tab.gladly.io)
+The homepage for [Tab for a Cause](https://tab.gladly.io).

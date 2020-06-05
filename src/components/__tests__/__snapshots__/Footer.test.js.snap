@@ -249,7 +249,7 @@ exports[`Footer matches expected snapshot 1`] = `
             }
           }
         >
-          <Icon />
+          <[object Object] />
         </IconWrapper>
       </Link>
       <Link
@@ -275,7 +275,7 @@ exports[`Footer matches expected snapshot 1`] = `
             }
           }
         >
-          <Icon />
+          <[object Object] />
         </IconWrapper>
       </Link>
     </div>

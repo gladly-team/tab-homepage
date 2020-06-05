@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import detectBrowser from 'browser-detect'
 import qs from 'qs'
 import {
   CHROME_BROWSER,
@@ -15,6 +14,7 @@ import {
 import redirect from 'src/utils/redirect'
 import localStorageMgr from 'src/utils/local-storage'
 import { SEARCH_STORAGE_REFERRAL_DATA_REFERRING_CHANNEL } from 'src/utils/constants'
+import getBrowserInfo from 'src/utils/browserDetection'
 
 // We put this page on tab.gladly.io for convenience so we can
 // use the same local storage to store the referrer as we do
@@ -56,24 +56,20 @@ class GetSearchExtensionRedirectPage extends React.Component {
   }
 
   detectBrowser() {
-    const browserInfo = detectBrowser()
-    var browser = 'other'
-    switch (browserInfo.name) {
-      case 'chrome':
-        browser = CHROME_BROWSER
-        break
-      case 'chromium':
-        browser = CHROME_BROWSER
-        break
-      case 'crios':
-        browser = CHROME_BROWSER
-        break
-      case 'firefox':
-        browser = FIREFOX_BROWSER
-        break
-      default:
-        browser = UNSUPPORTED_BROWSER
-        break
+    let browserInfo
+    try {
+      browserInfo = getBrowserInfo()
+    } catch (e) {
+      return UNSUPPORTED_BROWSER
+    }
+
+    let browser
+    if (browserInfo.isChrome()) {
+      browser = CHROME_BROWSER
+    } else if (browserInfo.isFirefox()) {
+      browser = FIREFOX_BROWSER
+    } else {
+      browser = UNSUPPORTED_BROWSER
     }
     return browser
   }
