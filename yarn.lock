@@ -7818,10 +7818,10 @@ md5@^2.2.1:
     crypt "~0.0.1"
     is-buffer "~1.1.1"
 
-mdi-material-ui@^5.11.0:
-  version "5.11.0"
-  resolved "https://registry.yarnpkg.com/mdi-material-ui/-/mdi-material-ui-5.11.0.tgz#afae81bd388936660fab6a67a22020dc9ee45971"
-  integrity sha512-9fIvdiKCKAfBoW11LqZsgaxZtu9WCQEd8FL9/8ceLHvStSf+fZM6sC7exwXaXZmzfwtJMfN1KiMGsPBPSTQFQg==
+mdi-material-ui@^6.16.0:
+  version "6.16.0"
+  resolved "https://registry.yarnpkg.com/mdi-material-ui/-/mdi-material-ui-6.16.0.tgz#8ed39f43259c14040fa5298d8da5c051bbc437d3"
+  integrity sha512-i22DW95kady0ty5QylixkEa9h40YTt2KETvAd1OdrXkfnKkDH4RCXNtONw2KGsK6pANH+M2Oqh2SfG98UjcX8g==
 
 mdn-data@~1.1.0:
   version "1.1.4"

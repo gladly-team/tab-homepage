@@ -1,7 +1,7 @@
 import React from 'react'
 import Divider from '@material-ui/core/Divider'
 import PropTypes from 'prop-types'
-import FacebookBox from 'mdi-material-ui/FacebookBox'
+import Facebook from 'mdi-material-ui/Facebook'
 import Twitter from 'mdi-material-ui/Twitter'
 
 import logoGrey from 'src/img/logo-grey.svg'
@@ -156,7 +156,7 @@ class Footer extends React.Component {
                 style={socialIconStyle}
                 hoverStyle={socialIconHoverStyle}
               >
-                <FacebookBox />
+                <Facebook />
               </IconWrapper>
             </Link>
 

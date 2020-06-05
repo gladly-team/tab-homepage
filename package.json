@@ -22,7 +22,7 @@
     "gatsby-source-filesystem": "^2.0.37",
     "gatsby-transformer-yaml": "^2.1.12",
     "lodash": "^4.17.13",
-    "mdi-material-ui": "^5.11.0",
+    "mdi-material-ui": "^6.16.0",
     "moment": "^2.24.0",
     "qs": "^6.8.0",
     "react": "^16.8.6",
