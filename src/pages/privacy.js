@@ -181,6 +181,20 @@ const PrivacyPolicyPage = ({ location }) => (
           in any other way than to provide services to us.
         </p>
         <p>
+          Some of the web search services provided herein are provided by
+          providers of third party web search services. For information on the
+          web search services data collection, please visit the end user privacy
+          statements of CodeFuel{' '}
+          <Link to="https://www.codefuel.com/legal/end_user_privacy_policy/">
+            here
+          </Link>{' '}
+          and{' '}
+          <Link to="https://privacy.microsoft.com/en-us/privacystatement">
+            Bing
+          </Link>
+          , both as updated from time to time and at any successor locations.
+        </p>
+        <p>
           We employ industry standard techniques to protect against unauthorized
           access of data that we store.
         </p>
