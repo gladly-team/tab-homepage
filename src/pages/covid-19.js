@@ -15,6 +15,7 @@ import foodBankNYCPhoto from 'src/img/covid-19/food-bank-for-nyc-covid-19.png'
 import EvidenceActionPhoto from 'src/img/covid-19/chlorine-dispenser.jpg'
 import NoKidHungryPhoto from 'src/img/covid-19/no-kid-hungry.png'
 import DoctorsWithoutBordersImg from 'src/img/covid-19/msf.png'
+import CoolEarthImg from 'src/img/covid-19/cool-earth.png'
 
 const installButtonBlock = (
   <div
@@ -148,6 +149,71 @@ const Covid19 = props => {
               access to clean water, given 10,000 meals to families in New York
               City, and raised thousands of dollars to the World Health
               Organization.
+            </p>
+            <p>
+              Now, we're providing supplies to indigenous families. Will you
+              join in?
+            </p>
+            <Divider
+              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
+            />
+          </div>
+          <div>
+            <div
+              style={{
+                marginTop: 60,
+                marginBottom: 40,
+              }}
+            >
+              <h5 style={campaignLabelStyle}>Campaign #6: July 17 – ?</h5>
+
+              <h2 style={{ fontSize: '1.8rem' }}>
+                Supplying 100 families in rainforest communities
+              </h2>
+              <p>
+                The COVID-19 pandemic has created new stresses on households and
+                habitats in the rainforest.
+              </p>
+              <p>
+                As a long-term partner with many rainforest communities,{' '}
+                <a
+                  href={'https://www.coolearth.org/rainforest-resilience-fund/'}
+                >
+                  Cool Earth
+                </a>{' '}
+                is working to provide food and hygiene equipment to keep people
+                safe and healthy, along with resources like seeds and tools to
+                prepare for the coming months.
+              </p>
+              <p>
+                Our goal is to raise enough money to provide 100 families of 6
+                with the supplies they need to weather this pandemic.
+              </p>
+            </div>
+            <div
+              style={{
+                marginTop: 30,
+                marginBottom: 6,
+                // Full page width CSS
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100vw',
+                position: 'relative',
+                left: '50%',
+                right: '50%',
+                marginLeft: '-50vw',
+                marginRight: '-50vw',
+                // End full page width CSS
+              }}
+            >
+              <img
+                alt={'Cool Earth Rainforest Resilience Fund'}
+                src={CoolEarthImg}
+                style={{ width: '100%', maxWidth: 1000 }}
+              />
+            </div>
+            <p style={{ marginBottom: 60 }}>
+              Photo Credit: <a href={'https://www.coolearth.org'}>Cool Earth</a>
             </p>
             <Divider
               style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
