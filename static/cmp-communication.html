@@ -1,0 +1,109 @@
+<!--
+ For publishers whose consent scope is group level,
+ host this HTML at the group level cookie access URL.
+-->
+
+<html>
+<head>
+ <script type="text/javascript">
+   function getCookie(name) {
+     var cookies = document.cookie
+       .split(';')
+       .filter(function(s) {
+         var cookie = s.trim();
+         if (cookie.indexOf(name + '=') === 0) {
+           return true;
+         };
+       })
+       .map(function(s) {
+         return s.trim().substring(name.length + 1);
+       });
+     return cookies;
+   }
+
+   var msgIsString = true;
+
+   function iframeCookieAccessMsgHandler(event) {
+     var msg = event.data;
+     msgIsString = typeof msg === "string";
+     var json;
+     if (msgIsString) {
+       json = event.data.indexOf("__qcCmpCookieAccessCall") !== -1 ? JSON.parse(event.data) : {};
+     } else {
+       json = event.data;
+     }
+     if (json.__qcCmpCookieAccessCall) {
+       var obj = json.__qcCmpCookieAccessCall;
+       var cookieNames = ['euconsent-v2', 'noniabvendorconsent'];
+       var localNames = ['_cmpRepromptOptions', '_cmpBlockedVendorsHash', '_cmpNonIabVendorsHash','_cmpRepromptHash'];
+       if (cookieNames.indexOf(obj.cookieName) === -1 && localNames.indexOf(obj.cookieName) === -1) {
+         return;
+       }
+
+       var returnObj = {
+         "callId": json.callId,
+         "__qcCmpCookieAccessReturn": {
+           "cmd": obj.cmd
+         }
+       }
+
+       if (obj.cmd === "set") {
+         if (cookieNames.indexOf(obj.cookieName) !== -1) {
+           document.cookie =
+             obj.cookieName +
+             '=' +
+             obj.cookieValue +
+             ';path=' +
+             obj.cookiePath +
+             ';expires=' +
+             obj.expires +
+             ';SameSite=None;secure'
+         } else {
+           localStorage.setItem(obj.cookieName, obj.cookieValue);
+         }
+         returnObj.__qcCmpCookieAccessReturn.isSuccess = true;
+       } else if (obj.cmd === "get") {
+         var consentCookies = null;
+         var infoObj = null;
+         if (cookieNames.indexOf(obj.cookieName) !== -1) {
+           consentCookies = getCookie(obj.cookieName);
+           infoObj = returnObj.__qcCmpCookieAccessReturn;
+ 
+           if (consentCookies.length !== 0) {
+             infoObj.cookies = consentCookies;
+             infoObj.isSuccess = true;
+           } else {
+             infoObj.isSuccess = false;
+           }
+         } else {
+           consentCookies = localStorage.getItem(obj.cookieName);
+           infoObj = returnObj.__qcCmpCookieAccessReturn;
+           if (consentCookies) {
+             infoObj.cookies = consentCookies;
+             infoObj.isSuccess = true;
+           } else {
+             infoObj.isSuccess = false;
+           }
+         }
+       }
+
+       event.source.postMessage(msgIsString ?
+         JSON.stringify(returnObj) : returnObj, "*");
+     }
+   }
+
+   if (window.addEventListener) {
+     window.addEventListener('message', iframeCookieAccessMsgHandler, false);
+   } else {
+     window.attachEvent('onmessage', iframeCookieAccessMsgHandler);
+   }
+
+   // post a message to CMP that the event handler is loaded.
+   var registeredMessage = { "__qcCmpCookieAccessReturn": { "isHandlerRegistered": true } };
+   window.parent.postMessage(msgIsString
+       ? JSON.stringify(registeredMessage) 
+       : registeredMessage, "*");
+ </script>
+</head>
+<body></body>
+</html>
