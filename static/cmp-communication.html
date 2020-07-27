@@ -33,6 +33,7 @@
        json = event.data;
      }
      if (json.__qcCmpCookieAccessCall) {
+       console.log(`[cmp] Attempting to access cookie name ${obj.cookieName}`)
        var obj = json.__qcCmpCookieAccessCall;
        var cookieNames = ['euconsent-v2', 'noniabvendorconsent'];
        var localNames = ['_cmpRepromptOptions', '_cmpBlockedVendorsHash', '_cmpNonIabVendorsHash','_cmpRepromptHash'];
