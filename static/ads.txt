@@ -14,7 +14,7 @@ adtech.com,12068,RESELLER,e1a5b5b6e3255540
 districtm.io,100962,RESELLER
 rhythmone.com,74229,DIRECT,a670c89d4a324e47
 rhythmone.com,1654642120,RESELLER,a670c89d4a324e47
-indexexchange.com,192410,Reseller,50b1c356f2c5c8fc
+indexexchange.com,192410,RESELLER,50b1c356f2c5c8fc
 
 # AOL
 adtech.com,10559,DIRECT
