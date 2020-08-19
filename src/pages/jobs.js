@@ -84,9 +84,9 @@ class JobsPage extends React.Component {
     const openGraphDescription =
       'Check out open jobs at a purpose-driven, challenging, and fun startup!'
     const jobPaperStyle = {
-      padding: 14,
-      marginTop: 28,
-      marginBottom: 28,
+      padding: 16,
+      marginTop: 32,
+      marginBottom: 32,
     }
     return (
       <Layout brand={'all'} location={location}>
@@ -115,7 +115,7 @@ class JobsPage extends React.Component {
               charitable donations.
             </p>
 
-            <p style={{ marginBottom: 14, fontWeight: 500 }}>You:</p>
+            <p style={{ marginBottom: 16, fontWeight: 500 }}>You:</p>
             <ul>
               <li>Are excited to jump into new projects and learn by doing</li>
               <li>Are fueled by responsibility and autonomy</li>
@@ -126,7 +126,7 @@ class JobsPage extends React.Component {
               <li>Are kind, positive, and collaborative</li>
             </ul>
 
-            <p style={{ marginBottom: 14, fontWeight: 500 }}>What you'd do:</p>
+            <p style={{ marginBottom: 16, fontWeight: 500 }}>What you'd do:</p>
             <ul>
               <li>
                 Help develop the Gladly brand through social media, content
@@ -146,7 +146,7 @@ class JobsPage extends React.Component {
               </li>
             </ul>
 
-            <p style={{ marginBottom: 14, fontWeight: 500 }}>
+            <p style={{ marginBottom: 16, fontWeight: 500 }}>
               Why you’ll love your job
             </p>
             <ul>
@@ -172,7 +172,7 @@ class JobsPage extends React.Component {
               </li>
             </ul>
 
-            <p style={{ marginBottom: 14, fontWeight: 500 }}>Nuts and bolts:</p>
+            <p style={{ marginBottom: 16, fontWeight: 500 }}>Nuts and bolts:</p>
             <ul>
               <li>Part-time position: 10-15hr/week at $20/hr</li>
               <li>
@@ -186,7 +186,7 @@ class JobsPage extends React.Component {
               </li>
             </ul>
 
-            <p style={{ marginBottom: 14, fontWeight: 500 }}>To apply:</p>
+            <p style={{ marginBottom: 16, fontWeight: 500 }}>To apply:</p>
             <p>
               Please send your resume attached to a short (2-3 paragraphs) email
               describing why you’d be a great fit for this role and Tab for a
@@ -204,7 +204,7 @@ class JobsPage extends React.Component {
             </p>
             <ApplyButton>Get in Touch</ApplyButton>
           </Paper>
-          <h1 style={{ marginTop: 42, marginBottom: 10 }}>Our Values</h1>
+          <h1 style={{ marginTop: 48, marginBottom: 10 }}>Our Values</h1>
           <Divider
             style={{
               backgroundColor: lightestTextColor,
@@ -245,8 +245,8 @@ class JobsPage extends React.Component {
                         <teamValue.iconComponent
                           style={{
                             color: secondaryContrastTextColor,
-                            width: 28,
-                            height: 28,
+                            width: 32,
+                            height: 32,
                           }}
                         />
                       ) : null}
@@ -262,7 +262,7 @@ class JobsPage extends React.Component {
                     </span>
                     <p
                       style={{
-                        fontSize: 14,
+                        fontSize: 16,
                         color: lighterTextColor,
                         margin: 20,
                       }}
