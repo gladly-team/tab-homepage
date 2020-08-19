@@ -84,7 +84,7 @@ class JobsPage extends React.Component {
     const openGraphDescription =
       'Check out open jobs at a purpose-driven, challenging, and fun startup!'
     const jobPaperStyle = {
-      padding: 16,
+      padding: 24,
       marginTop: 32,
       marginBottom: 32,
     }
