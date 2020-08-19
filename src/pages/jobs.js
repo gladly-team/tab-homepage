@@ -110,7 +110,7 @@ class JobsPage extends React.Component {
             <h2>Marketing and Customer Support Associate</h2>
             <p>
               Tab for a Cause is seeking a creative, self-motivated person to
-              join our team. As we continue to grow, you’ll be helping Tab for a
+              join our team. As we continue to grow, you'll be helping Tab for a
               Cause become a household name in turning everyday actions into
               charitable donations.
             </p>
@@ -147,7 +147,7 @@ class JobsPage extends React.Component {
             </ul>
 
             <p style={{ marginBottom: 16, fontWeight: 500 }}>
-              Why you’ll love your job
+              Why you'll love your job
             </p>
             <ul>
               <li>
@@ -159,7 +159,7 @@ class JobsPage extends React.Component {
               <li>
                 Company Impact: As part of a small and growing team, your voice
                 will be heard from day one. You will quickly gain experience in
-                nearly every area of startup marketing-- from social media to
+                nearly every area of startup marketing—from social media to
                 growth hacking to PR
               </li>
               <li>
@@ -189,9 +189,9 @@ class JobsPage extends React.Component {
             <p style={{ marginBottom: 16, fontWeight: 500 }}>To apply:</p>
             <p>
               Please send your resume attached to a short (2-3 paragraphs) email
-              describing why you’d be a great fit for this role and Tab for a
-              Cause to jobs@tabforacause.org with the subject: “YOUR NAME -
-              Marketing and Customer Support Associate”.
+              describing why you'd be a great fit for this role and Tab for a
+              Cause to jobs@tabforacause.org with the subject: "YOUR NAME -
+              Marketing and Customer Support Associate".
             </p>
 
             <ApplyButton>Apply</ApplyButton>
