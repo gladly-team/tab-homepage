@@ -16,6 +16,8 @@ import Restaurant from '@material-ui/icons/Restaurant'
 import SentimentVerySatisfied from '@material-ui/icons/SentimentVerySatisfied'
 import ShowChart from '@material-ui/icons/ShowChart'
 import Layout from 'src/components/Layout'
+import Divider from '@material-ui/core/Divider'
+import { lightestTextColor } from 'src/themes/theme'
 
 const teamValues = [
   {
@@ -62,6 +64,11 @@ class JobsPage extends React.Component {
     const openGraphTitle = 'Jobs at Tab for a Cause'
     const openGraphDescription =
       'Check out open jobs at a purpose-driven, challenging, and fun startup!'
+    const jobPaperStyle = {
+      padding: 14,
+      marginTop: 28,
+      marginBottom: 28,
+    }
     return (
       <Layout brand={'all'} location={location}>
         <TextPageContent>
@@ -72,7 +79,7 @@ class JobsPage extends React.Component {
             <meta name="twitter:description" content={openGraphDescription} />
           </Helmet>
           <TextPageHeader>Jobs</TextPageHeader>
-          <div style={{ marginBottom: 50 }}>
+          <div>
             <p>
               We are a small team that prioritizes collaboration, positivity,
               work-life balance, and social impact (we've given nearly $1M to
@@ -80,15 +87,24 @@ class JobsPage extends React.Component {
               little better.
             </p>
           </div>
-          <h2>Positions</h2>
-          <div style={{ marginBottom: 50 }}>
+          <Paper style={jobPaperStyle}>
+            <h2>Marketing and Customer Support Associate</h2>
+            <p>TO DO</p>
+          </Paper>
+          <Paper style={jobPaperStyle}>
+            <h2>Something else?</h2>
             <p>
-              We don't have any open jobs at this time. Interested in
-              volunteering, or think you'd be a fit for a job we haven't listed?
-              Email us at: jobs@gladly.io
+              Interested in volunteering, or think you'd be a fit for a job we
+              haven't listed? Email us at: jobs@tabforacause.org
             </p>
-          </div>
-          <h2>Our Values</h2>
+          </Paper>
+          <h1 style={{ marginTop: 42, marginBottom: 10 }}>Our Values</h1>
+          <Divider
+            style={{
+              backgroundColor: lightestTextColor,
+              marginBottom: 20,
+            }}
+          />
           <p>Our team's values drive how we work and what we work on.</p>
           <div
             style={{
@@ -104,10 +120,6 @@ class JobsPage extends React.Component {
                   elevation={1}
                   style={{
                     maxWidth: 300,
-                    // display: 'flex',
-                    // flexDirection: 'column',
-                    // justifyContent: 'center',
-                    // alignItems: 'center',
                     textAlign: 'center',
                     margin: 20,
                   }}
