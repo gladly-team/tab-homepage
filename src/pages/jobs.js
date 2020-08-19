@@ -199,8 +199,8 @@ class JobsPage extends React.Component {
           <Paper style={jobPaperStyle}>
             <h2>Something else?</h2>
             <p>
-              Interested in volunteering, or think you'd be a fit for a job we
-              haven't listed? Email us at: jobs@tabforacause.org
+              Think you'd be a fit for a job we haven't listed? Email us at:
+              jobs@tabforacause.org
             </p>
             <ApplyButton>Get in Touch</ApplyButton>
           </Paper>
