@@ -147,7 +147,7 @@ class JobsPage extends React.Component {
             </ul>
 
             <p style={{ marginBottom: 16, fontWeight: 500 }}>
-              Why you'll love your job
+              Why you'll love your job:
             </p>
             <ul>
               <li>
