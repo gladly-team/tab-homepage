@@ -75,7 +75,7 @@ class JobsPage extends React.Component {
           <div style={{ marginBottom: 50 }}>
             <p>
               We are a small team that prioritizes collaboration, positivity,
-              work-life balance, and social impact (we've given over $750,000 to
+              work-life balance, and social impact (we've given nearly $1M to
               charity!). We're striving to make both ourselves and the world a
               little better.
             </p>
