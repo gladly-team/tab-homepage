@@ -43,8 +43,13 @@ const typography = new Typography({
     p: {
       color: lighterTextColor,
     },
+    ul: {
+      paddingLeft: '14px',
+    },
     li: {
       color: lighterTextColor,
+      marginBottom: 0,
+      lineHeight: 1.36,
     },
     a: {
       color: primaryMainColor,
