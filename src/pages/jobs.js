@@ -18,6 +18,7 @@ import ShowChart from '@material-ui/icons/ShowChart'
 import Layout from 'src/components/Layout'
 import Divider from '@material-ui/core/Divider'
 import { lightestTextColor } from 'src/themes/theme'
+import Button from '@material-ui/core/Button'
 
 const teamValues = [
   {
@@ -58,6 +59,24 @@ const teamValues = [
   },
 ]
 
+const ApplyButton = props => {
+  const { children, ...otherProps } = props
+  return (
+    <a href="mailto:jobs@tabforacause.org">
+      <Button variant="contained" color="primary" size="medium" {...otherProps}>
+        {children}
+      </Button>
+    </a>
+  )
+}
+
+ApplyButton.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+}
+
 class JobsPage extends React.Component {
   render() {
     const { location } = this.props
@@ -90,6 +109,7 @@ class JobsPage extends React.Component {
           <Paper style={jobPaperStyle}>
             <h2>Marketing and Customer Support Associate</h2>
             <p>TO DO</p>
+            <ApplyButton>Apply</ApplyButton>
           </Paper>
           <Paper style={jobPaperStyle}>
             <h2>Something else?</h2>
@@ -97,6 +117,7 @@ class JobsPage extends React.Component {
               Interested in volunteering, or think you'd be a fit for a job we
               haven't listed? Email us at: jobs@tabforacause.org
             </p>
+            <ApplyButton>Get in Touch</ApplyButton>
           </Paper>
           <h1 style={{ marginTop: 42, marginBottom: 10 }}>Our Values</h1>
           <Divider
