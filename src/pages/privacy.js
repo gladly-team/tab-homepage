@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
 import Link from 'src/components/Link'
-import { contactUsURL, termsURL } from 'src/utils/navigation'
+import { accountPageURL, contactUsURL, termsURL } from 'src/utils/navigation'
 import Layout from 'src/components/Layout'
 
 const openGraphTitle = 'Privacy Policy - Tab for a Cause'
@@ -98,7 +98,7 @@ const PrivacyPolicyPage = ({ location }) => (
           </li>
           <li>
             <p>
-              <b>Ad Targeting, Selection, and Delivery: </b>
+              <b>Ad targeting, selection, and delivery: </b>
               When you use our Services, third parties that provide advertising,
               to the Services, may collect or receive information about you
               including through the use of cookies. These third parties may use
@@ -122,7 +122,19 @@ const PrivacyPolicyPage = ({ location }) => (
               selection, and delivery. For any EEA User who either selects "I do
               not accept" or does not make a selection, we will only serve
               non-personalized and non-programmatic advertising, which may be
-              targeted using coarse (country-level) location.
+              targeted using coarse (country-level) location. You may update
+              your preferences at any time on your{' '}
+              <Link to={accountPageURL}>account page</Link>.
+            </p>
+            <p>
+              If you are a resident of the United States of America, you can opt
+              out of sharing personal information with third-party advertisers:{' '}
+              <Link to={accountPageURL}>Do Not Sell My Info</Link>. You may
+              update your preferences at any time on your{' '}
+              <Link to={accountPageURL}>account page</Link>. This preference
+              sets whether advertisers can personalize ads to you. We{' '}
+              <b>never</b> sell personal information like email addresses, nor
+              do we collect your browsing history on other sites.
             </p>
           </li>
           <li>
