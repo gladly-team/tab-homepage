@@ -198,23 +198,6 @@ exports[`Footer matches expected snapshot 1`] = `
         >
           Jobs
         </Link>
-        <Link
-          hoverStyle={
-            Object {
-              "color": "#838383",
-            }
-          }
-          style={
-            Object {
-              "color": "#cecece",
-              "fontSize": 12,
-              "margin": 20,
-            }
-          }
-          to="https://orders.gladly.io"
-        >
-          Advertisers
-        </Link>
       </div>
     </div>
     <div
