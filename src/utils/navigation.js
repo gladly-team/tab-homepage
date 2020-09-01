@@ -12,8 +12,11 @@ export const privacyPolicyURL = '/privacy/'
 export const teamURL = '/team/'
 export const jobsURL = '/jobs/'
 export const adblockerWhitelistingURL = '/adblockers/'
-// Absolute because it's outside of this Gatsby app
+
+// New tab page app URLs.
+// Absolute URLs because it's outside of this Gatsby app.
 export const newTabPageURL = `${baseURL}/newtab/`
+export const accountPageURL = `${baseURL}/newtab/account/`
 
 // Search
 export const searchHomeURL = 'https://search.gladly.io'
