@@ -85,3 +85,6 @@ pubmatic.com,137711,RESELLER,5d62403b186f2ace
 pubmatic.com,156212,RESELLER,5d62403b186f2ace
 pubmatic.com,156700,RESELLER,5d62403b186f2ace
 rubiconproject.com,17960,RESELLER,0bfd66d529a55807
+
+# Verizon
+yahoo.com,56944,DIRECT
