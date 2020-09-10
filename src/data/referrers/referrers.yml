@@ -92,6 +92,8 @@
 - referrerId: 64
 - referrerId: 65
   path: minuteearth2
+- referrerId: 65
+  path: MinuteEarth2
 - referrerId: 66
   path: goodshop
 - referrerId: 67
