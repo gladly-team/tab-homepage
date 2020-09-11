@@ -107,42 +107,99 @@ class JobsPage extends React.Component {
             </p>
           </div>
           <Paper style={jobPaperStyle}>
-            <h2>Marketing and Customer Support Associate</h2>
+            <h2>Senior Full Stack Web Developer</h2>
+            <p>Remote – Full time or part time</p>
             <p>
-              Tab for a Cause is seeking a creative, self-motivated person to
-              join our team. As we continue to grow, you'll be helping Tab for a
-              Cause become a household name in turning everyday actions into
-              charitable donations.
+              We're looking to hire a driven, experienced, and thoughtful full
+              stack engineer. The person in this position will help take Tab for
+              a Cause from $1M raised for charity to $10M and beyond!
+            </p>
+            <p>
+              We're a small team that values collaboration, positivity, social
+              impact, and work-life balance. If that's your kind of team—and you
+              love having agency over your work and diving in to build web apps
+              for real users—you'll thrive here.
             </p>
 
             <p style={{ marginBottom: 16, fontWeight: 500 }}>You:</p>
             <ul>
-              <li>Are excited to jump into new projects and learn by doing</li>
-              <li>Are fueled by responsibility and autonomy</li>
-              <li>Love working in a small team environment</li>
-              <li>
-                Can efficiently juggle and prioritize a wide variety of tasks
-              </li>
-              <li>Are kind, positive, and collaborative</li>
+              <li>Are ready on day 1</li>
+              <ul>
+                <li>
+                  Are proficient with JavaScript and React.js (bonus: experience
+                  with GraphQL, DynamoDB, Firebase, Next.js, serverless
+                  infrastructure)
+                </li>
+                <li>
+                  Have previously owned substantial projects and features of a
+                  production web app, working across all aspects of the stack
+                </li>
+                <li>Are competent at data modeling and component design</li>
+                <li>Are excellent at writing tests and value clean code</li>
+                <li>
+                  Are incredibly resourceful: you rely on Google and reasonable
+                  workarounds to remove barriers
+                </li>
+                <li>
+                  Thrive on individual accountability yet prioritize overarching
+                  team goals
+                </li>
+              </ul>
+
+              <li>Think on a high level</li>
+              <ul>
+                <li>Understand how your work fits into company goals</li>
+                <li>Are comfortable speccing features</li>
+                <li>
+                  Don't get bogged down in unimportant problems or perfectionism
+                </li>
+                <li>
+                  Maintain a balance between rapid, minimum-viable feature
+                  development and avoiding technical debt and app instability
+                </li>
+                <li>Communicate well with non-engineers</li>
+              </ul>
+
+              <li>Love the work</li>
+              <ul>
+                <li>
+                  Enjoy working across the stack, from designing database schema
+                  to tweaking component styling to launching new web services
+                </li>
+                <li>
+                  Don't shy away from tedious or hard tasks when those are the
+                  most important
+                </li>
+                <li>
+                  Understand a small team environment comes with both good
+                  things (nimbleness, agency, flexibility) and challenges
+                  (wearing many hats, limited resources), and you're okay with
+                  that
+                </li>
+                <li>Believe in Tab for a Cause's potential</li>
+              </ul>
+              <li>Align with our values</li>
             </ul>
 
             <p style={{ marginBottom: 16, fontWeight: 500 }}>What you'd do:</p>
             <ul>
               <li>
-                Help develop the Gladly brand through social media, content
-                writing, and PR
+                Design and build features that increase our users' happiness,
+                help new people discover Tab for a Cause, and raise more money
+                for charity
               </li>
               <li>
-                Communicate with our users, providing user support and
-                distilling feedback into actionable takeaways
+                Work with marketing and business teams to iterate on growth
+                strategies
               </li>
               <li>
-                Create, analyze, and pursue your own ideas on how to spread the
-                word about Tab for a Cause
+                As needed, launch exploratory products that carry Tab for a
+                Cause's vision beyond the new tab page and into mobile or the
+                broader web
               </li>
               <li>
-                Generate and analyze data to inform our product development and
-                marketing decisions
+                Bring creative energy to help guide product and company
+                direction
               </li>
             </ul>
 
@@ -151,47 +208,43 @@ class JobsPage extends React.Component {
             </p>
             <ul>
               <li>
-                Autonomy: Plan, execute, and analyze your strategies in
-                real-time as you continue to reach for higher levels of
-                productivity. We will be here to help you whenever you need it,
-                but never to discourage an idea you think will be effective.
+                <b>Autonomy:</b> You'll own projects from birth to deployment
+                and have a ton of latitude to determine how they get done.
               </li>
               <li>
-                Company Impact: As part of a small and growing team, your voice
-                will be heard from day one. You will quickly gain experience in
-                nearly every area of startup marketing—from social media to
-                growth hacking to PR
+                <b>Impact:</b> As a critical part of our small team, you'll be a
+                major voice in the direction of Tab for a Cause. Zooming out,
+                your work will ultimately support critical, on-the-ground
+                nonprofit work.
               </li>
               <li>
-                Social Impact: Our goal is to help people raise money for the
-                causes they care about. To date, our users have raised nearly
-                $1M for amazing non-profits like Conservation International,
-                Water.org, GiveDirectly, and Save the Children. Your success at
-                Tab for a Cause will mean even more money will be raised for
-                important causes
+                <b>Values:</b> We don't lose sight of what matters: treating
+                each other well, enjoying our work, and doing good. We support
+                each other, help each other learn, and take pride in what we do.
               </li>
             </ul>
 
             <p style={{ marginBottom: 16, fontWeight: 500 }}>Nuts and bolts:</p>
             <ul>
-              <li>Part-time position: 10-15hr/week at $20/hr</li>
               <li>
-                Scheduling flexibility: Ideally at least a few hours of your
-                weekly schedule will overlap with the rest of the team, but when
-                exactly the bulk of your hours are worked are up to you.
+                If full time: $100k-120k salary + 1-2% equity + 401(k) matching
+                up to 4% + health benefits
               </li>
+              <li>If part time: $65/hour</li>
+              <li>Remote, collaboration on Slack + Github + video</li>
               <li>
-                We are currently a fully remote team and this position is
-                remote. The current team lives and works in San Mateo, CA.
+                Flexible schedule: besides team meetings and a reasonable
+                cadence of collaboration, work when you'd like
               </li>
             </ul>
 
-            <p style={{ marginBottom: 16, fontWeight: 500 }}>To apply:</p>
+            <p style={{ marginBottom: 16, fontWeight: 500 }}>
+              Sound great? Get in touch!
+            </p>
             <p>
-              Please send your resume attached to a short (2-3 paragraphs) email
-              describing why you'd be a great fit for this role and Tab for a
-              Cause to jobs@tabforacause.org with the subject: "YOUR NAME -
-              Marketing and Customer Support Associate".
+              Please email jobs@tabforacause.org with 1) a resume, and 2) a
+              quick description of some full stack work you're proud of. We look
+              forward to meeting you!
             </p>
 
             <ApplyButton>Apply</ApplyButton>
