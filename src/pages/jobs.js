@@ -107,6 +107,150 @@ class JobsPage extends React.Component {
             </p>
           </div>
           <Paper style={jobPaperStyle}>
+            <h2>Senior Full Stack Web Developer</h2>
+            <p>Remote – Full time or part time</p>
+            <p>
+              We're looking to hire a driven, experienced, and thoughtful full
+              stack engineer. The person in this position will help take Tab for
+              a Cause from $1M raised for charity to $10M and beyond!
+            </p>
+            <p>
+              We're a small team that values collaboration, positivity, social
+              impact, and work-life balance. If that's your kind of team—and you
+              love having agency over your work and diving in to build web apps
+              for real users—you'll thrive here.
+            </p>
+
+            <p style={{ marginBottom: 16, fontWeight: 500 }}>You:</p>
+            <ul>
+              <li>Are ready on day 1</li>
+              <ul>
+                <li>
+                  Are proficient with JavaScript and React.js (bonus: experience
+                  with GraphQL, DynamoDB, Firebase, Next.js, serverless
+                  infrastructure)
+                </li>
+                <li>
+                  Have previously owned substantial projects and features of a
+                  production web app, working across all aspects of the stack
+                </li>
+                <li>Are competent at data modeling and component design</li>
+                <li>Are excellent at writing tests and value clean code</li>
+                <li>
+                  Are incredibly resourceful: you rely on Google and reasonable
+                  workarounds to remove barriers
+                </li>
+                <li>
+                  Thrive on individual accountability yet prioritize overarching
+                  team goals
+                </li>
+              </ul>
+
+              <li>Think on a high level</li>
+              <ul>
+                <li>Understand how your work fits into company goals</li>
+                <li>Are comfortable speccing features</li>
+                <li>
+                  Don't get bogged down in unimportant problems or perfectionism
+                </li>
+                <li>
+                  Maintain a balance between rapid, minimum-viable feature
+                  development and avoiding technical debt and app instability
+                </li>
+                <li>Communicate well with non-engineers</li>
+              </ul>
+
+              <li>Love the work</li>
+              <ul>
+                <li>
+                  Enjoy working across the stack, from designing database schema
+                  to tweaking component styling to launching new web services
+                </li>
+                <li>
+                  Don't shy away from tedious or hard tasks when those are the
+                  most important
+                </li>
+                <li>
+                  Understand a small team environment comes with both good
+                  things (nimbleness, agency, flexibility) and challenges
+                  (wearing many hats, limited resources), and you're okay with
+                  that
+                </li>
+                <li>Believe in Tab for a Cause's potential</li>
+              </ul>
+              <li>Align with our values</li>
+            </ul>
+
+            <p style={{ marginBottom: 16, fontWeight: 500 }}>What you'd do:</p>
+            <ul>
+              <li>
+                Design and build features that increase our users' happiness,
+                help new people discover Tab for a Cause, and raise more money
+                for charity
+              </li>
+              <li>
+                Work with marketing and business teams to iterate on growth
+                strategies
+              </li>
+              <li>
+                As needed, launch exploratory products that carry Tab for a
+                Cause's vision beyond the new tab page and into mobile or the
+                broader web
+              </li>
+              <li>
+                Bring creative energy to help guide product and company
+                direction
+              </li>
+            </ul>
+
+            <p style={{ marginBottom: 16, fontWeight: 500 }}>
+              Why you'll love your job:
+            </p>
+            <ul>
+              <li>
+                <b>Autonomy:</b> You'll own projects from birth to deployment
+                and have a ton of latitude to determine how they get done.
+              </li>
+              <li>
+                <b>Impact:</b> As a critical part of our small team, you'll be a
+                major voice in the direction of Tab for a Cause. Zooming out,
+                your work will ultimately support critical, on-the-ground
+                nonprofit work.
+              </li>
+              <li>
+                <b>Balance:</b> We prioritize maintaining a healthy and happy
+                life. We're ambitious and hard-working, and sometimes we'll be
+                stressed and sometimes we'll work late, but we don't believe
+                overworking should be the norm.
+              </li>
+            </ul>
+
+            <p style={{ marginBottom: 16, fontWeight: 500 }}>Nuts and bolts:</p>
+            <ul>
+              <li>
+                If full time: $100k-120k salary + 1-2% equity + 401(k) matching
+                up to 4% + health benefits
+              </li>
+              <li>If part time: $65/hour</li>
+              <li>Remote, collaboration on Slack + Github + video</li>
+              <li>
+                Flexible schedule: besides team meetings and a reasonable
+                cadence of collaboration, work when you'd like
+              </li>
+            </ul>
+
+            <p style={{ marginBottom: 16, fontWeight: 500 }}>
+              Sound great? Get in touch!
+            </p>
+            <p>
+              Please email jobs@tabforacause.org with 1) a resume, and 2) a
+              quick description of some full stack work you're proud of. We look
+              forward to meeting you!
+            </p>
+
+            <ApplyButton>Apply</ApplyButton>
+          </Paper>
+          <Paper style={jobPaperStyle}>
             <h2>Something else?</h2>
             <p>
               Think you'd be a fit for a job we haven't listed? Email us at:
