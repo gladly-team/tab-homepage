@@ -218,10 +218,9 @@ class JobsPage extends React.Component {
                 nonprofit work.
               </li>
               <li>
-                <b>Balance:</b> We prioritize maintaining a healthy and happy
-                life. We're ambitious and hard-working, and sometimes we'll be
-                stressed and sometimes we'll work late, but we don't believe
-                overworking should be the norm.
+                <b>Values:</b> We don't lose sight of what matters: treating
+                each other well, enjoying our work, and doing good. We support
+                each other, help each other learn, and take pride in what we do.
               </li>
             </ul>
 
