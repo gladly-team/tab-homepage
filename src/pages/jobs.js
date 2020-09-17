@@ -120,6 +120,10 @@ class JobsPage extends React.Component {
               love having agency over your work and diving in to build web apps
               for real users—you'll thrive here.
             </p>
+            <p style={{ fontStyle: 'italic' }}>
+              Please note: while this role is remote, it does require U.S. work
+              authorization, and we unfortunately cannot sponsor visas
+            </p>
 
             <p style={{ marginBottom: 16, fontWeight: 500 }}>You:</p>
             <ul>
@@ -233,8 +237,9 @@ class JobsPage extends React.Component {
               <li>If part time: $65/hour</li>
               <li>Remote, collaboration on Slack + Github + video</li>
               <li>
-                Flexible schedule: besides team meetings and a reasonable
-                cadence of collaboration, work when you'd like
+                Flexible schedule: besides a good cadence of collaboration (we
+                aim to have working hour overlaps from about 10am – 2pm PT),
+                work when you’d like!
               </li>
             </ul>
 
