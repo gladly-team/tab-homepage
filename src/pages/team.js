@@ -8,6 +8,7 @@ import { jobsURL } from 'src/utils/navigation'
 import { secondaryMainColor } from 'src/themes/theme'
 import imgAlex from 'src/img/team/alex.jpg'
 import imgKevin from 'src/img/team/kevin.jpg'
+import imgMiranda from 'src/img/team/miranda.jpg'
 import Layout from 'src/components/Layout'
 
 const TeamPage = ({ location }) => {
@@ -21,6 +22,11 @@ const TeamPage = ({ location }) => {
       name: 'Kevin Jennison',
       img: imgKevin,
       title: 'Co-Founder & CTO',
+    },
+    {
+      name: 'Miranda Escobar',
+      img: imgMiranda,
+      title: 'Marketing Associate',
     },
   ]
   const openGraphTitle = 'Our Team - Tab for a Cause'
