@@ -60,9 +60,9 @@ const teamValues = [
 ]
 
 const ApplyButton = props => {
-  const { children, ...otherProps } = props
+  const { email = 'jobs@tabforacause.org', children, ...otherProps } = props
   return (
-    <a href="mailto:jobs@tabforacause.org">
+    <a href={`mailto:${email}`}>
       <Button variant="contained" color="primary" size="medium" {...otherProps}>
         {children}
       </Button>
@@ -71,6 +71,7 @@ const ApplyButton = props => {
 }
 
 ApplyButton.propTypes = {
+  email: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -247,12 +248,14 @@ class JobsPage extends React.Component {
               Sound great? Get in touch!
             </p>
             <p>
-              Please email jobs@tabforacause.org with 1) a resume, and 2) a
-              quick description of some full stack work you're proud of. We look
-              forward to meeting you!
+              Please email <b>job.2ooa6@funded.recruitee.com</b> with 1) a
+              resume, and 2) a quick description of some full stack work you're
+              proud of. We look forward to meeting you!
             </p>
 
-            <ApplyButton>Apply</ApplyButton>
+            <ApplyButton email="job.2ooa6@funded.recruitee.com">
+              Apply
+            </ApplyButton>
           </Paper>
           <Paper style={jobPaperStyle}>
             <h2>Something else?</h2>
