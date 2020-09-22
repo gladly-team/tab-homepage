@@ -147,13 +147,10 @@ const Covid19 = props => {
               So far, we've raised thousands of dollars to Doctors Without
               Borders, given meals to hungry kids, provided 2,000 people with
               access to clean water, given 10,000 meals to families in New York
-              City, and raised thousands of dollars to the World Health
-              Organization.
+              City, raised thousands of dollars for the World Health
+              Organization, and provided supplies to 100 indigenous families.
             </p>
-            <p>
-              Now, we're providing supplies to indigenous families. Will you
-              join in?
-            </p>
+            <p>Will you join in?</p>
             <Divider
               style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
             />
@@ -165,7 +162,7 @@ const Covid19 = props => {
                 marginBottom: 40,
               }}
             >
-              <h5 style={campaignLabelStyle}>Campaign #6: July 17 – ?</h5>
+              <h5 style={campaignLabelStyle}>Campaign #6: July 17 – 24</h5>
 
               <h2 style={{ fontSize: '1.8rem' }}>
                 Supplying 100 families in rainforest communities
@@ -186,8 +183,8 @@ const Covid19 = props => {
                 prepare for the coming months.
               </p>
               <p>
-                Our goal is to raise enough money to provide 100 families of 6
-                with the supplies they need to weather this pandemic.
+                We raised enough money to provide 100 families of 6 with the
+                supplies they need to weather this pandemic.
               </p>
             </div>
             <div
@@ -453,8 +450,7 @@ const Covid19 = props => {
               </p>
               <div
                 style={{
-                  display: 'flex',
-                  justifyContent: 'center',
+                  display: 'block',
                 }}
               >
                 <TwitterTweetEmbed tweetId={'1245467268345200641'} />
