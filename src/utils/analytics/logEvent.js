@@ -16,7 +16,7 @@ import ga from './google-analytics'
  */
 export const downloadButtonClick = async () => {
   const timeoutMs = 1000
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     fbq('track', 'Lead', { content_name: 'ExtensionDownload' })
 
     // Need to wait for events to fire before navigating

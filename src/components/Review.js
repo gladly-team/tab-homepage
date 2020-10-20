@@ -11,7 +11,7 @@ import styles from './Review.module.css'
 class Review extends React.Component {
   render() {
     const { name, imgUrl, starCount, style } = this.props
-    const stars = range(0, starCount).map(i => (
+    const stars = range(0, starCount).map((i) => (
       <Star key={`star-${i}`} style={{ width: 16, height: 16 }} />
     ))
     return (

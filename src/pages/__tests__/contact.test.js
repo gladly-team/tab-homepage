@@ -45,7 +45,7 @@ describe('jobs page', () => {
     const wrapper = shallow(<ContactPage {...getMockProps()} />)
     const elem = wrapper
       .find('p')
-      .filterWhere(n => n.text().indexOf('400 Concar') > -1)
+      .filterWhere((n) => n.text().indexOf('400 Concar') > -1)
     expect(elem.length).toBe(1)
   })
 
@@ -60,7 +60,7 @@ describe('jobs page', () => {
     const wrapper = shallow(<ContactPage {...getMockProps()} />)
     const helpCenterLink = wrapper
       .find(Link)
-      .filterWhere(e => e.render().text() === 'help center')
+      .filterWhere((e) => e.render().text() === 'help center')
     expect(helpCenterLink.exists()).toBe(true)
     expect(helpCenterLink.prop('to')).toEqual(externalHelpAllAppsURL)
   })

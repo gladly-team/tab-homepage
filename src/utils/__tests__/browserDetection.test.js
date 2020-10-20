@@ -5,7 +5,7 @@ import getBrowserInfo from 'src/utils/browserDetection'
 //
 // })
 
-const setUserAgent = userAgent => {
+const setUserAgent = (userAgent) => {
   Object.defineProperty(window.navigator, 'userAgent', {
     value: userAgent,
     configurable: true,

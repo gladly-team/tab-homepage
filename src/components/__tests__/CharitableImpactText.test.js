@@ -28,51 +28,26 @@ describe('CharitableImpactText', () => {
     const CharitableImpactText = require('../CharitableImpactText').default
     jest.useFakeTimers()
     const wrapper = shallow(<CharitableImpactText />)
-    expect(
-      wrapper
-        .find('span')
-        .last()
-        .text()
-    ).toBe(impactTexts[0])
+    expect(wrapper.find('span').last().text()).toBe(impactTexts[0])
     jest.advanceTimersByTime(5000)
     wrapper.update()
-    expect(
-      wrapper
-        .find('span')
-        .last()
-        .text()
-    ).toBe(impactTexts[1])
+    expect(wrapper.find('span').last().text()).toBe(impactTexts[1])
   })
 
   it('changes cycle speed with prop', () => {
     const CharitableImpactText = require('../CharitableImpactText').default
     jest.useFakeTimers()
     const wrapper = shallow(<CharitableImpactText cycleSpeedMs={40} />)
-    expect(
-      wrapper
-        .find('span')
-        .last()
-        .text()
-    ).toBe(impactTexts[0])
+    expect(wrapper.find('span').last().text()).toBe(impactTexts[0])
     jest.advanceTimersByTime(60)
     wrapper.update()
-    expect(
-      wrapper
-        .find('span')
-        .last()
-        .text()
-    ).toBe(impactTexts[1])
+    expect(wrapper.find('span').last().text()).toBe(impactTexts[1])
   })
 
   it('capitalizes text if "capitalize" prop is true', () => {
     const CharitableImpactText = require('../CharitableImpactText').default
     jest.useFakeTimers()
     const wrapper = shallow(<CharitableImpactText capitalize={true} />)
-    expect(
-      wrapper
-        .find('span')
-        .last()
-        .text()
-    ).toBe('Preserve oceans')
+    expect(wrapper.find('span').last().text()).toBe('Preserve oceans')
   })
 })

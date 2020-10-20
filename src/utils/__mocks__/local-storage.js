@@ -4,7 +4,7 @@ import { isNil } from 'lodash/lang'
 var mockStorage = {}
 
 export default {
-  getItem: jest.fn(key => {
+  getItem: jest.fn((key) => {
     return mockStorage[key]
   }),
   setItem: jest.fn((key, val) => {
@@ -12,7 +12,7 @@ export default {
       mockStorage[key] = String(val)
     }
   }),
-  removeItem: jest.fn(key => {
+  removeItem: jest.fn((key) => {
     delete mockStorage[key]
   }),
   clear: () => {

@@ -5,6 +5,6 @@
  * @param {string} url - The URL
  * @return {undefined}
  */
-export default url => {
+export default (url) => {
   window.location = url
 }

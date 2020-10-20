@@ -4,7 +4,7 @@
  * @param {number|string} amount - A number or numerical string
  * @return {string} The amount with commas where appropriate
  */
-export const commaFormatted = amount => {
+export const commaFormatted = (amount) => {
   if (amount === undefined || amount === null) {
     return '0'
   }
@@ -52,7 +52,7 @@ export const commaFormatted = amount => {
  * @param {number|string} amount - A number or numerical string
  * @return {string} The amount with exactly two decimal places (rounded or appended)
  */
-export const currencyFormatted = amount => {
+export const currencyFormatted = (amount) => {
   if (amount === undefined || amount === null) {
     return '0.00'
   }
