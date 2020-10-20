@@ -20,7 +20,7 @@ import { domain, getAbsoluteURL } from 'src/utils/navigation'
 
 // Use flexbox to make sure the footer sticks to the bottom of the page:
 // https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-3
-export const LayoutContent = props => {
+export const LayoutContent = (props) => {
   const { brand, children, data, location } = props
   const absoluteUrl = getAbsoluteURL(location.pathname)
   const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
@@ -123,7 +123,7 @@ LayoutContent.propTypes = {
 
 LayoutContent.displayName = 'LayoutContent'
 
-const Layout = props => (
+const Layout = (props) => (
   <StaticQuery
     query={graphql`
       query LayoutQuery {
@@ -139,7 +139,7 @@ const Layout = props => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <LayoutContent data={data} {...props}>
         {props.children}
       </LayoutContent>

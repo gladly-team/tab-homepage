@@ -39,9 +39,9 @@ class FinancialsQuarterButton extends React.Component {
                 : null
             )}
           >
-            <span style={{ color: lighterTextColor }}>{`Q${
-              quarterData.quarter
-            } ${quarterData.year}`}</span>
+            <span
+              style={{ color: lighterTextColor }}
+            >{`Q${quarterData.quarter} ${quarterData.year}`}</span>
           </Paper>
         </a>
       </div>

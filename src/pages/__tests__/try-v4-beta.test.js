@@ -63,10 +63,7 @@ describe('"Try V4 Beta" page', () => {
   it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage', () => {
     const TryV4BetaPage = require('../try-v4-beta').default
     const wrapper = shallow(<TryV4BetaPage {...getMockProps()} />)
-    const callback = wrapper
-      .find(InstallButton)
-      .first()
-      .prop('onBeforeInstall')
+    const callback = wrapper.find(InstallButton).first().prop('onBeforeInstall')
     callback()
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'tab.newUser.isTabV4Enabled',

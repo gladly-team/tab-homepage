@@ -27,12 +27,9 @@ describe('FinancialsQuarterButton', () => {
     const wrapper = shallow(
       <FinancialsQuarterButton quarterData={quarterData} />
     )
-    expect(
-      wrapper
-        .find('a')
-        .first()
-        .prop('href')
-    ).toBe('https://example.com/some-link/q2.pdf')
+    expect(wrapper.find('a').first().prop('href')).toBe(
+      'https://example.com/some-link/q2.pdf'
+    )
   })
 
   it('displays the correct name', () => {
@@ -46,12 +43,7 @@ describe('FinancialsQuarterButton', () => {
     const wrapper = shallow(
       <FinancialsQuarterButton quarterData={quarterData} />
     )
-    expect(
-      wrapper
-        .find('span')
-        .first()
-        .text()
-    ).toEqual('Q2 2018')
+    expect(wrapper.find('span').first().text()).toEqual('Q2 2018')
     wrapper.setProps({
       quarterData: {
         quarter: 3,
@@ -59,12 +51,7 @@ describe('FinancialsQuarterButton', () => {
         pdfUrl: '/',
       },
     })
-    expect(
-      wrapper
-        .find('span')
-        .first()
-        .text()
-    ).toEqual('Q3 2012')
+    expect(wrapper.find('span').first().text()).toEqual('Q3 2012')
   })
 
   it('changes size on hover', () => {
@@ -79,10 +66,7 @@ describe('FinancialsQuarterButton', () => {
       <FinancialsQuarterButton quarterData={quarterData} />
     )
     expect(wrapper.find(Paper).prop('style').transform).toBeUndefined()
-    wrapper
-      .find('div')
-      .first()
-      .simulate('mouseenter')
+    wrapper.find('div').first().simulate('mouseenter')
     expect(wrapper.find(Paper).prop('style').transform).toContain('scale(1.')
   })
 })

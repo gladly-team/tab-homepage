@@ -26,22 +26,19 @@ const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
 // hooks, and MUI v4 uses hooks. Instead of mounting, our tests
 // currently just call the Button component's "onClick" prop.
 // eslint-disable-next-line no-unused-vars
-const clickButton = async wrapper => {
-  wrapper
-    .find('button')
-    .first()
-    .simulate('click')
+const clickButton = async (wrapper) => {
+  wrapper.find('button').first().simulate('click')
 
   // Flush all promises
-  await new Promise(resolve => setImmediate(resolve))
+  await new Promise((resolve) => setImmediate(resolve))
 }
 
 // Helper to simulate a click on a shallow-rendered button.
-const clickButtonShallow = async wrapper => {
+const clickButtonShallow = async (wrapper) => {
   wrapper.find(Button).prop('onClick')()
 
   // Flush all promises
-  await new Promise(resolve => setImmediate(resolve))
+  await new Promise((resolve) => setImmediate(resolve))
 }
 
 beforeEach(() => {
@@ -80,60 +77,35 @@ describe('InstallButton', () => {
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', false))
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
-    expect(
-      wrapper
-        .find(Button)
-        .first()
-        .text()
-    ).toEqual('Add to Chrome')
+    expect(wrapper.find(Button).first().text()).toEqual('Add to Chrome')
   })
 
   it('has correct text for desktop Firefox', () => {
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', false))
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
-    expect(
-      wrapper
-        .find(Button)
-        .first()
-        .text()
-    ).toEqual('Add to Firefox')
+    expect(wrapper.find(Button).first().text()).toEqual('Add to Firefox')
   })
 
   it('has correct text for desktop Edge', () => {
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('edge', false))
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
-    expect(
-      wrapper
-        .find(Button)
-        .first()
-        .text()
-    ).toEqual('Add to Edge')
+    expect(wrapper.find(Button).first().text()).toEqual('Add to Edge')
   })
 
   it('has correct text for desktop unsupported browser', () => {
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('other', false))
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
-    expect(
-      wrapper
-        .find(Button)
-        .first()
-        .text()
-    ).toEqual('Get it Now')
+    expect(wrapper.find(Button).first().text()).toEqual('Get it Now')
   })
 
   it('has correct text for mobile browser', () => {
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('chrome', true))
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
-    expect(
-      wrapper
-        .find(Button)
-        .first()
-        .text()
-    ).toEqual('Get it Now')
+    expect(wrapper.find(Button).first().text()).toEqual('Get it Now')
   })
 
   it('navigates to the Firefox Addons page on click (on Firefox desktop browser)', async () => {

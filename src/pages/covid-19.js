@@ -97,7 +97,7 @@ const faqs = [
   },
 ]
 
-const Covid19 = props => {
+const Covid19 = (props) => {
   const { location } = props
   const openGraphTitle = 'Support COVID-19 Relief for Free'
   const openGraphDescription =
@@ -541,7 +541,7 @@ const Covid19 = props => {
 
         <div style={{ marginTop: 60 }}>
           <h2>FAQ</h2>
-          {faqs.map(faq => {
+          {faqs.map((faq) => {
             return (
               <div key={faq.question} style={{ padding: '10px 0px' }}>
                 <p style={{ fontWeight: 'bold' }}>{faq.question}</p>

@@ -36,7 +36,7 @@ const FinancialsPage = ({ data, location }) => {
               justifyContent: 'center',
             }}
           >
-            {sortedFinancialsEdges.map(quarter => {
+            {sortedFinancialsEdges.map((quarter) => {
               return (
                 <FinancialsQuarterButton
                   key={`Q${quarter.node.quarter}${quarter.node.year}`}

@@ -58,7 +58,7 @@ const TeamPage = ({ location }) => {
               justifyContent: 'space-around',
             }}
           >
-            {team.map(member => (
+            {team.map((member) => (
               <span
                 key={member.img}
                 style={{

@@ -232,7 +232,7 @@ exports[`Footer matches expected snapshot 1`] = `
             }
           }
         >
-          <[object Object] />
+          <Memo([object Object]) />
         </IconWrapper>
       </Link>
       <Link
@@ -258,7 +258,7 @@ exports[`Footer matches expected snapshot 1`] = `
             }
           }
         >
-          <[object Object] />
+          <Memo([object Object]) />
         </IconWrapper>
       </Link>
     </div>

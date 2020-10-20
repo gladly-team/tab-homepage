@@ -13,7 +13,7 @@ describe('Link', () => {
   it('uses GatsbyLink when navigating to a relative URL', () => {
     const Link = require('../Link').default
     const testUrls = ['/', '/some-url/here/', '/123/', '/thing']
-    testUrls.forEach(testUrl => {
+    testUrls.forEach((testUrl) => {
       const wrapper = shallow(<Link to={testUrl} />)
       expect(wrapper.find(GatsbyLink).length).toBe(1)
     })
@@ -26,7 +26,7 @@ describe('Link', () => {
       'localhost:3000/some-url/here/',
       'https://gladly.io',
     ]
-    testUrls.forEach(testUrl => {
+    testUrls.forEach((testUrl) => {
       const wrapper = shallow(<Link to={testUrl} />)
       expect(wrapper.find('a').length).toBe(1)
     })

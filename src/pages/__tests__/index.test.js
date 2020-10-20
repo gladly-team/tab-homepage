@@ -55,7 +55,7 @@ describe('index page', () => {
 
     const getUrlParameterValue = require('src/utils/location')
       .getUrlParameterValue
-    getUrlParameterValue.mockImplementation(param => {
+    getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
           return '234'
@@ -88,7 +88,7 @@ describe('index page', () => {
 
     const getUrlParameterValue = require('src/utils/location')
       .getUrlParameterValue
-    getUrlParameterValue.mockImplementation(param => {
+    getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
           return 'hello'
@@ -114,7 +114,7 @@ describe('index page', () => {
     const IndexPage = require('../index').default
     const getUrlParameterValue = require('src/utils/location')
       .getUrlParameterValue
-    getUrlParameterValue.mockImplementation(param => {
+    getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'u':
           return 'bobert'

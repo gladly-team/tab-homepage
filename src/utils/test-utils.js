@@ -4,7 +4,7 @@
  * @return {string} The CSS selector to select an element with
  *   data-test-id=`testId`
  */
-export const getTestIdSelector = testId => {
+export const getTestIdSelector = (testId) => {
   return `[data-test-id="${testId}"]`
 }
 

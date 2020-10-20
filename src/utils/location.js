@@ -13,7 +13,7 @@ const getLocation = () => {
  * @param {string} paramName - The URL parameter key
  * @return {string|null} The value of the URL parameter
  */
-const getUrlParameterValue = paramName => {
+const getUrlParameterValue = (paramName) => {
   try {
     const urlStr = exports.getLocation().href
     const url = new window.URL(urlStr)

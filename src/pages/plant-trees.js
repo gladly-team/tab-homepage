@@ -178,7 +178,7 @@ const photos = [
   { src: edenPhotoNepalNurseryDirector },
 ]
 
-const PlantTreesPage = props => {
+const PlantTreesPage = (props) => {
   const { location } = props
   const openGraphTitle = 'Plant Trees for Free'
   const openGraphDescription =
@@ -283,7 +283,7 @@ const PlantTreesPage = props => {
                 },
               ]}
             >
-              {photos.map(photo => (
+              {photos.map((photo) => (
                 <div key={photo.src}>
                   <img
                     // TODO
@@ -297,7 +297,7 @@ const PlantTreesPage = props => {
         </div>
         <div style={{ padding: '12px 0px' }}>
           <h2>FAQ</h2>
-          {faqs.map(faq => {
+          {faqs.map((faq) => {
             return (
               <div key={faq.question} style={{ padding: '10px 0px' }}>
                 <p style={{ fontWeight: 'bold' }}>{faq.question}</p>

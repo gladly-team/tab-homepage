@@ -29,22 +29,12 @@ describe('IconWrapper', () => {
         <span>some icon elem</span>
       </IconWrapper>
     )
-    expect(
-      wrapper
-        .find('span')
-        .first()
-        .prop('style')
-    ).toEqual({
+    expect(wrapper.find('span').first().prop('style')).toEqual({
       color: 'blue',
       background: '#000',
     })
     wrapper.first().simulate('mouseenter')
-    expect(
-      wrapper
-        .find('span')
-        .first()
-        .prop('style')
-    ).toEqual({
+    expect(wrapper.find('span').first().prop('style')).toEqual({
       color: 'red',
       background: '#000',
     })

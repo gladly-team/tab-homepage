@@ -28,7 +28,7 @@ describe('logEvent', () => {
     })
 
     // Flush all promises
-    await new Promise(resolve => setImmediate(resolve))
+    await new Promise((resolve) => setImmediate(resolve))
 
     expect(promise.done).toBe(false)
 
@@ -36,7 +36,7 @@ describe('logEvent', () => {
     hitCallback()
 
     // Flush all promises
-    await new Promise(resolve => setImmediate(resolve))
+    await new Promise((resolve) => setImmediate(resolve))
 
     expect(promise.done).toBe(true)
   })
@@ -57,7 +57,7 @@ describe('logEvent', () => {
     jest.advanceTimersByTime(50)
 
     // Flush all promises
-    await new Promise(resolve => setImmediate(resolve))
+    await new Promise((resolve) => setImmediate(resolve))
 
     expect(promise.done).toBe(false)
 
@@ -65,7 +65,7 @@ describe('logEvent', () => {
     jest.advanceTimersByTime(2000)
 
     // Flush all promises
-    await new Promise(resolve => setImmediate(resolve))
+    await new Promise((resolve) => setImmediate(resolve))
 
     expect(promise.done).toBe(true)
   })

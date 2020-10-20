@@ -8,7 +8,7 @@ localStorageMgr.setItem = (key, value) => {
   }
 }
 
-localStorageMgr.getItem = key => {
+localStorageMgr.getItem = (key) => {
   try {
     var value = window.localStorage.getItem(key)
     return value
@@ -18,7 +18,7 @@ localStorageMgr.getItem = key => {
   }
 }
 
-localStorageMgr.removeItem = key => {
+localStorageMgr.removeItem = (key) => {
   try {
     window.localStorage.removeItem(key)
   } catch (e) {

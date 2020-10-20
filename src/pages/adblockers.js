@@ -123,7 +123,7 @@ class AdblockersPage extends React.Component {
     const selectedAdblockerCode = this.state.selectedAdblockerCode
     if (selectedAdblockerCode) {
       const adblockerInfo = adblockers.find(
-        ab => ab.code === selectedAdblockerCode
+        (ab) => ab.code === selectedAdblockerCode
       )
       if (adblockerInfo) {
         if (!adblockerInfo.instructionsElem) {
@@ -157,7 +157,7 @@ class AdblockersPage extends React.Component {
           </Paper>
           <div style={{ marginTop: 30, marginBottom: 30 }}>
             <h2>What ad blocker do you use?</h2>
-            {adblockers.map(adblocker => {
+            {adblockers.map((adblocker) => {
               const selected = selectedAdblockerCode === adblocker.code
               return (
                 <Button
