@@ -8,6 +8,27 @@ import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
 
+const Section = ({ children, style }) => (
+  <div
+    className={`section`}
+    style={{ display: 'flex', flexDirection: 'column', ...style }}
+  >
+    {children}
+  </div>
+)
+
+Section.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+  style: PropTypes.object,
+}
+
+Section.defaultProps = {
+  style: {},
+}
+
 const MillionPage = () => {
   // TODO
   const openGraphTitle = 'Million raised'
@@ -25,10 +46,11 @@ const MillionPage = () => {
         //fullpage options
         licenseKey={'YOUR_KEY_HERE'}
         scrollingSpeed={1000} /* Options here */
-        render={({ _, fullpageApi }) => {
+        render={({ fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
-              <div className="section">
+              <Section style={{ background: 'blue' }}>
+                <div>hi</div>
                 <p>Section 1 (welcome to fullpage.js)</p>
                 <button onClick={() => fullpageApi.moveSectionDown()}>
                   Click me to move down
@@ -42,10 +64,10 @@ const MillionPage = () => {
                     }}
                   />
                 </div>
-              </div>
-              <div className="section">
+              </Section>
+              <Section style={{ background: 'green' }}>
                 <p>Section 2</p>
-              </div>
+              </Section>
             </ReactFullpage.Wrapper>
           )
         }}
