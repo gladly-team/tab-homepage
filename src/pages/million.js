@@ -15,25 +15,46 @@ import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
 import Footer from 'src/components/Footer'
+import Link from 'src/components/Link'
+import logoWithTextWhite from 'src/img/logo-with-text-white.svg'
 
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
 
-const useStyles = makeStyles(() => ({
-  menu: {
+const useStyles = makeStyles((theme) => ({
+  header: {
     display: 'flex',
-    justifyContent: 'space-around',
-    position: 'fixed',
-    zIndex: 10,
+    flexDirection: 'row',
     width: '100%',
+    justifyContent: 'space-between',
+    paddingTop: 20,
+    paddingBottom: 20,
+    paddingLeft: 40,
+    paddingRight: 40,
+    position: 'fixed',
     top: 0,
     left: 0,
+    zIndex: 10,
+  },
+  logoContainer: {
+    flex: 2,
+  },
+  menu: {
+    flex: 1,
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: '100%',
+  },
+  menuItem: {
+    margin: `0px ${theme.spacing(2)}px`,
   },
   section: {
     display: 'flex',
     flexDirection: 'column',
     height: '100%',
     alignItems: 'flex-start',
+    paddingTop: 80, // make room for the fixed header
   },
   darkBackground: {
     background: DARK_BACKGROUND,
@@ -45,12 +66,12 @@ const useStyles = makeStyles(() => ({
     marginTop: 'auto',
     display: 'flex',
     alignSelf: 'center',
-    padding: 24,
+    padding: theme.spacing(2),
   },
   downArrowButton: {
     width: 60,
     height: 60,
-    padding: 18,
+    padding: theme.spacing(1),
     borderRadius: '50%',
     display: 'flex',
     justifyContent: 'center',
@@ -153,18 +174,38 @@ const MillionPage = () => {
         <meta name="twitter:title" content={openGraphTitle} />
         <meta name="twitter:description" content={openGraphDescription} />
       </Helmet>
-      <div id={MENU_ID} className={classes.menu}>
-        <div data-menuanchor={SECTION_ID_TOP}>
-          <a href={`#${SECTION_ID_TOP}`}>$1M</a>
+      <div className={classes.header}>
+        <div className={classes.logoContainer}>
+          <Link to={homeURL}>
+            <img
+              data-test-id={'tab-logo-with-text'}
+              src={logoWithTextWhite}
+              style={{ height: 40 }}
+            />
+          </Link>
         </div>
-        <div data-menuanchor={SECTION_ID_GREEN_THING}>
-          <a href={`#${SECTION_ID_GREEN_THING}`}>Impact</a>
-        </div>
-        <div data-menuanchor={SECTION_ID_ANOTHER}>
-          <a href={`#${SECTION_ID_ANOTHER}`}>Thanks</a>
-        </div>
-        <div data-menuanchor={SECTION_ID_ONE_MORE}>
-          <a href={`#${SECTION_ID_ONE_MORE}`}>Celebration</a>
+        <div id={MENU_ID} className={classes.menu}>
+          <div data-menuanchor={SECTION_ID_TOP} className={classes.menuItem}>
+            <a href={`#${SECTION_ID_TOP}`}>$1M</a>
+          </div>
+          <div
+            data-menuanchor={SECTION_ID_GREEN_THING}
+            className={classes.menuItem}
+          >
+            <a href={`#${SECTION_ID_GREEN_THING}`}>Impact</a>
+          </div>
+          <div
+            data-menuanchor={SECTION_ID_ANOTHER}
+            className={classes.menuItem}
+          >
+            <a href={`#${SECTION_ID_ANOTHER}`}>Thanks</a>
+          </div>
+          <div
+            data-menuanchor={SECTION_ID_ONE_MORE}
+            className={classes.menuItem}
+          >
+            <a href={`#${SECTION_ID_ONE_MORE}`}>Celebration</a>
+          </div>
         </div>
       </div>
       <ReactFullpage
