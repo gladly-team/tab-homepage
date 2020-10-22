@@ -216,11 +216,11 @@ const MillionPage = () => {
         licenseKey={'YOUR_KEY_HERE'} // FIXME
         scrollingSpeed={500}
         onLeave={(_, destination) => {
-          if (destination && destination.index) {
-            setCurrentSectionIndex(destination.index)
+          if (destination) {
+            setCurrentSectionIndex(destination.index || 0)
           }
         }}
-        render={({ fullpageApi, state }) => {
+        render={({ fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper menu={MENU_ID}>
               <Section id={SECTION_ID_TOP} className={classes.darkBackground}>
