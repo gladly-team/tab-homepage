@@ -42,13 +42,17 @@ const useStyles = makeStyles((theme) => ({
   logoContainer: {
     flexShrink: 0,
   },
-  menu: {
+  menuContainer: {
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
-  menuItem: {
-    margin: `0px ${theme.spacing(2)}px`,
+  menu: ({ isInDarkSection }) => {
+    return {
+      color: isInDarkSection
+        ? theme.palette.common.white
+        : theme.palette.text.primary,
+    }
   },
   section: {
     display: 'flex',
@@ -154,10 +158,10 @@ DownArrowButtonContainer.propTypes = {
 DownArrowButtonContainer.defaultProps = {}
 
 const MillionPage = () => {
-  const classes = useStyles()
-
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
   const isInDarkSection = [0, 2].indexOf(currentSectionIndex) > -1
+
+  const classes = useStyles({ isInDarkSection })
 
   // TODO
   const openGraphTitle = 'Million raised'
@@ -188,8 +192,13 @@ const MillionPage = () => {
             />
           </Link>
         </div>
-        <div className={classes.menu}>
-          <Tabs value={currentSectionIndex} id={MENU_ID}>
+        <div className={classes.menuContainer}>
+          <Tabs
+            value={currentSectionIndex}
+            id={MENU_ID}
+            indicatorColor="primary"
+            className={classes.menu}
+          >
             <Tab label="$1M" href={`#${SECTION_ID_TOP}`} />
             <Tab label="Impact" href={`#${SECTION_ID_GREEN_THING}`} />
             <Tab label="Thanks" href={`#${SECTION_ID_ANOTHER}`} />
