@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import ReactFullpage from '@fullpage/react-fullpage'
@@ -16,6 +16,7 @@ import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
 import Footer from 'src/components/Footer'
 import Link from 'src/components/Link'
+import logoWithText from 'src/img/logo-with-text.svg'
 import logoWithTextWhite from 'src/img/logo-with-text-white.svg'
 
 const DARK_BACKGROUND = grey['800']
@@ -155,6 +156,9 @@ DownArrowButtonContainer.defaultProps = {}
 const MillionPage = () => {
   const classes = useStyles()
 
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
+  const isInDarkSection = [0, 2].indexOf(currentSectionIndex) > -1
+
   // TODO
   const openGraphTitle = 'Million raised'
   const openGraphDescription = 'We raised a million!'
@@ -179,7 +183,7 @@ const MillionPage = () => {
           <Link to={homeURL}>
             <img
               data-test-id={'tab-logo-with-text'}
-              src={logoWithTextWhite}
+              src={isInDarkSection ? logoWithTextWhite : logoWithText}
               style={{ height: 40 }}
             />
           </Link>
@@ -211,7 +215,12 @@ const MillionPage = () => {
       <ReactFullpage
         licenseKey={'YOUR_KEY_HERE'} // FIXME
         scrollingSpeed={500}
-        render={({ fullpageApi }) => {
+        onLeave={(_, destination) => {
+          if (destination && destination.index) {
+            setCurrentSectionIndex(destination.index)
+          }
+        }}
+        render={({ fullpageApi, state }) => {
           return (
             <ReactFullpage.Wrapper menu={MENU_ID}>
               <Section id={SECTION_ID_TOP} className={classes.darkBackground}>
