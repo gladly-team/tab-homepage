@@ -3,11 +3,15 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import ReactFullpage from '@fullpage/react-fullpage'
 import { ThemeProvider } from '@material-ui/styles'
+import grey from '@material-ui/core/colors/grey'
 import defaultTheme from 'src/themes/theme'
 import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
 import Footer from 'src/components/Footer'
+
+const DARK_BACKGROUND = grey['800']
+const LIGHT_BACKGROUND = grey['50']
 
 const Section = ({ id, children, style }) => (
   <div
@@ -95,7 +99,10 @@ const MillionPage = () => {
         render={({ fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper menu={MENU_ID}>
-              <Section id={SECTION_ID_TOP} style={{ background: 'blue' }}>
+              <Section
+                id={SECTION_ID_TOP}
+                style={{ background: DARK_BACKGROUND }}
+              >
                 <p>Section 1 (welcome to fullpage.js)</p>
                 <button onClick={() => fullpageApi.moveSectionDown()}>
                   Click me to move down
@@ -112,14 +119,20 @@ const MillionPage = () => {
               </Section>
               <Section
                 id={SECTION_ID_GREEN_THING}
-                style={{ background: 'green' }}
+                style={{ background: LIGHT_BACKGROUND }}
               >
                 <p>Section 2</p>
               </Section>
-              <Section id={SECTION_ID_ANOTHER} style={{ background: 'grey' }}>
+              <Section
+                id={SECTION_ID_ANOTHER}
+                style={{ background: DARK_BACKGROUND }}
+              >
                 <p>Section 3</p>
               </Section>
-              <Section id={SECTION_ID_ONE_MORE} style={{ background: 'teal' }}>
+              <Section
+                id={SECTION_ID_ONE_MORE}
+                style={{ background: LIGHT_BACKGROUND }}
+              >
                 <p>Section 4</p>
                 <Footer
                   id={FOOTER_ID}
