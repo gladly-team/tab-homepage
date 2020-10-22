@@ -27,7 +27,7 @@ import IconWrapper from 'src/components/IconWrapper'
 
 class Footer extends React.Component {
   render() {
-    const { style } = this.props
+    const { id, style } = this.props
     const footerLinkStyle = {
       color: lightestTextColor,
       fontSize: 12,
@@ -46,6 +46,7 @@ class Footer extends React.Component {
     }
     return (
       <div
+        id={id}
         style={Object.assign(
           {},
           {
@@ -168,10 +169,12 @@ class Footer extends React.Component {
 }
 
 Footer.propTypes = {
+  id: PropTypes.string,
   style: PropTypes.object,
 }
 
 Footer.defaultProps = {
+  id: undefined,
   style: {},
 }
 

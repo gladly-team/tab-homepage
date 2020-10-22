@@ -7,14 +7,27 @@ import defaultTheme from 'src/themes/theme'
 import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
+import Footer from 'src/components/Footer'
 
 const Section = ({ id, children, style }) => (
   <div
     data-anchor={id}
     className={`section`}
-    style={{ display: 'flex', flexDirection: 'column', ...style }}
+    // style={{ display: 'flex', flexDirection: 'column', ...style }}
   >
-    {children}
+    <div
+      // data-anchor={id}
+      // className={`section`}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        alignItems: 'flex-start',
+        ...style,
+      }}
+    >
+      {children}
+    </div>
   </div>
 )
 
@@ -41,6 +54,7 @@ const MillionPage = () => {
   const SECTION_ID_GREEN_THING = 'green-thing'
   const SECTION_ID_ANOTHER = 'another'
   const SECTION_ID_ONE_MORE = 'one-more'
+  const FOOTER_ID = 'footer'
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -107,6 +121,10 @@ const MillionPage = () => {
               </Section>
               <Section id={SECTION_ID_ONE_MORE} style={{ background: 'teal' }}>
                 <p>Section 4</p>
+                <Footer
+                  id={FOOTER_ID}
+                  style={{ marginTop: 'auto', width: '100%' }}
+                />
               </Section>
             </ReactFullpage.Wrapper>
           )
