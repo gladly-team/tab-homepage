@@ -77,7 +77,7 @@ const MillionPage = () => {
       </div>
       <ReactFullpage
         licenseKey={'YOUR_KEY_HERE'}
-        scrollingSpeed={1000}
+        scrollingSpeed={500}
         render={({ fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper menu={MENU_ID}>
