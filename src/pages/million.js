@@ -8,8 +8,9 @@ import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
 
-const Section = ({ children, style }) => (
+const Section = ({ id, children, style }) => (
   <div
+    data-anchor={id}
     className={`section`}
     style={{ display: 'flex', flexDirection: 'column', ...style }}
   >
@@ -18,6 +19,7 @@ const Section = ({ children, style }) => (
 )
 
 Section.propTypes = {
+  id: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -34,6 +36,11 @@ const MillionPage = () => {
   const openGraphTitle = 'Million raised'
   const openGraphDescription = 'We raised a million!'
 
+  const SECTION_ID_TOP = 'top'
+  const SECTION_ID_GREEN_THING = 'green-thing'
+  const SECTION_ID_ANOTHER = 'another'
+  const SECTION_ID_ONE_MORE = 'one-more'
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Helmet title={openGraphTitle}>
@@ -49,8 +56,31 @@ const MillionPage = () => {
         render={({ fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
-              <Section style={{ background: 'blue' }}>
-                <div>hi</div>
+              <Section id={SECTION_ID_TOP} style={{ background: 'blue' }}>
+                <div
+                  id="nav-bar"
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                  }}
+                >
+                  <div onClick={() => fullpageApi.moveTo(SECTION_ID_TOP, 0)}>
+                    $1M
+                  </div>
+                  <div
+                    onClick={() =>
+                      fullpageApi.moveTo(SECTION_ID_GREEN_THING, 0)
+                    }
+                  >
+                    Impact
+                  </div>
+                  <div onClick={() => fullpageApi.moveTo(SECTION_ID_ANOTHER)}>
+                    Thanks
+                  </div>
+                  <div onClick={() => fullpageApi.moveTo(SECTION_ID_ONE_MORE)}>
+                    Celebration
+                  </div>
+                </div>
                 <p>Section 1 (welcome to fullpage.js)</p>
                 <button onClick={() => fullpageApi.moveSectionDown()}>
                   Click me to move down
@@ -65,8 +95,17 @@ const MillionPage = () => {
                   />
                 </div>
               </Section>
-              <Section style={{ background: 'green' }}>
+              <Section
+                id={SECTION_ID_GREEN_THING}
+                style={{ background: 'green' }}
+              >
                 <p>Section 2</p>
+              </Section>
+              <Section id={SECTION_ID_ANOTHER} style={{ background: 'grey' }}>
+                <p>Section 3</p>
+              </Section>
+              <Section id={SECTION_ID_ONE_MORE} style={{ background: 'teal' }}>
+                <p>Section 4</p>
               </Section>
             </ReactFullpage.Wrapper>
           )
