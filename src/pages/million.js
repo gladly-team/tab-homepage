@@ -36,6 +36,7 @@ const MillionPage = () => {
   const openGraphTitle = 'Million raised'
   const openGraphDescription = 'We raised a million!'
 
+  const MENU_ID = 'nav-menu'
   const SECTION_ID_TOP = 'top'
   const SECTION_ID_GREEN_THING = 'green-thing'
   const SECTION_ID_ANOTHER = 'another'
@@ -49,38 +50,38 @@ const MillionPage = () => {
         <meta name="twitter:title" content={openGraphTitle} />
         <meta name="twitter:description" content={openGraphDescription} />
       </Helmet>
+      <div
+        id={MENU_ID}
+        style={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          position: 'fixed',
+          zIndex: 10,
+          width: '100%',
+          top: 0,
+          left: 0,
+        }}
+      >
+        <div data-menuanchor={SECTION_ID_TOP}>
+          <a href={`#${SECTION_ID_TOP}`}>$1M</a>
+        </div>
+        <div data-menuanchor={SECTION_ID_GREEN_THING}>
+          <a href={`#${SECTION_ID_GREEN_THING}`}>Impact</a>
+        </div>
+        <div data-menuanchor={SECTION_ID_ANOTHER}>
+          <a href={`#${SECTION_ID_ANOTHER}`}>Thanks</a>
+        </div>
+        <div data-menuanchor={SECTION_ID_ONE_MORE}>
+          <a href={`#${SECTION_ID_ONE_MORE}`}>Celebration</a>
+        </div>
+      </div>
       <ReactFullpage
-        //fullpage options
         licenseKey={'YOUR_KEY_HERE'}
-        scrollingSpeed={1000} /* Options here */
+        scrollingSpeed={1000}
         render={({ fullpageApi }) => {
           return (
-            <ReactFullpage.Wrapper>
+            <ReactFullpage.Wrapper menu={MENU_ID}>
               <Section id={SECTION_ID_TOP} style={{ background: 'blue' }}>
-                <div
-                  id="nav-bar"
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-around',
-                  }}
-                >
-                  <div onClick={() => fullpageApi.moveTo(SECTION_ID_TOP, 0)}>
-                    $1M
-                  </div>
-                  <div
-                    onClick={() =>
-                      fullpageApi.moveTo(SECTION_ID_GREEN_THING, 0)
-                    }
-                  >
-                    Impact
-                  </div>
-                  <div onClick={() => fullpageApi.moveTo(SECTION_ID_ANOTHER)}>
-                    Thanks
-                  </div>
-                  <div onClick={() => fullpageApi.moveTo(SECTION_ID_ONE_MORE)}>
-                    Celebration
-                  </div>
-                </div>
                 <p>Section 1 (welcome to fullpage.js)</p>
                 <button onClick={() => fullpageApi.moveSectionDown()}>
                   Click me to move down
