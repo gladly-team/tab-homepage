@@ -94,7 +94,7 @@ const MillionPage = () => {
         </div>
       </div>
       <ReactFullpage
-        licenseKey={'YOUR_KEY_HERE'}
+        licenseKey={'YOUR_KEY_HERE'} // FIXME
         scrollingSpeed={500}
         render={({ fullpageApi }) => {
           return (
