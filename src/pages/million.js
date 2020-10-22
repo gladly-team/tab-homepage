@@ -4,6 +4,9 @@ import Helmet from 'react-helmet'
 import ReactFullpage from '@fullpage/react-fullpage'
 import { ThemeProvider } from '@material-ui/styles'
 import grey from '@material-ui/core/colors/grey'
+import IconButton from '@material-ui/core/IconButton'
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
+
 import defaultTheme from 'src/themes/theme'
 import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
@@ -46,6 +49,53 @@ Section.propTypes = {
 
 Section.defaultProps = {
   style: {},
+}
+
+const DownArrowButton = ({ dark, onClick }) => (
+  <div
+    style={{
+      width: 60,
+      height: 60,
+      padding: 18,
+      borderRadius: '50%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}
+  >
+    <IconButton
+      onClick={onClick}
+      style={{ background: dark ? DARK_BACKGROUND : LIGHT_BACKGROUND }}
+    >
+      <ArrowDownwardIcon
+        style={{ color: dark ? LIGHT_BACKGROUND : DARK_BACKGROUND }}
+      />
+    </IconButton>
+  </div>
+)
+
+const DownArrowButtonContainer = ({ children }) => (
+  <div
+    style={{
+      marginTop: 'auto',
+      display: 'flex',
+      alignSelf: 'center',
+      padding: 18,
+    }}
+  >
+    {' '}
+    {children}
+  </div>
+)
+
+DownArrowButton.propTypes = {
+  dark: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+}
+
+DownArrowButton.defaultProps = {
+  dark: false,
+  onClick: () => {},
 }
 
 const MillionPage = () => {
@@ -103,11 +153,7 @@ const MillionPage = () => {
                 id={SECTION_ID_TOP}
                 style={{ background: DARK_BACKGROUND }}
               >
-                <p>Section 1 (welcome to fullpage.js)</p>
-                <button onClick={() => fullpageApi.moveSectionDown()}>
-                  Click me to move down
-                </button>
-                <p>hi</p>
+                <p>Section 1</p>
                 <div>
                   <InstallButton
                     size={'medium'}
@@ -116,18 +162,34 @@ const MillionPage = () => {
                     }}
                   />
                 </div>
+                <DownArrowButtonContainer>
+                  <DownArrowButton
+                    onClick={() => fullpageApi.moveSectionDown()}
+                  />
+                </DownArrowButtonContainer>
               </Section>
               <Section
                 id={SECTION_ID_GREEN_THING}
                 style={{ background: LIGHT_BACKGROUND }}
               >
                 <p>Section 2</p>
+                <DownArrowButtonContainer>
+                  <DownArrowButton
+                    dark
+                    onClick={() => fullpageApi.moveSectionDown()}
+                  />
+                </DownArrowButtonContainer>
               </Section>
               <Section
                 id={SECTION_ID_ANOTHER}
                 style={{ background: DARK_BACKGROUND }}
               >
                 <p>Section 3</p>
+                <DownArrowButtonContainer>
+                  <DownArrowButton
+                    onClick={() => fullpageApi.moveSectionDown()}
+                  />
+                </DownArrowButtonContainer>
               </Section>
               <Section
                 id={SECTION_ID_ONE_MORE}
