@@ -9,6 +9,8 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
 import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 import { lighten } from '@material-ui/core/styles/colorManipulator'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 
 import defaultTheme from 'src/themes/theme'
 import InstallButton from 'src/components/InstallButton'
@@ -38,14 +40,12 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 10,
   },
   logoContainer: {
-    flex: 2,
+    flexShrink: 0,
   },
   menu: {
-    flex: 1,
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
-    width: '100%',
   },
   menuItem: {
     margin: `0px ${theme.spacing(2)}px`,
@@ -188,28 +188,13 @@ const MillionPage = () => {
             />
           </Link>
         </div>
-        <div id={MENU_ID} className={classes.menu}>
-          <div data-menuanchor={SECTION_ID_TOP} className={classes.menuItem}>
-            <a href={`#${SECTION_ID_TOP}`}>$1M</a>
-          </div>
-          <div
-            data-menuanchor={SECTION_ID_GREEN_THING}
-            className={classes.menuItem}
-          >
-            <a href={`#${SECTION_ID_GREEN_THING}`}>Impact</a>
-          </div>
-          <div
-            data-menuanchor={SECTION_ID_ANOTHER}
-            className={classes.menuItem}
-          >
-            <a href={`#${SECTION_ID_ANOTHER}`}>Thanks</a>
-          </div>
-          <div
-            data-menuanchor={SECTION_ID_ONE_MORE}
-            className={classes.menuItem}
-          >
-            <a href={`#${SECTION_ID_ONE_MORE}`}>Celebration</a>
-          </div>
+        <div className={classes.menu}>
+          <Tabs value={currentSectionIndex} id={MENU_ID}>
+            <Tab label="$1M" href={`#${SECTION_ID_TOP}`} />
+            <Tab label="Impact" href={`#${SECTION_ID_GREEN_THING}`} />
+            <Tab label="Thanks" href={`#${SECTION_ID_ANOTHER}`} />
+            <Tab label="Celebration" href={`#${SECTION_ID_ONE_MORE}`} />
+          </Tabs>
         </div>
       </div>
       <ReactFullpage
