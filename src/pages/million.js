@@ -199,10 +199,30 @@ const MillionPage = () => {
             indicatorColor="primary"
             className={classes.menu}
           >
-            <Tab label="$1M" href={`#${SECTION_ID_TOP}`} />
-            <Tab label="Impact" href={`#${SECTION_ID_GREEN_THING}`} />
-            <Tab label="Thanks" href={`#${SECTION_ID_ANOTHER}`} />
-            <Tab label="Celebration" href={`#${SECTION_ID_ONE_MORE}`} />
+            <Tab
+              label="$1M"
+              onClick={() => {
+                window.fullpage_api.moveTo(SECTION_ID_TOP)
+              }}
+            />
+            <Tab
+              label="Impact"
+              onClick={() => {
+                window.fullpage_api.moveTo(SECTION_ID_GREEN_THING)
+              }}
+            />
+            <Tab
+              label="Thanks"
+              onClick={() => {
+                window.fullpage_api.moveTo(SECTION_ID_ANOTHER)
+              }}
+            />
+            <Tab
+              label="Celebration"
+              onClick={() => {
+                window.fullpage_api.moveTo(SECTION_ID_ONE_MORE)
+              }}
+            />
           </Tabs>
         </div>
       </div>
