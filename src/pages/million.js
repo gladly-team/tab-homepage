@@ -6,6 +6,9 @@ import { ThemeProvider } from '@material-ui/styles'
 import grey from '@material-ui/core/colors/grey'
 import IconButton from '@material-ui/core/IconButton'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
+import { makeStyles } from '@material-ui/core/styles'
+import clsx from 'clsx'
+import { lighten } from '@material-ui/core/styles/colorManipulator'
 
 import defaultTheme from 'src/themes/theme'
 import InstallButton from 'src/components/InstallButton'
@@ -16,89 +19,121 @@ import Footer from 'src/components/Footer'
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
 
-const Section = ({ id, children, style }) => (
-  <div
-    data-anchor={id}
-    className={`section`}
-    // style={{ display: 'flex', flexDirection: 'column', ...style }}
-  >
-    <div
-      // data-anchor={id}
-      // className={`section`}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100%',
-        alignItems: 'flex-start',
-        ...style,
-      }}
-    >
-      {children}
-    </div>
-  </div>
-)
+const useStyles = makeStyles(() => ({
+  menu: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    position: 'fixed',
+    zIndex: 10,
+    width: '100%',
+    top: 0,
+    left: 0,
+  },
+  section: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    alignItems: 'flex-start',
+  },
+  darkBackground: {
+    background: DARK_BACKGROUND,
+  },
+  lightBackground: {
+    background: LIGHT_BACKGROUND,
+  },
+  downArrowButtonContainer: {
+    marginTop: 'auto',
+    display: 'flex',
+    alignSelf: 'center',
+    padding: 24,
+  },
+  downArrowButton: {
+    width: 60,
+    height: 60,
+    padding: 18,
+    borderRadius: '50%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    transition: 'transform .2s ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.1)',
+    },
+  },
+  downArrowButtonBackground: ({ dark }) => {
+    const backgoundColor = dark ? DARK_BACKGROUND : LIGHT_BACKGROUND
+    return {
+      background: backgoundColor,
+      transition: 'background .2s ease-in-out',
+      '&:hover': {
+        background: lighten(backgoundColor, 0.15),
+      },
+    }
+  },
+  downArrowButtonIcon: ({ dark }) => ({
+    color: dark ? LIGHT_BACKGROUND : DARK_BACKGROUND,
+  }),
+}))
 
+const Section = ({ id, children, className }) => {
+  const classes = useStyles()
+  return (
+    <div data-anchor={id} className={`section`}>
+      <div className={clsx(classes.section, className)}>{children}</div>
+    </div>
+  )
+}
 Section.propTypes = {
   id: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]),
-  style: PropTypes.object,
+  className: PropTypes.string,
 }
-
 Section.defaultProps = {
   style: {},
+  className: '',
 }
 
-const DownArrowButton = ({ dark, onClick }) => (
-  <div
-    style={{
-      width: 60,
-      height: 60,
-      padding: 18,
-      borderRadius: '50%',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}
-  >
-    <IconButton
-      onClick={onClick}
-      style={{ background: dark ? DARK_BACKGROUND : LIGHT_BACKGROUND }}
-    >
-      <ArrowDownwardIcon
-        style={{ color: dark ? LIGHT_BACKGROUND : DARK_BACKGROUND }}
-      />
-    </IconButton>
-  </div>
-)
-
-const DownArrowButtonContainer = ({ children }) => (
-  <div
-    style={{
-      marginTop: 'auto',
-      display: 'flex',
-      alignSelf: 'center',
-      padding: 18,
-    }}
-  >
-    {' '}
-    {children}
-  </div>
-)
-
+const DownArrowButton = ({ dark, onClick }) => {
+  const classes = useStyles({ dark })
+  return (
+    <div className={classes.downArrowButton}>
+      <IconButton
+        onClick={onClick}
+        className={classes.downArrowButtonBackground}
+      >
+        <ArrowDownwardIcon className={classes.downArrowButtonIcon} />
+      </IconButton>
+    </div>
+  )
+}
 DownArrowButton.propTypes = {
   dark: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
 }
-
 DownArrowButton.defaultProps = {
   dark: false,
   onClick: () => {},
 }
 
+const DownArrowButtonContainer = ({ children }) => {
+  const classes = useStyles()
+  return <div className={classes.downArrowButtonContainer}>{children}</div>
+}
+
+DownArrowButtonContainer.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+}
+DownArrowButtonContainer.defaultProps = {}
+
 const MillionPage = () => {
+  const classes = useStyles()
+
   // TODO
   const openGraphTitle = 'Million raised'
   const openGraphDescription = 'We raised a million!'
@@ -118,18 +153,7 @@ const MillionPage = () => {
         <meta name="twitter:title" content={openGraphTitle} />
         <meta name="twitter:description" content={openGraphDescription} />
       </Helmet>
-      <div
-        id={MENU_ID}
-        style={{
-          display: 'flex',
-          justifyContent: 'space-around',
-          position: 'fixed',
-          zIndex: 10,
-          width: '100%',
-          top: 0,
-          left: 0,
-        }}
-      >
+      <div id={MENU_ID} className={classes.menu}>
         <div data-menuanchor={SECTION_ID_TOP}>
           <a href={`#${SECTION_ID_TOP}`}>$1M</a>
         </div>
@@ -149,10 +173,7 @@ const MillionPage = () => {
         render={({ fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper menu={MENU_ID}>
-              <Section
-                id={SECTION_ID_TOP}
-                style={{ background: DARK_BACKGROUND }}
-              >
+              <Section id={SECTION_ID_TOP} className={classes.darkBackground}>
                 <p>Section 1</p>
                 <div>
                   <InstallButton
@@ -170,7 +191,7 @@ const MillionPage = () => {
               </Section>
               <Section
                 id={SECTION_ID_GREEN_THING}
-                style={{ background: LIGHT_BACKGROUND }}
+                className={classes.lightBackground}
               >
                 <p>Section 2</p>
                 <DownArrowButtonContainer>
@@ -182,7 +203,7 @@ const MillionPage = () => {
               </Section>
               <Section
                 id={SECTION_ID_ANOTHER}
-                style={{ background: DARK_BACKGROUND }}
+                className={classes.darkBackground}
               >
                 <p>Section 3</p>
                 <DownArrowButtonContainer>
@@ -193,7 +214,7 @@ const MillionPage = () => {
               </Section>
               <Section
                 id={SECTION_ID_ONE_MORE}
-                style={{ background: LIGHT_BACKGROUND }}
+                className={classes.lightBackground}
               >
                 <p>Section 4</p>
                 <Footer
