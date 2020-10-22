@@ -16,7 +16,7 @@ jobs:
       - bash ./scripts/deploy.sh s3://dev-tab-website
       env:
         - GATSBY_DOMAIN=dev-tab2017.gladly.io
-        - SHOW_MILLION_RAISED_PAGE=false
+        - SHOW_MILLION_RAISED_PAGE=true
     - stage: production deploy
       if: branch = master AND NOT type = pull_request
       script:
