@@ -242,6 +242,32 @@ exports[`Footer matches expected snapshot 1`] = `
             "margin": 12,
           }
         }
+        to="https://www.instagram.com/tabforacause/"
+      >
+        <IconWrapper
+          hoverStyle={
+            Object {
+              "color": "#838383",
+            }
+          }
+          style={
+            Object {
+              "color": "#cecece",
+              "height": 20,
+              "width": 20,
+            }
+          }
+        >
+          <Memo([object Object]) />
+        </IconWrapper>
+      </Link>
+      <Link
+        hoverStyle={Object {}}
+        style={
+          Object {
+            "margin": 12,
+          }
+        }
         to="https://twitter.com/TabForACause"
       >
         <IconWrapper
