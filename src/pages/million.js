@@ -13,8 +13,8 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 
 import defaultTheme from 'src/themes/theme'
-import InstallButton from 'src/components/InstallButton'
-import redirect from 'src/utils/redirect'
+// import InstallButton from 'src/components/InstallButton'
+// import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
 import Footer from 'src/components/Footer'
 import Link from 'src/components/Link'
@@ -239,14 +239,14 @@ const MillionPage = () => {
             <ReactFullpage.Wrapper menu={MENU_ID}>
               <Section id={SECTION_ID_TOP} className={classes.darkBackground}>
                 <p>Section 1</p>
-                <div>
-                  <InstallButton
-                    size={'medium'}
-                    onUnsupportedBrowserInstallClick={() => {
-                      redirect(homeURL)
-                    }}
-                  />
-                </div>
+                {/* <div> */}
+                {/*   <InstallButton */}
+                {/*     size={'medium'} */}
+                {/*     onUnsupportedBrowserInstallClick={() => { */}
+                {/*       redirect(homeURL) */}
+                {/*     }} */}
+                {/*   /> */}
+                {/* </div> */}
                 <DownArrowButtonContainer>
                   <DownArrowButton
                     onClick={() => fullpageApi.moveSectionDown()}
