@@ -65,23 +65,24 @@ class Footer extends React.Component {
         <div
           style={{
             display: 'flex',
-            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'no-wrap',
           }}
         >
+          <Link to="/" style={{ minWidth: 24 }}>
+            <img src={logoGrey} style={{ height: 43 }} />
+          </Link>
           <div
             style={{
+              flex: 1,
+              marginLeft: 30,
               display: 'flex',
-              justifyContent: 'flex-start',
-              flexWrap: 'nowrap',
-              alignItems: 'center',
+              flexWrap: 'wrap',
             }}
           >
-            <Link to="/">
-              <img src={logoGrey} style={{ height: 43 }} />
-            </Link>
             <div
               style={{
-                marginLeft: 30,
+                flex: 1,
                 display: 'flex',
                 flexWrap: 'wrap',
                 justifyContent: 'flex-start',
@@ -144,34 +145,40 @@ class Footer extends React.Component {
                 Jobs
               </Link>
             </div>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', paddingTop: 4 }}>
-            <Link to={facebookPageURL} style={{ margin: 12 }}>
-              <IconWrapper
-                style={socialIconStyle}
-                hoverStyle={socialIconHoverStyle}
-              >
-                <Facebook />
-              </IconWrapper>
-            </Link>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                paddingTop: 4,
+              }}
+            >
+              <Link to={facebookPageURL} style={{ margin: 12 }}>
+                <IconWrapper
+                  style={socialIconStyle}
+                  hoverStyle={socialIconHoverStyle}
+                >
+                  <Facebook />
+                </IconWrapper>
+              </Link>
 
-            <Link to={instagramPageURL} style={{ margin: 12 }}>
-              <IconWrapper
-                style={socialIconStyle}
-                hoverStyle={socialIconHoverStyle}
-              >
-                <Instagram />
-              </IconWrapper>
-            </Link>
+              <Link to={instagramPageURL} style={{ margin: 12 }}>
+                <IconWrapper
+                  style={socialIconStyle}
+                  hoverStyle={socialIconHoverStyle}
+                >
+                  <Instagram />
+                </IconWrapper>
+              </Link>
 
-            <Link to={twitterPageURL} style={{ margin: 12 }}>
-              <IconWrapper
-                style={socialIconStyle}
-                hoverStyle={socialIconHoverStyle}
-              >
-                <Twitter />
-              </IconWrapper>
-            </Link>
+              <Link to={twitterPageURL} style={{ margin: 12 }}>
+                <IconWrapper
+                  style={socialIconStyle}
+                  hoverStyle={socialIconHoverStyle}
+                >
+                  <Twitter />
+                </IconWrapper>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -23,42 +23,47 @@ exports[`Footer matches expected snapshot 1`] = `
   <div
     style={
       Object {
+        "alignItems": "center",
         "display": "flex",
-        "justifyContent": "space-between",
+        "flexWrap": "no-wrap",
       }
     }
   >
+    <Link
+      hoverStyle={Object {}}
+      style={
+        Object {
+          "minWidth": 24,
+        }
+      }
+      to="/"
+    >
+      <img
+        src="test-file-stub"
+        style={
+          Object {
+            "height": 43,
+          }
+        }
+      />
+    </Link>
     <div
       style={
         Object {
-          "alignItems": "center",
           "display": "flex",
-          "flexWrap": "nowrap",
-          "justifyContent": "flex-start",
+          "flex": 1,
+          "flexWrap": "wrap",
+          "marginLeft": 30,
         }
       }
     >
-      <Link
-        hoverStyle={Object {}}
-        style={Object {}}
-        to="/"
-      >
-        <img
-          src="test-file-stub"
-          style={
-            Object {
-              "height": 43,
-            }
-          }
-        />
-      </Link>
       <div
         style={
           Object {
             "display": "flex",
+            "flex": 1,
             "flexWrap": "wrap",
             "justifyContent": "flex-start",
-            "marginLeft": 30,
           }
         }
       >
@@ -199,94 +204,94 @@ exports[`Footer matches expected snapshot 1`] = `
           Jobs
         </Link>
       </div>
-    </div>
-    <div
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "paddingTop": 4,
-        }
-      }
-    >
-      <Link
-        hoverStyle={Object {}}
+      <div
         style={
           Object {
-            "margin": 12,
+            "alignItems": "center",
+            "display": "flex",
+            "paddingTop": 4,
           }
         }
-        to="https://www.facebook.com/TabForACause"
       >
-        <IconWrapper
-          hoverStyle={
-            Object {
-              "color": "#838383",
-            }
-          }
+        <Link
+          hoverStyle={Object {}}
           style={
             Object {
-              "color": "#cecece",
-              "height": 20,
-              "width": 20,
+              "margin": 12,
             }
           }
+          to="https://www.facebook.com/TabForACause"
         >
-          <Memo([object Object]) />
-        </IconWrapper>
-      </Link>
-      <Link
-        hoverStyle={Object {}}
-        style={
-          Object {
-            "margin": 12,
-          }
-        }
-        to="https://www.instagram.com/tabforacause/"
-      >
-        <IconWrapper
-          hoverStyle={
-            Object {
-              "color": "#838383",
+          <IconWrapper
+            hoverStyle={
+              Object {
+                "color": "#838383",
+              }
             }
-          }
+            style={
+              Object {
+                "color": "#cecece",
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <Memo([object Object]) />
+          </IconWrapper>
+        </Link>
+        <Link
+          hoverStyle={Object {}}
           style={
             Object {
-              "color": "#cecece",
-              "height": 20,
-              "width": 20,
+              "margin": 12,
             }
           }
+          to="https://www.instagram.com/tabforacause/"
         >
-          <Memo([object Object]) />
-        </IconWrapper>
-      </Link>
-      <Link
-        hoverStyle={Object {}}
-        style={
-          Object {
-            "margin": 12,
-          }
-        }
-        to="https://twitter.com/TabForACause"
-      >
-        <IconWrapper
-          hoverStyle={
-            Object {
-              "color": "#838383",
+          <IconWrapper
+            hoverStyle={
+              Object {
+                "color": "#838383",
+              }
             }
-          }
+            style={
+              Object {
+                "color": "#cecece",
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <Memo([object Object]) />
+          </IconWrapper>
+        </Link>
+        <Link
+          hoverStyle={Object {}}
           style={
             Object {
-              "color": "#cecece",
-              "height": 20,
-              "width": 20,
+              "margin": 12,
             }
           }
+          to="https://twitter.com/TabForACause"
         >
-          <Memo([object Object]) />
-        </IconWrapper>
-      </Link>
+          <IconWrapper
+            hoverStyle={
+              Object {
+                "color": "#838383",
+              }
+            }
+            style={
+              Object {
+                "color": "#cecece",
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <Memo([object Object]) />
+          </IconWrapper>
+        </Link>
+      </div>
     </div>
   </div>
 </div>
