@@ -17,8 +17,8 @@ import { responsiveFontSizes } from '@material-ui/core/styles'
 import MoneyRaised from 'src/components/MoneyRaised'
 
 import defaultTheme from 'src/themes/theme'
-// import InstallButton from 'src/components/InstallButton'
-// import redirect from 'src/utils/redirect'
+import InstallButton from 'src/components/InstallButton'
+import redirect from 'src/utils/redirect'
 import { homeURL } from 'src/utils/navigation'
 import Footer from 'src/components/Footer'
 import Link from 'src/components/Link'
@@ -41,25 +41,35 @@ const useStyles = makeStyles((theme) => ({
   header: {
     display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
     width: '100%',
     justifyContent: 'space-between',
-    paddingTop: 20,
-    paddingBottom: 20,
-    paddingLeft: 40,
-    paddingRight: 40,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
     position: 'fixed',
     top: 0,
     left: 0,
     zIndex: 10,
   },
   logoContainer: {
+    flexGrow: 1,
     flexShrink: 0,
+    flexBasis: 0,
+    minWidth: 120,
   },
   menuContainer: {
-    marginLeft: 40,
+    flex: 3,
+    margin: '0px 10px',
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
+  },
+  installButtonContainer: {
+    flex: 1,
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
   menu: ({ isInDarkSection }) => {
     return {
@@ -69,11 +79,15 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   menuTab: {
-    [theme.breakpoints.down('sm')]: {
-      minWidth: 100,
+    [theme.breakpoints.down('md')]: {
+      minWidth: 140,
       padding: '6px 12px',
     },
-    [theme.breakpoints.down(750)]: {
+    [theme.breakpoints.down('sm')]: {
+      minWidth: 80,
+      padding: '6px 12px',
+    },
+    [theme.breakpoints.down(820)]: {
       display: 'none',
     },
   },
@@ -82,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     height: '100%',
     alignItems: 'flex-start',
-    paddingTop: 80, // make room for the fixed header
+    paddingTop: 60, // make room for the fixed header
   },
   darkBackground: {
     background: DARK_BACKGROUND,
@@ -331,6 +345,20 @@ const MillionPage = () => {
             />
           </Tabs>
         </div>
+
+        <div className={classes.installButtonContainer}>
+          <InstallButton
+            size={'medium'}
+            style={{
+              minWidth: 180,
+              paddingLeft: 10,
+              paddingRight: 10,
+            }}
+            onUnsupportedBrowserInstallClick={() => {
+              redirect(homeURL)
+            }}
+          />
+        </div>
       </div>
       <ReactFullpage
         licenseKey={'YOUR_KEY_HERE'} // FIXME
@@ -373,14 +401,6 @@ const MillionPage = () => {
                     for incredible causes
                   </Typography>
                 </Center>
-                {/* <div> */}
-                {/*   <InstallButton */}
-                {/*     size={'medium'} */}
-                {/*     onUnsupportedBrowserInstallClick={() => { */}
-                {/*       redirect(homeURL) */}
-                {/*     }} */}
-                {/*   /> */}
-                {/* </div> */}
                 <DownArrowButtonContainer
                   className={classes.hiddenUntilPageRendered}
                 >
