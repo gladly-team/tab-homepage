@@ -243,6 +243,10 @@ Center.defaultProps = {
 
 const MillionPage = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
+  const mapSectionIndexToMenuIndex = (sectionIndex) => {
+    return sectionIndex < 4 ? sectionIndex : 3
+  }
+  const currentMenuTabIndex = mapSectionIndexToMenuIndex(currentSectionIndex)
 
   // To know when Fullpage.js has initialized.
   const [isPageReady, setIsPageReady] = useState(false)
@@ -288,7 +292,7 @@ const MillionPage = () => {
         </div>
         <div className={classes.menuContainer}>
           <Tabs
-            value={currentSectionIndex}
+            value={currentMenuTabIndex}
             id={MENU_ID}
             indicatorColor="primary"
             className={clsx(classes.menu, classes.hiddenUntilPageRendered)}
