@@ -155,10 +155,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Section = ({ id, children, className }) => {
+const Section = ({ id, children, className, autoHeight }) => {
   const classes = useStyles()
   return (
-    <div data-anchor={id} className={`section`}>
+    <div
+      data-anchor={id}
+      className={clsx({ section: true, 'fp-auto-height': autoHeight })}
+    >
       <div className={clsx(classes.section, className)}>{children}</div>
     </div>
   )
@@ -170,8 +173,10 @@ Section.propTypes = {
     PropTypes.node,
   ]),
   className: PropTypes.string,
+  autoHeight: PropTypes.bool.isRequired,
 }
 Section.defaultProps = {
+  autoHeight: false,
   style: {},
   className: '',
 }
@@ -258,6 +263,7 @@ const MillionPage = () => {
   const SECTION_ID_IMPACT = 'impact'
   const SECTION_ID_THANKS = 'thanks'
   const SECTION_ID_CELEBRATION = 'celebration'
+  const SECTION_ID_FOOTER = 'footer-section'
   const FOOTER_ID = 'footer'
 
   return (
@@ -436,9 +442,21 @@ const MillionPage = () => {
                     Here's what's going on!
                   </Typography>
                 </Center>
+              </Section>
+              <Section
+                id={SECTION_ID_FOOTER}
+                className={clsx(
+                  classes.lightBackground,
+                  classes.hiddenUntilPageRendered
+                )}
+                autoHeight
+              >
                 <Footer
                   id={FOOTER_ID}
-                  style={{ marginTop: 'auto', width: '100%' }}
+                  style={{
+                    marginTop: 'auto',
+                    width: '100%',
+                  }}
                 />
               </Section>
             </ReactFullpage.Wrapper>
