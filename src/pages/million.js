@@ -97,10 +97,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   downArrowButton: {
-    width: 60,
     height: 60,
     padding: theme.spacing(1),
-    borderRadius: '50%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -132,9 +130,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     textAlign: 'center',
   },
-  downArrowButtonBackground: ({ dark }) => {
+  downArrowIconButton: ({ dark }) => {
     const backgoundColor = dark ? DARK_BACKGROUND : LIGHT_BACKGROUND
     return {
+      borderRadius: 60, // equal to the height
       background: backgoundColor,
       transition: 'background .2s ease-in-out',
       '&:hover': {
@@ -142,9 +141,12 @@ const useStyles = makeStyles((theme) => ({
       },
     }
   },
-  downArrowButtonIcon: ({ dark }) => ({
+  downArrowIcon: ({ dark }) => ({
     color: dark ? LIGHT_BACKGROUND : DARK_BACKGROUND,
   }),
+  downArrowText: {
+    color: DARK_BACKGROUND,
+  },
   hiddenUntilPageRendered: ({ isPageReady }) => {
     return {
       opacity: isPageReady ? 100 : 0,
@@ -174,20 +176,22 @@ Section.defaultProps = {
   className: '',
 }
 
-const DownArrowButton = ({ dark, onClick }) => {
+const DownArrowButton = ({ children, dark, onClick }) => {
   const classes = useStyles({ dark })
   return (
     <div className={classes.downArrowButton}>
-      <IconButton
-        onClick={onClick}
-        className={classes.downArrowButtonBackground}
-      >
-        <ArrowDownwardIcon className={classes.downArrowButtonIcon} />
+      <IconButton onClick={onClick} className={classes.downArrowIconButton}>
+        {children}
+        <ArrowDownwardIcon className={classes.downArrowIcon} />
       </IconButton>
     </div>
   )
 }
 DownArrowButton.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
   dark: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
 }
@@ -239,7 +243,11 @@ const MillionPage = () => {
   const [isPageReady, setIsPageReady] = useState(false)
 
   const isInDarkSection = [0, 2].indexOf(currentSectionIndex) > -1
-  const classes = useStyles({ isInDarkSection, isPageReady })
+  const classes = useStyles({
+    isInDarkSection,
+    isPageReady,
+    dark: !isInDarkSection,
+  })
 
   // TODO
   const openGraphTitle = 'Million raised'
@@ -368,7 +376,15 @@ const MillionPage = () => {
                 >
                   <DownArrowButton
                     onClick={() => fullpageApi.moveSectionDown()}
-                  />
+                  >
+                    <Typography
+                      variant={'body1'}
+                      className={classes.downArrowText}
+                      style={{ margin: '0px 12px' }}
+                    >
+                      See the impact
+                    </Typography>
+                  </DownArrowButton>
                 </DownArrowButtonContainer>
               </Section>
               <Section
