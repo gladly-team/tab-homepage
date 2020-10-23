@@ -191,9 +191,9 @@ const MillionPage = () => {
 
   const MENU_ID = 'nav-menu'
   const SECTION_ID_TOP = 'top'
-  const SECTION_ID_GREEN_THING = 'green-thing'
-  const SECTION_ID_ANOTHER = 'another'
-  const SECTION_ID_ONE_MORE = 'one-more'
+  const SECTION_ID_IMPACT = 'impact'
+  const SECTION_ID_THANKS = 'thanks'
+  const SECTION_ID_CELEBRATION = 'celebration'
   const FOOTER_ID = 'footer'
 
   return (
@@ -232,19 +232,19 @@ const MillionPage = () => {
             <Tab
               label="Impact"
               onClick={() => {
-                window.fullpage_api.moveTo(SECTION_ID_GREEN_THING)
+                window.fullpage_api.moveTo(SECTION_ID_IMPACT)
               }}
             />
             <Tab
               label="Thanks"
               onClick={() => {
-                window.fullpage_api.moveTo(SECTION_ID_ANOTHER)
+                window.fullpage_api.moveTo(SECTION_ID_THANKS)
               }}
             />
             <Tab
               label="Celebration"
               onClick={() => {
-                window.fullpage_api.moveTo(SECTION_ID_ONE_MORE)
+                window.fullpage_api.moveTo(SECTION_ID_CELEBRATION)
               }}
             />
           </Tabs>
@@ -283,7 +283,7 @@ const MillionPage = () => {
                 </DownArrowButtonContainer>
               </Section>
               <Section
-                id={SECTION_ID_GREEN_THING}
+                id={SECTION_ID_IMPACT}
                 className={clsx(
                   classes.lightBackground,
                   classes.hiddenUntilPageRendered
@@ -298,7 +298,7 @@ const MillionPage = () => {
                 </DownArrowButtonContainer>
               </Section>
               <Section
-                id={SECTION_ID_ANOTHER}
+                id={SECTION_ID_THANKS}
                 className={clsx(
                   classes.darkBackground,
                   classes.hiddenUntilPageRendered
@@ -312,7 +312,7 @@ const MillionPage = () => {
                 </DownArrowButtonContainer>
               </Section>
               <Section
-                id={SECTION_ID_ONE_MORE}
+                id={SECTION_ID_CELEBRATION}
                 className={clsx(
                   classes.lightBackground,
                   classes.hiddenUntilPageRendered
