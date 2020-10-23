@@ -115,6 +115,12 @@ const useStyles = makeStyles((theme) => ({
   whiteColor: {
     color: theme.palette.common.white,
   },
+  moneyRaised: {
+    fontWeight: 400,
+  },
+  moneyRaisedText: {
+    fontWeight: 200,
+  },
   center: {
     display: 'flex',
     flexDirection: 'column',
@@ -324,13 +330,28 @@ const MillionPage = () => {
             <ReactFullpage.Wrapper menu={MENU_ID}>
               <Section id={SECTION_ID_TOP} className={classes.darkBackground}>
                 <Center className={classes.hiddenUntilPageRendered}>
-                  <Typography variant={'h5'} className={classes.goldColor}>
+                  <Typography
+                    variant={'h5'}
+                    className={clsx(
+                      classes.whiteColor,
+                      classes.moneyRaisedText
+                    )}
+                  >
                     Together, your tabs have raised
                   </Typography>
-                  <Typography variant={'h1'} className={classes.goldColor}>
+                  <Typography
+                    variant={'h1'}
+                    className={clsx(classes.goldColor, classes.moneyRaised)}
+                  >
                     <MoneyRaised />
                   </Typography>
-                  <Typography variant={'h5'} className={classes.goldColor}>
+                  <Typography
+                    variant={'h5'}
+                    className={clsx(
+                      classes.whiteColor,
+                      classes.moneyRaisedText
+                    )}
+                  >
                     for incredible nonprofits
                   </Typography>
                 </Center>
