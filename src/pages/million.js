@@ -25,6 +25,14 @@ const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
 
 const useStyles = makeStyles((theme) => ({
+  pageBackground: {
+    background: DARK_BACKGROUND,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
   header: {
     display: 'flex',
     flexDirection: 'row',
@@ -99,6 +107,12 @@ const useStyles = makeStyles((theme) => ({
   downArrowButtonIcon: ({ dark }) => ({
     color: dark ? LIGHT_BACKGROUND : DARK_BACKGROUND,
   }),
+  hiddenUntilPageRendered: ({ isPageReady }) => {
+    return {
+      opacity: isPageReady ? 100 : 0,
+      transition: 'opacity 0.5s ease-in-out',
+    }
+  },
 }))
 
 const Section = ({ id, children, className }) => {
@@ -122,10 +136,10 @@ Section.defaultProps = {
   className: '',
 }
 
-const DownArrowButton = ({ dark, onClick }) => {
+const DownArrowButton = ({ className, dark, onClick }) => {
   const classes = useStyles({ dark })
   return (
-    <div className={classes.downArrowButton}>
+    <div className={clsx(classes.downArrowButton, className)}>
       <IconButton
         onClick={onClick}
         className={classes.downArrowButtonBackground}
@@ -144,9 +158,13 @@ DownArrowButton.defaultProps = {
   onClick: () => {},
 }
 
-const DownArrowButtonContainer = ({ children }) => {
+const DownArrowButtonContainer = ({ children, className }) => {
   const classes = useStyles()
-  return <div className={classes.downArrowButtonContainer}>{children}</div>
+  return (
+    <div className={clsx(classes.downArrowButtonContainer, className)}>
+      {children}
+    </div>
+  )
 }
 
 DownArrowButtonContainer.propTypes = {
@@ -159,9 +177,13 @@ DownArrowButtonContainer.defaultProps = {}
 
 const MillionPage = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
+
+  // To know when Fullpage.js has initialized.
+  const [isPageReady, setIsPageReady] = useState(false)
+
   const isInDarkSection = [0, 2].indexOf(currentSectionIndex) > -1
 
-  const classes = useStyles({ isInDarkSection })
+  const classes = useStyles({ isInDarkSection, isPageReady })
 
   // TODO
   const openGraphTitle = 'Million raised'
@@ -182,6 +204,8 @@ const MillionPage = () => {
         <meta name="twitter:title" content={openGraphTitle} />
         <meta name="twitter:description" content={openGraphDescription} />
       </Helmet>
+      {/* Set a full page dark background while Fullpage is loading */}
+      <div className={classes.pageBackground} />
       <div className={classes.header}>
         <div className={classes.logoContainer}>
           <Link to={homeURL}>
@@ -197,7 +221,7 @@ const MillionPage = () => {
             value={currentSectionIndex}
             id={MENU_ID}
             indicatorColor="primary"
-            className={classes.menu}
+            className={clsx(classes.menu, classes.hiddenUntilPageRendered)}
           >
             <Tab
               label="$1M"
@@ -234,6 +258,9 @@ const MillionPage = () => {
             setCurrentSectionIndex(destination.index || 0)
           }
         }}
+        afterRender={() => {
+          setIsPageReady(true)
+        }}
         render={({ fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper menu={MENU_ID}>
@@ -247,7 +274,9 @@ const MillionPage = () => {
                 {/*     }} */}
                 {/*   /> */}
                 {/* </div> */}
-                <DownArrowButtonContainer>
+                <DownArrowButtonContainer
+                  className={classes.hiddenUntilPageRendered}
+                >
                   <DownArrowButton
                     onClick={() => fullpageApi.moveSectionDown()}
                   />
@@ -255,7 +284,10 @@ const MillionPage = () => {
               </Section>
               <Section
                 id={SECTION_ID_GREEN_THING}
-                className={classes.lightBackground}
+                className={clsx(
+                  classes.lightBackground,
+                  classes.hiddenUntilPageRendered
+                )}
               >
                 <p>Section 2</p>
                 <DownArrowButtonContainer>
@@ -267,7 +299,10 @@ const MillionPage = () => {
               </Section>
               <Section
                 id={SECTION_ID_ANOTHER}
-                className={classes.darkBackground}
+                className={clsx(
+                  classes.darkBackground,
+                  classes.hiddenUntilPageRendered
+                )}
               >
                 <p>Section 3</p>
                 <DownArrowButtonContainer>
@@ -278,7 +313,10 @@ const MillionPage = () => {
               </Section>
               <Section
                 id={SECTION_ID_ONE_MORE}
-                className={classes.lightBackground}
+                className={clsx(
+                  classes.lightBackground,
+                  classes.hiddenUntilPageRendered
+                )}
               >
                 <p>Section 4</p>
                 <Footer
