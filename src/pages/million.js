@@ -360,7 +360,7 @@ const MillionPage = () => {
                       classes.moneyRaisedText
                     )}
                   >
-                    for incredible nonprofits
+                    for incredible causes
                   </Typography>
                 </Center>
                 {/* <div> */}
