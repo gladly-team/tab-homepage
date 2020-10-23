@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 0,
   },
   menuContainer: {
+    marginLeft: 40,
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
@@ -61,6 +62,15 @@ const useStyles = makeStyles((theme) => ({
         ? theme.palette.common.white
         : theme.palette.text.primary,
     }
+  },
+  menuTab: {
+    [theme.breakpoints.down('sm')]: {
+      minWidth: 100,
+      padding: '6px 12px',
+    },
+    [theme.breakpoints.down(750)]: {
+      display: 'none',
+    },
   },
   section: {
     display: 'flex',
@@ -182,7 +192,6 @@ const MillionPage = () => {
   const [isPageReady, setIsPageReady] = useState(false)
 
   const isInDarkSection = [0, 2].indexOf(currentSectionIndex) > -1
-
   const classes = useStyles({ isInDarkSection, isPageReady })
 
   // TODO
@@ -223,26 +232,34 @@ const MillionPage = () => {
             indicatorColor="primary"
             className={clsx(classes.menu, classes.hiddenUntilPageRendered)}
           >
+            {/*
+              Note: may have to adjust tab CSS breakpoints if adding
+              tabs or changing text.
+            */}
             <Tab
               label="$1M"
+              className={classes.menuTab}
               onClick={() => {
                 window.fullpage_api.moveTo(SECTION_ID_TOP)
               }}
             />
             <Tab
-              label="Impact"
+              label="Your Impact"
+              className={classes.menuTab}
               onClick={() => {
                 window.fullpage_api.moveTo(SECTION_ID_IMPACT)
               }}
             />
             <Tab
               label="Thanks"
+              className={classes.menuTab}
               onClick={() => {
                 window.fullpage_api.moveTo(SECTION_ID_THANKS)
               }}
             />
             <Tab
               label="Celebration"
+              className={classes.menuTab}
               onClick={() => {
                 window.fullpage_api.moveTo(SECTION_ID_CELEBRATION)
               }}
