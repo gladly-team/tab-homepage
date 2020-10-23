@@ -122,6 +122,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     margin: 'auto',
     padding: theme.spacing(2),
+    paddingTop: 0,
     justifyContent: 'center',
     textAlign: 'center',
   },
