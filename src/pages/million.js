@@ -146,10 +146,10 @@ Section.defaultProps = {
   className: '',
 }
 
-const DownArrowButton = ({ className, dark, onClick }) => {
+const DownArrowButton = ({ dark, onClick }) => {
   const classes = useStyles({ dark })
   return (
-    <div className={clsx(classes.downArrowButton, className)}>
+    <div className={classes.downArrowButton}>
       <IconButton
         onClick={onClick}
         className={classes.downArrowButtonBackground}
@@ -178,12 +178,15 @@ const DownArrowButtonContainer = ({ children, className }) => {
 }
 
 DownArrowButtonContainer.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]),
 }
-DownArrowButtonContainer.defaultProps = {}
+DownArrowButtonContainer.defaultProps = {
+  className: undefined,
+}
 
 const MillionPage = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
