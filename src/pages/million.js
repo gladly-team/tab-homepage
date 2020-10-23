@@ -14,6 +14,7 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Typography from '@material-ui/core/Typography'
 import { responsiveFontSizes } from '@material-ui/core/styles'
+import MoneyRaised from 'src/components/MoneyRaised'
 
 import defaultTheme from 'src/themes/theme'
 // import InstallButton from 'src/components/InstallButton'
@@ -321,12 +322,12 @@ const MillionPage = () => {
           return (
             <ReactFullpage.Wrapper menu={MENU_ID}>
               <Section id={SECTION_ID_TOP} className={classes.darkBackground}>
-                <Center>
+                <Center className={classes.hiddenUntilPageRendered}>
                   <Typography variant={'h5'} className={classes.goldColor}>
                     Together, your tabs have raised
                   </Typography>
                   <Typography variant={'h1'} className={classes.goldColor}>
-                    $994,032.45
+                    <MoneyRaised />
                   </Typography>
                   <Typography variant={'h5'} className={classes.goldColor}>
                     for incredible nonprofits
