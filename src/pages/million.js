@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import ReactFullpage from '@fullpage/react-fullpage'
 import { ThemeProvider } from '@material-ui/styles'
+import amber from '@material-ui/core/colors/amber'
 import grey from '@material-ui/core/colors/grey'
 import IconButton from '@material-ui/core/IconButton'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
@@ -11,6 +12,8 @@ import clsx from 'clsx'
 import { lighten } from '@material-ui/core/styles/colorManipulator'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
+import Typography from '@material-ui/core/Typography'
+import { responsiveFontSizes } from '@material-ui/core/styles'
 
 import defaultTheme from 'src/themes/theme'
 // import InstallButton from 'src/components/InstallButton'
@@ -23,6 +26,7 @@ import logoWithTextWhite from 'src/img/logo-with-text-white.svg'
 
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
+const GOLD = amber['A200']
 
 const useStyles = makeStyles((theme) => ({
   pageBackground: {
@@ -103,6 +107,22 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       transform: 'scale(1.1)',
     },
+  },
+  goldColor: {
+    color: GOLD,
+  },
+  whiteColor: {
+    color: theme.palette.common.white,
+  },
+  center: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    width: '100%',
+    margin: 'auto',
+    padding: theme.spacing(2),
+    justifyContent: 'center',
+    textAlign: 'center',
   },
   downArrowButtonBackground: ({ dark }) => {
     const backgoundColor = dark ? DARK_BACKGROUND : LIGHT_BACKGROUND
@@ -188,6 +208,22 @@ DownArrowButtonContainer.defaultProps = {
   className: undefined,
 }
 
+const Center = ({ children, className }) => {
+  const classes = useStyles()
+  return <div className={clsx(classes.center, className)}>{children}</div>
+}
+
+Center.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+}
+Center.defaultProps = {
+  className: undefined,
+}
+
 const MillionPage = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
 
@@ -209,7 +245,7 @@ const MillionPage = () => {
   const FOOTER_ID = 'footer'
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.5 })}>
       <Helmet title={openGraphTitle}>
         <meta property="og:title" content={openGraphTitle} />
         <meta property="og:description" content={openGraphDescription} />
@@ -285,7 +321,17 @@ const MillionPage = () => {
           return (
             <ReactFullpage.Wrapper menu={MENU_ID}>
               <Section id={SECTION_ID_TOP} className={classes.darkBackground}>
-                <p>Section 1</p>
+                <Center>
+                  <Typography variant={'h5'} className={classes.goldColor}>
+                    Together, your tabs have raised
+                  </Typography>
+                  <Typography variant={'h1'} className={classes.goldColor}>
+                    $994,032.45
+                  </Typography>
+                  <Typography variant={'h5'} className={classes.goldColor}>
+                    for incredible nonprofits
+                  </Typography>
+                </Center>
                 {/* <div> */}
                 {/*   <InstallButton */}
                 {/*     size={'medium'} */}
@@ -309,7 +355,11 @@ const MillionPage = () => {
                   classes.hiddenUntilPageRendered
                 )}
               >
-                <p>Section 2</p>
+                <Center>
+                  <Typography variant={'body2'}>
+                    Here's what we've accomplished.
+                  </Typography>
+                </Center>
                 <DownArrowButtonContainer>
                   <DownArrowButton
                     dark
@@ -324,7 +374,11 @@ const MillionPage = () => {
                   classes.hiddenUntilPageRendered
                 )}
               >
-                <p>Section 3</p>
+                <Center>
+                  <Typography variant={'body2'} className={classes.whiteColor}>
+                    A message here.
+                  </Typography>
+                </Center>
                 <DownArrowButtonContainer>
                   <DownArrowButton
                     onClick={() => fullpageApi.moveSectionDown()}
@@ -338,7 +392,11 @@ const MillionPage = () => {
                   classes.hiddenUntilPageRendered
                 )}
               >
-                <p>Section 4</p>
+                <Center>
+                  <Typography variant={'body2'}>
+                    Here's what's going on!
+                  </Typography>
+                </Center>
                 <Footer
                   id={FOOTER_ID}
                   style={{ marginTop: 'auto', width: '100%' }}
