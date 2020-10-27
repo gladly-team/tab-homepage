@@ -5,6 +5,9 @@ import ReactFullpage from '@fullpage/react-fullpage'
 import { ThemeProvider } from '@material-ui/styles'
 import amber from '@material-ui/core/colors/amber'
 import grey from '@material-ui/core/colors/grey'
+import green from '@material-ui/core/colors/green'
+// import brown from '@material-ui/core/colors/brown'
+import blue from '@material-ui/core/colors/blue'
 import IconButton from '@material-ui/core/IconButton'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
 import { makeStyles } from '@material-ui/core/styles'
@@ -14,8 +17,10 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Typography from '@material-ui/core/Typography'
 import { responsiveFontSizes } from '@material-ui/core/styles'
-import MoneyRaised from 'src/components/MoneyRaised'
+import PineTree from 'mdi-material-ui/PineTree'
+import LocalDrink from '@material-ui/icons/LocalDrink'
 
+import MoneyRaised from 'src/components/MoneyRaised'
 import defaultTheme from 'src/themes/theme'
 import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
@@ -104,6 +109,15 @@ const useStyles = makeStyles((theme) => ({
   lightBackground: {
     background: LIGHT_BACKGROUND,
   },
+  greenBackground: {
+    background: green[400],
+  },
+  // brownBackground: {
+  //   background: brown[400],
+  // },
+  blueBackground: {
+    background: blue[600],
+  },
   downArrowButtonContainer: {
     marginTop: 'auto',
     display: 'flex',
@@ -127,6 +141,12 @@ const useStyles = makeStyles((theme) => ({
   whiteColor: {
     color: theme.palette.common.white,
   },
+  impactTextPrimary: ({ dark }) => ({
+    color: dark ? 'auto' : theme.palette.common.white,
+  }),
+  impactTextSupporting: ({ dark }) => ({
+    color: dark ? 'auto' : grey[300],
+  }),
   moneyRaised: {
     fontWeight: 400,
   },
@@ -167,6 +187,38 @@ const useStyles = makeStyles((theme) => ({
       transition: 'opacity 0.5s ease-in-out',
     }
   },
+  impactSlide: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    width: '100%',
+    height: '100%',
+    overflow: 'hidden',
+  },
+  icon: ({ dark }) => ({
+    // TODO: make even more responsive
+    // fontSize: theme.typography.h4.fontSize,
+    fontSize: 32,
+    color: dark ? DARK_BACKGROUND : LIGHT_BACKGROUND,
+    margin: 4,
+  }),
+  impactTextContainer: {
+    flex: 1,
+  },
+  impactVisualizationContainer: {
+    flex: 1,
+    maxHeight: '70%',
+    maxWidth: 600,
+    marginBottom: 24,
+  },
+  impactKey: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  impactTextKey: ({ dark }) => ({
+    color: dark ? 'auto' : theme.palette.common.white,
+  }),
 }))
 
 const Section = ({ id, children, className, autoHeight }) => {
@@ -258,14 +310,29 @@ Center.defaultProps = {
 const MillionPage = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
   const mapSectionIndexToMenuIndex = (sectionIndex) => {
-    return sectionIndex < 4 ? sectionIndex : 3
+    const topIndexStart = 0
+    const impactIndexStart = 1
+    const thanksIndexStart = 3
+    const celebrationIndexStart = 4
+    const breakpoints = [
+      topIndexStart,
+      impactIndexStart,
+      thanksIndexStart,
+      celebrationIndexStart,
+      Number.POSITIVE_INFINITY,
+    ]
+    for (let i = 0; i < breakpoints.length; i++) {
+      if (sectionIndex < breakpoints[i]) {
+        return i - 1
+      }
+    }
   }
   const currentMenuTabIndex = mapSectionIndexToMenuIndex(currentSectionIndex)
 
   // To know when Fullpage.js has initialized.
   const [isPageReady, setIsPageReady] = useState(false)
 
-  const isInDarkSection = [0, 2].indexOf(currentSectionIndex) > -1
+  const isInDarkSection = [0, 1, 2, 3].indexOf(currentSectionIndex) > -1
   const classes = useStyles({
     isInDarkSection,
     isPageReady,
@@ -279,6 +346,7 @@ const MillionPage = () => {
   const MENU_ID = 'nav-menu'
   const SECTION_ID_TOP = 'top'
   const SECTION_ID_IMPACT = 'impact'
+  const SECTION_ID_IMPACT_1 = 'impact-1'
   const SECTION_ID_THANKS = 'thanks'
   const SECTION_ID_CELEBRATION = 'celebration'
   const SECTION_ID_FOOTER = 'footer-section'
@@ -420,18 +488,95 @@ const MillionPage = () => {
               <Section
                 id={SECTION_ID_IMPACT}
                 className={clsx(
-                  classes.lightBackground,
+                  classes.greenBackground,
                   classes.hiddenUntilPageRendered
                 )}
               >
-                <Center>
-                  <Typography variant={'body2'}>
-                    Here's what we've accomplished.
-                  </Typography>
-                </Center>
+                <div className={classes.impactSlide}>
+                  <Center className={classes.impactTextContainer}>
+                    <Typography
+                      variant={'h6'}
+                      className={classes.impactTextSupporting}
+                    >
+                      Tabbers have raised enough to
+                    </Typography>
+                    <Typography
+                      variant={'h4'}
+                      className={classes.impactTextPrimary}
+                    >
+                      protect 5,000 acres of rainforest
+                    </Typography>
+                    <Typography
+                      variant={'h6'}
+                      className={classes.impactTextSupporting}
+                    >
+                      through Conservation International
+                    </Typography>
+                  </Center>
+                  <Center className={classes.impactVisualizationContainer}>
+                    <div>
+                      {Array.from({ length: 50 }, (_, index) => (
+                        <PineTree key={index} className={classes.icon} />
+                      ))}
+                    </div>
+                    <div className={classes.impactKey}>
+                      <PineTree className={classes.icon} />{' '}
+                      <Typography
+                        variant={'body2'}
+                        className={classes.impactTextKey}
+                      >
+                        = 100 acres
+                      </Typography>
+                    </div>
+                  </Center>
+                </div>
                 <DownArrowButtonContainer>
                   <DownArrowButton
-                    dark
+                    onClick={() => fullpageApi.moveSectionDown()}
+                  />
+                </DownArrowButtonContainer>
+              </Section>
+              <Section
+                id={SECTION_ID_IMPACT_1}
+                className={clsx(
+                  classes.blueBackground,
+                  classes.hiddenUntilPageRendered
+                )}
+              >
+                <div className={classes.impactSlide}>
+                  <Center className={classes.impactTextContainer}>
+                    <Typography
+                      variant={'h4'}
+                      className={classes.impactTextPrimary}
+                    >
+                      provide access to clean water to over 12,000 people
+                    </Typography>
+                    <Typography
+                      variant={'h6'}
+                      className={classes.impactTextSupporting}
+                    >
+                      through Water.org
+                    </Typography>
+                  </Center>
+                  <Center className={classes.impactVisualizationContainer}>
+                    <div>
+                      {Array.from({ length: 120 }, (_, index) => (
+                        <LocalDrink key={index} className={classes.icon} />
+                      ))}
+                    </div>
+                    <div className={classes.impactKey}>
+                      <LocalDrink className={classes.icon} />{' '}
+                      <Typography
+                        variant={'body2'}
+                        className={classes.impactTextKey}
+                      >
+                        = 100 people
+                      </Typography>
+                    </div>
+                  </Center>
+                </div>
+                <DownArrowButtonContainer>
+                  <DownArrowButton
                     onClick={() => fullpageApi.moveSectionDown()}
                   />
                 </DownArrowButtonContainer>
