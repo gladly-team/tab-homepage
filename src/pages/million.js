@@ -410,7 +410,7 @@ const MillionPage = () => {
   const FOOTER_ID = 'footer'
 
   return (
-    <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.5 })}>
+    <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3 })}>
       <Helmet title={openGraphTitle}>
         <meta property="og:title" content={openGraphTitle} />
         <meta property="og:description" content={openGraphDescription} />
