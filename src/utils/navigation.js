@@ -13,6 +13,11 @@ export const teamURL = '/team/'
 export const jobsURL = '/jobs/'
 export const adblockerWhitelistingURL = '/adblockers/'
 
+// Million raised
+export const millionRaisedURL = '/million/'
+export const millionRaisedRainforestImpactURL = '/million/rainforest/'
+export const millionRaisedWaterImpactURL = '/million/water/'
+
 // New tab page app URLs.
 // Absolute URLs because it's outside of this Gatsby app.
 export const newTabPageURL = `${baseURL}/newtab/`

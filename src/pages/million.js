@@ -22,9 +22,15 @@ import MoneyRaised from 'src/components/MoneyRaised'
 import defaultTheme from 'src/themes/theme'
 import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
-import { homeURL } from 'src/utils/navigation'
+import {
+  getAbsoluteURL,
+  homeURL,
+  millionRaisedRainforestImpactURL,
+  millionRaisedWaterImpactURL,
+} from 'src/utils/navigation'
 import Footer from 'src/components/Footer'
 import Link from 'src/components/Link'
+import SocialShare from 'src/components/SocialShare'
 import logoWithText from 'src/img/logo-with-text.svg'
 import logoWithTextWhite from 'src/img/logo-with-text-white.svg'
 import waterImg from 'src/img/million/water.jpg'
@@ -223,6 +229,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'rgba(0, 0, 0, 0.45)',
     backgroundBlendMode: 'multiply',
   },
+  shareContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: theme.spacing(4),
+  },
 }))
 
 const Section = ({ id, children, className, autoHeight }) => {
@@ -309,6 +321,54 @@ Center.propTypes = {
 }
 Center.defaultProps = {
   className: undefined,
+}
+
+// FIXME: real content
+const socialShareData = {
+  conservation: {
+    url: getAbsoluteURL(millionRaisedRainforestImpactURL),
+    FacebookShareButtonProps: {
+      quote:
+        'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+    },
+    RedditShareButtonProps: {
+      title:
+        'Tabs transformed into vital supplies for 100 families in rainforest communities',
+    },
+    TumblrShareButtonProps: {
+      title:
+        'Tabs transformed into vital supplies for 100 families in rainforest communities',
+      caption:
+        'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+    },
+    TwitterShareButtonProps: {
+      title:
+        'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+      related: ['@TabForACause'],
+    },
+  },
+  water: {
+    url: getAbsoluteURL(millionRaisedWaterImpactURL),
+    FacebookShareButtonProps: {
+      quote:
+        'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+    },
+    RedditShareButtonProps: {
+      title:
+        'Tabs transformed into vital supplies for 100 families in rainforest communities',
+    },
+    TumblrShareButtonProps: {
+      title:
+        'Tabs transformed into vital supplies for 100 families in rainforest communities',
+      caption:
+        'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+    },
+    TwitterShareButtonProps: {
+      title:
+        'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+      related: ['@TabForACause'],
+    },
+  },
 }
 
 const MillionPage = () => {
@@ -517,6 +577,18 @@ const MillionPage = () => {
                     >
                       through Conservation International
                     </Typography>
+                    <div className={classes.shareContainer}>
+                      {/* <Typography */}
+                      {/*   variant={'overline'} */}
+                      {/*   className={classes.impactTextPrimary} */}
+                      {/* > */}
+                      {/*   Share this: */}
+                      {/* </Typography> */}
+                      <SocialShare
+                        url={millionRaisedRainforestImpactURL}
+                        {...socialShareData.conservation}
+                      />
+                    </div>
                   </Center>
                 </div>
                 <DownArrowButtonContainer>
@@ -547,6 +619,12 @@ const MillionPage = () => {
                     >
                       through Water.org
                     </Typography>
+                    <div className={classes.shareContainer}>
+                      <SocialShare
+                        url={millionRaisedWaterImpactURL}
+                        {...socialShareData.water}
+                      />
+                    </div>
                   </Center>
                 </div>
                 <DownArrowButtonContainer>
