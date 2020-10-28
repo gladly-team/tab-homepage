@@ -17,8 +17,6 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Typography from '@material-ui/core/Typography'
 import { responsiveFontSizes } from '@material-ui/core/styles'
-import PineTree from 'mdi-material-ui/PineTree'
-import LocalDrink from '@material-ui/icons/LocalDrink'
 
 import MoneyRaised from 'src/components/MoneyRaised'
 import defaultTheme from 'src/themes/theme'
@@ -29,6 +27,8 @@ import Footer from 'src/components/Footer'
 import Link from 'src/components/Link'
 import logoWithText from 'src/img/logo-with-text.svg'
 import logoWithTextWhite from 'src/img/logo-with-text-white.svg'
+import waterImg from 'src/img/million/water.jpg'
+import forestImg from 'src/img/million/forest.jpg'
 
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
@@ -141,18 +141,20 @@ const useStyles = makeStyles((theme) => ({
   whiteColor: {
     color: theme.palette.common.white,
   },
-  impactTextPrimary: ({ dark }) => ({
-    color: dark ? 'auto' : theme.palette.common.white,
-  }),
-  impactTextSupporting: ({ dark }) => ({
-    color: dark ? 'auto' : grey[300],
-  }),
   moneyRaised: {
-    fontWeight: 400,
+    fontWeight: 500,
   },
   moneyRaisedText: {
     fontWeight: 200,
   },
+  impactTextPrimary: ({ dark }) => ({
+    color: dark ? 'auto' : theme.palette.common.white,
+    fontWeight: 500,
+  }),
+  impactTextSupporting: ({ dark }) => ({
+    color: dark ? 'auto' : grey[300],
+    fontWeight: 200,
+  }),
   center: {
     display: 'flex',
     flexDirection: 'column',
@@ -205,20 +207,22 @@ const useStyles = makeStyles((theme) => ({
   impactTextContainer: {
     flex: 1,
   },
-  impactVisualizationContainer: {
-    flex: 1,
-    maxHeight: '70%',
-    maxWidth: 600,
-    marginBottom: 24,
+  impactBackgroundImage: {
+    display: 'none',
+    position: 'relative',
   },
-  impactKey: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+  waterImgBackground: {
+    backgroundImage: `url("${waterImg}")`,
   },
-  impactTextKey: ({ dark }) => ({
-    color: dark ? 'auto' : theme.palette.common.white,
-  }),
+  forestImgBackground: {
+    backgroundImage: `url("${forestImg}")`,
+  },
+  fullPageBackgroundImg: {
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundColor: 'rgba(0, 0, 0, 0.45)',
+    backgroundBlendMode: 'multiply',
+  },
 }))
 
 const Section = ({ id, children, className, autoHeight }) => {
@@ -488,7 +492,8 @@ const MillionPage = () => {
               <Section
                 id={SECTION_ID_IMPACT}
                 className={clsx(
-                  classes.greenBackground,
+                  classes.fullPageBackgroundImg,
+                  classes.forestImgBackground,
                   classes.hiddenUntilPageRendered
                 )}
               >
@@ -501,33 +506,17 @@ const MillionPage = () => {
                       Tabbers have raised enough to
                     </Typography>
                     <Typography
-                      variant={'h4'}
+                      variant={'h2'}
                       className={classes.impactTextPrimary}
                     >
                       protect 5,000 acres of rainforest
                     </Typography>
                     <Typography
-                      variant={'h6'}
+                      variant={'h5'}
                       className={classes.impactTextSupporting}
                     >
                       through Conservation International
                     </Typography>
-                  </Center>
-                  <Center className={classes.impactVisualizationContainer}>
-                    <div>
-                      {Array.from({ length: 50 }, (_, index) => (
-                        <PineTree key={index} className={classes.icon} />
-                      ))}
-                    </div>
-                    <div className={classes.impactKey}>
-                      <PineTree className={classes.icon} />{' '}
-                      <Typography
-                        variant={'body2'}
-                        className={classes.impactTextKey}
-                      >
-                        = 100 acres
-                      </Typography>
-                    </div>
                   </Center>
                 </div>
                 <DownArrowButtonContainer>
@@ -539,40 +528,25 @@ const MillionPage = () => {
               <Section
                 id={SECTION_ID_IMPACT_1}
                 className={clsx(
-                  classes.blueBackground,
+                  classes.fullPageBackgroundImg,
+                  classes.waterImgBackground,
                   classes.hiddenUntilPageRendered
                 )}
               >
                 <div className={classes.impactSlide}>
                   <Center className={classes.impactTextContainer}>
                     <Typography
-                      variant={'h4'}
+                      variant={'h2'}
                       className={classes.impactTextPrimary}
                     >
                       provide access to clean water to over 12,000 people
                     </Typography>
                     <Typography
-                      variant={'h6'}
+                      variant={'h5'}
                       className={classes.impactTextSupporting}
                     >
                       through Water.org
                     </Typography>
-                  </Center>
-                  <Center className={classes.impactVisualizationContainer}>
-                    <div>
-                      {Array.from({ length: 120 }, (_, index) => (
-                        <LocalDrink key={index} className={classes.icon} />
-                      ))}
-                    </div>
-                    <div className={classes.impactKey}>
-                      <LocalDrink className={classes.icon} />{' '}
-                      <Typography
-                        variant={'body2'}
-                        className={classes.impactTextKey}
-                      >
-                        = 100 people
-                      </Typography>
-                    </div>
                   </Center>
                 </div>
                 <DownArrowButtonContainer>
