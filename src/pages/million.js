@@ -487,7 +487,7 @@ const MillionPage = () => {
       </div>
       <ReactFullpage
         licenseKey={'YOUR_KEY_HERE'} // FIXME
-        scrollingSpeed={500}
+        scrollingSpeed={450}
         onLeave={(_, destination) => {
           if (destination) {
             setCurrentSectionIndex(destination.index || 0)
