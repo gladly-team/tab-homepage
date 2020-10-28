@@ -553,7 +553,7 @@ const MillionPage = () => {
                 <div className={classes.impactSlide}>
                   <Center className={classes.impactTextContainer}>
                     <Typography
-                      variant={'h6'}
+                      variant={'h5'}
                       className={classes.impactTextSupporting}
                     >
                       Tabbers have raised enough to
