@@ -203,13 +203,6 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     overflow: 'hidden',
   },
-  icon: ({ dark }) => ({
-    // TODO: make even more responsive
-    // fontSize: theme.typography.h4.fontSize,
-    fontSize: 32,
-    color: dark ? DARK_BACKGROUND : LIGHT_BACKGROUND,
-    margin: 4,
-  }),
   impactTextContainer: {
     flex: 1,
   },
