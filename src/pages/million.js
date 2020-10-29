@@ -409,6 +409,177 @@ const MillionPage = () => {
   const SECTION_ID_FOOTER = 'footer-section'
   const FOOTER_ID = 'footer'
 
+  const sections = [
+    {
+      id: SECTION_ID_TOP,
+      dark: true,
+      className: classes.darkBackground,
+      content: (
+        <>
+          <Center className={classes.hiddenUntilPageRendered}>
+            <Typography
+              variant={'h5'}
+              className={clsx(classes.whiteColor, classes.moneyRaisedText)}
+            >
+              Together, your tabs have raised
+            </Typography>
+            <Typography
+              variant={'h1'}
+              className={clsx(classes.goldColor, classes.moneyRaised)}
+            >
+              <MoneyRaised />
+            </Typography>
+            <Typography
+              variant={'h5'}
+              className={clsx(classes.whiteColor, classes.moneyRaisedText)}
+            >
+              for incredible causes
+            </Typography>
+          </Center>
+          <DownArrowButtonContainer className={classes.hiddenUntilPageRendered}>
+            <DownArrowButton
+              onClick={() => window.fullpage_api.moveSectionDown()}
+            >
+              <Typography
+                variant={'body1'}
+                className={classes.downArrowText}
+                style={{ margin: '0px 12px' }}
+              >
+                See the impact
+              </Typography>
+            </DownArrowButton>
+          </DownArrowButtonContainer>
+        </>
+      ),
+    },
+    {
+      id: SECTION_ID_IMPACT,
+      dark: true,
+      className: clsx(
+        classes.fullPageBackgroundImg,
+        classes.forestImgBackground,
+        classes.hiddenUntilPageRendered
+      ),
+      content: (
+        <>
+          <div className={classes.impactSlide}>
+            <Center className={classes.impactTextContainer}>
+              <Typography
+                variant={'h5'}
+                className={classes.impactTextSupporting}
+              >
+                Tabbers have raised enough to
+              </Typography>
+              <Typography variant={'h2'} className={classes.impactTextPrimary}>
+                protect 5,000 acres of rainforest
+              </Typography>
+              <Typography
+                variant={'h5'}
+                className={classes.impactTextSupporting}
+              >
+                through Conservation International
+              </Typography>
+              <div className={classes.shareContainer}>
+                <SocialShare
+                  url={millionRaisedRainforestImpactURL}
+                  {...socialShareData.conservation}
+                />
+              </div>
+            </Center>
+          </div>
+          <DownArrowButtonContainer>
+            <DownArrowButton
+              onClick={() => window.fullpage_api.moveSectionDown()}
+            />
+          </DownArrowButtonContainer>
+        </>
+      ),
+    },
+    {
+      id: SECTION_ID_IMPACT_1,
+      dark: true,
+      className: clsx(
+        classes.fullPageBackgroundImg,
+        classes.waterImgBackground,
+        classes.hiddenUntilPageRendered
+      ),
+      content: (
+        <>
+          <div className={classes.impactSlide}>
+            <Center className={classes.impactTextContainer}>
+              <Typography variant={'h2'} className={classes.impactTextPrimary}>
+                provide access to clean water to over 12,000 people
+              </Typography>
+              <Typography
+                variant={'h5'}
+                className={classes.impactTextSupporting}
+              >
+                through Water.org
+              </Typography>
+              <div className={classes.shareContainer}>
+                <SocialShare
+                  url={millionRaisedWaterImpactURL}
+                  {...socialShareData.water}
+                />
+              </div>
+            </Center>
+          </div>
+          <DownArrowButtonContainer>
+            <DownArrowButton
+              onClick={() => window.fullpage_api.moveSectionDown()}
+            />
+          </DownArrowButtonContainer>
+        </>
+      ),
+    },
+    {
+      id: SECTION_ID_THANKS,
+      dark: true,
+      className: clsx(classes.darkBackground, classes.hiddenUntilPageRendered),
+      content: (
+        <>
+          <Center>
+            <Typography variant={'body2'} className={classes.whiteColor}>
+              A message here.
+            </Typography>
+          </Center>
+          <DownArrowButtonContainer>
+            <DownArrowButton
+              onClick={() => window.fullpage_api.moveSectionDown()}
+            />
+          </DownArrowButtonContainer>
+        </>
+      ),
+    },
+    {
+      id: SECTION_ID_CELEBRATION,
+      dark: true,
+      className: clsx(classes.lightBackground, classes.hiddenUntilPageRendered),
+      content: (
+        <>
+          <Center>
+            <Typography variant={'body2'}>Here's what's going on!</Typography>
+          </Center>
+        </>
+      ),
+    },
+    {
+      id: SECTION_ID_FOOTER,
+      dark: false,
+      autoHeight: true,
+      className: clsx(classes.lightBackground, classes.hiddenUntilPageRendered),
+      content: (
+        <Footer
+          id={FOOTER_ID}
+          style={{
+            marginTop: 'auto',
+            width: '100%',
+          }}
+        />
+      ),
+    },
+  ]
+
   return (
     <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3 })}>
       <Helmet title={openGraphTitle}>
@@ -496,183 +667,19 @@ const MillionPage = () => {
         afterRender={() => {
           setIsPageReady(true)
         }}
-        render={({ fullpageApi }) => {
+        render={() => {
           return (
             <ReactFullpage.Wrapper menu={MENU_ID}>
-              <Section id={SECTION_ID_TOP} className={classes.darkBackground}>
-                <Center className={classes.hiddenUntilPageRendered}>
-                  <Typography
-                    variant={'h5'}
-                    className={clsx(
-                      classes.whiteColor,
-                      classes.moneyRaisedText
-                    )}
-                  >
-                    Together, your tabs have raised
-                  </Typography>
-                  <Typography
-                    variant={'h1'}
-                    className={clsx(classes.goldColor, classes.moneyRaised)}
-                  >
-                    <MoneyRaised />
-                  </Typography>
-                  <Typography
-                    variant={'h5'}
-                    className={clsx(
-                      classes.whiteColor,
-                      classes.moneyRaisedText
-                    )}
-                  >
-                    for incredible causes
-                  </Typography>
-                </Center>
-                <DownArrowButtonContainer
-                  className={classes.hiddenUntilPageRendered}
+              {sections.map((section) => (
+                <Section
+                  id={section.id}
+                  key={section.id}
+                  className={clsx(section.className)}
+                  autoHeight={section.autoHeight || false}
                 >
-                  <DownArrowButton
-                    onClick={() => fullpageApi.moveSectionDown()}
-                  >
-                    <Typography
-                      variant={'body1'}
-                      className={classes.downArrowText}
-                      style={{ margin: '0px 12px' }}
-                    >
-                      See the impact
-                    </Typography>
-                  </DownArrowButton>
-                </DownArrowButtonContainer>
-              </Section>
-              <Section
-                id={SECTION_ID_IMPACT}
-                className={clsx(
-                  classes.fullPageBackgroundImg,
-                  classes.forestImgBackground,
-                  classes.hiddenUntilPageRendered
-                )}
-              >
-                <div className={classes.impactSlide}>
-                  <Center className={classes.impactTextContainer}>
-                    <Typography
-                      variant={'h5'}
-                      className={classes.impactTextSupporting}
-                    >
-                      Tabbers have raised enough to
-                    </Typography>
-                    <Typography
-                      variant={'h2'}
-                      className={classes.impactTextPrimary}
-                    >
-                      protect 5,000 acres of rainforest
-                    </Typography>
-                    <Typography
-                      variant={'h5'}
-                      className={classes.impactTextSupporting}
-                    >
-                      through Conservation International
-                    </Typography>
-                    <div className={classes.shareContainer}>
-                      {/* <Typography */}
-                      {/*   variant={'overline'} */}
-                      {/*   className={classes.impactTextPrimary} */}
-                      {/* > */}
-                      {/*   Share this: */}
-                      {/* </Typography> */}
-                      <SocialShare
-                        url={millionRaisedRainforestImpactURL}
-                        {...socialShareData.conservation}
-                      />
-                    </div>
-                  </Center>
-                </div>
-                <DownArrowButtonContainer>
-                  <DownArrowButton
-                    onClick={() => fullpageApi.moveSectionDown()}
-                  />
-                </DownArrowButtonContainer>
-              </Section>
-              <Section
-                id={SECTION_ID_IMPACT_1}
-                className={clsx(
-                  classes.fullPageBackgroundImg,
-                  classes.waterImgBackground,
-                  classes.hiddenUntilPageRendered
-                )}
-              >
-                <div className={classes.impactSlide}>
-                  <Center className={classes.impactTextContainer}>
-                    <Typography
-                      variant={'h2'}
-                      className={classes.impactTextPrimary}
-                    >
-                      provide access to clean water to over 12,000 people
-                    </Typography>
-                    <Typography
-                      variant={'h5'}
-                      className={classes.impactTextSupporting}
-                    >
-                      through Water.org
-                    </Typography>
-                    <div className={classes.shareContainer}>
-                      <SocialShare
-                        url={millionRaisedWaterImpactURL}
-                        {...socialShareData.water}
-                      />
-                    </div>
-                  </Center>
-                </div>
-                <DownArrowButtonContainer>
-                  <DownArrowButton
-                    onClick={() => fullpageApi.moveSectionDown()}
-                  />
-                </DownArrowButtonContainer>
-              </Section>
-              <Section
-                id={SECTION_ID_THANKS}
-                className={clsx(
-                  classes.darkBackground,
-                  classes.hiddenUntilPageRendered
-                )}
-              >
-                <Center>
-                  <Typography variant={'body2'} className={classes.whiteColor}>
-                    A message here.
-                  </Typography>
-                </Center>
-                <DownArrowButtonContainer>
-                  <DownArrowButton
-                    onClick={() => fullpageApi.moveSectionDown()}
-                  />
-                </DownArrowButtonContainer>
-              </Section>
-              <Section
-                id={SECTION_ID_CELEBRATION}
-                className={clsx(
-                  classes.lightBackground,
-                  classes.hiddenUntilPageRendered
-                )}
-              >
-                <Center>
-                  <Typography variant={'body2'}>
-                    Here's what's going on!
-                  </Typography>
-                </Center>
-              </Section>
-              <Section
-                id={SECTION_ID_FOOTER}
-                className={clsx(
-                  classes.lightBackground,
-                  classes.hiddenUntilPageRendered
-                )}
-                autoHeight
-              >
-                <Footer
-                  id={FOOTER_ID}
-                  style={{
-                    marginTop: 'auto',
-                    width: '100%',
-                  }}
-                />
-              </Section>
+                  {section.content}
+                </Section>
+              ))}
             </ReactFullpage.Wrapper>
           )
         }}
