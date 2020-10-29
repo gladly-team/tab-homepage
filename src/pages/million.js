@@ -27,6 +27,11 @@ import {
   homeURL,
   millionRaisedRainforestImpactURL,
   millionRaisedWaterImpactURL,
+  millionRaisedHungerImpactURL,
+  millionRaisedGiveImpactURL,
+  millionRaisedReadImpactURL,
+  millionRaisedChildrenImpactURL,
+  millionRaisedEducateImpactURL,
 } from 'src/utils/navigation'
 import Footer from 'src/components/Footer'
 import Link from 'src/components/Link'
@@ -35,6 +40,11 @@ import logoWithText from 'src/img/logo-with-text.svg'
 import logoWithTextWhite from 'src/img/logo-with-text-white.svg'
 import waterImg from 'src/img/million/water.jpg'
 import forestImg from 'src/img/million/forest.jpg'
+import actionAgainstHungerImg from 'src/img/million/action-against-hunger.jpg'
+import giveDirectlyImg from 'src/img/million/give-directly.jpg'
+import roomToReadImg from 'src/img/million/room-to-read.jpg'
+import saveTheChildrenImg from 'src/img/million/save-the-children.jpg'
+import schoolImg from 'src/img/million/school.jpg'
 
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
@@ -216,6 +226,21 @@ const useStyles = makeStyles((theme) => ({
   forestImgBackground: {
     backgroundImage: `url("${forestImg}")`,
   },
+  actionAgainstHungerBackgroundImg: {
+    backgroundImage: `url("${actionAgainstHungerImg}")`,
+  },
+  giveDirectlyBackgroundImg: {
+    backgroundImage: `url("${giveDirectlyImg}")`,
+  },
+  roomToReadBackgroundImg: {
+    backgroundImage: `url("${roomToReadImg}")`,
+  },
+  saveTheChildrenBackgroundImg: {
+    backgroundImage: `url("${saveTheChildrenImg}")`,
+  },
+  schoolBackgroundImg: {
+    backgroundImage: `url("${schoolImg}")`,
+  },
   fullPageBackgroundImg: {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
@@ -316,54 +341,6 @@ Center.defaultProps = {
   className: undefined,
 }
 
-// FIXME: real content
-const socialShareData = {
-  conservation: {
-    url: getAbsoluteURL(millionRaisedRainforestImpactURL),
-    FacebookShareButtonProps: {
-      quote:
-        'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
-    },
-    RedditShareButtonProps: {
-      title:
-        'Tabs transformed into vital supplies for 100 families in rainforest communities',
-    },
-    TumblrShareButtonProps: {
-      title:
-        'Tabs transformed into vital supplies for 100 families in rainforest communities',
-      caption:
-        'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
-    },
-    TwitterShareButtonProps: {
-      title:
-        'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
-      related: ['@TabForACause'],
-    },
-  },
-  water: {
-    url: getAbsoluteURL(millionRaisedWaterImpactURL),
-    FacebookShareButtonProps: {
-      quote:
-        'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
-    },
-    RedditShareButtonProps: {
-      title:
-        'Tabs transformed into vital supplies for 100 families in rainforest communities',
-    },
-    TumblrShareButtonProps: {
-      title:
-        'Tabs transformed into vital supplies for 100 families in rainforest communities',
-      caption:
-        'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
-    },
-    TwitterShareButtonProps: {
-      title:
-        'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
-      related: ['@TabForACause'],
-    },
-  },
-}
-
 const MillionPage = () => {
   // TODO
   const openGraphTitle = 'Million raised'
@@ -380,8 +357,13 @@ const MillionPage = () => {
   const MENU_ITEM_CELEBRATION_TEXT = 'Celebration'
 
   const SECTION_ID_TOP = 'top'
-  const SECTION_ID_IMPACT_RAINFOREST = 'impact'
-  const SECTION_ID_IMPACT_WATER = 'impact-1'
+  const SECTION_ID_IMPACT_RAINFOREST = 'impact-rainforest'
+  const SECTION_ID_IMPACT_WATER = 'impact-water'
+  const SECTION_ID_IMPACT_STC = 'impact-stc'
+  const SECTION_ID_IMPACT_HUNGER = 'impact-hunger'
+  const SECTION_ID_IMPACT_GIVE_DIRECTLY = 'impact-give-directly'
+  const SECTION_ID_IMPACT_ROOM_TO_READ = 'impact-room-to-read'
+  const SECTION_ID_IMPACT_EDUCATE = 'impact-EDUCATE'
   const SECTION_ID_THANKS = 'thanks'
   const SECTION_ID_CELEBRATION = 'celebration'
   const SECTION_ID_FOOTER = 'footer-section'
@@ -439,6 +421,31 @@ const MillionPage = () => {
     },
     {
       id: SECTION_ID_IMPACT_WATER,
+      dark: true,
+      activeMenuId: MENU_ITEM_IMPACT_ID,
+    },
+    {
+      id: SECTION_ID_IMPACT_STC,
+      dark: true,
+      activeMenuId: MENU_ITEM_IMPACT_ID,
+    },
+    {
+      id: SECTION_ID_IMPACT_HUNGER,
+      dark: true,
+      activeMenuId: MENU_ITEM_IMPACT_ID,
+    },
+    {
+      id: SECTION_ID_IMPACT_GIVE_DIRECTLY,
+      dark: true,
+      activeMenuId: MENU_ITEM_IMPACT_ID,
+    },
+    {
+      id: SECTION_ID_IMPACT_ROOM_TO_READ,
+      dark: true,
+      activeMenuId: MENU_ITEM_IMPACT_ID,
+    },
+    {
+      id: SECTION_ID_IMPACT_EDUCATE,
       dark: true,
       activeMenuId: MENU_ITEM_IMPACT_ID,
     },
@@ -545,8 +552,81 @@ const MillionPage = () => {
               </Typography>
               <div className={classes.shareContainer}>
                 <SocialShare
-                  url={millionRaisedRainforestImpactURL}
-                  {...socialShareData.conservation}
+                  /* FIXME: actual copy needed */
+                  url={getAbsoluteURL(millionRaisedRainforestImpactURL)}
+                  FacebookShareButtonProps={{
+                    quote:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  RedditShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                  }}
+                  TumblrShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                    caption:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  TwitterShareButtonProps={{
+                    title:
+                      'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                    related: ['@TabForACause'],
+                  }}
+                />
+              </div>
+            </Center>
+          </div>
+          <DownArrowButtonContainer>
+            <DownArrowButton
+              onClick={() => window.fullpage_api.moveSectionDown()}
+            />
+          </DownArrowButtonContainer>
+        </>
+      ),
+    },
+    [SECTION_ID_IMPACT_STC]: {
+      className: clsx(
+        classes.fullPageBackgroundImg,
+        classes.saveTheChildrenBackgroundImg,
+        classes.hiddenUntilPageRendered
+      ),
+      content: (
+        <>
+          <div className={classes.impactSlide}>
+            <Center className={classes.impactTextContainer}>
+              <Typography variant={'h2'} className={classes.impactTextPrimary}>
+                give over 6,000 children a month of emergency nutrition
+              </Typography>
+              <Typography
+                variant={'h5'}
+                className={classes.impactTextSupporting}
+              >
+                through Save the Children
+              </Typography>
+              <div className={classes.shareContainer}>
+                <SocialShare
+                  /* FIXME: actual copy needed */
+                  url={getAbsoluteURL(millionRaisedChildrenImpactURL)}
+                  FacebookShareButtonProps={{
+                    quote:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  RedditShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                  }}
+                  TumblrShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                    caption:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  TwitterShareButtonProps={{
+                    title:
+                      'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                    related: ['@TabForACause'],
+                  }}
                 />
               </div>
             </Center>
@@ -580,8 +660,244 @@ const MillionPage = () => {
               </Typography>
               <div className={classes.shareContainer}>
                 <SocialShare
-                  url={millionRaisedWaterImpactURL}
-                  {...socialShareData.water}
+                  /* FIXME: actual copy needed */
+                  url={getAbsoluteURL(millionRaisedWaterImpactURL)}
+                  FacebookShareButtonProps={{
+                    quote:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  RedditShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                  }}
+                  TumblrShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                    caption:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  TwitterShareButtonProps={{
+                    title:
+                      'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                    related: ['@TabForACause'],
+                  }}
+                />
+              </div>
+            </Center>
+          </div>
+          <DownArrowButtonContainer>
+            <DownArrowButton
+              onClick={() => window.fullpage_api.moveSectionDown()}
+            />
+          </DownArrowButtonContainer>
+        </>
+      ),
+    },
+    [SECTION_ID_IMPACT_HUNGER]: {
+      className: clsx(
+        classes.fullPageBackgroundImg,
+        classes.actionAgainstHungerBackgroundImg,
+        classes.hiddenUntilPageRendered
+      ),
+      content: (
+        <>
+          <div className={classes.impactSlide}>
+            <Center className={classes.impactTextContainer}>
+              <Typography variant={'h2'} className={classes.impactTextPrimary}>
+                provide life-saving malnutrition treatment to over 1,500
+                children
+              </Typography>
+              <Typography
+                variant={'h5'}
+                className={classes.impactTextSupporting}
+              >
+                through Action Against Hunger
+              </Typography>
+              <div className={classes.shareContainer}>
+                <SocialShare
+                  /* FIXME: actual copy needed */
+                  url={getAbsoluteURL(millionRaisedHungerImpactURL)}
+                  FacebookShareButtonProps={{
+                    quote:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  RedditShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                  }}
+                  TumblrShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                    caption:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  TwitterShareButtonProps={{
+                    title:
+                      'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                    related: ['@TabForACause'],
+                  }}
+                />
+              </div>
+            </Center>
+          </div>
+          <DownArrowButtonContainer>
+            <DownArrowButton
+              onClick={() => window.fullpage_api.moveSectionDown()}
+            />
+          </DownArrowButtonContainer>
+        </>
+      ),
+    },
+    [SECTION_ID_IMPACT_ROOM_TO_READ]: {
+      className: clsx(
+        classes.fullPageBackgroundImg,
+        classes.roomToReadBackgroundImg,
+        classes.hiddenUntilPageRendered
+      ),
+      content: (
+        <>
+          <div className={classes.impactSlide}>
+            <Center className={classes.impactTextContainer}>
+              <Typography variant={'h2'} className={classes.impactTextPrimary}>
+                keep over 200 girls in school
+              </Typography>
+              <Typography
+                variant={'h5'}
+                className={classes.impactTextSupporting}
+              >
+                through Room to Read
+              </Typography>
+              <div className={classes.shareContainer}>
+                <SocialShare
+                  /* FIXME: actual copy needed */
+                  url={getAbsoluteURL(millionRaisedReadImpactURL)}
+                  FacebookShareButtonProps={{
+                    quote:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  RedditShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                  }}
+                  TumblrShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                    caption:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  TwitterShareButtonProps={{
+                    title:
+                      'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                    related: ['@TabForACause'],
+                  }}
+                />
+              </div>
+            </Center>
+          </div>
+          <DownArrowButtonContainer>
+            <DownArrowButton
+              onClick={() => window.fullpage_api.moveSectionDown()}
+            />
+          </DownArrowButtonContainer>
+        </>
+      ),
+    },
+    [SECTION_ID_IMPACT_GIVE_DIRECTLY]: {
+      className: clsx(
+        classes.fullPageBackgroundImg,
+        classes.giveDirectlyBackgroundImg,
+        classes.hiddenUntilPageRendered
+      ),
+      content: (
+        <>
+          <div className={classes.impactSlide}>
+            <Center className={classes.impactTextContainer}>
+              <Typography variant={'h2'} className={classes.impactTextPrimary}>
+                fund over $41,000 in direct cash transfers
+              </Typography>
+              <Typography
+                variant={'h5'}
+                className={classes.impactTextSupporting}
+              >
+                through GiveDirectly
+              </Typography>
+              <div className={classes.shareContainer}>
+                <SocialShare
+                  /* FIXME: actual copy needed */
+                  url={getAbsoluteURL(millionRaisedGiveImpactURL)}
+                  FacebookShareButtonProps={{
+                    quote:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  RedditShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                  }}
+                  TumblrShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                    caption:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  TwitterShareButtonProps={{
+                    title:
+                      'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                    related: ['@TabForACause'],
+                  }}
+                />
+              </div>
+            </Center>
+          </div>
+          <DownArrowButtonContainer>
+            <DownArrowButton
+              onClick={() => window.fullpage_api.moveSectionDown()}
+            />
+          </DownArrowButtonContainer>
+        </>
+      ),
+    },
+    [SECTION_ID_IMPACT_EDUCATE]: {
+      className: clsx(
+        classes.fullPageBackgroundImg,
+        classes.schoolBackgroundImg,
+        classes.hiddenUntilPageRendered
+      ),
+      content: (
+        <>
+          <div className={classes.impactSlide}>
+            <Center className={classes.impactTextContainer}>
+              <Typography variant={'h2'} className={classes.impactTextPrimary}>
+                give learning materials to over 3,500 students
+              </Typography>
+              <Typography
+                variant={'h5'}
+                className={classes.impactTextSupporting}
+              >
+                through Educate!
+              </Typography>
+              <div className={classes.shareContainer}>
+                <SocialShare
+                  /* FIXME: actual copy needed */
+                  url={getAbsoluteURL(millionRaisedEducateImpactURL)}
+                  FacebookShareButtonProps={{
+                    quote:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  RedditShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                  }}
+                  TumblrShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                    caption:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  TwitterShareButtonProps={{
+                    title:
+                      'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                    related: ['@TabForACause'],
+                  }}
                 />
               </div>
             </Center>

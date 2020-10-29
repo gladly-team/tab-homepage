@@ -17,6 +17,11 @@ export const adblockerWhitelistingURL = '/adblockers/'
 export const millionRaisedURL = '/million/'
 export const millionRaisedRainforestImpactURL = '/million/rainforest/'
 export const millionRaisedWaterImpactURL = '/million/water/'
+export const millionRaisedHungerImpactURL = '/million/hunger/'
+export const millionRaisedGiveImpactURL = '/million/give/'
+export const millionRaisedReadImpactURL = '/million/read/'
+export const millionRaisedChildrenImpactURL = '/million/children/'
+export const millionRaisedEducateImpactURL = '/million/educate/'
 
 // New tab page app URLs.
 // Absolute URLs because it's outside of this Gatsby app.
