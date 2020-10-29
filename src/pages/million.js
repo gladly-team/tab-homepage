@@ -244,7 +244,7 @@ const useStyles = makeStyles((theme) => ({
   fullPageBackgroundImg: {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    backgroundColor: 'rgba(0, 0, 0, 0.45)',
+    backgroundColor: 'rgba(0, 0, 0, 0.55)',
     backgroundBlendMode: 'multiply',
   },
   shareContainer: {
