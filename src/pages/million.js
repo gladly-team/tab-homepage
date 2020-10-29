@@ -365,42 +365,20 @@ const socialShareData = {
 }
 
 const MillionPage = () => {
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
-  const mapSectionIndexToMenuIndex = (sectionIndex) => {
-    const topIndexStart = 0
-    const impactIndexStart = 1
-    const thanksIndexStart = 3
-    const celebrationIndexStart = 4
-    const breakpoints = [
-      topIndexStart,
-      impactIndexStart,
-      thanksIndexStart,
-      celebrationIndexStart,
-      Number.POSITIVE_INFINITY,
-    ]
-    for (let i = 0; i < breakpoints.length; i++) {
-      if (sectionIndex < breakpoints[i]) {
-        return i - 1
-      }
-    }
-  }
-  const currentMenuTabIndex = mapSectionIndexToMenuIndex(currentSectionIndex)
-
-  // To know when Fullpage.js has initialized.
-  const [isPageReady, setIsPageReady] = useState(false)
-
-  const isInDarkSection = [0, 1, 2, 3].indexOf(currentSectionIndex) > -1
-  const classes = useStyles({
-    isInDarkSection,
-    isPageReady,
-    dark: !isInDarkSection,
-  })
-
   // TODO
   const openGraphTitle = 'Million raised'
   const openGraphDescription = 'We raised a million!'
 
   const MENU_ID = 'nav-menu'
+  const MENU_ITEM_1M_ID = 'top'
+  const MENU_ITEM_1M_TEXT = '$1M'
+  const MENU_ITEM_IMPACT_ID = 'impact'
+  const MENU_ITEM_IMPACT_TEXT = 'Your Impact'
+  const MENU_ITEM_THANKS_ID = 'thanks'
+  const MENU_ITEM_THANKS_TEXT = 'Thanks'
+  const MENU_ITEM_CELEBRATION_ID = 'celebration'
+  const MENU_ITEM_CELEBRATION_TEXT = 'Celebration'
+
   const SECTION_ID_TOP = 'top'
   const SECTION_ID_IMPACT = 'impact'
   const SECTION_ID_IMPACT_1 = 'impact-1'
@@ -409,10 +387,97 @@ const MillionPage = () => {
   const SECTION_ID_FOOTER = 'footer-section'
   const FOOTER_ID = 'footer'
 
+  // This is the index of the Fullpage.js section that's currently
+  // in focus.
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
+
+  // To know when Fullpage.js has initialized.
+  const [isPageReady, setIsPageReady] = useState(false)
+
+  // Data used to render the navigation menu items.
+  // Note: you may have to adjust tab CSS breakpoints if adding
+  // menu items or changing text.
+  const menuItems = [
+    {
+      id: MENU_ITEM_1M_ID, // used to link a section to this menu item
+      text: MENU_ITEM_1M_TEXT, // the display text
+      linkTo: SECTION_ID_TOP, // which section this should navigate to
+    },
+    {
+      id: MENU_ITEM_IMPACT_ID,
+      text: MENU_ITEM_IMPACT_TEXT,
+      linkTo: SECTION_ID_IMPACT,
+    },
+    {
+      id: MENU_ITEM_THANKS_ID,
+      text: MENU_ITEM_THANKS_TEXT,
+      linkTo: SECTION_ID_THANKS,
+    },
+    {
+      id: MENU_ITEM_CELEBRATION_ID,
+      text: MENU_ITEM_CELEBRATION_TEXT,
+      linkTo: SECTION_ID_CELEBRATION,
+    },
+  ]
+
+  // Partial data used to order and display page sections.
+  // To add a section, be sure to also add an object to the
+  // `sectionData` object below. We divided this info into
+  // `sections` and `sectionData` because we need to use the
+  // "dark" option to generate classes.
   const sections = [
     {
       id: SECTION_ID_TOP,
       dark: true,
+      activeMenuId: MENU_ITEM_1M_ID,
+    },
+    {
+      id: SECTION_ID_IMPACT,
+      dark: true,
+      activeMenuId: MENU_ITEM_IMPACT_ID,
+    },
+    {
+      id: SECTION_ID_IMPACT_1,
+      dark: true,
+      activeMenuId: MENU_ITEM_IMPACT_ID,
+    },
+    {
+      id: SECTION_ID_THANKS,
+      dark: true,
+      activeMenuId: MENU_ITEM_THANKS_ID,
+    },
+    {
+      id: SECTION_ID_CELEBRATION,
+      dark: false,
+      activeMenuId: MENU_ITEM_CELEBRATION_ID,
+    },
+    {
+      id: SECTION_ID_FOOTER,
+      dark: false,
+      activeMenuId: MENU_ITEM_CELEBRATION_ID,
+    },
+  ]
+
+  // Generate classes
+  const isInDarkSection = sections[currentSectionIndex].dark
+  let classes = useStyles({
+    isInDarkSection,
+    isPageReady,
+    dark: !isInDarkSection,
+  })
+
+  // Determine which menu item should be active based on the
+  // current section index.
+  const mapSectionIndexToMenuIndex = (sectionIndex) => {
+    const { activeMenuId } = sections[sectionIndex]
+    return menuItems.findIndex((item) => item.id === activeMenuId)
+  }
+  const currentMenuTabIndex = mapSectionIndexToMenuIndex(currentSectionIndex)
+
+  // The rest of the data used to render sections.
+  // Section order is determined in the `sections` array above.
+  const sectionData = {
+    [SECTION_ID_TOP]: {
       className: classes.darkBackground,
       content: (
         <>
@@ -452,9 +517,7 @@ const MillionPage = () => {
         </>
       ),
     },
-    {
-      id: SECTION_ID_IMPACT,
-      dark: true,
+    [SECTION_ID_IMPACT]: {
       className: clsx(
         classes.fullPageBackgroundImg,
         classes.forestImgBackground,
@@ -495,9 +558,7 @@ const MillionPage = () => {
         </>
       ),
     },
-    {
-      id: SECTION_ID_IMPACT_1,
-      dark: true,
+    [SECTION_ID_IMPACT_1]: {
       className: clsx(
         classes.fullPageBackgroundImg,
         classes.waterImgBackground,
@@ -532,9 +593,7 @@ const MillionPage = () => {
         </>
       ),
     },
-    {
-      id: SECTION_ID_THANKS,
-      dark: true,
+    [SECTION_ID_THANKS]: {
       className: clsx(classes.darkBackground, classes.hiddenUntilPageRendered),
       content: (
         <>
@@ -551,9 +610,7 @@ const MillionPage = () => {
         </>
       ),
     },
-    {
-      id: SECTION_ID_CELEBRATION,
-      dark: true,
+    [SECTION_ID_CELEBRATION]: {
       className: clsx(classes.lightBackground, classes.hiddenUntilPageRendered),
       content: (
         <>
@@ -563,9 +620,7 @@ const MillionPage = () => {
         </>
       ),
     },
-    {
-      id: SECTION_ID_FOOTER,
-      dark: false,
+    [SECTION_ID_FOOTER]: {
       autoHeight: true,
       className: clsx(classes.lightBackground, classes.hiddenUntilPageRendered),
       content: (
@@ -578,7 +633,7 @@ const MillionPage = () => {
         />
       ),
     },
-  ]
+  }
 
   return (
     <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3 })}>
@@ -607,38 +662,18 @@ const MillionPage = () => {
             indicatorColor="primary"
             className={clsx(classes.menu, classes.hiddenUntilPageRendered)}
           >
-            {/*
-              Note: may have to adjust tab CSS breakpoints if adding
-              tabs or changing text.
-            */}
-            <Tab
-              label="$1M"
-              className={classes.menuTab}
-              onClick={() => {
-                window.fullpage_api.moveTo(SECTION_ID_TOP)
-              }}
-            />
-            <Tab
-              label="Your Impact"
-              className={classes.menuTab}
-              onClick={() => {
-                window.fullpage_api.moveTo(SECTION_ID_IMPACT)
-              }}
-            />
-            <Tab
-              label="Thanks"
-              className={classes.menuTab}
-              onClick={() => {
-                window.fullpage_api.moveTo(SECTION_ID_THANKS)
-              }}
-            />
-            <Tab
-              label="Celebration"
-              className={classes.menuTab}
-              onClick={() => {
-                window.fullpage_api.moveTo(SECTION_ID_CELEBRATION)
-              }}
-            />
+            {menuItems.map((menuItem) => {
+              return (
+                <Tab
+                  key={menuItem.id}
+                  label={menuItem.text}
+                  className={classes.menuTab}
+                  onClick={() => {
+                    window.fullpage_api.moveTo(menuItem.linkTo)
+                  }}
+                />
+              )
+            })}
           </Tabs>
         </div>
 
@@ -670,16 +705,19 @@ const MillionPage = () => {
         render={() => {
           return (
             <ReactFullpage.Wrapper menu={MENU_ID}>
-              {sections.map((section) => (
-                <Section
-                  id={section.id}
-                  key={section.id}
-                  className={clsx(section.className)}
-                  autoHeight={section.autoHeight || false}
-                >
-                  {section.content}
-                </Section>
-              ))}
+              {sections.map((section) => {
+                const sectionInfo = sectionData[section.id]
+                return (
+                  <Section
+                    id={section.id}
+                    key={section.id}
+                    className={clsx(sectionInfo.className)}
+                    autoHeight={sectionInfo.autoHeight || false}
+                  >
+                    {sectionInfo.content}
+                  </Section>
+                )
+              })}
             </ReactFullpage.Wrapper>
           )
         }}
