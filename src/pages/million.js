@@ -380,8 +380,8 @@ const MillionPage = () => {
   const MENU_ITEM_CELEBRATION_TEXT = 'Celebration'
 
   const SECTION_ID_TOP = 'top'
-  const SECTION_ID_IMPACT = 'impact'
-  const SECTION_ID_IMPACT_1 = 'impact-1'
+  const SECTION_ID_IMPACT_RAINFOREST = 'impact'
+  const SECTION_ID_IMPACT_WATER = 'impact-1'
   const SECTION_ID_THANKS = 'thanks'
   const SECTION_ID_CELEBRATION = 'celebration'
   const SECTION_ID_FOOTER = 'footer-section'
@@ -406,7 +406,8 @@ const MillionPage = () => {
     {
       id: MENU_ITEM_IMPACT_ID,
       text: MENU_ITEM_IMPACT_TEXT,
-      linkTo: SECTION_ID_IMPACT,
+      // This should link to whatever is the first "impact" section.
+      linkTo: SECTION_ID_IMPACT_RAINFOREST,
     },
     {
       id: MENU_ITEM_THANKS_ID,
@@ -432,12 +433,12 @@ const MillionPage = () => {
       activeMenuId: MENU_ITEM_1M_ID,
     },
     {
-      id: SECTION_ID_IMPACT,
+      id: SECTION_ID_IMPACT_RAINFOREST,
       dark: true,
       activeMenuId: MENU_ITEM_IMPACT_ID,
     },
     {
-      id: SECTION_ID_IMPACT_1,
+      id: SECTION_ID_IMPACT_WATER,
       dark: true,
       activeMenuId: MENU_ITEM_IMPACT_ID,
     },
@@ -517,7 +518,7 @@ const MillionPage = () => {
         </>
       ),
     },
-    [SECTION_ID_IMPACT]: {
+    [SECTION_ID_IMPACT_RAINFOREST]: {
       className: clsx(
         classes.fullPageBackgroundImg,
         classes.forestImgBackground,
@@ -558,7 +559,7 @@ const MillionPage = () => {
         </>
       ),
     },
-    [SECTION_ID_IMPACT_1]: {
+    [SECTION_ID_IMPACT_WATER]: {
       className: clsx(
         classes.fullPageBackgroundImg,
         classes.waterImgBackground,
