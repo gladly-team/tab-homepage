@@ -129,6 +129,27 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'flex-start',
     paddingTop: 60, // make room for the fixed header
   },
+  scheduleSlide: {
+    padding: '0px 60px',
+  },
+  scheduleSlideTextContainer: {
+    maxWidth: 600,
+  },
+  slidesFixedHeader: {
+    position: 'absolute',
+    zIndex: 100,
+    width: '100%',
+    top: 60, // make room for the page header
+  },
+  scheduleHeaderText: {
+    fontStyle: 'italic',
+  },
+  scheduleSlideHeaderContent: {
+    marginTop: 40,
+    display: 'flex',
+    justifyContent: 'center',
+    maxWidth: 640,
+  },
   darkBackground: {
     background: DARK_BACKGROUND,
   },
@@ -192,7 +213,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     height: '100%',
     width: '100%',
-    margin: 'auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
     padding: theme.spacing(2),
     paddingTop: 0,
     justifyContent: 'center',
@@ -954,20 +976,123 @@ const MillionPage = () => {
       className: clsx(classes.darkBackground, classes.hiddenUntilPageRendered),
       content: (
         <>
-          <Slide>
-            <Typography variant={'body2'} className={classes.whiteColor}>
-              Here's what's going on!
-            </Typography>
+          <div className={classes.slidesFixedHeader}>
+            <Center
+              className={clsx(
+                classes.impactTextContainer,
+                classes.scheduleSlideHeaderContent
+              )}
+            >
+              <Typography
+                variant={'body2'}
+                className={clsx(classes.whiteColor, classes.scheduleHeaderText)}
+              >
+                For the weeks leading up to $1M, join us as we have some fun to
+                celebrate!
+              </Typography>
+            </Center>
+          </div>
+          <Slide className={classes.scheduleSlide}>
+            <Center className={classes.scheduleSlideTextContainer}>
+              <Typography
+                variant={'h4'}
+                className={clsx(
+                  classes.whiteColor,
+                  classes.impactTextSupporting
+                )}
+                gutterBottom
+              >
+                #MillionaireMonday
+              </Typography>
+              <Typography variant={'body2'} className={classes.whiteColor}>
+                For us, it was as easy as opening a new tab and donating hearts
+                to a cause we care about. For multi-millionaires, it’s as easy
+                as writing a check. Join us each Monday on Twitter and Instagram
+                where we will be asking the uber wealthy to match our $1M
+                donation. We’re looking at you @google...
+              </Typography>
+            </Center>
           </Slide>
-          <Slide>
-            <Typography variant={'body2'} className={classes.whiteColor}>
-              Another thing
-            </Typography>
+          <Slide className={classes.scheduleSlide}>
+            <Center className={classes.scheduleSlideTextContainer}>
+              <Typography
+                variant={'h4'}
+                className={clsx(
+                  classes.whiteColor,
+                  classes.impactTextSupporting
+                )}
+                gutterBottom
+              >
+                #TabberTuesday
+              </Typography>
+              <Typography variant={'body2'} className={classes.whiteColor}>
+                Tab for a Cause would not be possible without all of our
+                passionate Tabbers. We would love to hear why you use Tab for a
+                Cause on social media! DM us on Instagram, Facebook, and Twitter
+                or post why you tab to your feed with #tabforamillion and
+                @tabforacause and you may be featured on #TabberTuesday!
+              </Typography>
+            </Center>
           </Slide>
-          <Slide>
-            <Typography variant={'body2'} className={classes.whiteColor}>
-              One more thing
-            </Typography>
+          <Slide className={classes.scheduleSlide}>
+            <Center className={classes.scheduleSlideTextContainer}>
+              <Typography
+                variant={'h4'}
+                className={clsx(
+                  classes.whiteColor,
+                  classes.impactTextSupporting
+                )}
+                gutterBottom
+              >
+                #WelcomeWednesday
+              </Typography>
+              <Typography variant={'body2'} className={classes.whiteColor}>
+                Despite reaching this incredible milestone, most people still
+                have never heard of Tab for a Cause. The average internet
+                browser opens over 10 tabs every single day, help make sure
+                everyone is putting their tabs toward a cause they care about
+                and tell your friends about Tab for a Cause! Text, email, call,
+                DM, Snap, whatever it takes, make sure everyone knows that they
+                could be part of this incredible movement :)
+              </Typography>
+            </Center>
+          </Slide>
+          <Slide className={classes.scheduleSlide}>
+            <Center className={classes.scheduleSlideTextContainer}>
+              <Typography
+                variant={'h4'}
+                className={clsx(
+                  classes.whiteColor,
+                  classes.impactTextSupporting
+                )}
+                gutterBottom
+              >
+                #ThankfulThursday
+              </Typography>
+              <Typography variant={'body2'} className={classes.whiteColor}>
+                Join us in letting the world know how impactful a tab can be by
+                liking, reposting, and/or sharing our #ThankfulThursday posts on
+                Instagram, Facebook, and Twitter that showcase some of our
+                amazing charity partners.
+              </Typography>
+            </Center>
+          </Slide>
+          <Slide className={classes.scheduleSlide}>
+            <Center className={classes.scheduleSlideTextContainer}>
+              <Typography
+                variant={'h4'}
+                className={clsx(
+                  classes.whiteColor,
+                  classes.impactTextSupporting
+                )}
+                gutterBottom
+              >
+                Weekends
+              </Typography>
+              <Typography variant={'body2'} className={classes.whiteColor}>
+                Kick back and enjoy some well-deserved rest :)
+              </Typography>
+            </Center>
           </Slide>
           <DownArrowButtonContainer>
             <DownArrowButton
