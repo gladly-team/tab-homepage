@@ -112,6 +112,9 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  sectionWrapper: {
+    position: 'relative',
+  },
   sectionContent: {
     display: 'flex',
     flexDirection: 'column',
@@ -142,12 +145,18 @@ const useStyles = makeStyles((theme) => ({
     background: blue[600],
   },
   downArrowButtonContainer: {
-    marginTop: 'auto',
-    display: 'flex',
+    position: 'absolute',
+    bottom: 0,
+    zIndex: 100,
+    pointerEvents: 'none',
     alignSelf: 'center',
+    width: '100%',
+    justifyContent: 'center',
+    display: 'flex',
     padding: theme.spacing(2),
   },
   downArrowButton: {
+    pointerEvents: 'all',
     height: 60,
     padding: theme.spacing(1),
     display: 'flex',
@@ -270,6 +279,7 @@ const Section = ({ id, children, className, autoHeight }) => {
       className={clsx({
         section: true,
         'fp-auto-height': autoHeight,
+        sectionWrapper: true,
         [className]: true,
       })}
     >
@@ -1070,7 +1080,7 @@ const MillionPage = () => {
                   <Section
                     id={section.id}
                     key={section.id}
-                    className={clsx(sectionInfo.className)}
+                    className={sectionInfo.className}
                     autoHeight={sectionInfo.autoHeight || false}
                   >
                     {sectionInfo.content}
