@@ -112,7 +112,14 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
-  section: {
+  sectionContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    alignItems: 'flex-start',
+    paddingTop: 60, // make room for the fixed header
+  },
+  slideContent: {
     display: 'flex',
     flexDirection: 'column',
     height: '100%',
@@ -260,9 +267,13 @@ const Section = ({ id, children, className, autoHeight }) => {
   return (
     <div
       data-anchor={id}
-      className={clsx({ section: true, 'fp-auto-height': autoHeight })}
+      className={clsx({
+        section: true,
+        'fp-auto-height': autoHeight,
+        [className]: true,
+      })}
     >
-      <div className={clsx(classes.section, className)}>{children}</div>
+      {children}
     </div>
   )
 }
@@ -277,6 +288,26 @@ Section.propTypes = {
 }
 Section.defaultProps = {
   autoHeight: false,
+  style: {},
+  className: '',
+}
+
+const Slide = ({ children, className }) => {
+  const classes = useStyles()
+  return (
+    <div className={'slide'}>
+      <div className={clsx(classes.slideContent, className)}>{children}</div>
+    </div>
+  )
+}
+Slide.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+  className: PropTypes.string,
+}
+Slide.defaultProps = {
   style: {},
   className: '',
 }
@@ -392,14 +423,14 @@ const MillionPage = () => {
       linkTo: SECTION_ID_IMPACT_RAINFOREST,
     },
     {
-      id: MENU_ITEM_THANKS_ID,
-      text: MENU_ITEM_THANKS_TEXT,
-      linkTo: SECTION_ID_THANKS,
-    },
-    {
       id: MENU_ITEM_CELEBRATION_ID,
       text: MENU_ITEM_CELEBRATION_TEXT,
       linkTo: SECTION_ID_CELEBRATION,
+    },
+    {
+      id: MENU_ITEM_THANKS_ID,
+      text: MENU_ITEM_THANKS_TEXT,
+      linkTo: SECTION_ID_THANKS,
     },
   ]
 
@@ -450,14 +481,14 @@ const MillionPage = () => {
       activeMenuId: MENU_ITEM_IMPACT_ID,
     },
     {
-      id: SECTION_ID_THANKS,
+      id: SECTION_ID_CELEBRATION,
       dark: true,
-      activeMenuId: MENU_ITEM_THANKS_ID,
+      activeMenuId: MENU_ITEM_CELEBRATION_ID,
     },
     {
-      id: SECTION_ID_CELEBRATION,
+      id: SECTION_ID_THANKS,
       dark: false,
-      activeMenuId: MENU_ITEM_CELEBRATION_ID,
+      activeMenuId: MENU_ITEM_THANKS_ID,
     },
     {
       id: SECTION_ID_FOOTER,
@@ -488,7 +519,7 @@ const MillionPage = () => {
     [SECTION_ID_TOP]: {
       className: classes.darkBackground,
       content: (
-        <>
+        <div className={classes.sectionContent}>
           <Center className={classes.hiddenUntilPageRendered}>
             <Typography
               variant={'h5'}
@@ -522,7 +553,7 @@ const MillionPage = () => {
               </Typography>
             </DownArrowButton>
           </DownArrowButtonContainer>
-        </>
+        </div>
       ),
     },
     [SECTION_ID_IMPACT_RAINFOREST]: {
@@ -532,7 +563,7 @@ const MillionPage = () => {
         classes.hiddenUntilPageRendered
       ),
       content: (
-        <>
+        <div className={classes.sectionContent}>
           <div className={classes.impactSlide}>
             <Center className={classes.impactTextContainer}>
               <Typography
@@ -582,7 +613,7 @@ const MillionPage = () => {
               onClick={() => window.fullpage_api.moveSectionDown()}
             />
           </DownArrowButtonContainer>
-        </>
+        </div>
       ),
     },
     [SECTION_ID_IMPACT_STC]: {
@@ -592,7 +623,7 @@ const MillionPage = () => {
         classes.hiddenUntilPageRendered
       ),
       content: (
-        <>
+        <div className={classes.sectionContent}>
           <div className={classes.impactSlide}>
             <Center className={classes.impactTextContainer}>
               <Typography variant={'h2'} className={classes.impactTextPrimary}>
@@ -636,7 +667,7 @@ const MillionPage = () => {
               onClick={() => window.fullpage_api.moveSectionDown()}
             />
           </DownArrowButtonContainer>
-        </>
+        </div>
       ),
     },
     [SECTION_ID_IMPACT_WATER]: {
@@ -646,7 +677,7 @@ const MillionPage = () => {
         classes.hiddenUntilPageRendered
       ),
       content: (
-        <>
+        <div className={classes.sectionContent}>
           <div className={classes.impactSlide}>
             <Center className={classes.impactTextContainer}>
               <Typography variant={'h2'} className={classes.impactTextPrimary}>
@@ -690,7 +721,7 @@ const MillionPage = () => {
               onClick={() => window.fullpage_api.moveSectionDown()}
             />
           </DownArrowButtonContainer>
-        </>
+        </div>
       ),
     },
     [SECTION_ID_IMPACT_HUNGER]: {
@@ -700,7 +731,7 @@ const MillionPage = () => {
         classes.hiddenUntilPageRendered
       ),
       content: (
-        <>
+        <div className={classes.sectionContent}>
           <div className={classes.impactSlide}>
             <Center className={classes.impactTextContainer}>
               <Typography variant={'h2'} className={classes.impactTextPrimary}>
@@ -745,7 +776,7 @@ const MillionPage = () => {
               onClick={() => window.fullpage_api.moveSectionDown()}
             />
           </DownArrowButtonContainer>
-        </>
+        </div>
       ),
     },
     [SECTION_ID_IMPACT_ROOM_TO_READ]: {
@@ -755,7 +786,7 @@ const MillionPage = () => {
         classes.hiddenUntilPageRendered
       ),
       content: (
-        <>
+        <div className={classes.sectionContent}>
           <div className={classes.impactSlide}>
             <Center className={classes.impactTextContainer}>
               <Typography variant={'h2'} className={classes.impactTextPrimary}>
@@ -799,7 +830,7 @@ const MillionPage = () => {
               onClick={() => window.fullpage_api.moveSectionDown()}
             />
           </DownArrowButtonContainer>
-        </>
+        </div>
       ),
     },
     [SECTION_ID_IMPACT_GIVE_DIRECTLY]: {
@@ -809,7 +840,7 @@ const MillionPage = () => {
         classes.hiddenUntilPageRendered
       ),
       content: (
-        <>
+        <div className={classes.sectionContent}>
           <div className={classes.impactSlide}>
             <Center className={classes.impactTextContainer}>
               <Typography variant={'h2'} className={classes.impactTextPrimary}>
@@ -853,7 +884,7 @@ const MillionPage = () => {
               onClick={() => window.fullpage_api.moveSectionDown()}
             />
           </DownArrowButtonContainer>
-        </>
+        </div>
       ),
     },
     [SECTION_ID_IMPACT_EDUCATE]: {
@@ -863,7 +894,7 @@ const MillionPage = () => {
         classes.hiddenUntilPageRendered
       ),
       content: (
-        <>
+        <div className={classes.sectionContent}>
           <div className={classes.impactSlide}>
             <Center className={classes.impactTextContainer}>
               <Typography variant={'h2'} className={classes.impactTextPrimary}>
@@ -907,18 +938,28 @@ const MillionPage = () => {
               onClick={() => window.fullpage_api.moveSectionDown()}
             />
           </DownArrowButtonContainer>
-        </>
+        </div>
       ),
     },
-    [SECTION_ID_THANKS]: {
+    [SECTION_ID_CELEBRATION]: {
       className: clsx(classes.darkBackground, classes.hiddenUntilPageRendered),
       content: (
         <>
-          <Center>
+          <Slide>
             <Typography variant={'body2'} className={classes.whiteColor}>
-              A message here.
+              Here's what's going on!
             </Typography>
-          </Center>
+          </Slide>
+          <Slide>
+            <Typography variant={'body2'} className={classes.whiteColor}>
+              Another thing
+            </Typography>
+          </Slide>
+          <Slide>
+            <Typography variant={'body2'} className={classes.whiteColor}>
+              One more thing
+            </Typography>
+          </Slide>
           <DownArrowButtonContainer>
             <DownArrowButton
               onClick={() => window.fullpage_api.moveSectionDown()}
@@ -927,14 +968,14 @@ const MillionPage = () => {
         </>
       ),
     },
-    [SECTION_ID_CELEBRATION]: {
+    [SECTION_ID_THANKS]: {
       className: clsx(classes.lightBackground, classes.hiddenUntilPageRendered),
       content: (
-        <>
+        <div className={classes.sectionContent}>
           <Center>
-            <Typography variant={'body2'}>Here's what's going on!</Typography>
+            <Typography variant={'body2'}>A message here.</Typography>
           </Center>
-        </>
+        </div>
       ),
     },
     [SECTION_ID_FOOTER]: {
@@ -1019,6 +1060,7 @@ const MillionPage = () => {
         afterRender={() => {
           setIsPageReady(true)
         }}
+        // slidesNavigation // show nav dots on slides pages
         render={() => {
           return (
             <ReactFullpage.Wrapper menu={MENU_ID}>
