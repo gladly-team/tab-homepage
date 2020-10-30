@@ -503,7 +503,7 @@ const MillionPage = () => {
     {
       id: SECTION_ID_FOOTER,
       dark: false,
-      activeMenuId: MENU_ITEM_CELEBRATION_ID,
+      activeMenuId: MENU_ITEM_THANKS_ID,
     },
   ]
 
