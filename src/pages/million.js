@@ -272,7 +272,6 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Section = ({ id, children, className, autoHeight }) => {
-  const classes = useStyles()
   return (
     <div
       data-anchor={id}
