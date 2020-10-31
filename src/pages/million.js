@@ -50,6 +50,18 @@ const LIGHT_BACKGROUND = grey['50']
 const GOLD = amber['A200']
 
 const useStyles = makeStyles((theme) => ({
+  '@global': {
+    '.fp-slidesNav': {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    '.fp-slidesNav.fp-bottom': {
+      bottom: 80,
+    },
+    '.fp-slidesNav ul li a span': {
+      backgroundColor: theme.palette.common.white,
+    },
+  },
   pageBackground: {
     background: DARK_BACKGROUND,
     position: 'absolute',
@@ -1162,7 +1174,8 @@ const MillionPage = () => {
         afterRender={() => {
           setIsPageReady(true)
         }}
-        // slidesNavigation // show nav dots on slides pages
+        // controlArrows={false} // TODO: replace with better-styled arrows
+        slidesNavigation // show nav dots on slides pages
         render={() => {
           return (
             <ReactFullpage.Wrapper menu={MENU_ID}>
