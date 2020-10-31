@@ -6,13 +6,12 @@ import { ThemeProvider } from '@material-ui/styles'
 import amber from '@material-ui/core/colors/amber'
 import grey from '@material-ui/core/colors/grey'
 import green from '@material-ui/core/colors/green'
-// import brown from '@material-ui/core/colors/brown'
 import blue from '@material-ui/core/colors/blue'
 import IconButton from '@material-ui/core/IconButton'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
 import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
-import { lighten } from '@material-ui/core/styles/colorManipulator'
+import { darken, lighten } from '@material-ui/core/styles/colorManipulator'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Typography from '@material-ui/core/Typography'
@@ -323,11 +322,13 @@ Section.defaultProps = {
   className: '',
 }
 
-const Slide = ({ children, className }) => {
+const Slide = ({ children, className, style = {} }) => {
   const classes = useStyles()
   return (
     <div className={'slide'}>
-      <div className={clsx(classes.slideContent, className)}>{children}</div>
+      <div className={clsx(classes.slideContent, className)} style={style}>
+        {children}
+      </div>
     </div>
   )
 }
@@ -992,7 +993,10 @@ const MillionPage = () => {
               </Typography>
             </Center>
           </div>
-          <Slide className={classes.scheduleSlide}>
+          <Slide
+            className={classes.scheduleSlide}
+            style={{ background: blue[600] }}
+          >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
                 variant={'h4'}
@@ -1013,7 +1017,10 @@ const MillionPage = () => {
               </Typography>
             </Center>
           </Slide>
-          <Slide className={classes.scheduleSlide}>
+          <Slide
+            className={classes.scheduleSlide}
+            style={{ background: blue[700] }}
+          >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
                 variant={'h4'}
@@ -1034,7 +1041,10 @@ const MillionPage = () => {
               </Typography>
             </Center>
           </Slide>
-          <Slide className={classes.scheduleSlide}>
+          <Slide
+            className={classes.scheduleSlide}
+            style={{ background: blue[800] }}
+          >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
                 variant={'h4'}
@@ -1057,7 +1067,10 @@ const MillionPage = () => {
               </Typography>
             </Center>
           </Slide>
-          <Slide className={classes.scheduleSlide}>
+          <Slide
+            className={classes.scheduleSlide}
+            style={{ background: blue[900] }}
+          >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
                 variant={'h4'}
@@ -1077,7 +1090,10 @@ const MillionPage = () => {
               </Typography>
             </Center>
           </Slide>
-          <Slide className={classes.scheduleSlide}>
+          <Slide
+            className={classes.scheduleSlide}
+            style={{ background: darken(blue[900], 0.15) }}
+          >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
                 variant={'h4'}
