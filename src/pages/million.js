@@ -409,16 +409,18 @@ const ArrowButton = ({
       ArrowIcon = ArrowDownwardIcon
   }
   return (
-    <Button
-      onClick={onClick}
-      className={clsx(classes.arrowButton, className)}
-      elevation={1}
-      size="small"
-      variant="contained"
-    >
-      {children}
-      <ArrowIcon className={classes.arrowIcon} />
-    </Button>
+    <div className={className}>
+      <Button
+        onClick={onClick}
+        className={clsx(classes.arrowButton)}
+        elevation={1}
+        size="small"
+        variant="contained"
+      >
+        {children}
+        <ArrowIcon className={classes.arrowIcon} />
+      </Button>
+    </div>
   )
 }
 ArrowButton.propTypes = {
