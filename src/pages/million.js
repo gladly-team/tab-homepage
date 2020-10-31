@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import ReactFullpage from '@fullpage/react-fullpage'
 import { ThemeProvider } from '@material-ui/core/styles'
-import amber from '@material-ui/core/colors/amber'
 import grey from '@material-ui/core/colors/grey'
 import green from '@material-ui/core/colors/green'
 import blue from '@material-ui/core/colors/blue'
@@ -49,7 +48,6 @@ import schoolImg from 'src/img/million/school.jpg'
 
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
-const GOLD = amber['A200']
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -208,14 +206,15 @@ const useStyles = makeStyles((theme) => ({
       transform: 'scale(1.1)',
     },
   },
-  goldColor: {
-    color: GOLD,
-  },
   whiteColor: {
     color: theme.palette.common.white,
   },
   moneyRaised: {
     fontWeight: 500,
+    display: 'inline-block',
+    padding: `0px ${theme.spacing(1)}px`,
+    color: theme.palette.common.white,
+    background: theme.palette.primary.main,
   },
   moneyRaisedText: {
     fontWeight: 200,
@@ -232,7 +231,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     height: '100%',
-    width: '100%',
     marginLeft: 'auto',
     marginRight: 'auto',
     padding: theme.spacing(2),
@@ -569,10 +567,7 @@ const MillionPage = () => {
             >
               Together, your tabs have raised
             </Typography>
-            <Typography
-              variant={'h1'}
-              className={clsx(classes.goldColor, classes.moneyRaised)}
-            >
+            <Typography variant={'h1'} className={clsx(classes.moneyRaised)}>
               <MoneyRaised />
             </Typography>
             <Typography
