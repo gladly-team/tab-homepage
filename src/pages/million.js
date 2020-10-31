@@ -252,6 +252,12 @@ const useStyles = makeStyles((theme) => ({
       },
     }
   },
+  leftRightArrowButton: {
+    // Hide the left/right arrows on mobile.
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
+  },
   arrowIcon: ({ dark }) => ({
     color: dark ? LIGHT_BACKGROUND : DARK_BACKGROUND,
   }),
@@ -369,7 +375,13 @@ Slide.defaultProps = {
   className: '',
 }
 
-const ArrowButton = ({ children, dark, onClick, arrowDirection }) => {
+const ArrowButton = ({
+  children,
+  className,
+  dark,
+  onClick,
+  arrowDirection,
+}) => {
   const classes = useStyles({ dark })
   let ArrowIcon
   switch (arrowDirection) {
@@ -386,7 +398,7 @@ const ArrowButton = ({ children, dark, onClick, arrowDirection }) => {
       ArrowIcon = ArrowDownwardIcon
   }
   return (
-    <div className={classes.arrowButton}>
+    <div className={clsx(classes.arrowButton, className)}>
       <IconButton onClick={onClick} className={classes.arrowIconButton}>
         {children}
         <ArrowIcon className={classes.arrowIcon} />
@@ -396,6 +408,7 @@ const ArrowButton = ({ children, dark, onClick, arrowDirection }) => {
 }
 ArrowButton.propTypes = {
   arrowDirection: PropTypes.oneOf(['left', 'right', 'down']).isRequired,
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -405,6 +418,7 @@ ArrowButton.propTypes = {
 }
 ArrowButton.defaultProps = {
   arrowDirection: 'down',
+  className: undefined,
   dark: false,
   onClick: () => {},
 }
@@ -960,6 +974,7 @@ const MillionPage = () => {
           <ArrowButtonContainer>
             <ArrowButton
               arrowDirection="left"
+              className={classes.leftRightArrowButton}
               onClick={() => window.fullpage_api.moveSlideLeft()}
             />
             <ArrowButton
@@ -967,6 +982,7 @@ const MillionPage = () => {
               onClick={() => window.fullpage_api.moveSectionDown()}
             />
             <ArrowButton
+              className={classes.leftRightArrowButton}
               arrowDirection="right"
               onClick={() => window.fullpage_api.moveSlideRight()}
             />
@@ -1170,6 +1186,7 @@ const MillionPage = () => {
           <ArrowButtonContainer>
             <ArrowButton
               arrowDirection="left"
+              className={classes.leftRightArrowButton}
               onClick={() => window.fullpage_api.moveSlideLeft()}
             />
             <ArrowButton
@@ -1178,6 +1195,7 @@ const MillionPage = () => {
             />
             <ArrowButton
               arrowDirection="right"
+              className={classes.leftRightArrowButton}
               onClick={() => window.fullpage_api.moveSlideRight()}
             />
           </ArrowButtonContainer>
