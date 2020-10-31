@@ -149,7 +149,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'flex-start',
   },
   scheduleSlide: {
-    padding: '0px 60px',
+    padding: '0px 8px',
   },
   scheduleSlideTextContainer: {
     maxWidth: 600,
