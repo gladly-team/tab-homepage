@@ -27,6 +27,7 @@ import {
   getAbsoluteURL,
   homeURL,
   instagramPageURL,
+  millionRaisedURL,
   millionRaisedRainforestImpactURL,
   millionRaisedWaterImpactURL,
   millionRaisedHungerImpactURL,
@@ -152,6 +153,9 @@ const useStyles = makeStyles((theme) => ({
     padding: '0px 8px',
   },
   scheduleSlideTextContainer: {
+    maxWidth: 600,
+  },
+  thankYouTextContainer: {
     maxWidth: 600,
   },
   slidesFixedHeader: {
@@ -319,6 +323,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     margin: theme.spacing(4),
+  },
+  thanksShareWrapper: {
+    margin: theme.spacing(2),
   },
 }))
 
@@ -1206,8 +1213,47 @@ const MillionPage = () => {
       className: clsx(classes.lightBackground, classes.hiddenUntilPageRendered),
       content: (
         <div className={classes.sectionContent}>
-          <Center>
-            <Typography variant={'body2'}>A message here.</Typography>
+          <Center className={classes.thankYouTextContainer}>
+            <Typography
+              variant={'h1'}
+              className={clsx(classes.moneyRaised)}
+              gutterBottom
+            >
+              Thank you.
+            </Typography>
+            <Typography variant={'body2'} gutterBottom>
+              This milestone took a village to accomplish, and we couldn't be
+              more proud of the Tabbing community. From the bottoms of our
+              hearts, thank you.
+            </Typography>
+            <div className={classes.thanksShareWrapper}>
+              <Typography variant={'body2'} gutterBottom>
+                Share this achievement:
+              </Typography>
+              <SocialShare
+                /* FIXME: actual copy needed */
+                url={getAbsoluteURL(millionRaisedURL)}
+                FacebookShareButtonProps={{
+                  quote:
+                    'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                }}
+                RedditShareButtonProps={{
+                  title:
+                    'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                }}
+                TumblrShareButtonProps={{
+                  title:
+                    'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                  caption:
+                    'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                }}
+                TwitterShareButtonProps={{
+                  title:
+                    'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                  related: ['@TabForACause'],
+                }}
+              />
+            </div>
           </Center>
         </div>
       ),
