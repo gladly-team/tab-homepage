@@ -53,6 +53,12 @@ import schoolImg from 'src/img/million/school.jpg'
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
 
+// TODO:
+// - functional sharing (open graph tags per share URL)
+// - update sharing copy
+// - try tinting each impact image with a different color, rather than black
+// - prettier landing page background
+
 const useStyles = makeStyles((theme) => ({
   '@global': {
     '.fp-slidesNav': {
