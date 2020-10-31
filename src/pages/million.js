@@ -9,6 +9,8 @@ import green from '@material-ui/core/colors/green'
 import blue from '@material-ui/core/colors/blue'
 import IconButton from '@material-ui/core/IconButton'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
+import ArrowLeftIcon from '@material-ui/icons/ArrowBack'
+import ArrowRightIcon from '@material-ui/icons/ArrowForward'
 import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 import { darken, lighten } from '@material-ui/core/styles/colorManipulator'
@@ -56,10 +58,16 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'center',
     },
     '.fp-slidesNav.fp-bottom': {
-      bottom: 80,
+      bottom: 86,
     },
     '.fp-slidesNav ul li a span': {
       backgroundColor: theme.palette.common.white,
+      height: 6,
+      width: 6,
+    },
+    '.fp-slidesNav ul li a.active span': {
+      height: 14,
+      width: 14,
     },
   },
   pageBackground: {
@@ -177,18 +185,18 @@ const useStyles = makeStyles((theme) => ({
   blueBackground: {
     background: blue[600],
   },
-  downArrowButtonContainer: {
+  arrowButtonContainer: {
     position: 'absolute',
     bottom: 0,
     zIndex: 100,
     pointerEvents: 'none',
     alignSelf: 'center',
     width: '100%',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     display: 'flex',
     padding: theme.spacing(2),
   },
-  downArrowButton: {
+  arrowButton: {
     pointerEvents: 'all',
     height: 60,
     padding: theme.spacing(1),
@@ -232,7 +240,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     textAlign: 'center',
   },
-  downArrowIconButton: ({ dark }) => {
+  arrowIconButton: ({ dark }) => {
     const backgoundColor = dark ? DARK_BACKGROUND : LIGHT_BACKGROUND
     return {
       borderRadius: 60, // equal to the height
@@ -243,10 +251,10 @@ const useStyles = makeStyles((theme) => ({
       },
     }
   },
-  downArrowIcon: ({ dark }) => ({
+  arrowIcon: ({ dark }) => ({
     color: dark ? LIGHT_BACKGROUND : DARK_BACKGROUND,
   }),
-  downArrowText: {
+  arrowText: {
     color: DARK_BACKGROUND,
   },
   hiddenUntilPageRendered: ({ isPageReady }) => {
@@ -360,18 +368,33 @@ Slide.defaultProps = {
   className: '',
 }
 
-const DownArrowButton = ({ children, dark, onClick }) => {
+const ArrowButton = ({ children, dark, onClick, arrowDirection }) => {
   const classes = useStyles({ dark })
+  let ArrowIcon
+  switch (arrowDirection) {
+    case 'left':
+      ArrowIcon = ArrowLeftIcon
+      break
+    case 'right':
+      ArrowIcon = ArrowRightIcon
+      break
+    case 'down':
+      ArrowIcon = ArrowDownwardIcon
+      break
+    default:
+      ArrowIcon = ArrowDownwardIcon
+  }
   return (
-    <div className={classes.downArrowButton}>
-      <IconButton onClick={onClick} className={classes.downArrowIconButton}>
+    <div className={classes.arrowButton}>
+      <IconButton onClick={onClick} className={classes.arrowIconButton}>
         {children}
-        <ArrowDownwardIcon className={classes.downArrowIcon} />
+        <ArrowIcon className={classes.arrowIcon} />
       </IconButton>
     </div>
   )
 }
-DownArrowButton.propTypes = {
+ArrowButton.propTypes = {
+  arrowDirection: PropTypes.oneOf(['left', 'right', 'down']).isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -379,28 +402,29 @@ DownArrowButton.propTypes = {
   dark: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
 }
-DownArrowButton.defaultProps = {
+ArrowButton.defaultProps = {
+  arrowDirection: 'down',
   dark: false,
   onClick: () => {},
 }
 
-const DownArrowButtonContainer = ({ children, className }) => {
+const ArrowButtonContainer = ({ children, className }) => {
   const classes = useStyles()
   return (
-    <div className={clsx(classes.downArrowButtonContainer, className)}>
+    <div className={clsx(classes.arrowButtonContainer, className)}>
       {children}
     </div>
   )
 }
 
-DownArrowButtonContainer.propTypes = {
+ArrowButtonContainer.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]),
 }
-DownArrowButtonContainer.defaultProps = {
+ArrowButtonContainer.defaultProps = {
   className: undefined,
 }
 
@@ -558,19 +582,17 @@ const MillionPage = () => {
               for incredible causes
             </Typography>
           </Center>
-          <DownArrowButtonContainer className={classes.hiddenUntilPageRendered}>
-            <DownArrowButton
-              onClick={() => window.fullpage_api.moveSectionDown()}
-            >
+          <ArrowButtonContainer className={classes.hiddenUntilPageRendered}>
+            <ArrowButton onClick={() => window.fullpage_api.moveSectionDown()}>
               <Typography
                 variant={'body1'}
-                className={classes.downArrowText}
+                className={classes.arrowText}
                 style={{ margin: '0px 12px' }}
               >
                 See the impact
               </Typography>
-            </DownArrowButton>
-          </DownArrowButtonContainer>
+            </ArrowButton>
+          </ArrowButtonContainer>
         </div>
       ),
     },
@@ -937,11 +959,20 @@ const MillionPage = () => {
               </div>
             </div>
           </Slide>
-          <DownArrowButtonContainer>
-            <DownArrowButton
+          <ArrowButtonContainer>
+            <ArrowButton
+              arrowDirection="left"
+              onClick={() => window.fullpage_api.moveSlideLeft()}
+            />
+            <ArrowButton
+              arrowDirection="down"
               onClick={() => window.fullpage_api.moveSectionDown()}
             />
-          </DownArrowButtonContainer>
+            <ArrowButton
+              arrowDirection="right"
+              onClick={() => window.fullpage_api.moveSlideRight()}
+            />
+          </ArrowButtonContainer>
         </>
       ),
     },
@@ -1074,11 +1105,20 @@ const MillionPage = () => {
               </Typography>
             </Center>
           </Slide>
-          <DownArrowButtonContainer>
-            <DownArrowButton
+          <ArrowButtonContainer>
+            <ArrowButton
+              arrowDirection="left"
+              onClick={() => window.fullpage_api.moveSlideLeft()}
+            />
+            <ArrowButton
+              arrowDirection="down"
               onClick={() => window.fullpage_api.moveSectionDown()}
             />
-          </DownArrowButtonContainer>
+            <ArrowButton
+              arrowDirection="right"
+              onClick={() => window.fullpage_api.moveSlideRight()}
+            />
+          </ArrowButtonContainer>
         </>
       ),
     },
@@ -1174,7 +1214,7 @@ const MillionPage = () => {
         afterRender={() => {
           setIsPageReady(true)
         }}
-        // controlArrows={false} // TODO: replace with better-styled arrows
+        controlArrows={false}
         slidesNavigation // show nav dots on slides pages
         render={() => {
           return (
