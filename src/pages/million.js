@@ -23,8 +23,10 @@ import defaultTheme from 'src/themes/theme'
 import InstallButton from 'src/components/InstallButton'
 import redirect from 'src/utils/redirect'
 import {
+  facebookPageURL,
   getAbsoluteURL,
   homeURL,
+  instagramPageURL,
   millionRaisedRainforestImpactURL,
   millionRaisedWaterImpactURL,
   millionRaisedHungerImpactURL,
@@ -32,6 +34,7 @@ import {
   millionRaisedReadImpactURL,
   millionRaisedChildrenImpactURL,
   millionRaisedEducateImpactURL,
+  twitterPageURL,
 } from 'src/utils/navigation'
 import Footer from 'src/components/Footer'
 import Link from 'src/components/Link'
@@ -999,10 +1002,26 @@ const MillionPage = () => {
                 #MillionaireMonday
               </Typography>
               <Typography variant={'body2'} className={classes.whiteColor}>
-                For us, it was as easy as opening a new tab and donating hearts
-                to a cause we care about. For multi-millionaires, it’s as easy
-                as writing a check. Join us each Monday on Twitter and Instagram
-                where we will be asking the uber wealthy to match our $1M
+                For us, it was as easy as opening tabs. For multi-millionaires,
+                it’s as easy as writing a check. Join us each Monday on{' '}
+                <Link
+                  to={twitterPageURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#fff', textDecoration: 'underline' }}
+                >
+                  Twitter
+                </Link>{' '}
+                and{' '}
+                <Link
+                  to={instagramPageURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#fff', textDecoration: 'underline' }}
+                >
+                  Instagram
+                </Link>{' '}
+                where we will be asking the uber wealthy to match with a $1M
                 donation. We’re looking at you @google...
               </Typography>
             </Center>
@@ -1023,11 +1042,36 @@ const MillionPage = () => {
                 #TabberTuesday
               </Typography>
               <Typography variant={'body2'} className={classes.whiteColor}>
-                Tab for a Cause would not be possible without all of our
-                passionate Tabbers. We would love to hear why you use Tab for a
-                Cause on social media! DM us on Instagram, Facebook, and Twitter
-                or post why you tab to your feed with #tabforamillion and
-                @tabforacause and you may be featured on #TabberTuesday!
+                Tab for a Cause would not be possible without you. We would love
+                to hear why you use it! DM us on{' '}
+                <Link
+                  to={instagramPageURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#fff', textDecoration: 'underline' }}
+                >
+                  Instagram
+                </Link>
+                ,{' '}
+                <Link
+                  to={facebookPageURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#fff', textDecoration: 'underline' }}
+                >
+                  Facebook
+                </Link>
+                , and{' '}
+                <Link
+                  to={twitterPageURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#fff', textDecoration: 'underline' }}
+                >
+                  Twitter
+                </Link>{' '}
+                (or post why you tab to your feed with #TabForAMillion and
+                @tabforacause) and you may be featured on #TabberTuesday!
               </Typography>
             </Center>
           </Slide>
@@ -1047,13 +1091,11 @@ const MillionPage = () => {
                 #WelcomeWednesday
               </Typography>
               <Typography variant={'body2'} className={classes.whiteColor}>
-                Despite reaching this incredible milestone, most people still
-                have never heard of Tab for a Cause. The average internet
-                browser opens over 10 tabs every single day, help make sure
-                everyone is putting their tabs toward a cause they care about
-                and tell your friends about Tab for a Cause! Text, email, call,
-                DM, Snap, whatever it takes, make sure everyone knows that they
-                could be part of this incredible movement :)
+                Despite this incredible milestone, most people haven't heard of
+                Tab for a Cause. Make sure your friends' tabs aren't going to
+                waste. Text, email, call, DM, Snap, whatever it takes, make sure
+                everyone knows that they could be part of this incredible
+                movement!
               </Typography>
             </Center>
           </Slide>
@@ -1074,9 +1116,34 @@ const MillionPage = () => {
               </Typography>
               <Typography variant={'body2'} className={classes.whiteColor}>
                 Join us in letting the world know how impactful a tab can be by
-                liking, reposting, and/or sharing our #ThankfulThursday posts on
-                Instagram, Facebook, and Twitter that showcase some of our
-                amazing charity partners.
+                liking, reposting, and/or sharing our #ThankfulThursday posts on{' '}
+                <Link
+                  to={instagramPageURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#fff', textDecoration: 'underline' }}
+                >
+                  Instagram
+                </Link>
+                ,{' '}
+                <Link
+                  to={facebookPageURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#fff', textDecoration: 'underline' }}
+                >
+                  Facebook
+                </Link>
+                , and{' '}
+                <Link
+                  to={twitterPageURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#fff', textDecoration: 'underline' }}
+                >
+                  Twitter
+                </Link>{' '}
+                that showcase some of our amazing charity partners.
               </Typography>
             </Center>
           </Slide>
