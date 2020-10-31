@@ -222,6 +222,8 @@ const useStyles = makeStyles((theme) => ({
     padding: `0px ${theme.spacing(1)}px`,
     color: theme.palette.common.white,
     background: theme.palette.primary.main,
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   moneyRaisedText: {
     fontWeight: 200,
