@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import ReactFullpage from '@fullpage/react-fullpage'
-import { ThemeProvider } from '@material-ui/styles'
+import { ThemeProvider } from '@material-ui/core/styles'
 import amber from '@material-ui/core/colors/amber'
 import grey from '@material-ui/core/colors/grey'
 import green from '@material-ui/core/colors/green'
@@ -119,7 +119,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     height: '100%',
     alignItems: 'flex-start',
-    paddingTop: 60, // make room for the fixed header
+    padding: '60px 0px', // make room for the fixed header and footer
   },
   slideContent: {
     display: 'flex',
@@ -138,11 +138,16 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 100,
     width: '100%',
     top: 60, // make room for the page header
+    display: 'flex',
+    justifyContent: 'center',
   },
-  scheduleHeaderText: {
-    fontStyle: 'italic',
+  slideHeaderText: {
+    padding: `0px ${theme.spacing(1)}px`,
+    color: theme.palette.common.white,
+    background: theme.palette.primary.main,
+    marginTop: 20,
   },
-  scheduleSlideHeaderContent: {
+  slideHeaderContent: {
     marginTop: 40,
     display: 'flex',
     justifyContent: 'center',
@@ -157,9 +162,6 @@ const useStyles = makeStyles((theme) => ({
   greenBackground: {
     background: green[400],
   },
-  // brownBackground: {
-  //   background: brown[400],
-  // },
   blueBackground: {
     background: blue[600],
   },
@@ -564,6 +566,14 @@ const MillionPage = () => {
       className: clsx(classes.hiddenUntilPageRendered),
       content: (
         <>
+          <div className={classes.slidesFixedHeader}>
+            <Typography
+              variant={'h5'}
+              className={clsx(classes.slideHeaderText)}
+            >
+              Tabbers have raised enough to...
+            </Typography>
+          </div>
           <Slide>
             <div
               className={clsx(
@@ -573,12 +583,6 @@ const MillionPage = () => {
             >
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
-                  <Typography
-                    variant={'h5'}
-                    className={classes.impactTextSupporting}
-                  >
-                    Tabbers have raised enough to
-                  </Typography>
                   <Typography
                     variant={'h2'}
                     className={classes.impactTextPrimary}
@@ -934,20 +938,12 @@ const MillionPage = () => {
       content: (
         <>
           <div className={classes.slidesFixedHeader}>
-            <Center
-              className={clsx(
-                classes.impactTextContainer,
-                classes.scheduleSlideHeaderContent
-              )}
+            <Typography
+              variant={'h5'}
+              className={clsx(classes.slideHeaderText)}
             >
-              <Typography
-                variant={'body2'}
-                className={clsx(classes.whiteColor, classes.scheduleHeaderText)}
-              >
-                For the weeks leading up to $1M, join us as we have some fun to
-                celebrate!
-              </Typography>
-            </Center>
+              Join us to celebrate the next few weeks!
+            </Typography>
           </div>
           <Slide
             className={classes.scheduleSlide}
@@ -1100,7 +1096,7 @@ const MillionPage = () => {
   }
 
   return (
-    <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3 })}>
+    <div>
       <Helmet title={openGraphTitle}>
         <meta property="og:title" content={openGraphTitle} />
         <meta property="og:description" content={openGraphDescription} />
@@ -1187,16 +1183,18 @@ const MillionPage = () => {
           )
         }}
       />
-    </ThemeProvider>
+    </div>
   )
 }
-
-MillionPage.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
-}
-
 MillionPage.displayName = 'MillionPage'
 
-export default MillionPage
+// Can't create and use theme in same component (useStyles will not use
+// the custom theme).
+const MillionPageWithTheme = () => (
+  <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3 })}>
+    <MillionPage />
+  </ThemeProvider>
+)
+MillionPageWithTheme.displayName = 'MillionPageWithTheme'
+
+export default MillionPageWithTheme
