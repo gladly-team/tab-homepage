@@ -6,7 +6,7 @@ import { ThemeProvider } from '@material-ui/core/styles'
 import grey from '@material-ui/core/colors/grey'
 import green from '@material-ui/core/colors/green'
 import blue from '@material-ui/core/colors/blue'
-import IconButton from '@material-ui/core/IconButton'
+import Button from '@material-ui/core/Button'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
 import ArrowLeftIcon from '@material-ui/icons/ArrowBack'
 import ArrowRightIcon from '@material-ui/icons/ArrowForward'
@@ -199,19 +199,41 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     justifyContent: 'space-around',
     display: 'flex',
-    padding: theme.spacing(2),
+    padding: theme.spacing(3),
   },
-  arrowButton: {
-    pointerEvents: 'all',
-    height: 60,
-    padding: theme.spacing(1),
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    transition: 'transform .2s ease-in-out',
-    '&:hover': {
-      transform: 'scale(1.1)',
+  arrowButton: () => {
+    const backgroundColor = LIGHT_BACKGROUND
+    return {
+      borderRadius: 50, // equal to the height
+      height: 50,
+      minWidth: 50,
+      background: backgroundColor,
+      transition: 'all .2s ease-in-out',
+      pointerEvents: 'all',
+      padding: theme.spacing(1),
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      '&:hover': {
+        transform: 'scale(1.1)',
+        background: lighten(backgroundColor, 0.15),
+      },
+    }
+  },
+  leftRightArrowButton: {
+    // Hide the left/right arrows on mobile.
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
     },
+  },
+  arrowIcon: ({ dark }) => ({
+    width: 28,
+    height: 28,
+    color: dark ? LIGHT_BACKGROUND : DARK_BACKGROUND,
+  }),
+  arrowText: {
+    color: DARK_BACKGROUND,
+    textTransform: 'none',
   },
   whiteColor: {
     color: theme.palette.common.white,
@@ -225,9 +247,12 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 'auto',
     marginRight: 'auto',
   },
-  moneyRaisedText: {
+  moneyRaisedText: ({ isInDarkSection }) => ({
     fontWeight: 200,
-  },
+    color: isInDarkSection
+      ? theme.palette.common.white
+      : theme.palette.text.primary,
+  }),
   impactTextPrimary: ({ dark }) => ({
     color: dark ? 'auto' : theme.palette.common.white,
     fontWeight: 500,
@@ -246,29 +271,6 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 0,
     justifyContent: 'center',
     textAlign: 'center',
-  },
-  arrowIconButton: ({ dark }) => {
-    const backgoundColor = dark ? DARK_BACKGROUND : LIGHT_BACKGROUND
-    return {
-      borderRadius: 60, // equal to the height
-      background: backgoundColor,
-      transition: 'background .2s ease-in-out',
-      '&:hover': {
-        background: lighten(backgoundColor, 0.15),
-      },
-    }
-  },
-  leftRightArrowButton: {
-    // Hide the left/right arrows on mobile.
-    [theme.breakpoints.down('xs')]: {
-      display: 'none',
-    },
-  },
-  arrowIcon: ({ dark }) => ({
-    color: dark ? LIGHT_BACKGROUND : DARK_BACKGROUND,
-  }),
-  arrowText: {
-    color: DARK_BACKGROUND,
   },
   hiddenUntilPageRendered: ({ isPageReady }) => {
     return {
@@ -407,21 +409,25 @@ const ArrowButton = ({
       ArrowIcon = ArrowDownwardIcon
   }
   return (
-    <div className={clsx(classes.arrowButton, className)}>
-      <IconButton onClick={onClick} className={classes.arrowIconButton}>
-        {children}
-        <ArrowIcon className={classes.arrowIcon} />
-      </IconButton>
-    </div>
+    <Button
+      onClick={onClick}
+      className={clsx(classes.arrowButton, className)}
+      elevation={1}
+      size="small"
+      variant="contained"
+    >
+      {children}
+      <ArrowIcon className={classes.arrowIcon} />
+    </Button>
   )
 }
 ArrowButton.propTypes = {
   arrowDirection: PropTypes.oneOf(['left', 'right', 'down']).isRequired,
-  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]),
+  className: PropTypes.string,
   dark: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
 }
@@ -538,7 +544,7 @@ const MillionPage = () => {
   const sections = [
     {
       id: SECTION_ID_TOP,
-      dark: true,
+      dark: false,
       activeMenuId: MENU_ITEM_1M_ID,
     },
     {
@@ -583,13 +589,13 @@ const MillionPage = () => {
   // Section order is determined in the `sections` array above.
   const sectionData = {
     [SECTION_ID_TOP]: {
-      className: classes.darkBackground,
+      className: classes.lightBackground,
       content: (
         <div className={classes.sectionContent}>
           <Center className={classes.hiddenUntilPageRendered}>
             <Typography
               variant={'h5'}
-              className={clsx(classes.whiteColor, classes.moneyRaisedText)}
+              className={clsx(classes.moneyRaisedText)}
             >
               Together, your tabs have raised
             </Typography>
@@ -598,7 +604,7 @@ const MillionPage = () => {
             </Typography>
             <Typography
               variant={'h5'}
-              className={clsx(classes.whiteColor, classes.moneyRaisedText)}
+              className={clsx(classes.moneyRaisedText)}
             >
               for incredible causes
             </Typography>
@@ -1320,6 +1326,7 @@ const MillionPage = () => {
         <div className={classes.installButtonContainer}>
           <InstallButton
             size={'medium'}
+            color="primary"
             style={{
               minWidth: 180,
               paddingLeft: 10,
