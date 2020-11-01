@@ -5,6 +5,10 @@ var protocol = 'https'
 var baseURL = `${protocol}://${domain}`
 
 module.exports = {
+  siteMetadata: {
+    domain: `${domain}`,
+    siteUrl: `https://${domain}`, // Used in gatsby-plugin-sitemap
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     // Handle server-side rendering MaterialUI styles:
