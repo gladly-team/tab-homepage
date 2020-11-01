@@ -49,7 +49,7 @@ import giveDirectlyImg from 'src/img/million/give-directly.jpg'
 import roomToReadImg from 'src/img/million/room-to-read.jpg'
 import saveTheChildrenImg from 'src/img/million/save-the-children.jpg'
 import schoolImg from 'src/img/million/school.jpg'
-import openGraphImg from 'src/img/opengraph-img.png'
+import openGraphImg1M from 'src/img/million/og-img-1M.png'
 
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
@@ -492,7 +492,7 @@ const MillionPage = ({ location: { pathname } }) => {
     'I helped raise $1,000,000 for charity by doing almost nothing'
   const ogDescription =
     'Turn your internet browsing into positive impact with Tab for a Cause.'
-  const ogImage = getAbsoluteURL(openGraphImg)
+  const ogImage = getAbsoluteURL(openGraphImg1M)
 
   const MENU_ID = 'nav-menu'
   const MENU_ITEM_1M_ID = 'top'
