@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   pageBackground: {
-    background: DARK_BACKGROUND,
+    background: LIGHT_BACKGROUND,
     position: 'absolute',
     top: 0,
     left: 0,
@@ -1300,7 +1300,7 @@ const MillionPage = () => {
         <meta name="twitter:title" content={openGraphTitle} />
         <meta name="twitter:description" content={openGraphDescription} />
       </Helmet>
-      {/* Set a full page dark background while Fullpage is loading */}
+      {/* Set a full page background while Fullpage is loading */}
       <div className={classes.pageBackground} />
       <div className={classes.header}>
         <div className={classes.logoContainer}>

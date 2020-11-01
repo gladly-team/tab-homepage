@@ -46,7 +46,7 @@
   ],
   "license": "MPL-2.0",
   "scripts": {
-    "build": "GATSBY_TELEMETRY_DISABLED=1 gatsby build",
+    "build": "SHOW_MILLION_RAISED_PAGE=true GATSBY_TELEMETRY_DISABLED=1 gatsby build",
     "develop": "SHOW_MILLION_RAISED_PAGE=true GATSBY_TELEMETRY_DISABLED=1 gatsby develop",
     "format": "eslint --fix 'src/**/*.js'",
     "lint": "eslint 'src/**/*.js'",
