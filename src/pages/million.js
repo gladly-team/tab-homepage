@@ -184,6 +184,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     maxWidth: 640,
   },
+  topBackground: {
+    background: LIGHT_BACKGROUND,
+  },
   darkBackground: {
     background: DARK_BACKGROUND,
   },
@@ -597,7 +600,7 @@ const MillionPage = () => {
   // Section order is determined in the `sections` array above.
   const sectionData = {
     [SECTION_ID_TOP]: {
-      className: classes.lightBackground,
+      className: classes.topBackground,
       content: (
         <div className={classes.sectionContent}>
           <Center className={classes.hiddenUntilPageRendered}>
