@@ -5,19 +5,6 @@ var protocol = 'https'
 var baseURL = `${protocol}://${domain}`
 
 module.exports = {
-  siteMetadata: {
-    title: 'Tab for a Cause',
-    domain: `${domain}`,
-    siteUrl: `https://${domain}`,
-    keywords:
-      'tab for a cause, charity, tab, cause, giving, extension, browser, advertising',
-    descriptionLong:
-      "Raise money for charity with every browser tab you open. It doesn't cost you a thing.",
-    descriptionShort:
-      'Raise money for charity with every browser tab you open.',
-    metaTagCallToAction: 'Join me on Tab for a Cause!',
-    twitterHandle: '@TabForACause',
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     // Handle server-side rendering MaterialUI styles:
