@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import ReactFullpage from '@fullpage/react-fullpage'
 import { ThemeProvider } from '@material-ui/core/styles'
 import grey from '@material-ui/core/colors/grey'
@@ -18,6 +17,7 @@ import Tab from '@material-ui/core/Tab'
 import Typography from '@material-ui/core/Typography'
 import { responsiveFontSizes } from '@material-ui/core/styles'
 
+import HeadTags from 'src/components/HeadTags'
 import MoneyRaised from 'src/components/MoneyRaised'
 import defaultTheme from 'src/themes/theme'
 import InstallButton from 'src/components/InstallButton'
@@ -49,6 +49,7 @@ import giveDirectlyImg from 'src/img/million/give-directly.jpg'
 import roomToReadImg from 'src/img/million/room-to-read.jpg'
 import saveTheChildrenImg from 'src/img/million/save-the-children.jpg'
 import schoolImg from 'src/img/million/school.jpg'
+import openGraphImg from 'src/img/opengraph-img.png'
 
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
@@ -485,10 +486,13 @@ Center.defaultProps = {
   className: undefined,
 }
 
-const MillionPage = () => {
-  // TODO
-  const openGraphTitle = 'Million raised'
-  const openGraphDescription = 'We raised a million!'
+const MillionPage = ({ location: { pathname } }) => {
+  const title = '$1M Raised'
+  const ogTitle =
+    'I helped raise $1,000,000 for charity by doing almost nothing'
+  const ogDescription =
+    'Turn your internet browsing into positive impact with Tab for a Cause.'
+  const ogImage = getAbsoluteURL(openGraphImg)
 
   const MENU_ID = 'nav-menu'
   const MENU_ITEM_1M_ID = 'top'
@@ -1294,12 +1298,13 @@ const MillionPage = () => {
 
   return (
     <div>
-      <Helmet title={openGraphTitle}>
-        <meta property="og:title" content={openGraphTitle} />
-        <meta property="og:description" content={openGraphDescription} />
-        <meta name="twitter:title" content={openGraphTitle} />
-        <meta name="twitter:description" content={openGraphDescription} />
-      </Helmet>
+      <HeadTags
+        title={title}
+        ogTitle={ogTitle}
+        ogDescription={ogDescription}
+        ogImage={ogImage}
+        pageURL={pathname}
+      />
       {/* Set a full page background while Fullpage is loading */}
       <div className={classes.pageBackground} />
       <div className={classes.header}>
@@ -1386,12 +1391,19 @@ const MillionPage = () => {
   )
 }
 MillionPage.displayName = 'MillionPage'
+MillionPage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }),
+}
+
+MillionPage.displayName = 'MillionPage'
 
 // Can't create and use theme in same component (useStyles will not use
 // the custom theme).
-const MillionPageWithTheme = () => (
+const MillionPageWithTheme = (props) => (
   <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3 })}>
-    <MillionPage />
+    <MillionPage {...props} />
   </ThemeProvider>
 )
 MillionPageWithTheme.displayName = 'MillionPageWithTheme'
