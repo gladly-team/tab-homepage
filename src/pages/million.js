@@ -486,14 +486,7 @@ Center.defaultProps = {
   className: undefined,
 }
 
-const MillionPage = ({ location: { pathname } }) => {
-  const title = '$1M Raised'
-  const ogTitle =
-    'I helped raise $1,000,000 for charity by doing almost nothing'
-  const ogDescription =
-    'Turn your internet browsing into positive impact with Tab for a Cause.'
-  const ogImage = getAbsoluteURL(openGraphImg1M)
-
+const MillionPage = ({ location: { pathname }, headTagsProps }) => {
   const MENU_ID = 'nav-menu'
   const MENU_ITEM_1M_ID = 'top'
   const MENU_ITEM_1M_TEXT = '$1M'
@@ -1299,11 +1292,16 @@ const MillionPage = ({ location: { pathname } }) => {
   return (
     <div>
       <HeadTags
-        title={title}
-        ogTitle={ogTitle}
-        ogDescription={ogDescription}
-        ogImage={ogImage}
+        title={'$1M Raised'}
+        ogTitle={
+          'I helped raise $1,000,000 for charity by doing almost nothing'
+        }
+        ogDescription={
+          'Turn your internet browsing into positive impact with Tab for a Cause.'
+        }
+        ogImage={getAbsoluteURL(openGraphImg1M)}
         pageURL={pathname}
+        {...headTagsProps}
       />
       {/* Set a full page background while Fullpage is loading */}
       <div className={classes.pageBackground} />
@@ -1395,9 +1393,11 @@ MillionPage.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
+  headTagsProps: PropTypes.object,
 }
-
-MillionPage.displayName = 'MillionPage'
+MillionPage.defaultProps = {
+  headTagsProps: {},
+}
 
 // Can't create and use theme in same component (useStyles will not use
 // the custom theme).
