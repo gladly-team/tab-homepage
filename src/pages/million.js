@@ -826,25 +826,24 @@ const MillionPage = ({
                   </Typography>
                   <div className={classes.shareContainer}>
                     <SocialShare
-                      /* FIXME: actual copy needed */
                       url={getAbsoluteURL(millionRaisedReadImpactURL)}
                       FacebookShareButtonProps={{
                         quote:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped keep over 200 girls in school just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
                       }}
                       RedditShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          'Browser tabs transformed into education for over 200 girls',
                       }}
                       TumblrShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          'A simple and free way to make the world a better place',
                         caption:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped keep over 200 girls in school just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause.',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                          'I helped keep over 200 girls in school just by opening tabs with @TabForACause. Join me! #TabForAMillion',
                         related: ['@TabForACause'],
                       }}
                     />
@@ -876,25 +875,24 @@ const MillionPage = ({
                   </Typography>
                   <div className={classes.shareContainer}>
                     <SocialShare
-                      /* FIXME: actual copy needed */
                       url={getAbsoluteURL(millionRaisedWaterImpactURL)}
                       FacebookShareButtonProps={{
                         quote:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped provide access to clean water for over 12,000 people just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
                       }}
                       RedditShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          'Browser tabs transformed into access to clean water for over 12,000 people',
                       }}
                       TumblrShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          'A simple and free way to make the world a better place',
                         caption:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped provide learning materials to over 3,500 students just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                          'I helped provide learning materials to over 3,500 students just by opening tabs with @TabForACause. Join me! #TabForAMillion',
                         related: ['@TabForACause'],
                       }}
                     />
@@ -1027,25 +1025,24 @@ const MillionPage = ({
                   </Typography>
                   <div className={classes.shareContainer}>
                     <SocialShare
-                      /* FIXME: actual copy needed */
                       url={getAbsoluteURL(millionRaisedEducateImpactURL)}
                       FacebookShareButtonProps={{
                         quote:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped keep over 200 girls in school just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
                       }}
                       RedditShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          'Browser tabs transformed into education for over 200 girls',
                       }}
                       TumblrShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          'A simple and free way to make the world a better place',
                         caption:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped keep over 200 girls in school just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                          'I helped keep over 200 girls in school just by opening tabs with @TabForACause. Join me! #TabForAMillion',
                         related: ['@TabForACause'],
                       }}
                     />
