@@ -1308,7 +1308,7 @@ const MillionPage = ({
       className: clsx(classes.lightBackground, classes.hiddenUntilPageRendered),
       content: (
         <div className={classes.sectionContent}>
-          <Center className={classes.thankYouTextContainer}>
+          <Center>
             <Typography
               variant={'h1'}
               className={clsx(classes.moneyRaised)}
@@ -1316,38 +1316,40 @@ const MillionPage = ({
             >
               Thank you.
             </Typography>
-            <Typography variant={'body2'} gutterBottom>
-              This milestone took a village to accomplish, and we couldn't be
-              more proud of the Tabbing community. From the bottoms of our
-              hearts, thank you.
-            </Typography>
-            <div className={classes.thanksShareWrapper}>
+            <div className={classes.thankYouTextContainer}>
               <Typography variant={'body2'} gutterBottom>
-                Share this achievement:
+                This milestone took a village to accomplish, and we couldn't be
+                more proud of the Tabbing community. From the bottoms of our
+                hearts, thank you.
               </Typography>
-              <SocialShare
-                /* FIXME: actual copy needed */
-                url={getAbsoluteURL(millionRaisedURL)}
-                FacebookShareButtonProps={{
-                  quote:
-                    'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
-                }}
-                RedditShareButtonProps={{
-                  title:
-                    'Tabs transformed into vital supplies for 100 families in rainforest communities',
-                }}
-                TumblrShareButtonProps={{
-                  title:
-                    'Tabs transformed into vital supplies for 100 families in rainforest communities',
-                  caption:
-                    'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
-                }}
-                TwitterShareButtonProps={{
-                  title:
-                    'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
-                  related: ['@TabForACause'],
-                }}
-              />
+              <div className={classes.thanksShareWrapper}>
+                <Typography variant={'body2'} gutterBottom>
+                  Share this achievement:
+                </Typography>
+                <SocialShare
+                  /* FIXME: actual copy needed */
+                  url={getAbsoluteURL(millionRaisedURL)}
+                  FacebookShareButtonProps={{
+                    quote:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  RedditShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                  }}
+                  TumblrShareButtonProps={{
+                    title:
+                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                    caption:
+                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                  }}
+                  TwitterShareButtonProps={{
+                    title:
+                      'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                    related: ['@TabForACause'],
+                  }}
+                />
+              </div>
             </div>
           </Center>
         </div>
