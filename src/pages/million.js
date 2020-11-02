@@ -5,9 +5,9 @@ import { ThemeProvider } from '@material-ui/core/styles'
 import grey from '@material-ui/core/colors/grey'
 import green from '@material-ui/core/colors/green'
 import blue from '@material-ui/core/colors/blue'
-import red from '@material-ui/core/colors/red'
-import teal from '@material-ui/core/colors/teal'
-import brown from '@material-ui/core/colors/brown'
+// import red from '@material-ui/core/colors/red'
+// import teal from '@material-ui/core/colors/teal'
+// import brown from '@material-ui/core/colors/brown'
 import Button from '@material-ui/core/Button'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
 import ArrowLeftIcon from '@material-ui/icons/ArrowBack'
@@ -15,7 +15,7 @@ import ArrowRightIcon from '@material-ui/icons/ArrowForward'
 import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 import {
-  fade,
+  // fade,
   darken,
   lighten,
 } from '@material-ui/core/styles/colorManipulator'
@@ -325,40 +325,44 @@ const useStyles = makeStyles((theme) => ({
   },
   waterImgBackground: {
     backgroundImage: `url("${waterImg}")`,
-    backgroundColor: fade(blue[700], 0.8),
+    // backgroundColor: fade(blue[700], 0.8),
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
   },
   forestImgBackground: {
     backgroundImage: `url("${forestImg}")`,
-    backgroundColor: fade(darken(green[900], 0.1), 0.7),
+    // backgroundColor: fade(darken(green[900], 0.1), 0.7),
+    backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
   actionAgainstHungerBackgroundImg: {
     backgroundImage: `url("${actionAgainstHungerImg}")`,
-    backgroundColor: fade(darken(red[900], 0.2), 0.6),
+    // backgroundColor: fade(darken(red[900], 0.2), 0.6),
+    backgroundColor: 'rgba(0, 0, 0, 0.45)',
   },
   giveDirectlyBackgroundImg: {
     backgroundImage: `url("${giveDirectlyImg}")`,
-    backgroundColor: fade(teal[900], 0.7),
+    // backgroundColor: fade(teal[900], 0.7),
+    backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
   roomToReadBackgroundImg: {
     backgroundImage: `url("${roomToReadImg}")`,
-    backgroundColor: fade(brown[700], 0.8),
+    // backgroundColor: fade(brown[700], 0.8),
+    backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
   saveTheChildrenBackgroundImg: {
     backgroundImage: `url("${saveTheChildrenImg}")`,
-    backgroundColor: fade(darken(red[900], 0.4), 0.7),
+    // backgroundColor: fade(darken(red[900], 0.4), 0.7),
+    backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
   schoolBackgroundImg: {
     backgroundImage: `url("${schoolImg}")`,
-    backgroundColor: fade(brown[900], 0.6),
+    // backgroundColor: fade(brown[900], 0.6),
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   fullPageBackgroundImg: {
     width: '100%',
     height: '100%',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    // Tint background images black as an alternative to
-    // tinting with colors.
-    // backgroundColor: 'rgba(0, 0, 0, 0.55)',
     backgroundBlendMode: 'multiply',
   },
   shareContainer: {
