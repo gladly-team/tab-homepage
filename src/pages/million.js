@@ -568,13 +568,6 @@ const MillionPage = ({
 
   const SECTION_ID_TOP = 'top'
   const SECTION_ID_IMPACT = 'impact'
-  // const SECTION_ID_IMPACT_RAINFOREST = 'impact-rainforest'
-  // const SECTION_ID_IMPACT_WATER = 'impact-water'
-  // const SECTION_ID_IMPACT_STC = 'impact-stc'
-  // const SECTION_ID_IMPACT_HUNGER = 'impact-hunger'
-  // const SECTION_ID_IMPACT_GIVE_DIRECTLY = 'impact-give-directly'
-  // const SECTION_ID_IMPACT_ROOM_TO_READ = 'impact-room-to-read'
-  // const SECTION_ID_IMPACT_EDUCATE = 'impact-EDUCATE'
   const SECTION_ID_THANKS = 'thanks'
   const SECTION_ID_CELEBRATION = 'celebration'
   const SECTION_ID_FOOTER = 'footer-section'
