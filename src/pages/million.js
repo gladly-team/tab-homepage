@@ -70,10 +70,8 @@ const CHILDREN = 'children'
 const EDUCATE = 'educate'
 
 // TODO:
-// - functional sharing (open graph tags per share URL)
 // - update sharing copy
 // - try tinting each impact image with a different color, rather than black
-// - get Fullpage license
 // - prettier landing page background
 
 const useStyles = makeStyles((theme) => ({
@@ -1410,7 +1408,7 @@ const MillionPage = ({
         </div>
       </div>
       <ReactFullpage
-        licenseKey={'YOUR_KEY_HERE'} // FIXME
+        licenseKey={'7F2A2647-CD094CE7-B5D7C859-577BFB5C'}
         scrollingSpeed={450}
         onLeave={(_, destination) => {
           if (destination) {
