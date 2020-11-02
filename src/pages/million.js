@@ -129,9 +129,12 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 120,
   },
   menuContainer: {
+    // Leaving in menu logic in case we add more page content,
+    // but the menu seems unncessary now.
+    display: 'none',
+    // display: 'flex',
     flex: 3,
     margin: '0px 10px',
-    display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
