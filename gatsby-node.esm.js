@@ -42,6 +42,27 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
   })
+
+  // Create sharable impact subpages for $1M raised.
+  const millionPage = path.resolve(`src/pages/million.js`)
+  const millionSubpages = [
+    'rainforest',
+    'water',
+    'hunger',
+    'give',
+    'read',
+    'children',
+    'educate',
+  ]
+  millionSubpages.forEach((impactStat) => {
+    createPage({
+      path: `million/${impactStat}/`,
+      component: millionPage,
+      context: {
+        impactStat,
+      },
+    })
+  })
 }
 
 exports.onCreatePage = async ({ page, actions: { deletePage } }) => {

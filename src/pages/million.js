@@ -50,14 +50,30 @@ import roomToReadImg from 'src/img/million/room-to-read.jpg'
 import saveTheChildrenImg from 'src/img/million/save-the-children.jpg'
 import schoolImg from 'src/img/million/school.jpg'
 import openGraphImg1M from 'src/img/million/og-img-1M.png'
+import openGraphImg1MWater from 'src/img/million/og-img-1M-water.png'
+import openGraphImg1MChildren from 'src/img/million/og-img-1M-children.png'
+import openGraphImg1MEducate from 'src/img/million/og-img-1M-educate.png'
+import openGraphImg1MGive from 'src/img/million/og-img-1M-give.png'
+import openGraphImg1MHunger from 'src/img/million/og-img-1M-hunger.png'
+import openGraphImg1MRainforest from 'src/img/million/og-img-1M-rainforest.png'
+import openGraphImg1MRead from 'src/img/million/og-img-1M-read.png'
 
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
+
+const RAINFOREST = 'rainforest'
+const WATER = 'water'
+const HUNGER = 'hunger'
+const GIVE = 'give'
+const READ = 'read'
+const CHILDREN = 'children'
+const EDUCATE = 'educate'
 
 // TODO:
 // - functional sharing (open graph tags per share URL)
 // - update sharing copy
 // - try tinting each impact image with a different color, rather than black
+// - get Fullpage license
 // - prettier landing page background
 
 const useStyles = makeStyles((theme) => ({
@@ -486,7 +502,60 @@ Center.defaultProps = {
   className: undefined,
 }
 
-const MillionPage = ({ location: { pathname }, headTagsProps }) => {
+const MillionPage = ({
+  location: { pathname },
+  pageContext: { impactStat } = {},
+}) => {
+  // We generate subpages to make each impact stat shareable.
+  // Set the open graph info based on the specific impact stat.
+  let title = '$1M Raised'
+  const ogTitle =
+    'I helped raise $1,000,000 for charity by doing almost nothing'
+  const ogDescription =
+    'Turn your internet browsing into positive impact with Tab for a Cause.'
+  let ogImage = getAbsoluteURL(openGraphImg1M)
+  switch (impactStat) {
+    case RAINFOREST: {
+      title = 'Protected over 5,000 acres of rainforest - $1M Raised'
+      ogImage = getAbsoluteURL(openGraphImg1MRainforest)
+      break
+    }
+    case WATER: {
+      title = 'Access to clean water for 12,000 people - $1M Raised'
+      ogImage = getAbsoluteURL(openGraphImg1MWater)
+      break
+    }
+    case HUNGER: {
+      title = 'Live-saving treatment for 1,500 children - $1M Raised'
+      ogImage = getAbsoluteURL(openGraphImg1MHunger)
+      break
+    }
+    case GIVE: {
+      title = 'Over $41,000 in cash transfers - $1M Raised'
+      ogImage = getAbsoluteURL(openGraphImg1MGive)
+      break
+    }
+    case READ: {
+      title = 'Kept over 200 girls in school - $1M Raised'
+      ogImage = getAbsoluteURL(openGraphImg1MRead)
+      break
+    }
+    case CHILDREN: {
+      title =
+        'A month of emergency nutrition for over 6,000 children - $1M Raised'
+      ogImage = getAbsoluteURL(openGraphImg1MChildren)
+      break
+    }
+    case EDUCATE: {
+      title = 'Learning materials for over 3,500 children - $1M Raised'
+      ogImage = getAbsoluteURL(openGraphImg1MEducate)
+      break
+    }
+    default: {
+      break
+    }
+  }
+
   const MENU_ID = 'nav-menu'
   const MENU_ITEM_1M_ID = 'top'
   const MENU_ITEM_1M_TEXT = '$1M'
@@ -1292,16 +1361,11 @@ const MillionPage = ({ location: { pathname }, headTagsProps }) => {
   return (
     <div>
       <HeadTags
-        title={'$1M Raised'}
-        ogTitle={
-          'I helped raise $1,000,000 for charity by doing almost nothing'
-        }
-        ogDescription={
-          'Turn your internet browsing into positive impact with Tab for a Cause.'
-        }
-        ogImage={getAbsoluteURL(openGraphImg1M)}
+        title={title}
+        ogTitle={ogTitle}
+        ogDescription={ogDescription}
+        ogImage={ogImage}
         pageURL={pathname}
-        {...headTagsProps}
       />
       {/* Set a full page background while Fullpage is loading */}
       <div className={classes.pageBackground} />
@@ -1394,9 +1458,22 @@ MillionPage.propTypes = {
     pathname: PropTypes.string.isRequired,
   }),
   headTagsProps: PropTypes.object,
+  pageContext: PropTypes.shape({
+    impactStat: PropTypes.oneOf([
+      RAINFOREST,
+      WATER,
+      HUNGER,
+      GIVE,
+      READ,
+      CHILDREN,
+      EDUCATE,
+    ]),
+  }),
 }
 MillionPage.defaultProps = {
-  headTagsProps: {},
+  pageContext: {
+    impactStat: null,
+  },
 }
 
 // Can't create and use theme in same component (useStyles will not use
