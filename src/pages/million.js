@@ -1314,10 +1314,42 @@ const MillionPage = ({
                 )}
                 gutterBottom
               >
-                Weekends
+                #FriendFriday
               </Typography>
               <Typography variant={'body2'} className={classes.whiteColor}>
-                Kick back and enjoy some well-deserved rest :)
+                We are proud to support nine incredible nonprofit partners who
+                turn our tabs into concrete impact. Check out what they have to
+                say about Tab for a Cause on{' '}
+                <Link
+                  to={instagramPageURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={classes.link}
+                  style={{ color: '#fff', textDecoration: 'underline' }}
+                >
+                  Instagram
+                </Link>
+                ,{' '}
+                <Link
+                  to={facebookPageURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={classes.link}
+                  style={{ color: '#fff', textDecoration: 'underline' }}
+                >
+                  Facebook
+                </Link>
+                , and{' '}
+                <Link
+                  to={twitterPageURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={classes.link}
+                  style={{ color: '#fff', textDecoration: 'underline' }}
+                >
+                  Twitter
+                </Link>
+                .
               </Typography>
             </Center>
           </Slide>
