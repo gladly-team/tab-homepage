@@ -16,7 +16,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 import {
   // fade,
-  darken,
   lighten,
 } from '@material-ui/core/styles/colorManipulator'
 import Tabs from '@material-ui/core/Tabs'
@@ -259,13 +258,16 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     padding: theme.spacing(3),
   },
-  arrowButton: () => {
-    const backgroundColor = LIGHT_BACKGROUND
+  arrowButton: ({ dark }) => {
+    // Dark color matches aurora effect.
+    const backgroundColor = dark ? '#32a6ff' : LIGHT_BACKGROUND
+    const color = dark ? theme.palette.common.white : 'auto'
     return {
       borderRadius: 50, // equal to the height
       height: 50,
       minWidth: 50,
       background: backgroundColor,
+      color,
       transition: 'all .2s ease-in-out',
       pointerEvents: 'all',
       padding: theme.spacing(1),
@@ -327,6 +329,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     paddingTop: 0,
     justifyContent: 'center',
+    alignItems: 'center',
     textAlign: 'center',
   },
   hiddenUntilPageRendered: ({ isPageReady }) => {
@@ -608,6 +611,7 @@ const MillionPage = ({
   const MENU_ID = 'nav-menu'
   const MENU_ITEM_1M_ID = 'top'
   const MENU_ITEM_1M_TEXT = '$1M'
+  const SECTION_ID_IMPACT_INTRO = 'impact-intro'
   const MENU_ITEM_IMPACT_ID = 'impact'
   const MENU_ITEM_IMPACT_TEXT = 'Your Impact'
   const MENU_ITEM_THANKS_ID = 'thanks'
@@ -665,6 +669,11 @@ const MillionPage = ({
       id: SECTION_ID_TOP,
       dark: true,
       activeMenuId: MENU_ITEM_1M_ID,
+    },
+    {
+      id: SECTION_ID_IMPACT_INTRO,
+      dark: false,
+      activeMenuId: MENU_ITEM_IMPACT_ID,
     },
     {
       id: SECTION_ID_IMPACT,
@@ -735,6 +744,54 @@ const MillionPage = ({
               <Typography
                 variant={'body1'}
                 className={classes.arrowText}
+                style={{ margin: '0px 12px' }}
+              >
+                How we got here
+              </Typography>
+            </ArrowButton>
+          </ArrowButtonContainer>
+        </div>
+      ),
+    },
+    [SECTION_ID_IMPACT_INTRO]: {
+      className: clsx(classes.lightBackground, classes.hiddenUntilPageRendered),
+      content: (
+        <div className={classes.sectionContent}>
+          <Center>
+            <Typography
+              variant={'h5'}
+              className={clsx(classes.moneyRaisedText)}
+              gutterBottom
+            >
+              We never imagined we would
+            </Typography>
+            <Typography
+              variant={'h1'}
+              className={clsx(classes.moneyRaised, classes.bottomThankYouText)}
+              gutterBottom
+            >
+              #TabForAMillion
+            </Typography>
+            <Typography variant={'body2'} style={{ maxWidth: 540 }} paragraph>
+              When we first launched Tab for a Cause, we were college kids
+              without much free time or money. It was a fun idea to do a little
+              good, for free.
+            </Typography>
+            <Typography variant={'body2'} style={{ maxWidth: 540 }} paragraph>
+              What we didn't expect was{' '}
+              <span style={{ fontWeight: 'bold' }}>you</span>. Soon, the little
+              good became a lot of good. And here we are.
+            </Typography>
+          </Center>
+          <ArrowButtonContainer className={classes.hiddenUntilPageRendered}>
+            <ArrowButton
+              className={classes.purpleBackground}
+              onClick={() => window.fullpage_api.moveSectionDown()}
+              dark
+            >
+              <Typography
+                variant={'body1'}
+                className={clsx(classes.arrowText, classes.whiteColor)}
                 style={{ margin: '0px 12px' }}
               >
                 See the impact
