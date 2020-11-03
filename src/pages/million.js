@@ -1299,7 +1299,7 @@ const MillionPage = ({
                 Despite this incredible milestone, most people haven't heard of
                 Tab for a Cause. Make sure your friends' tabs aren't going to
                 waste. Text, email, call, DM, Snap, whatever it takes, make sure
-                everyone knows that they could be part of this incredible
+                everyone knows that they can be part of this incredible
                 movement!
               </Typography>
             </Center>
