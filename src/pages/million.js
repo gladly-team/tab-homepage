@@ -1326,9 +1326,9 @@ const MillionPage = ({
                 #ThankfulThursday
               </Typography>
               <Typography variant={'body2'} className={classes.whiteColor}>
-                On social media, share the Tab for a Cause nonprofit partner or
-                spotlight campaign that you are most thankful for with
-                #TabForAMillion #ThankfulThursday
+                On social media, share which Tab for a Cause nonprofit partner
+                or spotlight campaign you're most thankful for with
+                #TabForAMillion and #ThankfulThursday.
               </Typography>
             </Center>
           </Slide>
