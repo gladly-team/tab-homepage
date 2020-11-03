@@ -199,7 +199,6 @@ const useStyles = makeStyles((theme) => ({
   slideHeaderText: {
     padding: `0px ${theme.spacing(1)}px`,
     color: theme.palette.common.white,
-    background: theme.palette.primary.main,
     marginTop: 20,
   },
   slideHeaderContent: {
