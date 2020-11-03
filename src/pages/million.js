@@ -1050,7 +1050,7 @@ const MillionPage = ({
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                          'I helped provide food to over 1,500 children just by opening tabs with @TabForACause. Join me! #TabForAMillion',
                         related: ['@TabForACause'],
                       }}
                     />
