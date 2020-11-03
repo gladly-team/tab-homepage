@@ -1423,25 +1423,24 @@ const MillionPage = ({
                   Share this achievement:
                 </Typography>
                 <SocialShare
-                  /* FIXME: actual copy needed */
                   url={getAbsoluteURL(millionRaisedURL)}
                   FacebookShareButtonProps={{
                     quote:
-                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                      'Join me in turning your internet browsing into a force for good with @TabForACause',
                   }}
                   RedditShareButtonProps={{
                     title:
-                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                      'Turn your internet browsing into a force for good with Tab for a Cause',
                   }}
                   TumblrShareButtonProps={{
                     title:
-                      'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                      'A simple and free way to make the world a better place',
                     caption:
-                      'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                      'Turn your internet browsing into a force for good with Tab for a Cause',
                   }}
                   TwitterShareButtonProps={{
                     title:
-                      'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                      'Turn your internet browsing into a force for good with @TabForACause. Join me! #TabForAMillion',
                     related: ['@TabForACause'],
                   }}
                 />
