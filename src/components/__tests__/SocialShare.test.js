@@ -93,7 +93,7 @@ describe('SocialShare component', () => {
       ...mockProps.FacebookShareButtonProps,
       children: expect.any(Object),
       url: mockProps.url,
-      hashtag: 'tabsTransformed',
+      // hashtag: 'tabsTransformed',
     })
   })
 
@@ -183,7 +183,7 @@ describe('SocialShare component', () => {
       ...mockProps.TwitterShareButtonProps,
       children: expect.any(Object),
       url: mockProps.url,
-      hashtags: ['tabsTransformed'],
+      // hashtags: ['tabsTransformed'],
     })
   })
 
