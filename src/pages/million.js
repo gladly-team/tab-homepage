@@ -1137,7 +1137,8 @@ const MillionPage = ({
           </div>
           <Slide
             className={classes.scheduleSlide}
-            style={{ background: blue[600] }}
+            // Background color matches aurora effect.
+            style={{ background: '#32a6ff' }}
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
@@ -1177,7 +1178,8 @@ const MillionPage = ({
           </Slide>
           <Slide
             className={classes.scheduleSlide}
-            style={{ background: blue[700] }}
+            // A blend of the first two colors in the aurora effect.
+            style={{ background: '#398BFF' }}
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
@@ -1226,7 +1228,8 @@ const MillionPage = ({
           </Slide>
           <Slide
             className={classes.scheduleSlide}
-            style={{ background: blue[800] }}
+            // Background color matches aurora effect.
+            style={{ background: '#3f6fff' }}
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
@@ -1250,7 +1253,8 @@ const MillionPage = ({
           </Slide>
           <Slide
             className={classes.scheduleSlide}
-            style={{ background: blue[900] }}
+            // A blend of the second two colors in the aurora effect.
+            style={{ background: '#6662FF' }}
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
@@ -1298,7 +1302,8 @@ const MillionPage = ({
           </Slide>
           <Slide
             className={classes.scheduleSlide}
-            style={{ background: darken(blue[900], 0.15) }}
+            // Background color matches aurora effect.
+            style={{ background: '#8d54ff' }}
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
