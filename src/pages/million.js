@@ -837,25 +837,24 @@ const MillionPage = ({
                   </Typography>
                   <div className={classes.shareContainer}>
                     <SocialShare
-                      /* FIXME: actual copy needed */
                       url={getAbsoluteURL(millionRaisedRainforestImpactURL)}
                       FacebookShareButtonProps={{
                         quote:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped protect over 5,000 acres of rainforest just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
                       }}
                       RedditShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          '5,000 acres of rainforest protected just by opening browser tabs',
                       }}
                       TumblrShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          'A simple and free way to make the world a better place',
                         caption:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped protect 5,000 acres of rainforest just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                          'I helped protect over 5,000 acres of rainforest just by opening tabs with @TabForACause. Join me! #TabForAMillion',
                         related: ['@TabForACause'],
                       }}
                     />
@@ -887,25 +886,24 @@ const MillionPage = ({
                   </Typography>
                   <div className={classes.shareContainer}>
                     <SocialShare
-                      /* FIXME: actual copy needed */
                       url={getAbsoluteURL(millionRaisedChildrenImpactURL)}
                       FacebookShareButtonProps={{
                         quote:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped provide emergency nutrition to over 6,000 children just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
                       }}
                       RedditShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          '6,000 children provided emergency nutrition just by opening browser tabs',
                       }}
                       TumblrShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          'A simple and free way to make the world a better place',
                         caption:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped  provide emergency nutrition to over 6,000 children just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                          'I helped provide emergency nutrition to over 6,000 children just by opening tabs with @TabForACause. Join me! #TabForAMillion',
                         related: ['@TabForACause'],
                       }}
                     />
@@ -999,11 +997,11 @@ const MillionPage = ({
                         title:
                           'A simple and free way to make the world a better place',
                         caption:
-                          'I helped provide learning materials to over 3,500 students just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
+                          'I helped provide access to clean water for over 12,000 people just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'I helped provide learning materials to over 3,500 students just by opening tabs with @TabForACause. Join me! #TabForAMillion',
+                          'I helped provide access to clean water for over 12,000 people just by opening tabs with @TabForACause. Join me! #TabForAMillion',
                         related: ['@TabForACause'],
                       }}
                     />
@@ -1036,21 +1034,20 @@ const MillionPage = ({
                   </Typography>
                   <div className={classes.shareContainer}>
                     <SocialShare
-                      /* FIXME: actual copy needed */
                       url={getAbsoluteURL(millionRaisedHungerImpactURL)}
                       FacebookShareButtonProps={{
                         quote:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped provide food to over 1,500 children just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
                       }}
                       RedditShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          '1,500 children fed just by opening browser tabs',
                       }}
                       TumblrShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          'A simple and free way to make the world a better place',
                         caption:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped provide food to over 1,500 children just by opening tabs with @TabForACause. Join me! #TabForAMillion',
                       }}
                       TwitterShareButtonProps={{
                         title:
@@ -1086,25 +1083,24 @@ const MillionPage = ({
                   </Typography>
                   <div className={classes.shareContainer}>
                     <SocialShare
-                      /* FIXME: actual copy needed */
                       url={getAbsoluteURL(millionRaisedGiveImpactURL)}
                       FacebookShareButtonProps={{
                         quote:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped transfer over $41,000 to those in need just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
                       }}
                       RedditShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          '$41,000 in direct cash transfer to those in need just by opening browser tabs',
                       }}
                       TumblrShareButtonProps={{
                         title:
-                          'Tabs transformed into vital supplies for 100 families in rainforest communities',
+                          'A simple and free way to make the world a better place',
                         caption:
-                          'We just helped protect 100 families in rainforest communities via Cool Earth. And all we did was open browser tabs.',
+                          'I helped transfer over $41,000 to those in need just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'On @TabForACause, we just supplied 100 rainforest families via @coolearth just by opening tabs. #COVID19',
+                          'I helped transfer over $41,000 to those in need just by opening tabs with @TabForACause. Join me! #TabForAMillion',
                         related: ['@TabForACause'],
                       }}
                     />
@@ -1139,21 +1135,21 @@ const MillionPage = ({
                       url={getAbsoluteURL(millionRaisedEducateImpactURL)}
                       FacebookShareButtonProps={{
                         quote:
-                          'I helped keep over 200 girls in school just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                          'I helped provide learning materials to over 3,500 students just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
                       }}
                       RedditShareButtonProps={{
                         title:
-                          'Browser tabs transformed into education for over 200 girls',
+                          'Browser tabs transformed into learning materials for over 3,500 students',
                       }}
                       TumblrShareButtonProps={{
                         title:
                           'A simple and free way to make the world a better place',
                         caption:
-                          'I helped keep over 200 girls in school just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
+                          'I helped provide learning materials to over 3,500 students just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'I helped keep over 200 girls in school just by opening tabs with @TabForACause. Join me! #TabForAMillion',
+                          'I helped provide learning materials to over 3,500 students just by opening tabs with @TabForACause. Join me! #TabForAMillion',
                         related: ['@TabForACause'],
                       }}
                     />
