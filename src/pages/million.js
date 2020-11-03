@@ -1326,35 +1326,9 @@ const MillionPage = ({
                 #ThankfulThursday
               </Typography>
               <Typography variant={'body2'} className={classes.whiteColor}>
-                Join us in letting the world know how impactful a tab can be by
-                liking, reposting, and/or sharing our #ThankfulThursday posts on{' '}
-                <Link
-                  to={instagramPageURL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#fff', textDecoration: 'underline' }}
-                >
-                  Instagram
-                </Link>
-                ,{' '}
-                <Link
-                  to={facebookPageURL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#fff', textDecoration: 'underline' }}
-                >
-                  Facebook
-                </Link>
-                , and{' '}
-                <Link
-                  to={twitterPageURL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#fff', textDecoration: 'underline' }}
-                >
-                  Twitter
-                </Link>{' '}
-                that showcase some of our amazing charity partners.
+                On social media, share the Tab for a Cause nonprofit partner or
+                spotlight campaign that you are most thankful for with
+                #TabForAMillion #ThankfulThursday
               </Typography>
             </Center>
           </Slide>
