@@ -199,6 +199,7 @@ const useStyles = makeStyles((theme) => ({
     padding: `0px ${theme.spacing(1)}px`,
     color: theme.palette.common.white,
     marginTop: 20,
+    textAlign: 'center',
   },
   slideHeaderContent: {
     marginTop: 40,
@@ -1189,7 +1190,7 @@ const MillionPage = ({
               variant={'h5'}
               className={clsx(classes.slideHeaderText)}
             >
-              Join us to celebrate the next few weeks!
+              Join us as we celebrate each day leading up to $1M.
             </Typography>
           </div>
           <Slide
@@ -1228,8 +1229,8 @@ const MillionPage = ({
                 >
                   Instagram
                 </Link>{' '}
-                where we will be asking the uber wealthy to match with a $1M
-                donation. We’re looking at you @google...
+                as we ask the uber-wealthy to match with a $1M donation. We’re
+                looking at you @google...
               </Typography>
             </Center>
           </Slide>
@@ -1279,7 +1280,7 @@ const MillionPage = ({
                   Twitter
                 </Link>{' '}
                 (or post why you tab to your feed with #TabForAMillion and
-                @tabforacause) and you may be featured on #TabberTuesday!
+                @tabforacause) and you might be featured!
               </Typography>
             </Center>
           </Slide>
