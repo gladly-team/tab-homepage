@@ -1585,7 +1585,7 @@ MillionPage.defaultProps = {
 // Can't create and use theme in same component (useStyles will not use
 // the custom theme).
 const MillionPageWithTheme = (props) => (
-  <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3 })}>
+  <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
     <MillionPage {...props} />
   </ThemeProvider>
 )
