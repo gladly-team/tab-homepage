@@ -402,6 +402,11 @@ const useStyles = makeStyles((theme) => ({
   thanksShareWrapper: {
     margin: theme.spacing(2),
   },
+  bottomThankYouText: {
+    color: theme.palette.common.white,
+    // Matches the aurora effect on the top section.
+    background: 'linear-gradient(45deg, #32a6ff 0%, #3f6fff 49%, #8d54ff 82%)',
+  },
 }))
 
 const Section = ({ id, children, className, autoHeight }) => {
@@ -1338,7 +1343,7 @@ const MillionPage = ({
           <Center>
             <Typography
               variant={'h1'}
-              className={clsx(classes.moneyRaised)}
+              className={clsx(classes.moneyRaised, classes.bottomThankYouText)}
               gutterBottom
             >
               Thank you.
