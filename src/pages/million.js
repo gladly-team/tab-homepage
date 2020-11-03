@@ -209,7 +209,33 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 640,
   },
   topBackground: {
-    background: LIGHT_BACKGROUND,
+    // Aurora effect: https://codepen.io/shottsn/pen/QOqpqP
+    background: 'linear-gradient(45deg, #32a6ff 0%, #3f6fff 49%, #8d54ff 82%)',
+    backgroundSize: '200%',
+    animation: '$aurora 10s infinite',
+  },
+  topBackgroundInner: {
+    background:
+      'radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15))',
+    backgroundSize: '200%',
+    animation: '$aurora 7s infinite',
+  },
+  '@keyframes aurora': {
+    '      0%': {
+      backgroundPosition: 'left top',
+    },
+    '25%': {
+      backgroundPosition: 'right top',
+    },
+    '50%': {
+      backgroundPosition: 'right bottom',
+    },
+    '75%': {
+      backgroundPosition: 'left bottom',
+    },
+    '100%': {
+      backgroundPosition: 'left top',
+    },
   },
   darkBackground: {
     background: DARK_BACKGROUND,
@@ -276,7 +302,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-block',
     padding: `0px ${theme.spacing(1)}px`,
     color: theme.palette.common.white,
-    background: theme.palette.primary.main,
     marginLeft: 'auto',
     marginRight: 'auto',
   },
@@ -634,7 +659,7 @@ const MillionPage = ({
   const sections = [
     {
       id: SECTION_ID_TOP,
-      dark: false,
+      dark: true,
       activeMenuId: MENU_ITEM_1M_ID,
     },
     {
@@ -681,7 +706,9 @@ const MillionPage = ({
     [SECTION_ID_TOP]: {
       className: classes.topBackground,
       content: (
-        <div className={classes.sectionContent}>
+        <div
+          className={clsx(classes.sectionContent, classes.topBackgroundInner)}
+        >
           <Center className={classes.hiddenUntilPageRendered}>
             <Typography
               variant={'h5'}
