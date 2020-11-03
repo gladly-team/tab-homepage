@@ -16,6 +16,7 @@ jobs:
       - bash ./scripts/deploy.sh s3://dev-tab-website
       env:
         - GATSBY_DOMAIN=dev-tab2017.gladly.io
+        - SHOW_MILLION_RAISED_PAGE=true
     - stage: production deploy
       if: branch = master AND NOT type = pull_request
       script:
@@ -25,6 +26,7 @@ jobs:
       - bash ./scripts/deploy.sh s3://prod-tab-website
       env:
         - GATSBY_DOMAIN=tab.gladly.io
+        - SHOW_MILLION_RAISED_PAGE=false
 env:
   global:
   - secure: nsYTijPccDgzIPU4jQhV3nj8EjjipcpxbUzfwIiq6rRxW0HXUb8ad1K49q7YWqiWzmQLj2ZSxJ/xatzt672HRT8ZYqfBTNN69ZgCeAoNCx2PQTuA02wxhtMtRmgeN52Fbt0EAgNIg/AD/VHO9WjSZyW47dFL6lkGCeYEW3Znd/1A+8phGefV2tcQF+txczVU9Y2lcLq0aUN/86M+4nkBTYgYzYbCJK6Apzso3+GDREYfRW1sw5kKBD/l9OqxdX5IBM30owamjxYu6JxAdpReQC8WBDJ0aGOaqugWJjsI6tsa7l7Ya3MkbKn7gl2yUB594szzMwARAzZHjCij1Wjy6Sw+jthxYftC3P+TE2thqMeP7FlFq+CC4AYa0YkVdDvOMn/WO3EHpuBOqWHLDChv2SXMdgF8cs/DhGCOf4qV0g0MPmZ1co089PBlsQPU8yHwlXsP6kA51CIne/vMR7aElxnpP7eLAMw9edfCi8RvjTIjBoyZP6loZC2DRFxrGYpmacpT4AXFslTtMKIXEFlbnjz5h6RChAkgk6+cKM2/30eaRDXwMId7DkzrqnpLGKl8i/8HMc0j7adZkIf6u9u4U0EYIl9aBVZ/ozURZwURG/oli/y/w27Zn9tDVFky3Rq5PwFrOiUH5/Lg0+KQpfrkjWL5i+95f9uQLLKcmRGv4RU=

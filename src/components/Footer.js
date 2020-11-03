@@ -2,6 +2,7 @@ import React from 'react'
 import Divider from '@material-ui/core/Divider'
 import PropTypes from 'prop-types'
 import Facebook from 'mdi-material-ui/Facebook'
+import Instagram from 'mdi-material-ui/Instagram'
 import Twitter from 'mdi-material-ui/Twitter'
 
 import logoGrey from 'src/img/logo-grey.svg'
@@ -16,6 +17,7 @@ import {
   externalHelpURL,
   facebookPageURL,
   financialsURL,
+  instagramPageURL,
   jobsURL,
   privacyPolicyURL,
   teamURL,
@@ -27,7 +29,7 @@ import IconWrapper from 'src/components/IconWrapper'
 
 class Footer extends React.Component {
   render() {
-    const { style } = this.props
+    const { id, style } = this.props
     const footerLinkStyle = {
       color: lightestTextColor,
       fontSize: 12,
@@ -46,6 +48,7 @@ class Footer extends React.Component {
     }
     return (
       <div
+        id={id}
         style={Object.assign(
           {},
           {
@@ -62,23 +65,24 @@ class Footer extends React.Component {
         <div
           style={{
             display: 'flex',
-            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'no-wrap',
           }}
         >
+          <Link to="/" style={{ minWidth: 24 }}>
+            <img src={logoGrey} style={{ height: 43 }} />
+          </Link>
           <div
             style={{
+              flex: 1,
+              marginLeft: 30,
               display: 'flex',
-              justifyContent: 'flex-start',
-              flexWrap: 'nowrap',
-              alignItems: 'center',
+              flexWrap: 'wrap',
             }}
           >
-            <Link to="/">
-              <img src={logoGrey} style={{ height: 43 }} />
-            </Link>
             <div
               style={{
-                marginLeft: 30,
+                flex: 1,
                 display: 'flex',
                 flexWrap: 'wrap',
                 justifyContent: 'flex-start',
@@ -141,25 +145,40 @@ class Footer extends React.Component {
                 Jobs
               </Link>
             </div>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', paddingTop: 4 }}>
-            <Link to={facebookPageURL} style={{ margin: 12 }}>
-              <IconWrapper
-                style={socialIconStyle}
-                hoverStyle={socialIconHoverStyle}
-              >
-                <Facebook />
-              </IconWrapper>
-            </Link>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                paddingTop: 4,
+              }}
+            >
+              <Link to={facebookPageURL} style={{ margin: 12 }}>
+                <IconWrapper
+                  style={socialIconStyle}
+                  hoverStyle={socialIconHoverStyle}
+                >
+                  <Facebook />
+                </IconWrapper>
+              </Link>
 
-            <Link to={twitterPageURL} style={{ margin: 12 }}>
-              <IconWrapper
-                style={socialIconStyle}
-                hoverStyle={socialIconHoverStyle}
-              >
-                <Twitter />
-              </IconWrapper>
-            </Link>
+              <Link to={instagramPageURL} style={{ margin: 12 }}>
+                <IconWrapper
+                  style={socialIconStyle}
+                  hoverStyle={socialIconHoverStyle}
+                >
+                  <Instagram />
+                </IconWrapper>
+              </Link>
+
+              <Link to={twitterPageURL} style={{ margin: 12 }}>
+                <IconWrapper
+                  style={socialIconStyle}
+                  hoverStyle={socialIconHoverStyle}
+                >
+                  <Twitter />
+                </IconWrapper>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -168,10 +187,12 @@ class Footer extends React.Component {
 }
 
 Footer.propTypes = {
+  id: PropTypes.string,
   style: PropTypes.object,
 }
 
 Footer.defaultProps = {
+  id: undefined,
   style: {},
 }
 

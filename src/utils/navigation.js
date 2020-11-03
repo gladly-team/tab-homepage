@@ -13,6 +13,16 @@ export const teamURL = '/team/'
 export const jobsURL = '/jobs/'
 export const adblockerWhitelistingURL = '/adblockers/'
 
+// Million raised
+export const millionRaisedURL = '/million/'
+export const millionRaisedRainforestImpactURL = '/million/rainforest/'
+export const millionRaisedWaterImpactURL = '/million/water/'
+export const millionRaisedHungerImpactURL = '/million/hunger/'
+export const millionRaisedGiveImpactURL = '/million/give/'
+export const millionRaisedReadImpactURL = '/million/read/'
+export const millionRaisedChildrenImpactURL = '/million/children/'
+export const millionRaisedEducateImpactURL = '/million/educate/'
+
 // New tab page app URLs.
 // Absolute URLs because it's outside of this Gatsby app.
 export const newTabPageURL = `${baseURL}/newtab/`
@@ -34,6 +44,7 @@ export const externalContactUsURL =
 
 // Social
 export const facebookPageURL = 'https://www.facebook.com/TabForACause'
+export const instagramPageURL = 'https://www.instagram.com/tabforacause/'
 export const twitterPageURL = 'https://twitter.com/TabForACause'
 
 // Github
