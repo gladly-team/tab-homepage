@@ -991,7 +991,7 @@ const MillionPage = ({
                       }}
                       RedditShareButtonProps={{
                         title:
-                          'Browser tabs transformed into access to clean water for over 12,000 people',
+                          'Access to clean water for over 12,000 people just by opening browser tabs',
                       }}
                       TumblrShareButtonProps={{
                         title:
