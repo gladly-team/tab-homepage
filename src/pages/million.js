@@ -774,9 +774,8 @@ const MillionPage = ({
               #TabForAMillion
             </Typography>
             <Typography variant={'body2'} style={{ maxWidth: 540 }} paragraph>
-              When we first launched Tab for a Cause, we were college kids
-              without much free time or money. It was a fun idea to do a little
-              good, for free.
+              When we first launched Tab for a Cause, we thought it was a fun
+              idea to do a little good, for free.
             </Typography>
             <Typography variant={'body2'} style={{ maxWidth: 540 }} paragraph>
               What we didn't expect was{' '}
