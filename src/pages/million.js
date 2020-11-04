@@ -837,10 +837,15 @@ const MillionPage = ({
                   <div className={classes.shareContainer}>
                     <SocialShare
                       url={getAbsoluteURL(millionRaisedRainforestImpactURL)}
-                      FacebookShareButtonProps={{
-                        quote:
-                          'I helped protect over 5,000 acres of rainforest just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
-                      }}
+                      FacebookShareButtonProps={
+                        {
+                          // Disabling the quote so Facebook shares the large version
+                          // of the image, but leaving this prop so that SocialShare
+                          // will still show the Facebook button.
+                          // quote:
+                          //   'I helped protect over 5,000 acres of rainforest just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                        }
+                      }
                       RedditShareButtonProps={{
                         title:
                           '5,000 acres of rainforest protected just by opening browser tabs',
@@ -886,10 +891,15 @@ const MillionPage = ({
                   <div className={classes.shareContainer}>
                     <SocialShare
                       url={getAbsoluteURL(millionRaisedChildrenImpactURL)}
-                      FacebookShareButtonProps={{
-                        quote:
-                          'I helped provide emergency nutrition to over 6,000 children just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
-                      }}
+                      FacebookShareButtonProps={
+                        {
+                          // Disabling the quote so Facebook shares the large version
+                          // of the image, but leaving this prop so that SocialShare
+                          // will still show the Facebook button.
+                          // quote:
+                          //   'I helped provide emergency nutrition to over 6,000 children just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                        }
+                      }
                       RedditShareButtonProps={{
                         title:
                           '6,000 children provided emergency nutrition just by opening browser tabs',
@@ -935,10 +945,15 @@ const MillionPage = ({
                   <div className={classes.shareContainer}>
                     <SocialShare
                       url={getAbsoluteURL(millionRaisedReadImpactURL)}
-                      FacebookShareButtonProps={{
-                        quote:
-                          'I helped keep over 200 girls in school just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
-                      }}
+                      FacebookShareButtonProps={
+                        {
+                          // Disabling the quote so Facebook shares the large version
+                          // of the image, but leaving this prop so that SocialShare
+                          // will still show the Facebook button.
+                          // quote:
+                          //   'I helped keep over 200 girls in school just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                        }
+                      }
                       RedditShareButtonProps={{
                         title:
                           'Browser tabs transformed into education for over 200 girls',
@@ -984,10 +999,15 @@ const MillionPage = ({
                   <div className={classes.shareContainer}>
                     <SocialShare
                       url={getAbsoluteURL(millionRaisedWaterImpactURL)}
-                      FacebookShareButtonProps={{
-                        quote:
-                          'I helped provide access to clean water for over 12,000 people just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
-                      }}
+                      FacebookShareButtonProps={
+                        {
+                          // Disabling the quote so Facebook shares the large version
+                          // of the image, but leaving this prop so that SocialShare
+                          // will still show the Facebook button.
+                          // quote:
+                          //   'I helped provide access to clean water for over 12,000 people just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                        }
+                      }
                       RedditShareButtonProps={{
                         title:
                           'Access to clean water for over 12,000 people just by opening browser tabs',
@@ -1034,10 +1054,15 @@ const MillionPage = ({
                   <div className={classes.shareContainer}>
                     <SocialShare
                       url={getAbsoluteURL(millionRaisedHungerImpactURL)}
-                      FacebookShareButtonProps={{
-                        quote:
-                          'I helped provide food to over 1,500 children just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
-                      }}
+                      FacebookShareButtonProps={
+                        {
+                          // Disabling the quote so Facebook shares the large version
+                          // of the image, but leaving this prop so that SocialShare
+                          // will still show the Facebook button.
+                          // quote:
+                          //   'I helped provide food to over 1,500 children just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                        }
+                      }
                       RedditShareButtonProps={{
                         title:
                           '1,500 children fed just by opening browser tabs',
@@ -1083,10 +1108,15 @@ const MillionPage = ({
                   <div className={classes.shareContainer}>
                     <SocialShare
                       url={getAbsoluteURL(millionRaisedGiveImpactURL)}
-                      FacebookShareButtonProps={{
-                        quote:
-                          'I helped transfer over $41,000 to those in need just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
-                      }}
+                      FacebookShareButtonProps={
+                        {
+                          // Disabling the quote so Facebook shares the large version
+                          // of the image, but leaving this prop so that SocialShare
+                          // will still show the Facebook button.
+                          // quote:
+                          //   'I helped transfer over $41,000 to those in need just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                        }
+                      }
                       RedditShareButtonProps={{
                         title:
                           '$41,000 in direct cash transfer to those in need just by opening browser tabs',
@@ -1132,10 +1162,15 @@ const MillionPage = ({
                   <div className={classes.shareContainer}>
                     <SocialShare
                       url={getAbsoluteURL(millionRaisedEducateImpactURL)}
-                      FacebookShareButtonProps={{
-                        quote:
-                          'I helped provide learning materials to over 3,500 students just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
-                      }}
+                      FacebookShareButtonProps={
+                        {
+                          // Disabling the quote so Facebook shares the large version
+                          // of the image, but leaving this prop so that SocialShare
+                          // will still show the Facebook button.
+                          // quote:
+                          //   'I helped provide learning materials to over 3,500 students just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                        }
+                      }
                       RedditShareButtonProps={{
                         title:
                           'Browser tabs transformed into learning materials for over 3,500 students',
@@ -1423,10 +1458,15 @@ const MillionPage = ({
                 </Typography>
                 <SocialShare
                   url={getAbsoluteURL(millionRaisedURL)}
-                  FacebookShareButtonProps={{
-                    quote:
-                      'Join me in turning your internet browsing into a force for good with @TabForACause',
-                  }}
+                  FacebookShareButtonProps={
+                    {
+                      // Disabling the quote so Facebook shares the large version
+                      // of the image, but leaving this prop so that SocialShare
+                      // will still show the Facebook button.
+                      // quote:
+                      //   'Join me in turning your internet browsing into a force for good with @TabForACause',
+                    }
+                  }
                   RedditShareButtonProps={{
                     title:
                       'Turn your internet browsing into a force for good with Tab for a Cause',
