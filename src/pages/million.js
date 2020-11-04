@@ -61,7 +61,7 @@ import openGraphImg1MChildren from 'src/img/million/og-img-1M-children.png'
 import openGraphImg1MEducate from 'src/img/million/og-img-1M-educate.png'
 import openGraphImg1MGive from 'src/img/million/og-img-1M-give.png'
 import openGraphImg1MHunger from 'src/img/million/og-img-1M-hunger.png'
-import openGraphImg1MRainforest from 'src/img/million/og-img-1M-rainforest.png'
+import openGraphImg1MRainforestV2 from 'src/img/million/og-img-1M-rainforest-v2.png'
 import openGraphImg1MRead from 'src/img/million/og-img-1M-read.png'
 
 const DARK_BACKGROUND = grey['800']
@@ -570,7 +570,7 @@ const MillionPage = ({
   switch (impactStat) {
     case RAINFOREST: {
       title = 'Protected over 5,000 acres of rainforest - $1M Raised'
-      ogImage = getAbsoluteURL(openGraphImg1MRainforest)
+      ogImage = getAbsoluteURL(openGraphImg1MRainforestV2)
       break
     }
     case WATER: {
