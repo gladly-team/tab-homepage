@@ -53,6 +53,7 @@ exports.createPages = async ({ actions, graphql }) => {
     'read',
     'children',
     'educate',
+    'match', // millionaire matching
   ]
   millionSubpages.forEach((impactStat) => {
     createPage({

@@ -56,6 +56,7 @@ import roomToReadImg from 'src/img/million/room-to-read.jpg'
 import saveTheChildrenImg from 'src/img/million/save-the-children.jpg'
 import schoolImg from 'src/img/million/school.jpg'
 import openGraphImg1M from 'src/img/million/og-img-1M.png'
+import openGraphImg1MMatch from 'src/img/million/og-img-1M-match-v2.png'
 import openGraphImg1MWater from 'src/img/million/og-img-1M-water.png'
 import openGraphImg1MChildren from 'src/img/million/og-img-1M-children.png'
 import openGraphImg1MEducate from 'src/img/million/og-img-1M-educate.png'
@@ -74,10 +75,7 @@ const GIVE = 'give'
 const READ = 'read'
 const CHILDREN = 'children'
 const EDUCATE = 'educate'
-
-// TODO:
-// - update sharing copy
-// - prettier landing page background
+const MATCH = 'match' // millionaire matching subpage
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -562,9 +560,8 @@ const MillionPage = ({
   // We generate subpages to make each impact stat shareable.
   // Set the open graph info based on the specific impact stat.
   let title = '$1M Raised'
-  const ogTitle =
-    'I helped raise $1,000,000 for charity by doing almost nothing'
-  const ogDescription =
+  let ogTitle = 'I helped raise $1,000,000 for charity by doing almost nothing'
+  let ogDescription =
     'Turn your internet browsing into positive impact with Tab for a Cause.'
   let ogImage = getAbsoluteURL(openGraphImg1M)
   switch (impactStat) {
@@ -602,6 +599,14 @@ const MillionPage = ({
     case EDUCATE: {
       title = 'Learning materials for over 3,500 children - $1M Raised'
       ogImage = getAbsoluteURL(openGraphImg1MEducate)
+      break
+    }
+    case MATCH: {
+      title = '$1M Raised'
+      ogTitle = 'We raised $1,000,000 for charity. Your turn.'
+      ogDescription =
+        "We're not millionaires, but we turned our browser tabs into $1M for good. You can make it $2M right now."
+      ogImage = getAbsoluteURL(openGraphImg1MMatch)
       break
     }
     default: {
@@ -1613,6 +1618,7 @@ MillionPage.propTypes = {
       READ,
       CHILDREN,
       EDUCATE,
+      MATCH,
     ]),
   }),
 }
