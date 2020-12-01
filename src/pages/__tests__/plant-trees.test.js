@@ -42,7 +42,7 @@ describe('"plant trees" page', () => {
     const wrapper = shallow(<PlantTreesPage {...getMockProps()} />)
     const elem = wrapper.find('meta[property="og:description"]')
     expect(elem.prop('content')).toBe(
-      'We are planting a tree for every person who joins Tab for a Cause from now until January 10, 2020.'
+      'We are planting a tree for every person who joins Tab for a Cause from now until January 5, 2021.'
     )
   })
 
