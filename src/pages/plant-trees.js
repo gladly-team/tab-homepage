@@ -182,7 +182,7 @@ const PlantTreesPage = (props) => {
   const { location } = props
   const openGraphTitle = 'Plant Trees for Free'
   const openGraphDescription =
-    'We are planting a tree for every person who joins Tab for a Cause from now until January 10, 2020.'
+    'We are planting a tree for every person who joins Tab for a Cause from now until January 5, 2021.'
   return (
     <Layout brand={'tab'} location={location}>
       <TextPageContent>
@@ -237,7 +237,7 @@ const PlantTreesPage = (props) => {
             To do our part,{' '}
             <span style={{ fontWeight: 'bold' }}>
               Tab for a Cause will plant a tree for each new Tabber from
-              November 14, 2019 to January 10, 2020
+              December 1, 2020 to January 5, 2021
             </span>
             . If you are a current Tabber, you can plant a tree right now by
             getting one friend or family member to start Tabbing.
