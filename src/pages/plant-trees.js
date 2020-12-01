@@ -306,6 +306,96 @@ const PlantTreesPage = (props) => {
             )
           })}
         </div>
+        <div id="challenge" style={{ padding: '12px 0px' }}>
+          <h2>TikTok & Instagram Challenge</h2>
+
+          <div style={{ padding: '10px 0px' }}>
+            <p>
+              Help us spread the world from December 1, 2020 to January 4, 2021
+              through Tik Tok and Instagram Reels!{' '}
+            </p>
+          </div>
+
+          <div style={{ padding: '10px 0px' }}>
+            <p style={{ fontWeight: 'bold' }}>What should I post?</p>
+            <p>
+              We would love any video content that{' '}
+              <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>
+                tells others about Tab for a Cause and encourages them to start
+                Tabbing!
+              </span>{' '}
+              We will leave the creativity up to you, but that is the gist of
+              it! Want to create a new dance, a POV video or just explain? Go
+              for it!
+            </p>
+            <p>We’re excited to see what you will come up with!</p>
+          </div>
+
+          <div style={{ padding: '10px 0px' }}>
+            <p style={{ fontWeight: 'bold' }}>What should I NOT post?</p>
+            <p>
+              To be considered for this competition we ask that you{' '}
+              <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>
+                do not use any offensive language or imagery.
+              </span>{' '}
+              We want to create a community that is inclusive and celebrates
+              positive change, so we ask that your content created for this
+              campaign coincides with this.
+            </p>
+          </div>
+
+          <div style={{ padding: '10px 0px' }}>
+            <p style={{ fontWeight: 'bold' }}>
+              How can I ensure that I am entered into this competition?
+            </p>
+            <p>
+              Tag us on Tik Tok (@tabforacause.official) and Instagram
+              (@tabforacause) and email your submission to
+              contact@tabforacause.org with the subject “Video Submission”.
+              While we will consider any video we see, we can’t guarantee that
+              we will be able to view your submission if it hasn't been sent to
+              us directly.
+            </p>
+          </div>
+
+          <div style={{ padding: '10px 0px' }}>
+            <p style={{ fontWeight: 'bold' }}>What do I win?</p>
+            <p>
+              The Tabber with the top submission will receive a{' '}
+              <span style={{ fontWeight: 'bold' }}>
+                $500 donation to the charity of their choice
+              </span>
+              , along with their choice of sweatshirt, tote bag and stickers
+              from our merchandise store! Our next 4 runner ups will receive
+              their choice of tote bag and/or stickers!
+            </p>
+          </div>
+
+          <div style={{ padding: '10px 0px' }}>
+            <p style={{ fontWeight: 'bold' }}>How do I win?</p>
+            <p>
+              The top 5 videos will be decided by our team based on creativity
+              of content and engagement with the video (likes, comments,
+              shares). The top video will be decided on by our Tabbers! Starting
+              January 5, 2021 we will share the 5 videos selected and have the
+              Tabbing community vote for a winner!
+            </p>
+          </div>
+
+          <div style={{ padding: '10px 0px' }}>
+            <p style={{ fontWeight: 'bold' }}>
+              What if I don’t win but still want merchandise?
+            </p>
+            <p>
+              You can{' '}
+              <a href={'https://shop.spreadshirt.com/tab-for-a-cause/'}>
+                shop merchandise here
+              </a>
+              , and we'll plant 20 trees for each shirt, sweatshirt, or tote
+              sold!
+            </p>
+          </div>
+        </div>
       </TextPageContent>
     </Layout>
   )
