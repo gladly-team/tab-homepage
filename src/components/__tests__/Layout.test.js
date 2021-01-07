@@ -7,6 +7,7 @@ import Footer from 'src/components/Footer'
 import HeadTags from 'src/components/HeadTags'
 
 jest.mock('src/components/HeadTags')
+jest.mock('src/utils/navigation')
 
 const getMockProps = () => ({
   brand: 'tab',
@@ -26,7 +27,7 @@ describe('index layout page', () => {
     const Layout = require('src/components/Layout').default
     const wrapper = shallow(<Layout {...getMockProps()} />)
     const elem = wrapper.find(HeadTags)
-    expect(elem.prop('pageURL')).toBe('https://tab.gladly.io/')
+    expect(elem.prop('pageURL')).toBe('https://example.com/')
   })
   it('renders the Header component', () => {
     const Layout = require('src/components/Layout').default

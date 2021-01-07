@@ -51,9 +51,9 @@
     "format": "eslint --fix 'src/**/*.js'",
     "lint": "eslint 'src/**/*.js'",
     "serve": "GATSBY_TELEMETRY_DISABLED=1 gatsby serve",
-    "test": "yarn run lint && jest --env=jsdom --coverage && yarn run test:codecov",
-    "test:codecov": "if-env CI=true && codecov || echo 'Skipping test coverage logging.'",
-    "test:watch": "jest --env=jsdom --watch"
+    "test": "yarn run lint && jest --env=jsdom --coverage",
+    "test:watch": "jest --env=jsdom --watch",
+    "deploy": "gatsby-plugin-s3 deploy"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -65,7 +65,6 @@
     "babel-jest": "^26.6.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-gatsby": "^0.5.14",
-    "codecov": "^3.8.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
@@ -74,6 +73,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "esm": "^3.2.25",
+    "gatsby-plugin-s3": "^0.3.8",
     "if-env": "^1.0.4",
     "jest": "^26.6.0",
     "jsdom": "^16.4.0",

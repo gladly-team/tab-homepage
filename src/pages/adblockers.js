@@ -147,8 +147,8 @@ class AdblockersPage extends React.Component {
           <Paper style={{ padding: 20 }}>
             <p>
               Tab for a Cause uses ads to raise money for charity. If you have
-              an ad blocker, you will likely need to whitelist Tab for a Cause
-              to allow ads to show.
+              an ad blocker, you'll likely need to whitelist Tab for a Cause to
+              allow ads to show.
             </p>
             <p style={{ marginBottom: 0 }}>
               <span style={{ fontWeight: 'bold' }}>Having trouble?</span> Please

@@ -62,6 +62,10 @@ Layout.propTypes = {
   }),
 }
 
+Layout.defaultProps = {
+  brand: 'tab',
+}
+
 Layout.displayName = 'Layout'
 
 export default Layout

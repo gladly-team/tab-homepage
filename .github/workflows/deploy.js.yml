@@ -1,0 +1,48 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      # Conditionally set environment variables depending on
+      # the branch.
+      # https://github.community/t/github-actions-branch-conditional/16057
+      # https://stackoverflow.com/a/57969570
+      - name: Set env vars for production (main branch)
+        if: github.ref == 'refs/heads/master'
+        run: |
+          echo "GATSBY_S3_BUCKET_NAME=prod-tab-website" >> "$GITHUB_ENV"
+          echo "GATSBY_DOMAIN=tab.gladly.io" >> "$GITHUB_ENV"
+      - name: Set env vars for dev branch
+        if: github.ref == 'refs/heads/dev'
+        run: |
+          echo "GATSBY_S3_BUCKET_NAME=dev-tab-website" >> "$GITHUB_ENV"
+          echo "GATSBY_DOMAIN=dev-tab2017.gladly.io" >> "$GITHUB_ENV"
+      - name: Install dependencies
+        run: yarn install
+      - name: Run tests
+        run: yarn test
+      - name: Build
+        run: yarn build
+      # The deploy user needs the following permissions:
+      # https://github.com/jariz/gatsby-plugin-s3/issues/39#issuecomment-467379363
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - name: Deploy
+        run: yarn run deploy
