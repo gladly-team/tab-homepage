@@ -51,7 +51,7 @@
     "format": "eslint --fix 'src/**/*.js'",
     "lint": "eslint 'src/**/*.js'",
     "serve": "GATSBY_TELEMETRY_DISABLED=1 gatsby serve",
-    "test": "yarn run lint && jest --env=jsdom --coverage && yarn run test:codecov",
+    "test": "yarn run lint && jest --env=jsdom --coverage",
     "test:watch": "jest --env=jsdom --watch"
   },
   "devDependencies": {
