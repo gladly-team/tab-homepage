@@ -65,14 +65,21 @@ module.exports = {
         dsn: 'https://8cb64ec80165437b98905b07296ddc3f@sentry.io/1232334',
       },
     },
-    {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        // https://github.com/jariz/gatsby-plugin-s3#configuration
-        bucketName: process.env.GATSBY_S3_BUCKET_NAME,
-        removeNonexistentObjects: false,
-        acl: null,
-      },
-    },
+    // Only include the S3 plugin in a CI environment, because
+    // it requires the GATSBY_S3_BUCKET_NAME env var, and we
+    // don't want to set a default value.
+    ...(process.env.CI === 'true'
+      ? [
+          {
+            resolve: `gatsby-plugin-s3`,
+            options: {
+              // https://github.com/jariz/gatsby-plugin-s3#configuration
+              bucketName: process.env.GATSBY_S3_BUCKET_NAME,
+              removeNonexistentObjects: false,
+              acl: null,
+            },
+          },
+        ]
+      : []),
   ],
 }
