@@ -73,5 +73,6 @@ module.exports = {
         removeNonexistentObjects: false,
         acl: null,
       },
+    },
   ],
 }
