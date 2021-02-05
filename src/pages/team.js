@@ -9,6 +9,7 @@ import { secondaryMainColor } from 'src/themes/theme'
 import imgAlex from 'src/img/team/alex.jpg'
 import imgKevin from 'src/img/team/kevin.jpg'
 import imgMiranda from 'src/img/team/miranda.jpg'
+import imgAlec from 'src/img/team/alec.jpg'
 import Layout from 'src/components/Layout'
 
 const TeamPage = ({ location }) => {
@@ -26,7 +27,12 @@ const TeamPage = ({ location }) => {
     {
       name: 'Miranda Escobar',
       img: imgMiranda,
-      title: 'Marketing Associate',
+      title: 'Marketing Manager',
+    },
+    {
+      name: 'Alec Maliwanag',
+      img: imgAlec,
+      title: 'Senior Web Developer',
     },
   ]
   const openGraphTitle = 'Our Team - Tab for a Cause'
@@ -56,6 +62,7 @@ const TeamPage = ({ location }) => {
               display: 'flex',
               flexWrap: 'wrap',
               justifyContent: 'space-around',
+              boxSizing: 'border-box',
             }}
           >
             {team.map((member) => (
@@ -65,7 +72,9 @@ const TeamPage = ({ location }) => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  margin: 8,
+                  padding: 12,
+                  width: '50%',
+                  boxSizing: 'border-box',
                 }}
               >
                 <img
