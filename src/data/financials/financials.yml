@@ -117,3 +117,6 @@
 - quarter: 3
   year: 2020
   pdfUrl: '/financials/2020-Q3.pdf'
+- quarter: 4
+  year: 2020
+  pdfUrl: '/financials/2020-Q4.pdf'
