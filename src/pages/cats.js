@@ -158,7 +158,6 @@ const Cats = ({ pageContext }) => {
         <Section wrap={'reverse'}>
           <img
             src={browserLandingPageImg}
-            className={styles.homepageImg} // responsive styling
             style={{
               width: '67%',
               maxWidth: 740,
@@ -169,7 +168,6 @@ const Cats = ({ pageContext }) => {
             }}
           />
           <div
-            className={styles.homepageMainText} // responsive styling
             style={{
               flex: 1,
               display: 'flex',
