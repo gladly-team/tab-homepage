@@ -52,6 +52,7 @@ import {
 import { getUrlParameterValue } from 'src/utils/location'
 import Divider from '@material-ui/core/Divider'
 import redirect from 'src/utils/redirect'
+
 const canonicalURL = getAbsoluteURL(homeURL)
 const useStyles = makeStyles(() => ({
   whiteFont: {
