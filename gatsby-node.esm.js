@@ -65,3 +65,12 @@ exports.createPages = async ({ actions, graphql }) => {
     })
   })
 }
+exports.onCreatePage = async ({ page, actions: { deletePage } }) => {
+  // Only conditionally build the "million raised" page.
+  if (page.path.match(/^\/cats/)) {
+    // eslint-disable-next-line no-undef
+    if (!(process.env.SHOW_CATS_PAGE === 'true')) {
+      deletePage(page)
+    }
+  }
+}
