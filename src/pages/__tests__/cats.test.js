@@ -3,8 +3,13 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
+import InstallButton from 'src/components/InstallButton'
+import redirect from 'src/utils/redirect'
+import { homeURL } from 'src/utils/navigation'
 
+jest.mock('src/components/InstallButton')
 jest.mock('src/utils/local-storage')
+jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')
 jest.mock('src/utils/navigation')
 jest.mock('src/components/FAQDropDown')
@@ -130,5 +135,35 @@ describe('cats page', () => {
 
     mount(<CatsPageWithTheme {...getMockProps()} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
+  })
+
+  it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage', () => {
+    const CatsPageWithTheme = require('../cats').default
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+
+    const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
+    const callback = wrapper.find(InstallButton).first().prop('onBeforeInstall')
+    callback()
+    expect(localStorageMgr.setItem).toHaveBeenCalledWith(
+      'tab.newUser.isTabV4Enabled',
+      'true'
+    )
+  })
+
+  it('the InstallButton onUnsupportedBrowserInstallClick sends the user to the homepage', () => {
+    const CatsPageWithTheme = require('../cats').default
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+
+    const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
+    const callback = wrapper
+      .find(InstallButton)
+      .first()
+      .prop('onUnsupportedBrowserInstallClick')
+    callback()
+    expect(redirect).toHaveBeenCalledWith(homeURL)
   })
 })
