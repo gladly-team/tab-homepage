@@ -6,40 +6,40 @@ import Popover from '@material-ui/core/Popover'
 const getMockProps = () => ({
   open: false,
   onClose: () => {},
+  anchorEl: mount(<div />),
 })
 
 describe('Info Popover', () => {
   it('renders without error', () => {
-    const mockDomNode = mount(<div />)
     const InfoPopover = require('src/components/InfoPopover').default
     const mockProps = getMockProps()
-    shallow(<InfoPopover {...mockProps} anchorEl={mockDomNode} />)
+    shallow(<InfoPopover {...mockProps} />)
   })
 
-  xit('passes the "open" prop to Popover', () => {
+  it('passes the "open" prop to Popover', () => {
     const InfoPopover = require('src/components/InfoPopover').default
     const mockProps = getMockProps()
-    const wrapper = mount(<InfoPopover {...mockProps} />)
+    const wrapper = shallow(<InfoPopover {...mockProps} />)
     wrapper.setProps({ open: true })
     expect(wrapper.find(Popover).prop('open')).toBe(true)
     wrapper.setProps({ open: false })
     expect(wrapper.find(Popover).prop('open')).toBe(false)
   })
 
-  xit('passes the "anchorElement" prop to Popover', () => {
+  it('passes the "anchorElement" prop to Popover', () => {
     const InfoPopover = require('src/components/InfoPopover').default
     const mockProps = getMockProps()
-    const wrapper = mount(<InfoPopover {...mockProps} />)
-    const mockAnchorEl = <div id="blah" />
+    const wrapper = shallow(<InfoPopover {...mockProps} />)
+    const mockAnchorEl = mount(<div id="blah" />)
     wrapper.setProps({ anchorEl: mockAnchorEl })
     expect(wrapper.find(Popover).prop('anchorEl')).toBe(mockAnchorEl)
   })
 
-  xit('passes extra props to Popover', () => {
+  it('passes extra props to Popover', () => {
     const InfoPopover = require('src/components/InfoPopover').default
     const mockProps = getMockProps()
     mockProps.foo = 'blah'
-    const wrapper = mount(<InfoPopover {...mockProps} />)
+    const wrapper = shallow(<InfoPopover {...mockProps} />)
     expect(wrapper.find(Popover).prop('foo')).toEqual('blah')
   })
 })

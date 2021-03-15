@@ -16,7 +16,7 @@ import Review from 'src/components/Review'
 import FAQDropDown from 'src/components/FAQDropDown'
 import InfoPopover from 'src/components/InfoPopover'
 // Images
-import browserLandingPageImg from 'src/img/browser-rain-trees.png'
+import browserLandingPageImg from 'src/img/cats/mockPage1.png'
 import {
   getAbsoluteURL,
   financialsURL,
@@ -56,6 +56,9 @@ const canonicalURL = getAbsoluteURL(homeURL)
 const useStyles = makeStyles(() => ({
   whiteFont: {
     color: '#fff',
+  },
+  topSectionHeight: {
+    height: 'calc(100vh - 64px)',
   },
   sectionSplit: {
     display: 'flex',
@@ -155,16 +158,13 @@ const Cats = ({ pageContext }) => {
         <Helmet>
           <link rel="canonical" href={canonicalURL} />
         </Helmet>
-        <Section wrap={'reverse'}>
+        <Section wrap={'reverse'} className={cx.topSectionHeight}>
           <img
             src={browserLandingPageImg}
             style={{
-              width: '67%',
               maxWidth: 740,
-              height: '67%',
-              marginTop: 20,
-              marginRight: 0,
-              marginBottom: 20,
+              margin: '20px',
+              boxShadow: '0 32px 40px rgba(0, 0, 0, 0.25)',
             }}
           />
           <div
@@ -182,14 +182,8 @@ const Cats = ({ pageContext }) => {
             }}
           >
             <h1 className={cx.title}>Tab For Cats</h1>
-            <p style={{ width: '80%', textAlign: 'justify' }}>
-              Tab for a Cause is excited to introduce its latest project, Tab
-              for Cats! Every time you open a new tab, you are donating a treat
-              to a shelter cat to help them with reinforcement training in
-              anticipation of being adopted into their fur-ever homes!
-            </p>
-            <p style={{ width: '80%', textAlign: 'justify' }}>
-              Scroll to learn more!
+            <p style={{ width: '80%', textAlign: 'center', fontSize: '30px' }}>
+              Open browser tabs, help shelter cats get adopted!
             </p>
             <div style={{ marginTop: 20, marginBottom: 20 }}>
               {installButton}
@@ -241,7 +235,13 @@ const Cats = ({ pageContext }) => {
             }}
           >
             <h1 className={cx.title}>We Show Our Work.</h1>
-            <p style={{ width: '80%', textAlign: 'center' }}>
+            <p
+              style={{
+                width: '80%',
+                textAlign: 'center',
+                marginBottom: '30px',
+              }}
+            >
               We know that trust must be earned. That's why the code for our{' '}
               <Link to="https://github.com/gladly-team/tab-web">
                 new tab page
@@ -256,13 +256,25 @@ const Cats = ({ pageContext }) => {
               </Link>{' '}
               are open source.
             </p>
-            <p style={{ width: '80%', textAlign: 'center' }}>
+            <p
+              style={{
+                width: '80%',
+                textAlign: 'center',
+                marginBottom: '30px',
+              }}
+            >
               Even better, we publish quarterly{' '}
               <Link to={financialsURL}>financials</Link> reports, so you can see
               exactly how much we give to each charity and what our other costs
               are.
             </p>
-            <p style={{ width: '80%', textAlign: 'center' }}>
+            <p
+              style={{
+                width: '80%',
+                textAlign: 'center',
+                marginBottom: '30px',
+              }}
+            >
               As this is our first quarter since creating Tab for Cats, date
               before Q4 2020 will not show Tab for Cats' impact.
             </p>
@@ -400,10 +412,7 @@ const Cats = ({ pageContext }) => {
                       }}
                     >
                       <div>
-                        <p
-                          variant={'body2'}
-                          // className={classes.dropdownText}
-                        >
+                        <p variant={'body2'}>
                           No. Tab for a Cause does not endorse the companies
                           advertising on our page. We don't choose specific ads
                           ourselves (as awesome as that would be).

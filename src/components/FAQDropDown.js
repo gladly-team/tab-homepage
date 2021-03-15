@@ -18,7 +18,6 @@ const styles = {
 class FAQDropDown extends React.Component {
   constructor(props) {
     super(props)
-    this.timer = 0
     this.state = {
       isPopoverOpen: false,
     }
