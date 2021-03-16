@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import defaultTheme from 'src/themes/theme'
 import { ThemeProvider } from '@material-ui/core/styles'
 import { responsiveFontSizes } from '@material-ui/core/styles'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Section from 'src/components/Section'
 import InstallButton from 'src/components/InstallButton'
 import Link from 'src/components/Link'
@@ -15,8 +16,10 @@ import ReviewCarousel from 'src/components/ReviewCarousel'
 import Review from 'src/components/Review'
 import FAQDropDown from 'src/components/FAQDropDown'
 import InfoPopover from 'src/components/InfoPopover'
+import useInterval from '@use-it/interval'
 // Images
 import browserLandingPageImg from 'src/img/cats/mockPage1.png'
+import browserLandingPageImg2 from 'src/img/cats/mockPage2.png'
 import {
   getAbsoluteURL,
   financialsURL,
@@ -53,10 +56,32 @@ import { getUrlParameterValue } from 'src/utils/location'
 import Divider from '@material-ui/core/Divider'
 import redirect from 'src/utils/redirect'
 
+const mockImagesArray = [browserLandingPageImg, browserLandingPageImg2]
 const canonicalURL = getAbsoluteURL(homeURL)
 const useStyles = makeStyles(() => ({
   whiteFont: {
     color: '#fff',
+  },
+  backgroundImageEnter: {
+    opacity: 0,
+  },
+  backgroundImageEnterActive: {
+    opacity: 1,
+    transition: 'opacity 2000ms',
+  },
+  backgroundImageAppear: {
+    opacity: 0,
+  },
+  backgroundImageAppearActive: {
+    opacity: 1,
+    transition: 'opacity 2000ms',
+  },
+  backgroundImageExit: {
+    opacity: 1,
+  },
+  backgroundImageExitActive: {
+    opacity: 0,
+    transition: 'opacity 2000ms',
   },
   topSectionHeight: {
     height: 'calc(100vh - 64px)',
@@ -92,6 +117,7 @@ const useStyles = makeStyles(() => ({
 }))
 const Cats = ({ pageContext }) => {
   const cx = useStyles()
+  const [imgUrl, setImgUrl] = useState(browserLandingPageImg)
   // store referrer id
   useEffect(() => {
     let referrerId = null
@@ -119,6 +145,13 @@ const Cats = ({ pageContext }) => {
       )
     }
   }, [])
+  useInterval(() => {
+    console.log('fiured')
+    const currentIndex = mockImagesArray.indexOf(imgUrl)
+    const nextIndex = (currentIndex + 1) % mockImagesArray.length
+    console.log(nextIndex)
+    setImgUrl(mockImagesArray[nextIndex])
+  }, 3000)
   const installButton = (
     <InstallButton
       onBeforeInstall={() => {
@@ -160,14 +193,43 @@ const Cats = ({ pageContext }) => {
           <link rel="canonical" href={canonicalURL} />
         </Helmet>
         <Section wrap={'reverse'} className={cx.topSectionHeight}>
-          <img
-            src={browserLandingPageImg}
-            style={{
-              maxWidth: 740,
-              margin: '20px',
-              boxShadow: '0 32px 40px rgba(0, 0, 0, 0.25)',
-            }}
-          />
+          <TransitionGroup>
+            <CSSTransition
+              key={imgUrl}
+              appear
+              timeout={2000}
+              exit={false}
+              classNames={{
+                appear: cx.backgroundImageAppear,
+                appearActive: cx.backgroundImageAppearActive,
+                enter: cx.backgroundImageEnter,
+                enterActive: cx.backgroundImageEnterActive,
+                // exit: cx.backgroundImageExit,
+                // exitActive: cx.backgroundImageExitActive,
+              }}
+            >
+              <img
+                style={{
+                  maxWidth: 740,
+                  margin: '20px',
+                  boxShadow: '0 32px 40px rgba(0, 0, 0, 0.25)',
+                }}
+                src={imgUrl}
+              />
+            </CSSTransition>
+            {/* <Transition key={imgUrl} appear exit timeout={2000}>
+              <img
+                src={imgUrl}
+                style={{
+                  maxWidth: 740,
+                  margin: '20px',
+                  boxShadow: '0 32px 40px rgba(0, 0, 0, 0.25)',
+                  transition: `opacity 500ms ease-in-out`,
+                  opacity: 1,
+                }}
+              />
+            </Transition> */}
+          </TransitionGroup>
           <div
             style={{
               flex: 1,
