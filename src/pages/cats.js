@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
@@ -15,13 +15,16 @@ import ReviewCarousel from 'src/components/ReviewCarousel'
 import Review from 'src/components/Review'
 import FAQDropDown from 'src/components/FAQDropDown'
 import InfoPopover from 'src/components/InfoPopover'
-import useInterval from '@use-it/interval'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import 'src/pages/cats.css'
 // Images
-import browserLandingPageImg from 'src/img/cats/mockPage1.png'
-import browserLandingPageImg2 from 'src/img/cats/mockPage2.png'
+import landingImg from 'src/img/cats/mockPage1.png'
+import landingImg2 from 'src/img/cats/mockPage2.png'
+import landingImg3 from 'src/img/cats/mockPage3.png'
+import landingImg4 from 'src/img/cats/mockPage4.png'
+import landingImg5 from 'src/img/cats/mockPage5.png'
+import landingImg6 from 'src/img/cats/mockPage6.png'
 import { lightestTextColor } from 'src/themes/theme'
 import {
   getAbsoluteURL,
@@ -65,18 +68,46 @@ import redirect from 'src/utils/redirect'
 
 const mockImagesArray = [
   <img
-    key="1"
+    key="6"
     style={{
       maxWidth: 600,
     }}
-    src={browserLandingPageImg}
+    src={landingImg6}
+  />,
+  <img
+    key="4"
+    style={{
+      maxWidth: 600,
+    }}
+    src={landingImg4}
   />,
   <img
     key="2"
     style={{
       maxWidth: 600,
     }}
-    src={browserLandingPageImg2}
+    src={landingImg2}
+  />,
+  <img
+    key="3"
+    style={{
+      maxWidth: 600,
+    }}
+    src={landingImg3}
+  />,
+  <img
+    key="5"
+    style={{
+      maxWidth: 600,
+    }}
+    src={landingImg5}
+  />,
+  <img
+    key="1"
+    style={{
+      maxWidth: 600,
+    }}
+    src={landingImg}
   />,
 ]
 const canonicalURL = getAbsoluteURL(homeURL)
@@ -145,7 +176,6 @@ const useStyles = makeStyles(() => ({
 }))
 const Cats = ({ pageContext }) => {
   const cx = useStyles()
-  const [imgUrl, setImgUrl] = useState(browserLandingPageImg)
   // store referrer id
   useEffect(() => {
     let referrerId = null
@@ -173,13 +203,6 @@ const Cats = ({ pageContext }) => {
       )
     }
   }, [])
-  useInterval(() => {
-    console.log('fiured')
-    const currentIndex = mockImagesArray.indexOf(imgUrl)
-    const nextIndex = (currentIndex + 1) % mockImagesArray.length
-    console.log(nextIndex)
-    setImgUrl(mockImagesArray[nextIndex])
-  }, 3000)
   const installButton = (
     <InstallButton
       classes={{ contained: cx.mainInstallButton }}
@@ -237,8 +260,8 @@ const Cats = ({ pageContext }) => {
             animationType="fadeout"
             autoPlayStrategy="none"
             items={mockImagesArray}
-            animationDuration={1500}
-            autoPlayInterval={3200}
+            animationDuration={1000}
+            autoPlayInterval={2500}
             disableButtonsControls
             disableDotsControls
             disableSlideInfo
