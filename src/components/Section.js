@@ -5,7 +5,7 @@ import { lightestShadingColor } from 'src/themes/theme'
 
 class Section extends React.Component {
   render() {
-    const { background, fullWidth, style, wrap } = this.props
+    const { background, fullWidth, style, wrap, className } = this.props
     return (
       <div
         style={Object.assign(
@@ -28,6 +28,7 @@ class Section extends React.Component {
               },
           style
         )}
+        className={className}
       >
         {this.props.children}
       </div>
@@ -44,6 +45,7 @@ Section.propTypes = {
   fullWidth: PropTypes.bool,
   style: PropTypes.object,
   wrap: PropTypes.oneOf(['normal', 'reverse']),
+  className: PropTypes.string,
 }
 
 Section.defaultProps = {

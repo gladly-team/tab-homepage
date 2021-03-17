@@ -73,12 +73,13 @@ class MoneyRaised extends React.Component {
     var moneyRaisedFormatted = `$${commaFormatted(
       currencyFormatted(moneyRaised)
     )}`
-    return <span>{moneyRaisedFormatted}</span>
+    return <span className={this.props.className}>{moneyRaisedFormatted}</span>
   }
 }
 
 MoneyRaised.propTypes = {
   onLoaded: PropTypes.func,
+  className: PropTypes.string,
 }
 
 MoneyRaised.defaultProps = {
