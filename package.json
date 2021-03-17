@@ -29,6 +29,7 @@
     "moment": "^2.29.1",
     "qs": "^6.9.4",
     "react": "^16.14.0",
+    "react-alice-carousel": "^2.4.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-share": "^4.3.1",

@@ -4,6 +4,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import styles from './ReviewCarousel.module.css'
+import clsx from 'clsx'
 
 class ReviewCarousel extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class ReviewCarousel extends React.Component {
     // review.
     return (
       <div
-        className={styles.carouselContainer} // responsive styling
+        className={clsx(styles.carouselContainer, this.props.className)} // responsive styling
         style={{
           display: 'block',
           paddingBottom: 20,
@@ -46,6 +47,7 @@ ReviewCarousel.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  className: PropTypes.string,
 }
 
 ReviewCarousel.defaultProps = {}

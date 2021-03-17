@@ -1,0 +1,9 @@
+.alice-carousel {
+  width: 600px;
+  box-shadow: 20px 32px 40px rgb(0 0 0 / 45%);
+  margin-left: 40px;
+}
+p {
+  font-size: 18px;
+  color:#353535;
+}

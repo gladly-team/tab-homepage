@@ -6,20 +6,23 @@ import Toolbar from '@material-ui/core/Toolbar'
 import defaultTheme from 'src/themes/theme'
 import { ThemeProvider } from '@material-ui/core/styles'
 import { responsiveFontSizes } from '@material-ui/core/styles'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Section from 'src/components/Section'
 import InstallButton from 'src/components/InstallButton'
 import Link from 'src/components/Link'
-import MoneyRaised from 'src/components/MoneyRaised'
+import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import Helmet from 'react-helmet'
 import ReviewCarousel from 'src/components/ReviewCarousel'
 import Review from 'src/components/Review'
 import FAQDropDown from 'src/components/FAQDropDown'
 import InfoPopover from 'src/components/InfoPopover'
 import useInterval from '@use-it/interval'
+import AliceCarousel from 'react-alice-carousel'
+import 'react-alice-carousel/lib/alice-carousel.css'
+import 'src/pages/cats.css'
 // Images
 import browserLandingPageImg from 'src/img/cats/mockPage1.png'
 import browserLandingPageImg2 from 'src/img/cats/mockPage2.png'
+import { lightestTextColor } from 'src/themes/theme'
 import {
   getAbsoluteURL,
   financialsURL,
@@ -34,6 +37,11 @@ import {
 import logoWhite from 'src/img/logo-white.svg'
 import cat1 from 'src/img/cats/1.png'
 import cat2 from 'src/img/cats/2.png'
+
+// Icons
+import Star from '@material-ui/icons/Star'
+import StarHalf from '@material-ui/icons/StarHalf'
+
 // Reviewer images
 import reviewImgAbbyH from 'src/img/reviews/abby_h.png'
 import reviewImgAlfonzoG from 'src/img/reviews/alfonzo_g.png'
@@ -46,7 +54,6 @@ import reviewImgLucasN from 'src/img/reviews/lucas_n.png'
 import reviewImgShayneW from 'src/img/reviews/shayne_w.png'
 import reviewImgTobyS from 'src/img/reviews/toby_s.png'
 import localStorageMgr from 'src/utils/local-storage'
-import { lightestTextColor } from 'src/themes/theme'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
@@ -56,11 +63,32 @@ import { getUrlParameterValue } from 'src/utils/location'
 import Divider from '@material-ui/core/Divider'
 import redirect from 'src/utils/redirect'
 
-const mockImagesArray = [browserLandingPageImg, browserLandingPageImg2]
+const mockImagesArray = [
+  <img
+    key="1"
+    style={{
+      maxWidth: 600,
+    }}
+    src={browserLandingPageImg}
+  />,
+  <img
+    key="2"
+    style={{
+      maxWidth: 600,
+    }}
+    src={browserLandingPageImg2}
+  />,
+]
 const canonicalURL = getAbsoluteURL(homeURL)
 const useStyles = makeStyles(() => ({
   whiteFont: {
     color: '#fff',
+  },
+  MuiButtonContained: {
+    boxShadow: 'none',
+  },
+  mainInstallButton: {
+    borderRadius: '20px',
   },
   backgroundImageEnter: {
     opacity: 0,
@@ -83,12 +111,12 @@ const useStyles = makeStyles(() => ({
     opacity: 0,
     transition: 'opacity 2000ms',
   },
-  topSectionHeight: {
+  SectionHeight: {
     height: 'calc(100vh - 64px)',
   },
   sectionSplit: {
     display: 'flex',
-    minHeight: '460px',
+    minHeight: '540px',
     alignItems: 'center',
   },
   halfPage: {
@@ -101,9 +129,9 @@ const useStyles = makeStyles(() => ({
     width: 40,
     height: 40,
   },
-  logoContainer: { flex: 1 },
+  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
   title: {
-    fontSize: '75px',
+    fontSize: '65px',
     color: 'black',
     fontWeight: 'bold',
     textAlign: 'center',
@@ -154,6 +182,7 @@ const Cats = ({ pageContext }) => {
   }, 3000)
   const installButton = (
     <InstallButton
+      classes={{ contained: cx.mainInstallButton }}
       onBeforeInstall={() => {
         localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
       }}
@@ -183,8 +212,18 @@ const Cats = ({ pageContext }) => {
                 />
               </Link>
             </div>
+            <InstallButton
+              onBeforeInstall={() => {
+                localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
+              }}
+              classes={{ contained: cx.MuiButtonContained }}
+              onUnsupportedBrowserInstallClick={() => {
+                redirect(homeURL)
+              }}
+            />
           </div>
-          <MoneyRaised className={cx.whiteFont} />
+
+          <MoneyRaisedDisplay whiteClassName={cx.whiteFont} />
         </Toolbar>
       </AppBar>
 
@@ -192,44 +231,19 @@ const Cats = ({ pageContext }) => {
         <Helmet>
           <link rel="canonical" href={canonicalURL} />
         </Helmet>
-        <Section wrap={'reverse'} className={cx.topSectionHeight}>
-          <TransitionGroup>
-            <CSSTransition
-              key={imgUrl}
-              appear
-              timeout={2000}
-              exit={false}
-              classNames={{
-                appear: cx.backgroundImageAppear,
-                appearActive: cx.backgroundImageAppearActive,
-                enter: cx.backgroundImageEnter,
-                enterActive: cx.backgroundImageEnterActive,
-                // exit: cx.backgroundImageExit,
-                // exitActive: cx.backgroundImageExitActive,
-              }}
-            >
-              <img
-                style={{
-                  maxWidth: 740,
-                  margin: '20px',
-                  boxShadow: '0 32px 40px rgba(0, 0, 0, 0.25)',
-                }}
-                src={imgUrl}
-              />
-            </CSSTransition>
-            {/* <Transition key={imgUrl} appear exit timeout={2000}>
-              <img
-                src={imgUrl}
-                style={{
-                  maxWidth: 740,
-                  margin: '20px',
-                  boxShadow: '0 32px 40px rgba(0, 0, 0, 0.25)',
-                  transition: `opacity 500ms ease-in-out`,
-                  opacity: 1,
-                }}
-              />
-            </Transition> */}
-          </TransitionGroup>
+        <Section wrap={'reverse'} fullWidth className={cx.SectionHeight}>
+          <AliceCarousel
+            autoPlay
+            animationType="fadeout"
+            autoPlayStrategy="none"
+            items={mockImagesArray}
+            animationDuration={1500}
+            autoPlayInterval={3200}
+            disableButtonsControls
+            disableDotsControls
+            disableSlideInfo
+            infinite
+          />
           <div
             style={{
               flex: 1,
@@ -245,15 +259,40 @@ const Cats = ({ pageContext }) => {
             }}
           >
             <h1 className={cx.title}>Tab For Cats</h1>
-            <p style={{ width: '80%', textAlign: 'center', fontSize: '30px' }}>
+            <p style={{ width: '80%', textAlign: 'center', fontSize: '25px' }}>
               Open browser tabs, help shelter cats get adopted!
             </p>
             <div style={{ marginTop: 20, marginBottom: 20 }}>
               {installButton}
             </div>
+            <div style={{ margin: 0 }}>
+              <div>
+                <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+                <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+                <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+                <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+                <StarHalf style={{ color: '#ffc533', width: 18, height: 18 }} />
+              </div>
+              <p
+                style={{
+                  fontSize: 12,
+                  color: lightestTextColor,
+                  marginBottom: 0,
+                }}
+              >
+                215,000+ people are Tabbing on Chrome
+              </p>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}
+              ></div>
+            </div>
           </div>
         </Section>
-        <Section background={'dark'}>
+        <Section background={'dark'} fullWidth>
           <div className={cx.sectionSplit}>
             <div className={cx.halfPage}>
               <h1 className={cx.title}>How Does it Work?</h1>
@@ -287,14 +326,14 @@ const Cats = ({ pageContext }) => {
             </div>
           </div>
         </Section>
-        <Section style={{ justifyContent: 'center' }}>
+        <Section style={{ justifyContent: 'center' }} fullWidth>
           <div
             style={{
               display: 'flex',
               justifyContent: 'center',
               flexDirection: 'column',
               alignItems: 'center',
-              minHeight: '460px',
+              minHeight: '540px',
             }}
           >
             <h1 className={cx.title}>We Show Our Work.</h1>
@@ -302,7 +341,7 @@ const Cats = ({ pageContext }) => {
               style={{
                 width: '80%',
                 textAlign: 'center',
-                marginBottom: '30px',
+                marginBottom: '40px',
               }}
             >
               We know that trust must be earned. That's why the code for our{' '}
@@ -323,7 +362,7 @@ const Cats = ({ pageContext }) => {
               style={{
                 width: '80%',
                 textAlign: 'center',
-                marginBottom: '30px',
+                marginBottom: '40px',
               }}
             >
               Even better, we publish quarterly{' '}
@@ -335,7 +374,7 @@ const Cats = ({ pageContext }) => {
               style={{
                 width: '80%',
                 textAlign: 'center',
-                marginBottom: '30px',
+                marginBottom: '40px',
               }}
             >
               As this is our first quarter since creating Tab for Cats, date
@@ -442,7 +481,7 @@ const Cats = ({ pageContext }) => {
             </Review>
           </ReviewCarousel>
         </Section>
-        <Section style={{ justifyContent: 'center', minHeight: '460px' }}>
+        <Section style={{ justifyContent: 'center', minHeight: '540px' }}>
           <h1 className={cx.title}>Frequently Asked Questions</h1>
           <div style={{ maxWidth: '986px', width: '100%', display: 'flex' }}>
             <div className={cx.halfPage}>
@@ -490,9 +529,9 @@ const Cats = ({ pageContext }) => {
                           choice!
                         </p>{' '}
                         <p variant={'body2'} style={{ paddingTop: '10px' }}>
-                          If you see anything that doesn’t feel
-                          family-friendlyfamily friendly please let us know by
-                          emailing contact@tabforacause.org so we can fix this
+                          If you see anything that doesn’t feel family-friendly
+                          please let us know by emailing
+                          contact@tabforacause.org so we can fix this
                           immediately! If you are comfortable screenshotting the
                           ad you are concerned about, this will help us identify
                           where it came from a lot faster but you are never
@@ -752,7 +791,7 @@ const Cats = ({ pageContext }) => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              minHeight: '460px',
+              minHeight: '540px',
             }}
           >
             <h1 className={cx.title}>Contact Us</h1>
