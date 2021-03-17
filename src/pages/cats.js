@@ -842,7 +842,7 @@ const Cats = ({ pageContext }) => {
                 announcements? We're on{' '}
                 <Link to={instagramPageURL}>Instagram</Link>
                 {', '}
-                <Link to={tiktokPageURL}>Tik Tok</Link>,
+                <Link to={tiktokPageURL}>Tik Tok</Link>,{' '}
                 <Link to={facebookPageURL}>Facebook</Link>, and{' '}
                 <Link to={twitterPageURL}>Twitter</Link>!
               </p>
