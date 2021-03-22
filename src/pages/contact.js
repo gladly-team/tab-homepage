@@ -66,8 +66,8 @@ const ContactPage = ({ location }) => {
                 Tab for a Cause is built with love at:
               </p>
               <p style={addressStyle}>Gladly, Inc.</p>
-              <p style={addressStyle}>400 Concar Dr.</p>
-              <p style={addressStyle}>San Mateo, CA 94402</p>
+              <p style={addressStyle}>204 E 2nd Ave</p>
+              <p style={addressStyle}>San Mateo, CA 94401</p>
             </div>
           </div>
           <p />
