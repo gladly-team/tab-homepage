@@ -864,8 +864,8 @@ const Cats = ({ pageContext }) => {
                     Tab for a Cause is built with love at:
                   </p>
                   <p className={cx.address}>Gladly, Inc.</p>
-                  <p className={cx.address}>400 Concar Dr.</p>
-                  <p className={cx.address}>San Mateo, CA 94402</p>
+                  <p className={cx.address}>204 E 2nd Ave</p>
+                  <p className={cx.address}>San Mateo, CA 94401</p>
                 </div>
               </div>
               <p />

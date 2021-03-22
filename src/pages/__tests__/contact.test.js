@@ -45,7 +45,7 @@ describe('jobs page', () => {
     const wrapper = shallow(<ContactPage {...getMockProps()} />)
     const elem = wrapper
       .find('p')
-      .filterWhere((n) => n.text().indexOf('400 Concar') > -1)
+      .filterWhere((n) => n.text().indexOf('204 E 2nd Ave') > -1)
     expect(elem.length).toBe(1)
   })
 
