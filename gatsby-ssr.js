@@ -15,6 +15,21 @@ export const onRenderBody = ({ setHeadComponents }) => {
   if (process.env.NODE_ENV === `production`) {
     setHeadComponents([
       <script
+        key="gtag"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-LDFLQCKVHG"
+      ></script>,
+      <script
+        key="gtag-global"
+        dangerouslySetInnerHTML={{
+          __html: oneLine`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LDFLQCKVHG');`,
+        }}
+      ></script>,
+      <script
         key="google-gst-js"
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${GST_ID}`}
