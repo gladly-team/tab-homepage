@@ -27,27 +27,13 @@ export const onRenderBody = ({ setHeadComponents }) => {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-97R0W6NWB0');
+            gtag('config', 'G-97R0W6NWB0',{'debug_mode':true});
             gtag('config', 'G-97R0W6NWB0', {
               custom_map: { tfac_app_version: 'homepage' },
             });
             gtag('set', 'tfac_app_version', 'homePage');`,
         }}
       ></script>,
-      <script
-        key="google-gst-js"
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${GST_ID}`}
-      />,
-      <script
-        key="google-gst-init"
-        dangerouslySetInnerHTML={{
-          __html: oneLine`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GST_ID}');`,
-        }}
-      />,
     ])
   }
 }
