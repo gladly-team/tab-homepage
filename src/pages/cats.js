@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
@@ -15,6 +15,7 @@ import ReviewCarousel from 'src/components/ReviewCarousel'
 import Review from 'src/components/Review'
 import FAQDropDown from 'src/components/FAQDropDown'
 import InfoPopover from 'src/components/InfoPopover'
+import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import 'src/pages/cats.css'
@@ -64,7 +65,6 @@ import {
 } from 'src/utils/constants'
 import { getUrlParameterValue } from 'src/utils/location'
 import Divider from '@material-ui/core/Divider'
-import redirect from 'src/utils/redirect'
 
 const mockImagesArray = [
   <img
@@ -176,6 +176,10 @@ const useStyles = makeStyles(() => ({
 }))
 const Cats = ({ pageContext }) => {
   const cx = useStyles()
+  const [
+    showUnsupportedBrowserMessage,
+    setShowUnsupportedBrowserMessage,
+  ] = useState(false)
   // store referrer id
   useEffect(() => {
     let referrerId = null
@@ -210,7 +214,7 @@ const Cats = ({ pageContext }) => {
         localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
       }}
       onUnsupportedBrowserInstallClick={() => {
-        redirect(homeURL)
+        setShowUnsupportedBrowserMessage(true)
       }}
     />
   )
@@ -241,7 +245,7 @@ const Cats = ({ pageContext }) => {
               }}
               classes={{ contained: cx.MuiButtonContained }}
               onUnsupportedBrowserInstallClick={() => {
-                redirect(homeURL)
+                setShowUnsupportedBrowserMessage(true)
               }}
             />
           </div>
@@ -873,6 +877,12 @@ const Cats = ({ pageContext }) => {
           </div>
         </Section>
       </div>
+      <UnsupportedBrowserDialog
+        open={showUnsupportedBrowserMessage}
+        onClose={() => {
+          setShowUnsupportedBrowserMessage(false)
+        }}
+      />
     </div>
   )
 }
