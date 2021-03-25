@@ -28,6 +28,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
             gtag('js', new Date());
             gtag('config', 'G-97R0W6NWB0');
             gtag('config', 'G-97R0W6NWB0',{'debug_mode':true});
+            gtag('config', 'G-97R0W6NWB0',{'user_app_version':'homepage', 'tfac_app_version':'homepage'});
             gtag('config', 'G-97R0W6NWB0', {
               custom_map: { tfac_app_version: 'homepage' },
             });
