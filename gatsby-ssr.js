@@ -32,6 +32,9 @@ export const onRenderBody = ({ setHeadComponents }) => {
             gtag('config', 'G-97R0W6NWB0', {
               custom_map: { tfac_app_version: 'homepage' },
             });
+            gtag('set', 'user_properties', {
+              user_app_version: 'homepage',
+            });
             gtag('set', 'tfac_app_version', 'homePage');`,
         }}
       ></script>,
