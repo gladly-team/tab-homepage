@@ -4,9 +4,8 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
 import InstallButton from 'src/components/InstallButton'
-import redirect from 'src/utils/redirect'
-import { homeURL } from 'src/utils/navigation'
-
+import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
+import { act } from 'react-dom/test-utils'
 jest.mock('src/components/InstallButton')
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')
@@ -14,12 +13,18 @@ jest.mock('src/utils/location')
 jest.mock('src/utils/navigation')
 jest.mock('src/components/FAQDropDown')
 jest.mock('src/components/InfoPopover')
+jest.mock('src/components/UnsupportedBrowserDialog')
 const getMockProps = () => ({
   location: {
     pathname: '/',
   },
   pageContext: {},
 })
+
+const flushAllPromises = async () => {
+  // eslint-disable-next-line no-undef
+  await new Promise((resolve) => setImmediate(resolve))
+}
 
 afterEach(() => {
   jest.clearAllMocks()
@@ -152,18 +157,64 @@ describe('cats page', () => {
     )
   })
 
-  it('the InstallButton onUnsupportedBrowserInstallClick sends the user to the homepage', () => {
+  it('the InstallButton onUnsupportedBrowserInstallClick shows unsupported browser model', async () => {
     const CatsPageWithTheme = require('../cats').default
     const getUrlParameterValue = require('src/utils/location')
       .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
-
     const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
-    const callback = wrapper
-      .find(InstallButton)
-      .first()
-      .prop('onUnsupportedBrowserInstallClick')
-    callback()
-    expect(redirect).toHaveBeenCalledWith(homeURL)
+    await act(async () => {
+      wrapper
+        .find(InstallButton)
+        .first()
+        .prop('onUnsupportedBrowserInstallClick')()
+      await flushAllPromises()
+      wrapper.update()
+    })
+    const dialog = wrapper.find(UnsupportedBrowserDialog)
+    expect(dialog.prop('open')).toBe(true)
+  })
+
+  it('the second InstallButton onUnsupportedBrowserInstallClick shows unsupported browser model', async () => {
+    const CatsPageWithTheme = require('../cats').default
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+    const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
+    await act(async () => {
+      wrapper
+        .find(InstallButton)
+        .at(1)
+        .prop('onUnsupportedBrowserInstallClick')()
+      await flushAllPromises()
+      wrapper.update()
+    })
+    const dialog = wrapper.find(UnsupportedBrowserDialog)
+    expect(dialog.prop('open')).toBe(true)
+  })
+
+  it('the unsupported browser dialog closes on close', async () => {
+    const CatsPageWithTheme = require('../cats').default
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+    const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
+    await act(async () => {
+      wrapper
+        .find(InstallButton)
+        .first()
+        .prop('onUnsupportedBrowserInstallClick')()
+      await flushAllPromises()
+      wrapper.update()
+    })
+    const dialog = wrapper.find(UnsupportedBrowserDialog)
+    expect(dialog.prop('open')).toBe(true)
+    await act(async () => {
+      dialog.prop('onClose')()
+      wrapper.update()
+      await flushAllPromises()
+      wrapper.update()
+    })
+    expect(wrapper.find(UnsupportedBrowserDialog).prop('open')).toBe(false)
   })
 })
