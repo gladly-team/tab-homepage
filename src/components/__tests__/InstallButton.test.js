@@ -84,7 +84,7 @@ describe('InstallButton', () => {
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', false))
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
-    expect(wrapper.find(Button).first().text()).toEqual('Add to Firefox')
+    expect(wrapper.find(Button).first().text()).toEqual('Get it Now')
   })
 
   it('has correct text for desktop Edge', () => {
@@ -108,10 +108,12 @@ describe('InstallButton', () => {
     expect(wrapper.find(Button).first().text()).toEqual('Get it Now')
   })
 
-  it('navigates to the Firefox Addons page on click (on Firefox desktop browser)', async () => {
-    expect.assertions(2)
+  // FIREFOX IS CURRENTLY NOT SUPPORTED
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Firefox desktop', async () => {
+    expect.assertions(1)
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', false))
-    const redirect = require('src/utils/redirect').default
+    // Silence expected console.info log
+    jest.spyOn(console, 'info').mockImplementationOnce(() => {})
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
     const wrapper = shallow(
@@ -120,10 +122,7 @@ describe('InstallButton', () => {
       />
     )
     await clickButtonShallow(wrapper)
-    expect(redirect).toHaveBeenCalledWith(
-      'https://addons.mozilla.org/en-US/firefox/addon/tab-for-a-cause/'
-    )
-    expect(mockOnUnsupportedBrowserInstallClick).not.toHaveBeenCalled()
+    expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
 
   it('navigates to the Chrome Web Store page on click (on Chrome desktop browser)', async () => {
@@ -197,12 +196,13 @@ describe('InstallButton', () => {
     await clickButtonShallow(wrapper)
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
-
-  it('navigates to the Firefox Addons page on click (on Firefox mobile browser)', async () => {
-    expect.assertions(2)
+  // FIREFOX IS CURRENTLY NOT SUPPORTED
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Firefox mobile', async () => {
+    expect.assertions(1)
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', true))
-    const redirect = require('src/utils/redirect').default
 
+    // Silence expected console.info log
+    jest.spyOn(console, 'info').mockImplementationOnce(() => {})
     const InstallButton = require('../InstallButton').default
     const mockOnUnsupportedBrowserInstallClick = jest.fn()
     const wrapper = shallow(
@@ -211,10 +211,7 @@ describe('InstallButton', () => {
       />
     )
     await clickButtonShallow(wrapper)
-    expect(redirect).toHaveBeenCalledWith(
-      'https://addons.mozilla.org/en-US/firefox/addon/tab-for-a-cause/'
-    )
-    expect(mockOnUnsupportedBrowserInstallClick).not.toHaveBeenCalled()
+    expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
 
   it('navigates to the Chrome Web Store page on click (on Chrome mobile browser)', async () => {

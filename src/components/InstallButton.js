@@ -10,7 +10,7 @@ import {
 import {
   chromeExtensionURL,
   edgeExtensionURL,
-  firefoxExtensionURL,
+  // firefoxExtensionURL,
 } from 'src/utils/navigation'
 import redirect from 'src/utils/redirect'
 import { downloadButtonClick } from 'src/utils/analytics/logEvent'
@@ -81,7 +81,10 @@ class InstallButton extends React.Component {
         redirect(edgeExtensionURL)
         break
       case FIREFOX_BROWSER:
-        redirect(firefoxExtensionURL)
+        console.info(
+          'Cannot add Tab for a Cause extension: this browser is not supported'
+        )
+        onUnsupportedBrowserInstallClick()
         break
       default:
         console.info(
@@ -103,7 +106,7 @@ class InstallButton extends React.Component {
         case EDGE_BROWSER:
           return 'Add to Edge'
         case FIREFOX_BROWSER:
-          return 'Add to Firefox'
+          return 'Get it Now'
         default:
           return 'Get it Now'
       }
