@@ -17,7 +17,7 @@ import {
   chromeExtensionURL,
   edgeExtensionURL,
   financialsURL,
-  firefoxExtensionURL,
+  // firefoxExtensionURL,
   githubTabRepoURL,
   githubTabExtensionsRepoURL,
   githubTabHomepageRepoURL,
@@ -40,7 +40,7 @@ import { getUrlParameterValue } from 'src/utils/location'
 // Icons
 import Star from '@material-ui/icons/Star'
 import StarHalf from '@material-ui/icons/StarHalf'
-import Firefox from 'mdi-material-ui/Firefox'
+// import Firefox from 'mdi-material-ui/Firefox'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
 
@@ -312,7 +312,7 @@ class IndexPage extends React.Component {
                       }}
                     />
                   </Link>
-                  <Link
+                  {/* <Link
                     to={firefoxExtensionURL}
                     style={{ color: lightestTextColor }}
                     hoverStyle={{ color: lighterTextColor }}
@@ -324,7 +324,7 @@ class IndexPage extends React.Component {
                         height: 20,
                       }}
                     />
-                  </Link>
+                  </Link> */}
                   <Link
                     to={edgeExtensionURL}
                     style={{ color: lightestTextColor }}
