@@ -27,6 +27,9 @@ export const onRenderBody = ({ setHeadComponents }) => {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-97R0W6NWB0');
+            gtag('config', 'G-LDFLQCKVHG', {
+              custom_map: { tfac_app_version: 'homepage' },
+            });
             gtag('set', 'tfac_app_version', 'homePage');`,
         }}
       ></script>,
