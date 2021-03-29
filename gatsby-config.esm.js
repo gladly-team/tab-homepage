@@ -46,14 +46,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-24159386-1',
-        // Puts tracking script in the head instead of the body
-        head: false,
-      },
-    },
-    {
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {
         pixelId: '1813501258922708',
