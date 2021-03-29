@@ -17,7 +17,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
       <script
         key="gtag"
         async
-        src="https://www.googletagmanager.com/gtag/js?id=G-97R0W6NWB0"
+        src="https://www.googletagmanager.com/gtag/js?id=G-LDFLQCKVHG"
       ></script>,
       <script
         key="gtag-global"
@@ -26,16 +26,9 @@ export const onRenderBody = ({ setHeadComponents }) => {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-97R0W6NWB0');
-            gtag('config', 'G-97R0W6NWB0',{'debug_mode':true});
-            gtag('config', 'G-97R0W6NWB0',{'user_app_version':'homepage', 'tfac_app_version':'homepage'});
-            gtag('config', 'G-97R0W6NWB0', {
-              custom_map: { tfac_app_version: 'homepage' },
-            });
-            gtag('set', 'user_properties', {
-              user_app_version: 'homepage',
-            });
-            gtag('set', 'tfac_app_version', 'homePage');`,
+            gtag('config', 'G-LDFLQCKVHG');
+            gtag('config', 'G-LDFLQCKVHG',{'debug_mode':true});
+            gtag('config', 'G-LDFLQCKVHG',{'tfac_app_version':'homepage'});`,
         }}
       ></script>,
     ])
