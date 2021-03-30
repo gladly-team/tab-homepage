@@ -20,6 +20,7 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import 'src/pages/cats.css'
 // Images
+import favicon from 'src/img/logo32x32.png'
 import landingImg from 'src/img/cats/mockPage1.png'
 import landingImg2 from 'src/img/cats/mockPage2.png'
 import landingImg3 from 'src/img/cats/mockPage3.png'
@@ -220,6 +221,7 @@ const Cats = ({ pageContext }) => {
   )
   return (
     <div>
+      <link rel="icon" href={favicon} />
       <AppBar color="primary" position="sticky">
         <Toolbar>
           <div className={cx.logoContainer}>
