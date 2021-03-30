@@ -328,7 +328,7 @@ const Cats = ({ pageContext }) => {
               <p style={{ width: '80%', textAlign: 'justify' }}>
                 We have partnered with The{' '}
                 <Link to="https://thejacksongalaxyproject.greatergood.org/about/cat-pawsitive/">
-                  Jackson Galaxy Project
+                  Greater Good Charities' The Jackson Galaxy Project
                 </Link>{' '}
                 to provide treats to shelter cats for FREE! How can we do this?
                 Through ad revenue!
@@ -521,7 +521,7 @@ const Cats = ({ pageContext }) => {
                   alignItems: 'start',
                 }}
               >
-              <FAQDropDown
+                <FAQDropDown
                   text={
                     <p
                       style={{
@@ -530,8 +530,8 @@ const Cats = ({ pageContext }) => {
                         textDecoration: 'underline',
                       }}
                     >
-                      How did you pick The Jackson Galaxy Project to partner
-                      with?
+                      How did you pick Greater Good Charities' The Jackson
+                      Galaxy Project to partner with?
                     </p>
                   }
                   dropdown={({ open, onClose, anchorElement }) => (
@@ -550,14 +550,13 @@ const Cats = ({ pageContext }) => {
                         >
                           Like with Tab for a Cause, our number one priority is
                           ensuring that organizations we are partnered with make
-                          a positive impact! While researching, we came into
-                          contact with the Jackson Galaxy Project and thought
-                          they were the perfect fit! Every timeEverytime you
-                          open a new tab you are one step closer to helping a
-                          shelter cat get adopted! They do this by using treats
-                          for positive reinforcement training to ensure these
-                          cats are ready to be welcome into their fur-ever
-                          homes!
+                          a positive impact, and the Greater Good Charities'
+                          Jackson Galaxy Project seemed like the perfect fit.
+                          Every time you open a new tab you are supporting
+                          initiatives that help shelter cats get adopted! These
+                          include initiatives that use treats for positive
+                          reinforcement training to ensure cats are ready to be
+                          welcomed into their fur-ever homes!
                         </p>
                       </div>
                     </InfoPopover>
@@ -604,7 +603,7 @@ const Cats = ({ pageContext }) => {
                         textDecoration: 'underline',
                       }}
                     >
-                      This sounds too good to be true, what is the catch?
+                      This sounds too good to be true. What's the catch?
                     </p>
                   }
                   dropdown={({ open, onClose, anchorElement }) => (
@@ -620,10 +619,10 @@ const Cats = ({ pageContext }) => {
                         <p>
                           Unless you count looking at ads as a catch, there are
                           none! Tab for a Cause was created by our founders,
-                          Alex and Kevin, because at the time they were college
-                          students that wanted to give back to charitable causes
-                          but couldn’t afford it. Now, as a company, we want to
-                          make sure everyone can do their part to give back
+                          Alex and Kevin, who at the time were college students
+                          who wanted to give back to charitable causes but
+                          couldn’t afford to do so. Now, as a company, we want
+                          to make sure everyone can do their part to give back
                           without breaking the bank.
                         </p>
                       </div>
@@ -695,15 +694,15 @@ const Cats = ({ pageContext }) => {
                         <p>
                           Convincing your friends and family to join Tab for
                           Cats is the most impactful thing you can do! In
-                          addition to each person raising more money for The
-                          Jackson Galaxy Project, as we grow we can negotiate
-                          better rates for our ads! This increases the value of
-                          everyone's tabs meaning you can give a cat a treat
-                          even faster.
+                          addition to each person raising more money for Greater
+                          Good Charities' The Jackson Galaxy Project, as we grow
+                          we can negotiate better rates for our ads. This
+                          increases the value of everyone's tabs, meaning you
+                          can raise funds to help shelter cats even faster.
                         </p>
                         <p style={{ paddingTop: '10px' }}>
-                          We will also donate 10 extra treats on behalf of both
-                          you and your friend when they sign up with your link!
+                          We will also give 10 extra treats when they sign up
+                          with your link!
                         </p>
                       </div>
                     </InfoPopover>
@@ -733,15 +732,15 @@ const Cats = ({ pageContext }) => {
                       <div>
                         <p>
                           It’s possible! Tab for Cats is the latest project
-                          created by Tab for a Cause. Right now its main goal is
-                          to help shelter cats in need by providing them with
+                          created by Tab for a Cause. Right now, its main goal
+                          is to help shelter cats in need by providing them with
                           treats for reinforcement training. There is a
                           possibility that we will be able to help cats in
-                          different ways in the future but we don’t have a set
-                          plan or timeline to do this yet. Additionally, Tab for
-                          Cats is focused on cats only, but Tab for a Cause is
-                          still available for those who want to raise money for
-                          a variety of causes.
+                          different ways in the future, but we don’t have a set
+                          timeline to do this yet. Additionally, Tab for Cats is
+                          focused on cats only, but Tab for a Cause is still
+                          available for those who want to raise money for a
+                          variety of causes.
                         </p>
                         <p style={{ paddingTop: '10px' }}>
                           Have a cause close to your heart or an idea of how to
@@ -782,8 +781,8 @@ const Cats = ({ pageContext }) => {
                         <p variant={'body2'} style={{ paddingTop: '10px' }}>
                           The funnel goes: Company --{'>'} Ad Network --{'>'}{' '}
                           Your Tabs. We work with the ad networks to put filters
-                          in place to ensure ads are family-friendly, however,
-                          ads sometimes get miscategorized and leak through our
+                          in place to ensure ads are family-friendly, but ads
+                          sometimes get miscategorized and leak through our
                           filters. This may mean seeing an ad you disagree with,
                           but the money still goes to the charity of your
                           choice!
@@ -794,7 +793,7 @@ const Cats = ({ pageContext }) => {
                           contact@tabforacause.org so we can fix this
                           immediately! If you are comfortable screenshotting the
                           ad you are concerned about, this will help us identify
-                          where it came from a lot faster but you are never
+                          where it came from a lot faster, but you are never
                           required to do so.
                         </p>
                       </div>
