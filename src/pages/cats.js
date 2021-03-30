@@ -521,56 +521,7 @@ const Cats = ({ pageContext }) => {
                   alignItems: 'start',
                 }}
               >
-                <FAQDropDown
-                  text={
-                    <p
-                      style={{
-                        textAlign: 'justify',
-                        hover: 'pointer',
-                        textDecoration: 'underline',
-                      }}
-                    >
-                      Do you endorse the companies in your ads?
-                    </p>
-                  }
-                  dropdown={({ open, onClose, anchorElement }) => (
-                    <InfoPopover
-                      open={open}
-                      anchorEl={anchorElement}
-                      onClose={onClose}
-                      style={{
-                        marginTop: 6,
-                      }}
-                    >
-                      <div>
-                        <p variant={'body2'}>
-                          No. Tab for a Cause does not endorse the companies
-                          advertising on our page. We don't choose specific ads
-                          ourselves (as awesome as that would be).
-                        </p>
-                        <p variant={'body2'} style={{ paddingTop: '10px' }}>
-                          The funnel goes: Company --{'>'} Ad Network --{'>'}{' '}
-                          Your Tabs. We work with the ad networks to put filters
-                          in place to ensure ads are family-friendly, however,
-                          ads sometimes get miscategorized and leak through our
-                          filters. This may mean seeing an ad you disagree with,
-                          but the money still goes to the charity of your
-                          choice!
-                        </p>{' '}
-                        <p variant={'body2'} style={{ paddingTop: '10px' }}>
-                          If you see anything that doesn’t feel family-friendly
-                          please let us know by emailing
-                          contact@tabforacause.org so we can fix this
-                          immediately! If you are comfortable screenshotting the
-                          ad you are concerned about, this will help us identify
-                          where it came from a lot faster but you are never
-                          required to do so.
-                        </p>
-                      </div>
-                    </InfoPopover>
-                  )}
-                />
-                <FAQDropDown
+              <FAQDropDown
                   text={
                     <p
                       style={{
@@ -607,88 +558,6 @@ const Cats = ({ pageContext }) => {
                           for positive reinforcement training to ensure these
                           cats are ready to be welcome into their fur-ever
                           homes!
-                        </p>
-                      </div>
-                    </InfoPopover>
-                  )}
-                />
-                <FAQDropDown
-                  text={
-                    <p
-                      style={{
-                        textAlign: 'justify',
-                        hover: 'pointer',
-                        textDecoration: 'underline',
-                      }}
-                    >
-                      What is the impact of referring my friends to join?
-                    </p>
-                  }
-                  dropdown={({ open, onClose, anchorElement }) => (
-                    <InfoPopover
-                      open={open}
-                      anchorEl={anchorElement}
-                      onClose={onClose}
-                      style={{
-                        marginTop: 6,
-                      }}
-                    >
-                      <div>
-                        <p>
-                          Convincing your friends and family to join Tab for
-                          Cats is the most impactful thing you can do! In
-                          addition to each person raising more money for The
-                          Jackson Galaxy Project, as we grow we can negotiate
-                          better rates for our ads! This increases the value of
-                          everyone's tabs meaning you can give a cat a treat
-                          even faster.
-                        </p>
-                        <p style={{ paddingTop: '10px' }}>
-                          We will also donate 10 extra treats on behalf of both
-                          you and your friend when they sign up with your link!
-                        </p>
-                      </div>
-                    </InfoPopover>
-                  )}
-                />
-                <FAQDropDown
-                  text={
-                    <p
-                      style={{
-                        textAlign: 'justify',
-                        hover: 'pointer',
-                        textDecoration: 'underline',
-                      }}
-                    >
-                      Are you going to add more charities?
-                    </p>
-                  }
-                  dropdown={({ open, onClose, anchorElement }) => (
-                    <InfoPopover
-                      open={open}
-                      anchorEl={anchorElement}
-                      onClose={onClose}
-                      style={{
-                        marginTop: 6,
-                      }}
-                    >
-                      <div>
-                        <p>
-                          It’s possible! Tab for Cats is the latest project
-                          created by Tab for a Cause. Right now its main goal is
-                          to help shelter cats in need by providing them with
-                          treats for reinforcement training. There is a
-                          possibility that we will be able to help cats in
-                          different ways in the future but we don’t have a set
-                          plan or timeline to do this yet. Additionally, Tab for
-                          Cats is focused on cats only, but Tab for a Cause is
-                          still available for those who want to raise money for
-                          a variety of causes.
-                        </p>
-                        <p style={{ paddingTop: '10px' }}>
-                          Have a cause close to your heart or an idea of how to
-                          help shelter cats even more? Let us know by emailing
-                          us at contact@tabforacause.org.
                         </p>
                       </div>
                     </InfoPopover>
@@ -796,6 +665,137 @@ const Cats = ({ pageContext }) => {
                           include hosting/server costs and internal company
                           expenses; and (2) to reinvest in getting more Tabbers
                           so that we can give more to charity in the long term.
+                        </p>
+                      </div>
+                    </InfoPopover>
+                  )}
+                />
+                <FAQDropDown
+                  text={
+                    <p
+                      style={{
+                        textAlign: 'justify',
+                        hover: 'pointer',
+                        textDecoration: 'underline',
+                      }}
+                    >
+                      What is the impact of referring my friends to join?
+                    </p>
+                  }
+                  dropdown={({ open, onClose, anchorElement }) => (
+                    <InfoPopover
+                      open={open}
+                      anchorEl={anchorElement}
+                      onClose={onClose}
+                      style={{
+                        marginTop: 6,
+                      }}
+                    >
+                      <div>
+                        <p>
+                          Convincing your friends and family to join Tab for
+                          Cats is the most impactful thing you can do! In
+                          addition to each person raising more money for The
+                          Jackson Galaxy Project, as we grow we can negotiate
+                          better rates for our ads! This increases the value of
+                          everyone's tabs meaning you can give a cat a treat
+                          even faster.
+                        </p>
+                        <p style={{ paddingTop: '10px' }}>
+                          We will also donate 10 extra treats on behalf of both
+                          you and your friend when they sign up with your link!
+                        </p>
+                      </div>
+                    </InfoPopover>
+                  )}
+                />
+                <FAQDropDown
+                  text={
+                    <p
+                      style={{
+                        textAlign: 'justify',
+                        hover: 'pointer',
+                        textDecoration: 'underline',
+                      }}
+                    >
+                      Are you going to add more charities?
+                    </p>
+                  }
+                  dropdown={({ open, onClose, anchorElement }) => (
+                    <InfoPopover
+                      open={open}
+                      anchorEl={anchorElement}
+                      onClose={onClose}
+                      style={{
+                        marginTop: 6,
+                      }}
+                    >
+                      <div>
+                        <p>
+                          It’s possible! Tab for Cats is the latest project
+                          created by Tab for a Cause. Right now its main goal is
+                          to help shelter cats in need by providing them with
+                          treats for reinforcement training. There is a
+                          possibility that we will be able to help cats in
+                          different ways in the future but we don’t have a set
+                          plan or timeline to do this yet. Additionally, Tab for
+                          Cats is focused on cats only, but Tab for a Cause is
+                          still available for those who want to raise money for
+                          a variety of causes.
+                        </p>
+                        <p style={{ paddingTop: '10px' }}>
+                          Have a cause close to your heart or an idea of how to
+                          help shelter cats even more? Let us know by emailing
+                          us at contact@tabforacause.org.
+                        </p>
+                      </div>
+                    </InfoPopover>
+                  )}
+                />
+                <FAQDropDown
+                  text={
+                    <p
+                      style={{
+                        textAlign: 'justify',
+                        hover: 'pointer',
+                        textDecoration: 'underline',
+                      }}
+                    >
+                      Do you endorse the companies in your ads?
+                    </p>
+                  }
+                  dropdown={({ open, onClose, anchorElement }) => (
+                    <InfoPopover
+                      open={open}
+                      anchorEl={anchorElement}
+                      onClose={onClose}
+                      style={{
+                        marginTop: 6,
+                      }}
+                    >
+                      <div>
+                        <p variant={'body2'}>
+                          No. Tab for a Cause does not endorse the companies
+                          advertising on our page. We don't choose specific ads
+                          ourselves (as awesome as that would be).
+                        </p>
+                        <p variant={'body2'} style={{ paddingTop: '10px' }}>
+                          The funnel goes: Company --{'>'} Ad Network --{'>'}{' '}
+                          Your Tabs. We work with the ad networks to put filters
+                          in place to ensure ads are family-friendly, however,
+                          ads sometimes get miscategorized and leak through our
+                          filters. This may mean seeing an ad you disagree with,
+                          but the money still goes to the charity of your
+                          choice!
+                        </p>{' '}
+                        <p variant={'body2'} style={{ paddingTop: '10px' }}>
+                          If you see anything that doesn’t feel family-friendly
+                          please let us know by emailing
+                          contact@tabforacause.org so we can fix this
+                          immediately! If you are comfortable screenshotting the
+                          ad you are concerned about, this will help us identify
+                          where it came from a lot faster but you are never
+                          required to do so.
                         </p>
                       </div>
                     </InfoPopover>
