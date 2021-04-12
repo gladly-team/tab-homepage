@@ -539,7 +539,7 @@ const Cats = ({ pageContext, location }) => {
                   text={
                     <p
                       style={{
-                        textAlign: 'justify',
+                        textAlign: 'left',
                         hover: 'pointer',
                         textDecoration: 'underline',
                       }}
@@ -580,7 +580,7 @@ const Cats = ({ pageContext, location }) => {
                   text={
                     <p
                       style={{
-                        textAlign: 'justify',
+                        textAlign: 'left',
                         hover: 'pointer',
                         textDecoration: 'underline',
                       }}
@@ -612,7 +612,7 @@ const Cats = ({ pageContext, location }) => {
                   text={
                     <p
                       style={{
-                        textAlign: 'justify',
+                        textAlign: 'left',
                         hover: 'pointer',
                         textDecoration: 'underline',
                       }}
@@ -647,7 +647,7 @@ const Cats = ({ pageContext, location }) => {
                   text={
                     <p
                       style={{
-                        textAlign: 'justify',
+                        textAlign: 'left',
                         hover: 'pointer',
                         textDecoration: 'underline',
                       }}
@@ -687,7 +687,7 @@ const Cats = ({ pageContext, location }) => {
                   text={
                     <p
                       style={{
-                        textAlign: 'justify',
+                        textAlign: 'left',
                         hover: 'pointer',
                         textDecoration: 'underline',
                       }}
@@ -726,7 +726,7 @@ const Cats = ({ pageContext, location }) => {
                   text={
                     <p
                       style={{
-                        textAlign: 'justify',
+                        textAlign: 'left',
                         hover: 'pointer',
                         textDecoration: 'underline',
                       }}
@@ -769,7 +769,7 @@ const Cats = ({ pageContext, location }) => {
                   text={
                     <p
                       style={{
-                        textAlign: 'justify',
+                        textAlign: 'left',
                         hover: 'pointer',
                         textDecoration: 'underline',
                       }}
