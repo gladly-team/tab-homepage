@@ -8,6 +8,7 @@ jest.mock('src/img/opengraph-img.png', () => '/static/some-image.png')
 const getMockProps = () => ({
   favicon: 'http://example.com/some/favicon.png',
   title: 'My Example Site',
+  titleTemplate: '% - Some Template',
   ogTitle: 'Check this out!',
   ogDescription: 'A description here!',
   ogImage: 'http://example.com/some/img.png',
@@ -30,6 +31,13 @@ describe('index layout page', () => {
   })
 
   it('sets the default page title using Helmet', () => {
+    const HeadTags = require('src/components/HeadTags').default
+    const wrapper = shallow(<HeadTags {...getMockProps()} />)
+    const elem = wrapper.find(Helmet)
+    expect(elem.prop('titleTemplate')).toBe('% - Some Template')
+  })
+
+  it('sets the titleTemplate using Helmet', () => {
     const HeadTags = require('src/components/HeadTags').default
     const wrapper = shallow(<HeadTags {...getMockProps()} />)
     const elem = wrapper.find(Helmet)

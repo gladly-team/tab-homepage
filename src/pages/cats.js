@@ -19,8 +19,8 @@ import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import 'src/pages/cats.css'
+import HeadTags from 'src/components/HeadTags'
 // Images
-import favicon from 'src/img/logo32x32.png'
 import landingImg from 'src/img/cats/mockPage1.png'
 import landingImg2 from 'src/img/cats/mockPage2.png'
 import landingImg3 from 'src/img/cats/mockPage3.png'
@@ -42,6 +42,7 @@ import {
 import logoWhite from 'src/img/logo-white.svg'
 import cat1 from 'src/img/cats/1.png'
 import cat2 from 'src/img/cats/2.png'
+import catsOGImg from 'src/img/cats/cats-og-img.png'
 
 // Icons
 import Star from '@material-ui/icons/Star'
@@ -175,7 +176,7 @@ const useStyles = makeStyles(() => ({
     fontSize: 12,
   },
 }))
-const Cats = ({ pageContext }) => {
+const Cats = ({ pageContext, location }) => {
   const cx = useStyles()
   const [
     showUnsupportedBrowserMessage,
@@ -219,9 +220,22 @@ const Cats = ({ pageContext }) => {
       }}
     />
   )
+  const absolutePageURL = getAbsoluteURL(location.pathname)
   return (
     <div>
-      <link rel="icon" href={favicon} />
+      <HeadTags
+        title={'Tab for Cats - Home'}
+        titleTemplate={'%s | Tab for Cats'}
+        ogTitle={'Help Shelter Cats for Free Online | Tab for Cats '}
+        ogDescription={
+          'Open new tabs, help shelter cats for free... it’s that easy!'
+        }
+        ogImage={catsOGImg}
+        keywords={
+          'charity, cat, cats, extension, new tab, chrome, help, donation, raise money, money, adoption, shelter cat, easy, ways to donate, free, best, home, animals, safe, Jackson Galaxy, Greater Good, treats, volunteer, internet, tab for a cause, impact, stray, legitimate, rescue, food, facebook, twitter, reddit, instagram, tumblr'
+        }
+        pageURL={absolutePageURL}
+      />
       <AppBar color="primary" position="sticky">
         <Toolbar>
           <div className={cx.logoContainer}>
@@ -888,6 +902,9 @@ const Cats = ({ pageContext }) => {
   )
 }
 Cats.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }),
   pageContext: PropTypes.shape({
     referrer: PropTypes.shape({
       id: PropTypes.number,
