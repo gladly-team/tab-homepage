@@ -113,6 +113,7 @@ const mockImagesArray = [
   />,
 ]
 const canonicalURL = getAbsoluteURL(homeURL)
+const ogImgURLAbsolute = getAbsoluteURL(catsOGImg)
 const useStyles = makeStyles(() => ({
   whiteFont: {
     color: '#fff',
@@ -230,7 +231,7 @@ const Cats = ({ pageContext, location }) => {
         ogDescription={
           'Open new tabs, help shelter cats for free... it’s that easy!'
         }
-        ogImage={catsOGImg}
+        ogImage={ogImgURLAbsolute}
         keywords={
           'charity, cat, cats, extension, new tab, chrome, help, donation, raise money, money, adoption, shelter cat, easy, ways to donate, free, best, home, animals, safe, Jackson Galaxy, Greater Good, treats, volunteer, internet, tab for a cause, impact, stray, legitimate, rescue, food, facebook, twitter, reddit, instagram, tumblr'
         }
