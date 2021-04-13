@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
+import { AlertTitle, Alert } from '@material-ui/lab'
 import defaultTheme from 'src/themes/theme'
 import { ThemeProvider } from '@material-ui/core/styles'
 import { responsiveFontSizes } from '@material-ui/core/styles'
@@ -116,6 +117,8 @@ const useStyles = makeStyles(() => ({
   whiteFont: {
     color: '#fff',
   },
+  alertIcon: { flexDirection: 'column', justifyContent: 'center' },
+  alertRoot: { margin: '20px 40px' },
   MuiButtonContained: {
     boxShadow: 'none',
   },
@@ -145,6 +148,9 @@ const useStyles = makeStyles(() => ({
   },
   SectionHeight: {
     height: 'calc(100vh - 64px)',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
   sectionSplit: {
     display: 'flex',
@@ -177,27 +183,11 @@ const useStyles = makeStyles(() => ({
 }))
 const Cats = ({ pageContext }) => {
   const cx = useStyles()
-  const checkIfReferrered = () => {
-    let isReferred = false
-    if (pageContext && pageContext.referrer) {
-      isReferred = true
-    } else {
-      const paramRefId = parseInt(getUrlParameterValue('r'))
-      if (!isNaN(paramRefId)) {
-        isReferred = true
-      }
-    }
-    const userReferrerId = getUrlParameterValue('u')
-    if (userReferrerId !== null && userReferrerId !== undefined) {
-      isReferred = true
-    }
-    return isReferred
-  }
   const [
     showUnsupportedBrowserMessage,
     setShowUnsupportedBrowserMessage,
   ] = useState(false)
-  const [isReferral] = useState(checkIfReferrered())
+  const [isReferral, setIsReferral] = useState(false)
   // store referrer id
   useEffect(() => {
     let referrerId = null
@@ -223,6 +213,7 @@ const Cats = ({ pageContext }) => {
         STORAGE_REFERRAL_DATA_REFERRING_USER,
         userReferrerId
       )
+      setIsReferral(true)
     }
   }, [])
   const installButton = (
@@ -277,67 +268,84 @@ const Cats = ({ pageContext }) => {
         <Helmet>
           <link rel="canonical" href={canonicalURL} />
         </Helmet>
-        <Section wrap={'reverse'} fullWidth className={cx.SectionHeight}>
-          <AliceCarousel
-            autoPlay
-            animationType="fadeout"
-            autoPlayStrategy="none"
-            items={mockImagesArray}
-            animationDuration={1000}
-            autoPlayInterval={2500}
-            disableButtonsControls
-            disableDotsControls
-            disableSlideInfo
-            infinite
-          />
-          <div
-            style={{
-              flex: 1,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-start',
-              minWidth: 220,
-              marginTop: 20,
-              marginBottom: 40,
-              marginLeft: 0,
-              marginRight: 40,
-              alignItems: 'center',
-            }}
-          >
-            <h1 className={cx.title}>Tab For Cats</h1>
-            <p style={{ width: '80%', textAlign: 'center', fontSize: '25px' }}>
-              Open browser tabs, help shelter cats get adopted!
-            </p>
-            <div style={{ marginTop: 20, marginBottom: 20 }}>
-              {installButton}
-            </div>
-            <div style={{ margin: 0 }}>
-              <div>
-                <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
-                <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
-                <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
-                <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
-                <StarHalf style={{ color: '#ffc533', width: 18, height: 18 }} />
-              </div>
+        <div className={cx.SectionHeight}>
+          {isReferral ? (
+            <Alert
+              severity="info"
+              classes={{ icon: cx.alertIcon, root: cx.alertRoot }}
+              data-test-id={'referral-text'}
+            >
+              <AlertTitle>Your friend sent you a gift</AlertTitle>By signing up
+              with this link, you'll help shelter cats get adopted more quickly
+              by giving them 5 treats for positive-reinforcement training
+            </Alert>
+          ) : undefined}
+          <Section wrap={'reverse'} fullWidth>
+            <AliceCarousel
+              autoPlay
+              animationType="fadeout"
+              autoPlayStrategy="none"
+              items={mockImagesArray}
+              animationDuration={1000}
+              autoPlayInterval={2500}
+              disableButtonsControls
+              disableDotsControls
+              disableSlideInfo
+              infinite
+            />
+            <div
+              style={{
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start',
+                minWidth: 220,
+                marginTop: 20,
+                marginBottom: 40,
+                marginLeft: 0,
+                marginRight: 40,
+                alignItems: 'center',
+              }}
+            >
+              <h1 className={cx.title}>Tab For Cats</h1>
               <p
-                style={{
-                  fontSize: 12,
-                  color: lightestTextColor,
-                  marginBottom: 0,
-                }}
+                style={{ width: '80%', textAlign: 'center', fontSize: '25px' }}
               >
-                215,000+ people are Tabbing on Chrome
+                Open browser tabs, help shelter cats get adopted!
               </p>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}
-              ></div>
+              <div style={{ marginTop: 20, marginBottom: 20 }}>
+                {installButton}
+              </div>
+              <div style={{ margin: 0 }}>
+                <div>
+                  <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+                  <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+                  <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+                  <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+                  <StarHalf
+                    style={{ color: '#ffc533', width: 18, height: 18 }}
+                  />
+                </div>
+                <p
+                  style={{
+                    fontSize: 12,
+                    color: lightestTextColor,
+                    marginBottom: 0,
+                  }}
+                >
+                  215,000+ people are Tabbing on Chrome
+                </p>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}
+                ></div>
+              </div>
             </div>
-          </div>
-        </Section>
+          </Section>
+        </div>
         <Section background={'dark'} fullWidth>
           <div className={cx.sectionSplit}>
             <div className={cx.halfPage}>
@@ -360,20 +368,6 @@ const Cats = ({ pageContext }) => {
                 our users, and a great way to make an impact without breaking
                 the bank.
               </p>
-              {isReferral ? (
-                <p
-                  data-test-id={'referral-text'}
-                  style={{
-                    width: '80%',
-                    textAlign: 'justify',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  Since you were referred to join Tab for Cats, we'll give an
-                  additional donation to shelter cats on behalf of you and your
-                  referral when you sign up!
-                </p>
-              ) : null}
             </div>
             <div className={cx.halfPage}>
               <img

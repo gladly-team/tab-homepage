@@ -53,17 +53,6 @@ describe('cats page', () => {
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
 
-  it('shows referral copy when it is a vanity URL', () => {
-    const CatsPageWithTheme = require('../cats').default
-
-    // Gatsby will pass a referrer in the pageContext prop if it's
-    // a page created for a vanity referrer URL.
-    const mockProps = getMockProps()
-    mockProps.pageContext = { referrer: { id: 123 } }
-    const wrapper = mount(<CatsPageWithTheme {...mockProps} />)
-    expect(wrapper.find(getTestIdSelector('referral-text')).exists()).toBe(true)
-  })
-
   it('does not store a referrer ID in local storage when it is not a vanity URL', () => {
     const CatsPageWithTheme = require('../cats').default
     const mockProps = getMockProps()
@@ -104,24 +93,6 @@ describe('cats page', () => {
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
 
-  it('shows referral copy when refferal id is included as a URL parameter', () => {
-    const CatsPageWithTheme = require('../cats').default
-
-    const getUrlParameterValue = require('src/utils/location')
-      .getUrlParameterValue
-    getUrlParameterValue.mockImplementation((param) => {
-      switch (param) {
-        case 'r':
-          return '234'
-        default:
-          return null
-      }
-    })
-
-    const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
-    expect(wrapper.find(getTestIdSelector('referral-text')).exists()).toBe(true)
-  })
-
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const CatsPageWithTheme = require('../cats').default
 
@@ -133,7 +104,7 @@ describe('cats page', () => {
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
-  it('does not shows referral copy when refferal id is included as a URL parameter', () => {
+  it('does not shows referral copy when referrer id is included as a URL parameter', () => {
     const CatsPageWithTheme = require('../cats').default
 
     const getUrlParameterValue = require('src/utils/location')
