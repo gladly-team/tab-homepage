@@ -5,6 +5,7 @@ import { shallow, mount } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
 import InstallButton from 'src/components/InstallButton'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
+import { getTestIdSelector } from 'src/utils/test-utils'
 import { act } from 'react-dom/test-utils'
 jest.mock('src/components/InstallButton')
 jest.mock('src/utils/local-storage')
@@ -52,12 +53,33 @@ describe('cats page', () => {
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
 
+  it('shows referral copy when it is a vanity URL', () => {
+    const CatsPageWithTheme = require('../cats').default
+
+    // Gatsby will pass a referrer in the pageContext prop if it's
+    // a page created for a vanity referrer URL.
+    const mockProps = getMockProps()
+    mockProps.pageContext = { referrer: { id: 123 } }
+    const wrapper = mount(<CatsPageWithTheme {...mockProps} />)
+    expect(wrapper.find(getTestIdSelector('referral-text')).exists()).toBe(true)
+  })
+
   it('does not store a referrer ID in local storage when it is not a vanity URL', () => {
     const CatsPageWithTheme = require('../cats').default
     const mockProps = getMockProps()
     mockProps.pageContext = {}
     mount(<CatsPageWithTheme {...mockProps} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
+  })
+
+  it('does not show referral copy when it is not a vanity URL', () => {
+    const CatsPageWithTheme = require('../cats').default
+    const mockProps = getMockProps()
+    mockProps.pageContext = {}
+    const wrapper = mount(<CatsPageWithTheme {...mockProps} />)
+    expect(wrapper.find(getTestIdSelector('referral-text')).exists()).toBe(
+      false
+    )
   })
 
   it('stores the referrer ID in local storage when it is included as a URL parameter', () => {
@@ -82,6 +104,24 @@ describe('cats page', () => {
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
 
+  it('shows referral copy when refferal id is included as a URL parameter', () => {
+    const CatsPageWithTheme = require('../cats').default
+
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
+    getUrlParameterValue.mockImplementation((param) => {
+      switch (param) {
+        case 'r':
+          return '234'
+        default:
+          return null
+      }
+    })
+
+    const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
+    expect(wrapper.find(getTestIdSelector('referral-text')).exists()).toBe(true)
+  })
+
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const CatsPageWithTheme = require('../cats').default
 
@@ -91,6 +131,19 @@ describe('cats page', () => {
 
     mount(<CatsPageWithTheme {...getMockProps()} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
+  })
+
+  it('does not shows referral copy when refferal id is included as a URL parameter', () => {
+    const CatsPageWithTheme = require('../cats').default
+
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+
+    const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
+    expect(wrapper.find(getTestIdSelector('referral-text')).exists()).toBe(
+      false
+    )
   })
 
   it('does not store a referrer ID in local storage when the URL param referrer ID value is not an integer', () => {
@@ -132,6 +185,23 @@ describe('cats page', () => {
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
 
+  it('shows referral copy when user is included as a URL parameter', () => {
+    const CatsPageWithTheme = require('../cats').default
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
+    getUrlParameterValue.mockImplementation((param) => {
+      switch (param) {
+        case 'u':
+          return 'bobert'
+        default:
+          return null
+      }
+    })
+
+    const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
+    expect(wrapper.find(getTestIdSelector('referral-text')).exists()).toBe(true)
+  })
+
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const CatsPageWithTheme = require('../cats').default
     const getUrlParameterValue = require('src/utils/location')
@@ -140,6 +210,18 @@ describe('cats page', () => {
 
     mount(<CatsPageWithTheme {...getMockProps()} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
+  })
+
+  it('does not show referral copy the referrer ID is not in the URL params', () => {
+    const CatsPageWithTheme = require('../cats').default
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+
+    const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
+    expect(wrapper.find(getTestIdSelector('referral-text')).exists()).toBe(
+      false
+    )
   })
 
   it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage', () => {

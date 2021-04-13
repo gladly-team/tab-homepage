@@ -177,10 +177,27 @@ const useStyles = makeStyles(() => ({
 }))
 const Cats = ({ pageContext }) => {
   const cx = useStyles()
+  const checkIfReferrered = () => {
+    let isReferred = false
+    if (pageContext && pageContext.referrer) {
+      isReferred = true
+    } else {
+      const paramRefId = parseInt(getUrlParameterValue('r'))
+      if (!isNaN(paramRefId)) {
+        isReferred = true
+      }
+    }
+    const userReferrerId = getUrlParameterValue('u')
+    if (userReferrerId !== null && userReferrerId !== undefined) {
+      isReferred = true
+    }
+    return isReferred
+  }
   const [
     showUnsupportedBrowserMessage,
     setShowUnsupportedBrowserMessage,
   ] = useState(false)
+  const [isReferral] = useState(checkIfReferrered())
   // store referrer id
   useEffect(() => {
     let referrerId = null
@@ -343,6 +360,20 @@ const Cats = ({ pageContext }) => {
                 our users, and a great way to make an impact without breaking
                 the bank.
               </p>
+              {isReferral ? (
+                <p
+                  data-test-id={'referral-text'}
+                  style={{
+                    width: '80%',
+                    textAlign: 'justify',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Since you were referred to join Tab for Cats, we'll give an
+                  additional donation to shelter cats on behalf of you and your
+                  referral when you sign up!
+                </p>
+              ) : null}
             </div>
             <div className={cx.halfPage}>
               <img
