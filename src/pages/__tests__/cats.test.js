@@ -104,7 +104,7 @@ describe('cats page', () => {
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
-  it('does not shows referral copy when referrer id is included as a URL parameter', () => {
+  it('does not shows referral copy when referrer id is not included as a URL parameter', () => {
     const CatsPageWithTheme = require('../cats').default
 
     const getUrlParameterValue = require('src/utils/location')
@@ -181,18 +181,6 @@ describe('cats page', () => {
 
     mount(<CatsPageWithTheme {...getMockProps()} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
-  })
-
-  it('does not show referral copy the referrer ID is not in the URL params', () => {
-    const CatsPageWithTheme = require('../cats').default
-    const getUrlParameterValue = require('src/utils/location')
-      .getUrlParameterValue
-    getUrlParameterValue.mockReturnValue(null)
-
-    const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
-    expect(wrapper.find(getTestIdSelector('referral-text')).exists()).toBe(
-      false
-    )
   })
 
   it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage', () => {

@@ -118,7 +118,13 @@ const useStyles = makeStyles(() => ({
     color: '#fff',
   },
   alertIcon: { flexDirection: 'column', justifyContent: 'center' },
-  alertRoot: { margin: '20px 40px' },
+  alertRoot: {
+    margin: '0px 40px',
+    position: 'absolute',
+    top: '80px',
+    left: 0,
+    right: 0,
+  },
   MuiButtonContained: {
     boxShadow: 'none',
   },
