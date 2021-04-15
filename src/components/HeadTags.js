@@ -10,6 +10,7 @@ const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
 const HeadTags = ({
   favicon,
   title,
+  titleTemplate,
   ogTitle,
   ogDescription,
   ogImage,
@@ -19,7 +20,7 @@ const HeadTags = ({
 }) => {
   const absolutePageURL = getAbsoluteURL(pageURL)
   return (
-    <Helmet titleTemplate={`%s - ${title}`} defaultTitle={title}>
+    <Helmet titleTemplate={titleTemplate} defaultTitle={title}>
       <meta name="description" content={ogDescription} />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={absolutePageURL} />
@@ -46,6 +47,7 @@ const HeadTags = ({
 HeadTags.propTypes = {
   favicon: PropTypes.string,
   title: PropTypes.string,
+  titleTemplate: PropTypes.string,
   ogTitle: PropTypes.string,
   ogDescription: PropTypes.string,
   ogImage: PropTypes.string,
@@ -57,6 +59,7 @@ HeadTags.propTypes = {
 HeadTags.defaultProps = {
   favicon: favicon,
   title: 'Tab for a Cause',
+  titleTemplate: '%s - Tab for a Cause',
   ogTitle: 'Join me on Tab for a Cause!',
   ogDescription:
     'Raise money for charity with every browser tab you open, for free.',

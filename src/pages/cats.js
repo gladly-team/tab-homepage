@@ -20,8 +20,8 @@ import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import 'src/pages/cats.css'
+import HeadTags from 'src/components/HeadTags'
 // Images
-import favicon from 'src/img/logo32x32.png'
 import landingImg from 'src/img/cats/mockPage1.png'
 import landingImg2 from 'src/img/cats/mockPage2.png'
 import landingImg3 from 'src/img/cats/mockPage3.png'
@@ -43,6 +43,7 @@ import {
 import logoWhite from 'src/img/logo-white.svg'
 import cat1 from 'src/img/cats/1.png'
 import cat2 from 'src/img/cats/2.png'
+import catsOGImg from 'src/img/cats/cats-og-img.png'
 
 // Icons
 import Star from '@material-ui/icons/Star'
@@ -68,6 +69,7 @@ import {
 import { getUrlParameterValue } from 'src/utils/location'
 import Divider from '@material-ui/core/Divider'
 
+const ogImgURLAbsolute = getAbsoluteURL(catsOGImg)
 const canonicalURL = getAbsoluteURL(homeURL)
 const useStyles = makeStyles((theme) => ({
   whiteFont: {
@@ -164,7 +166,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 12,
   },
 }))
-const Cats = ({ pageContext }) => {
+const Cats = ({ pageContext, location }) => {
   const cx = useStyles()
   const [
     showUnsupportedBrowserMessage,
@@ -218,9 +220,22 @@ const Cats = ({ pageContext }) => {
     <img key="5" className={cx.image} src={landingImg5} />,
     <img key="1" className={cx.image} src={landingImg} />,
   ]
+  const absolutePageURL = getAbsoluteURL(location.pathname)
   return (
     <div>
-      <link rel="icon" href={favicon} />
+      <HeadTags
+        title={'Tab for Cats - Home'}
+        titleTemplate={'%s | Tab for Cats'}
+        ogTitle={'Help Shelter Cats for Free Online | Tab for Cats '}
+        ogDescription={
+          'Open new tabs, help shelter cats for free... it’s that easy!'
+        }
+        ogImage={ogImgURLAbsolute}
+        keywords={
+          'charity, cat, cats, extension, new tab, chrome, help, donation, raise money, money, adoption, shelter cat, easy, ways to donate, free, best, home, animals, safe, Jackson Galaxy, Greater Good, treats, volunteer, internet, tab for a cause, impact, stray, legitimate, rescue, food, facebook, twitter, reddit, instagram, tumblr'
+        }
+        pageURL={absolutePageURL}
+      />
       <AppBar color="primary" position="sticky">
         <Toolbar>
           <div className={cx.logoContainer}>
@@ -341,7 +356,7 @@ const Cats = ({ pageContext }) => {
               <p style={{ width: '80%', textAlign: 'justify' }}>
                 We have partnered with The{' '}
                 <Link to="https://thejacksongalaxyproject.greatergood.org/about/cat-pawsitive/">
-                  Jackson Galaxy Project
+                  Greater Good Charities' The Jackson Galaxy Project
                 </Link>{' '}
                 to provide treats to shelter cats for FREE! How can we do this?
                 Through ad revenue!
@@ -546,62 +561,13 @@ const Cats = ({ pageContext }) => {
                   text={
                     <p
                       style={{
-                        textAlign: 'justify',
+                        textAlign: 'left',
                         hover: 'pointer',
                         textDecoration: 'underline',
                       }}
                     >
-                      Do you endorse the companies in your ads?
-                    </p>
-                  }
-                  dropdown={({ open, onClose, anchorElement }) => (
-                    <InfoPopover
-                      open={open}
-                      anchorEl={anchorElement}
-                      onClose={onClose}
-                      style={{
-                        marginTop: 6,
-                      }}
-                    >
-                      <div>
-                        <p variant={'body2'}>
-                          No. Tab for a Cause does not endorse the companies
-                          advertising on our page. We don't choose specific ads
-                          ourselves (as awesome as that would be).
-                        </p>
-                        <p variant={'body2'} style={{ paddingTop: '10px' }}>
-                          The funnel goes: Company --{'>'} Ad Network --{'>'}{' '}
-                          Your Tabs. We work with the ad networks to put filters
-                          in place to ensure ads are family-friendly, however,
-                          ads sometimes get miscategorized and leak through our
-                          filters. This may mean seeing an ad you disagree with,
-                          but the money still goes to the charity of your
-                          choice!
-                        </p>{' '}
-                        <p variant={'body2'} style={{ paddingTop: '10px' }}>
-                          If you see anything that doesn’t feel family-friendly
-                          please let us know by emailing
-                          contact@tabforacause.org so we can fix this
-                          immediately! If you are comfortable screenshotting the
-                          ad you are concerned about, this will help us identify
-                          where it came from a lot faster but you are never
-                          required to do so.
-                        </p>
-                      </div>
-                    </InfoPopover>
-                  )}
-                />
-                <FAQDropDown
-                  text={
-                    <p
-                      style={{
-                        textAlign: 'justify',
-                        hover: 'pointer',
-                        textDecoration: 'underline',
-                      }}
-                    >
-                      How did you pick The Jackson Galaxy Project to partner
-                      with?
+                      How did you pick Greater Good Charities' The Jackson
+                      Galaxy Project to partner with?
                     </p>
                   }
                   dropdown={({ open, onClose, anchorElement }) => (
@@ -620,14 +586,13 @@ const Cats = ({ pageContext }) => {
                         >
                           Like with Tab for a Cause, our number one priority is
                           ensuring that organizations we are partnered with make
-                          a positive impact! While researching, we came into
-                          contact with the Jackson Galaxy Project and thought
-                          they were the perfect fit! Every timeEverytime you
-                          open a new tab you are one step closer to helping a
-                          shelter cat get adopted! They do this by using treats
-                          for positive reinforcement training to ensure these
-                          cats are ready to be welcome into their fur-ever
-                          homes!
+                          a positive impact, and the Greater Good Charities'
+                          Jackson Galaxy Project seemed like the perfect fit.
+                          Every time you open a new tab you are supporting
+                          initiatives that help shelter cats get adopted! These
+                          include initiatives that use treats for positive
+                          reinforcement training to ensure cats are ready to be
+                          welcomed into their fur-ever homes!
                         </p>
                       </div>
                     </InfoPopover>
@@ -637,89 +602,7 @@ const Cats = ({ pageContext }) => {
                   text={
                     <p
                       style={{
-                        textAlign: 'justify',
-                        hover: 'pointer',
-                        textDecoration: 'underline',
-                      }}
-                    >
-                      What is the impact of referring my friends to join?
-                    </p>
-                  }
-                  dropdown={({ open, onClose, anchorElement }) => (
-                    <InfoPopover
-                      open={open}
-                      anchorEl={anchorElement}
-                      onClose={onClose}
-                      style={{
-                        marginTop: 6,
-                      }}
-                    >
-                      <div>
-                        <p>
-                          Convincing your friends and family to join Tab for
-                          Cats is the most impactful thing you can do! In
-                          addition to each person raising more money for The
-                          Jackson Galaxy Project, as we grow we can negotiate
-                          better rates for our ads! This increases the value of
-                          everyone's tabs meaning you can give a cat a treat
-                          even faster.
-                        </p>
-                        <p style={{ paddingTop: '10px' }}>
-                          We will also donate 10 extra treats on behalf of both
-                          you and your friend when they sign up with your link!
-                        </p>
-                      </div>
-                    </InfoPopover>
-                  )}
-                />
-                <FAQDropDown
-                  text={
-                    <p
-                      style={{
-                        textAlign: 'justify',
-                        hover: 'pointer',
-                        textDecoration: 'underline',
-                      }}
-                    >
-                      Are you going to add more charities?
-                    </p>
-                  }
-                  dropdown={({ open, onClose, anchorElement }) => (
-                    <InfoPopover
-                      open={open}
-                      anchorEl={anchorElement}
-                      onClose={onClose}
-                      style={{
-                        marginTop: 6,
-                      }}
-                    >
-                      <div>
-                        <p>
-                          It’s possible! Tab for Cats is the latest project
-                          created by Tab for a Cause. Right now its main goal is
-                          to help shelter cats in need by providing them with
-                          treats for reinforcement training. There is a
-                          possibility that we will be able to help cats in
-                          different ways in the future but we don’t have a set
-                          plan or timeline to do this yet. Additionally, Tab for
-                          Cats is focused on cats only, but Tab for a Cause is
-                          still available for those who want to raise money for
-                          a variety of causes.
-                        </p>
-                        <p style={{ paddingTop: '10px' }}>
-                          Have a cause close to your heart or an idea of how to
-                          help shelter cats even more? Let us know by emailing
-                          us at contact@tabforacause.org.
-                        </p>
-                      </div>
-                    </InfoPopover>
-                  )}
-                />
-                <FAQDropDown
-                  text={
-                    <p
-                      style={{
-                        textAlign: 'justify',
+                        textAlign: 'left',
                         hover: 'pointer',
                         textDecoration: 'underline',
                       }}
@@ -751,12 +634,12 @@ const Cats = ({ pageContext }) => {
                   text={
                     <p
                       style={{
-                        textAlign: 'justify',
+                        textAlign: 'left',
                         hover: 'pointer',
                         textDecoration: 'underline',
                       }}
                     >
-                      This sounds too good to be true, what is the catch?
+                      This sounds too good to be true. What's the catch?
                     </p>
                   }
                   dropdown={({ open, onClose, anchorElement }) => (
@@ -772,10 +655,10 @@ const Cats = ({ pageContext }) => {
                         <p>
                           Unless you count looking at ads as a catch, there are
                           none! Tab for a Cause was created by our founders,
-                          Alex and Kevin, because at the time they were college
-                          students that wanted to give back to charitable causes
-                          but couldn’t afford it. Now, as a company, we want to
-                          make sure everyone can do their part to give back
+                          Alex and Kevin, who at the time were college students
+                          who wanted to give back to charitable causes but
+                          couldn’t afford to do so. Now, as a company, we want
+                          to make sure everyone can do their part to give back
                           without breaking the bank.
                         </p>
                       </div>
@@ -786,7 +669,7 @@ const Cats = ({ pageContext }) => {
                   text={
                     <p
                       style={{
-                        textAlign: 'justify',
+                        textAlign: 'left',
                         hover: 'pointer',
                         textDecoration: 'underline',
                       }}
@@ -817,6 +700,137 @@ const Cats = ({ pageContext }) => {
                           include hosting/server costs and internal company
                           expenses; and (2) to reinvest in getting more Tabbers
                           so that we can give more to charity in the long term.
+                        </p>
+                      </div>
+                    </InfoPopover>
+                  )}
+                />
+                <FAQDropDown
+                  text={
+                    <p
+                      style={{
+                        textAlign: 'left',
+                        hover: 'pointer',
+                        textDecoration: 'underline',
+                      }}
+                    >
+                      What is the impact of referring my friends to join?
+                    </p>
+                  }
+                  dropdown={({ open, onClose, anchorElement }) => (
+                    <InfoPopover
+                      open={open}
+                      anchorEl={anchorElement}
+                      onClose={onClose}
+                      style={{
+                        marginTop: 6,
+                      }}
+                    >
+                      <div>
+                        <p>
+                          Convincing your friends and family to join Tab for
+                          Cats is the most impactful thing you can do! In
+                          addition to each person raising more money for Greater
+                          Good Charities' The Jackson Galaxy Project, as we grow
+                          we can negotiate better rates for our ads. This
+                          increases the value of everyone's tabs, meaning you
+                          can raise funds to help shelter cats even faster.
+                        </p>
+                        <p style={{ paddingTop: '10px' }}>
+                          We will also give 10 extra treats when they sign up
+                          with your link!
+                        </p>
+                      </div>
+                    </InfoPopover>
+                  )}
+                />
+                <FAQDropDown
+                  text={
+                    <p
+                      style={{
+                        textAlign: 'left',
+                        hover: 'pointer',
+                        textDecoration: 'underline',
+                      }}
+                    >
+                      Are you going to add more charities?
+                    </p>
+                  }
+                  dropdown={({ open, onClose, anchorElement }) => (
+                    <InfoPopover
+                      open={open}
+                      anchorEl={anchorElement}
+                      onClose={onClose}
+                      style={{
+                        marginTop: 6,
+                      }}
+                    >
+                      <div>
+                        <p>
+                          It’s possible! Tab for Cats is the latest project
+                          created by Tab for a Cause. Right now, its main goal
+                          is to help shelter cats in need by providing them with
+                          treats for reinforcement training. There is a
+                          possibility that we will be able to help cats in
+                          different ways in the future, but we don’t have a set
+                          timeline to do this yet. Additionally, Tab for Cats is
+                          focused on cats only, but Tab for a Cause is still
+                          available for those who want to raise money for a
+                          variety of causes.
+                        </p>
+                        <p style={{ paddingTop: '10px' }}>
+                          Have a cause close to your heart or an idea of how to
+                          help shelter cats even more? Let us know by emailing
+                          us at contact@tabforacause.org.
+                        </p>
+                      </div>
+                    </InfoPopover>
+                  )}
+                />
+                <FAQDropDown
+                  text={
+                    <p
+                      style={{
+                        textAlign: 'left',
+                        hover: 'pointer',
+                        textDecoration: 'underline',
+                      }}
+                    >
+                      Do you endorse the companies in your ads?
+                    </p>
+                  }
+                  dropdown={({ open, onClose, anchorElement }) => (
+                    <InfoPopover
+                      open={open}
+                      anchorEl={anchorElement}
+                      onClose={onClose}
+                      style={{
+                        marginTop: 6,
+                      }}
+                    >
+                      <div>
+                        <p variant={'body2'}>
+                          No. Tab for a Cause does not endorse the companies
+                          advertising on our page. We don't choose specific ads
+                          ourselves (as awesome as that would be).
+                        </p>
+                        <p variant={'body2'} style={{ paddingTop: '10px' }}>
+                          The funnel goes: Company --{'>'} Ad Network --{'>'}{' '}
+                          Your Tabs. We work with the ad networks to put filters
+                          in place to ensure ads are family-friendly, but ads
+                          sometimes get miscategorized and leak through our
+                          filters. This may mean seeing an ad you disagree with,
+                          but the money still goes to the charity of your
+                          choice!
+                        </p>{' '}
+                        <p variant={'body2'} style={{ paddingTop: '10px' }}>
+                          If you see anything that doesn’t feel family-friendly
+                          please let us know by emailing
+                          contact@tabforacause.org so we can fix this
+                          immediately! If you are comfortable screenshotting the
+                          ad you are concerned about, this will help us identify
+                          where it came from a lot faster, but you are never
+                          required to do so.
                         </p>
                       </div>
                     </InfoPopover>
@@ -910,6 +924,9 @@ const Cats = ({ pageContext }) => {
   )
 }
 Cats.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }),
   pageContext: PropTypes.shape({
     referrer: PropTypes.shape({
       id: PropTypes.number,

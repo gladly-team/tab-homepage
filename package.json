@@ -16,7 +16,6 @@
     "common-tags": "^1.8.0",
     "gatsby": "^2.24.83",
     "gatsby-plugin-facebook-pixel": "^1.0.5",
-    "gatsby-plugin-google-analytics": "^2.3.19",
     "gatsby-plugin-material-ui": "^2.1.10",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-robots-txt": "^1.5.3",
