@@ -47,7 +47,7 @@ const typography = new Typography({
       paddingLeft: '14px',
     },
     li: {
-      color: lighterTextColor,
+      color: 'rgb(53, 53, 53)',
       marginBottom: 0,
       lineHeight: 1.36,
     },
