@@ -69,53 +69,9 @@ import {
 import { getUrlParameterValue } from 'src/utils/location'
 import Divider from '@material-ui/core/Divider'
 
-const mockImagesArray = [
-  <img
-    key="6"
-    style={{
-      maxWidth: 600,
-    }}
-    src={landingImg6}
-  />,
-  <img
-    key="4"
-    style={{
-      maxWidth: 600,
-    }}
-    src={landingImg4}
-  />,
-  <img
-    key="2"
-    style={{
-      maxWidth: 600,
-    }}
-    src={landingImg2}
-  />,
-  <img
-    key="3"
-    style={{
-      maxWidth: 600,
-    }}
-    src={landingImg3}
-  />,
-  <img
-    key="5"
-    style={{
-      maxWidth: 600,
-    }}
-    src={landingImg5}
-  />,
-  <img
-    key="1"
-    style={{
-      maxWidth: 600,
-    }}
-    src={landingImg}
-  />,
-]
-const canonicalURL = getAbsoluteURL(homeURL)
 const ogImgURLAbsolute = getAbsoluteURL(catsOGImg)
-const useStyles = makeStyles(() => ({
+const canonicalURL = getAbsoluteURL(homeURL)
+const useStyles = makeStyles((theme) => ({
   whiteFont: {
     color: '#fff',
   },
@@ -126,6 +82,18 @@ const useStyles = makeStyles(() => ({
     top: '80px',
     left: 0,
     right: 0,
+    [theme.breakpoints.down('sm')]: {
+      position: 'relative',
+      top: '10px',
+      margin: '0px 10px',
+    },
+  },
+  image: {
+    maxWidth: '600px',
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+      maxWidth: '100%',
+    },
   },
   MuiButtonContained: {
     boxShadow: 'none',
@@ -159,17 +127,26 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    [theme.breakpoints.down('sm')]: {
+      height: '100%',
+    },
   },
   sectionSplit: {
     display: 'flex',
     minHeight: '540px',
     alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      flexWrap: 'wrap',
+    },
   },
   halfPage: {
     width: '50%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
   },
   logo: {
     width: 40,
@@ -235,6 +212,14 @@ const Cats = ({ pageContext, location }) => {
       }}
     />
   )
+  const mockImagesArray = [
+    <img key="6" className={cx.image} src={landingImg6} />,
+    <img key="4" className={cx.image} src={landingImg4} />,
+    <img key="2" className={cx.image} src={landingImg2} />,
+    <img key="3" className={cx.image} src={landingImg3} />,
+    <img key="5" className={cx.image} src={landingImg5} />,
+    <img key="1" className={cx.image} src={landingImg} />,
+  ]
   const absolutePageURL = getAbsoluteURL(location.pathname)
   return (
     <div>
@@ -321,10 +306,7 @@ const Cats = ({ pageContext, location }) => {
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
                 minWidth: 220,
-                marginTop: 20,
                 marginBottom: 40,
-                marginLeft: 0,
-                marginRight: 40,
                 alignItems: 'center',
               }}
             >
@@ -558,13 +540,21 @@ const Cats = ({ pageContext, location }) => {
         </Section>
         <Section style={{ justifyContent: 'center', minHeight: '540px' }}>
           <h1 className={cx.title}>Frequently Asked Questions</h1>
-          <div style={{ maxWidth: '986px', width: '100%', display: 'flex' }}>
+          <div
+            style={{
+              maxWidth: '986px',
+              width: '100%',
+              display: 'flex',
+              flexWrap: 'wrap',
+            }}
+          >
             <div className={cx.halfPage}>
               <div
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'start',
+                  width: '90%',
                 }}
               >
                 <FAQDropDown
