@@ -12,6 +12,7 @@ export const privacyPolicyURL = '/privacy/'
 export const teamURL = '/team/'
 export const jobsURL = '/jobs/'
 export const adblockerWhitelistingURL = '/adblockers/'
+export const catsURL = '/cats/'
 
 // Million raised
 export const millionRaisedURL = '/million/'

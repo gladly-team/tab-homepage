@@ -39,6 +39,7 @@ import {
   tiktokPageURL,
   instagramPageURL,
   homeURL,
+  catsURL,
 } from 'src/utils/navigation'
 import logoWhite from 'src/img/logo-white.svg'
 import cat1 from 'src/img/cats/1.png'
@@ -70,7 +71,7 @@ import { getUrlParameterValue } from 'src/utils/location'
 import Divider from '@material-ui/core/Divider'
 
 const ogImgURLAbsolute = getAbsoluteURL(catsOGImg)
-const canonicalURL = getAbsoluteURL(homeURL)
+const canonicalURL = getAbsoluteURL(catsURL)
 const useStyles = makeStyles((theme) => ({
   whiteFont: {
     color: '#fff',
