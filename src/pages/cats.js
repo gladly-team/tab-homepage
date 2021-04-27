@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
+import {
+  makeStyles,
+  ThemeProvider,
+  responsiveFontSizes,
+} from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import { AlertTitle, Alert } from '@material-ui/lab'
-import defaultTheme from 'src/themes/theme'
-import { ThemeProvider } from '@material-ui/core/styles'
-import { responsiveFontSizes } from '@material-ui/core/styles'
+import defaultTheme, { lightestTextColor } from 'src/themes/theme'
+
 import Section from 'src/components/Section'
 import InstallButton from 'src/components/InstallButton'
 import Link from 'src/components/Link'
@@ -28,7 +31,7 @@ import landingImg3 from 'src/img/cats/mockPage3.png'
 import landingImg4 from 'src/img/cats/mockPage4.png'
 import landingImg5 from 'src/img/cats/mockPage5.png'
 import landingImg6 from 'src/img/cats/mockPage6.png'
-import { lightestTextColor } from 'src/themes/theme'
+
 import {
   getAbsoluteURL,
   financialsURL,
@@ -39,6 +42,7 @@ import {
   tiktokPageURL,
   instagramPageURL,
   homeURL,
+  catsURL,
 } from 'src/utils/navigation'
 import logoWhite from 'src/img/logo-white.svg'
 import cat1 from 'src/img/cats/1.png'
@@ -70,7 +74,7 @@ import { getUrlParameterValue } from 'src/utils/location'
 import Divider from '@material-ui/core/Divider'
 
 const ogImgURLAbsolute = getAbsoluteURL(catsOGImg)
-const canonicalURL = getAbsoluteURL(homeURL)
+const canonicalURL = getAbsoluteURL(catsURL)
 const useStyles = makeStyles((theme) => ({
   whiteFont: {
     color: '#fff',
@@ -224,23 +228,19 @@ const Cats = ({ pageContext, location }) => {
   return (
     <div>
       <HeadTags
-        title={'Tab for Cats - Home'}
-        titleTemplate={'%s | Tab for Cats'}
-        ogTitle={'Help Shelter Cats for Free Online | Tab for Cats '}
-        ogDescription={
-          'Open new tabs, help shelter cats for free... it’s that easy!'
-        }
+        title="Tab for Cats - Home"
+        titleTemplate="%s | Tab for Cats"
+        ogTitle="Help Shelter Cats for Free Online | Tab for Cats "
+        ogDescription="Open new tabs, help shelter cats for free... it’s that easy!"
         ogImage={ogImgURLAbsolute}
-        keywords={
-          'charity, cat, cats, extension, new tab, chrome, help, donation, raise money, money, adoption, shelter cat, easy, ways to donate, free, best, home, animals, safe, Jackson Galaxy, Greater Good, treats, volunteer, internet, tab for a cause, impact, stray, legitimate, rescue, food, facebook, twitter, reddit, instagram, tumblr'
-        }
+        keywords="charity, cat, cats, extension, new tab, chrome, help, donation, raise money, money, adoption, shelter cat, easy, ways to donate, free, best, home, animals, safe, Jackson Galaxy, Greater Good, treats, volunteer, internet, tab for a cause, impact, stray, legitimate, rescue, food, facebook, twitter, reddit, instagram, tumblr"
         pageURL={absolutePageURL}
       />
       <AppBar color="primary" position="sticky">
         <Toolbar>
           <div className={cx.logoContainer}>
             <div
-              data-test-id={'logo-container'}
+              data-test-id="logo-container"
               style={{
                 display: 'flex',
                 justifyContent: 'flex-start',
@@ -249,7 +249,7 @@ const Cats = ({ pageContext, location }) => {
             >
               <Link to={homeURL}>
                 <img
-                  data-test-id={'tab-logo-with-text'}
+                  data-test-id="tab-logo-with-text"
                   src={logoWhite}
                   style={{ height: 40 }}
                 />
@@ -279,14 +279,14 @@ const Cats = ({ pageContext, location }) => {
             <Alert
               severity="info"
               classes={{ icon: cx.alertIcon, root: cx.alertRoot }}
-              data-test-id={'referral-text'}
+              data-test-id="referral-text"
             >
               <AlertTitle>Your friend sent you a gift</AlertTitle>By signing up
               with this link, you'll help shelter cats get adopted more quickly
               by giving them 5 treats for positive-reinforcement training
             </Alert>
           ) : undefined}
-          <Section wrap={'reverse'} fullWidth>
+          <Section wrap="reverse" fullWidth>
             <AliceCarousel
               autoPlay
               animationType="fadeout"
@@ -344,12 +344,12 @@ const Cats = ({ pageContext, location }) => {
                     flexDirection: 'row',
                     alignItems: 'center',
                   }}
-                ></div>
+                />
               </div>
             </div>
           </Section>
         </div>
-        <Section background={'dark'} fullWidth>
+        <Section background="dark" fullWidth>
           <div className={cx.sectionSplit}>
             <div className={cx.halfPage}>
               <h1 className={cx.title}>How Does it Work?</h1>
@@ -440,8 +440,8 @@ const Cats = ({ pageContext, location }) => {
           </div>
         </Section>
         <Section
-          background={'dark'}
-          fullWidth={true}
+          background="dark"
+          fullWidth
           style={{
             display: 'block',
             flexDirection: 'unset',
@@ -581,7 +581,7 @@ const Cats = ({ pageContext, location }) => {
                     >
                       <div>
                         <p
-                          variant={'body2'}
+                          variant="body2"
                           // className={classes.dropdownText}
                         >
                           Like with Tab for a Cause, our number one priority is
@@ -809,12 +809,12 @@ const Cats = ({ pageContext, location }) => {
                       }}
                     >
                       <div>
-                        <p variant={'body2'}>
+                        <p variant="body2">
                           No. Tab for a Cause does not endorse the companies
                           advertising on our page. We don't choose specific ads
                           ourselves (as awesome as that would be).
                         </p>
-                        <p variant={'body2'} style={{ paddingTop: '10px' }}>
+                        <p variant="body2" style={{ paddingTop: '10px' }}>
                           The funnel goes: Company --{'>'} Ad Network --{'>'}{' '}
                           Your Tabs. We work with the ad networks to put filters
                           in place to ensure ads are family-friendly, but ads
@@ -823,7 +823,7 @@ const Cats = ({ pageContext, location }) => {
                           but the money still goes to the charity of your
                           choice!
                         </p>{' '}
-                        <p variant={'body2'} style={{ paddingTop: '10px' }}>
+                        <p variant="body2" style={{ paddingTop: '10px' }}>
                           If you see anything that doesn’t feel family-friendly
                           please let us know by emailing
                           contact@tabforacause.org so we can fix this
@@ -849,7 +849,7 @@ const Cats = ({ pageContext, location }) => {
             </div>
           </div>
         </Section>
-        <Section background={'dark'} style={{ justifyContent: 'center' }}>
+        <Section background="dark" style={{ justifyContent: 'center' }}>
           <div
             style={{
               display: 'flex',
