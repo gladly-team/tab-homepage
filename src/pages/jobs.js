@@ -210,101 +210,101 @@ class JobsPage extends React.Component {
             <ApplyButton email="jobs@tabforacause.org">Apply</ApplyButton>
           </Paper>
 
-          <Paper style={jobPaperStyle}>
-            <h2>UI/UX Designer</h2>
-            <p>Remote – Part time (contract)</p>
-            <p>
-              Tab for a Cause is the easiest way to do good every day. We
-              believe everybody should make a difference in the world just by
-              surfing the web: every browser tab you open gives money, for free.
-              We’re taking our new tab page to the next level as we strive to
-              make Tab for a Cause even more intuitive, fun, and impactful.
-            </p>
-            <p>
-              As the UI/UX expert, you’ll lead the process of turning feature
-              ideas into design mocks and prototypes. We’re a small team that
-              iterates rapidly, so your work will quickly land in front of the
-              Tabbing community and make a real difference for our nonprofit
-              partners.
-            </p>
-
-            <p style={{ marginBottom: 16, fontWeight: 500 }}>You:</p>
-            <ul>
-              <li>Are ready on day 1</li>
-              <ul>
-                <li>Are proficient with Figma</li>
-                <li>Have prior experience in web app UX design</li>
-                <li>Are grounded in design principles and conventions</li>
-              </ul>
-
-              <li>Bring vision, leadership, and crystal-clear communication</li>
-              <ul>
-                <li>
-                  Are comfortable ideating on product direction in real time and
-                  turning a conversation into a prototype
-                </li>
-                <li>
-                  Are capable at navigating competing/conflicting design visions
-                  toward the best outcome
-                </li>
-                <li>
-                  Are excellent at communicating rationale behind design
-                  decisions
-                </li>
-                <li>
-                  Are empathetic to users’ needs and motivations and how they
-                  relate to business goals
-                </li>
-                <li>
-                  Are able to see beyond what a product currently is to what it
-                  could be
-                </li>
-              </ul>
-
-              <li>Are excited about working with a small startup</li>
-              <ul>
-                <li>
-                  Are interested in leading design on a rapidly-evolving product
-                </li>
-                <li>
-                  Are comfortable with uncertainty and shifting priorities
-                </li>
-                <li>
-                  Believe Tab for a Cause can grow into something greater than
-                  it is
-                </li>
-              </ul>
-              <li>
-                Align with our team’s values and want to work alongside kind,
-                ambitious, purpose-driven people
-              </li>
-            </ul>
-
-            <p style={{ marginBottom: 16, fontWeight: 500 }}>
-              Compensation & Other Details:
-            </p>
-            <ul>
-              <li>Contract, part time: 10 hours/week, $55/hour</li>
-              <li>Remote work, must be a U.S. resident</li>
-              <li>
-                Available a few hours each week between 10am and 2pm PT for
-                meetings (exact times will be flexible)
-              </li>
-              <li>
-                As we grow, potential to move to a full-time role (+ equity and
-                benefits), if interested
-              </li>
-            </ul>
-
-            <p style={{ marginBottom: 16, fontWeight: 500 }}>To Apply:</p>
-            <p>
-              Please send a resume, portfolio, and short message about why you’d
-              be a great fit to <b>jobs@tabforacause.org</b>. We look forward to
-              hearing from you!
-            </p>
-
-            <ApplyButton email="jobs@tabforacause.org">Apply</ApplyButton>
-          </Paper>
+          {/*           <Paper style={jobPaperStyle}> */}
+          {/*             <h2>UI/UX Designer</h2> */}
+          {/*             <p>Remote – Part time (contract)</p> */}
+          {/*             <p> */}
+          {/*               Tab for a Cause is the easiest way to do good every day. We */}
+          {/*               believe everybody should make a difference in the world just by */}
+          {/*               surfing the web: every browser tab you open gives money, for free. */}
+          {/*               We’re taking our new tab page to the next level as we strive to */}
+          {/*               make Tab for a Cause even more intuitive, fun, and impactful. */}
+          {/*             </p> */}
+          {/*             <p> */}
+          {/*               As the UI/UX expert, you’ll lead the process of turning feature */}
+          {/*               ideas into design mocks and prototypes. We’re a small team that */}
+          {/*               iterates rapidly, so your work will quickly land in front of the */}
+          {/*               Tabbing community and make a real difference for our nonprofit */}
+          {/*               partners. */}
+          {/*             </p> */}
+          {/*  */}
+          {/*             <p style={{ marginBottom: 16, fontWeight: 500 }}>You:</p> */}
+          {/*             <ul> */}
+          {/*               <li>Are ready on day 1</li> */}
+          {/*               <ul> */}
+          {/*                 <li>Are proficient with Figma</li> */}
+          {/*                 <li>Have prior experience in web app UX design</li> */}
+          {/*                 <li>Are grounded in design principles and conventions</li> */}
+          {/*               </ul> */}
+          {/*  */}
+          {/*               <li>Bring vision, leadership, and crystal-clear communication</li> */}
+          {/*               <ul> */}
+          {/*                 <li> */}
+          {/*                   Are comfortable ideating on product direction in real time and */}
+          {/*                   turning a conversation into a prototype */}
+          {/*                 </li> */}
+          {/*                 <li> */}
+          {/*                   Are capable at navigating competing/conflicting design visions */}
+          {/*                   toward the best outcome */}
+          {/*                 </li> */}
+          {/*                 <li> */}
+          {/*                   Are excellent at communicating rationale behind design */}
+          {/*                   decisions */}
+          {/*                 </li> */}
+          {/*                 <li> */}
+          {/*                   Are empathetic to users’ needs and motivations and how they */}
+          {/*                   relate to business goals */}
+          {/*                 </li> */}
+          {/*                 <li> */}
+          {/*                   Are able to see beyond what a product currently is to what it */}
+          {/*                   could be */}
+          {/*                 </li> */}
+          {/*               </ul> */}
+          {/*  */}
+          {/*               <li>Are excited about working with a small startup</li> */}
+          {/*               <ul> */}
+          {/*                 <li> */}
+          {/*                   Are interested in leading design on a rapidly-evolving product */}
+          {/*                 </li> */}
+          {/*                 <li> */}
+          {/*                   Are comfortable with uncertainty and shifting priorities */}
+          {/*                 </li> */}
+          {/*                 <li> */}
+          {/*                   Believe Tab for a Cause can grow into something greater than */}
+          {/*                   it is */}
+          {/*                 </li> */}
+          {/*               </ul> */}
+          {/*               <li> */}
+          {/*                 Align with our team’s values and want to work alongside kind, */}
+          {/*                 ambitious, purpose-driven people */}
+          {/*               </li> */}
+          {/*             </ul> */}
+          {/*  */}
+          {/*             <p style={{ marginBottom: 16, fontWeight: 500 }}> */}
+          {/*               Compensation & Other Details: */}
+          {/*             </p> */}
+          {/*             <ul> */}
+          {/*               <li>Contract, part time: 10 hours/week, $55/hour</li> */}
+          {/*               <li>Remote work, must be a U.S. resident</li> */}
+          {/*               <li> */}
+          {/*                 Available a few hours each week between 10am and 2pm PT for */}
+          {/*                 meetings (exact times will be flexible) */}
+          {/*               </li> */}
+          {/*               <li> */}
+          {/*                 As we grow, potential to move to a full-time role (+ equity and */}
+          {/*                 benefits), if interested */}
+          {/*               </li> */}
+          {/*             </ul> */}
+          {/*  */}
+          {/*             <p style={{ marginBottom: 16, fontWeight: 500 }}>To Apply:</p> */}
+          {/*             <p> */}
+          {/*               Please send a resume, portfolio, and short message about why you’d */}
+          {/*               be a great fit to <b>jobs@tabforacause.org</b>. We look forward to */}
+          {/*               hearing from you! */}
+          {/*             </p> */}
+          {/*  */}
+          {/*             <ApplyButton email="jobs@tabforacause.org">Apply</ApplyButton> */}
+          {/*           </Paper> */}
 
           {/*           <Paper style={jobPaperStyle}> */}
           {/*             <h2>Senior Full Stack Web Developer</h2> */}
