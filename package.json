@@ -24,7 +24,7 @@
     "gatsby-plugin-typography": "^2.5.13",
     "gatsby-source-filesystem": "^2.3.35",
     "gatsby-transformer-yaml": "^2.4.15",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "mdi-material-ui": "^6.20.0",
     "moment": "^2.29.1",
     "qs": "^6.9.4",
