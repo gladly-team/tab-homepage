@@ -42,6 +42,5 @@ jobs:
           aws-region: us-west-2
       - name: Deploy to test environemnt
         run: yarn run deploy
-      # TODO: enable
-      # - name: Run end-to-end tests
-      #   run: yarn run tests:e2e
+      - name: Run end-to-end tests
+        run: yarn run test:e2e
