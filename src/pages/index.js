@@ -254,7 +254,7 @@ class IndexPage extends React.Component {
               }}
             >
               <h1>
-                Raise money for charity every time you open a new browser tab!
+                Raise money for charity every time you open a new browser tab
               </h1>
               <p>
                 It's free and incredibly easy. Transform your tabs into a force
