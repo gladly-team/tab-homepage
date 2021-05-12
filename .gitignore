@@ -8,3 +8,6 @@ yarn-error.log
 
 # Code coverage
 coverage
+.env
+.yalc
+yalc.lock
