@@ -1,8 +1,6 @@
 name: Run end-to-end tests
 
-# TODO: change to PR only
-on: [push]
-# on: [pull_request]
+on: [pull_request]
 
 env:
   GATSBY_S3_BUCKET_NAME: test-tab-website
