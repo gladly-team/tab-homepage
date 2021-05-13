@@ -1,0 +1,46 @@
+name: Run end-to-end tests
+
+on: [pull_request]
+
+env:
+  GATSBY_S3_BUCKET_NAME: test-tab-website
+  GATSBY_DOMAIN: test-tab2017.gladly.io
+  SHOW_CATS_PAGE: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      BROWSERSTACK_USER: kevinjennison1
+      BROWSERSTACK_KEY: ${{secrets.BROWSERSTACK_KEY}}
+      INTEGRATION_TEST_USER_EMAIL: ${{secrets.INTEGRATION_TEST_USER_EMAIL}}
+      INTEGRATION_TEST_USER_PASSWORD: ${{secrets.INTEGRATION_TEST_USER_PASSWORD}}
+      MAILOSAUR_SERVER_ID: ${{secrets.MAILOSAUR_SERVER_ID}}
+      MAILOSAUR_API_KEY: ${{secrets.MAILOSAUR_API_KEY}}
+      SELENIUM_DRIVER_TYPE: remote
+      SELENIUM_HOST: https://test-tab2017.gladly.io
+      # A unique build identifier passed to tab-e2e.
+      TRAVIS_BUILD_NUMBER: tab-homepage-${{ github.run_number }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn run build
+      # The deploy user needs the following permissions:
+      # https://github.com/jariz/gatsby-plugin-s3/issues/39#issuecomment-467379363
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - name: Deploy to test environemnt
+        run: yarn run deploy
+      - name: Run end-to-end tests
+        run: yarn run test:e2e
