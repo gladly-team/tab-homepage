@@ -15926,10 +15926,10 @@ synchronous-promise@^2.0.6:
   resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.15.tgz#07ca1822b9de0001f5ff73595f3d08c4f720eb8e"
   integrity sha512-k8uzYIkIVwmT+TcglpdN50pS2y1BDcUnBPK9iJeGu0Pl1lOI8pD6wtzgw91Pjpe+RxtTncw32tLxs/R0yNL2Mg==
 
-tab-e2e@^1.0.1:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/tab-e2e/-/tab-e2e-1.0.3.tgz#babf3b7571bfd1e45f0d6002dfb3583d456c1a05"
-  integrity sha512-bWzel1iRSqN9xzOS/VoomgGRpl5qJY2kNFHJ0mIQ4umNa9Eh5Nuowy/TWxmyaMtIvgJE5HTmXTaigI8g0WCygQ==
+tab-e2e@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/tab-e2e/-/tab-e2e-1.0.4.tgz#2b08646f05680e847fd9bca038586022234da4e1"
+  integrity sha512-/AwLWTo1rhwtVpWfBg1cstiiKktGyE0lz3zK1hUyQjoKTthkS8cuZ1QWTvO6zB9ZYWETc1FuMKMh44OKz1NxpA==
   dependencies:
     chromedriver "^90.0.0"
     mailosaur "^7.2.1"
