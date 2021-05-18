@@ -43,14 +43,14 @@ describe('directToAppExtension', () => {
     expect(myRedirect).toEqual(chromeExtensionURL)
   })
 
-  it('redirects to the Firefox Add-ons page when the browser is Firefox on desktop', () => {
+  it('redirects to the home page when the browser is Firefox on desktop', () => {
     expect.assertions(1)
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', false))
     const myRedirect = directToAppExtension()
     expect(myRedirect).toEqual('/')
   })
 
-  it('redirects to the Firefox Add-ons page when the browser is Firefox on mobile', () => {
+  it('redirects to the home page when the browser is Firefox on mobile', () => {
     expect.assertions(1)
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', true))
     const myRedirect = directToAppExtension()

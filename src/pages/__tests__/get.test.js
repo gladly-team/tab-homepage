@@ -28,9 +28,9 @@ describe('GetExtensionRedirectPage', () => {
   it('redirects to the proper browser extension', () => {
     const GetExtensionRedirectPage = require('../get').default
     const mockProps = getMockProps()
+    directToAppExtension.mockReturnValue('nba.com')
     shallow(<GetExtensionRedirectPage {...mockProps} />)
-    expect(redirect).toHaveBeenCalled()
-    expect(directToAppExtension).toHaveBeenCalled()
+    expect(redirect).toHaveBeenCalledWith('nba.com')
   })
 
   it('stores the referrer ID in local storage if it exists', () => {
