@@ -8,7 +8,6 @@ import { act } from 'react-dom/test-utils'
 
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/local-storage')
-jest.useFakeTimers()
 
 const getMockProps = () => ({
   location: {
@@ -31,11 +30,11 @@ describe('GetExtensionRedirectPage', () => {
     const GetExtensionRedirectPage = require('../cats/getHTML').default
     const mockProps = getMockProps()
     jest.useFakeTimers()
+    mount(<GetExtensionRedirectPage {...mockProps} />)
     directToAppExtension.mockReturnValue('nba.com')
     act(() => {
       jest.advanceTimersByTime(5000)
     })
-    mount(<GetExtensionRedirectPage {...mockProps} />)
     expect(redirect).toHaveBeenCalledWith('nba.com')
   })
 
