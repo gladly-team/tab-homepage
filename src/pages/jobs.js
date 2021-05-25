@@ -108,108 +108,6 @@ class JobsPage extends React.Component {
             </p>
           </div>
 
-          <Paper style={jobPaperStyle}>
-            <h2>Social Media Intern - TikTok/Instagram</h2>
-            <p>Remote – Part time</p>
-            <p>
-              Tab for a Cause is seeking a creative, charismatic, and
-              self-motivated person to join our team. As we continue to grow,
-              you’ll be helping Tab for a Cause become a household name in
-              turning everyday actions into charitable giving.
-            </p>
-
-            <p style={{ marginBottom: 16, fontWeight: 500 }}>You:</p>
-            <ul>
-              <li>Are excited to jump into new projects and learn by doing</li>
-              <li>Are fueled by creativity, responsibility, and autonomy</li>
-              <li>Love working in a small team environment</li>
-              <li>Can efficiently juggle and prioritize a variety of tasks</li>
-              <li>
-                Are experienced in video content creation, particularly TikTok
-              </li>
-              <li>Are familiar with Canva</li>
-              <li>Are kind, positive, and collaborative</li>
-              <li>Are 18+ years old and located in the United States</li>
-            </ul>
-
-            <p style={{ marginBottom: 16, fontWeight: 500 }}>What you'd do:</p>
-            <ul>
-              <li>
-                Help develop the Tab for a Cause brand through social media
-                content creation
-              </li>
-              <li>
-                Create fun and engaging content on Tik Tok/Instagram Reels
-              </li>
-              <li>
-                Work alongside our Marketing Manager to occasionally create
-                informative graphics for Instagram on Canva
-              </li>
-              <li>
-                Generate innovative, creative ways that Tab for a Cause can
-                reach new users across social media
-              </li>
-            </ul>
-
-            <p style={{ marginBottom: 16, fontWeight: 500 }}>
-              Why you'll love your job:
-            </p>
-            <ul>
-              <li>
-                <b>Autonomy:</b> Plan, execute, and analyze your social-media
-                content strategies, looking to continuously improve engagement
-                and conversions
-              </li>
-              <li>
-                <b>Company Impact:</b> As part of a small and growing team, your
-                voice will be heard from day one. You will quickly gain
-                experience in social media content creation for a large brand,
-                as well as marketing as a whole.
-              </li>
-              <li>
-                <b>Social Impact:</b> Our goal is to help people raise money for
-                the causes they care about. To date, our users have raised over
-                $1.1M for amazing non-profits like The Bail Project,
-                Conservation International, Water.org, GiveDirectly, and Save
-                the Children. Your success at Tab for a Cause will mean even
-                more money will be raised for important causes.
-              </li>
-            </ul>
-
-            <p style={{ marginBottom: 16, fontWeight: 500 }}>Nuts and bolts:</p>
-            <ul>
-              <li>
-                Part-time position: 15-20hr/week at $15/hr (we are open to fewer
-                hours if needed as well)
-              </li>
-              <li>
-                Scheduling flexibility: Ideally at least a few hours of your
-                weekly schedule will overlap with the rest of the team (PST),
-                but when exactly the bulk of your hours are worked are up to
-                you.
-              </li>
-              <li>
-                We are currently a fully remote team and this position is
-                remote. The current team lives and works in the California Bay
-                Area. Unfortunately, we can only offer this to residents of the
-                United States.
-              </li>
-            </ul>
-
-            <p style={{ marginBottom: 16, fontWeight: 500 }}>To Apply:</p>
-            <p>
-              Please send your resume, a quick blurb about why you’d be great
-              for the role, and a TikTok video you have created to{' '}
-              <b>jobs@tabforacause.org</b> with the subject: “YOUR NAME - Social
-              Media Intern”. This video can be for yourself, another brand, or
-              even Tab for a Cause but should demonstrate you are comfortable
-              putting together videos and can create engaging content. We look
-              forward to hearing from you!
-            </p>
-
-            <ApplyButton email="jobs@tabforacause.org">Apply</ApplyButton>
-          </Paper>
-
           {/*           <Paper style={jobPaperStyle}> */}
           {/*             <h2>UI/UX Designer</h2> */}
           {/*             <p>Remote – Part time (contract)</p> */}
@@ -458,8 +356,8 @@ class JobsPage extends React.Component {
           {/*           </Paper> */}
 
           <Paper style={jobPaperStyle}>
-            <h2>Something else?</h2>
-            {/* <h2>No Open Positions at the Moment</h2> */}
+            {/* <h2>Something else?</h2> */}
+            <h2>No Open Positions at the Moment</h2>
             <p>
               Think you'd be a fit for a job we haven't listed? Email us at:
               jobs@tabforacause.org
