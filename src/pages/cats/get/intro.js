@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import qs from 'qs'
 import { STORAGE_NEW_USER_IS_TAB_V4_BETA } from 'src/utils/constants'
-import { homeURL } from 'src/utils/navigation'
+import { catsURL } from 'src/utils/navigation'
 import redirect, { directToAppExtension } from 'src/utils/redirect'
 import localStorageMgr from 'src/utils/local-storage'
 import { STORAGE_REFERRAL_DATA_REFERRING_CHANNEL } from 'src/utils/constants'
@@ -37,10 +37,10 @@ const GetExtensionRedirectPage = (props) => {
     // Based on the browser, go to the appropriate extension page.
   } catch (e) {
     console.error(e)
-    redirect(homeURL)
+    redirect(catsURL)
   }
   if (timeUntilRedirect < 1) {
-    redirect(directToAppExtension())
+    redirect(directToAppExtension(true))
   }
   return (
     <div

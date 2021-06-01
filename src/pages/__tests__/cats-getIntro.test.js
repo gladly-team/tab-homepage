@@ -21,13 +21,13 @@ afterEach(() => {
 
 describe('GetExtensionRedirectPage', () => {
   it('renders without error', () => {
-    const GetExtensionRedirectPage = require('../cats/getHTML').default
+    const GetExtensionRedirectPage = require('../cats/get/intro').default
     const mockProps = getMockProps()
     mount(<GetExtensionRedirectPage {...mockProps} />)
   })
 
   it('redirects to the proper browser extension', () => {
-    const GetExtensionRedirectPage = require('../cats/getHTML').default
+    const GetExtensionRedirectPage = require('../cats/get/intro').default
     const mockProps = getMockProps()
     jest.useFakeTimers()
     mount(<GetExtensionRedirectPage {...mockProps} />)
@@ -40,7 +40,7 @@ describe('GetExtensionRedirectPage', () => {
 
   it('stores the referrer ID in local storage if it exists', () => {
     expect.assertions(1)
-    const GetExtensionRedirectPage = require('../cats/getHTML').default
+    const GetExtensionRedirectPage = require('../cats/get/intro').default
     const mockProps = getMockProps()
     mockProps.location.search = '?src=hi&r=1357&foo'
     mount(<GetExtensionRedirectPage {...mockProps} />)
@@ -52,7 +52,7 @@ describe('GetExtensionRedirectPage', () => {
 
   it('sets v4 beta enabled to true', () => {
     expect.assertions(1)
-    const GetExtensionRedirectPage = require('../cats/getHTML').default
+    const GetExtensionRedirectPage = require('../cats/get/intro').default
     const mockProps = getMockProps()
     mockProps.location.search = '?foo=bar'
     mount(<GetExtensionRedirectPage {...mockProps} />)
@@ -64,7 +64,7 @@ describe('GetExtensionRedirectPage', () => {
 
   it('does not call local storage for referrer if there is no referrer ID', () => {
     expect.assertions(1)
-    const GetExtensionRedirectPage = require('../cats/getHTML').default
+    const GetExtensionRedirectPage = require('../cats/get/intro').default
     const mockProps = getMockProps()
     mockProps.location.search = '?foo=bar'
     mount(<GetExtensionRedirectPage {...mockProps} />)
@@ -73,7 +73,7 @@ describe('GetExtensionRedirectPage', () => {
 
   it('does not call local storage for referrer if the referrer ID is not a number', () => {
     expect.assertions(1)
-    const GetExtensionRedirectPage = require('../cats/getHTML').default
+    const GetExtensionRedirectPage = require('../cats/get/intro').default
     const mockProps = getMockProps()
     mockProps.location.search = '?r=hello'
     mount(<GetExtensionRedirectPage {...mockProps} />)

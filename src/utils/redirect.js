@@ -8,6 +8,7 @@ import {
   chromeExtensionURL,
   homeURL,
   edgeExtensionURL,
+  catsURL,
   // firefoxExtensionURL,
 } from 'src/utils/navigation'
 import getBrowserInfo from 'src/utils/browserDetection'
@@ -42,7 +43,7 @@ export const detectBrowser = () => {
   }
   return browser
 }
-export const directToAppExtension = () => {
+export const directToAppExtension = (cats = false) => {
   const browser = detectBrowser()
   let redirectUrl = ''
   switch (browser) {
@@ -57,7 +58,7 @@ export const directToAppExtension = () => {
     //   redirectUrl = firefoxExtensionURL
     //   break
     default:
-      redirectUrl = homeURL
+      redirectUrl = cats ? catsURL : homeURL
       break
   }
   return redirectUrl
