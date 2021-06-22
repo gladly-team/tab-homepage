@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import qs from 'qs'
 import { STORAGE_NEW_USER_IS_TAB_V4_BETA } from 'src/utils/constants'
-import { homeURL } from 'src/utils/navigation'
+import { catsURL } from 'src/utils/navigation'
 import redirect, { directToAppExtension } from 'src/utils/redirect'
 import localStorageMgr from 'src/utils/local-storage'
 import { STORAGE_REFERRAL_DATA_REFERRING_CHANNEL } from 'src/utils/constants'
@@ -27,10 +27,10 @@ class GetExtensionRedirectPage extends React.Component {
       }
 
       // Based on the browser, go to the appropriate extension page.
-      redirect(directToAppExtension())
+      redirect(directToAppExtension(true))
     } catch (e) {
       console.error(e)
-      redirect(homeURL)
+      redirect(catsURL)
     }
   }
   render() {
