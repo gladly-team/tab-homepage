@@ -56,7 +56,7 @@
     "serve": "GATSBY_TELEMETRY_DISABLED=1 gatsby serve",
     "test": "yarn run lint && jest --env=jsdom --coverage --testPathIgnorePatterns=e2e-tests",
     "test:e2e": "dotenv-extended --defaults=./.env yarn jest --testPathPattern=e2e-tests.test --watchAll=false",
-    "test:watch": "jest --env=jsdom --watch",
+    "test:watch": "jest --env=jsdom --testPathIgnorePatterns=e2e-tests --watch",
     "deploy": "gatsby-plugin-s3 deploy"
   },
   "devDependencies": {
