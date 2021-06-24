@@ -43,6 +43,10 @@ import {
   instagramPageURL,
   homeURL,
   catsURL,
+  externalHelpURL,
+  jobsURL,
+  privacyPolicyURL,
+  termsURL,
 } from 'src/utils/navigation'
 import logoWhite from 'src/img/logo-white.svg'
 import cat1 from 'src/img/cats/1.png'
@@ -907,6 +911,18 @@ const Cats = ({ pageContext, location }) => {
                   <p className={cx.address}>Gladly, Inc.</p>
                   <p className={cx.address}>204 E 2nd Ave</p>
                   <p className={cx.address}>San Mateo, CA 94401</p>
+                </div>
+                <div>
+                  <br />
+                  <p className={cx.address}>
+                    <Link to={externalHelpURL}>Help</Link>
+                    {' / '}
+                    <Link to={financialsURL}>Financials</Link>
+                    {' / '}
+                    <Link to={privacyPolicyURL}>Privacy</Link>
+                    {' / '}
+                    <Link to={termsURL}>Terms</Link>
+                  </p>
                 </div>
               </div>
               <p />
