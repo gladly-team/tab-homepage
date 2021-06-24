@@ -44,7 +44,6 @@ import {
   homeURL,
   catsURL,
   externalHelpURL,
-  jobsURL,
   privacyPolicyURL,
   termsURL,
 } from 'src/utils/navigation'
