@@ -358,7 +358,7 @@ const Cats = ({ pageContext, location }) => {
               <h1 className={cx.title}>How Does it Work?</h1>
               <p style={{ width: '80%', textAlign: 'justify' }}>
                 We have partnered with The{' '}
-                <Link to="https://thejacksongalaxyproject.greatergood.org/about/cat-pawsitive/">
+                <Link to="https://greatergood.org/jackson-galaxy">
                   Greater Good Charities' The Jackson Galaxy Project
                 </Link>{' '}
                 to provide treats to shelter cats for FREE! How can we do this?
