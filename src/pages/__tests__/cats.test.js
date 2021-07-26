@@ -6,6 +6,7 @@ import localStorageMgr from 'src/utils/local-storage'
 import InstallButton from 'src/components/InstallButton'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import { getTestIdSelector } from 'src/utils/test-utils'
+import { STORAGE_REFERRAL_DATA_MISSION_ID } from 'src/utils/constants'
 import { act } from 'react-dom/test-utils'
 jest.mock('src/components/InstallButton')
 jest.mock('src/utils/local-storage')
@@ -174,6 +175,37 @@ describe('cats page', () => {
   })
 
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
+    const CatsPageWithTheme = require('../cats').default
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+
+    mount(<CatsPageWithTheme {...getMockProps()} />)
+    expect(localStorageMgr.setItem).not.toHaveBeenCalled()
+  })
+
+  it('stores the mission id in local storage when it is included as a URL parameter', () => {
+    const CatsPageWithTheme = require('../cats').default
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
+    getUrlParameterValue.mockImplementation((param) => {
+      switch (param) {
+        case 'm':
+          return '123456789'
+        default:
+          return null
+      }
+    })
+
+    mount(<CatsPageWithTheme {...getMockProps()} />)
+    expect(localStorageMgr.setItem).toHaveBeenCalledWith(
+      STORAGE_REFERRAL_DATA_MISSION_ID,
+      '123456789'
+    )
+    expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
+  })
+
+  it('does not store a mission ID in local storage when the mission ID is not in the URL params', () => {
     const CatsPageWithTheme = require('../cats').default
     const getUrlParameterValue = require('src/utils/location')
       .getUrlParameterValue
