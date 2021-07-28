@@ -72,6 +72,7 @@ import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
   STORAGE_NEW_USER_IS_TAB_V4_BETA,
+  STORAGE_REFERRAL_DATA_MISSION_ID,
 } from 'src/utils/constants'
 import { getUrlParameterValue } from 'src/utils/location'
 import Divider from '@material-ui/core/Divider'
@@ -206,6 +207,13 @@ const Cats = ({ pageContext, location }) => {
         userReferrerId
       )
       setIsReferral(true)
+    }
+  }, [])
+  // squad id
+  useEffect(() => {
+    const missionId = getUrlParameterValue('m')
+    if (missionId !== null && missionId !== undefined) {
+      localStorageMgr.setItem(STORAGE_REFERRAL_DATA_MISSION_ID, missionId)
     }
   }, [])
   const installButton = (

@@ -10,7 +10,7 @@ export const STORAGE_REFERRAL_DATA_REFERRING_USER =
   'tab.referralData.referringUser'
 export const STORAGE_REFERRAL_DATA_REFERRING_CHANNEL =
   'tab.referralData.referringChannel'
-
+export const STORAGE_REFERRAL_DATA_MISSION_ID = 'tab.referralData.missionId'
 export const SEARCH_STORAGE_REFERRAL_DATA_REFERRING_USER =
   'search.referralData.referringUser'
 export const SEARCH_STORAGE_REFERRAL_DATA_REFERRING_CHANNEL =
