@@ -438,16 +438,6 @@ const Cats = ({ pageContext, location }) => {
               exactly how much we give to each charity and what our other costs
               are.
             </p>
-            <p
-              style={{
-                width: '80%',
-                textAlign: 'center',
-                marginBottom: '40px',
-              }}
-            >
-              As this is our first quarter since creating Tab for Cats, date
-              before Q4 2020 will not show Tab for Cats' impact.
-            </p>
           </div>
         </Section>
         <Section

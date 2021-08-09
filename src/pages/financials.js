@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import { AlertTitle, Alert } from '@material-ui/lab'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
 import { orderBy } from 'lodash/collection'
@@ -29,6 +30,26 @@ const FinancialsPage = ({ data, location }) => {
         </Helmet>
         <TextPageContent>
           <TextPageHeader>Financials</TextPageHeader>
+          <p>
+            We know we have to earn your trust. That's why we've published
+            detailed financial reports for years.
+          </p>
+          <p>
+            Financials are available about 3 months after the end of a quarter,
+            because our ad partners pay us on a delayed schedule.
+          </p>
+          <div style={{ marginBottom: 16 }}>
+            <Alert
+              severity="info"
+              // classes={{ icon: cx.alertIcon, root: cx.alertRoot }}
+            >
+              <AlertTitle>Looking for cats?</AlertTitle>
+              <div>
+                Our cats nonprofit partner, the Jackson Galaxy Project, is a
+                recent addition. They'll show up in Q2 2021 financials.
+              </div>
+            </Alert>
+          </div>
           <div
             style={{
               display: 'flex',
