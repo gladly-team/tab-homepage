@@ -215,6 +215,53 @@ describe('cats page', () => {
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
+  it('does not show mission copy when it is not a vanity URL', () => {
+    const CatsPageWithTheme = require('../cats').default
+    const mockProps = getMockProps()
+    mockProps.pageContext = {}
+    const wrapper = mount(<CatsPageWithTheme {...mockProps} />)
+    expect(wrapper.find(getTestIdSelector('mission-text')).exists()).toBe(false)
+  })
+
+  it('shows mission copy when user is included as a URL parameter', () => {
+    const CatsPageWithTheme = require('../cats').default
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
+    getUrlParameterValue.mockImplementation((param) => {
+      switch (param) {
+        case 'm':
+          return '123456789'
+        case 'u':
+          return 'bobert'
+        default:
+          return null
+      }
+    })
+
+    const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
+    expect(wrapper.find(getTestIdSelector('mission-text')).exists()).toBe(true)
+    expect(wrapper.find(getTestIdSelector('referral-text')).exists()).toBe(
+      false
+    )
+  })
+
+  it('shows mission copy when user is included as a URL parameter and referral id included', () => {
+    const CatsPageWithTheme = require('../cats').default
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
+    getUrlParameterValue.mockImplementation((param) => {
+      switch (param) {
+        case 'm':
+          return '123456789'
+        default:
+          return null
+      }
+    })
+
+    const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
+    expect(wrapper.find(getTestIdSelector('mission-text')).exists()).toBe(true)
+  })
+
   it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage', () => {
     const CatsPageWithTheme = require('../cats').default
     const getUrlParameterValue = require('src/utils/location')

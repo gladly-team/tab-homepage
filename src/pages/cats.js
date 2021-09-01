@@ -181,6 +181,7 @@ const Cats = ({ pageContext, location }) => {
     setShowUnsupportedBrowserMessage,
   ] = useState(false)
   const [isReferral, setIsReferral] = useState(false)
+  const [isMission, setIsMission] = useState(false)
   // store referrer id
   useEffect(() => {
     let referrerId = null
@@ -214,6 +215,7 @@ const Cats = ({ pageContext, location }) => {
     const missionId = getUrlParameterValue('m')
     if (missionId !== null && missionId !== undefined) {
       localStorageMgr.setItem(STORAGE_REFERRAL_DATA_MISSION_ID, missionId)
+      setIsMission(true)
     }
   }, [])
   const installButton = (
@@ -286,7 +288,19 @@ const Cats = ({ pageContext, location }) => {
           <link rel="canonical" href={canonicalURL} />
         </Helmet>
         <div className={cx.SectionHeight}>
-          {isReferral ? (
+          {isMission ? (
+            <Alert
+              severity="info"
+              classes={{ icon: cx.alertIcon, root: cx.alertRoot }}
+              data-test-id="mission-text"
+            >
+              <AlertTitle>
+                Your friend has invited you to help join their rescue mission
+              </AlertTitle>
+              By signing up with this link you’ll join a group of friends to
+              help get a rescue cat house trained and adopted
+            </Alert>
+          ) : isReferral ? (
             <Alert
               severity="info"
               classes={{ icon: cx.alertIcon, root: cx.alertRoot }}
