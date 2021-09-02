@@ -10,6 +10,8 @@ import Bowser from 'bowser'
  *   the client is an Edge browser
  * @return {Function<Boolean>} browserInfo.isFirefox - Returns true if
  *   the client is a Firefox browser
+ * @return {Function<Boolean>} browserInfo.isSafari - Returns true if
+ *   the client is a Safari browser
  * @return {Function<Boolean>} browserInfo.isMObile - Returns true if
  *   the client is a mobile device
  */
@@ -29,6 +31,9 @@ const getBrowserInfo = () => {
     },
     isFirefox: () => {
       return browser.isBrowser('Firefox')
+    },
+    isSafari: () => {
+      return browser.isBrowser('Safari')
     },
     isMobile: () => {
       // https://github.com/lancedikson/bowser/blob/master/src/constants.js#L86

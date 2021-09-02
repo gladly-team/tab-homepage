@@ -78,6 +78,7 @@ export const edgeExtensionURL =
   'https://microsoftedge.microsoft.com/addons/detail/hmiiajmhelfgiaoboffbjpjdckbmnddg'
 export const firefoxExtensionURL =
   'https://addons.mozilla.org/en-US/firefox/addon/tab-for-a-cause/'
+export const safariExtensionURL = ''
 
 // Advertising
 export const advertisingSelfServeURL = 'https://orders.gladly.io'

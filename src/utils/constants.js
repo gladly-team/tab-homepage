@@ -2,6 +2,7 @@
 export const CHROME_BROWSER = 'chrome'
 export const EDGE_BROWSER = 'edge'
 export const FIREFOX_BROWSER = 'firefox'
+export const SAFARI_BROWSER = 'safari'
 export const UNSUPPORTED_BROWSER = 'other'
 
 // localStorage keys

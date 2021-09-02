@@ -5,16 +5,19 @@ import {
   CHROME_BROWSER,
   EDGE_BROWSER,
   FIREFOX_BROWSER,
+  SAFARI_BROWSER,
   UNSUPPORTED_BROWSER,
 } from 'src/utils/constants'
 import {
   chromeExtensionURL,
   edgeExtensionURL,
   // firefoxExtensionURL,
+  safariExtensionURL,
 } from 'src/utils/navigation'
 import redirect from 'src/utils/redirect'
 import { downloadButtonClick } from 'src/utils/analytics/logEvent'
 import getBrowserInfo from 'src/utils/browserDetection'
+import { safariEnabled } from 'src/utils/featureFlags'
 
 class InstallButton extends React.Component {
   constructor(props) {
@@ -47,6 +50,8 @@ class InstallButton extends React.Component {
       browser = FIREFOX_BROWSER
     } else if (browserInfo.isEdge()) {
       browser = EDGE_BROWSER
+    } else if (browserInfo.isSafari()) {
+      browser = SAFARI_BROWSER
     } else {
       browser = UNSUPPORTED_BROWSER
     }
@@ -80,6 +85,16 @@ class InstallButton extends React.Component {
       case EDGE_BROWSER:
         redirect(edgeExtensionURL)
         break
+      case SAFARI_BROWSER:
+        if (safariEnabled() && !this.state.mobile) {
+          redirect(safariExtensionURL)
+        } else {
+          console.info(
+            'Cannot add Tab for a Cause extension: this browser is not supported'
+          )
+          onUnsupportedBrowserInstallClick()
+        }
+        break
       case FIREFOX_BROWSER:
         console.info(
           'Cannot add Tab for a Cause extension: this browser is not supported'
@@ -107,6 +122,8 @@ class InstallButton extends React.Component {
           return 'Add to Edge'
         case FIREFOX_BROWSER:
           return 'Get it Now'
+        case SAFARI_BROWSER:
+          return safariEnabled() ? 'Add to Safari' : 'Get it Now'
         default:
           return 'Get it Now'
       }
