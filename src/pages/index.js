@@ -26,6 +26,7 @@ import {
   pressLATimesURL,
   pressMashableURL,
   pressUSATodayURL,
+  safariExtensionURL,
 } from 'src/utils/navigation'
 import { lighterTextColor, lightestTextColor } from 'src/themes/theme'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
@@ -43,6 +44,7 @@ import StarHalf from '@material-ui/icons/StarHalf'
 // import Firefox from 'mdi-material-ui/Firefox'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
+import AppleSafari from 'mdi-material-ui/AppleSafari'
 
 // Images
 import browserLandingPageImg from 'src/img/browser-rain-trees.png'
@@ -68,6 +70,8 @@ import reviewImgShayneW from 'src/img/reviews/shayne_w.png'
 import reviewImgTobyS from 'src/img/reviews/toby_s.png'
 
 import styles from './index.module.css'
+
+import { safariEnabled } from 'src/utils/featureFlags'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -338,6 +342,21 @@ class IndexPage extends React.Component {
                       }}
                     />
                   </Link>
+                  {safariEnabled() && (
+                    <Link
+                      to={safariExtensionURL}
+                      style={{ color: lightestTextColor }}
+                      hoverStyle={{ color: lighterTextColor }}
+                    >
+                      <AppleSafari
+                        style={{
+                          margin: '0px 2px',
+                          width: 20,
+                          height: 20,
+                        }}
+                      />
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

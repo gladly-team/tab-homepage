@@ -5,18 +5,26 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Button from '@material-ui/core/Button'
 import getBrowserInfo from 'src/utils/browserDetection'
+import { safariEnabled } from 'src/utils/featureFlags'
+import { safariExtensionURL } from '../../utils/navigation'
 
 jest.mock('src/utils/browserDetection')
 jest.mock('src/utils/location')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/analytics/logEvent')
 jest.mock('@material-ui/core/Button')
+jest.mock('src/utils/featureFlags')
+
+afterEach(() => {
+  jest.clearAllMocks()
+})
 
 const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
   return {
     isChrome: () => browser === 'chrome',
     isEdge: () => browser === 'edge',
     isFirefox: () => browser === 'firefox',
+    isSafari: () => browser === 'safari',
     isMobile: () => mobile,
   }
 }
@@ -92,6 +100,22 @@ describe('InstallButton', () => {
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
     expect(wrapper.find(Button).first().text()).toEqual('Add to Edge')
+  })
+
+  it('has correct text for desktop Safari with safariEnabled true', () => {
+    safariEnabled.mockReturnValue(true)
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('safari', false))
+    const InstallButton = require('../InstallButton').default
+    const wrapper = shallow(<InstallButton />)
+    expect(wrapper.find(Button).first().text()).toEqual('Add to Safari')
+  })
+
+  it('has correct text for desktop Safari with safariEnabled false', () => {
+    safariEnabled.mockReturnValue(false)
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('safari', false))
+    const InstallButton = require('../InstallButton').default
+    const wrapper = shallow(<InstallButton />)
+    expect(wrapper.find(Button).first().text()).toEqual('Get it Now')
   })
 
   it('has correct text for desktop unsupported browser', () => {
@@ -252,8 +276,64 @@ describe('InstallButton', () => {
     expect(mockOnUnsupportedBrowserInstallClick).not.toHaveBeenCalled()
   })
 
-  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Safari mobile browser', async () => {
+  it('navigates to the Safari Web Store page on click (on Safari desktop browser) when safariEnabled', async () => {
+    expect.assertions(2)
+    safariEnabled.mockReturnValue(true)
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('safari', false))
+    const redirect = require('src/utils/redirect').default
+    const InstallButton = require('../InstallButton').default
+    const mockOnUnsupportedBrowserInstallClick = jest.fn()
+    const wrapper = shallow(
+      <InstallButton
+        onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
+      />
+    )
+    await clickButtonShallow(wrapper)
+    expect(redirect).toHaveBeenCalledWith(safariExtensionURL)
+    expect(mockOnUnsupportedBrowserInstallClick).not.toHaveBeenCalled()
+  })
+
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Safari desktop browser when not safariEnabled', async () => {
     expect.assertions(1)
+    safariEnabled.mockReturnValue(false)
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('safari', false))
+
+    // Silence expected console.info log
+    jest.spyOn(console, 'info').mockImplementationOnce(() => {})
+
+    const mockOnUnsupportedBrowserInstallClick = jest.fn()
+    const InstallButton = require('../InstallButton').default
+    const wrapper = shallow(
+      <InstallButton
+        onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
+      />
+    )
+    await clickButtonShallow(wrapper)
+    expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
+  })
+
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Safari mobile browser when safariEnabled', async () => {
+    expect.assertions(1)
+    safariEnabled.mockReturnValue(true)
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('safari', true))
+
+    // Silence expected console.info log
+    jest.spyOn(console, 'info').mockImplementationOnce(() => {})
+
+    const mockOnUnsupportedBrowserInstallClick = jest.fn()
+    const InstallButton = require('../InstallButton').default
+    const wrapper = shallow(
+      <InstallButton
+        onUnsupportedBrowserInstallClick={mockOnUnsupportedBrowserInstallClick}
+      />
+    )
+    await clickButtonShallow(wrapper)
+    expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
+  })
+
+  it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Safari mobile browser when not safariEnabled', async () => {
+    expect.assertions(1)
+    safariEnabled.mockReturnValue(false)
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('safari', true))
 
     // Silence expected console.info log

@@ -2,6 +2,7 @@ import {
   CHROME_BROWSER,
   EDGE_BROWSER,
   FIREFOX_BROWSER,
+  SAFARI_BROWSER,
   UNSUPPORTED_BROWSER,
 } from 'src/utils/constants'
 import {
@@ -9,9 +10,11 @@ import {
   homeURL,
   edgeExtensionURL,
   catsURL,
+  safariExtensionURL,
   // firefoxExtensionURL,
 } from 'src/utils/navigation'
 import getBrowserInfo from 'src/utils/browserDetection'
+import { safariEnabled } from 'src/utils/featureFlags'
 /**
  * Set window.location to the value of "url". Helpful to make
  * components more testable. This is for external URLs only. For
@@ -38,6 +41,8 @@ export const detectBrowser = () => {
     browser = FIREFOX_BROWSER
   } else if (browserInfo.isEdge()) {
     browser = EDGE_BROWSER
+  } else if (browserInfo.isSafari() && browserInfo.isMobile()) {
+    browser = SAFARI_BROWSER
   } else {
     browser = UNSUPPORTED_BROWSER
   }
@@ -52,6 +57,13 @@ export const directToAppExtension = (cats = false) => {
       break
     case EDGE_BROWSER:
       redirectUrl = edgeExtensionURL
+      break
+    case SAFARI_BROWSER:
+      redirectUrl = safariEnabled()
+        ? safariExtensionURL
+        : cats
+        ? catsURL
+        : homeURL
       break
     // Firefox is temporarily not supported :(
     // case FIREFOX_BROWSER:
