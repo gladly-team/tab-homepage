@@ -335,7 +335,11 @@ const Cats = ({ pageContext, location }) => {
                 alignItems: 'center',
               }}
             >
+
+
               <h1 className={cx.title}>Tab For Cats</h1>
+
+              
               <p
                 style={{ width: '80%', textAlign: 'center', fontSize: '25px' }}
               >
