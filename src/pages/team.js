@@ -10,6 +10,7 @@ import imgAlex from 'src/img/team/alex.jpg'
 import imgKevin from 'src/img/team/kevin.jpg'
 import imgMiranda from 'src/img/team/miranda.jpg'
 import imgAlec from 'src/img/team/alec.jpg'
+import imgIlana from 'src/img/team/ilana.jpg'
 import Layout from 'src/components/Layout'
 
 const TeamPage = ({ location }) => {
@@ -33,6 +34,11 @@ const TeamPage = ({ location }) => {
       name: 'Alec Maliwanag',
       img: imgAlec,
       title: 'Senior Web Developer',
+    },
+    {
+      name: 'Ilana Degann',
+      img: imgIlana,
+      title: 'Social Media Intern',
     },
   ]
   const openGraphTitle = 'Our Team - Tab for a Cause'
