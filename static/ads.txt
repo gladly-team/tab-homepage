@@ -66,6 +66,7 @@ pubmatic.com,159277,RESELLER,5d62403b186f2ace
 advertising.com,28605,RESELLER
 improvedigital.com,1699,RESELLER
 #   RhythmOne via Amazon:
+video.unrulymedia.com,4155644243,DIRECT
 rhythmone.com,4155644243,DIRECT,a670c89d4a324e47
 
 # Sonobi
