@@ -2,28 +2,34 @@
 google.com,pub-1918626353776886,DIRECT,f08c47fec0942fa0
 google.com,pub-5930411933708598,DIRECT,f08c47fec0942fa0
 
-# Amazon
-aps.amazon.com,ea374841-51b0-4335-9960-99200427f7c8,DIRECT
-# appnexus.com,7707,DIRECT,f5ab79cb980f11d1 -- Defined in AppNexus section below.
-# sovrn.com,240713,DIRECT,fafdf38b16bf6b2b -- Defined in Sovrn section below.
-# lijit.com,240713,DIRECT,fafdf38b16bf6b2b -- Defined in Sovrn section below.
-rhythmone.com,74229,DIRECT,a670c89d4a324e47
-pubmatic.com,157150,RESELLER,5d62403b186f2ace
-openx.com,540191398,RESELLER,6a698e2ec38604c6
-rubiconproject.com,18020,RESELLER,0bfd66d529a55807
-smaato.com,1100044650,RESELLER,07bcf65f187117b4
+# Amazon: https://ams.amazon.com/webpublisher/sites/ads_txts_index
 ad-generation.jp,12474,RESELLER,7f4ea9029ac04e53
+admanmedia.com,726,RESELLER
+appnexus.com,1356,RESELLER,f5ab79cb980f11d1
 appnexus.com,3663,RESELLER,f5ab79cb980f11d1
-yahoo.com,55029,RESELLER,e1a5b5b6e3255540
+# appnexus.com,7707,DIRECT,f5ab79cb980f11d1 -- Defined in AppNexus section below.
+aps.amazon.com,ea374841-51b0-4335-9960-99200427f7c8,DIRECT
+contextweb.com,562541,RESELLER,89ff185a4c4e857c
+emxdgt.com,2009,RESELLER,1e1d41537f7cad7f
 gumgum.com,14141,RESELLER,ffdef49475d318a9
 indexexchange.com,192410,RESELLER,50b1c356f2c5c8fc
-admanmedia.com,726,RESELLER
+# lijit.com,240713,DIRECT,fafdf38b16bf6b2b -- Defined in Sovrn section below.
+openx.com,540191398,RESELLER,6a698e2ec38604c6
+pubmatic.com,157150,RESELLER,5d62403b186f2ace
 pubmatic.com,160006,RESELLER,5d62403b186f2ace
 pubmatic.com,160096,RESELLER,5d62403b186f2ace
+rhythmone.com,74229,DIRECT,a670c89d4a324e47
+rubiconproject.com,18020,RESELLER,0bfd66d529a55807
+sharethrough.com,7144eb80,RESELLER
+smaato.com,1100044650,RESELLER,07bcf65f187117b4
+smartadserver.com,4125,RESELLER,060d053dcf45cbf3
+# sovrn.com,240713,DIRECT,fafdf38b16bf6b2b -- Defined in Sovrn section below.
+yahoo.com,55029,RESELLER,e1a5b5b6e3255540
+yieldmo.com,2719019867620450718,RESELLER
 
-# Amazon (possibly legacy)
-districtm.io,100962,RESELLER
-rhythmone.com,1654642120,RESELLER,a670c89d4a324e47
+# Amazon (legacy)
+appnexus.com,1908,RESELLER,f5ab79cb980f11d1
+districtm.io,100962,RESELLER,3fd707be9c4527c3
 
 # AOL
 adtech.com,10559,DIRECT
@@ -33,8 +39,8 @@ aolcloud.net,10559,DIRECT
 appnexus.com,7707,DIRECT,f5ab79cb980f11d1
 
 # brealtime
-emxdgt.com,298,DIRECT,1e1d41537f7cad7f
 appnexus.com,1356,DIRECT,f5ab79cb980f11d1
+emxdgt.com,298,DIRECT,1e1d41537f7cad7f
 google.com,pub-5995202563537249,DIRECT,f08c47fec0942fa0
 
 # DistrictM
@@ -54,37 +60,38 @@ contextweb.com,560174,DIRECT,89ff185a4c4e857c
 
 # RhythmOne
 #   Direct relationship:
-rhythmone.com,1398004509,DIRECT,a670c89d4a324e47
-video.unrulymedia.com,1398004509,DIRECT
-rhythmone.com,3781572624,DIRECT,a670c89d4a324e47
-indexexchange.com,182257,RESELLER,50b1c356f2c5c8fc
-appnexus.com,6849,RESELLER,f5ab79cb980f11d1
-rubiconproject.com,15268,RESELLER,0bfd66d529a55807
-spotxchange.com,285547,RESELLER,7842df1d2fe2db34
-spotx.tv,285547,RESELLER,7842df1d2fe2db34
-pubmatic.com,159277,RESELLER,5d62403b186f2ace
 advertising.com,28605,RESELLER
+appnexus.com,6849,RESELLER,f5ab79cb980f11d1
 improvedigital.com,1699,RESELLER
+indexexchange.com,182257,RESELLER,50b1c356f2c5c8fc
+pubmatic.com,159277,RESELLER,5d62403b186f2ace
+rhythmone.com,1398004509,DIRECT,a670c89d4a324e47
+rhythmone.com,3781572624,DIRECT,a670c89d4a324e47
+rubiconproject.com,15268,RESELLER,0bfd66d529a55807
+spotx.tv,285547,RESELLER,7842df1d2fe2db34
+spotxchange.com,285547,RESELLER,7842df1d2fe2db34
+video.unrulymedia.com,1398004509,DIRECT
 #   RhythmOne via Amazon:
 rhythmone.com,4155644243,DIRECT,a670c89d4a324e47
+video.unrulymedia.com,4155644243,DIRECT
 
 # Sonobi
-sonobi.com,5695c92f04,DIRECT
-rhythmone.com,1059622079,RESELLER,a670c89d4a324e47
 contextweb.com,560606,RESELLER,89ff185a4c4e857c
 coxmt.com,2000067997702,RESELLER
+rhythmone.com,1059622079,RESELLER,a670c89d4a324e47
+sonobi.com,5695c92f04,DIRECT
 
 # Sovrn
-sovrn.com,240713,DIRECT,fafdf38b16bf6b2b
-lijit.com,240713,DIRECT,fafdf38b16bf6b2b
 appnexus.com,1360,RESELLER,f5ab79cb980f11d1
 gumgum.com,11645,RESELLER,ffdef49475d318a9
+lijit.com,240713,DIRECT,fafdf38b16bf6b2b
 openx.com,538959099,RESELLER,6a698e2ec38604c6
 openx.com,539924617,RESELLER,6a698e2ec38604c6
 pubmatic.com,137711,RESELLER,5d62403b186f2ace
 pubmatic.com,156212,RESELLER,5d62403b186f2ace
 pubmatic.com,156700,RESELLER,5d62403b186f2ace
 rubiconproject.com,17960,RESELLER,0bfd66d529a55807
+sovrn.com,240713,DIRECT,fafdf38b16bf6b2b
 
 # Verizon
 yahoo.com,56944,DIRECT
