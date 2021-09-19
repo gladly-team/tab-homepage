@@ -6,7 +6,7 @@ import Avatar from '@material-ui/core/Avatar'
 import Star from '@material-ui/icons/Star'
 import { range } from 'lodash/util'
 import { lightestTextColor } from 'src/themes/theme'
-import styles from './Review.module.css'
+import * as styles from './Review.module.css'
 
 class Review extends React.Component {
   render() {
