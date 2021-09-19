@@ -74,6 +74,84 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
   })
+  const v4CauseSpecificHomepages = await graphql(`
+  allCauseSpecificJsonDataJson(limit: 1000) {
+    edges {
+      node {
+        data {
+          sections {
+            Mission {
+              subtitle
+              text
+              title
+            }
+            TFACIntro {
+              img1
+              img1Subtext
+              img2
+              img2Subtext
+              img3
+              img3Subtext
+              title
+            }
+            charityIntro {
+              introImg1
+              introImg1Subtext
+              introImg2
+              introImg2Subtext
+              subTitle
+              title
+            }
+            landing {
+              ctaImg
+              subtitle
+              title
+            }
+            moneyRaised {
+              moneyImg
+            }
+          }
+          styles {
+            colors {
+              background
+              primary
+              secondary
+              secondaryShadow
+            }
+          }
+        }
+        path
+      }
+    }
+  }
+  `)
+  v4CauseSpecificHomepages.allCauseSpecificJsonDataJson.edges.forEach(
+    ({ node: { path, data } }) => {
+      createPage({
+        path: `${path}/`,
+        component: catsLandingPage, // this will be new component that takes all data as props,
+        context: {
+          data,
+        },
+      })
+      response.data.allReferrersYaml.edges.forEach(({ node }) => {
+        // Not all referrers will have a vanity URL.
+        if (!node.path || !node.referrerId) {
+          return
+        }
+        createPage({
+          path: `${path}/`,
+          component: catsLandingPage, // this will be new component that takes all data as props,
+          context: {
+            data,
+            referrer: {
+              id: node.referrerId,
+            },
+          },
+        })
+      })
+    }
+  )
 }
 exports.onCreatePage = async ({ page, actions: { deletePage } }) => {
   // Only conditionally build the "million raised" page.

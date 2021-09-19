@@ -26,6 +26,7 @@
     "gatsby-plugin-sitemap": "^4.10.0",
     "gatsby-plugin-typography": "^3.14.0",
     "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-transformer-json": "^3.14.0",
     "gatsby-transformer-yaml": "^3.14.0",
     "lodash": "^4.17.21",
     "mdi-material-ui": "^6.20.0",
