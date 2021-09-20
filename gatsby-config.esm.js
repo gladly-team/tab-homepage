@@ -17,15 +17,6 @@ module.exports = {
       resolve: `gatsby-plugin-material-ui`,
     },
     {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        cssLoaderOptions: {
-          exportLocalsConvention: false,
-          namedExport: false,
-        },
-      },
-    },
-    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/themes/typography`,
