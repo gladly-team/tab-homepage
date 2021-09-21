@@ -9,6 +9,15 @@
         "background": "FAEFE1"
       }
     },
+    "metadata": {
+      "title": "Tab for Cats - Home",
+      "titleTemplate": "%s | Tab for Cats",
+      "ogTitle": "Help Shelter Cats for Free Online | Tab for Cats ",
+      "ogDescription": "Open new tabs, help shelter cats for free... it’s that easy!",
+      "ogImage": "catsMoneyRaised.png  -- the file name in an expected path",
+      "causeSpecificKeywords": "charity, cat, cats",
+      "cannonicalUrl": "/cats/  --this gets passed into a function that generates the full url"
+    },
     "sections": {
       "landing": {
         "title": "Open tabs.  Help shelter cats!",
@@ -24,7 +33,8 @@
         "introImg1": "introImg1.png",
         "introImg1Subtext": "More new happy cat owners",
         "introImg2": "introImg2.png",
-        "introImg2Subtext": "More cats adopted"
+        "introImg2Subtext": "More cats adopted",
+        "link": "https://greatergood.org/jackson-galaxy"
       },
       "TFACIntro": {
         "title": "The easiest way to raise money.",
