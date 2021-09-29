@@ -1,0 +1,67 @@
+## Copyblog/yet-another-post.mdx: copy code to clipboard
+
+path: "trees"
+date: "2021-07-25"
+
+---
+
+import Cats from '../../pages/cats.js'
+import Typography from '@material-ui/core/Typography'
+export const data = {
+  styles: {
+    colors: {
+      primary: 'FF6A08',
+      secondary: '29BEBA',
+      secondaryShadow: '15AAA6',
+      background: 'FAEFE1',
+    },
+  },
+  metadata: {
+    title: <Typography variant={'h5'}>'Tab for Cats - Home'</Typography>,
+    titleTemplate: '%s | Tab for Cats',
+    ogTitle: 'Help Shelter Cats for Free Online | Tab for Cats ',
+    ogDescription:
+      'Open new tabs, help shelter cats for free... it’s that easy!',
+    ogImage: 'catsMoneyRaised.png  -- the file name in an expected path',
+    causeSpecificKeywords: 'charity, cat, cats',
+    cannonicalUrl:
+      '/cats/  --this gets passed into a function that generates the full url',
+  },
+  sections: {
+    landing: {
+      title: 'Open tabs.  Help shelter cats!',
+      subtitle:
+        'Every tab opened raises money for cats in need of an extra, helping paw. It’s so easy a cat could do it.',
+      ctaImg: 'cat1.png',
+    },
+    moneyRaised: {
+      moneyImg: 'catsMoneyRaised.png',
+    },
+    charityIntro: {
+      title: 'Being a shelter cat is hard.',
+      subTitle:
+        'Our impact is everything to us. And, we’re so proud of the impact we’ve been able to drive, together, thus far.',
+      introImg1: 'introImg1.png',
+      introImg1Subtext: 'More new happy cat owners',
+      introImg2: 'introImg2.png',
+      introImg2Subtext: 'More cats adopted',
+      link: 'https://greatergood.org/jackson-galaxy',
+    },
+    TFACIntro: {
+      title: 'The easiest way to raise money.',
+      img1: 'TFACIntro1.png',
+      img1Subtext: 'Open new tabs on your browser.',
+      img2: 'TFACIntro2.png',
+      img2Subtext: 'Earn Money for cat training programs.',
+      img3: 'TFACIntro3.png',
+      img3Subtext: 'Help get more cats adopted.',
+    },
+    Mission: {
+      title: 'Our Mission',
+      subtitle: 'Help shelter cats get adopted',
+      text: "We have partnered with The Greater Good Charities' The Jackson Galaxy Project to provide treats to shelter cats for FREE! How can we do this? Through ad revenue! Every time you open a new tab, there will be two small ads in the right corner of your home screen. Companies pay for this space to advertise on our platform, and from there we can put that money to good use by giving it back to an organization doing great work for our furry friends. Tab for Cats is absolutely free for our users, and a great way to make an impact without breaking the bank.",
+    },
+  },
+}
+
+<Cats data={data} />

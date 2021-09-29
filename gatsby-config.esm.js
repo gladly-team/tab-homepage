@@ -38,6 +38,13 @@ module.exports = {
         path: `./src/data/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `img`,
+        path: `./src/img/`,
+      },
+    },
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-plugin-sitemap`,
@@ -47,12 +54,9 @@ module.exports = {
       },
     },
     `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `./src/data/`,
-      },
-    },
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-mdx',
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
@@ -67,6 +71,7 @@ module.exports = {
         pixelId: '1813501258922708',
       },
     },
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-sentry',
       options: {

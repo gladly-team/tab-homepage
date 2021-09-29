@@ -13,7 +13,10 @@
       "landing": {
         "title": "Open tabs.  Help shelter trees!",
         "subtitle": "Every tab opened raises money for trees in need of an extra, helping paw. It’s so easy a cat could do it.",
-        "ctaImg": "cat1.png"
+        "ctaImg": "../../img/cats/1.png",
+        "image": {
+          "src": "../../img/cats/1.png"
+        }
       },
       "moneyRaised": {
         "moneyImg": "treesMoneyRaised.png"
