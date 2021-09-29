@@ -76,6 +76,7 @@ import {
 } from 'src/utils/constants'
 import { getUrlParameterValue } from 'src/utils/location'
 import Divider from '@material-ui/core/Divider'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const ogImgURLAbsolute = getAbsoluteURL(catsOGImg)
 const canonicalURL = getAbsoluteURL(catsURL)
@@ -175,6 +176,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 const Cats = ({ pageContext, location }) => {
+  console.log(pageContext)
+  console.log(pageContext.data.sections.landing.ctaImg)
+  const imageTest = getImage(pageContext.data.sections.landing.ctaImg)
   const cx = useStyles()
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
@@ -310,7 +314,7 @@ const Cats = ({ pageContext, location }) => {
             </Alert>
           ) : undefined}
           <Section wrap="reverse" fullWidth>
-            <AliceCarousel
+            {/* <AliceCarousel
               autoPlay
               animationType="fadeout"
               autoPlayStrategy="none"
@@ -321,6 +325,11 @@ const Cats = ({ pageContext, location }) => {
               disableDotsControls
               disableSlideInfo
               infinite
+            /> */}
+            <GatsbyImage
+              image={imageTest}
+              loading="eager"
+              backgroundColor="transparent"
             />
             <div
               style={{
