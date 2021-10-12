@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import * as styles from './ReviewCarousel.module.css'
+import styles from './ReviewCarousel.module.css'
 import clsx from 'clsx'
 
 class ReviewCarousel extends React.Component {

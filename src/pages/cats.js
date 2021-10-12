@@ -176,8 +176,10 @@ const useStyles = makeStyles((theme) => ({
 }))
 const Cats = ({ pageContext, location }) => {
   const cx = useStyles()
-  const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
-    useState(false)
+  const [
+    showUnsupportedBrowserMessage,
+    setShowUnsupportedBrowserMessage,
+  ] = useState(false)
   const [isReferral, setIsReferral] = useState(false)
   const [isMission, setIsMission] = useState(false)
   // store referrer id

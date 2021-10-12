@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/core/styles'
+import { createMuiTheme } from '@material-ui/core/styles'
 
 // Text on white background
 export const textColor = 'rgba(33, 33, 33, 0.82)'
@@ -28,7 +28,7 @@ export const secondaryMainColor = '#4a90e2'
 export const secondaryContrastTextColor = '#fff'
 export const baseFontSize = 16
 
-const theme = createTheme({
+const theme = createMuiTheme({
   palette: {
     background: {
       // This value changes the HTML background color:

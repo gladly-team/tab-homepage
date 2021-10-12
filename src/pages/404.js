@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import Link from 'src/components/Link'
 import { homeURL } from 'src/utils/navigation'
 import { withTheme } from '@material-ui/styles'
-import * as styles from './404.module.css'
+import styles from './404.module.css'
 import Layout from 'src/components/Layout'
 
 class NotFoundPage extends React.Component {

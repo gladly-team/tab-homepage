@@ -75,8 +75,8 @@ describe('cats page', () => {
   it('stores the referrer ID in local storage when it is included as a URL parameter', () => {
     const CatsPageWithTheme = require('../cats').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
@@ -97,8 +97,8 @@ describe('cats page', () => {
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const CatsPageWithTheme = require('../cats').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
     mount(<CatsPageWithTheme {...getMockProps()} />)
@@ -108,8 +108,8 @@ describe('cats page', () => {
   it('does not shows referral copy when referrer id is not included as a URL parameter', () => {
     const CatsPageWithTheme = require('../cats').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
     const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
@@ -121,8 +121,8 @@ describe('cats page', () => {
   it('does not store a referrer ID in local storage when the URL param referrer ID value is not an integer', () => {
     const CatsPageWithTheme = require('../cats').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
@@ -138,8 +138,8 @@ describe('cats page', () => {
 
   it('stores the referring user in local storage when it is included as a URL parameter', () => {
     const CatsPageWithTheme = require('../cats').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'u':
@@ -159,8 +159,8 @@ describe('cats page', () => {
 
   it('shows referral copy when user is included as a URL parameter', () => {
     const CatsPageWithTheme = require('../cats').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'u':
@@ -176,8 +176,8 @@ describe('cats page', () => {
 
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const CatsPageWithTheme = require('../cats').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
     mount(<CatsPageWithTheme {...getMockProps()} />)
@@ -186,8 +186,8 @@ describe('cats page', () => {
 
   it('stores the mission id in local storage when it is included as a URL parameter', () => {
     const CatsPageWithTheme = require('../cats').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'm':
@@ -207,8 +207,8 @@ describe('cats page', () => {
 
   it('does not store a mission ID in local storage when the mission ID is not in the URL params', () => {
     const CatsPageWithTheme = require('../cats').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
     mount(<CatsPageWithTheme {...getMockProps()} />)
@@ -225,8 +225,8 @@ describe('cats page', () => {
 
   it('shows mission copy when user is included as a URL parameter', () => {
     const CatsPageWithTheme = require('../cats').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'm':
@@ -247,8 +247,8 @@ describe('cats page', () => {
 
   it('shows mission copy when user is included as a URL parameter and referral id included', () => {
     const CatsPageWithTheme = require('../cats').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'm':
@@ -264,8 +264,8 @@ describe('cats page', () => {
 
   it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage', () => {
     const CatsPageWithTheme = require('../cats').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
     const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
@@ -279,8 +279,8 @@ describe('cats page', () => {
 
   it('the InstallButton onUnsupportedBrowserInstallClick shows unsupported browser model', async () => {
     const CatsPageWithTheme = require('../cats').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
     const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
     await act(async () => {
@@ -297,8 +297,8 @@ describe('cats page', () => {
 
   it('the second InstallButton onUnsupportedBrowserInstallClick shows unsupported browser model', async () => {
     const CatsPageWithTheme = require('../cats').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
     const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
     await act(async () => {
@@ -315,8 +315,8 @@ describe('cats page', () => {
 
   it('the unsupported browser dialog closes on close', async () => {
     const CatsPageWithTheme = require('../cats').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
     const wrapper = mount(<CatsPageWithTheme {...getMockProps()} />)
     await act(async () => {

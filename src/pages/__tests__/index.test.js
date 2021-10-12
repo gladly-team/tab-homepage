@@ -53,8 +53,8 @@ describe('index page', () => {
   it('stores the referrer ID in local storage when it is included as a URL parameter', () => {
     const IndexPage = require('../index').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
@@ -75,8 +75,8 @@ describe('index page', () => {
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const IndexPage = require('../index').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
     shallow(<IndexPage {...getMockProps()} />)
@@ -86,8 +86,8 @@ describe('index page', () => {
   it('does not store a referrer ID in local storage when the URL param referrer ID value is not an integer', () => {
     const IndexPage = require('../index').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
@@ -112,8 +112,8 @@ describe('index page', () => {
 
   it('stores the referring user in local storage when it is included as a URL parameter', () => {
     const IndexPage = require('../index').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'u':
@@ -133,8 +133,8 @@ describe('index page', () => {
 
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const IndexPage = require('../index').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const getUrlParameterValue = require('src/utils/location')
+      .getUrlParameterValue
     getUrlParameterValue.mockReturnValue(null)
 
     shallow(<IndexPage {...getMockProps()} />)

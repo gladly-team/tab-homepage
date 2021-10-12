@@ -395,8 +395,8 @@ describe('InstallButton', () => {
   it('calls downloadButtonClick analytics event on click', async () => {
     expect.assertions(1)
 
-    const downloadButtonClick =
-      require('src/utils/analytics/logEvent').downloadButtonClick
+    const downloadButtonClick = require('src/utils/analytics/logEvent')
+      .downloadButtonClick
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
     await clickButtonShallow(wrapper)

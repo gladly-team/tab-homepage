@@ -34,7 +34,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         // Exclude pages that just redirect.
-        excludes: ['/help', '/contact'],
+        exclude: ['/help', '/contact'],
       },
     },
     {

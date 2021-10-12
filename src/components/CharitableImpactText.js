@@ -7,7 +7,7 @@ import impactTexts from 'src/utils/impactTexts'
 // Using with CSSTransition:
 // https://github.com/css-modules/css-modules/issues/84#issuecomment-226731145
 // https://reactcommunity.org/react-transition-group/
-import * as styles from 'src/components/CharitableImpactText.module.css'
+import styles from 'src/components/CharitableImpactText.module.css'
 
 class CharitableImpactText extends React.Component {
   constructor(props) {
