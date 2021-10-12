@@ -69,7 +69,7 @@ import reviewImgLucasN from 'src/img/reviews/lucas_n.png'
 import reviewImgShayneW from 'src/img/reviews/shayne_w.png'
 import reviewImgTobyS from 'src/img/reviews/toby_s.png'
 
-import styles from './index.module.css'
+import { homepageImg, homepageMainText } from './index.module.css'
 
 import { safariEnabled } from 'src/utils/featureFlags'
 
@@ -233,7 +233,7 @@ class IndexPage extends React.Component {
           <Section wrap={'reverse'}>
             <img
               src={browserLandingPageImg}
-              className={styles.homepageImg} // responsive styling
+              className={homepageImg} // responsive styling
               style={{
                 width: '67%',
                 maxWidth: 740,
@@ -244,7 +244,7 @@ class IndexPage extends React.Component {
               }}
             />
             <div
-              className={styles.homepageMainText} // responsive styling
+              className={homepageMainText} // responsive styling
               style={{
                 flex: 1,
                 display: 'flex',
@@ -463,7 +463,7 @@ class IndexPage extends React.Component {
             </div>
             <img
               src={laptopImg}
-              className={styles.homepageImg} // responsive styling
+              className={homepageImg} // responsive styling
               style={{
                 width: '60%',
                 maxWidth: 700,
@@ -477,7 +477,7 @@ class IndexPage extends React.Component {
           <Section wrap={'reverse'}>
             <img
               src={waterImg}
-              className={styles.homepageImg} // responsive styling
+              className={homepageImg} // responsive styling
               style={{
                 width: '60%',
                 maxWidth: 700,

@@ -6,8 +6,8 @@ import Paper from '@material-ui/core/Paper'
 
 describe('FinancialsQuarterButton', () => {
   it('renders without error', () => {
-    const FinancialsQuarterButton = require('../FinancialsQuarterButton')
-      .default
+    const FinancialsQuarterButton =
+      require('../FinancialsQuarterButton').default
     const quarterData = {
       quarter: 2,
       year: 2018,
@@ -17,8 +17,8 @@ describe('FinancialsQuarterButton', () => {
   })
 
   it('links to the provided PDF URL', () => {
-    const FinancialsQuarterButton = require('../FinancialsQuarterButton')
-      .default
+    const FinancialsQuarterButton =
+      require('../FinancialsQuarterButton').default
     const quarterData = {
       quarter: 2,
       year: 2018,
@@ -33,8 +33,8 @@ describe('FinancialsQuarterButton', () => {
   })
 
   it('displays the correct name', () => {
-    const FinancialsQuarterButton = require('../FinancialsQuarterButton')
-      .default
+    const FinancialsQuarterButton =
+      require('../FinancialsQuarterButton').default
     const quarterData = {
       quarter: 2,
       year: 2018,
@@ -55,8 +55,8 @@ describe('FinancialsQuarterButton', () => {
   })
 
   it('changes size on hover', () => {
-    const FinancialsQuarterButton = require('../FinancialsQuarterButton')
-      .default
+    const FinancialsQuarterButton =
+      require('../FinancialsQuarterButton').default
     const quarterData = {
       quarter: 2,
       year: 2018,
