@@ -13,6 +13,7 @@ export const teamURL = '/team/'
 export const jobsURL = '/jobs/'
 export const adblockerWhitelistingURL = '/adblockers/'
 export const catsURL = '/cats/'
+export const seasURL = '/teamseas/'
 
 // Million raised
 export const millionRaisedURL = '/million/'
