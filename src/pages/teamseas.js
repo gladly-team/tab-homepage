@@ -13,7 +13,7 @@ import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import { tabForTeamSeasTheme } from 'src/themes/theme'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
-import catsOGImg from 'src/img/cats/cats-og-img.png'
+import openGraphImg from 'src/img/opengraph-img.png'
 import { getUrlParameterValue } from 'src/utils/location'
 import localStorageMgr from 'src/utils/local-storage'
 import { getAbsoluteURL, homeURL, seasURL } from 'src/utils/navigation'
@@ -26,7 +26,7 @@ import {
 import Link from 'src/components/Link'
 import Countdown from 'react-countdown'
 // place holder until we get sea image
-const ogImgURLAbsolute = getAbsoluteURL(catsOGImg)
+const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
 const canonicalURL = getAbsoluteURL(seasURL)
 const useStyles = makeStyles((theme) => ({
   logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
