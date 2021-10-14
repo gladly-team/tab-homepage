@@ -72,3 +72,46 @@ const theme = createTheme({
 })
 
 export default theme
+
+export const tabForTeamSeasTheme = createTheme({
+  palette: {
+    background: {
+      // This value changes the HTML background color:
+      // https://material-ui.com/api/css-baseline/
+      default: '#fff',
+    },
+    primary: {
+      // light: will be calculated from palette.primary.main,
+      main: '#5094FB',
+      // dark: will be calculated from palette.primary.main,
+      contrastText: primaryContrastTextColor,
+    },
+    secondary: {
+      // light: will be calculated from palette.primary.main,
+      main: '#29BEBA',
+      // dark: will be calculated from palette.primary.main,
+      contrastText: secondaryContrastTextColor,
+    },
+  },
+  shape: {
+    borderRadius: 2,
+  },
+  typography: {
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+    fontSize: baseFontSize,
+    useNextVariants: true,
+  },
+  overrides: {
+    MuiButton: {
+      // Name of the styleSheet
+      root: {
+        fontWeight: '500',
+      },
+    },
+    MuiDivider: {
+      root: {
+        backgroundColor: lighterShadingColor,
+      },
+    },
+  },
+})
