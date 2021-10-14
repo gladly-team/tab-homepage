@@ -22,6 +22,9 @@ import seaImg from 'src/img/seas/ocean.jpg'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
+  STORAGE_NEW_USER_IS_TAB_V4_BETA,
+  STORAGE_SEAS_CAUSE_ID,
+  STORAGE_NEW_USER_CAUSE_ID,
 } from 'src/utils/constants'
 import Link from 'src/components/Link'
 import Countdown from 'react-countdown'
@@ -116,6 +119,12 @@ const Seas = ({ pageContext, location }) => {
     }
   }, [])
 
+  // function to be used in install button
+  // eslint-disable-next-line no-unused-vars
+  const onBeforeInstall = () => {
+    localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
+    localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, STORAGE_SEAS_CAUSE_ID)
+  }
   const absolutePageURL = getAbsoluteURL(location.pathname)
   return (
     <div>

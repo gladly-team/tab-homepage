@@ -262,7 +262,7 @@ describe('cats page', () => {
     expect(wrapper.find(getTestIdSelector('mission-text')).exists()).toBe(true)
   })
 
-  it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage', () => {
+  it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage and the cause id', () => {
     const CatsPageWithTheme = require('../cats').default
     const getUrlParameterValue =
       require('src/utils/location').getUrlParameterValue
@@ -274,6 +274,10 @@ describe('cats page', () => {
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'tab.newUser.isTabV4Enabled',
       'true'
+    )
+    expect(localStorageMgr.setItem).toHaveBeenCalledWith(
+      'tab.newUser.causeId',
+      '6ce5ad8e-7dd4-4de5-ba4f-13868e7d212z'
     )
   })
 

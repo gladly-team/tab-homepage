@@ -73,6 +73,8 @@ import {
   STORAGE_REFERRAL_DATA_REFERRING_USER,
   STORAGE_NEW_USER_IS_TAB_V4_BETA,
   STORAGE_REFERRAL_DATA_MISSION_ID,
+  STORAGE_CATS_CAUSE_ID,
+  STORAGE_NEW_USER_CAUSE_ID,
 } from 'src/utils/constants'
 import { getUrlParameterValue } from 'src/utils/location'
 import Divider from '@material-ui/core/Divider'
@@ -221,6 +223,10 @@ const Cats = ({ pageContext, location }) => {
       classes={{ contained: cx.mainInstallButton }}
       onBeforeInstall={() => {
         localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
+        localStorageMgr.setItem(
+          STORAGE_NEW_USER_CAUSE_ID,
+          STORAGE_CATS_CAUSE_ID
+        )
       }}
       onUnsupportedBrowserInstallClick={() => {
         setShowUnsupportedBrowserMessage(true)
@@ -269,6 +275,10 @@ const Cats = ({ pageContext, location }) => {
             <InstallButton
               onBeforeInstall={() => {
                 localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
+                localStorageMgr.setItem(
+                  STORAGE_NEW_USER_CAUSE_ID,
+                  STORAGE_CATS_CAUSE_ID
+                )
               }}
               classes={{ contained: cx.MuiButtonContained }}
               onUnsupportedBrowserInstallClick={() => {

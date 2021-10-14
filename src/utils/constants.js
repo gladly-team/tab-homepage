@@ -16,3 +16,6 @@ export const SEARCH_STORAGE_REFERRAL_DATA_REFERRING_USER =
   'search.referralData.referringUser'
 export const SEARCH_STORAGE_REFERRAL_DATA_REFERRING_CHANNEL =
   'search.referralData.referringChannel'
+export const STORAGE_NEW_USER_CAUSE_ID = 'tab.newUser.causeId'
+export const STORAGE_CATS_CAUSE_ID = '6ce5ad8e-7dd4-4de5-ba4f-13868e7d212z'
+export const STORAGE_SEAS_CAUSE_ID = 'c04b544f-5e6b-4e10-b783-05834e5d087d'
