@@ -11,3 +11,6 @@ coverage
 .env
 .yalc
 yalc.lock
+
+# Storybook
+build-storybook.log
