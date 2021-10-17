@@ -16967,10 +16967,10 @@ sync-fetch@0.3.0:
     buffer "^5.7.0"
     node-fetch "^2.6.1"
 
-tab-e2e@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/tab-e2e/-/tab-e2e-2.0.1.tgz#98d2fce8675f4fd4b91e95c6ebe5260307677998"
-  integrity sha512-Z9sNu6cwIr9jdbri90Uha+OYzQXmJH38EZN4ZhS8a4AeBodSiCvzuz0QUy4LVcE8P7CcP7F/4ivhlvXqi6Prag==
+tab-e2e@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/tab-e2e/-/tab-e2e-2.0.2.tgz#8c50784e23357a9a31de3fbcfd8691c200949f4d"
+  integrity sha512-H9B+mEK2cbf6N9rurYjfpSkVX6P51oNtIjExtUleQ2bj6rZto47b84twDKyXG1XtKacAdyBB9r+2H9mO0Bzy9w==
   dependencies:
     chromedriver "^93.0.0"
     mailosaur "^7.2.1"
