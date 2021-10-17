@@ -31,6 +31,9 @@ module.exports = {
     },
     `gatsby-transformer-yaml`,
     {
+      // If modifying, validate/update on webmaster tools for
+      // Google, Bing, etc.
+      // https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sitemap
       resolve: `gatsby-plugin-sitemap`,
       options: {
         // Exclude pages that just redirect.
@@ -41,7 +44,7 @@ module.exports = {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: baseURL,
-        sitemap: `${baseURL}/sitemap.xml`,
+        sitemap: `${baseURL}/sitemap/sitemap-index.xml`,
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
