@@ -277,7 +277,7 @@ describe('cats page', () => {
     )
     expect(localStorageMgr.setItem).toHaveBeenCalledWith(
       'tab.newUser.causeId',
-      '6ce5ad8e-7dd4-4de5-ba4f-13868e7d212z'
+      '7f8476b9-f83f-47ac-8173-4a1c2ec3dc29'
     )
   })
 
