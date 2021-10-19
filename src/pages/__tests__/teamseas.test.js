@@ -4,6 +4,9 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
 import { getTestIdSelector } from 'src/utils/test-utils'
+import InstallButton from 'src/components/InstallButton'
+import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
+import { act } from 'react-dom/test-utils'
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')
@@ -19,6 +22,11 @@ afterEach(() => {
   jest.clearAllMocks()
   localStorageMgr.clear()
 })
+
+const flushAllPromises = async () => {
+  // eslint-disable-next-line no-undef
+  await new Promise((resolve) => setImmediate(resolve))
+}
 
 describe('teamseas page', () => {
   it('renders without error', () => {
@@ -139,5 +147,42 @@ describe('teamseas page', () => {
 
     mount(<SeasPageWithTheme {...getMockProps()} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
+  })
+
+  it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage and the cause id', () => {
+    const TeamSeasPageWithTheme = require('../teamseas').default
+    const getUrlParameterValue =
+      require('src/utils/location').getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+
+    const wrapper = mount(<TeamSeasPageWithTheme {...getMockProps()} />)
+    const callback = wrapper.find(InstallButton).first().prop('onBeforeInstall')
+    callback()
+    expect(localStorageMgr.setItem).toHaveBeenCalledWith(
+      'tab.newUser.isTabV4Enabled',
+      'true'
+    )
+    expect(localStorageMgr.setItem).toHaveBeenCalledWith(
+      'tab.newUser.causeId',
+      'SGa6zohkY'
+    )
+  })
+
+  it('the InstallButton onUnsupportedBrowserInstallClick shows unsupported browser model', async () => {
+    const TeamSeasPageWithTheme = require('../teamseas').default
+    const getUrlParameterValue =
+      require('src/utils/location').getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+    const wrapper = mount(<TeamSeasPageWithTheme {...getMockProps()} />)
+    await act(async () => {
+      wrapper
+        .find(InstallButton)
+        .first()
+        .prop('onUnsupportedBrowserInstallClick')()
+      await flushAllPromises()
+      wrapper.update()
+    })
+    const dialog = wrapper.find(UnsupportedBrowserDialog)
+    expect(dialog.prop('open')).toBe(true)
   })
 })
