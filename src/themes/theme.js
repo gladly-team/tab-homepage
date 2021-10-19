@@ -78,7 +78,7 @@ export const tabForTeamSeasTheme = createTheme({
     background: {
       // This value changes the HTML background color:
       // https://material-ui.com/api/css-baseline/
-      default: '#fff',
+      default: '#FBF3E9',
     },
     primary: {
       // light: will be calculated from palette.primary.main,
@@ -97,15 +97,28 @@ export const tabForTeamSeasTheme = createTheme({
     borderRadius: 2,
   },
   typography: {
-    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+    fontFamily: '"Helvetica Neue", Poppins, Helvetica, Arial, sans-serif,',
     fontSize: baseFontSize,
     useNextVariants: true,
+
+    h1: {
+      fontWeight: 900,
+      color: '#5094FB',
+      fontFamily: 'Poppins',
+      fontStyle: 'normal',
+      lineHeight: 1,
+      fontSize: '5rem',
+    },
   },
   overrides: {
     MuiButton: {
       // Name of the styleSheet
       root: {
-        fontWeight: '500',
+        fontWeight: '800',
+        fontFamily: 'Poppins',
+      },
+      contained: {
+        borderRadius: 24,
       },
     },
     MuiDivider: {

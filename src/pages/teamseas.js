@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import {
   makeStyles,
@@ -9,7 +9,8 @@ import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import Paper from '@material-ui/core/Paper'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import InstallButton from 'src/components/InstallButton'
 import Typography from '@material-ui/core/Typography'
 import { tabForTeamSeasTheme } from 'src/themes/theme'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
@@ -18,7 +19,8 @@ import { getUrlParameterValue } from 'src/utils/location'
 import localStorageMgr from 'src/utils/local-storage'
 import { getAbsoluteURL, homeURL, seasURL } from 'src/utils/navigation'
 import logoWhite from 'src/img/logo-with-text-white.svg'
-import seaImg from 'src/img/seas/ocean.jpg'
+import headerImg from 'src/img/seas/headerImage.png'
+import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
@@ -27,69 +29,86 @@ import {
   STORAGE_NEW_USER_CAUSE_ID,
 } from 'src/utils/constants'
 import Link from 'src/components/Link'
-import Countdown from 'react-countdown'
+import Wave from 'src/components/Wave'
+
 // place holder until we get sea image
 const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
 const canonicalURL = getAbsoluteURL(seasURL)
 const useStyles = makeStyles((theme) => ({
   logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  background: {
-    backgroundImage: `url("${seaImg}")`,
-    boxShadow: 'rgba(0, 0, 0, 0.5) 0px 0px 120px inset',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
-    WebkitBackgroundSize: 'cover',
-    MozBackgroundSize: 'cover',
-    backgroundSize: 'cover',
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    zIndex: '-2',
-  },
-  tint: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    zIndex: '-1',
-    // Needs to match shading in extension new tab page.
-    backgroundColor: `rgba(0, 0, 0, 0.3)`,
-  },
   titleSection: {
     margin: '0 auto',
     display: 'flex',
     height: 'calc(100vh - 64px)',
-    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
-    color: '#fff',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column-reverse',
+      height: 'auto',
+    },
   },
-  comingSoon: {
-    marginBottom: theme.spacing(2),
+  title: {
+    color: theme.palette.primary.main,
   },
-  countdownPaper: {
-    borderRadius: '50%',
-    height: '150px',
-    width: '150px',
+  halfScreenLeft: {
+    width: '50%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
-    border: `1px solid ${theme.palette.secondary.main}`,
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(2),
+    paddingLeft: '10%',
+    [theme.breakpoints.down(1100)]: {
+      width: '47%',
+      paddingLeft: '7%',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '80%',
+      marginTop: theme.spacing(4),
+      paddingLeft: 0,
+      marginBottom: theme.spacing(8),
+    },
   },
-  countdownFont: {
-    color: theme.palette.secondary.main,
+  halfScreenRight: {
+    width: '55%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    position: 'absolute',
+    right: 0,
+    [theme.breakpoints.down('sm')]: {
+      position: 'relative',
+      width: '100%',
+    },
+  },
+  subtitle: {
+    marginTop: theme.spacing(2),
+  },
+  buttonStyles: {
+    maxWidth: theme.spacing(30),
+    marginTop: theme.spacing(1.5),
+  },
+  wave: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    zIndex: -1,
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
+  },
+  waveMobile: {
+    display: 'none',
+    position: 'absolute',
+    width: '100%',
+    zIndex: -1,
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+    },
   },
 }))
+
 const Seas = ({ pageContext, location }) => {
   const cx = useStyles()
-
+  const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
+    useState(false)
   // store referrer id
   useEffect(() => {
     let referrerId = null
@@ -164,50 +183,48 @@ const Seas = ({ pageContext, location }) => {
           <MoneyRaisedDisplay color="inherit" />
         </Toolbar>
       </AppBar>
-      <div className={cx.background}>
-        <div className={cx.tint}></div>
-      </div>
       <div className={cx.titleSection}>
-        <Typography variant="h2" color="inherit">
-          TAB FOR #TEAMSEAS
-        </Typography>
-        <Typography variant="h3" color="inherit" className={cx.comingSoon}>
-          COMING SOON IN:
-        </Typography>
-        <Countdown
-          date={'2021-10-29T13:00:00.000'}
-          intervalDelay={0}
-          precision={3}
-          renderer={({ hours, minutes, seconds, days }) => (
-            <div style={{ display: 'flex' }}>
-              <Paper className={cx.countdownPaper}>
-                <Typography variant="h4" className={cx.countdownFont}>
-                  {days}
-                </Typography>
-                <Typography>days</Typography>
-              </Paper>
-              <Paper className={cx.countdownPaper}>
-                <Typography variant="h4" className={cx.countdownFont}>
-                  {hours}
-                </Typography>
-                <Typography>hours</Typography>
-              </Paper>
-              <Paper className={cx.countdownPaper}>
-                <Typography variant="h4" className={cx.countdownFont}>
-                  {minutes}
-                </Typography>
-                <Typography>minutes</Typography>
-              </Paper>
-              <Paper className={cx.countdownPaper}>
-                <Typography variant="h4" className={cx.countdownFont}>
-                  {seconds}
-                </Typography>
-                <Typography>seconds</Typography>
-              </Paper>
-            </div>
-          )}
-        />
+        <div className={cx.halfScreenLeft}>
+          <Typography variant="h1" color="primary">
+            The easiest way to save our seas
+          </Typography>
+          <Typography className={cx.subtitle}>
+            Every tab opened raises money for #TeamSeas, an internet-led
+            movement raising $30 million to clean up 30 million pounds of trash
+            from our oceans, rivers, and lakes.
+          </Typography>
+          <InstallButton
+            className={cx.buttonStyles}
+            color="secondary"
+            size="medium"
+            onBeforeInstall={() => {
+              localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
+              localStorageMgr.setItem(
+                STORAGE_NEW_USER_CAUSE_ID,
+                STORAGE_SEAS_CAUSE_ID
+              )
+            }}
+            onUnsupportedBrowserInstallClick={() => {
+              setShowUnsupportedBrowserMessage(true)
+            }}
+          />
+        </div>
+        <div className={cx.halfScreenRight}>
+          <img src={headerImg}></img>
+        </div>
+        <div className={cx.wave}>
+          <Wave />
+        </div>
       </div>
+      <div className={cx.waveMobile}>
+        <Wave />
+      </div>
+      <UnsupportedBrowserDialog
+        open={showUnsupportedBrowserMessage}
+        onClose={() => {
+          setShowUnsupportedBrowserMessage(false)
+        }}
+      />
     </div>
   )
 }
@@ -225,7 +242,9 @@ const SeasPageWithTheme = (props) => (
   <ThemeProvider
     theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
   >
-    <Seas {...props} />
+    <CssBaseline>
+      <Seas {...props} />
+    </CssBaseline>
   </ThemeProvider>
 )
 export default SeasPageWithTheme

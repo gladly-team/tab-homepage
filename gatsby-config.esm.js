@@ -11,6 +11,17 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-fonts-v2`,
+      options: {
+        fonts: [
+          {
+            family: 'Poppins',
+            weights: ['400', '500', '900'],
+          },
+        ],
+      },
+    },
     // Handle server-side rendering MaterialUI styles:
     // https://github.com/hupe1980/gatsby-plugin-material-ui/tree/master
     {
