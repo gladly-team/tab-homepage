@@ -48,7 +48,8 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         // Exclude pages that just redirect.
-        excludes: ['/help', '/contact'],
+        // Exclude our secret test page
+        excludes: ['/help', '/contact', '/teamseas/atlantis'],
       },
     },
     {
