@@ -19,7 +19,7 @@ import logoWhite from 'src/img/logo-with-text-white.svg'
 import seaImg from 'src/img/seas/ocean.jpg'
 import Link from 'src/components/Link'
 import Countdown from 'react-countdown'
-// place holder until we get sea image
+
 const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
 const canonicalURL = getAbsoluteURL(seasURL)
 const useStyles = makeStyles((theme) => ({

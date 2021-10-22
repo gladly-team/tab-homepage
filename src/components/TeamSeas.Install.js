@@ -31,7 +31,6 @@ import {
 import Link from 'src/components/Link'
 import Wave from 'src/components/Wave'
 
-// place holder until we get sea image
 const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
 const canonicalURL = getAbsoluteURL(seasURL)
 const useStyles = makeStyles((theme) => ({
