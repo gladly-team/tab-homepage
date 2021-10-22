@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import {
   makeStyles,
@@ -13,19 +13,10 @@ import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import { tabForTeamSeasTheme } from 'src/themes/theme'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
-import openGraphImg from 'src/img/opengraph-img.png'
-import { getUrlParameterValue } from 'src/utils/location'
-import localStorageMgr from 'src/utils/local-storage'
+import openGraphImg from 'src/img/seasOG.png'
 import { getAbsoluteURL, homeURL, seasURL } from 'src/utils/navigation'
 import logoWhite from 'src/img/logo-with-text-white.svg'
 import seaImg from 'src/img/seas/ocean.jpg'
-import {
-  STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
-  STORAGE_REFERRAL_DATA_REFERRING_USER,
-  STORAGE_NEW_USER_IS_TAB_V4_BETA,
-  STORAGE_SEAS_CAUSE_ID,
-  STORAGE_NEW_USER_CAUSE_ID,
-} from 'src/utils/constants'
 import Link from 'src/components/Link'
 import Countdown from 'react-countdown'
 // place holder until we get sea image
@@ -87,44 +78,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.main,
   },
 }))
-const Seas = ({ pageContext, location }) => {
+const Seas = ({ location }) => {
   const cx = useStyles()
 
-  // store referrer id
-  useEffect(() => {
-    let referrerId = null
-    // Check for a referrer's vanity URL.
-    if (pageContext && pageContext.referrer) {
-      referrerId = pageContext.referrer.id
-    } else {
-      const paramRefId = parseInt(getUrlParameterValue('r'))
-      if (!isNaN(paramRefId)) {
-        referrerId = paramRefId
-      }
-    }
-    referrerId &&
-      localStorageMgr.setItem(
-        STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
-        referrerId
-      )
-  }, [])
-  // store user referral
-  useEffect(() => {
-    const userReferrerId = getUrlParameterValue('u')
-    if (userReferrerId !== null && userReferrerId !== undefined) {
-      localStorageMgr.setItem(
-        STORAGE_REFERRAL_DATA_REFERRING_USER,
-        userReferrerId
-      )
-    }
-  }, [])
-
-  // function to be used in install button
-  // eslint-disable-next-line no-unused-vars
-  const onBeforeInstall = () => {
-    localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
-    localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, STORAGE_SEAS_CAUSE_ID)
-  }
   const absolutePageURL = getAbsoluteURL(location.pathname)
   return (
     <div>
