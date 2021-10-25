@@ -14,7 +14,7 @@ const getMockProps = () => ({
 })
 
 describe('teamseas page', () => {
-  it('renders coming soon page by default', () => {
+  it('renders teamseas page by default', () => {
     showDownloadPage.mockReturnValueOnce(false)
     const SeasPage = require('../teamseas').default
     const wrapper = mount(<SeasPage {...getMockProps()} />)
