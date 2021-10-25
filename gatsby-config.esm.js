@@ -11,6 +11,17 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-fonts-v2`,
+      options: {
+        fonts: [
+          {
+            family: 'Poppins',
+            weights: ['300', '400', '500', '800', '900'],
+          },
+        ],
+      },
+    },
     // Handle server-side rendering MaterialUI styles:
     // https://github.com/hupe1980/gatsby-plugin-material-ui/tree/master
     {
@@ -37,7 +48,8 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         // Exclude pages that just redirect.
-        excludes: ['/help', '/contact'],
+        // Exclude our secret test page
+        excludes: ['/help', '/contact', '/teamseas/atlantis'],
       },
     },
     {
