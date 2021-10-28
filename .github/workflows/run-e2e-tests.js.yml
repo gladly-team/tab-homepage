@@ -6,6 +6,7 @@ env:
   GATSBY_S3_BUCKET_NAME: test-tab-website
   GATSBY_DOMAIN: test-tab2017.gladly.io
   SHOW_CATS_PAGE: true
+  GATSBY_SHOW_TEAMSEAS_INSTALL: true
 
 jobs:
   test:
