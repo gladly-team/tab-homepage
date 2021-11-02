@@ -16,6 +16,7 @@ import Mission from 'src/components/Mission'
 import Intro from 'src/components/Intro'
 import LandingMoneyRaised from 'src/components/LandingMoneyRaised'
 import CharityIntro from 'src/components/CharityIntro'
+import FAQ from 'src/components/FAQ'
 import Snackbar from '@material-ui/core/Snackbar'
 import Alert from '@material-ui/lab/Alert'
 import AlertTitle from '@material-ui/lab/AlertTitle'
@@ -42,6 +43,7 @@ const HomepageWrapper = ({
       },
       sections: {
         charityIntro,
+        faq,
         landing,
         Financials,
         Endorsements,
@@ -118,6 +120,7 @@ const HomepageWrapper = ({
             endorsementsData={Endorsements}
             causeId={causeId}
           />
+          <FAQ faqData={faq} />
           <Snackbar open={isPreviewPage}>
             <Alert severity="info" sx={{ width: '100%' }}>
               <AlertTitle>Shh! This page is secret!</AlertTitle>
