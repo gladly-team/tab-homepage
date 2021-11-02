@@ -3,7 +3,21 @@ import PropTypes from 'prop-types'
 import SeasPageWithTheme from '../../components/TeamSeas.Install'
 
 const TestSeas = ({ pageContext, location }) => (
-  <SeasPageWithTheme pageContext={pageContext} location={location} />
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      height: '100vh',
+    }}
+  >
+    <div
+      style={{
+        flex: '1 0 auto',
+      }}
+    >
+      <SeasPageWithTheme pageContext={pageContext} location={location} />
+    </div>
+  </div>
 )
 
 TestSeas.propTypes = {

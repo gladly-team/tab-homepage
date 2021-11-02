@@ -80,6 +80,9 @@ export const tabForTeamSeasTheme = createTheme({
       // https://material-ui.com/api/css-baseline/
       default: '#FBF3E9',
     },
+    text: {
+      secondary: '#fff',
+    },
     primary: {
       // light: will be calculated from palette.primary.main,
       main: '#5094FB',
@@ -108,6 +111,11 @@ export const tabForTeamSeasTheme = createTheme({
       fontStyle: 'normal',
       lineHeight: 1,
       fontSize: '5rem',
+    },
+    subtitle2: {
+      fontWeight: 700,
+      fontSize: '1.16rem',
+      lineHeight: 1.43,
     },
   },
   overrides: {
