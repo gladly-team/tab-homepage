@@ -14,6 +14,7 @@ import FinancialsComponent from 'src/components/Financials'
 import EndorsementsComponent from 'src/components/Endorsements'
 import Mission from 'src/components/Mission'
 import Intro from 'src/components/Intro'
+import LandingMoneyRaised from 'src/components/LandingMoneyRaised'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
@@ -39,6 +40,7 @@ const HomepageWrapper = ({
         Endorsements,
         Mission: missionData,
         TFACIntro,
+        moneyRaised,
       },
     },
     referrer,
@@ -88,6 +90,7 @@ const HomepageWrapper = ({
             <link rel="canonical" href={canonicalURL} />
           </Helmet>
           <Landing landingData={landing} causeId={causeId} />
+          <LandingMoneyRaised moneyRaisedData={moneyRaised} />
           <Intro introData={TFACIntro} />
           <Mission missionData={missionData} />
           <FinancialsComponent financialsData={Financials} />
