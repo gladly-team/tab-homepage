@@ -63,7 +63,7 @@ const processor = unified()
       h4: (props) => <Typography {...props} variant="h6" gutterBottom />,
       h5: (props) => <Typography {...props} variant="body1" gutterBottom />,
       h6: (props) => <Typography {...props} variant="caption" />,
-      p: (props) => <Typography {...props} variant="body2" paragraph />,
+      p: (props) => <Typography {...props} variant="body2" />,
       a: MarkdownLink,
     },
   })

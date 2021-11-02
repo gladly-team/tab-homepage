@@ -13,6 +13,7 @@ import Landing from 'src/components/Landing'
 import FinancialsComponent from 'src/components/Financials'
 import EndorsementsComponent from 'src/components/Endorsements'
 import Mission from 'src/components/Mission'
+import Intro from 'src/components/Intro'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
@@ -32,7 +33,13 @@ const HomepageWrapper = ({
         ogImage,
         causeSpecificKeywords,
       },
-      sections: { landing, Financials, Endorsements, Mission: missionData },
+      sections: {
+        landing,
+        Financials,
+        Endorsements,
+        Mission: missionData,
+        TFACIntro,
+      },
     },
     referrer,
   },
@@ -80,6 +87,7 @@ const HomepageWrapper = ({
             <link rel="canonical" href={canonicalURL} />
           </Helmet>
           <Landing landingData={landing} causeId={causeId} />
+          <Intro introData={TFACIntro} />
           <Mission missionData={missionData} />
           <FinancialsComponent financialsData={Financials} />
           <EndorsementsComponent
