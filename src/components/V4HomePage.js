@@ -15,6 +15,7 @@ import EndorsementsComponent from 'src/components/Endorsements'
 import Mission from 'src/components/Mission'
 import Intro from 'src/components/Intro'
 import LandingMoneyRaised from 'src/components/LandingMoneyRaised'
+import CharityIntro from 'src/components/CharityIntro'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
@@ -35,6 +36,7 @@ const HomepageWrapper = ({
         causeSpecificKeywords,
       },
       sections: {
+        charityIntro,
         landing,
         Financials,
         Endorsements,
@@ -91,6 +93,7 @@ const HomepageWrapper = ({
           </Helmet>
           <Landing landingData={landing} causeId={causeId} />
           <LandingMoneyRaised moneyRaisedData={moneyRaised} />
+          <CharityIntro charityIntroData={charityIntro} />
           <Intro introData={TFACIntro} />
           <Mission missionData={missionData} />
           <FinancialsComponent financialsData={Financials} />
