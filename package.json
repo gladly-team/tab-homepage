@@ -64,8 +64,7 @@
     "test:watch": "jest --env=jsdom --testPathIgnorePatterns=e2e-tests --watch",
     "deploy": "gatsby-plugin-s3 deploy",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token ada1c3340c1b"
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
