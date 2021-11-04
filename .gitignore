@@ -12,5 +12,5 @@ coverage
 .yalc
 yalc.lock
 
-# Storybook
+# Other files
 build-storybook.log
