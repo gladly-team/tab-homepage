@@ -14,4 +14,4 @@ Our humble paragraph uses Typography body2. And here is...
 
 ... another paragraph!
 
-And a **bold**, then _italicized_, word with a 
+And a **bold**, then _italicized_, word with a [link here](https://example.com).

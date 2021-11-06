@@ -10,7 +10,6 @@ import remarkRehype from 'remark-rehype'
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
 import rehypeReact from 'rehype-react'
 import Typography from '@material-ui/core/Typography'
-import Link from 'src/components/Link'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
@@ -20,15 +19,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const MarkdownLink = ({ href, ...otherProps }) => {
+//TODO: Convert this back to the link component. Unclear why it's not working.
+const MarkdownLink = ({ href, children, ...otherProps }) => {
   const cx = useStyles()
   return (
-    <Link target="_blank" to={href} className={cx.anchor} {...otherProps} />
+    <a
+      rel="noopener noreferrer"
+      target="_blank"
+      href={href}
+      className={cx.anchor}
+      {...otherProps}
+    >
+      {children}
+    </a>
   )
 }
 MarkdownLink.displayName = 'MarkdownLink'
 MarkdownLink.propTypes = {
   href: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 }
 MarkdownLink.defaultProps = {}
 
