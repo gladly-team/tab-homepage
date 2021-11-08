@@ -42,7 +42,6 @@ export const decorators = [
         theme = tabForTeamSeasTheme
         break
     }
-    console.log(theme, vertical)
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline>
