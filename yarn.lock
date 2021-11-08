@@ -2162,6 +2162,11 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@luigiminardim/storybook-addon-globals-controls@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@luigiminardim/storybook-addon-globals-controls/-/storybook-addon-globals-controls-0.1.3.tgz#8be7f1d8f25a51dd94eab8dae27c73f67c7abdd2"
+  integrity sha512-gRwZue2pzGKkdliOnpnByG/fZh2bmhQ9DY9O62Ppk9nJSgHsQbhsv87yjjldqayd88ZYkg2u5jHv5VgYRubI8A==
+
 "@material-ui/codemod@^4.5.0":
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/@material-ui/codemod/-/codemod-4.5.0.tgz#e258a4865a7d68506579e046a6170fd742ffdf4f"

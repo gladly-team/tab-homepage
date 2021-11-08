@@ -34,7 +34,7 @@ describe('Link', () => {
 
   it('passes style prop to GatsbyLink component', () => {
     const Link = require('../Link').default
-    const someStyle = { fontSize: 12, color: '#cdcdcd' }
+    const someStyle = { fontSize: 12, color: '#cdcdcd', textDecoration: 'none' }
     const wrapper = shallow(
       <Link to={'/'} style={someStyle} hoverStyle={{ color: 'red' }} />
     )
@@ -43,7 +43,7 @@ describe('Link', () => {
 
   it('passes style prop to anchor elem', () => {
     const Link = require('../Link').default
-    const someStyle = { fontSize: 12, color: '#cdcdcd' }
+    const someStyle = { fontSize: 12, color: '#cdcdcd', textDecoration: 'none' }
     const wrapper = shallow(
       <Link
         to={'https://tab.gladly.io/'}
@@ -64,6 +64,7 @@ describe('Link', () => {
     expect(wrapper.find(GatsbyLink).props().style).toEqual({
       fontSize: 12,
       color: 'red',
+      textDecoration: 'none',
     })
   })
 
@@ -81,6 +82,7 @@ describe('Link', () => {
     expect(wrapper.find('a').props().style).toEqual({
       fontSize: 12,
       color: 'red',
+      textDecoration: 'none',
     })
   })
 })

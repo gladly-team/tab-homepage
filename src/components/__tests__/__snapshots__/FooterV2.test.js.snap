@@ -100,7 +100,7 @@ exports[`FooterV2 matches expected snapshot 1`] = `
         <Link
           hoverStyle={Object {}}
           style={Object {}}
-          to="https://twitter.com/TabForACause"
+          to="https://www.tiktok.com/@tabforacause.official?"
         >
           <WithStyles(ForwardRef(IconButton))
             classes={
@@ -176,10 +176,10 @@ exports[`FooterV2 matches expected snapshot 1`] = `
       </div>
     </div>
     <div
-      className="makeStyles-ColumnTwo-5"
+      className="makeStyles-columnTwo-5"
     >
       <div
-        className="makeStyles-SubColumn-6"
+        className="makeStyles-subColumn-6"
       >
         <Link
           hoverStyle={Object {}}
@@ -248,7 +248,7 @@ exports[`FooterV2 matches expected snapshot 1`] = `
         </Link>
       </div>
       <div
-        className="makeStyles-SubColumn-6"
+        className="makeStyles-subColumn-6"
       >
         <Link
           hoverStyle={Object {}}

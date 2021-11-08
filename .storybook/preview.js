@@ -1,7 +1,17 @@
 import { ThemeProvider } from '@material-ui/core/styles'
-import { action } from "@storybook/addon-actions"
-import theme from 'src/themes/theme'
-
+import { action } from '@storybook/addon-actions'
+import catsTheme, { tabForTeamSeasTheme } from 'src/themes/theme'
+import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls'
+import CssBaseline from '@material-ui/core/CssBaseline'
+export const globalTypes = {
+  vertical: {
+    name: 'Vertical',
+    description: 'the vertical experience you want',
+    defaultValue: 'seas',
+    options: ['seas', 'cats'],
+    control: { type: 'radio' },
+  },
+}
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
 // This global object isn't set in storybook context, requiring you to override it to empty functions (no-op),
@@ -11,17 +21,37 @@ global.___loader = {
   hovering: () => {},
 }
 // This global variable prevents the "__BASE_PATH__ is not defined" error inside Storybook.
-global.__BASE_PATH__ = "/"
+global.__BASE_PATH__ = '/'
 // Navigating through a gatsby app using gatsby-link or any other gatsby component will use the `___navigate` method.
 // In Storybook, it makes more sense to log an action than doing an actual navigate. Check out the actions addon docs for more info: https://storybook.js.org/docs/react/essentials/actions
-window.___navigate = pathname => {
-  action("NavigateTo:")(pathname)
+window.___navigate = (pathname) => {
+  action('NavigateTo:')(pathname)
 }
 
 export const decorators = [
-  (Story) => (
-    <ThemeProvider theme={theme}>
-      <Story />
-    </ThemeProvider>
-  ),
+  withGlobals((Story, { vertical }) => {
+    let theme
+    switch (vertical) {
+      case 'seas':
+        theme = tabForTeamSeasTheme
+        break
+      case 'cats':
+        theme = catsTheme
+        break
+      default:
+        theme = tabForTeamSeasTheme
+        break
+    }
+    console.log(theme, vertical)
+    return (
+      <ThemeProvider theme={theme}>
+        <CssBaseline>
+          <Story />
+        </CssBaseline>
+      </ThemeProvider>
+    )
+  }),
 ]
+export const parameters = {
+  layout: 'fullscreen',
+}

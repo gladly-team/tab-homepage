@@ -41,6 +41,9 @@ const theme = createTheme({
       // dark: will be calculated from palette.primary.main,
       contrastText: primaryContrastTextColor,
     },
+    text: {
+      secondary: '#fff',
+    },
     secondary: {
       // light: will be calculated from palette.primary.main,
       main: secondaryMainColor,
@@ -100,7 +103,7 @@ export const tabForTeamSeasTheme = createTheme({
     borderRadius: 2,
   },
   typography: {
-    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif,',
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     fontSize: baseFontSize,
     useNextVariants: true,
 
@@ -114,8 +117,6 @@ export const tabForTeamSeasTheme = createTheme({
     },
     subtitle2: {
       fontWeight: 700,
-      fontSize: '1.16rem',
-      lineHeight: 1.43,
     },
   },
   overrides: {

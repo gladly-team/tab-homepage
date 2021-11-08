@@ -1,14 +1,12 @@
 module.exports = {
-  "stories": [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    'storybook-addon-gatsby',
+    '@luigiminardim/storybook-addon-globals-controls',
   ],
-  "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "storybook-addon-gatsby",
-  ],
-  "core": {
-    "builder": "webpack5"
-  }
+  core: {
+    builder: 'webpack5',
+  },
 }

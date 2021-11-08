@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import IconButton from '@material-ui/core/IconButton'
 import FacebookIcon from '@material-ui/icons/Facebook'
@@ -27,6 +27,7 @@ import {
   teamURL,
   termsURL,
   twitterPageURL,
+  tiktokPageURL,
 } from 'src/utils/navigation'
 import Link from 'src/components/Link'
 const useStyles = makeStyles((theme) => ({
@@ -40,35 +41,29 @@ const useStyles = makeStyles((theme) => ({
   contentRow: {
     display: 'flex',
     width: '80%',
-    minWidth: '570px',
-    maxWidth: '1200px',
     flexWrap: 'wrap',
-    [theme.breakpoints.down(580)]: {
-      flexDirection: 'column',
-      width: '90%',
-      minWidth: '300px',
-    },
-    paddingTop: theme.spacing(4),
   },
   columnOne: {
+    marginTop: theme.spacing(6.5),
     display: 'flex',
     flexDirection: 'column',
     color: '#fff',
+    minWidth: theme.spacing(36),
+    width: '36%',
   },
-  ColumnTwo: {
+  columnTwo: {
+    marginTop: theme.spacing(6.5),
+    width: theme.spacing(60),
     display: 'flex',
+    flexWrap: 'wrap',
     flexDirection: 'row',
     color: '#fff',
-    marginLeft: theme.spacing(5),
-    [theme.breakpoints.down(580)]: {
-      marginLeft: theme.spacing(0),
-    },
   },
-  SubColumn: {
+  subColumn: {
     display: 'flex',
     flexDirection: 'column',
     color: '#fff',
-    marginRight: theme.spacing(1),
+    width: theme.spacing(30),
   },
   iconRow: {
     display: 'flex',
@@ -88,14 +83,14 @@ const useStyles = makeStyles((theme) => ({
 }))
 const Footer = (props) => {
   const cx = useStyles()
-  const browserOnClick = (extensionUrl) => async () => {
-    const { onBeforeInstall } = props
-
-    if (onBeforeInstall) {
+  const { onBeforeInstall } = props
+  const browserOnClick = useCallback(
+    (extensionUrl) => async () => {
       await onBeforeInstall()
-    }
-    redirect(extensionUrl)
-  }
+      redirect(extensionUrl)
+    },
+    [onBeforeInstall]
+  )
   return (
     <div className={cx.backgroundContainer}>
       <div className={cx.contentRow}>
@@ -124,7 +119,7 @@ const Footer = (props) => {
                 <TwitterIcon classes={{ root: cx.iconStyles }} />
               </IconButton>
             </Link>
-            <Link to={twitterPageURL}>
+            <Link to={tiktokPageURL}>
               <IconButton classes={{ root: cx.iconButton }}>
                 <SvgIcon
                   viewBox="0 0 50 50"
@@ -165,8 +160,8 @@ const Footer = (props) => {
             </IconButton>
           </div>
         </div>
-        <div className={cx.ColumnTwo}>
-          <div className={cx.SubColumn}>
+        <div className={cx.columnTwo}>
+          <div className={cx.subColumn}>
             <Link to={externalHelpURL}>
               <Typography
                 variant="subtitle2"
@@ -213,7 +208,7 @@ const Footer = (props) => {
               </Typography>
             </Link>
           </div>
-          <div className={cx.SubColumn}>
+          <div className={cx.subColumn}>
             <Link to={teamURL}>
               <Typography
                 variant="subtitle2"
