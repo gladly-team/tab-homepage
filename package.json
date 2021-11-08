@@ -100,7 +100,7 @@
     "prettier": "^2.1.2",
     "react-test-renderer": "^16.14.0",
     "storybook-addon-gatsby": "^0.0.2",
-    "tab-e2e": "^2.0.2",
+    "tab-e2e": "^2.0.5",
     "webpack": "^5.57.1"
   },
   "jest": {
