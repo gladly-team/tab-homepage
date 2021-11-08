@@ -20,6 +20,7 @@ const tests = init({
 })
 
 describe('Tab: acceptance tests', () => {
+  jest.retryTimes(3)
   tests.forEach(({ description, test, testTimeout }) =>
     it(description, test, testTimeout)
   )
