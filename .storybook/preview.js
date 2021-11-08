@@ -28,6 +28,7 @@ window.___navigate = (pathname) => {
   action('NavigateTo:')(pathname)
 }
 
+// global theming
 export const decorators = [
   withGlobals((Story, { vertical }) => {
     let theme
