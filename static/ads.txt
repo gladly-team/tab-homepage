@@ -51,6 +51,10 @@ districtm.io,100390,DIRECT
 # Index Exchange
 indexexchange.com,189509,DIRECT,50b1c356f2c5c8fc
 indexexchange.com,189508,DIRECT,50b1c356f2c5c8fc
+indexexchange.com,196902,DIRECT,50b1c356f2c5c8fc
+
+# Media.net
+media.net,8CUH6Y44N,DIRECT
 
 # OpenX
 openx.com,537145035,DIRECT,6a698e2ec38604c6
@@ -88,6 +92,7 @@ sonobi.com,5695c92f04,DIRECT
 appnexus.com,1360,RESELLER,f5ab79cb980f11d1
 gumgum.com,11645,RESELLER,ffdef49475d318a9
 lijit.com,240713,DIRECT,fafdf38b16bf6b2b
+lijit.com,240713-eb,DIRECT,fafdf38b16bf6b2b
 openx.com,538959099,RESELLER,6a698e2ec38604c6
 openx.com,539924617,RESELLER,6a698e2ec38604c6
 pubmatic.com,137711,RESELLER,5d62403b186f2ace
