@@ -14,6 +14,7 @@ emxdgt.com,2009,RESELLER,1e1d41537f7cad7f
 gumgum.com,14141,RESELLER,ffdef49475d318a9
 indexexchange.com,192410,RESELLER,50b1c356f2c5c8fc
 # lijit.com,240713,DIRECT,fafdf38b16bf6b2b -- Defined in Sovrn section below.
+# lijit.com,375328,DIRECT,fafdf38b16bf6b2b -- Defined in Sovrn section below.
 openx.com,540191398,RESELLER,6a698e2ec38604c6
 pubmatic.com,157150,RESELLER,5d62403b186f2ace
 pubmatic.com,160006,RESELLER,5d62403b186f2ace
@@ -24,6 +25,8 @@ sharethrough.com,7144eb80,RESELLER
 smaato.com,1100044650,RESELLER,07bcf65f187117b4
 smartadserver.com,4125,RESELLER,060d053dcf45cbf3
 # sovrn.com,240713,DIRECT,fafdf38b16bf6b2b -- Defined in Sovrn section below.
+# sovrn.com,375328,DIRECT,fafdf38b16bf6b2b -- Defined in Sovrn section below.
+themediagrid.com,JTQKMP,RESELLER,35d5010d7789b49d
 yahoo.com,55029,RESELLER,e1a5b5b6e3255540
 yieldmo.com,2719019867620450718,RESELLER
 
@@ -51,6 +54,10 @@ districtm.io,100390,DIRECT
 # Index Exchange
 indexexchange.com,189509,DIRECT,50b1c356f2c5c8fc
 indexexchange.com,189508,DIRECT,50b1c356f2c5c8fc
+indexexchange.com,196902,DIRECT,50b1c356f2c5c8fc
+
+# Media.net
+media.net,8CUH6Y44N,DIRECT
 
 # OpenX
 openx.com,537145035,DIRECT,6a698e2ec38604c6
@@ -88,6 +95,7 @@ sonobi.com,5695c92f04,DIRECT
 appnexus.com,1360,RESELLER,f5ab79cb980f11d1
 gumgum.com,11645,RESELLER,ffdef49475d318a9
 lijit.com,240713,DIRECT,fafdf38b16bf6b2b
+lijit.com,240713-eb,DIRECT,fafdf38b16bf6b2b
 openx.com,538959099,RESELLER,6a698e2ec38604c6
 openx.com,539924617,RESELLER,6a698e2ec38604c6
 pubmatic.com,137711,RESELLER,5d62403b186f2ace
@@ -95,6 +103,8 @@ pubmatic.com,156212,RESELLER,5d62403b186f2ace
 pubmatic.com,156700,RESELLER,5d62403b186f2ace
 rubiconproject.com,17960,RESELLER,0bfd66d529a55807
 sovrn.com,240713,DIRECT,fafdf38b16bf6b2b
+sovrn.com,375328,DIRECT,fafdf38b16bf6b2b
+lijit.com,375328,DIRECT,fafdf38b16bf6b2b
 
 # Verizon
 yahoo.com,56944,DIRECT
