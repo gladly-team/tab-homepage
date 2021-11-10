@@ -45,13 +45,16 @@ const useStyles = makeStyles((theme) => ({
   },
   columnOne: {
     marginTop: theme.spacing(6.5),
+    marginRight: theme.spacing(2),
+  },
+  columnTwo: {
+    marginTop: theme.spacing(6.5),
     display: 'flex',
     flexDirection: 'column',
     color: '#fff',
     minWidth: theme.spacing(36),
-    width: '36%',
   },
-  columnTwo: {
+  columnThree: {
     marginTop: theme.spacing(6.5),
     width: theme.spacing(60),
     display: 'flex',
@@ -64,6 +67,12 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     color: '#fff',
     width: theme.spacing(30),
+  },
+  subColumnTwo: {
+    display: 'flex',
+    flexDirection: 'column',
+    color: '#fff',
+    width: theme.spacing(19),
   },
   iconRow: {
     display: 'flex',
@@ -98,6 +107,8 @@ const Footer = (props) => {
           <Link to="/">
             <img src={logo} style={{ height: 43 }} />
           </Link>
+        </div>
+        <div className={cx.columnTwo}>
           <Typography variant="subtitle2" color="textSecondary">
             Social
           </Typography>
@@ -160,7 +171,7 @@ const Footer = (props) => {
             </IconButton>
           </div>
         </div>
-        <div className={cx.columnTwo}>
+        <div className={cx.columnThree}>
           <div className={cx.subColumn}>
             <Link to={externalHelpURL}>
               <Typography
@@ -208,7 +219,7 @@ const Footer = (props) => {
               </Typography>
             </Link>
           </div>
-          <div className={cx.subColumn}>
+          <div className={cx.subColumnTwo}>
             <Link to={teamURL}>
               <Typography
                 variant="subtitle2"
