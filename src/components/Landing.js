@@ -14,7 +14,7 @@ import localStorageMgr from 'src/utils/local-storage'
 import { getAbsoluteURL, homeURL } from 'src/utils/navigation'
 import logoWhite from 'src/img/logo-with-text-white.svg'
 import seasHeaderImg from 'src/img/seas/headerImage.png'
-import catsHeaderImg from 'src/img/cats/headerImg.svg'
+import catsHeaderImg from 'src/img/cats/headerImg.png'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import {
   STORAGE_CATS_CAUSE_ID,
@@ -110,6 +110,7 @@ const Landing = ({ pageContext, location, causeData }) => {
     title,
     subtitle,
     causeId,
+    waveColor,
   } = causeData
   const cx = useStyles()
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
@@ -220,7 +221,7 @@ const Landing = ({ pageContext, location, causeData }) => {
           <img src={headerImg}></img>
         </div>
         <div className={cx.wave}>
-          <Wave />
+          <Wave color={waveColor} />
         </div>
       </div>
       <div className={cx.waveMobile}>
@@ -255,6 +256,7 @@ Landing.propTypes = {
     headOgDescription: PropTypes.string,
     headKeywords: PropTypes.string,
     headOgImgURLAbsolute: PropTypes.string,
+    waveColor: PropTypes.string,
   }),
 }
 const LandingWithTheme = (props) => (

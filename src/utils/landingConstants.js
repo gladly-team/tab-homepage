@@ -23,6 +23,7 @@ export const seasLandingProps = {
     headKeywords:
       'charity, seas, TeamSeas, teamseas, #teamseas, ocean, oceans, sharks, whales, dolphins, fish, environment, global warming, river, rivers, lake, lakes, pollution, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, free, best, home, youtube, safe, volunteer, internet, tab for a cause, impact, legitimate, food, facebook, twitter, reddit, instagram, tumblr',
     headOgImgURLAbsolute: getAbsoluteURL(openGraphImg),
+    waveColor: '5094FB',
   },
 }
 
@@ -40,5 +41,6 @@ export const catsLandingProps = {
     headOgDescription: 'TODO',
     headKeywords: 'TODO',
     headOgImgURLAbsolute: getAbsoluteURL(openGraphImg), //todo
+    waveColor: '5094FB',
   },
 }
