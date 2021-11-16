@@ -193,7 +193,7 @@ exports.createPages = async ({ actions, graphql }) => {
             return
           }
           createPage({
-            path: `${path}/`,
+            path: `${path}/${node.path}/`,
             component: HomePageWrapper, // this will be new component that takes all data as props,
             context: {
               data,
