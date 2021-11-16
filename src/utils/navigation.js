@@ -93,6 +93,7 @@ export const advertisingSelfServeURL = 'https://orders.gladly.io'
 export const getAbsoluteURL = (path) => {
   // If the passed path is already an absolute URL,
   // just return it.
+  console.log(path, 'passed in')
   if (path.startsWith('http://') || path.startsWith('https://')) {
     return path
   }

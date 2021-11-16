@@ -128,3 +128,53 @@ export const tabForTeamSeasTheme = createTheme({
     },
   },
 })
+
+export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
+  createTheme({
+    palette: {
+      background: {
+        default: '#FBF3E9',
+      },
+      primary: {
+        main: primary,
+        contrastText: primaryContrast,
+      },
+      secondary: {
+        main: secondary,
+        contrastText: secondaryContrastTextColor,
+      },
+    },
+    shape: {
+      borderRadius: 2,
+    },
+    typography: {
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif,',
+      fontSize: baseFontSize,
+      useNextVariants: true,
+
+      h1: {
+        fontWeight: 900,
+        color: '#5094FB',
+        fontFamily: 'Poppins',
+        fontStyle: 'normal',
+        lineHeight: 1,
+        fontSize: '5rem',
+      },
+    },
+    overrides: {
+      MuiButton: {
+        root: {
+          fontWeight: '800',
+          fontFamily: 'Poppins',
+        },
+        contained: {
+          borderRadius: 24,
+        },
+      },
+      MuiDivider: {
+        root: {
+          backgroundColor: lighterShadingColor,
+        },
+      },
+    },
+  })
