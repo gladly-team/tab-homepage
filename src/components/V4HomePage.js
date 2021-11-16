@@ -3,11 +3,7 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Helmet from 'react-helmet'
-import {
-  makeStyles,
-  ThemeProvider,
-  responsiveFontSizes,
-} from '@material-ui/core/styles'
+import { ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles'
 import { getUrlParameterValue } from 'src/utils/location'
 import { createCauseTheme } from 'src/themes/theme'
 import HeadTags from 'src/components/HeadTags'
@@ -57,7 +53,6 @@ const HomepageWrapper = ({
       )
     }
   }, [])
-  console.log(location.pathname)
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
   const ogImgURLAbsolute = getAbsoluteURL(
     ogImage.childImageSharp.gatsbyImageData.images.sources[0].srcSet

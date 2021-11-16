@@ -1,7 +1,7 @@
 /* globals exports */
 
 import path from 'path'
-
+import { generateCausePages } from './src/utils/featureFlags'
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -85,127 +85,127 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
   })
-
-  const dynamicDataQuery = await graphql(`
-    {
-      allCausesJson(limit: 1000) {
-        edges {
-          node {
-            data {
-              metadata {
-                title
-                ogTitle
-                url
-                ogDescription
-                ogImage {
-                  childImageSharp {
-                    gatsbyImageData(quality: 8)
+  if (generateCausePages()) {
+    const dynamicDataQuery = await graphql(`
+      {
+        allCausesJson(limit: 1000) {
+          edges {
+            node {
+              data {
+                metadata {
+                  title
+                  ogTitle
+                  url
+                  ogDescription
+                  ogImage {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
+                    }
+                  }
+                  causeSpecificKeywords
+                }
+                sections {
+                  Mission {
+                    subtitle
+                    text
+                    title
+                  }
+                  TFACIntro {
+                    img1 {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
+                    img1Subtext
+                    img2 {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
+                    img2Subtext
+                    img3 {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
+                    img3Subtext
+                    title
+                  }
+                  charityIntro {
+                    introImg1 {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
+                    introImg1Subtext
+                    introImg2 {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
+                    introImg2Subtext
+                    subTitle
+                    title
+                  }
+                  landing {
+                    subtitle
+                    title
+                    ctaImg {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
+                  }
+                  moneyRaised {
+                    moneyImg {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
                   }
                 }
-                causeSpecificKeywords
+                styles {
+                  colors {
+                    primary
+                    secondary
+                    primaryContrast
+                  }
+                }
               }
-              sections {
-                Mission {
-                  subtitle
-                  text
-                  title
-                }
-                TFACIntro {
-                  img1 {
-                    childImageSharp {
-                      gatsbyImageData(quality: 8)
-                    }
-                  }
-                  img1Subtext
-                  img2 {
-                    childImageSharp {
-                      gatsbyImageData(quality: 8)
-                    }
-                  }
-                  img2Subtext
-                  img3 {
-                    childImageSharp {
-                      gatsbyImageData(quality: 8)
-                    }
-                  }
-                  img3Subtext
-                  title
-                }
-                charityIntro {
-                  introImg1 {
-                    childImageSharp {
-                      gatsbyImageData(quality: 8)
-                    }
-                  }
-                  introImg1Subtext
-                  introImg2 {
-                    childImageSharp {
-                      gatsbyImageData(quality: 8)
-                    }
-                  }
-                  introImg2Subtext
-                  subTitle
-                  title
-                }
-                landing {
-                  subtitle
-                  title
-                  ctaImg {
-                    childImageSharp {
-                      gatsbyImageData(quality: 8)
-                    }
-                  }
-                }
-                moneyRaised {
-                  moneyImg {
-                    childImageSharp {
-                      gatsbyImageData(quality: 8)
-                    }
-                  }
-                }
-              }
-              styles {
-                colors {
-                  primary
-                  secondary
-                  primaryContrast
-                }
-              }
+              path
             }
-            path
           }
         }
       }
-    }
-  `)
-  console.log(dynamicDataQuery)
-  dynamicDataQuery.data.allCausesJson.edges.forEach(
-    ({ node: { path, data } }) => {
-      createPage({
-        path: `${path}/`,
-        component: HomePageWrapper, // this will be new component that takes all data as props,
-        context: {
-          data,
-        },
-      })
-      response.data.allReferrersYaml.edges.forEach(({ node }) => {
-        // Not all referrers will have a vanity URL.
-        if (!node.path || !node.referrerId) {
-          return
-        }
+    `)
+    dynamicDataQuery.data.allCausesJson.edges.forEach(
+      ({ node: { path, data } }) => {
         createPage({
           path: `${path}/`,
           component: HomePageWrapper, // this will be new component that takes all data as props,
           context: {
             data,
-            referrer: {
-              id: node.referrerId,
-            },
           },
         })
-      })
-    }
-  )
+        response.data.allReferrersYaml.edges.forEach(({ node }) => {
+          // Not all referrers will have a vanity URL.
+          if (!node.path || !node.referrerId) {
+            return
+          }
+          createPage({
+            path: `${path}/`,
+            component: HomePageWrapper, // this will be new component that takes all data as props,
+            context: {
+              data,
+              referrer: {
+                id: node.referrerId,
+              },
+            },
+          })
+        })
+      }
+    )
+  }
 }
 exports.onCreatePage = async ({ page, actions: { deletePage } }) => {
   // Only conditionally build the "million raised" page.
