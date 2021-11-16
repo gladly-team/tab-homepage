@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-
+import get from 'lodash/get'
 import PropTypes from 'prop-types'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Helmet from 'react-helmet'
@@ -39,7 +39,7 @@ const HomepageWrapper = ({
     if (referrer || !isNaN(parseInt(getUrlParameterValue('r')))) {
       localStorageMgr.setItem(
         STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
-        referrer.id || parseInt(getUrlParameterValue('r'))
+        get(referrer, 'id') || parseInt(getUrlParameterValue('r'))
       )
     }
   }, [])
@@ -55,7 +55,7 @@ const HomepageWrapper = ({
   }, [])
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
   const ogImgURLAbsolute = getAbsoluteURL(
-    ogImage.childImageSharp.gatsbyImageData.images.sources[0].srcSet
+    get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet')
   )
   const canonicalURL = getAbsoluteURL(url)
   return (
