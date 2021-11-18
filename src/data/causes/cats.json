@@ -1,0 +1,54 @@
+{
+  "path": "cats2",
+  "data": {
+    "styles": {
+      "colors": {
+        "primary": "#FF6A08",
+        "secondary": "#29BEBA",
+        "primaryContrast": "#15AAA6"
+      }
+    },
+    "causeId": "CA6A5C2uj",
+    "metadata": {
+      "title": "Tab for Cats - Home",
+      "ogTitle": "Help Shelter Cats for Free Online | Tab for Cats ",
+      "url": "/cats/",
+      "ogDescription": "Open new tabs, help shelter cats for free... it’s that easy!",
+      "ogImage": "../../img/cats/1.png",
+      "causeSpecificKeywords": "charity, cat, cats"
+    },
+    "sections": {
+      "landing": {
+        "title": "Open tabs.  Help shelter cats!",
+        "subtitle": "Every tab opened raises money for cats in need of an extra, helping paw. It’s so easy a cat could do it.",
+        "ctaImg": "../../img/cats/1.png"
+      },
+      "moneyRaised": {
+        "moneyImg": "../../img/cats/1.png"
+      },
+      "charityIntro": {
+        "title": "Being a shelter cat is hard.",
+        "subTitle": "Our impact is everything to us. And, we’re so proud of the impact we’ve been able to drive, together, thus far.",
+        "introImg1": "../../img/cats/1.png",
+        "introImg1Subtext": "More new happy cat owners",
+        "introImg2": "../../img/cats/1.png",
+        "introImg2Subtext": "More cats adopted",
+        "link": "https://greatergood.org/jackson-galaxy"
+      },
+      "TFACIntro": {
+        "title": "The easiest way to raise money.",
+        "img1": "../../img/cats/1.png",
+        "img1Subtext": "Open new tabs on your browser.",
+        "img2": "../../img/cats/1.png",
+        "img2Subtext": "Earn Money for cat training programs.",
+        "img3": "../../img/cats/1.png",
+        "img3Subtext": "Help get more cats adopted."
+      },
+      "Mission": {
+        "title": "Our Mission",
+        "subtitle": "Help shelter cats get adopted",
+        "text": "We have partnered with The Greater Good Charities' The Jackson Galaxy Project to provide treats to shelter cats for FREE! How can we do this? Through ad revenue! Every time you open a new tab, there will be two small ads in the right corner of your home screen. Companies pay for this space to advertise on our platform, and from there we can put that money to good use by giving it back to an organization doing great work for our furry friends. Tab for Cats is absolutely free for our users, and a great way to make an impact without breaking the bank."
+      }
+    }
+  }
+}
