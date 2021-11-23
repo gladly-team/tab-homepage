@@ -42,6 +42,17 @@ module.exports = {
     },
     `gatsby-transformer-yaml`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `img`,
+        path: `./src/img/`,
+      },
+    },
+    `gatsby-transformer-json`,
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
       // If modifying, validate/update on webmaster tools for
       // Google, Bing, etc.
       // https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sitemap

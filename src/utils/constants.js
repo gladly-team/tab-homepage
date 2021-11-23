@@ -19,3 +19,5 @@ export const SEARCH_STORAGE_REFERRAL_DATA_REFERRING_CHANNEL =
 export const STORAGE_NEW_USER_CAUSE_ID = 'tab.newUser.causeId'
 export const STORAGE_CATS_CAUSE_ID = 'CA6A5C2uj'
 export const STORAGE_SEAS_CAUSE_ID = 'SGa6zohkY'
+export const KEY_WORDS =
+  'charity, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, free, best, home, youtube, safe, volunteer, internet, tab for a cause, impact, legitimate, food, facebook, twitter, reddit, instagram, tumblr, '

@@ -26,6 +26,7 @@ jobs:
           echo "GATSBY_S3_BUCKET_NAME=prod-tab-website" >> "$GITHUB_ENV"
           echo "GATSBY_DOMAIN=tab.gladly.io" >> "$GITHUB_ENV"
           echo "GATSBY_SHOW_TEAMSEAS_INSTALL=true" >> "$GITHUB_ENV"
+          echo "GATSBY_GENERATE_CAUSE_PAGES=false" >> "$GITHUB_ENV"
           echo "SHOW_CATS_PAGE=true" >> "$GITHUB_ENV"
       - name: Set env vars for dev branch
         if: github.ref == 'refs/heads/dev'
@@ -33,6 +34,7 @@ jobs:
           echo "GATSBY_S3_BUCKET_NAME=dev-tab-website" >> "$GITHUB_ENV"
           echo "GATSBY_DOMAIN=dev-tab2017.gladly.io" >> "$GITHUB_ENV"
           echo "GATSBY_SHOW_TEAMSEAS_INSTALL=true" >> "$GITHUB_ENV"
+          echo "GATSBY_GENERATE_CAUSE_PAGES=true" >> "$GITHUB_ENV"
           echo "SHOW_CATS_PAGE=true" >> "$GITHUB_ENV"
       - name: Install dependencies
         run: yarn install
