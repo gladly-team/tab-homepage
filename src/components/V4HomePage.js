@@ -9,6 +9,7 @@ import { createCauseTheme } from 'src/themes/theme'
 import HeadTags from 'src/components/HeadTags'
 import localStorageMgr from 'src/utils/local-storage'
 import { getAbsoluteURL } from 'src/utils/navigation'
+import Landing from 'src/components/Landing'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
@@ -18,7 +19,7 @@ import {
 const HomepageWrapper = ({
   pageContext: {
     data: {
-      sections,
+      causeId,
       styles,
       metadata: {
         url,
@@ -28,6 +29,7 @@ const HomepageWrapper = ({
         ogImage,
         causeSpecificKeywords,
       },
+      sections: { landing },
     },
     referrer,
   },
@@ -74,8 +76,7 @@ const HomepageWrapper = ({
           <Helmet>
             <link rel="canonical" href={canonicalURL} />
           </Helmet>
-          {/* insert components here*/}
-          {JSON.stringify(sections)}
+          <Landing landingData={landing} causeId={causeId} />
         </div>
       </CssBaseline>
     </ThemeProvider>

@@ -1,25 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles, ThemeProvider } from '@material-ui/core/styles'
-import Helmet from 'react-helmet'
-import HeadTags from 'src/components/HeadTags'
+import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import CssBaseline from '@material-ui/core/CssBaseline'
 import InstallButton from 'src/components/InstallButton'
 import Typography from '@material-ui/core/Typography'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
-import { getUrlParameterValue } from 'src/utils/location'
 import localStorageMgr from 'src/utils/local-storage'
-import { getAbsoluteURL, homeURL } from 'src/utils/navigation'
+import { homeURL } from 'src/utils/navigation'
 import logoWhite from 'src/img/logo-with-text-white.svg'
 import seasHeaderImg from 'src/img/seas/headerImage.png'
 import catsHeaderImg from 'src/img/cats/headerImg.png'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import {
   STORAGE_CATS_CAUSE_ID,
-  STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
-  STORAGE_REFERRAL_DATA_REFERRING_USER,
   STORAGE_SEAS_CAUSE_ID,
   STORAGE_NEW_USER_IS_TAB_V4_BETA,
   STORAGE_NEW_USER_CAUSE_ID,
@@ -98,59 +92,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Landing = ({ pageContext, location, causeData }) => {
-  const {
-    canonicalURL,
-    headTitle,
-    headTitleTemplate,
-    headOgTitle,
-    headOgDescription,
-    headKeywords,
-    headOgImgURLAbsolute,
-    title,
-    subtitle,
-    causeId,
-    waveColor,
-  } = causeData
+const Landing = ({ landingData, causeId }) => {
+  const { title, subtitle, waveColor } = landingData
   const cx = useStyles()
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
-  // store referrer id
-  useEffect(() => {
-    let referrerId = null
-    // Check for a referrer's vanity URL.
-    if (pageContext && pageContext.referrer) {
-      referrerId = pageContext.referrer.id
-    } else {
-      const paramRefId = parseInt(getUrlParameterValue('r'))
-      if (!isNaN(paramRefId)) {
-        referrerId = paramRefId
-      }
-    }
-    referrerId &&
-      localStorageMgr.setItem(
-        STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
-        referrerId
-      )
-  }, [])
-  // store user referral
-  useEffect(() => {
-    const userReferrerId = getUrlParameterValue('u')
-    if (userReferrerId !== null && userReferrerId !== undefined) {
-      localStorageMgr.setItem(
-        STORAGE_REFERRAL_DATA_REFERRING_USER,
-        userReferrerId
-      )
-    }
-  }, [])
-
-  // function to be used in install button
-  // eslint-disable-next-line no-unused-vars
-  const onBeforeInstall = () => {
-    localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
-    localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
-  }
-  const absolutePageURL = getAbsoluteURL(location.pathname)
   let headerImg
   switch (causeId) {
     case STORAGE_SEAS_CAUSE_ID:
@@ -162,18 +108,6 @@ const Landing = ({ pageContext, location, causeData }) => {
   }
   return (
     <div>
-      <HeadTags
-        title={headTitle}
-        titleTemplate={headTitleTemplate}
-        ogTitle={headOgTitle}
-        ogDescription={headOgDescription}
-        ogImage={headOgImgURLAbsolute}
-        keywords={headKeywords}
-        pageURL={absolutePageURL}
-      />
-      <Helmet>
-        <link rel="canonical" href={canonicalURL} />
-      </Helmet>
       <AppBar color="primary" position="sticky">
         <Toolbar>
           <div className={cx.logoContainer}>
@@ -225,7 +159,7 @@ const Landing = ({ pageContext, location, causeData }) => {
         </div>
       </div>
       <div className={cx.waveMobile}>
-        <Wave />
+        <Wave color={waveColor} />
       </div>
       <UnsupportedBrowserDialog
         open={showUnsupportedBrowserMessage}
@@ -237,38 +171,11 @@ const Landing = ({ pageContext, location, causeData }) => {
   )
 }
 Landing.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }),
-  pageContext: PropTypes.shape({
-    referrer: PropTypes.shape({
-      id: PropTypes.number,
-    }),
-  }),
-  causeData: PropTypes.shape({
-    causeId: PropTypes.string,
-    canonicalURL: PropTypes.string,
+  causeId: PropTypes.string,
+  landingData: PropTypes.shape({
     title: PropTypes.string,
     subtitle: PropTypes.string,
-    headTitle: PropTypes.string,
-    headTitleTemplate: PropTypes.string,
-    headOgTitle: PropTypes.string,
-    headOgDescription: PropTypes.string,
-    headKeywords: PropTypes.string,
-    headOgImgURLAbsolute: PropTypes.string,
     waveColor: PropTypes.string,
   }),
 }
-const LandingWithTheme = (props) => (
-  <ThemeProvider theme={props.theme}>
-    <CssBaseline>
-      <Landing {...props} />
-    </CssBaseline>
-  </ThemeProvider>
-)
-LandingWithTheme.propTypes = {
-  theme: PropTypes.shape({
-    palette: PropTypes.object,
-  }).isRequired,
-}
-export default LandingWithTheme
+export default Landing
