@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+import React from 'react'
 import Header from './Header'
 
 export default {
@@ -6,12 +8,12 @@ export default {
 }
 
 const Template = (args) => <Header {...args} />
-export const standard = Template.bind({})
-standard.args = {
+export const TabForACause = Template.bind({})
+TabForACause.args = {
   brand: 'tab',
 }
 
-export const full = Template.bind({})
-full.args = {
+export const SearchForACause = Template.bind({})
+SearchForACause.args = {
   brand: 'search',
 }

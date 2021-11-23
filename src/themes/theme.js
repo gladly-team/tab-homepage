@@ -58,6 +58,9 @@ const theme = createTheme({
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     fontSize: baseFontSize,
     useNextVariants: true,
+    subtitle2: {
+      fontWeight: 700,
+    },
   },
   overrides: {
     MuiButton: {

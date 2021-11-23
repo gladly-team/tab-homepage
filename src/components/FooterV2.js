@@ -30,6 +30,9 @@ import {
   tiktokPageURL,
 } from 'src/utils/navigation'
 import Link from 'src/components/Link'
+/* TODO GENERALIZATION READ IMAGE PASSED DOWN FROM PROPS*/
+import FooterJellyFish from 'src/img/seas/FooterJellyFish.png'
+
 const useStyles = makeStyles((theme) => ({
   logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
   backgroundContainer: {
@@ -41,26 +44,36 @@ const useStyles = makeStyles((theme) => ({
   contentRow: {
     display: 'flex',
     width: '80%',
+    justifyContent: 'space-between',
     flexWrap: 'wrap',
+    flexFlow: 'row',
+    '&::after': {
+      content: '',
+      flex: '0 1 30%',
+    },
   },
   columnOne: {
-    marginTop: theme.spacing(6.5),
-    marginRight: theme.spacing(2),
-  },
-  columnTwo: {
     marginTop: theme.spacing(6.5),
     display: 'flex',
     flexDirection: 'column',
     color: '#fff',
     minWidth: theme.spacing(36),
   },
-  columnThree: {
+  columnTwo: {
     marginTop: theme.spacing(6.5),
-    width: theme.spacing(60),
+    width: theme.spacing(38),
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'row',
     color: '#fff',
+  },
+  columnThree: {
+    marginTop: theme.spacing(6.5),
+    display: 'flex',
+    [theme.breakpoints.down(1080)]: {
+      width: '100%',
+      justifyContent: 'center',
+    },
   },
   subColumn: {
     display: 'flex',
@@ -72,7 +85,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     color: '#fff',
-    width: theme.spacing(19),
   },
   iconRow: {
     display: 'flex',
@@ -107,8 +119,6 @@ const Footer = (props) => {
           <Link to="/">
             <img src={logo} style={{ height: 43 }} />
           </Link>
-        </div>
-        <div className={cx.columnTwo}>
           <Typography variant="subtitle2" color="textSecondary">
             Social
           </Typography>
@@ -171,7 +181,7 @@ const Footer = (props) => {
             </IconButton>
           </div>
         </div>
-        <div className={cx.columnThree}>
+        <div className={cx.columnTwo}>
           <div className={cx.subColumn}>
             <Link to={externalHelpURL}>
               <Typography
@@ -248,6 +258,11 @@ const Footer = (props) => {
               </Typography>
             </Link>
           </div>
+        </div>
+        <div className={cx.columnThree}>
+          {/* TODO GENERALIZATION
+          READ IMAGE PASSED DOWN FROM PROPS*/}
+          <img src={FooterJellyFish} />
         </div>
       </div>
     </div>
