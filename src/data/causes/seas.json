@@ -3,9 +3,9 @@
   "data": {
     "styles": {
       "colors": {
-        "primary": "#FBF3E9",
-        "secondary": "#5094FB",
-        "primaryContrast": "#29BEBA"
+        "primary": "#5094FB",
+        "secondary": "#29BEBA",
+        "primaryContrast": "#fff"
       }
     },
     "causeId": "SGa6zohkY",
@@ -22,7 +22,7 @@
         "title": "The easiest way to save our seas",
         "subtitle": "Every tab opened raises money for #TeamSeas, an internet-led movement raising $30 million to clean up 30 million pounds of trash from our oceans, rivers, and lakes.",
         "ctaImg": "TODO",
-        "waveColor": "5094FB"
+        "waveColor": "#5094FB"
       },
       "moneyRaised": {
         "moneyImg": "TODO"

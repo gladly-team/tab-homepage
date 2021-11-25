@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
   },
   waveMobile: {
     display: 'none',
-    position: 'absolute',
+    position: 'static',
     width: '100%',
     zIndex: -1,
     [theme.breakpoints.down('sm')]: {
@@ -107,7 +107,7 @@ const Landing = ({ landingData, causeId }) => {
       break
   }
   return (
-    <div>
+    <div className="parent">
       <AppBar color="primary" position="sticky">
         <Toolbar>
           <div className={cx.logoContainer}>
