@@ -41,6 +41,9 @@ const theme = createTheme({
       // dark: will be calculated from palette.primary.main,
       contrastText: primaryContrastTextColor,
     },
+    text: {
+      secondary: '#fff',
+    },
     secondary: {
       // light: will be calculated from palette.primary.main,
       main: secondaryMainColor,
@@ -55,6 +58,9 @@ const theme = createTheme({
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     fontSize: baseFontSize,
     useNextVariants: true,
+    subtitle2: {
+      fontWeight: 700,
+    },
   },
   overrides: {
     MuiButton: {
@@ -80,6 +86,9 @@ export const tabForTeamSeasTheme = createTheme({
       // https://material-ui.com/api/css-baseline/
       default: '#FBF3E9',
     },
+    text: {
+      secondary: '#fff',
+    },
     primary: {
       // light: will be calculated from palette.primary.main,
       main: '#5094FB',
@@ -97,7 +106,7 @@ export const tabForTeamSeasTheme = createTheme({
     borderRadius: 2,
   },
   typography: {
-    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif,',
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     fontSize: baseFontSize,
     useNextVariants: true,
 
@@ -108,6 +117,9 @@ export const tabForTeamSeasTheme = createTheme({
       fontStyle: 'normal',
       lineHeight: 1,
       fontSize: '5rem',
+    },
+    subtitle2: {
+      fontWeight: 700,
     },
   },
   overrides: {
