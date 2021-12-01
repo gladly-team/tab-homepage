@@ -18,6 +18,7 @@ import {
   STORAGE_NEW_USER_IS_TAB_V4_BETA,
   STORAGE_NEW_USER_CAUSE_ID,
 } from 'src/utils/constants'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Link from 'src/components/Link'
 import Wave from 'src/components/Wave'
 
@@ -97,6 +98,7 @@ const Landing = ({ landingData, causeId }) => {
   const cx = useStyles()
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
+  const imageTest = getImage(landingData.ctaImg)
   let headerImg
   switch (causeId) {
     case STORAGE_SEAS_CAUSE_ID:
@@ -152,7 +154,12 @@ const Landing = ({ landingData, causeId }) => {
           />
         </div>
         <div className={cx.halfScreenRight}>
-          <img src={headerImg}></img>
+          <GatsbyImage
+            image={imageTest}
+            alt=""
+            placeholder="none"
+            backgroundColor="transparent"
+          />
         </div>
         <div className={cx.wave}>
           <Wave color={waveColor} />
