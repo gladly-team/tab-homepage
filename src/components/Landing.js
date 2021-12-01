@@ -12,6 +12,7 @@ import logoWhite from 'src/img/logo-with-text-white.svg'
 import seasHeaderImg from 'src/img/seas/headerImage.png'
 import catsHeaderImg from 'src/img/cats/headerImg.png'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
+import { useCauseData } from '../utils/storybookHelpers/useCauseData'
 import {
   STORAGE_CATS_CAUSE_ID,
   STORAGE_SEAS_CAUSE_ID,
@@ -108,6 +109,8 @@ const Landing = ({ landingData, causeId }) => {
       headerImg = catsHeaderImg
       break
   }
+  console.log(useCauseData(), 'cause data')
+  console.log(JSON.stringify(landingData.ctaImg))
   return (
     <div className="parent">
       <AppBar color="primary" position="sticky">
