@@ -78,6 +78,17 @@ export const currencyFormatted = (amount) => {
   return s
 }
 
+/**
+ * by default gatsby-sharp-plugin should return a default background color of transparent
+ * however it is always returning a background color of black
+ * I've tried manually setting the config in the plugin
+ * messing with versions
+ * and adjusting the graphql query but nothing seems to work.  I'm doing this as a workaround
+ * and I've filed a bug ticket on gatsby here https://github.com/gatsbyjs/gatsby/issues/34206
+ * @param {*} sharpNode
+ * @returns
+ */
+
 export const formatImg = (sharpNode) => {
   if (
     sharpNode &&
