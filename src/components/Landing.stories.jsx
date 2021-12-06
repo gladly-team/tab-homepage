@@ -1,7 +1,5 @@
 import React from 'react'
 import Landing from './Landing'
-import catsData from 'src/data/causes/cats.json'
-import seasData from 'src/data/causes/seas.json'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 
 export default {
@@ -12,21 +10,31 @@ export default {
 // console.log(useCauseData())
 // const seasData = useCauseData('seas')
 // const catsData = useCauseData('cats')
-const Template = (args) => {
-  // useCauseData must be used INSIDE Template
-  const { causeId, cause } = args
-  const data = useCauseData(cause)
+const Template = (_args, { loaded: { data } }) => {
   const landingData = data.data.sections.landing
-  return <Landing landingData={landingData} causeId={causeId} />
+  return <Landing landingData={landingData} />
 }
 export const seas = Template.bind({})
-seas.args = {
-  causeId: seasData.data.causeId,
-  cause: 'seas',
-}
+/*
+ * loaders are experimental and allow us to use async await which we need in
+ * order to programatically spoof gatsby images
+ * https://storybook.js.org/docs/react/writing-stories/loaders
+ */
+seas.loaders = [
+  async () => ({
+    data: await useCauseData('seas'),
+  }),
+]
+seas.args = {}
 
 export const cats = Template.bind({})
-cats.args = {
-  causeId: catsData.data.causeId,
-  cause: 'cats',
-}
+/*
+ * loaders are experimental and allow us to use async await which we need in
+ * order to programatically spoof gatsby images
+ * https://storybook.js.org/docs/react/writing-stories/loaders
+ */
+cats.loaders = [
+  async () => ({
+    data: await useCauseData('cats'),
+  }),
+]

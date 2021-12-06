@@ -77,3 +77,14 @@ export const currencyFormatted = (amount) => {
   s = minus + s
   return s
 }
+
+export const formatImg = (sharpNode) => {
+  if (
+    sharpNode &&
+    sharpNode.childImageSharp &&
+    sharpNode.childImageSharp.gatsbyImageData.backgroundColor
+  ) {
+    delete sharpNode.childImageSharp.gatsbyImageData.backgroundColor
+  }
+  return sharpNode
+}

@@ -11,6 +11,7 @@ import localStorageMgr from 'src/utils/local-storage'
 import { homeURL } from 'src/utils/navigation'
 import logoWhite from 'src/img/logo-with-text-white.svg'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
+import { formatImg } from 'src/utils/formatting'
 import {
   STORAGE_NEW_USER_IS_TAB_V4_BETA,
   STORAGE_NEW_USER_CAUSE_ID,
@@ -94,7 +95,9 @@ const Landing = ({ landingData, causeId }) => {
   const cx = useStyles()
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
-  const ctaImage = getImage(ctaImg)
+  console.log(ctaImg, 'what')
+
+  const ctaImage = getImage(formatImg(ctaImg))
   return (
     <div className="parent">
       <AppBar color="primary" position="sticky">
@@ -141,12 +144,7 @@ const Landing = ({ landingData, causeId }) => {
           />
         </div>
         <div className={cx.halfScreenRight}>
-          <GatsbyImage
-            image={ctaImage}
-            alt=""
-            placeholder="none"
-            backgroundColor="transparent"
-          />
+          <GatsbyImage image={ctaImage} backgroundColor="transparent" />
         </div>
         <div className={cx.wave}>
           <Wave color={waveColor} />
