@@ -4,6 +4,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     'storybook-addon-gatsby',
+    '@luigiminardim/storybook-addon-globals-controls',
   ],
   core: {
     builder: 'webpack5',

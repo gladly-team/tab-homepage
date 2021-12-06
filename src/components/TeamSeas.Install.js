@@ -30,6 +30,7 @@ import {
 } from 'src/utils/constants'
 import Link from 'src/components/Link'
 import Wave from 'src/components/Wave'
+import Footer from 'src/components/FooterV2'
 
 const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
 const canonicalURL = getAbsoluteURL(seasURL)
@@ -224,6 +225,7 @@ const Seas = ({ pageContext, location }) => {
           setShowUnsupportedBrowserMessage(false)
         }}
       />
+      <Footer onBeforeInstall={onBeforeInstall} />
     </div>
   )
 }

@@ -6,9 +6,6 @@ import localStorageMgr from 'src/utils/local-storage'
 import InstallButton from 'src/components/InstallButton'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import { act } from 'react-dom/test-utils'
-import seasHeaderImg from 'src/img/seas/headerImage.png'
-import catsHeaderImg from 'src/img/cats/headerImg.svg'
-import { STORAGE_CATS_CAUSE_ID } from 'src/utils/constants'
 import Typography from '@material-ui/core/Typography'
 import seasData from 'src/data/causes/seas.json'
 jest.mock('src/utils/local-storage')
@@ -71,23 +68,6 @@ describe('teamseas page', () => {
     })
     const dialog = wrapper.find(UnsupportedBrowserDialog)
     expect(dialog.prop('open')).toBe(true)
-  })
-
-  it('sets the header image correctly according to the cause data', async () => {
-    const Landing = require('../Landing').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
-    getUrlParameterValue.mockReturnValue(null)
-
-    let mockProps = getMockProps()
-    const wrapper = mount(<Landing {...mockProps} />)
-    const image = wrapper.find('img').first()
-    expect(image.prop('src')).toEqual(seasHeaderImg)
-
-    mockProps.landingData.causeId = STORAGE_CATS_CAUSE_ID
-    const newWrapper = mount(<Landing {...mockProps} />)
-    const newImage = newWrapper.find('img').first()
-    expect(newImage.prop('src')).toEqual(catsHeaderImg)
   })
 
   it('sets the title correctly according to the cause data', async () => {

@@ -3,23 +3,18 @@ import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import InstallButton from 'src/components/InstallButton'
 import Typography from '@material-ui/core/Typography'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import InstallButton from 'src/components/InstallButton'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import localStorageMgr from 'src/utils/local-storage'
 import { homeURL } from 'src/utils/navigation'
 import logoWhite from 'src/img/logo-with-text-white.svg'
-import seasHeaderImg from 'src/img/seas/headerImage.png'
-import catsHeaderImg from 'src/img/cats/headerImg.png'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
-import { useCauseData } from '../utils/storybookHelpers/useCauseData'
 import {
-  STORAGE_CATS_CAUSE_ID,
-  STORAGE_SEAS_CAUSE_ID,
   STORAGE_NEW_USER_IS_TAB_V4_BETA,
   STORAGE_NEW_USER_CAUSE_ID,
 } from 'src/utils/constants'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Link from 'src/components/Link'
 import Wave from 'src/components/Wave'
 
@@ -56,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   halfScreenRight: {
-    width: '55%',
+    width: '50%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -95,26 +90,11 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Landing = ({ landingData, causeId }) => {
-  const { title, subtitle, waveColor } = landingData
+  const { title, subtitle, waveColor, ctaImg } = landingData
   const cx = useStyles()
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
-  const imageTest = getImage(landingData.ctaImg)
-  console.log(
-    JSON.stringify(useCauseData().data.sections.landing.ctaImg),
-    'my mock'
-  )
-  console.log(JSON.stringify(landingData.ctaImg))
-  console.log(useCauseData().data.sections.landing.ctaImg)
-  let headerImg
-  switch (causeId) {
-    case STORAGE_SEAS_CAUSE_ID:
-      headerImg = seasHeaderImg
-      break
-    case STORAGE_CATS_CAUSE_ID:
-      headerImg = catsHeaderImg
-      break
-  }
+  const ctaImage = getImage(ctaImg)
   return (
     <div className="parent">
       <AppBar color="primary" position="sticky">
@@ -162,11 +142,10 @@ const Landing = ({ landingData, causeId }) => {
         </div>
         <div className={cx.halfScreenRight}>
           <GatsbyImage
-            image={imageTest}
+            image={ctaImage}
             alt=""
             placeholder="none"
             backgroundColor="transparent"
-            height="200px"
           />
         </div>
         <div className={cx.wave}>
@@ -191,6 +170,7 @@ Landing.propTypes = {
     title: PropTypes.string,
     subtitle: PropTypes.string,
     waveColor: PropTypes.string,
+    ctaImg: PropTypes.any,
   }),
 }
 export default Landing

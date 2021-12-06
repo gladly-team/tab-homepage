@@ -14,35 +14,35 @@
       "ogTitle": "Remove trash from the seas for free | Tab for #TeamSeas",
       "url": "/seas/",
       "ogDescription": "Open browser tabs to clean our seas, for free. It's that easy. Join #teamseas today!",
-      "ogImage": "TODO",
+      "ogImage": "../../img/cats/1.png",
       "causeSpecificKeywords": "charity, seas, TeamSeas, teamseas, #teamseas, ocean, oceans, sharks, whales, dolphins, fish, environment, global warming, river, rivers, lake, lakes, pollution, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, free, best, home, youtube, safe, volunteer, internet, tab for a cause, impact, legitimate, food, facebook, twitter, reddit, instagram, tumblr"
     },
     "sections": {
       "landing": {
         "title": "The easiest way to save our seas",
         "subtitle": "Every tab opened raises money for #TeamSeas, an internet-led movement raising $30 million to clean up 30 million pounds of trash from our oceans, rivers, and lakes.",
-        "ctaImg": "TODO",
+        "ctaImg": "../../img/cats/1.png",
         "waveColor": "#5094FB"
       },
       "moneyRaised": {
-        "moneyImg": "TODO"
+        "moneyImg": "../../img/cats/1.png"
       },
       "charityIntro": {
         "title": "TODO",
         "subTitle": "TODO",
-        "introImg1": "TODO",
+        "introImg1": "../../img/cats/1.png",
         "introImg1Subtext": "TODO",
-        "introImg2": "TODO",
+        "introImg2": "../../img/cats/1.png",
         "introImg2Subtext": "TODO",
         "link": "TODO"
       },
       "TFACIntro": {
         "title": "TODO",
-        "img1": "TODO",
+        "img1": "../../img/cats/1.png",
         "img1Subtext": "TODO",
-        "img2": "TODO",
+        "img2": "../../img/cats/1.png",
         "img2Subtext": "TODO",
-        "img3": "TODO",
+        "img3": "../../img/cats/1.png",
         "img3Subtext": "TODO"
       },
       "Mission": {

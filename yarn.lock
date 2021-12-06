@@ -2421,6 +2421,11 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
+"@luigiminardim/storybook-addon-globals-controls@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@luigiminardim/storybook-addon-globals-controls/-/storybook-addon-globals-controls-0.1.3.tgz#8be7f1d8f25a51dd94eab8dae27c73f67c7abdd2"
+  integrity sha512-gRwZue2pzGKkdliOnpnByG/fZh2bmhQ9DY9O62Ppk9nJSgHsQbhsv87yjjldqayd88ZYkg2u5jHv5VgYRubI8A==
+
 "@mapbox/hast-util-table-cell-style@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@mapbox/hast-util-table-cell-style/-/hast-util-table-cell-style-0.2.0.tgz#1003f59d54fae6f638cb5646f52110fb3da95b4d"
