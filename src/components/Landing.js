@@ -142,7 +142,7 @@ const Landing = ({ landingData, causeId }) => {
           />
         </div>
         <div className={cx.halfScreenRight}>
-          <GatsbyImage image={ctaImage} backgroundColor="transparent" />
+          <GatsbyImage image={ctaImage} />
         </div>
         <div className={cx.wave}>
           <Wave color={waveColor} />
