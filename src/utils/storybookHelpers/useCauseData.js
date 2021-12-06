@@ -3,13 +3,6 @@ import catsData from 'src/data/causes/cats.json'
 import seasData from 'src/data/causes/seas.json'
 import set from 'lodash/set'
 import get from 'lodash/get'
-/**
- * For use with Storybook: spoofs a gatsby IGatsbyImageData blob by loading image to get w/h.
- *
- * @param filename Assumes src/images as base directory (set in package.json storybook script)
- * @param layout optional override for gatsby layout parameter
- * @returns
- */
 const keyify = (obj, prefix = '') =>
   Object.keys(obj).reduce((res, el) => {
     if (Array.isArray(obj[el])) {
@@ -20,6 +13,13 @@ const keyify = (obj, prefix = '') =>
     return [...res, prefix + el]
   }, [])
 
+/**
+ * For use with Storybook: loads .
+ *
+ * @param filename Assumes src/images as base directory (set in package.json storybook script)
+ * @param layout optional override for gatsby layout parameter
+ * @returns
+ */
 export const useCauseData = async (cause = 'cats') => {
   // a default is provided so component types can treat it as defined
   // deep cloning data
