@@ -9,14 +9,15 @@ import { useEffect, useState } from 'react'
  * @returns
  */
 export const useImageData = (filename, layout = 'constrained') => {
+  console.log(filename, 'filename')
   // a default is provided so component types can treat it as defined
   const [imageData, setImageData] = useState({
     childImageSharp: {
       gatsbyImageData: {
         layout: 'constrained',
-        images: { fallback: { src: '' } },
-        width: 0,
-        height: 0,
+        images: { fallback: { src: `static/media/src/img/cats/1.png` } },
+        width: 550,
+        height: 549,
       },
     },
   })
@@ -36,7 +37,7 @@ export const useImageData = (filename, layout = 'constrained') => {
         },
       })
     }
-    img.src = filename
+    // img.src = filename
 
     return () => {
       img.onload = null

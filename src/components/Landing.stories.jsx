@@ -13,18 +13,20 @@ export default {
 // const seasData = useCauseData('seas')
 // const catsData = useCauseData('cats')
 const Template = (args) => {
-  // useCauseData must be used INSIDE template
-  console.log(useCauseData())
-  return <Landing {...args} />
+  // useCauseData must be used INSIDE Template
+  const { causeId, cause } = args
+  const data = useCauseData(cause)
+  const landingData = data.data.sections.landing
+  return <Landing landingData={landingData} causeId={causeId} />
 }
 export const seas = Template.bind({})
 seas.args = {
-  landingData: seasData.data.sections.landing,
   causeId: seasData.data.causeId,
+  cause: 'seas',
 }
 
 export const cats = Template.bind({})
 cats.args = {
-  landingData: catsData.data.sections.landing,
   causeId: catsData.data.causeId,
+  cause: 'cats',
 }

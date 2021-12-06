@@ -100,6 +100,12 @@ const Landing = ({ landingData, causeId }) => {
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
   const imageTest = getImage(landingData.ctaImg)
+  console.log(
+    JSON.stringify(useCauseData().data.sections.landing.ctaImg),
+    'my mock'
+  )
+  console.log(JSON.stringify(landingData.ctaImg))
+  console.log(useCauseData().data.sections.landing.ctaImg)
   let headerImg
   switch (causeId) {
     case STORAGE_SEAS_CAUSE_ID:
@@ -109,8 +115,6 @@ const Landing = ({ landingData, causeId }) => {
       headerImg = catsHeaderImg
       break
   }
-  console.log(useCauseData(), 'cause data')
-  console.log(JSON.stringify(landingData.ctaImg))
   return (
     <div className="parent">
       <AppBar color="primary" position="sticky">
@@ -162,6 +166,7 @@ const Landing = ({ landingData, causeId }) => {
             alt=""
             placeholder="none"
             backgroundColor="transparent"
+            height="200px"
           />
         </div>
         <div className={cx.wave}>
