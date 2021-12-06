@@ -6,10 +6,7 @@ export default {
   title: 'Components/Landing',
   component: Landing,
 }
-// console.log(useCauseData())
-// console.log(useCauseData())
-// const seasData = useCauseData('seas')
-// const catsData = useCauseData('cats')
+
 const Template = (_args, { loaded: { data } }) => {
   const landingData = data.data.sections.landing
   return <Landing landingData={landingData} />

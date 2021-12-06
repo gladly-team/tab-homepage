@@ -1,4 +1,4 @@
-// util function to load an image as a promise
+// util function to load an image as a promise and return img pixel dimensions
 const getHeightAndWidthFromDataUrl = (dataURL) =>
   new Promise((resolve) => {
     const img = new Image()

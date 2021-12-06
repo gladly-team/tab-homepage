@@ -3,6 +3,10 @@ import catsData from 'src/data/causes/cats.json'
 import seasData from 'src/data/causes/seas.json'
 import set from 'lodash/set'
 import get from 'lodash/get'
+/**
+ * util function
+ * deeply get all keys of object
+ */
 const keyify = (obj, prefix = '') =>
   Object.keys(obj).reduce((res, el) => {
     if (Array.isArray(obj[el])) {
@@ -14,7 +18,7 @@ const keyify = (obj, prefix = '') =>
   }, [])
 
 /**
- * For use with Storybook: loads .
+ * For use with Storybook: loads our 'backend' cause data and mocks gatsby-plugin-sharp and gatsby-transform-sharp
  *
  * @param filename Assumes src/images as base directory (set in package.json storybook script)
  * @param layout optional override for gatsby layout parameter
@@ -35,7 +39,6 @@ export const useCauseData = async (cause = 'cats') => {
       data = JSON.parse(JSON.stringify(catsData))
   }
   const keys = keyify(data)
-  console.log(keys)
   // replace image paths with mock gatsby image data
   const dataToModify = await Promise.all(
     keys
