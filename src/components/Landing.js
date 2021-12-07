@@ -95,7 +95,7 @@ const Landing = ({ landingData, causeId }) => {
   const cx = useStyles()
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
-  const ctaImage = getImage(ctaImg)
+  const ctaImage = getImage(formatImg(ctaImg))
   return (
     <div className="parent">
       <AppBar color="primary" position="sticky">
