@@ -22,7 +22,11 @@ class MoneyRaisedDisplay extends React.Component {
     return (
       <span style={{ visibility: this.state.show ? 'visible' : 'hidden' }}>
         {color ? (
-          <Typography color={color} variant="body1">
+          <Typography
+            className={whiteClassName ? whiteClassName : undefined}
+            color={color}
+            variant="body1"
+          >
             <MoneyRaised onLoaded={this.show.bind(this)} />
           </Typography>
         ) : (

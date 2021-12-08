@@ -29,6 +29,9 @@ export const secondaryContrastTextColor = '#fff'
 export const baseFontSize = 16
 
 const theme = createTheme({
+  body: {
+    padding: '0px',
+  },
   palette: {
     background: {
       // This value changes the HTML background color:

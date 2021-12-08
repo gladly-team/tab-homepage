@@ -19,9 +19,10 @@
     },
     "sections": {
       "landing": {
-        "title": "Open tabs.  Help shelter cats!",
+        "title": "The easiest way to help cats",
         "subtitle": "Every tab opened raises money for cats in need of an extra, helping paw. It’s so easy a cat could do it.",
-        "ctaImg": "../../img/cats/1.png"
+        "ctaImg": "../../img/cats/headerImg.png",
+        "waveColor": "#FF6A08"
       },
       "moneyRaised": {
         "moneyImg": "../../img/cats/1.png"
