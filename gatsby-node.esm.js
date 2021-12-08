@@ -155,6 +155,7 @@ exports.createPages = async ({ actions, graphql }) => {
                         gatsbyImageData(quality: 8)
                       }
                     }
+                    waveColor
                   }
                   moneyRaised {
                     moneyImg {
@@ -180,7 +181,6 @@ exports.createPages = async ({ actions, graphql }) => {
     `)
     dynamicDataQuery.data.allCausesJson.edges.forEach(
       ({ node: { path, data } }) => {
-        console.log(data)
         createPage({
           path: `${path}/`,
           component: HomePageWrapper, // this will be new component that takes all data as props,

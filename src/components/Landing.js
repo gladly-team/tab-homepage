@@ -19,6 +19,9 @@ import Link from 'src/components/Link'
 import Wave from 'src/components/Wave'
 
 const useStyles = makeStyles((theme) => ({
+  whiteFont: {
+    color: '#fff',
+  },
   logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
   titleSection: {
     margin: '0 auto',
@@ -118,7 +121,7 @@ const Landing = ({ landingData, causeId }) => {
             </div>
           </div>
 
-          <MoneyRaisedDisplay color="inherit" />
+          <MoneyRaisedDisplay whiteClassName={cx.whiteFont} />
         </Toolbar>
       </AppBar>
       <div className={cx.titleSection}>
