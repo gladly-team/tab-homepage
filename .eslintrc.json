@@ -10,7 +10,8 @@
     "console": true,
     "module": true,
     "graphql": true,
-    "require": true
+    "require": true,
+    "Image": true
   },
   "rules": {
     "no-console": "off",
