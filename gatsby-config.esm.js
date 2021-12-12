@@ -49,9 +49,9 @@ module.exports = {
       },
     },
     `gatsby-transformer-json`,
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-image',
     {
       // If modifying, validate/update on webmaster tools for
       // Google, Bing, etc.

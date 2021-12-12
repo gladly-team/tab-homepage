@@ -113,7 +113,7 @@ exports.createPages = async ({ actions, graphql }) => {
                   TFACIntro {
                     img1 {
                       childImageSharp {
-                        gatsbyImageData(backgroundColor: "transparent")
+                        gatsbyImageData(quality: 8)
                       }
                     }
                     img1Subtext
