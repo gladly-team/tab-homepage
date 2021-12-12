@@ -30,6 +30,7 @@ const HomepageWrapper = ({
         causeSpecificKeywords,
       },
       sections: { landing },
+      financials,
     },
     referrer,
   },

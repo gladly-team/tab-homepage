@@ -164,6 +164,11 @@ exports.createPages = async ({ actions, graphql }) => {
                       }
                     }
                   }
+                  Financials {
+                    buttonText
+                    text
+                    title
+                  }
                 }
                 styles {
                   colors {
@@ -177,6 +182,20 @@ exports.createPages = async ({ actions, graphql }) => {
             }
           }
         }
+        allFinancialsYaml(
+          filter: { year: { gte: 2020 } }
+          sort: { order: [DESC, DESC], fields: [year, quarter] }
+          limit: 4
+        ) {
+          edges {
+            node {
+              id
+              pdfUrl
+              quarter
+              year
+            }
+          }
+        }
       }
     `)
     dynamicDataQuery.data.allCausesJson.edges.forEach(
@@ -185,7 +204,16 @@ exports.createPages = async ({ actions, graphql }) => {
           path: `${path}/`,
           component: HomePageWrapper, // this will be new component that takes all data as props,
           context: {
-            data,
+            data: {
+              ...data,
+              financials: dynamicDataQuery.data.allFinancialsYaml.edges.reduce(
+                (acum, financial) => {
+                  acum.push(financial.node)
+                  return acum
+                },
+                []
+              ),
+            },
           },
         })
         response.data.allReferrersYaml.edges.forEach(({ node }) => {
