@@ -237,7 +237,6 @@ exports.createPages = async ({ actions, graphql }) => {
                   ...data.sections.Financials,
                   pdfs: dynamicDataQuery.data.allFinancialsYaml.edges.reduce(
                     (acum, financial) => {
-                      console.log(data.sections.Financials, 'something', data)
                       const { q1Img, q2Img, q3Img, q4Img } =
                         data.sections.Financials
                       // mapping financial quarter to the seasonal image associated with

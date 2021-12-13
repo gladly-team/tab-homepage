@@ -12,9 +12,6 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 const useStyles = makeStyles((theme) => ({
-  whiteFont: {
-    color: '#fff',
-  },
   logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
   wrapper: {
     margin: '0 auto',
@@ -24,10 +21,6 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    // [theme.breakpoints.down('sm')]: {
-    //   flexDirection: 'column-reverse',
-    //   height: 'auto',
-    // },
   },
   reportsContainer: {
     display: 'flex',
@@ -100,7 +93,6 @@ const Financials = ({ financialsData }) => {
   const { title, text, buttonText, ctaImg, pdfs } = financialsData
   const cx = useStyles()
   const Image = getImage(formatImg(ctaImg))
-  console.log(pdfs, 'did i get images', ctaImg)
   return (
     <div className={cx.wrapper}>
       <div className={cx.titleSectionWrapper}>

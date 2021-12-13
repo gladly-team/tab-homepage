@@ -29,6 +29,7 @@ MobileSeas.parameters = {
   viewport: {
     defaultViewport: 'mobile2',
   },
+  chromatic: { viewports: [414, 900] },
 }
 export const MobileCats = mobile(cats(Template.bind({})))
 /*
@@ -47,6 +48,7 @@ MobileCats.parameters = {
   viewport: {
     defaultViewport: 'mobile2',
   },
+  chromatic: { viewports: [414, 900] },
 }
 
 export const FullWidthSeas = seas(Template.bind({}))
