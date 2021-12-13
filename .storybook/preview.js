@@ -46,6 +46,10 @@ export const decorators = [
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline>
+          <style>
+            @import
+            url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800;900&display=swap');
+          </style>
           <Story />
         </CssBaseline>
       </ThemeProvider>

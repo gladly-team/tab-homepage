@@ -10,6 +10,7 @@ import HeadTags from 'src/components/HeadTags'
 import localStorageMgr from 'src/utils/local-storage'
 import { getAbsoluteURL } from 'src/utils/navigation'
 import Landing from 'src/components/Landing'
+import FinancialsComponent from 'src/components/Financials'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
@@ -29,8 +30,7 @@ const HomepageWrapper = ({
         ogImage,
         causeSpecificKeywords,
       },
-      sections: { landing },
-      financials,
+      sections: { landing, Financials },
     },
     referrer,
   },
@@ -78,6 +78,7 @@ const HomepageWrapper = ({
             <link rel="canonical" href={canonicalURL} />
           </Helmet>
           <Landing landingData={landing} causeId={causeId} />
+          <FinancialsComponent financialsData={Financials} />
         </div>
       </CssBaseline>
     </ThemeProvider>

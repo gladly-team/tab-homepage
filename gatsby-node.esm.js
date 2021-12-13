@@ -168,6 +168,31 @@ exports.createPages = async ({ actions, graphql }) => {
                     buttonText
                     text
                     title
+                    ctaImg {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
+                    q1Img {
+                      childImageSharp {
+                        gatsbyImageData(width: 103, height: 100)
+                      }
+                    }
+                    q2Img {
+                      childImageSharp {
+                        gatsbyImageData(width: 103, height: 100)
+                      }
+                    }
+                    q3Img {
+                      childImageSharp {
+                        gatsbyImageData(width: 103, height: 100)
+                      }
+                    }
+                    q4Img {
+                      childImageSharp {
+                        gatsbyImageData(width: 103, height: 100)
+                      }
+                    }
                   }
                 }
                 styles {
@@ -205,14 +230,35 @@ exports.createPages = async ({ actions, graphql }) => {
           component: HomePageWrapper, // this will be new component that takes all data as props,
           context: {
             data: {
-              ...data,
-              financials: dynamicDataQuery.data.allFinancialsYaml.edges.reduce(
-                (acum, financial) => {
-                  acum.push(financial.node)
-                  return acum
+              metadata: data.metadata,
+              sections: {
+                ...data.sections,
+                Financials: {
+                  ...data.sections.Financials,
+                  pdfs: dynamicDataQuery.data.allFinancialsYaml.edges.reduce(
+                    (acum, financial) => {
+                      console.log(data.sections.Financials, 'something', data)
+                      const { q1Img, q2Img, q3Img, q4Img } =
+                        data.sections.Financials
+                      // mapping financial quarter to the seasonal image associated with
+                      // that quarter
+                      const financialsImageMap = {
+                        1: q1Img,
+                        2: q2Img,
+                        3: q3Img,
+                        4: q4Img,
+                      }
+                      acum.push({
+                        ...financial.node,
+                        img: financialsImageMap[financial.node.quarter],
+                      })
+                      return acum
+                    },
+                    []
+                  ),
                 },
-                []
-              ),
+              },
+              styles: data.styles,
             },
           },
         })

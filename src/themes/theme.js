@@ -121,6 +121,14 @@ export const tabForTeamSeasTheme = createTheme({
       lineHeight: 1,
       fontSize: '5rem',
     },
+    h2: {
+      fontWeight: 900,
+      color: '#5094FB',
+      fontFamily: 'Poppins',
+      fontStyle: 'normal',
+      lineHeight: 1,
+      fontSize: '4rem',
+    },
     subtitle2: {
       fontWeight: 700,
     },
@@ -158,6 +166,9 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
         main: secondary,
         contrastText: secondaryContrastTextColor,
       },
+      text: {
+        secondary: '#fff',
+      },
     },
     shape: {
       borderRadius: 2,
@@ -174,6 +185,14 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
         fontStyle: 'normal',
         lineHeight: 1,
         fontSize: '5rem',
+      },
+      h2: {
+        fontWeight: 900,
+        color: '#5094FB',
+        fontFamily: 'Poppins',
+        fontStyle: 'normal',
+        lineHeight: 1,
+        fontSize: '4rem',
       },
     },
     overrides: {

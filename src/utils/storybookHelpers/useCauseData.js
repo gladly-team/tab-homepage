@@ -54,5 +54,31 @@ export const useCauseData = async (cause = 'cats') => {
       })
   )
   dataToModify.forEach(({ key, newValue }) => set(data, key, newValue))
+  data.data.sections.Financials.pdfs = [
+    {
+      quarter: 1,
+      year: 2021,
+      pdfUrl: '/financials/2021-Q1.pdf',
+      img: data.data.sections.Financials.q1Img,
+    },
+    {
+      quarter: 2,
+      year: 2021,
+      pdfUrl: '/financials/2021-Q2.pdf',
+      img: data.data.sections.Financials.q2Img,
+    },
+    {
+      quarter: 4,
+      year: 2020,
+      pdfUrl: '/financials/2020-Q4.pdf',
+      img: data.data.sections.Financials.q4Img,
+    },
+    {
+      quarter: 3,
+      year: 2020,
+      pdfUrl: '/financials/2020-Q3.pdf',
+      img: data.data.sections.Financials.q3Img,
+    },
+  ]
   return data
 }
