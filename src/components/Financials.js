@@ -104,7 +104,7 @@ const Financials = ({ financialsData }) => {
             backgroundColor="transparent"
           />
         </div>
-        <div className={cx.halfScreenRight} data-test-id="title-wrapper">
+        <div className={cx.halfScreenRight}>
           <Typography variant="h2" color="primary">
             {title}
           </Typography>
