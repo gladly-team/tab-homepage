@@ -23,28 +23,19 @@ MobileSeas.loaders = [
     data: await useCauseData('seas'),
   }),
 ]
-MobileSeas.args = {}
 MobileSeas.parameters = {
-  layout: 'centered',
   viewport: {
     defaultViewport: 'mobile2',
   },
   chromatic: { viewports: [414, 900] },
 }
 export const MobileCats = mobile(cats(Template.bind({})))
-/*
- * loaders are experimental and allow us to use async await which we need in
- * order to programatically spoof gatsby images
- * https://storybook.js.org/docs/react/writing-stories/loaders
- */
 MobileCats.loaders = [
   async () => ({
     data: await useCauseData('cats'),
   }),
 ]
-MobileCats.args = {}
 MobileCats.parameters = {
-  layout: 'centered',
   viewport: {
     defaultViewport: 'mobile2',
   },
@@ -52,27 +43,15 @@ MobileCats.parameters = {
 }
 
 export const FullWidthSeas = seas(Template.bind({}))
-/*
- * loaders are experimental and allow us to use async await which we need in
- * order to programatically spoof gatsby images
- * https://storybook.js.org/docs/react/writing-stories/loaders
- */
 FullWidthSeas.loaders = [
   async () => ({
     data: await useCauseData('seas'),
   }),
 ]
-FullWidthSeas.args = {}
 
 export const FullWidthCats = cats(Template.bind({}))
-/*
- * loaders are experimental and allow us to use async await which we need in
- * order to programatically spoof gatsby images
- * https://storybook.js.org/docs/react/writing-stories/loaders
- */
 FullWidthCats.loaders = [
   async () => ({
     data: await useCauseData('cats'),
   }),
 ]
-FullWidthCats.args = {}

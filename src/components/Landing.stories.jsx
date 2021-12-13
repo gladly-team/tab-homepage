@@ -1,7 +1,7 @@
 import React from 'react'
 import Landing from './Landing'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
-
+import { mobile, seas, cats } from '../../.storybook/boilerPlate'
 export default {
   title: 'Components/Landing',
   component: Landing,
@@ -11,26 +11,45 @@ const Template = (_args, { loaded: { data } }) => {
   const landingData = data.data.sections.landing
   return <Landing landingData={landingData} />
 }
-export const seas = Template.bind({})
+export const MobileSeas = mobile(seas(Template.bind({})))
 /*
  * loaders are experimental and allow us to use async await which we need in
  * order to programatically spoof gatsby images
  * https://storybook.js.org/docs/react/writing-stories/loaders
  */
-seas.loaders = [
+MobileSeas.loaders = [
   async () => ({
     data: await useCauseData('seas'),
   }),
 ]
-seas.args = {}
+MobileSeas.parameters = {
+  viewport: {
+    defaultViewport: 'mobile2',
+  },
+  chromatic: { viewports: [414, 900] },
+}
+export const MobileCats = mobile(cats(Template.bind({})))
+MobileCats.loaders = [
+  async () => ({
+    data: await useCauseData('cats'),
+  }),
+]
+MobileCats.parameters = {
+  viewport: {
+    defaultViewport: 'mobile2',
+  },
+  chromatic: { viewports: [414, 900] },
+}
 
-export const cats = Template.bind({})
-/*
- * loaders are experimental and allow us to use async await which we need in
- * order to programatically spoof gatsby images
- * https://storybook.js.org/docs/react/writing-stories/loaders
- */
-cats.loaders = [
+export const FullWidthSeas = seas(Template.bind({}))
+FullWidthSeas.loaders = [
+  async () => ({
+    data: await useCauseData('seas'),
+  }),
+]
+
+export const FullWidthCats = cats(Template.bind({}))
+FullWidthCats.loaders = [
   async () => ({
     data: await useCauseData('cats'),
   }),

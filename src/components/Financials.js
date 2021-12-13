@@ -121,6 +121,7 @@ const Financials = ({ financialsData }) => {
           centerMode={true}
           dots={true}
           focusOnSelect={true}
+          arrows={false}
           slidesToShow={2}
           style={{ width: '100%' }}
           responsive={[

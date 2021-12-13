@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles'
 import { action } from '@storybook/addon-actions'
 import { createCauseTheme } from 'src/themes/theme'
 import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls'
@@ -12,13 +12,13 @@ export const mobile = (template) => (props, loaders) =>
   <div style={{ width: 414 }}>{template(props, loaders)}</div>
 export const seas = (template) => (props, loaders) =>
   (
-    <ThemeProvider theme={seasTheme}>
+    <ThemeProvider theme={responsiveFontSizes(seasTheme)}>
       <CssBaseline>{template(props, loaders)}</CssBaseline>
     </ThemeProvider>
   )
 export const cats = (template) => (props, loaders) =>
   (
-    <ThemeProvider theme={catsTheme}>
+    <ThemeProvider theme={responsiveFontSizes(catsTheme)}>
       <CssBaseline>{template(props, loaders)}</CssBaseline>
     </ThemeProvider>
   )

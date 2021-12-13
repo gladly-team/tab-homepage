@@ -1,8 +1,12 @@
-import { ThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles'
 import { action } from '@storybook/addon-actions'
 import catsTheme, { tabForTeamSeasTheme } from 'src/themes/theme'
 import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls'
 import CssBaseline from '@material-ui/core/CssBaseline'
+
+export const parameters = {
+  layout: 'fullscreen',
+}
 export const globalTypes = {
   vertical: {
     name: 'Vertical',
@@ -44,7 +48,7 @@ export const decorators = [
         break
     }
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={responsiveFontSizes(theme)}>
         <CssBaseline>
           <style>
             @import
@@ -56,6 +60,3 @@ export const decorators = [
     )
   }),
 ]
-export const parameters = {
-  layout: 'fullscreen',
-}
