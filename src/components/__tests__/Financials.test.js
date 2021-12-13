@@ -4,7 +4,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { financialsURL } from 'src/utils/navigation'
 import data from 'src/data/causes/cats.json'
-import Link from 'src/components/link'
+import Link from 'src/components/Link'
 import { Typography } from '@material-ui/core'
 const getMockProps = () => {
   data.data.sections.Financials.pdfs = [
