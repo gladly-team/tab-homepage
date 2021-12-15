@@ -194,6 +194,27 @@ exports.createPages = async ({ actions, graphql }) => {
                       }
                     }
                   }
+                  Endorsements {
+                    endorser
+                    endorserImg {
+                      childImageSharp {
+                        gatsbyImageData(height: 240, width: 231)
+                      }
+                    }
+                    endorserTitle
+                    headerQuote
+                    quote
+                    title
+                    smallEndorsements {
+                      endorsement
+                      endorser
+                      img {
+                        childImageSharp {
+                          gatsbyImageData(width: 43, height: 43)
+                        }
+                      }
+                    }
+                  }
                 }
                 styles {
                   colors {

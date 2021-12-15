@@ -80,5 +80,17 @@ export const useCauseData = async (cause = 'cats') => {
       img: data.data.sections.Financials.q3Img,
     },
   ]
+  // keyify doesnt handle arrays
+  const endorsementDataToModify = await Promise.all(
+    data.data.sections.Endorsements.smallEndorsements.map((endorsement) =>
+      useImageData(endorsement.img)
+    )
+  )
+  endorsementDataToModify.forEach(
+    (resolvedImage, smallEndorsementsIndex) =>
+      (data.data.sections.Endorsements.smallEndorsements[
+        smallEndorsementsIndex
+      ].img = resolvedImage)
+  )
   return data
 }

@@ -64,6 +64,13 @@ const theme = createTheme({
     subtitle2: {
       fontWeight: 700,
     },
+    subtitle3: {
+      fontWeight: 500,
+      fontFamily: 'Poppins',
+      fontStyle: 'normal',
+      lineHeight: 1,
+      color: '#2E282A',
+    },
   },
   overrides: {
     MuiButton: {
@@ -129,6 +136,9 @@ export const tabForTeamSeasTheme = createTheme({
       lineHeight: 1,
       fontSize: '4rem',
     },
+    subtitle1: {
+      fontWeight: 300,
+    },
     subtitle2: {
       fontWeight: 700,
     },
@@ -193,6 +203,36 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
         fontStyle: 'normal',
         lineHeight: 1,
         fontSize: '4rem',
+      },
+      h3: {
+        fontWeight: 800,
+        color: '#5094FB',
+        fontFamily: 'Poppins',
+        fontStyle: 'normal',
+        lineHeight: 1,
+        fontSize: '2.5rem',
+      },
+      subtitle1: {
+        fontWeight: 300,
+        color: '#2E282A',
+        lineHeight: 1.33,
+      },
+      subtitle2: {
+        fontWeight: 700,
+      },
+      caption: {
+        fontWeight: 500,
+        fontFamily: 'Poppins',
+        fontStyle: 'normal',
+        fontSize: '1rem',
+        lineHeight: 1.43,
+        color: '#2E282A',
+      },
+      body2: {
+        fontWeight: 300,
+        fontSize: '1rem',
+        lineHeight: 1.11,
+        color: '#2E282A',
       },
     },
     overrides: {
