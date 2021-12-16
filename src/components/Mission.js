@@ -14,12 +14,22 @@ const useStyles = makeStyles((theme) => ({
   wrapper: {
     position: 'relative',
     display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    backgroundColor: '#FFFFFF',
+    overflow: 'hidden',
+    minHeight: '100vh',
+  },
+  column: {
+    position: 'relative',
+    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: theme.spacing(6),
-    overflow: 'hidden',
-    backgroundColor: '#FFFFFF',
+    width: '85%',
+    height: '100%',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
     },
@@ -38,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     flex: '1',
     margin: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
-      maxWidth: '80%',
+      maxWidth: 'unset',
     },
   },
   titleText: {},
@@ -53,6 +63,7 @@ const useStyles = makeStyles((theme) => ({
   },
   squiggle: {
     position: 'absolute',
+    zIndex: '1',
     left: theme.spacing(-2),
     top: theme.spacing(4),
     width: theme.spacing(8),
@@ -95,31 +106,33 @@ const Mission = ({ missionData }) => {
       <img className={cx.squiggle} src={heartSquiggle} />
       <img className={cx.leftBubble} src={leftBubble} />
       <img className={cx.rightBubble} src={rightBubble} />
-      <div className={cx.textContainer}>
-        <Typography variant="h1" color="primary">
-          {titleText}
-        </Typography>
-        <Typography className={cx.subtitle} variant="h5" color="primary">
-          {subtitleText}
-        </Typography>
-        <Markdown>{bodyText}</Markdown>
-        <Link to={missionURL}>
-          <Button
-            className={cx.missionLink}
-            variant={'contained'}
-            color={'secondary'}
-          >
-            Read our Story
-          </Button>
-        </Link>
+      <div className={cx.column}>
+        <div className={cx.textContainer}>
+          <Typography variant="h1" color="primary">
+            {titleText}
+          </Typography>
+          <Typography className={cx.subtitle} variant="h5" color="primary">
+            {subtitleText}
+          </Typography>
+          <Markdown>{bodyText}</Markdown>
+          <Link to={missionURL}>
+            <Button
+              className={cx.missionLink}
+              variant={'contained'}
+              color={'secondary'}
+            >
+              Read our Story
+            </Button>
+          </Link>
+        </div>
+        <GatsbyImage
+          image={missionImage}
+          className={cx.missionImage}
+          alt=""
+          placeholder="none"
+          backgroundColor="transparent"
+        />
       </div>
-      <GatsbyImage
-        image={missionImage}
-        className={cx.missionImage}
-        alt=""
-        placeholder="none"
-        backgroundColor="transparent"
-      />
     </div>
   )
 }

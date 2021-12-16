@@ -1,35 +1,56 @@
 import React from 'react'
 import Mission from './Mission'
-import catsData from 'src/data/causes/cats.json'
-import seasData from 'src/data/causes/seas.json'
+import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
-
 export default {
   title: 'Components/Mission',
   component: Mission,
 }
 
-const Template = (args) => <Mission {...args} />
-
-export const MobileSeas = mobile(seas(Template)).bind({})
-MobileSeas.args = {
-  missionData: seasData.data.sections.Mission,
+const Template = (_args, { loaded: { data } }) => {
+  const missionData = data.data.sections.Mission
+  return <Mission missionData={missionData} />
 }
+export const MobileSeas = mobile(seas(Template.bind({})))
+/*
+ * loaders are experimental and allow us to use async await which we need in
+ * order to programatically spoof gatsby images
+ * https://storybook.js.org/docs/react/writing-stories/loaders
+ */
+MobileSeas.loaders = [
+  async () => ({
+    data: await useCauseData('seas'),
+  }),
+]
 MobileSeas.parameters = {
-  layout: 'centered',
+  viewport: {
+    defaultViewport: 'mobile2',
+  },
+  chromatic: { viewports: [414, 900] },
 }
-export const MobileCats = mobile(cats(Template)).bind({})
-MobileCats.args = {
-  missionData: catsData.data.sections.Mission,
-}
+export const MobileCats = mobile(cats(Template.bind({})))
+MobileCats.loaders = [
+  async () => ({
+    data: await useCauseData('cats'),
+  }),
+]
 MobileCats.parameters = {
-  layout: 'centered',
+  viewport: {
+    defaultViewport: 'mobile2',
+  },
+  chromatic: { viewports: [414, 900] },
 }
-export const FullWidthSeas = seas(Template).bind({})
-FullWidthSeas.args = {
-  missionData: seasData.data.sections.Mission,
-}
-export const FullWidthCats = cats(Template).bind({})
-FullWidthCats.args = {
-  missionData: catsData.data.sections.Mission,
-}
+
+export const FullWidthSeas = seas(Template.bind({}))
+FullWidthSeas.loaders = [
+  async () => ({
+    data: await useCauseData('seas'),
+  }),
+]
+
+export const FullWidthCats = cats(Template.bind({}))
+FullWidthCats.loaders = [
+  async () => ({
+    data: await useCauseData('cats'),
+  }),
+]
