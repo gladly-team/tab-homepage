@@ -3,7 +3,32 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
 import data from 'src/data/causes/cats.json'
-
+data.data.sections.Financials.pdfs = [
+  {
+    quarter: 1,
+    year: 2021,
+    pdfUrl: '/financials/2021-Q1.pdf',
+    img: data.data.sections.Financials.q1Img,
+  },
+  {
+    quarter: 2,
+    year: 2021,
+    pdfUrl: '/financials/2021-Q2.pdf',
+    img: data.data.sections.Financials.q2Img,
+  },
+  {
+    quarter: 4,
+    year: 2020,
+    pdfUrl: '/financials/2020-Q4.pdf',
+    img: data.data.sections.Financials.q4Img,
+  },
+  {
+    quarter: 3,
+    year: 2020,
+    pdfUrl: '/financials/2020-Q3.pdf',
+    img: data.data.sections.Financials.q3Img,
+  },
+]
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')

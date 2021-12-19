@@ -1,15 +1,16 @@
 import React from 'react'
-import Landing from './Landing'
-import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+import Financials from './Financials'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+
 export default {
-  title: 'Components/Landing',
-  component: Landing,
+  title: 'Components/Financials',
+  component: Financials,
 }
 
 const Template = (_args, { loaded: { data } }) => {
-  const landingData = data.data.sections.landing
-  return <Landing landingData={landingData} />
+  const financialsData = data.data.sections.Financials
+  return <Financials financialsData={financialsData} />
 }
 export const MobileSeas = mobile(seas(Template.bind({})))
 /*

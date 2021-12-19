@@ -49,6 +49,16 @@
         "title": "TODO",
         "subtitle": "TODO",
         "text": "TODO"
+      },
+      "Financials": {
+        "title": "Transparent Financials",
+        "text": "Every tab does make an impact!  Check out how much we've raised together.",
+        "buttonText": "See All Financials",
+        "ctaImg": "../../img/cats/financialsCat.png",
+        "q1Img": "../../img/cats/q1.png",
+        "q2Img": "../../img/cats/q2.png",
+        "q3Img": "../../img/cats/q3.png",
+        "q4Img": "../../img/cats/q4.png"
       }
     }
   }

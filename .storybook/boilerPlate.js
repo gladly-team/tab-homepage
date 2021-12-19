@@ -1,20 +1,24 @@
-import { ThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles'
 import { action } from '@storybook/addon-actions'
-import catsTheme, { tabForTeamSeasTheme } from 'src/themes/theme'
+import { createCauseTheme } from 'src/themes/theme'
 import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import catsData from 'src/data/causes/cats.json'
+import seasData from 'src/data/causes/seas.json'
 
-export const mobile = (template) => (props) =>
-  <div style={{ width: 428 }}>{template(props)}</div>
-export const seas = (template) => (props) =>
+const seasTheme = createCauseTheme(seasData.data.styles.colors)
+const catsTheme = createCauseTheme(catsData.data.styles.colors)
+export const mobile = (template) => (props, loaders) =>
+  <div style={{ width: 414 }}>{template(props, loaders)}</div>
+export const seas = (template) => (props, loaders) =>
   (
-    <ThemeProvider theme={tabForTeamSeasTheme}>
-      <CssBaseline>{template(props)}</CssBaseline>
+    <ThemeProvider theme={responsiveFontSizes(seasTheme)}>
+      <CssBaseline>{template(props, loaders)}</CssBaseline>
     </ThemeProvider>
   )
-export const cats = (template) => (props) =>
+export const cats = (template) => (props, loaders) =>
   (
-    <ThemeProvider theme={catsTheme}>
-      <CssBaseline>{template(props)}</CssBaseline>
+    <ThemeProvider theme={responsiveFontSizes(catsTheme)}>
+      <CssBaseline>{template(props, loaders)}</CssBaseline>
     </ThemeProvider>
   )

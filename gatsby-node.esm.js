@@ -164,6 +164,36 @@ exports.createPages = async ({ actions, graphql }) => {
                       }
                     }
                   }
+                  Financials {
+                    buttonText
+                    text
+                    title
+                    ctaImg {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
+                    q1Img {
+                      childImageSharp {
+                        gatsbyImageData(width: 103, height: 100)
+                      }
+                    }
+                    q2Img {
+                      childImageSharp {
+                        gatsbyImageData(width: 103, height: 100)
+                      }
+                    }
+                    q3Img {
+                      childImageSharp {
+                        gatsbyImageData(width: 103, height: 100)
+                      }
+                    }
+                    q4Img {
+                      childImageSharp {
+                        gatsbyImageData(width: 103, height: 100)
+                      }
+                    }
+                  }
                 }
                 styles {
                   colors {
@@ -177,6 +207,20 @@ exports.createPages = async ({ actions, graphql }) => {
             }
           }
         }
+        allFinancialsYaml(
+          filter: { year: { gte: 2020 } }
+          sort: { order: [DESC, DESC], fields: [year, quarter] }
+          limit: 4
+        ) {
+          edges {
+            node {
+              id
+              pdfUrl
+              quarter
+              year
+            }
+          }
+        }
       }
     `)
     dynamicDataQuery.data.allCausesJson.edges.forEach(
@@ -185,7 +229,36 @@ exports.createPages = async ({ actions, graphql }) => {
           path: `${path}/`,
           component: HomePageWrapper, // this will be new component that takes all data as props,
           context: {
-            data,
+            data: {
+              metadata: data.metadata,
+              sections: {
+                ...data.sections,
+                Financials: {
+                  ...data.sections.Financials,
+                  pdfs: dynamicDataQuery.data.allFinancialsYaml.edges.reduce(
+                    (acum, financial) => {
+                      const { q1Img, q2Img, q3Img, q4Img } =
+                        data.sections.Financials
+                      // mapping financial quarter to the seasonal image associated with
+                      // that quarter
+                      const financialsImageMap = {
+                        1: q1Img,
+                        2: q2Img,
+                        3: q3Img,
+                        4: q4Img,
+                      }
+                      acum.push({
+                        ...financial.node,
+                        img: financialsImageMap[financial.node.quarter],
+                      })
+                      return acum
+                    },
+                    []
+                  ),
+                },
+              },
+              styles: data.styles,
+            },
           },
         })
         response.data.allReferrersYaml.edges.forEach(({ node }) => {

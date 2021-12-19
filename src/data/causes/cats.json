@@ -49,6 +49,16 @@
         "title": "Our Mission",
         "subtitle": "Help shelter cats get adopted",
         "text": "We have partnered with The Greater Good Charities' The Jackson Galaxy Project to provide treats to shelter cats for FREE! How can we do this? Through ad revenue! Every time you open a new tab, there will be two small ads in the right corner of your home screen. Companies pay for this space to advertise on our platform, and from there we can put that money to good use by giving it back to an organization doing great work for our furry friends. Tab for Cats is absolutely free for our users, and a great way to make an impact without breaking the bank."
+      },
+      "Financials": {
+        "title": "Transparent Financials",
+        "text": "Every tab does make an impact!  Check out how much we've raised together.",
+        "buttonText": "See All Financials",
+        "ctaImg": "../../img/cats/financialsCat.png",
+        "q1Img": "../../img/cats/q1.png",
+        "q2Img": "../../img/cats/q2.png",
+        "q3Img": "../../img/cats/q3.png",
+        "q4Img": "../../img/cats/q4.png"
       }
     }
   }

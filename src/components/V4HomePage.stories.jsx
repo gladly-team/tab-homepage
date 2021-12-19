@@ -1,46 +1,57 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import HomePageWrapper from './V4HomePage'
-import catsData from 'src/data/causes/cats.json'
-import seasData from 'src/data/causes/seas.json'
-// enable after footer pr
-// import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 export default {
   title: 'Pages/HomePage',
   component: HomePageWrapper,
 }
-const catArgs = {
-  location: {
-    pathname: '/',
+
+const Template = (_args, { loaded: { data } }) => (
+  <HomePageWrapper location={'/'} pageContext={data} />
+)
+
+export const MobileSeas = mobile(seas(Template.bind({})))
+/*
+ * loaders are experimental and allow us to use async await which we need in
+ * order to programatically spoof gatsby images
+ * https://storybook.js.org/docs/react/writing-stories/loaders
+ */
+MobileSeas.loaders = [
+  async () => ({
+    data: await useCauseData('seas'),
+  }),
+]
+MobileSeas.parameters = {
+  viewport: {
+    defaultViewport: 'mobile2',
   },
-  pageContext: {
-    data: catsData.data,
+  chromatic: { viewports: [414, 900] },
+}
+export const MobileCats = mobile(cats(Template.bind({})))
+MobileCats.loaders = [
+  async () => ({
+    data: await useCauseData('cats'),
+  }),
+]
+MobileCats.parameters = {
+  viewport: {
+    defaultViewport: 'mobile2',
   },
+  chromatic: { viewports: [414, 900] },
 }
 
-const Template = ({ location, pageContext }) => {
-  return <HomePageWrapper location={location} pageContext={pageContext} />
-}
-export const standard = Template.bind({})
-standard.args = catArgs
+export const FullWidthSeas = seas(Template.bind({}))
+FullWidthSeas.loaders = [
+  async () => ({
+    data: await useCauseData('seas'),
+  }),
+]
 
-const seasArgs = {
-  location: {
-    pathname: '/',
-  },
-  pageContext: {
-    data: seasData.data,
-  },
-}
-
-export const seas = Template.bind({})
-seas.args = seasArgs
-
-// can be enabled once footer pr is merged
-// export const MobileCats = mobile(cats(Template)).bind({})
-// MobileCats.args = catArgs
-// MobileCats.parameters = {
-//   layout: 'centered',
-// }
-// export const FullWidthCats = cats(Template).bind({})
-// FullWidthCats.args = catArgs
+export const FullWidthCats = cats(Template.bind({}))
+FullWidthCats.loaders = [
+  async () => ({
+    data: await useCauseData('cats'),
+  }),
+]
