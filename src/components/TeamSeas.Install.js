@@ -213,11 +213,11 @@ const Seas = ({ pageContext, location }) => {
           <img src={headerImg}></img>
         </div>
         <div className={cx.wave}>
-          <Wave />
+          <Wave color={'#5094FB'} />
         </div>
       </div>
       <div className={cx.waveMobile}>
-        <Wave />
+        <Wave color={'#5094FB'} />
       </div>
       <UnsupportedBrowserDialog
         open={showUnsupportedBrowserMessage}
