@@ -59,6 +59,36 @@
         "q2Img": "../../img/cats/q2.png",
         "q3Img": "../../img/cats/q3.png",
         "q4Img": "../../img/cats/q4.png"
+      },
+      "Endorsements": {
+        "title": "People are saying good things",
+        "headerQuote": "“It’s the quote that’s the easiest way to raise do good for cats”",
+        "quote": "“We’ve always strived to make sure our partners are doing good by us and our furry friends. Tab for Cats is an exceptional example of what you should be looking forward to doing as a charitable organization. It’s the quote that’s the easiest way to raise do good for cats”",
+        "endorser": "Jackson Galaxy",
+        "endorserTitle": "Owner and founder of the Jackson Galaxy Project, Partner at Greater Good Charities",
+        "endorserImg": "../../img/cats/mainEndorser.png",
+        "smallEndorsements": [
+          {
+            "endorser": "Jess S.",
+            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
+            "img": "../../img/cats/endorser1.png"
+          },
+          {
+            "endorser": "Donny P.",
+            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
+            "img": "../../img/cats/endorser2.png"
+          },
+          {
+            "endorser": "Brenda J.",
+            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
+            "img": "../../img/cats/endorser3.png"
+          },
+          {
+            "endorser": "Brenda J2.",
+            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
+            "img": "../../img/cats/endorser3.png"
+          }
+        ]
       }
     }
   }
