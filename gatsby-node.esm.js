@@ -106,9 +106,15 @@ exports.createPages = async ({ actions, graphql }) => {
                 }
                 sections {
                   Mission {
-                    subtitle
-                    text
-                    title
+                    missionURL
+                    subtitleText
+                    titleText
+                    bodyText
+                    image {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
                   }
                   TFACIntro {
                     img1 {

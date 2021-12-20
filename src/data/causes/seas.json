@@ -46,9 +46,11 @@
         "img3Subtext": "TODO"
       },
       "Mission": {
-        "title": "TODO",
-        "subtitle": "TODO",
-        "text": "TODO"
+        "canonicalURL": "/seas/",
+        "titleText": "Our Mission",
+        "subtitleText": "To make giving back easier than ever",
+        "bodyText": "We all want to do our part to help out, but with limited time this can be tough to fit into our jam-packed schedules. \n\n We, at Tab for #TeamSeas, believe everyone can make a difference, and that’s why we created a way to do this even if you don't have a ton of time or money. Through our partnership with #TeamSeas, you can be sure each tab you open is directly supporting [Ocean Conservancy](https://oceanconservancy.org/) and [The Ocean Cleanup](https://theoceancleanup.com/).",
+        "image": "../../img/seas/mission.png"
       },
       "Financials": {
         "title": "Transparent Financials",

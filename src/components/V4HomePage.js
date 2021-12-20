@@ -12,6 +12,7 @@ import { getAbsoluteURL } from 'src/utils/navigation'
 import Landing from 'src/components/Landing'
 import FinancialsComponent from 'src/components/Financials'
 import EndorsementsComponent from 'src/components/Endorsements'
+import Mission from 'src/components/Mission'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
@@ -31,7 +32,7 @@ const HomepageWrapper = ({
         ogImage,
         causeSpecificKeywords,
       },
-      sections: { landing, Financials, Endorsements },
+      sections: { landing, Financials, Endorsements, Mission: missionData },
     },
     referrer,
   },
@@ -79,6 +80,7 @@ const HomepageWrapper = ({
             <link rel="canonical" href={canonicalURL} />
           </Helmet>
           <Landing landingData={landing} causeId={causeId} />
+          <Mission missionData={missionData} />
           <FinancialsComponent financialsData={Financials} />
           <EndorsementsComponent
             endorsementsData={Endorsements}
