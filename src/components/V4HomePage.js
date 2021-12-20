@@ -11,6 +11,7 @@ import localStorageMgr from 'src/utils/local-storage'
 import { getAbsoluteURL } from 'src/utils/navigation'
 import Landing from 'src/components/Landing'
 import FinancialsComponent from 'src/components/Financials'
+import EndorsementsComponent from 'src/components/Endorsements'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
@@ -30,7 +31,7 @@ const HomepageWrapper = ({
         ogImage,
         causeSpecificKeywords,
       },
-      sections: { landing, Financials },
+      sections: { landing, Financials, Endorsements },
     },
     referrer,
   },
@@ -79,6 +80,10 @@ const HomepageWrapper = ({
           </Helmet>
           <Landing landingData={landing} causeId={causeId} />
           <FinancialsComponent financialsData={Financials} />
+          <EndorsementsComponent
+            endorsementsData={Endorsements}
+            causeId={causeId}
+          />
         </div>
       </CssBaseline>
     </ThemeProvider>
