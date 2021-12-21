@@ -1,21 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import InstallButton from 'src/components/InstallButton'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
-import localStorageMgr from 'src/utils/local-storage'
 import { homeURL } from 'src/utils/navigation'
 import logoWhite from 'src/img/logo-with-text-white.svg'
-import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import { formatImg } from 'src/utils/formatting'
-import {
-  STORAGE_NEW_USER_IS_TAB_V4_BETA,
-  STORAGE_NEW_USER_CAUSE_ID,
-} from 'src/utils/constants'
 import Link from 'src/components/Link'
 import Wave from 'src/components/Wave'
 
@@ -93,11 +86,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Landing = ({ landingData, causeId }) => {
+const Landing = ({ installButton, landingData }) => {
   const { title, subtitle, waveColor, ctaImg } = landingData
   const cx = useStyles()
-  const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
-    useState(false)
   const ctaImage = getImage(formatImg(ctaImg))
   return (
     <div className="parent">
@@ -121,7 +112,6 @@ const Landing = ({ landingData, causeId }) => {
               </Link>
             </div>
           </div>
-
           <MoneyRaisedDisplay whiteClassName={cx.whiteFont} />
         </Toolbar>
       </AppBar>
@@ -131,18 +121,7 @@ const Landing = ({ landingData, causeId }) => {
             {title}
           </Typography>
           <Typography className={cx.subtitle}>{subtitle}</Typography>
-          <InstallButton
-            className={cx.buttonStyles}
-            color="secondary"
-            size="medium"
-            onBeforeInstall={() => {
-              localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
-              localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
-            }}
-            onUnsupportedBrowserInstallClick={() => {
-              setShowUnsupportedBrowserMessage(true)
-            }}
-          />
+          {installButton}
         </div>
         <div className={cx.halfScreenRight}>
           <GatsbyImage image={ctaImage} />
@@ -154,17 +133,11 @@ const Landing = ({ landingData, causeId }) => {
       <div className={cx.waveMobile}>
         <Wave color={waveColor} />
       </div>
-      <UnsupportedBrowserDialog
-        open={showUnsupportedBrowserMessage}
-        onClose={() => {
-          setShowUnsupportedBrowserMessage(false)
-        }}
-      />
     </div>
   )
 }
 Landing.propTypes = {
-  causeId: PropTypes.string,
+  installButton: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   landingData: PropTypes.shape({
     title: PropTypes.string,
     subtitle: PropTypes.string,

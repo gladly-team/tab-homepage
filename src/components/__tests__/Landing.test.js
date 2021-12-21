@@ -3,9 +3,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
-import InstallButton from 'src/components/InstallButton'
-import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
-import { act } from 'react-dom/test-utils'
 import Typography from '@material-ui/core/Typography'
 import seasData from 'src/data/causes/seas.json'
 jest.mock('src/utils/local-storage')
@@ -22,52 +19,10 @@ afterEach(() => {
   localStorageMgr.clear()
 })
 
-const flushAllPromises = async () => {
-  // eslint-disable-next-line no-undef
-  await new Promise((resolve) => setImmediate(resolve))
-}
-
-describe('teamseas page', () => {
+describe('landing component', () => {
   it('renders without error', () => {
     const Landing = require('../Landing').default
     shallow(<Landing {...getMockProps()} />)
-  })
-
-  it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage and the cause id', () => {
-    const Landing = require('../Landing').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
-    getUrlParameterValue.mockReturnValue(null)
-
-    const wrapper = mount(<Landing {...getMockProps()} />)
-    const callback = wrapper.find(InstallButton).first().prop('onBeforeInstall')
-    callback()
-    expect(localStorageMgr.setItem).toHaveBeenCalledWith(
-      'tab.newUser.isTabV4Enabled',
-      'true'
-    )
-    expect(localStorageMgr.setItem).toHaveBeenCalledWith(
-      'tab.newUser.causeId',
-      'SGa6zohkY'
-    )
-  })
-
-  it('the InstallButton onUnsupportedBrowserInstallClick shows unsupported browser model', async () => {
-    const Landing = require('../Landing').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
-    getUrlParameterValue.mockReturnValue(null)
-    const wrapper = mount(<Landing {...getMockProps()} />)
-    await act(async () => {
-      wrapper
-        .find(InstallButton)
-        .first()
-        .prop('onUnsupportedBrowserInstallClick')()
-      await flushAllPromises()
-      wrapper.update()
-    })
-    const dialog = wrapper.find(UnsupportedBrowserDialog)
-    expect(dialog.prop('open')).toBe(true)
   })
 
   it('sets the title correctly according to the cause data', async () => {

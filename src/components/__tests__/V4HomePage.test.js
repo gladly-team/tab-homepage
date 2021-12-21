@@ -3,6 +3,9 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
 import data from 'src/data/causes/cats.json'
+import InstallButton from 'src/components/InstallButton'
+import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
+import { act } from 'react-dom/test-utils'
 data.data.sections.Financials.pdfs = [
   {
     quarter: 1,
@@ -42,15 +45,57 @@ const getMockProps = () => ({
   },
 })
 
+const flushAllPromises = async () => {
+  // eslint-disable-next-line no-undef
+  await new Promise((resolve) => setImmediate(resolve))
+}
+
 afterEach(() => {
   jest.clearAllMocks()
   localStorageMgr.clear()
 })
 
-describe('teamseas page', () => {
+describe('home page', () => {
   it('renders without error', () => {
     const HomePageWrapper = require('../V4HomePage').default
     shallow(<HomePageWrapper {...getMockProps()} />)
+  })
+
+  it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage and the cause id', () => {
+    const HomePageWrapper = require('../V4HomePage').default
+    const getUrlParameterValue =
+      require('src/utils/location').getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+
+    const wrapper = mount(<HomePageWrapper {...getMockProps()} />)
+    const callback = wrapper.find(InstallButton).first().prop('onBeforeInstall')
+    callback()
+    expect(localStorageMgr.setItem).toHaveBeenCalledWith(
+      'tab.newUser.isTabV4Enabled',
+      'true'
+    )
+    expect(localStorageMgr.setItem).toHaveBeenCalledWith(
+      'tab.newUser.causeId',
+      'CA6A5C2uj'
+    )
+  })
+
+  it('the InstallButton onUnsupportedBrowserInstallClick shows unsupported browser model', async () => {
+    const HomePageWrapper = require('../V4HomePage').default
+    const getUrlParameterValue =
+      require('src/utils/location').getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+    const wrapper = mount(<HomePageWrapper {...getMockProps()} />)
+    await act(async () => {
+      wrapper
+        .find(InstallButton)
+        .first()
+        .prop('onUnsupportedBrowserInstallClick')()
+      await flushAllPromises()
+      wrapper.update()
+    })
+    const dialog = wrapper.find(UnsupportedBrowserDialog)
+    expect(dialog.prop('open')).toBe(true)
   })
 
   it('stores the referrer ID in local storage when it is a vanity URL', () => {
