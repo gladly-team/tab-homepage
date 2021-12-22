@@ -125,7 +125,7 @@ const Landing = ({ landingData, causeId }) => {
           <V4InstallButton causeId={causeId} />
         </div>
         <div className={cx.halfScreenRight}>
-          <GatsbyImage image={ctaImage} />
+          <GatsbyImage image={ctaImage} alt={'call to action'} />
         </div>
         <div className={cx.wave}>
           <Wave color={waveColor} />

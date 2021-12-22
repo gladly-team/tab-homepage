@@ -37,13 +37,15 @@
         "link": "https://greatergood.org/jackson-galaxy"
       },
       "TFACIntro": {
-        "title": "The easiest way to raise money.",
-        "img1": "../../img/cats/1.png",
-        "img1Subtext": "Open new tabs on your browser.",
-        "img2": "../../img/cats/1.png",
-        "img2Subtext": "Earn Money for cat training programs.",
-        "img3": "../../img/cats/1.png",
-        "img3Subtext": "Help get more cats adopted."
+        "titleImg": "../../img/cats/introMain.png",
+        "title": "The simplest way to make an impact",
+        "subtitle": "Turn your daily habits into a new life for shelter cats. Do good, feel good.",
+        "img1": "../../img/cats/intro1.png",
+        "img1Subtext": "##### Open new tabs on your browser.",
+        "img2": "../../img/cats/intro2.png",
+        "img2Subtext": "##### Earn Money for cat training programs.",
+        "img3": "../../img/cats/intro3.png",
+        "img3Subtext": "##### Help get more cats adopted."
       },
       "Mission": {
         "missionURL": "/cats/",

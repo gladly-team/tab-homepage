@@ -21,7 +21,7 @@
       "landing": {
         "title": "The easiest way to save our seas",
         "subtitle": "Every tab opened raises money for #TeamSeas, an internet-led movement raising $30 million to clean up 30 million pounds of trash from our oceans, rivers, and lakes.",
-        "ctaImg": "../../img/cats/headerImg.png",
+        "ctaImg": "../../img/seas/headerImage.png",
         "waveColor": "#5094FB"
       },
       "moneyRaised": {
@@ -37,13 +37,15 @@
         "link": "TODO"
       },
       "TFACIntro": {
-        "title": "TODO",
-        "img1": "../../img/cats/1.png",
-        "img1Subtext": "TODO",
-        "img2": "../../img/cats/1.png",
-        "img2Subtext": "TODO",
-        "img3": "../../img/cats/1.png",
-        "img3Subtext": "TODO"
+        "titleImg": "../../img/seas/introMain.png", 
+        "title": "The simplest way to make an impact",
+        "subtitle": "Turn your daily habits into a cleaner planet for all. Do good, feel good.",
+        "img1": "../../img/seas/intro1.png",
+        "img1Subtext": "##### Open new tabs on your browser.",
+        "img2": "../../img/seas/intro2.png",
+        "img2Subtext": "##### Earn money to clean up our oceans, rivers, and lakes.",
+        "img3": "../../img/seas/intro3.png",
+        "img3Subtext": "##### Help protect our planet and create a better world for all."
       },
       "Mission": {
         "canonicalURL": "/seas/",
