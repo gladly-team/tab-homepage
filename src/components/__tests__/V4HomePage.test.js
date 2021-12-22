@@ -94,7 +94,7 @@ describe('home page', () => {
       await flushAllPromises()
       wrapper.update()
     })
-    const dialog = wrapper.find(UnsupportedBrowserDialog)
+    const dialog = wrapper.find(UnsupportedBrowserDialog).first()
     expect(dialog.prop('open')).toBe(true)
   })
 

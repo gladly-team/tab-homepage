@@ -13,6 +13,7 @@ import StarHalf from '@material-ui/icons/StarHalf'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import V4InstallButton from './V4InstallButton'
 const useStyles = makeStyles((theme) => ({
   logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
   wrapper: {
@@ -165,7 +166,7 @@ const Arrow = () => (
     />
   </svg>
 )
-const Endorsements = ({ endorsementsData, installButton }) => {
+const Endorsements = ({ endorsementsData, causeId }) => {
   const {
     title,
     endorser,
@@ -264,12 +265,12 @@ const Endorsements = ({ endorsementsData, installButton }) => {
           </IconButton>
         </div>
       </div>
-      {installButton}
+      <V4InstallButton causeId={causeId} />
     </div>
   )
 }
 Endorsements.propTypes = {
-  installButton: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  causeId: PropTypes.string,
   endorsementsData: PropTypes.shape({
     title: PropTypes.string,
     endorser: PropTypes.string,

@@ -11,6 +11,7 @@ import logoWhite from 'src/img/logo-with-text-white.svg'
 import { formatImg } from 'src/utils/formatting'
 import Link from 'src/components/Link'
 import Wave from 'src/components/Wave'
+import V4InstallButton from 'src/components/V4InstallButton'
 
 const useStyles = makeStyles((theme) => ({
   whiteFont: {
@@ -86,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Landing = ({ installButton, landingData }) => {
+const Landing = ({ landingData, causeId }) => {
   const { title, subtitle, waveColor, ctaImg } = landingData
   const cx = useStyles()
   const ctaImage = getImage(formatImg(ctaImg))
@@ -121,7 +122,7 @@ const Landing = ({ installButton, landingData }) => {
             {title}
           </Typography>
           <Typography className={cx.subtitle}>{subtitle}</Typography>
-          {installButton}
+          <V4InstallButton causeId={causeId} />
         </div>
         <div className={cx.halfScreenRight}>
           <GatsbyImage image={ctaImage} />
@@ -137,7 +138,7 @@ const Landing = ({ installButton, landingData }) => {
   )
 }
 Landing.propTypes = {
-  installButton: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  causeId: PropTypes.string,
   landingData: PropTypes.shape({
     title: PropTypes.string,
     subtitle: PropTypes.string,
