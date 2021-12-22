@@ -1,17 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Paper from '@material-ui/core/Paper'
-import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import IconButton from '@material-ui/core/IconButton'
-import InstallButton from 'src/components/InstallButton'
-import localStorageMgr from 'src/utils/local-storage'
-import {
-  STORAGE_NEW_USER_IS_TAB_V4_BETA,
-  STORAGE_NEW_USER_CAUSE_ID,
-} from 'src/utils/constants'
 import { formatImg } from 'src/utils/formatting'
 import Slider from 'react-slick'
 // Icons
@@ -20,6 +13,7 @@ import StarHalf from '@material-ui/icons/StarHalf'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import V4InstallButton from './V4InstallButton'
 const useStyles = makeStyles((theme) => ({
   logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
   wrapper: {
@@ -184,8 +178,6 @@ const Endorsements = ({ endorsementsData, causeId }) => {
   } = endorsementsData
   const cx = useStyles()
   const endorserImage = getImage(formatImg(endorserImg))
-  const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
-    useState(false)
   const sliderRef = useRef()
   return (
     <div className={cx.wrapper}>
@@ -273,28 +265,12 @@ const Endorsements = ({ endorsementsData, causeId }) => {
           </IconButton>
         </div>
       </div>
-      <InstallButton
-        className={cx.buttonStyles}
-        color="secondary"
-        size="medium"
-        onBeforeInstall={() => {
-          localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
-          localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
-        }}
-        onUnsupportedBrowserInstallClick={() => {
-          setShowUnsupportedBrowserMessage(true)
-        }}
-      />
-      <UnsupportedBrowserDialog
-        open={showUnsupportedBrowserMessage}
-        onClose={() => {
-          setShowUnsupportedBrowserMessage(false)
-        }}
-      />
+      <V4InstallButton causeId={causeId} />
     </div>
   )
 }
 Endorsements.propTypes = {
+  causeId: PropTypes.string,
   endorsementsData: PropTypes.shape({
     title: PropTypes.string,
     endorser: PropTypes.string,
@@ -304,6 +280,5 @@ Endorsements.propTypes = {
     quote: PropTypes.string,
     smallEndorsements: PropTypes.any,
   }),
-  causeId: PropTypes.string,
 }
 export default Endorsements
