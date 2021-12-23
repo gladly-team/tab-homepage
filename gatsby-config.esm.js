@@ -61,6 +61,33 @@ module.exports = {
         // Exclude pages that just redirect.
         // Exclude our secret test page
         excludes: ['/help', '/contact', '/teamseas/atlantis'],
+        query: `
+        {
+          site {
+            siteMetadata {
+               siteUrl
+            }
+          }
+          allSitePage {
+            nodes {
+              path
+              context {
+                referrer {
+                  id
+                }
+              }
+            }
+          }
+        }`,
+        resolvePages: ({ allSitePage: {nodes: allPages}}) => allPages,
+        filterPages: (page, excludedRoute) => page.context.referrer !== null || page.path.slice(0, -1) === excludedRoute,
+        serialize: (page) => {
+          return {
+            url: baseURL + page.path,
+            changefreq: `daily`,
+            priority: 0.7,
+          }
+        },
       },
     },
     {

@@ -109,12 +109,14 @@ const Seas = ({ pageContext, location }) => {
   const cx = useStyles()
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
+  const [isReferralChannel, setIsReferralChannel] = useState(false)
   // store referrer id
   useEffect(() => {
     let referrerId = null
     // Check for a referrer's vanity URL.
     if (pageContext && pageContext.referrer) {
       referrerId = pageContext.referrer.id
+      setIsReferralChannel(true)
     } else {
       const paramRefId = parseInt(getUrlParameterValue('r'))
       if (!isNaN(paramRefId)) {
@@ -158,6 +160,7 @@ const Seas = ({ pageContext, location }) => {
       />
       <Helmet>
         <link rel="canonical" href={canonicalURL} />
+        {isReferralChannel ? <meta name="robots" content="noindex" /> : null}
       </Helmet>
       <AppBar color="primary" position="sticky">
         <Toolbar>
