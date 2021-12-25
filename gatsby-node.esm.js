@@ -2,6 +2,7 @@
 
 import path from 'path'
 import { generateCausePages } from './src/utils/featureFlags'
+
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -18,6 +19,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const catsLandingPage = path.resolve(`src/pages/cats.js`)
   const seasLandingPage = path.resolve('src/pages/teamseas.js')
   const HomePageWrapper = path.resolve('src/components/V4HomePage.js')
+  const NotFoundPage = path.resolve('src/pages/404.js')
   const response = await graphql(`
     {
       allReferrersYaml(limit: 5000) {
@@ -85,13 +87,17 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
   })
-  if (generateCausePages()) {
-    const dynamicDataQuery = await graphql(`
+  const dynamicDataQuery = await graphql(`
       {
         allCausesJson(limit: 1000) {
           edges {
             node {
               data {
+                causeLaunch {
+                  preview
+                  enabled
+                }
+                causeId
                 metadata {
                   title
                   ogTitle
@@ -253,38 +259,41 @@ exports.createPages = async ({ actions, graphql }) => {
         }
       }
     `)
-    dynamicDataQuery.data.allCausesJson.edges.forEach(
-      ({ node: { path, data } }) => {
-        const pivotedData = {
-          metadata: data.metadata,
-          sections: {
-            ...data.sections,
-            Financials: {
-              ...data.sections.Financials,
-              pdfs: dynamicDataQuery.data.allFinancialsYaml.edges.reduce(
-                (acum, financial) => {
-                  const { q1Img, q2Img, q3Img, q4Img } =
-                    data.sections.Financials
-                  // mapping financial quarter to the seasonal image associated with
-                  // that quarter
-                  const financialsImageMap = {
-                    1: q1Img,
-                    2: q2Img,
-                    3: q3Img,
-                    4: q4Img,
-                  }
-                  acum.push({
-                    ...financial.node,
-                    img: financialsImageMap[financial.node.quarter],
-                  })
-                  return acum
-                },
-                []
-              ),
-            },
+  dynamicDataQuery.data.allCausesJson.edges.forEach(
+    ({ node: { path, data } }) => {
+      const pivotedData = {
+        causeLaunch: data.causeLaunch,
+        metadata: data.metadata,
+        sections: {
+          ...data.sections,
+          Financials: {
+            ...data.sections.Financials,
+            pdfs: dynamicDataQuery.data.allFinancialsYaml.edges.reduce(
+              (acum, financial) => {
+                const { q1Img, q2Img, q3Img, q4Img } =
+                  data.sections.Financials
+                // mapping financial quarter to the seasonal image associated with
+                // that quarter
+                const financialsImageMap = {
+                  1: q1Img,
+                  2: q2Img,
+                  3: q3Img,
+                  4: q4Img,
+                }
+                acum.push({
+                  ...financial.node,
+                  img: financialsImageMap[financial.node.quarter],
+                })
+                return acum
+              },
+              []
+            ),
           },
-          styles: data.styles,
-        }
+        },
+        styles: data.styles,
+      }
+      const causeLaunchData = data.causeLaunch
+      if (generateCausePages() || causeLaunchData.enabled) {
         createPage({
           path: `${path}/`,
           component: HomePageWrapper, // this will be new component that takes all data as props,
@@ -308,9 +317,18 @@ exports.createPages = async ({ actions, graphql }) => {
             },
           })
         })
+      } else {
+        // No need to create referrer URLs 
+        createPage({
+          path: `${path}/${data.causeId}/`,
+          component: causeLaunchData.preview ? HomePageWrapper : NotFoundPage,
+          context: {
+            data: pivotedData,
+          },
+        })
       }
-    )
-  }
+    }
+  )
 }
 exports.onCreatePage = async ({ page, actions: { deletePage } }) => {
   // Only conditionally build the "million raised" page.
