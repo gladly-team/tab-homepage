@@ -199,7 +199,11 @@ const Endorsements = ({ endorsementsData, causeId }) => {
         </div>
       </div>
       <div className={cx.endorserContainer}>
-        <GatsbyImage image={endorserImage} className={cx.endorserImage} />
+        <GatsbyImage
+          alt="endorser image"
+          image={endorserImage}
+          className={cx.endorserImage}
+        />
         <div className={cx.endorserTextContainer}>
           <Typography variant="h3" color="primary" className={cx.textSpacing}>
             {headerQuote}
@@ -241,6 +245,7 @@ const Endorsements = ({ endorsementsData, causeId }) => {
               <Paper className={cx.Paper} elevation={3}>
                 <div className={cx.endorsementPaperTitleContainer}>
                   <GatsbyImage
+                    alt="endorsement image"
                     image={getImage(formatImg(endorsement.img))}
                     style={{
                       height: '43px',
