@@ -13,6 +13,7 @@ import Landing from 'src/components/Landing'
 import FinancialsComponent from 'src/components/Financials'
 import EndorsementsComponent from 'src/components/Endorsements'
 import Mission from 'src/components/Mission'
+import Footer from 'src/components/FooterV2'
 import Intro from 'src/components/Intro'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
@@ -95,6 +96,7 @@ const HomepageWrapper = ({
             endorsementsData={Endorsements}
             causeId={causeId}
           />
+          <Footer />
         </div>
       </CssBaseline>
     </ThemeProvider>

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   titleSection: {
     margin: '0 auto',
     display: 'flex',
-    height: 'calc(100vh - 64px)',
+    minHeight: 'calc(100vh - 64px)',
     alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
