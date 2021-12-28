@@ -158,6 +158,9 @@ const Seas = ({ pageContext, location }) => {
       />
       <Helmet>
         <link rel="canonical" href={canonicalURL} />
+        {pageContext && 'referrer' in pageContext ? (
+          <meta name="robots" content="noindex" />
+        ) : null}
       </Helmet>
       <AppBar color="primary" position="sticky">
         <Toolbar>

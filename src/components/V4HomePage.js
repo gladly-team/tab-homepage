@@ -47,10 +47,12 @@ const HomepageWrapper = ({
   },
   location,
 }) => {
+  const hasReferrer = () =>
+    referrer || !isNaN(parseInt(getUrlParameterValue('r')))
   // store referrer id
   useEffect(() => {
     // Check for a referrer's vanity URL.
-    if (referrer || !isNaN(parseInt(getUrlParameterValue('r')))) {
+    if (hasReferrer()) {
       localStorageMgr.setItem(
         STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
         get(referrer, 'id') || parseInt(getUrlParameterValue('r'))
@@ -88,6 +90,7 @@ const HomepageWrapper = ({
           />
           <Helmet>
             <link rel="canonical" href={canonicalURL} />
+            {referrer ? <meta name="robots" content="noindex" /> : null}
           </Helmet>
           <Landing landingData={landing} causeId={causeId} />
           <LandingMoneyRaised moneyRaisedData={moneyRaised} />

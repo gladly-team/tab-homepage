@@ -228,6 +228,9 @@ class IndexPage extends React.Component {
         <div>
           <Helmet>
             <link rel="canonical" href={canonicalURL} />
+            {this.isReferralFromChannel() ? (
+              <meta name="robots" content="noindex" />
+            ) : null}
           </Helmet>
           {UrgentNotification}
           <Section wrap={'reverse'}>

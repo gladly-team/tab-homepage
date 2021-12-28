@@ -294,6 +294,9 @@ const Cats = ({ pageContext, location }) => {
       <div>
         <Helmet>
           <link rel="canonical" href={canonicalURL} />
+          {pageContext && 'referrer' in pageContext ? (
+            <meta name="robots" content="noindex" />
+          ) : null}
         </Helmet>
         <div className={cx.SectionHeight}>
           {isMission ? (
