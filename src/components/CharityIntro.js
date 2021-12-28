@@ -67,8 +67,8 @@ const CharityIntro = ({ charityIntroData }) => {
   const stepComponents = steps.map((step, index) => getStep(step, index))
   return (
     <div className={cx.parent}>
+      <CharityIntroWave color={waveColor} />
       <div className={cx.column}>
-        <CharityIntroWave color={waveColor} />
         <Typography className={cx.title} color="primary" variant="h1">
           {title}
         </Typography>
