@@ -28,13 +28,23 @@
         "moneyImg": "../../img/seas/moneyRaised.png"
       },
       "charityIntro": {
-        "title": "TODO",
-        "subTitle": "TODO",
-        "introImg1": "../../img/cats/1.png",
-        "introImg1Subtext": "TODO",
-        "introImg2": "../../img/cats/1.png",
-        "introImg2Subtext": "TODO",
-        "link": "TODO"
+        "title": "Stop wasting tabs, start changing the world",
+        "subTitle": "Little actions can have big results: that is why we are supporting #TeamSeas with their goal of cleaning up 30M pounds of trash from our seas. With Tab for #TeamSeas, you can help reach this goal just by opening more browser tabs. It’s free and easy!",
+        "steps": [
+          {
+            "img": "../../img/seas/charityIntro1.png",
+            "text": "Less trash in oceans and rivers"
+          }, 
+          {
+            "img": "../../img/seas/charityIntro2.png",
+            "text": "Healthier, happier marine animals"
+          },
+          {
+            "img": "../../img/seas/charityIntro3.png",
+            "text": "A cleaner, healthier planet"
+          }
+        ],
+        "waveColor": "#5094FB"
       },
       "TFACIntro": {
         "titleImg": "../../img/seas/introMain.png", 

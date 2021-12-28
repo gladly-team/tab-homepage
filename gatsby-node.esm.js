@@ -144,20 +144,17 @@ exports.createPages = async ({ actions, graphql }) => {
                     subtitle
                   }
                   charityIntro {
-                    introImg1 {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
+                    steps {
+                      img {
+                        childImageSharp {
+                          gatsbyImageData(quality: 8)
+                        }
                       }
+                      text
                     }
-                    introImg1Subtext
-                    introImg2 {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
-                    }
-                    introImg2Subtext
                     subTitle
                     title
+                    waveColor
                   }
                   landing {
                     subtitle
