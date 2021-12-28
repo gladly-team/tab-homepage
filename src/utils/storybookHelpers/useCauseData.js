@@ -92,5 +92,12 @@ export const useCauseData = async (cause = 'cats') => {
         smallEndorsementsIndex
       ].img = resolvedImage)
   )
+  const charityIntroDataToModify = await Promise.all(
+    data.data.sections.charityIntro.steps.map((step) => useImageData(step.img))
+  )
+  charityIntroDataToModify.forEach(
+    (resolvedImage, stepIndex) =>
+      (data.data.sections.charityIntro.steps[stepIndex].img = resolvedImage)
+  )
   return data
 }

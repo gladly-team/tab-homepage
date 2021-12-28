@@ -25,16 +25,23 @@
         "waveColor": "#FF6A08"
       },
       "moneyRaised": {
-        "moneyImg": "../../img/cats/1.png"
+        "moneyImg": "../../img/cats/moneyRaised.png"
       },
       "charityIntro": {
-        "title": "Being a shelter cat is hard.",
-        "subTitle": "Our impact is everything to us. And, we’re so proud of the impact we’ve been able to drive, together, thus far.",
-        "introImg1": "../../img/cats/1.png",
-        "introImg1Subtext": "More new happy cat owners",
-        "introImg2": "../../img/cats/1.png",
-        "introImg2Subtext": "More cats adopted",
-        "link": "https://greatergood.org/jackson-galaxy"
+        "title": "Stop wasting tabs, start changing the world",
+        "subTitle": "Every cat deserves a home. With Tab for Cats, you can help them find theirs all by opening more browser tabs. It’s free, easy, and supports cats in need.",
+        "steps": [
+          {
+            "img": "../../img/cats/charityIntro1.png",
+            "text": "More new happy cat owners"
+          }, 
+          {
+            "img": "../../img/cats/charityIntro2.png",
+            "text": "More cats adopted"
+          }
+        ],
+        "link": "https://greatergood.org/jackson-galaxy",
+        "waveColor": "#FF6A08"
       },
       "TFACIntro": {
         "titleImg": "../../img/cats/introMain.png",

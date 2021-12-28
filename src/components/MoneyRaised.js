@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import { commaFormatted, currencyFormatted } from 'src/utils/formatting'
+import { isChromaticEnv } from '../utils/featureFlags'
 
 // These must match the new tab page's numbers.
 // Eventually call the API instead of hard-coding.
@@ -31,12 +32,15 @@ class MoneyRaised extends React.Component {
     const now = moment()
     const diff = now.diff(MONEY_RAISED_UPDATE_TIME, 'seconds')
     const daysDiff = diff / secsInDay
+    if (isChromaticEnv()) {
+      return MONEY_RAISED
+    }
     return MONEY_RAISED + daysDiff * DOLLARS_PER_DAY_RATE
   }
 
   incrementAmount() {
-    var amountRised = this.state.moneyRaised
-    var newAmountRaised = amountRised + 0.01
+    var amountRaised = this.state.moneyRaised
+    var newAmountRaised = amountRaised + 0.01
     this.setState({
       moneyRaised: newAmountRaised,
     })
@@ -58,10 +62,12 @@ class MoneyRaised extends React.Component {
     // Set an interval to add a penny to the money raised.
     if (!(secondsPerPenny <= 0)) {
       var millisecondsPerPenny = Math.round(Math.abs(secondsPerPenny) * 1000)
-      this.timer = window.setInterval(
-        this.incrementAmount.bind(this),
-        millisecondsPerPenny
-      )
+      if (!isChromaticEnv()) {
+        this.timer = window.setInterval(
+          this.incrementAmount.bind(this),
+          millisecondsPerPenny
+        )
+      }
     }
   }
 

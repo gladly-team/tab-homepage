@@ -31,4 +31,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           autoAcceptChanges: true
           exitOnceUploaded: true
+        env: 
+          STORYBOOK_CHROMATIC_ENV: true
+
 

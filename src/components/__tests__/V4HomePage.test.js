@@ -6,6 +6,7 @@ import data from 'src/data/causes/cats.json'
 import InstallButton from 'src/components/InstallButton'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import { act } from 'react-dom/test-utils'
+import Helmet from 'react-helmet'
 data.data.sections.Financials.pdfs = [
   {
     quarter: 1,
@@ -36,6 +37,8 @@ jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')
 jest.mock('src/utils/navigation')
+Helmet.canUseDOM = false
+
 const getMockProps = () => ({
   location: {
     pathname: '/',
@@ -53,6 +56,7 @@ const flushAllPromises = async () => {
 afterEach(() => {
   jest.clearAllMocks()
   localStorageMgr.clear()
+  Helmet.rewind()
 })
 
 describe('home page', () => {
@@ -96,6 +100,38 @@ describe('home page', () => {
     })
     const dialog = wrapper.find(UnsupportedBrowserDialog).first()
     expect(dialog.prop('open')).toBe(true)
+  })
+
+  it('noindexes the page if it is a vanity URL', () => {
+    const HomePageWrapper = require('../V4HomePage').default
+
+    // Gatsby will pass a referrer in the pageContext prop if it's
+    // a page created for a vanity referrer URL.
+    const mockProps = getMockProps()
+    mockProps.pageContext = { ...mockProps.pageContext, referrer: { id: 123 } }
+    mount(<HomePageWrapper {...mockProps} />)
+
+    const symbols = Helmet.peek().meta.toComponent()
+    expect(
+      symbols.filter(
+        (tag) => tag.props.name === 'robots' && tag.props.content === 'noindex'
+      )
+    ).toHaveLength(1)
+  })
+
+  it('indexes the page if it is not a vanity URL', () => {
+    const HomePageWrapper = require('../V4HomePage').default
+
+    // Gatsby will pass a referrer in the pageContext prop if it's
+    // a page created for a vanity referrer URL.
+    mount(<HomePageWrapper {...getMockProps()} />)
+
+    const symbols = Helmet.peek().meta.toComponent()
+    expect(
+      symbols.filter(
+        (tag) => tag.props.name === 'robots' && tag.props.content === 'noindex'
+      )
+    ).toHaveLength(0)
   })
 
   it('stores the referrer ID in local storage when it is a vanity URL', () => {
