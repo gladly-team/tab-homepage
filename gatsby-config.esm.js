@@ -80,6 +80,7 @@ module.exports = {
           }
         }`,
         resolvePages: ({ allSitePage: {nodes: allPages}}) => allPages,
+        // slice in the below expression is to strip trailing slashes from page.path
         filterPages: (page, excludedRoute) => page.context.referrer !== null || page.path.slice(0, -1) === excludedRoute,
         serialize: (page) => {
           return {

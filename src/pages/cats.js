@@ -181,7 +181,6 @@ const Cats = ({ pageContext, location }) => {
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
   const [isReferral, setIsReferral] = useState(false)
-  const [isReferralChannel, setIsReferralChannel] = useState(false)
   const [isMission, setIsMission] = useState(false)
   // store referrer id
   useEffect(() => {
@@ -200,7 +199,6 @@ const Cats = ({ pageContext, location }) => {
         STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
         referrerId
       )
-      setIsReferralChannel(true)
   }, [])
   useEffect(() => {
     const userReferrerId = getUrlParameterValue('u')
@@ -296,7 +294,9 @@ const Cats = ({ pageContext, location }) => {
       <div>
         <Helmet>
           <link rel="canonical" href={canonicalURL} />
-          {isReferralChannel ? <meta name="robots" content="noindex" /> : null}
+          {pageContext && 'referrer' in pageContext ? (
+            <meta name="robots" content="noindex" />
+          ) : null}
         </Helmet>
         <div className={cx.SectionHeight}>
           {isMission ? (

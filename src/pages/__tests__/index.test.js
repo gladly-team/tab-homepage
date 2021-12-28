@@ -1,13 +1,15 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
 import { getAbsoluteURL } from 'src/utils/navigation'
+import Helmet from 'react-helmet'
 
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/location')
 jest.mock('src/utils/navigation')
+Helmet.canUseDOM = false
 
 const getMockProps = () => ({
   location: {
@@ -19,12 +21,45 @@ const getMockProps = () => ({
 afterEach(() => {
   jest.clearAllMocks()
   localStorageMgr.clear()
+  Helmet.rewind()
 })
 
 describe('index page', () => {
   it('renders without error', () => {
     const IndexPage = require('../index').default
     shallow(<IndexPage {...getMockProps()} />)
+  })
+
+  it('noindexes the page if it is a vanity URL', () => {
+    const Index = require('../index').default
+
+    // Gatsby will pass a referrer in the pageContext prop if it's
+    // a page created for a vanity referrer URL.
+    const mockProps = getMockProps()
+    mockProps.pageContext = { referrer: { id: 123 } }
+    mount(<Index {...mockProps} />)
+
+    const symbols = Helmet.peek().meta.toComponent()
+    expect(
+      symbols.filter(
+        (tag) => tag.props.name === 'robots' && tag.props.content === 'noindex'
+      )
+    ).toHaveLength(1)
+  })
+
+  it('indexes the page if it is not a vanity URL', () => {
+    const Index = require('../index').default
+
+    // Gatsby will pass a referrer in the pageContext prop if it's
+    // a page created for a vanity referrer URL.
+    mount(<Index {...getMockProps()} />)
+
+    const symbols = Helmet.peek().meta.toComponent()
+    expect(
+      symbols.filter(
+        (tag) => tag.props.name === 'robots' && tag.props.content === 'noindex'
+      )
+    ).toHaveLength(0)
   })
 
   it('stores the referrer ID in local storage when it is a vanity URL', () => {
