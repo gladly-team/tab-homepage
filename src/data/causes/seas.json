@@ -34,7 +34,7 @@
           {
             "img": "../../img/seas/charityIntro1.png",
             "text": "Less trash in oceans and rivers"
-          }, 
+          },
           {
             "img": "../../img/seas/charityIntro2.png",
             "text": "Healthier, happier marine animals"
@@ -47,7 +47,7 @@
         "waveColor": "#5094FB"
       },
       "TFACIntro": {
-        "titleImg": "../../img/seas/introMain.png", 
+        "titleImg": "../../img/seas/introMain.png",
         "title": "The simplest way to make an impact",
         "subtitle": "Turn your daily habits into a cleaner planet for all. Do good, feel good.",
         "img1": "../../img/seas/intro1.png",
@@ -103,6 +103,9 @@
             "img": "../../img/cats/endorser3.png"
           }
         ]
+      },
+      "Footer": {
+        "img": "../../img/seas/FooterJellyFish.png"
       }
     }
   }

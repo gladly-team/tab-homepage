@@ -18,40 +18,24 @@ class MoneyRaisedDisplay extends React.Component {
   }
 
   render() {
-    const { whiteClassName, color, textVariant, longCopy } = this.props
+    const { whiteClassName, color, textVariant, subTextVariant, longCopy } =
+      this.props
     return (
       <span style={{ visibility: this.state.show ? 'visible' : 'hidden' }}>
-        {color ? (
-          <Typography
-            className={whiteClassName ? whiteClassName : undefined}
-            color={color}
-            variant={textVariant ? textVariant : 'body1'}
-          >
-            <MoneyRaised onLoaded={this.show.bind(this)} />
-          </Typography>
-        ) : (
-          <p style={{ margin: 0 }}>
-            <MoneyRaised
-              className={whiteClassName ? whiteClassName : undefined}
-              onLoaded={this.show.bind(this)}
-            />
-          </p>
-        )}
-        {color ? (
-          <Typography color={color} variant="caption">
-            raised for charity{longCopy ? ', just by surfing the web' : null}
-          </Typography>
-        ) : (
-          <p
-            style={{
-              margin: 0,
-              fontSize: 12,
-              color: whiteClassName ? '#fff' : lightestTextColor,
-            }}
-          >
-            raised for charity{longCopy ? ', just by surfing the web' : null}
-          </p>
-        )}
+        <Typography
+          className={whiteClassName ? whiteClassName : undefined}
+          color={color}
+          variant={textVariant ? textVariant : 'body1'}
+        >
+          <MoneyRaised onLoaded={this.show.bind(this)} />
+        </Typography>
+        <Typography
+          color={color}
+          variant={subTextVariant ? subTextVariant : 'caption'}
+          className={whiteClassName ? whiteClassName : undefined}
+        >
+          raised for charity{longCopy ? ', just by surfing the web' : null}
+        </Typography>
       </span>
     )
   }

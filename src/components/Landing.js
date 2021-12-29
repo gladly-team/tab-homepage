@@ -113,7 +113,10 @@ const Landing = ({ landingData, causeId }) => {
               </Link>
             </div>
           </div>
-          <MoneyRaisedDisplay whiteClassName={cx.whiteFont} />
+          <MoneyRaisedDisplay
+            whiteClassName={cx.whiteFont}
+            textVariant="subtitle2"
+          />
         </Toolbar>
       </AppBar>
       <div className={cx.titleSection}>

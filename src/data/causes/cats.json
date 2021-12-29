@@ -34,7 +34,7 @@
           {
             "img": "../../img/cats/charityIntro1.png",
             "text": "More new happy cat owners"
-          }, 
+          },
           {
             "img": "../../img/cats/charityIntro2.png",
             "text": "More cats adopted"
@@ -100,6 +100,9 @@
             "img": "../../img/cats/endorser3.png"
           }
         ]
+      },
+      "Footer": {
+        "img": "../../img/cats/footerCat.png"
       }
     }
   }

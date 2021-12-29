@@ -203,6 +203,13 @@ exports.createPages = async ({ actions, graphql }) => {
                       }
                     }
                   }
+                  Footer {
+                    img {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
+                  }
                   Endorsements {
                     endorser
                     endorserImg {

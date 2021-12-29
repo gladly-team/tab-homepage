@@ -18,6 +18,10 @@ import Intro from 'src/components/Intro'
 import LandingMoneyRaised from 'src/components/LandingMoneyRaised'
 import CharityIntro from 'src/components/CharityIntro'
 import {
+  STORAGE_NEW_USER_IS_TAB_V4_BETA,
+  STORAGE_NEW_USER_CAUSE_ID,
+} from 'src/utils/constants'
+import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
   KEY_WORDS,
@@ -44,6 +48,7 @@ const HomepageWrapper = ({
         Mission: missionData,
         TFACIntro,
         moneyRaised,
+        Footer: footerData,
       },
     },
     referrer,
@@ -105,7 +110,13 @@ const HomepageWrapper = ({
             endorsementsData={Endorsements}
             causeId={causeId}
           />
-          <Footer />
+          <Footer
+            footerData={footerData}
+            beforeInstall={() => {
+              localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
+              localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
+            }}
+          />
         </div>
       </CssBaseline>
     </ThemeProvider>
