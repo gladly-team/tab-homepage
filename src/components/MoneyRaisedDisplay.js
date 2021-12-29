@@ -18,8 +18,13 @@ class MoneyRaisedDisplay extends React.Component {
   }
 
   render() {
-    const { whiteClassName, color, textVariant, subTextVariant, longCopy } =
-      this.props
+    const {
+      whiteClassName,
+      color,
+      textVariant,
+      longCopy,
+      excludeText = false,
+    } = this.props
     return (
       <span style={{ visibility: this.state.show ? 'visible' : 'hidden' }}>
         <Typography
@@ -29,13 +34,15 @@ class MoneyRaisedDisplay extends React.Component {
         >
           <MoneyRaised onLoaded={this.show.bind(this)} />
         </Typography>
-        <Typography
-          color={color}
-          variant={subTextVariant ? subTextVariant : 'caption'}
-          className={whiteClassName ? whiteClassName : undefined}
-        >
-          raised for charity{longCopy ? ', just by surfing the web' : null}
-        </Typography>
+        {!excludeText && (
+          <Typography
+            color={color}
+            variant={'caption'}
+            className={whiteClassName ? whiteClassName : undefined}
+          >
+            raised for charity{longCopy ? ', just by surfing the web' : null}
+          </Typography>
+        )}
       </span>
     )
   }
@@ -45,6 +52,7 @@ MoneyRaisedDisplay.propTypes = {
   color: Proptypes.string,
   textVariant: Proptypes.string,
   longCopy: Proptypes.bool,
+  excludeText: Proptypes.bool,
 }
 
 export default MoneyRaisedDisplay

@@ -116,6 +116,7 @@ const Landing = ({ landingData, causeId }) => {
           <MoneyRaisedDisplay
             whiteClassName={cx.whiteFont}
             textVariant="subtitle2"
+            excludeText
           />
         </Toolbar>
       </AppBar>

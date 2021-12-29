@@ -98,6 +98,9 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(4),
     borderRadius: theme.spacing(0.5),
   },
+  imgClassName: {
+    height: 'auto !important',
+  },
   iconButton: {
     borderRadius: '10%',
   },
@@ -259,8 +262,13 @@ const Footer = ({ onBeforeInstall, footerData: { img } }) => {
             </Link>
           </div>
         </div>
-        <div className={cx.columnThree}></div>
-        <GatsbyImage image={image} alt="footer" />
+        <div className={cx.columnThree}>
+          <GatsbyImage
+            image={image}
+            alt="footer"
+            imgClassName={cx.imgClassName}
+          />
+        </div>
       </div>
     </div>
   )

@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(3),
     },
   },
+  moneyRaised: {
+    marginBottom: theme.spacing(2),
+  },
 }))
 
 const LandingMoneyRaised = ({ moneyRaisedData }) => {
@@ -57,6 +60,7 @@ const LandingMoneyRaised = ({ moneyRaisedData }) => {
         />
         <MoneyRaisedDisplay
           color={'textSecondary'}
+          whiteClassName={cx.moneyRaised}
           textVariant={'h1'}
           longCopy
         />
