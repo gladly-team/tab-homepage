@@ -97,7 +97,6 @@ exports.createPages = async ({ actions, graphql }) => {
                   preview
                   enabled
                 }
-                causeId
                 metadata {
                   title
                   ogTitle
@@ -317,16 +316,17 @@ exports.createPages = async ({ actions, graphql }) => {
             },
           })
         })
-      } else {
-        // No need to create referrer URLs 
-        createPage({
-          path: `${path}/${data.causeId}/`,
-          component: causeLaunchData.preview ? HomePageWrapper : NotFoundPage,
-          context: {
-            data: pivotedData,
-          },
-        })
       }
+      createPage({
+        path: `${path}/preview/`,
+        component: causeLaunchData.preview ? HomePageWrapper : NotFoundPage,
+        context: {
+          data: pivotedData,
+          previewPage: {
+            path: `../../${path}/`
+          },
+        },
+      })
     }
   )
 }

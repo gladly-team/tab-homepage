@@ -9,7 +9,7 @@
       }
     },
     "causeLaunch" : {
-      "preview": false,
+      "preview": true,
       "enabled": false
     },
     "causeId": "SGa6zohkY",

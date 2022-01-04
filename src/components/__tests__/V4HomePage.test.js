@@ -8,6 +8,7 @@ import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import { act } from 'react-dom/test-utils'
 import Helmet from 'react-helmet'
 import Snackbar from '@material-ui/core/Snackbar'
+
 data.data.sections.Financials.pdfs = [
   {
     quarter: 1,
@@ -38,6 +39,8 @@ jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')
 jest.mock('src/utils/navigation')
+jest.mock('gatsby')
+
 Helmet.canUseDOM = false
 
 const getMockProps = () => ({
@@ -128,6 +131,25 @@ describe('home page', () => {
     ).toHaveLength(0)
   })
 
+  it('redirects if cause is enabled and is preview page', () => {
+    const HomePageWrapper = require('../V4HomePage').default
+
+    // Gatsby will pass a referrer in the pageContext prop if it's
+    // a page created for a vanity referrer URL.
+    const mockProps = getMockProps()
+    mockProps.pageContext.data.causeLaunch = {
+      enabled: true,
+      preview: true,
+    }
+    mockProps.pageContext.previewPage = {
+      path: '/test/',
+    }
+    mount(<HomePageWrapper {...mockProps} />)
+
+    const { navigate } = require('gatsby')
+    expect(navigate).toHaveBeenCalledWith('/test/')
+  })
+
   it('noindexes the page if it is a preview page', () => {
     const HomePageWrapper = require('../V4HomePage').default
 
@@ -137,6 +159,9 @@ describe('home page', () => {
     mockProps.pageContext.data.causeLaunch = {
       enabled: false,
       preview: true,
+    }
+    mockProps.pageContext.previewPage = {
+      path: '/test/',
     }
     mount(<HomePageWrapper {...mockProps} />)
 
@@ -273,21 +298,12 @@ describe('home page', () => {
     const HomePageWrapper = require('../V4HomePage').default
     const mockProps = getMockProps()
     mockProps.pageContext.data.causeLaunch = {
-      enabled: true,
+      enabled: false,
       preview: false,
     }
 
     const wrapper = shallow(<HomePageWrapper {...mockProps} />)
     expect(wrapper.find(Snackbar).first().prop('open')).toEqual(false)
-
-    const mockProps2 = getMockProps()
-    mockProps2.pageContext.data.causeLaunch = {
-      enabled: false,
-      preview: false,
-    }
-
-    const wrapper2 = shallow(<HomePageWrapper {...mockProps2} />)
-    expect(wrapper2.find(Snackbar).first().prop('open')).toEqual(false)
   })
 
   it('shows snackbar if preview enabled and cause not launched', () => {
@@ -296,6 +312,9 @@ describe('home page', () => {
     mockProps.pageContext.data.causeLaunch = {
       enabled: false,
       preview: true,
+    }
+    mockProps.pageContext.previewPage = {
+      path: '/test/',
     }
 
     const wrapper = shallow(<HomePageWrapper {...mockProps} />)

@@ -19,6 +19,7 @@ import CharityIntro from 'src/components/CharityIntro'
 import Snackbar from '@material-ui/core/Snackbar'
 import Alert from '@material-ui/lab/Alert'
 import AlertTitle from '@material-ui/lab/AlertTitle'
+import { navigate } from 'gatsby'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
@@ -30,7 +31,7 @@ const HomepageWrapper = ({
     data: {
       causeId,
       styles,
-      causeLaunch: { preview, enabled },
+      causeLaunch: { enabled },
       metadata: {
         url,
         title,
@@ -50,10 +51,11 @@ const HomepageWrapper = ({
       },
     },
     referrer,
+    previewPage,
   },
   location,
 }) => {
-  const isPreviewPage = preview && !enabled
+  const isPreviewPage = !!(!enabled && previewPage)
   const hasReferrer = () =>
     referrer || !isNaN(parseInt(getUrlParameterValue('r')))
   // store referrer id
@@ -74,6 +76,11 @@ const HomepageWrapper = ({
         STORAGE_REFERRAL_DATA_REFERRING_USER,
         userReferrerId
       )
+    }
+  }, [])
+  useEffect(() => {
+    if (enabled && previewPage) {
+      navigate(previewPage.path)
     }
   }, [])
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
@@ -101,11 +108,7 @@ const HomepageWrapper = ({
               <meta name="robots" content="noindex" />
             ) : null}
           </Helmet>
-          <Landing
-            landingData={landing}
-            causeId={causeId}
-            previewMessage={isPreviewPage}
-          />
+          <Landing landingData={landing} causeId={causeId} />
           <LandingMoneyRaised moneyRaisedData={moneyRaised} />
           <CharityIntro charityIntroData={charityIntro} />
           <Intro introData={TFACIntro} />
@@ -136,6 +139,9 @@ HomepageWrapper.propTypes = {
       id: PropTypes.number,
     }),
     data: PropTypes.any,
+    previewPage: PropTypes.shape({
+      path: PropTypes.string,
+    }),
   }),
 }
 export default HomepageWrapper
