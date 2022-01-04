@@ -8,6 +8,10 @@
         "primaryContrast": "#15AAA6"
       }
     },
+    "causeLaunch" : {
+      "preview": false,
+      "enabled": true
+    },
     "causeId": "CA6A5C2uj",
     "metadata": {
       "title": "Tab for Cats - Home",

@@ -16,6 +16,10 @@ import Mission from 'src/components/Mission'
 import Intro from 'src/components/Intro'
 import LandingMoneyRaised from 'src/components/LandingMoneyRaised'
 import CharityIntro from 'src/components/CharityIntro'
+import Snackbar from '@material-ui/core/Snackbar'
+import Alert from '@material-ui/lab/Alert'
+import AlertTitle from '@material-ui/lab/AlertTitle'
+import { navigate } from 'gatsby'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
@@ -27,6 +31,7 @@ const HomepageWrapper = ({
     data: {
       causeId,
       styles,
+      causeLaunch: { enabled },
       metadata: {
         url,
         title,
@@ -46,9 +51,11 @@ const HomepageWrapper = ({
       },
     },
     referrer,
+    previewPage,
   },
   location,
 }) => {
+  const isPreviewPage = !!(!enabled && previewPage)
   const hasReferrer = () =>
     referrer || !isNaN(parseInt(getUrlParameterValue('r')))
   // store referrer id
@@ -69,6 +76,11 @@ const HomepageWrapper = ({
         STORAGE_REFERRAL_DATA_REFERRING_USER,
         userReferrerId
       )
+    }
+  }, [])
+  useEffect(() => {
+    if (enabled && previewPage) {
+      navigate(previewPage.path)
     }
   }, [])
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
@@ -92,7 +104,9 @@ const HomepageWrapper = ({
           />
           <Helmet>
             <link rel="canonical" href={canonicalURL} />
-            {referrer ? <meta name="robots" content="noindex" /> : null}
+            {referrer || isPreviewPage ? (
+              <meta name="robots" content="noindex" />
+            ) : null}
           </Helmet>
           <Landing landingData={landing} causeId={causeId} />
           <LandingMoneyRaised moneyRaisedData={moneyRaised} />
@@ -104,6 +118,13 @@ const HomepageWrapper = ({
             endorsementsData={Endorsements}
             causeId={causeId}
           />
+          <Snackbar open={isPreviewPage}>
+            <Alert severity="info" sx={{ width: '100%' }}>
+              <AlertTitle>Shh! This page is secret!</AlertTitle>
+              You probably got here because the Tab for a Cause team shared it
+              with you, but please don’t share it with others.
+            </Alert>
+          </Snackbar>
         </div>
       </CssBaseline>
     </ThemeProvider>
@@ -118,6 +139,9 @@ HomepageWrapper.propTypes = {
       id: PropTypes.number,
     }),
     data: PropTypes.any,
+    previewPage: PropTypes.shape({
+      path: PropTypes.string,
+    }),
   }),
 }
 export default HomepageWrapper

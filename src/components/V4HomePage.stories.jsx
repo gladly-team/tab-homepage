@@ -8,7 +8,7 @@ export default {
   component: HomePageWrapper,
 }
 
-const Template = (_args, { loaded: { data } }) => (
+const Template = (_args, { loaded: { data, previewPage } }) => (
   <HomePageWrapper location={'/'} pageContext={data} />
 )
 
@@ -47,6 +47,19 @@ FullWidthSeas.loaders = [
   async () => ({
     data: await useCauseData('seas'),
   }),
+]
+
+export const FullWidthSeasPreview = seas(Template.bind({}))
+FullWidthSeasPreview.loaders = [
+  async () => {
+    var data = await useCauseData('seas')
+    data.causeLaunch = {
+      enabled: false,
+      preview: true
+    }
+    data.previewPage = { path: '/test/' }
+    return { data }
+  }
 ]
 
 export const FullWidthCats = cats(Template.bind({}))

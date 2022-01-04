@@ -8,6 +8,10 @@
         "primaryContrast": "#fff"
       }
     },
+    "causeLaunch" : {
+      "preview": true,
+      "enabled": false
+    },
     "causeId": "SGa6zohkY",
     "metadata": {
       "title": "Tab for TeamSeas - Home",
