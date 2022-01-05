@@ -88,7 +88,9 @@ const FAQ = ({ faqData }) => {
       disableGutters
       key={index}
     >
-      <MuiAccordionSummary expandIcon={<ExpandMoreIcon className={cx.expandIcon} />}>
+      <MuiAccordionSummary
+        expandIcon={<ExpandMoreIcon className={cx.expandIcon} />}
+      >
         <Typography variant="caption" color="primary">
           {question.question}
         </Typography>
