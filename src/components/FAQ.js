@@ -55,16 +55,16 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
   },
+  expandIcon: {
+    color: theme.palette.secondary.main,
+  },
   MuiAccordionRoot: {
-    '&.MuiAccordion-root:before': {
-      backgroundColor: 'white',
+    '&::before': {
+      backgroundColor: 'transparent',
       top: '0px',
     },
     '& .Mui-expanded': {
       marginTop: '0px',
-    },
-    '& .MuiIconButton-label': {
-      color: theme.palette.secondary.main,
     },
     '& .MuiAccordionDetails-root': {
       paddingTop: '0px',
@@ -88,7 +88,7 @@ const FAQ = ({ faqData }) => {
       disableGutters
       key={index}
     >
-      <MuiAccordionSummary expandIcon={<ExpandMoreIcon />}>
+      <MuiAccordionSummary expandIcon={<ExpandMoreIcon className={cx.expandIcon} />}>
         <Typography variant="caption" color="primary">
           {question.question}
         </Typography>
