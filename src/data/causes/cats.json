@@ -8,7 +8,7 @@
         "primaryContrast": "#15AAA6"
       }
     },
-    "causeLaunch" : {
+    "causeLaunch": {
       "preview": false,
       "enabled": true
     },
@@ -38,7 +38,7 @@
           {
             "img": "../../img/cats/charityIntro1.png",
             "text": "More new happy cat owners"
-          }, 
+          },
           {
             "img": "../../img/cats/charityIntro2.png",
             "text": "More cats adopted"
@@ -64,6 +64,9 @@
         "subtitleText": "To make giving back easier than ever",
         "bodyText": "We all want to do our part to help out, but with limited time this can be tough to fit into our jam-packed schedules. We, at Tab for Cats, believe everyone can make a difference and that is why we created a way to do this even if you don't have a ton of time or money. Through our partnership with The Jackson Galaxy Project, you can be sure each tab you open is directly helping shelter cats get adopted into their fur-ever homes.",
         "image": "../../img/cats/mission.png"
+      },
+      "Security": {
+        "titleImg": "../../img/cats/securityImg.png"
       },
       "Financials": {
         "title": "Transparent Financials",

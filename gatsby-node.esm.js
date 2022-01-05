@@ -88,176 +88,183 @@ exports.createPages = async ({ actions, graphql }) => {
     })
   })
   const dynamicDataQuery = await graphql(`
-      {
-        allCausesJson(limit: 1000) {
-          edges {
-            node {
-              data {
-                causeLaunch {
-                  preview
-                  enabled
+    {
+      allCausesJson(limit: 1000) {
+        edges {
+          node {
+            data {
+              causeLaunch {
+                preview
+                enabled
+              }
+              metadata {
+                title
+                ogTitle
+                url
+                ogDescription
+                ogImage {
+                  childImageSharp {
+                    gatsbyImageData(quality: 8)
+                  }
                 }
-                metadata {
-                  title
-                  ogTitle
-                  url
-                  ogDescription
-                  ogImage {
+                causeSpecificKeywords
+              }
+              sections {
+                Mission {
+                  missionURL
+                  subtitleText
+                  titleText
+                  bodyText
+                  image {
                     childImageSharp {
                       gatsbyImageData(quality: 8)
                     }
                   }
-                  causeSpecificKeywords
                 }
-                sections {
-                  Mission {
-                    missionURL
-                    subtitleText
-                    titleText
-                    bodyText
-                    image {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
+                TFACIntro {
+                  img1 {
+                    childImageSharp {
+                      gatsbyImageData(backgroundColor: "transparent")
                     }
                   }
-                  TFACIntro {
-                    img1 {
-                      childImageSharp {
-                        gatsbyImageData(backgroundColor: "transparent")
-                      }
-                    }
-                    img1Subtext
-                    img2 {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
-                    }
-                    img2Subtext
-                    img3 {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
-                    }
-                    img3Subtext
-                    title
-                    titleImg {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
-                    }
-                    subtitle
-                  }
-                  charityIntro {
-                    steps {
-                      img {
-                        childImageSharp {
-                          gatsbyImageData(quality: 8)
-                        }
-                      }
-                      text
-                    }
-                    subTitle
-                    title
-                    waveColor
-                  }
-                  landing {
-                    subtitle
-                    title
-                    ctaImg {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
-                    }
-                    waveColor
-                  }
-                  moneyRaised {
-                    moneyImg {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
+                  img1Subtext
+                  img2 {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
                     }
                   }
-                  Financials {
-                    buttonText
+                  img2Subtext
+                  img3 {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
+                    }
+                  }
+                  img3Subtext
+                  title
+                  titleImg {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
+                    }
+                  }
+                  subtitle
+                }
+                charityIntro {
+                  steps {
+                    img {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
                     text
-                    title
-                    ctaImg {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
-                    }
-                    q1Img {
-                      childImageSharp {
-                        gatsbyImageData(width: 103, height: 100)
-                      }
-                    }
-                    q2Img {
-                      childImageSharp {
-                        gatsbyImageData(width: 103, height: 100)
-                      }
-                    }
-                    q3Img {
-                      childImageSharp {
-                        gatsbyImageData(width: 103, height: 100)
-                      }
-                    }
-                    q4Img {
-                      childImageSharp {
-                        gatsbyImageData(width: 103, height: 100)
-                      }
+                  }
+                  subTitle
+                  title
+                  waveColor
+                }
+                landing {
+                  subtitle
+                  title
+                  ctaImg {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
                     }
                   }
-                  Endorsements {
-                    endorser
-                    endorserImg {
-                      childImageSharp {
-                        gatsbyImageData(height: 240, width: 231)
-                      }
-                    }
-                    endorserTitle
-                    headerQuote
-                    quote
-                    title
-                    smallEndorsements {
-                      endorsement
-                      endorser
-                      img {
-                        childImageSharp {
-                          gatsbyImageData(width: 43, height: 43)
-                        }
-                      }
+                  waveColor
+                }
+                moneyRaised {
+                  moneyImg {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
                     }
                   }
                 }
-                styles {
-                  colors {
-                    primary
-                    secondary
-                    primaryContrast
+                Security {
+                  titleImg {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
+                    }
+                  }
+                }
+                Financials {
+                  buttonText
+                  text
+                  title
+                  ctaImg {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
+                    }
+                  }
+                  q1Img {
+                    childImageSharp {
+                      gatsbyImageData(width: 103, height: 100)
+                    }
+                  }
+                  q2Img {
+                    childImageSharp {
+                      gatsbyImageData(width: 103, height: 100)
+                    }
+                  }
+                  q3Img {
+                    childImageSharp {
+                      gatsbyImageData(width: 103, height: 100)
+                    }
+                  }
+                  q4Img {
+                    childImageSharp {
+                      gatsbyImageData(width: 103, height: 100)
+                    }
+                  }
+                }
+                Endorsements {
+                  endorser
+                  endorserImg {
+                    childImageSharp {
+                      gatsbyImageData(height: 240, width: 231)
+                    }
+                  }
+                  endorserTitle
+                  headerQuote
+                  quote
+                  title
+                  smallEndorsements {
+                    endorsement
+                    endorser
+                    img {
+                      childImageSharp {
+                        gatsbyImageData(width: 43, height: 43)
+                      }
+                    }
                   }
                 }
               }
-              path
+              styles {
+                colors {
+                  primary
+                  secondary
+                  primaryContrast
+                }
+              }
             }
-          }
-        }
-        allFinancialsYaml(
-          filter: { year: { gte: 2020 } }
-          sort: { order: [DESC, DESC], fields: [year, quarter] }
-          limit: 4
-        ) {
-          edges {
-            node {
-              id
-              pdfUrl
-              quarter
-              year
-            }
+            path
           }
         }
       }
-    `)
+      allFinancialsYaml(
+        filter: { year: { gte: 2020 } }
+        sort: { order: [DESC, DESC], fields: [year, quarter] }
+        limit: 4
+      ) {
+        edges {
+          node {
+            id
+            pdfUrl
+            quarter
+            year
+          }
+        }
+      }
+    }
+  `)
   dynamicDataQuery.data.allCausesJson.edges.forEach(
     ({ node: { path, data } }) => {
       const pivotedData = {
@@ -269,8 +276,7 @@ exports.createPages = async ({ actions, graphql }) => {
             ...data.sections.Financials,
             pdfs: dynamicDataQuery.data.allFinancialsYaml.edges.reduce(
               (acum, financial) => {
-                const { q1Img, q2Img, q3Img, q4Img } =
-                  data.sections.Financials
+                const { q1Img, q2Img, q3Img, q4Img } = data.sections.Financials
                 // mapping financial quarter to the seasonal image associated with
                 // that quarter
                 const financialsImageMap = {
@@ -323,7 +329,7 @@ exports.createPages = async ({ actions, graphql }) => {
         context: {
           data: pivotedData,
           previewPage: {
-            path: `../../${path}/`
+            path: `../../${path}/`,
           },
         },
       })
