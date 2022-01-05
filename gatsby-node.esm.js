@@ -235,6 +235,17 @@ exports.createPages = async ({ actions, graphql }) => {
                       }
                     }
                   }
+                  faq {
+                    img {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
+                    questions {
+                      question
+                      answer
+                    }
+                  }
                 }
               }
               styles {

@@ -108,7 +108,31 @@
             "endorser": "Brenda J2.",
             "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
             "img": "../../img/cats/endorser3.png"
-          }
+          }]
+      },
+      "faq": {
+        "img": "../../img/seas/faq.png",
+        "questions": [
+          {
+            "question": "How does opening tabs raise money for charity?",
+            "answer": "Every time you open a new tab, there will be a few ads in the right corner of your home screen. These ads generate the revenue that funds our charitable impact. And the best part? It’s completely free!"
+          },
+          {
+            "question": "Is the new tab page as cute as this page?",
+            "answer": "It might be even cuter! Each day our Tabbers are welcomed with a new adorable cat photo as their background on Tab for Cats."
+          },
+          {
+            "question": "What nonprofit does Tab for Cats support?",
+            "answer": "Tab for Cats supports Greater Good Charities’ The Jackson Galaxy Project. We are proud to support an incredible organization that works to train shelter cats to give them the best opportunity to be adopted."
+          },
+          {
+            "question": "How can I find out about new updates and announcements?",
+            "answer": "Stay in touch with us on social media! Follow us @tabforacause on TikTok, Instagram, Twitter, and Facebook."
+          },
+          {
+            "question": "This all sounds amazing! How else can I help?",
+            "answer": "Convincing your friends and family to join Tab for Cats is the most impactful thing you can do! In addition to each person raising more money, as we grow we can negotiate better rates for our ads meaning you can raise funds to help shelter cats even faster."
+          } 
         ]
       }
     }
