@@ -15,8 +15,14 @@ import EndorsementsComponent from 'src/components/Endorsements'
 import Mission from 'src/components/Mission'
 import Footer from 'src/components/FooterV2'
 import Intro from 'src/components/Intro'
+import SecuritySection from './SecuritySection'
 import LandingMoneyRaised from 'src/components/LandingMoneyRaised'
 import CharityIntro from 'src/components/CharityIntro'
+import FAQ from 'src/components/FAQ'
+import Snackbar from '@material-ui/core/Snackbar'
+import Alert from '@material-ui/lab/Alert'
+import AlertTitle from '@material-ui/lab/AlertTitle'
+import { navigate } from 'gatsby'
 import {
   STORAGE_NEW_USER_IS_TAB_V4_BETA,
   STORAGE_NEW_USER_CAUSE_ID,
@@ -32,6 +38,7 @@ const HomepageWrapper = ({
     data: {
       causeId,
       styles,
+      causeLaunch: { enabled },
       metadata: {
         url,
         title,
@@ -42,8 +49,10 @@ const HomepageWrapper = ({
       },
       sections: {
         charityIntro,
+        faq,
         landing,
         Financials,
+        Security,
         Endorsements,
         Mission: missionData,
         TFACIntro,
@@ -52,9 +61,11 @@ const HomepageWrapper = ({
       },
     },
     referrer,
+    previewPage,
   },
   location,
 }) => {
+  const isPreviewPage = !!(!enabled && previewPage)
   const hasReferrer = () =>
     referrer || !isNaN(parseInt(getUrlParameterValue('r')))
   // store referrer id
@@ -75,6 +86,11 @@ const HomepageWrapper = ({
         STORAGE_REFERRAL_DATA_REFERRING_USER,
         userReferrerId
       )
+    }
+  }, [])
+  useEffect(() => {
+    if (enabled && previewPage) {
+      navigate(previewPage.path)
     }
   }, [])
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
@@ -98,18 +114,22 @@ const HomepageWrapper = ({
           />
           <Helmet>
             <link rel="canonical" href={canonicalURL} />
-            {referrer ? <meta name="robots" content="noindex" /> : null}
+            {referrer || isPreviewPage ? (
+              <meta name="robots" content="noindex" />
+            ) : null}
           </Helmet>
           <Landing landingData={landing} causeId={causeId} />
           <LandingMoneyRaised moneyRaisedData={moneyRaised} />
           <CharityIntro charityIntroData={charityIntro} />
           <Intro introData={TFACIntro} />
           <Mission missionData={missionData} />
+          <SecuritySection securityData={Security} />
           <FinancialsComponent financialsData={Financials} />
           <EndorsementsComponent
             endorsementsData={Endorsements}
             causeId={causeId}
           />
+          <FAQ faqData={faq} />
           <Footer
             footerData={footerData}
             beforeInstall={() => {
@@ -117,6 +137,13 @@ const HomepageWrapper = ({
               localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
             }}
           />
+          <Snackbar open={isPreviewPage}>
+            <Alert severity="info" sx={{ width: '100%' }}>
+              <AlertTitle>Shh! This page is secret!</AlertTitle>
+              You probably got here because the Tab for a Cause team shared it
+              with you, but please don’t share it with others.
+            </Alert>
+          </Snackbar>
         </div>
       </CssBaseline>
     </ThemeProvider>
@@ -131,6 +158,9 @@ HomepageWrapper.propTypes = {
       id: PropTypes.number,
     }),
     data: PropTypes.any,
+    previewPage: PropTypes.shape({
+      path: PropTypes.string,
+    }),
   }),
 }
 export default HomepageWrapper

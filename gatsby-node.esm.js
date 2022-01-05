@@ -2,6 +2,7 @@
 
 import path from 'path'
 import { generateCausePages } from './src/utils/featureFlags'
+
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -18,6 +19,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const catsLandingPage = path.resolve(`src/pages/cats.js`)
   const seasLandingPage = path.resolve('src/pages/teamseas.js')
   const HomePageWrapper = path.resolve('src/components/V4HomePage.js')
+  const NotFoundPage = path.resolve('src/pages/404.js')
   const response = await graphql(`
     {
       allReferrersYaml(limit: 5000) {
@@ -85,213 +87,236 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
   })
-  if (generateCausePages()) {
-    const dynamicDataQuery = await graphql(`
-      {
-        allCausesJson(limit: 1000) {
-          edges {
-            node {
-              data {
-                metadata {
-                  title
-                  ogTitle
-                  url
-                  ogDescription
-                  ogImage {
+  const dynamicDataQuery = await graphql(`
+    {
+      allCausesJson(limit: 1000) {
+        edges {
+          node {
+            data {
+              causeLaunch {
+                preview
+                enabled
+              }
+              metadata {
+                title
+                ogTitle
+                url
+                ogDescription
+                ogImage {
+                  childImageSharp {
+                    gatsbyImageData(quality: 8)
+                  }
+                }
+                causeSpecificKeywords
+              }
+              sections {
+                Mission {
+                  missionURL
+                  subtitleText
+                  titleText
+                  bodyText
+                  image {
                     childImageSharp {
                       gatsbyImageData(quality: 8)
                     }
                   }
-                  causeSpecificKeywords
                 }
-                sections {
-                  Mission {
-                    missionURL
-                    subtitleText
-                    titleText
-                    bodyText
-                    image {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
+                TFACIntro {
+                  img1 {
+                    childImageSharp {
+                      gatsbyImageData(backgroundColor: "transparent")
                     }
                   }
-                  TFACIntro {
-                    img1 {
-                      childImageSharp {
-                        gatsbyImageData(backgroundColor: "transparent")
-                      }
-                    }
-                    img1Subtext
-                    img2 {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
-                    }
-                    img2Subtext
-                    img3 {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
-                    }
-                    img3Subtext
-                    title
-                    titleImg {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
-                    }
-                    subtitle
-                  }
-                  charityIntro {
-                    steps {
-                      img {
-                        childImageSharp {
-                          gatsbyImageData(quality: 8)
-                        }
-                      }
-                      text
-                    }
-                    subTitle
-                    title
-                    waveColor
-                  }
-                  landing {
-                    subtitle
-                    title
-                    ctaImg {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
-                    }
-                    waveColor
-                  }
-                  moneyRaised {
-                    moneyImg {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
+                  img1Subtext
+                  img2 {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
                     }
                   }
-                  Financials {
-                    buttonText
-                    text
-                    title
-                    ctaImg {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
-                    }
-                    q1Img {
-                      childImageSharp {
-                        gatsbyImageData(width: 103, height: 100)
-                      }
-                    }
-                    q2Img {
-                      childImageSharp {
-                        gatsbyImageData(width: 103, height: 100)
-                      }
-                    }
-                    q3Img {
-                      childImageSharp {
-                        gatsbyImageData(width: 103, height: 100)
-                      }
-                    }
-                    q4Img {
-                      childImageSharp {
-                        gatsbyImageData(width: 103, height: 100)
-                      }
+                  img2Subtext
+                  img3 {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
                     }
                   }
-                  Footer {
+                  img3Subtext
+                  title
+                  titleImg {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
+                    }
+                  }
+                  subtitle
+                }
+                charityIntro {
+                  steps {
                     img {
                       childImageSharp {
                         gatsbyImageData(quality: 8)
                       }
                     }
+                    text
                   }
-                  Endorsements {
-                    endorser
-                    endorserImg {
-                      childImageSharp {
-                        gatsbyImageData(height: 240, width: 231)
-                      }
+                  subTitle
+                  title
+                  waveColor
+                }
+                landing {
+                  subtitle
+                  title
+                  ctaImg {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
                     }
-                    endorserTitle
-                    headerQuote
-                    quote
-                    title
-                    smallEndorsements {
-                      endorsement
-                      endorser
-                      img {
-                        childImageSharp {
-                          gatsbyImageData(width: 43, height: 43)
-                        }
-                      }
+                  }
+                  waveColor
+                }
+                moneyRaised {
+                  moneyImg {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
                     }
                   }
                 }
-                styles {
-                  colors {
-                    primary
-                    secondary
-                    primaryContrast
+                Security {
+                  titleImg {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
+                    }
+                  }
+                }
+                Financials {
+                  buttonText
+                  text
+                  title
+                  ctaImg {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
+                    }
+                  }
+                  q1Img {
+                    childImageSharp {
+                      gatsbyImageData(width: 103, height: 100)
+                    }
+                  }
+                  q2Img {
+                    childImageSharp {
+                      gatsbyImageData(width: 103, height: 100)
+                    }
+                  }
+                  q3Img {
+                    childImageSharp {
+                      gatsbyImageData(width: 103, height: 100)
+                    }
+                  }
+                  q4Img {
+                    childImageSharp {
+                      gatsbyImageData(width: 103, height: 100)
+                    }
+                  }
+                }
+                Footer {
+                  img {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
+                    }
+                  }
+                }
+                Endorsements {
+                  endorser
+                  endorserImg {
+                    childImageSharp {
+                      gatsbyImageData(height: 240, width: 231)
+                    }
+                  }
+                  endorserTitle
+                  headerQuote
+                  quote
+                  title
+                  smallEndorsements {
+                    endorsement
+                    endorser
+                    img {
+                      childImageSharp {
+                        gatsbyImageData(width: 43, height: 43)
+                      }
+                    }
+                  }
+                  faq {
+                    img {
+                      childImageSharp {
+                        gatsbyImageData(quality: 8)
+                      }
+                    }
+                    questions {
+                      question
+                      answer
+                    }
                   }
                 }
               }
-              path
+              styles {
+                colors {
+                  primary
+                  secondary
+                  primaryContrast
+                }
+              }
             }
-          }
-        }
-        allFinancialsYaml(
-          filter: { year: { gte: 2020 } }
-          sort: { order: [DESC, DESC], fields: [year, quarter] }
-          limit: 4
-        ) {
-          edges {
-            node {
-              id
-              pdfUrl
-              quarter
-              year
-            }
+            path
           }
         }
       }
-    `)
-    dynamicDataQuery.data.allCausesJson.edges.forEach(
-      ({ node: { path, data } }) => {
-        const pivotedData = {
-          metadata: data.metadata,
-          sections: {
-            ...data.sections,
-            Financials: {
-              ...data.sections.Financials,
-              pdfs: dynamicDataQuery.data.allFinancialsYaml.edges.reduce(
-                (acum, financial) => {
-                  const { q1Img, q2Img, q3Img, q4Img } =
-                    data.sections.Financials
-                  // mapping financial quarter to the seasonal image associated with
-                  // that quarter
-                  const financialsImageMap = {
-                    1: q1Img,
-                    2: q2Img,
-                    3: q3Img,
-                    4: q4Img,
-                  }
-                  acum.push({
-                    ...financial.node,
-                    img: financialsImageMap[financial.node.quarter],
-                  })
-                  return acum
-                },
-                []
-              ),
-            },
-          },
-          styles: data.styles,
+      allFinancialsYaml(
+        filter: { year: { gte: 2020 } }
+        sort: { order: [DESC, DESC], fields: [year, quarter] }
+        limit: 4
+      ) {
+        edges {
+          node {
+            id
+            pdfUrl
+            quarter
+            year
+          }
         }
+      }
+    }
+  `)
+  dynamicDataQuery.data.allCausesJson.edges.forEach(
+    ({ node: { path, data } }) => {
+      const pivotedData = {
+        causeLaunch: data.causeLaunch,
+        metadata: data.metadata,
+        sections: {
+          ...data.sections,
+          Financials: {
+            ...data.sections.Financials,
+            pdfs: dynamicDataQuery.data.allFinancialsYaml.edges.reduce(
+              (acum, financial) => {
+                const { q1Img, q2Img, q3Img, q4Img } = data.sections.Financials
+                // mapping financial quarter to the seasonal image associated with
+                // that quarter
+                const financialsImageMap = {
+                  1: q1Img,
+                  2: q2Img,
+                  3: q3Img,
+                  4: q4Img,
+                }
+                acum.push({
+                  ...financial.node,
+                  img: financialsImageMap[financial.node.quarter],
+                })
+                return acum
+              },
+              []
+            ),
+          },
+        },
+        styles: data.styles,
+      }
+      const causeLaunchData = data.causeLaunch
+      if (generateCausePages() || causeLaunchData.enabled) {
         createPage({
           path: `${path}/`,
           component: HomePageWrapper, // this will be new component that takes all data as props,
@@ -316,8 +341,18 @@ exports.createPages = async ({ actions, graphql }) => {
           })
         })
       }
-    )
-  }
+      createPage({
+        path: `${path}/preview/`,
+        component: causeLaunchData.preview ? HomePageWrapper : NotFoundPage,
+        context: {
+          data: pivotedData,
+          previewPage: {
+            path: `../../${path}/`,
+          },
+        },
+      })
+    }
+  )
 }
 exports.onCreatePage = async ({ page, actions: { deletePage } }) => {
   // Only conditionally build the "million raised" page.

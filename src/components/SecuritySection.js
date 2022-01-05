@@ -1,0 +1,97 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import { makeStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { formatImg } from 'src/utils/formatting'
+import { githubOrganizationURL } from 'src/utils/navigation.js'
+const useStyles = makeStyles((theme) => ({
+  parent: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    minHeight: '100vh',
+    backgroundColor: '#fafafa',
+    justifyContent: 'center',
+  },
+  link: {
+    color: theme.palette.secondary.main,
+    textDecoration: 'none',
+  },
+  column: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '80%',
+    [theme.breakpoints.down('sm')]: {
+      width: '90%',
+    },
+  },
+  linkText: {
+    marginTop: theme.spacing(1),
+  },
+  title: {
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
+    textAlign: 'center',
+  },
+  subtitle: {
+    textAlign: 'center',
+  },
+  subtitleTwo: {
+    marginRight: theme.spacing(0.5),
+  },
+  steps: {
+    display: 'flex',
+    flexDirection: 'row',
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(8),
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
+  },
+  step: {
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+  },
+  stepText: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+}))
+
+const SecuritySection = ({ securityData }) => {
+  const cx = useStyles()
+  const { titleImg } = securityData
+  const image = getImage(formatImg(titleImg))
+  return (
+    <div className={cx.parent}>
+      <div className={cx.column}>
+        <GatsbyImage image={image} alt="" placeholder="none" />
+        <Typography className={cx.title} color="primary" variant="h1">
+          Secure, private, and open source
+        </Typography>
+        <Typography className={cx.subtitle}>
+          We are serious about privacy. That’s why our browser extension will
+          not (and literally cannot) access any private data beyond our new tab
+          page.
+        </Typography>
+        <div className={cx.linkText}>
+          <Typography className={cx.subtitleTwo}>
+            Don’t just take our word for it—our code is{' '}
+            <a className={cx.link} href={githubOrganizationURL}>
+              open source!
+            </a>
+          </Typography>
+        </div>
+      </div>
+    </div>
+  )
+}
+SecuritySection.propTypes = {
+  securityData: PropTypes.shape({
+    titleImg: PropTypes.any,
+  }),
+}
+export default SecuritySection

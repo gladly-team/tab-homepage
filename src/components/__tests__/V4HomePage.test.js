@@ -7,6 +7,8 @@ import InstallButton from 'src/components/InstallButton'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import { act } from 'react-dom/test-utils'
 import Helmet from 'react-helmet'
+import Snackbar from '@material-ui/core/Snackbar'
+
 data.data.sections.Financials.pdfs = [
   {
     quarter: 1,
@@ -37,6 +39,8 @@ jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')
 jest.mock('src/utils/navigation')
+jest.mock('gatsby')
+
 Helmet.canUseDOM = false
 
 const getMockProps = () => ({
@@ -102,6 +106,73 @@ describe('home page', () => {
     expect(dialog.prop('open')).toBe(true)
   })
 
+  it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
+    const HomePageWrapper = require('../V4HomePage').default
+    const getUrlParameterValue =
+      require('src/utils/location').getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+
+    mount(<HomePageWrapper {...getMockProps()} />)
+    expect(localStorageMgr.setItem).not.toHaveBeenCalled()
+  })
+
+  it('indexes the page if it is not a vanity URL or a preview page', () => {
+    const HomePageWrapper = require('../V4HomePage').default
+
+    // Gatsby will pass a referrer in the pageContext prop if it's
+    // a page created for a vanity referrer URL.
+    mount(<HomePageWrapper {...getMockProps()} />)
+
+    const symbols = Helmet.peek().meta.toComponent()
+    expect(
+      symbols.filter(
+        (tag) => tag.props.name === 'robots' && tag.props.content === 'noindex'
+      )
+    ).toHaveLength(0)
+  })
+
+  it('redirects if cause is enabled and is preview page', () => {
+    const HomePageWrapper = require('../V4HomePage').default
+
+    // Gatsby will pass a referrer in the pageContext prop if it's
+    // a page created for a vanity referrer URL.
+    const mockProps = getMockProps()
+    mockProps.pageContext.data.causeLaunch = {
+      enabled: true,
+      preview: true,
+    }
+    mockProps.pageContext.previewPage = {
+      path: '/test/',
+    }
+    mount(<HomePageWrapper {...mockProps} />)
+
+    const { navigate } = require('gatsby')
+    expect(navigate).toHaveBeenCalledWith('/test/')
+  })
+
+  it('noindexes the page if it is a preview page', () => {
+    const HomePageWrapper = require('../V4HomePage').default
+
+    // Gatsby will pass a referrer in the pageContext prop if it's
+    // a page created for a vanity referrer URL.
+    const mockProps = getMockProps()
+    mockProps.pageContext.data.causeLaunch = {
+      enabled: false,
+      preview: true,
+    }
+    mockProps.pageContext.previewPage = {
+      path: '/test/',
+    }
+    mount(<HomePageWrapper {...mockProps} />)
+
+    const symbols = Helmet.peek().meta.toComponent()
+    expect(
+      symbols.filter(
+        (tag) => tag.props.name === 'robots' && tag.props.content === 'noindex'
+      )
+    ).toHaveLength(1)
+  })
+
   it('noindexes the page if it is a vanity URL', () => {
     const HomePageWrapper = require('../V4HomePage').default
 
@@ -117,21 +188,6 @@ describe('home page', () => {
         (tag) => tag.props.name === 'robots' && tag.props.content === 'noindex'
       )
     ).toHaveLength(1)
-  })
-
-  it('indexes the page if it is not a vanity URL', () => {
-    const HomePageWrapper = require('../V4HomePage').default
-
-    // Gatsby will pass a referrer in the pageContext prop if it's
-    // a page created for a vanity referrer URL.
-    mount(<HomePageWrapper {...getMockProps()} />)
-
-    const symbols = Helmet.peek().meta.toComponent()
-    expect(
-      symbols.filter(
-        (tag) => tag.props.name === 'robots' && tag.props.content === 'noindex'
-      )
-    ).toHaveLength(0)
   })
 
   it('stores the referrer ID in local storage when it is a vanity URL', () => {
@@ -236,5 +292,32 @@ describe('home page', () => {
 
     mount(<HomePageWrapper {...getMockProps()} />)
     expect(localStorageMgr.setItem).not.toHaveBeenCalled()
+  })
+
+  it('does not show snackbar if page enabled, or if no page preview', () => {
+    const HomePageWrapper = require('../V4HomePage').default
+    const mockProps = getMockProps()
+    mockProps.pageContext.data.causeLaunch = {
+      enabled: false,
+      preview: false,
+    }
+
+    const wrapper = shallow(<HomePageWrapper {...mockProps} />)
+    expect(wrapper.find(Snackbar).first().prop('open')).toEqual(false)
+  })
+
+  it('shows snackbar if preview enabled and cause not launched', () => {
+    const HomePageWrapper = require('../V4HomePage').default
+    const mockProps = getMockProps()
+    mockProps.pageContext.data.causeLaunch = {
+      enabled: false,
+      preview: true,
+    }
+    mockProps.pageContext.previewPage = {
+      path: '/test/',
+    }
+
+    const wrapper = shallow(<HomePageWrapper {...mockProps} />)
+    expect(wrapper.find(Snackbar).first().prop('open')).toEqual(true)
   })
 })

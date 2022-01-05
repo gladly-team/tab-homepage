@@ -1,17 +1,16 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
-import HomePageWrapper from './V4HomePage'
-import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+import FAQ from './FAQ'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+import { mobile, seas, cats } from '../../.storybook/boilerPlate'
 export default {
-  title: 'Pages/HomePage',
-  component: HomePageWrapper,
+  title: 'Components/FAQ',
+  component: FAQ,
 }
 
-const Template = (_args, { loaded: { data, previewPage } }) => (
-  <HomePageWrapper location={'/'} pageContext={data} />
-)
-
+const Template = (_args, { loaded: { data } }) => {
+  const faqData = data.data.sections.faq
+  return <FAQ faqData={faqData} />
+}
 export const MobileSeas = mobile(seas(Template.bind({})))
 /*
  * loaders are experimental and allow us to use async await which we need in
@@ -47,19 +46,6 @@ FullWidthSeas.loaders = [
   async () => ({
     data: await useCauseData('seas'),
   }),
-]
-
-export const FullWidthSeasPreview = seas(Template.bind({}))
-FullWidthSeasPreview.loaders = [
-  async () => {
-    var data = await useCauseData('seas')
-    data.causeLaunch = {
-      enabled: false,
-      preview: true
-    }
-    data.previewPage = { path: '/test/' }
-    return { data }
-  }
 ]
 
 export const FullWidthCats = cats(Template.bind({}))
