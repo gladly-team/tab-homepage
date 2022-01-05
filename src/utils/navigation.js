@@ -50,8 +50,7 @@ export const instagramPageURL = 'https://www.instagram.com/tabforacause/'
 export const twitterPageURL = 'https://twitter.com/TabForACause'
 export const tiktokPageURL = 'https://www.tiktok.com/@tabforacause.official?'
 // Github
-export const githubOrganizationURL =
-  'https://github.com/gladly-team/tab-homepage'
+export const githubOrganizationURL = 'https://github.com/gladly-team/'
 export const githubTabRepoURL = 'https://github.com/gladly-team/tab'
 export const githubTabExtensionsRepoURL =
   'https://github.com/gladly-team/tab-extensions'

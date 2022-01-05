@@ -14,6 +14,7 @@ import FinancialsComponent from 'src/components/Financials'
 import EndorsementsComponent from 'src/components/Endorsements'
 import Mission from 'src/components/Mission'
 import Intro from 'src/components/Intro'
+import SecuritySection from './SecuritySection'
 import LandingMoneyRaised from 'src/components/LandingMoneyRaised'
 import CharityIntro from 'src/components/CharityIntro'
 import Snackbar from '@material-ui/core/Snackbar'
@@ -44,6 +45,7 @@ const HomepageWrapper = ({
         charityIntro,
         landing,
         Financials,
+        Security,
         Endorsements,
         Mission: missionData,
         TFACIntro,
@@ -113,6 +115,7 @@ const HomepageWrapper = ({
           <CharityIntro charityIntroData={charityIntro} />
           <Intro introData={TFACIntro} />
           <Mission missionData={missionData} />
+          <SecuritySection securityData={Security} />
           <FinancialsComponent financialsData={Financials} />
           <EndorsementsComponent
             endorsementsData={Endorsements}

@@ -8,7 +8,7 @@
         "primaryContrast": "#fff"
       }
     },
-    "causeLaunch" : {
+    "causeLaunch": {
       "preview": true,
       "enabled": false
     },
@@ -31,6 +31,9 @@
       "moneyRaised": {
         "moneyImg": "../../img/seas/moneyRaised.png"
       },
+      "Security": {
+        "titleImg": "../../img/seas/securityImg.png"
+      },
       "charityIntro": {
         "title": "Stop wasting tabs, start changing the world",
         "subTitle": "Little actions can have big results: that is why we are supporting #TeamSeas with their goal of cleaning up 30M pounds of trash from our seas. With Tab for #TeamSeas, you can help reach this goal just by opening more browser tabs. It’s free and easy!",
@@ -38,7 +41,7 @@
           {
             "img": "../../img/seas/charityIntro1.png",
             "text": "Less trash in oceans and rivers"
-          }, 
+          },
           {
             "img": "../../img/seas/charityIntro2.png",
             "text": "Healthier, happier marine animals"
@@ -51,7 +54,7 @@
         "waveColor": "#5094FB"
       },
       "TFACIntro": {
-        "titleImg": "../../img/seas/introMain.png", 
+        "titleImg": "../../img/seas/introMain.png",
         "title": "The simplest way to make an impact",
         "subtitle": "Turn your daily habits into a cleaner planet for all. Do good, feel good.",
         "img1": "../../img/seas/intro1.png",
