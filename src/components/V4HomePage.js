@@ -99,7 +99,7 @@ const HomepageWrapper = ({
         <div>
           <HeadTags
             title={title}
-            titleTemplate="Tab for A Cause"
+            titleTemplate="Tab for a Cause"
             ogTitle={ogTitle}
             ogDescription={ogDescription}
             ogImage={ogImgURLAbsolute}

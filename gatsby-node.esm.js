@@ -20,6 +20,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const seasLandingPage = path.resolve('src/pages/teamseas.js')
   const HomePageWrapper = path.resolve('src/components/V4HomePage.js')
   const NotFoundPage = path.resolve('src/pages/404.js')
+  const ComingSoon = path.resolve('src/components/ComingSoon.js')
   const response = await graphql(`
     {
       allReferrersYaml(limit: 5000) {
@@ -94,6 +95,8 @@ exports.createPages = async ({ actions, graphql }) => {
           node {
             data {
               causeLaunch {
+                comingSoonTitle
+                launchDate
                 preview
                 enabled
               }
@@ -235,16 +238,16 @@ exports.createPages = async ({ actions, graphql }) => {
                       }
                     }
                   }
-                  faq {
-                    img {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
+                }
+                faq {
+                  img {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
                     }
-                    questions {
-                      question
-                      answer
-                    }
+                  }
+                  questions {
+                    question
+                    answer
                   }
                 }
               }
@@ -312,7 +315,7 @@ exports.createPages = async ({ actions, graphql }) => {
       if (generateCausePages() || causeLaunchData.enabled) {
         createPage({
           path: `${path}/`,
-          component: HomePageWrapper, // this will be new component that takes all data as props,
+          component: causeLaunchData.enabled ? HomePageWrapper : ComingSoon,
           context: {
             data: pivotedData,
           },
@@ -324,7 +327,7 @@ exports.createPages = async ({ actions, graphql }) => {
           }
           createPage({
             path: `${path}/${node.path}/`,
-            component: HomePageWrapper, // this will be new component that takes all data as props,
+            component: causeLaunchData.enabled ? HomePageWrapper : ComingSoon,
             context: {
               data: pivotedData,
               referrer: {
