@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import Link from 'src/components/Link'
 import Markdown from 'src/components/Markdown'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { formatImg } from 'src/utils/formatting'
 import heartSquiggle from 'src/img/causeshared/mission_squiggle.png'
 import leftBubble from 'src/img/causeshared/blobLeft.svg'
 import rightBubble from 'src/img/causeshared/blobRight.svg'
@@ -100,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
 const Mission = ({ missionData }) => {
   const { missionURL, titleText, subtitleText, bodyText, image } = missionData
   const cx = useStyles()
-  const missionImage = getImage(image)
+  const missionImage = getImage(formatImg(image))
   return (
     <div className={cx.wrapper}>
       <img className={cx.squiggle} src={heartSquiggle} />
