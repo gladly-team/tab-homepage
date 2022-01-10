@@ -1,7 +1,6 @@
 import React from 'react'
 import Proptypes from 'prop-types'
 import MoneyRaised from 'src/components/MoneyRaised'
-import { lightestTextColor } from 'src/themes/theme'
 import Typography from '@material-ui/core/Typography'
 class MoneyRaisedDisplay extends React.Component {
   constructor(props) {
