@@ -27,7 +27,7 @@ MobileSeas.parameters = {
   viewport: {
     defaultViewport: 'mobile2',
   },
-  chromatic: { viewports: [414, 900] },
+  chromatic: { viewports: [414, 736], delay: 1500 },
 }
 export const MobileCats = mobile(cats(Template.bind({})))
 MobileCats.loaders = [
@@ -39,7 +39,7 @@ MobileCats.parameters = {
   viewport: {
     defaultViewport: 'mobile2',
   },
-  chromatic: { viewports: [414, 900] },
+  chromatic: { viewports: [414, 736], delay: 1500 },
 }
 
 export const FullWidthSeas = seas(Template.bind({}))
@@ -48,19 +48,24 @@ FullWidthSeas.loaders = [
     data: await useCauseData('seas'),
   }),
 ]
-
+FullWidthSeas.parameters = {
+  chromatic: { delay: 1500 },
+}
 export const FullWidthSeasPreview = seas(Template.bind({}))
 FullWidthSeasPreview.loaders = [
   async () => {
     var data = await useCauseData('seas')
     data.causeLaunch = {
       enabled: false,
-      preview: true
+      preview: true,
     }
     data.previewPage = { path: '/test/' }
     return { data }
-  }
+  },
 ]
+FullWidthSeasPreview.parameters = {
+  chromatic: { delay: 1500 },
+}
 
 export const FullWidthCats = cats(Template.bind({}))
 FullWidthCats.loaders = [
@@ -68,3 +73,6 @@ FullWidthCats.loaders = [
     data: await useCauseData('cats'),
   }),
 ]
+FullWidthCats.parameters = {
+  chromatic: { delay: 1500 },
+}
