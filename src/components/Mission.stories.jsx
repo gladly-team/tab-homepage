@@ -9,7 +9,7 @@ export default {
 
 const Template = (_args, { loaded: { data } }) => {
   const missionData = data.data.sections.Mission
-  return <Mission missionData={missionData} />
+  return <Mission missionData={missionData} causeId={data.data.causeId} />
 }
 export const MobileSeas = mobile(seas(Template.bind({})))
 /*

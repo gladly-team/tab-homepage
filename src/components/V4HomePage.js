@@ -122,7 +122,7 @@ const HomepageWrapper = ({
           <LandingMoneyRaised moneyRaisedData={moneyRaised} />
           <CharityIntro charityIntroData={charityIntro} />
           <Intro introData={TFACIntro} />
-          <Mission missionData={missionData} />
+          <Mission missionData={missionData} causeId={causeId} />
           <SecuritySection securityData={Security} />
           <FinancialsComponent financialsData={Financials} />
           <EndorsementsComponent

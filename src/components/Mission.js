@@ -1,16 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
-import Link from 'src/components/Link'
 import Markdown from 'src/components/Markdown'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 import heartSquiggle from 'src/img/causeshared/mission_squiggle.png'
 import leftBubble from 'src/img/causeshared/blobLeft.svg'
 import rightBubble from 'src/img/causeshared/blobRight.svg'
-
+import V4InstallButton from 'src/components/V4InstallButton'
 const useStyles = makeStyles((theme) => ({
   wrapper: {
     position: 'relative',
@@ -98,8 +96,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Mission = ({ missionData }) => {
-  const { missionURL, titleText, subtitleText, bodyText, image } = missionData
+const Mission = ({ missionData, causeId }) => {
+  const { titleText, subtitleText, bodyText, image } = missionData
   const cx = useStyles()
   const missionImage = getImage(formatImg(image))
   return (
@@ -116,15 +114,7 @@ const Mission = ({ missionData }) => {
             {subtitleText}
           </Typography>
           <Markdown>{bodyText}</Markdown>
-          <Link to={missionURL}>
-            <Button
-              className={cx.missionLink}
-              variant={'contained'}
-              color={'secondary'}
-            >
-              Read our Story
-            </Button>
-          </Link>
+          <V4InstallButton causeId={causeId} />
         </div>
         <GatsbyImage
           image={missionImage}
@@ -139,11 +129,11 @@ const Mission = ({ missionData }) => {
 }
 Mission.propTypes = {
   missionData: PropTypes.shape({
-    missionURL: PropTypes.string,
     titleText: PropTypes.string,
     subtitleText: PropTypes.string,
     bodyText: PropTypes.string,
     image: PropTypes.any,
   }),
+  causeId: PropTypes.string,
 }
 export default Mission

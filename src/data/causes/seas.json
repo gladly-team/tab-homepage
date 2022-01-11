@@ -75,7 +75,7 @@
         "title": "Transparent Financials",
         "text": "Every tab does make an impact!  Check out how much we've raised together.",
         "buttonText": "See All Financials",
-        "ctaImg": "../../img/cats/financialsCat.png",
+        "ctaImg": "../../img/seas/financialSeas.png",
         "q1Img": "../../img/cats/q1.png",
         "q2Img": "../../img/cats/q2.png",
         "q3Img": "../../img/cats/q3.png",
@@ -108,7 +108,8 @@
             "endorser": "Brenda J2.",
             "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
             "img": "../../img/cats/endorser3.png"
-          }]
+          }
+        ]
       },
       "faq": {
         "img": "../../img/seas/faq.png",
@@ -132,7 +133,7 @@
           {
             "question": "This all sounds amazing! How else can I help?",
             "answer": "Convincing your friends and family to join Tab for Cats is the most impactful thing you can do! In addition to each person raising more money, as we grow we can negotiate better rates for our ads meaning you can raise funds to help shelter cats even faster."
-          } 
+          }
         ]
       },
       "Footer": {

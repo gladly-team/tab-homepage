@@ -11,6 +11,7 @@ jest.mock('src/utils/location')
 jest.mock('src/utils/navigation')
 const getMockProps = () => ({
   missionData: catsData.data.sections.Mission,
+  causeId: '123456',
 })
 
 afterEach(() => {
@@ -36,14 +37,5 @@ describe('mission page', () => {
 
     const body = wrapper.find(Markdown).first()
     expect(body.props().children).toEqual(mockProps.missionData.bodyText)
-  })
-
-  it('links to correct url', () => {
-    const mockProps = getMockProps()
-    const Mission = require('../Mission').default
-    const wrapper = shallow(<Mission {...mockProps} />)
-
-    const title = wrapper.find(Link).first()
-    expect(title.props().to).toEqual(mockProps.missionData.missionURL)
   })
 })

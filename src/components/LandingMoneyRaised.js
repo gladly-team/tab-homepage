@@ -25,7 +25,9 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(20),
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
-      padding: theme.spacing(6),
+      paddingBottom: theme.spacing(6),
+      paddingLeft: theme.spacing(2),
+      paddingRight: theme.spacing(2),
       paddingTop: theme.spacing(0),
       marginTop: theme.spacing(-16),
     },
@@ -58,12 +60,14 @@ const LandingMoneyRaised = ({ moneyRaisedData }) => {
           className={cx.titleImage}
           image={moneyImage}
         />
-        <MoneyRaisedDisplay
-          color={'textSecondary'}
-          whiteClassName={cx.moneyRaised}
-          textVariant={'h1'}
-          longCopy
-        />
+        <div>
+          <MoneyRaisedDisplay
+            color={'textSecondary'}
+            whiteClassName={cx.moneyRaised}
+            textVariant={'h1'}
+            longCopy
+          />
+        </div>
       </div>
     </div>
   )
