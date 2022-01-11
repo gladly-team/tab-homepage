@@ -149,10 +149,20 @@ const ComingSoon = ({
         </Toolbar>
       </AppBar>
       <div className={cx.titleSection} data-test-id="coming-soon-body">
-        <Typography className={cx.titleText} variant="h2" color="inherit">
+        <Typography
+          className={cx.titleText}
+          variant="h2"
+          color="inherit"
+          align="center"
+        >
           {comingSoonTitle}
         </Typography>
-        <Typography variant="h3" color="inherit" className={cx.comingSoon}>
+        <Typography
+          variant="h3"
+          color="inherit"
+          align="center"
+          className={cx.comingSoon}
+        >
           COMING SOON
         </Typography>
         {displayCountdown ? (
