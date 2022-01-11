@@ -9,6 +9,8 @@
       }
     },
     "causeLaunch": {
+      "comingSoonTitle": "Tab for TeamSeas",
+      "launchDate": "2021-10-29T13:00:00.000",
       "preview": true,
       "enabled": false
     },
