@@ -215,6 +215,13 @@ exports.createPages = async ({ actions, graphql }) => {
                     }
                   }
                 }
+                Footer {
+                  img {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
+                    }
+                  }
+                }
                 Endorsements {
                   endorser
                   endorserImg {
@@ -235,16 +242,16 @@ exports.createPages = async ({ actions, graphql }) => {
                       }
                     }
                   }
-                  faq {
-                    img {
-                      childImageSharp {
-                        gatsbyImageData(quality: 8)
-                      }
+                }
+                faq {
+                  img {
+                    childImageSharp {
+                      gatsbyImageData(quality: 8)
                     }
-                    questions {
-                      question
-                      answer
-                    }
+                  }
+                  questions {
+                    question
+                    answer
                   }
                 }
               }

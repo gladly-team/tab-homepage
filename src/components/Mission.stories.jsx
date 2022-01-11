@@ -9,7 +9,7 @@ export default {
 
 const Template = (_args, { loaded: { data } }) => {
   const missionData = data.data.sections.Mission
-  return <Mission missionData={missionData} />
+  return <Mission missionData={missionData} causeId={data.data.causeId} />
 }
 export const MobileSeas = mobile(seas(Template.bind({})))
 /*
@@ -26,7 +26,7 @@ MobileSeas.parameters = {
   viewport: {
     defaultViewport: 'mobile2',
   },
-  chromatic: { viewports: [414, 900] },
+  chromatic: { viewports: [414, 736] },
 }
 export const MobileCats = mobile(cats(Template.bind({})))
 MobileCats.loaders = [
@@ -38,7 +38,7 @@ MobileCats.parameters = {
   viewport: {
     defaultViewport: 'mobile2',
   },
-  chromatic: { viewports: [414, 900] },
+  chromatic: { viewports: [414, 736] },
 }
 
 export const FullWidthSeas = seas(Template.bind({}))

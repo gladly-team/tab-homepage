@@ -80,32 +80,28 @@
       },
       "Endorsements": {
         "title": "People are saying good things",
-        "headerQuote": "“It’s the quote that’s the easiest way to raise do good for cats”",
-        "quote": "“We’ve always strived to make sure our partners are doing good by us and our furry friends. Tab for Cats is an exceptional example of what you should be looking forward to doing as a charitable organization. It’s the quote that’s the easiest way to raise do good for cats”",
+        "headerQuote": "“Tab for Cats really is the easiest way to help shelter cats - and it’s free. It’s a win-win!”",
+        "quote": "“Tab for Cats is technology at its finest. A simple and free way to support cats just by spending time online. It is a great way for anyone to make a real difference.”",
         "endorser": "Jackson Galaxy",
         "endorserTitle": "Owner and founder of the Jackson Galaxy Project, Partner at Greater Good Charities",
         "endorserImg": "../../img/cats/mainEndorser.png",
         "smallEndorsements": [
           {
             "endorser": "Jess S.",
-            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
+            "endorsement": "“FANTASTIC app that lets you do a lot of good things while doing your day to day work, studying for finals, or just surfing the web!”",
             "img": "../../img/cats/endorser1.png"
           },
           {
             "endorser": "Donny P.",
-            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
+            "endorsement": "“As a person who frequently enters wikipedia holes opening 20 tabs at a time.. its great to know that my procrastination can be of some use! Great app, brilliant idea”",
             "img": "../../img/cats/endorser2.png"
           },
           {
             "endorser": "Brenda J.",
             "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
             "img": "../../img/cats/endorser3.png"
-          },
-          {
-            "endorser": "Brenda J2.",
-            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
-            "img": "../../img/cats/endorser3.png"
-          }]
+          }
+        ]
       },
       "faq": {
         "img": "../../img/cats/faq.png",
@@ -129,8 +125,11 @@
           {
             "question": "This all sounds amazing! How else can I help?",
             "answer": "Convincing your friends and family to join Tab for Cats is the most impactful thing you can do! In addition to each person raising more money, as we grow we can negotiate better rates for our ads meaning you can raise funds to help shelter cats even faster."
-          } 
+          }
         ]
+      },
+      "Footer": {
+        "img": "../../img/cats/footerCat.png"
       }
     }
   }

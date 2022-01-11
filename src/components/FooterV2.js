@@ -12,6 +12,8 @@ import logo from 'src/img/logo-with-text-white.svg'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
 import AppleSafari from 'mdi-material-ui/AppleSafari'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { formatImg } from 'src/utils/formatting'
 import {
   chromeExtensionURL,
   edgeExtensionURL,
@@ -30,8 +32,6 @@ import {
   tiktokPageURL,
 } from 'src/utils/navigation'
 import Link from 'src/components/Link'
-/* TODO GENERALIZATION READ IMAGE PASSED DOWN FROM PROPS*/
-import FooterJellyFish from 'src/img/seas/FooterJellyFish.png'
 
 const useStyles = makeStyles((theme) => ({
   logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
@@ -98,13 +98,16 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(4),
     borderRadius: theme.spacing(0.5),
   },
+  imgClassName: {
+    height: 'auto !important',
+  },
   iconButton: {
     borderRadius: '10%',
   },
 }))
-const Footer = (props) => {
+const Footer = ({ onBeforeInstall, footerData: { img } }) => {
+  const image = getImage(formatImg(img))
   const cx = useStyles()
-  const { onBeforeInstall } = props
   const browserOnClick = useCallback(
     (extensionUrl) => async () => {
       await onBeforeInstall()
@@ -260,9 +263,11 @@ const Footer = (props) => {
           </div>
         </div>
         <div className={cx.columnThree}>
-          {/* TODO GENERALIZATION
-          READ IMAGE PASSED DOWN FROM PROPS*/}
-          <img src={FooterJellyFish} />
+          <GatsbyImage
+            image={image}
+            alt="footer"
+            imgClassName={cx.imgClassName}
+          />
         </div>
       </div>
     </div>
@@ -271,6 +276,7 @@ const Footer = (props) => {
 
 Footer.propTypes = {
   onBeforeInstall: PropTypes.func.isRequired,
+  footerData: PropTypes.shape({ img: PropTypes.any }),
 }
 
 Footer.defaultProps = {}

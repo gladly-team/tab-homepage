@@ -2,7 +2,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import catsData from 'src/data/causes/cats.json'
-import Link from 'src/components/Link'
 import Markdown from 'src/components/Markdown'
 import Typography from '@material-ui/core/Typography'
 
@@ -11,6 +10,7 @@ jest.mock('src/utils/location')
 jest.mock('src/utils/navigation')
 const getMockProps = () => ({
   missionData: catsData.data.sections.Mission,
+  causeId: '123456',
 })
 
 afterEach(() => {
@@ -36,14 +36,5 @@ describe('mission page', () => {
 
     const body = wrapper.find(Markdown).first()
     expect(body.props().children).toEqual(mockProps.missionData.bodyText)
-  })
-
-  it('links to correct url', () => {
-    const mockProps = getMockProps()
-    const Mission = require('../Mission').default
-    const wrapper = shallow(<Mission {...mockProps} />)
-
-    const title = wrapper.find(Link).first()
-    expect(title.props().to).toEqual(mockProps.missionData.missionURL)
   })
 })

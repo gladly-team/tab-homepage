@@ -190,7 +190,7 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
 
       h1: {
         fontWeight: 900,
-        color: '#5094FB',
+        color: primary,
         fontFamily: 'Poppins',
         fontStyle: 'normal',
         lineHeight: 1,
@@ -198,7 +198,7 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
       },
       h2: {
         fontWeight: 900,
-        color: '#5094FB',
+        color: primary,
         fontFamily: 'Poppins',
         fontStyle: 'normal',
         lineHeight: 1,
@@ -206,7 +206,7 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
       },
       h3: {
         fontWeight: 800,
-        color: '#5094FB',
+        color: primary,
         fontFamily: 'Poppins',
         fontStyle: 'normal',
         lineHeight: 1,

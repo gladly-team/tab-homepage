@@ -1,7 +1,6 @@
 import React from 'react'
 import Proptypes from 'prop-types'
 import MoneyRaised from 'src/components/MoneyRaised'
-import { lightestTextColor } from 'src/themes/theme'
 import Typography from '@material-ui/core/Typography'
 class MoneyRaisedDisplay extends React.Component {
   constructor(props) {
@@ -18,39 +17,30 @@ class MoneyRaisedDisplay extends React.Component {
   }
 
   render() {
-    const { whiteClassName, color, textVariant, longCopy } = this.props
+    const {
+      whiteClassName,
+      color,
+      textVariant,
+      longCopy,
+      excludeText = false,
+    } = this.props
     return (
       <span style={{ visibility: this.state.show ? 'visible' : 'hidden' }}>
-        {color ? (
+        <Typography
+          className={whiteClassName ? whiteClassName : undefined}
+          color={color}
+          variant={textVariant ? textVariant : 'body1'}
+        >
+          <MoneyRaised onLoaded={this.show.bind(this)} />
+        </Typography>
+        {!excludeText && (
           <Typography
-            className={whiteClassName ? whiteClassName : undefined}
             color={color}
-            variant={textVariant ? textVariant : 'body1'}
-          >
-            <MoneyRaised onLoaded={this.show.bind(this)} />
-          </Typography>
-        ) : (
-          <p style={{ margin: 0 }}>
-            <MoneyRaised
-              className={whiteClassName ? whiteClassName : undefined}
-              onLoaded={this.show.bind(this)}
-            />
-          </p>
-        )}
-        {color ? (
-          <Typography color={color} variant="caption">
-            raised for charity{longCopy ? ', just by surfing the web' : null}
-          </Typography>
-        ) : (
-          <p
-            style={{
-              margin: 0,
-              fontSize: 12,
-              color: whiteClassName ? '#fff' : lightestTextColor,
-            }}
+            variant={'caption'}
+            className={whiteClassName ? whiteClassName : undefined}
           >
             raised for charity{longCopy ? ', just by surfing the web' : null}
-          </p>
+          </Typography>
         )}
       </span>
     )
@@ -61,6 +51,7 @@ MoneyRaisedDisplay.propTypes = {
   color: Proptypes.string,
   textVariant: Proptypes.string,
   longCopy: Proptypes.bool,
+  excludeText: Proptypes.bool,
 }
 
 export default MoneyRaisedDisplay

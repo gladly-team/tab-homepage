@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   titleSection: {
     margin: '0 auto',
     display: 'flex',
-    height: 'calc(100vh - 64px)',
+    minHeight: 'calc(100vh - 64px)',
     alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
@@ -113,7 +113,11 @@ const Landing = ({ landingData, causeId }) => {
               </Link>
             </div>
           </div>
-          <MoneyRaisedDisplay whiteClassName={cx.whiteFont} />
+          <MoneyRaisedDisplay
+            whiteClassName={cx.whiteFont}
+            textVariant="subtitle2"
+            excludeText
+          />
         </Toolbar>
       </AppBar>
       <div className={cx.titleSection}>

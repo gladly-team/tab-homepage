@@ -228,7 +228,7 @@ const Seas = ({ pageContext, location }) => {
           setShowUnsupportedBrowserMessage(false)
         }}
       />
-      <Footer onBeforeInstall={onBeforeInstall} />
+      <Footer onBeforeInstall={onBeforeInstall} footerData={{ img: {} }} />
     </div>
   )
 }

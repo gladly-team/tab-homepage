@@ -13,6 +13,7 @@ import Landing from 'src/components/Landing'
 import FinancialsComponent from 'src/components/Financials'
 import EndorsementsComponent from 'src/components/Endorsements'
 import Mission from 'src/components/Mission'
+import Footer from 'src/components/FooterV2'
 import Intro from 'src/components/Intro'
 import SecuritySection from './SecuritySection'
 import LandingMoneyRaised from 'src/components/LandingMoneyRaised'
@@ -22,6 +23,10 @@ import Snackbar from '@material-ui/core/Snackbar'
 import Alert from '@material-ui/lab/Alert'
 import AlertTitle from '@material-ui/lab/AlertTitle'
 import { navigate } from 'gatsby'
+import {
+  STORAGE_NEW_USER_IS_TAB_V4_BETA,
+  STORAGE_NEW_USER_CAUSE_ID,
+} from 'src/utils/constants'
 import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
@@ -52,6 +57,7 @@ const HomepageWrapper = ({
         Mission: missionData,
         TFACIntro,
         moneyRaised,
+        Footer: footerData,
       },
     },
     referrer,
@@ -116,7 +122,7 @@ const HomepageWrapper = ({
           <LandingMoneyRaised moneyRaisedData={moneyRaised} />
           <CharityIntro charityIntroData={charityIntro} />
           <Intro introData={TFACIntro} />
-          <Mission missionData={missionData} />
+          <Mission missionData={missionData} causeId={causeId} />
           <SecuritySection securityData={Security} />
           <FinancialsComponent financialsData={Financials} />
           <EndorsementsComponent
@@ -124,6 +130,13 @@ const HomepageWrapper = ({
             causeId={causeId}
           />
           <FAQ faqData={faq} />
+          <Footer
+            footerData={footerData}
+            beforeInstall={() => {
+              localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
+              localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
+            }}
+          />
           <Snackbar open={isPreviewPage}>
             <Alert severity="info" sx={{ width: '100%' }}>
               <AlertTitle>Shh! This page is secret!</AlertTitle>
