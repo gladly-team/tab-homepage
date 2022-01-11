@@ -7,6 +7,7 @@ import data from 'src/data/causes/cats.json'
 import Countdown from 'react-countdown'
 import { mockDate } from 'src/utils/test-utils'
 import { isChromaticEnv } from '../../utils/featureFlags'
+import { getTestIdSelector } from 'src/utils/test-utils'
 
 jest.mock('../../utils/featureFlags')
 
@@ -33,7 +34,11 @@ describe('ComingSoon page component', () => {
     const mockProps = getMockProps()
     const ComingSoon = require('../ComingSoon').default
     const wrapper = mount(<ComingSoon {...mockProps} />)
-    const typography = wrapper.find(Typography).first()
+    const typography = wrapper
+      .find(getTestIdSelector('coming-soon-body'))
+      .at(0)
+      .find(Typography)
+      .at(0)
     expect(typography.text()).toEqual(
       mockProps.pageContext.data.causeLaunch.comingSoonTitle
     )

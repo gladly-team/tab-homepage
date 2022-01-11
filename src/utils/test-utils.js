@@ -59,11 +59,9 @@ mockDate.on = (dateStr = null, options = {}) => {
     mockDate._origDate = Date
   }
 
-  console.log(dateStr)
   const constantDate = dateStr
     ? new Date(dateStr)
     : new Date(mockDate.defaultDateISO)
-  console.log(constantDate)
   const mockCurrentTimeOnly = !!options.mockCurrentTimeOnly
 
   global.Date = Date

@@ -148,7 +148,7 @@ const ComingSoon = ({
           <MoneyRaisedDisplay whiteClassName={cx.whiteFont} />
         </Toolbar>
       </AppBar>
-      <div className={cx.titleSection}>
+      <div className={cx.titleSection} data-test-id="coming-soon-body">
         <Typography className={cx.titleText} variant="h2" color="inherit">
           {comingSoonTitle}
         </Typography>
