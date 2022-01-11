@@ -2,7 +2,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import catsData from 'src/data/causes/cats.json'
-import Link from 'src/components/Link'
 import Markdown from 'src/components/Markdown'
 import Typography from '@material-ui/core/Typography'
 
