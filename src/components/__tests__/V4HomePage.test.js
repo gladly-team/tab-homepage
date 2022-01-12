@@ -4,6 +4,7 @@ import { shallow, mount } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
 import data from 'src/data/causes/cats.json'
 import InstallButton from 'src/components/InstallButton'
+import EndorsementsComponent from 'src/components/Endorsements'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import { act } from 'react-dom/test-utils'
 import Helmet from 'react-helmet'
@@ -321,6 +322,7 @@ describe('home page', () => {
     const wrapper = shallow(<HomePageWrapper {...mockProps} />)
     expect(wrapper.find(Snackbar).first().prop('open')).toEqual(true)
   })
+<<<<<<< HEAD
   it('calls the onBeforeInstall prop on click and works if it is async', async () => {
     expect.assertions(2)
     const HomePageWrapper = require('../V4HomePage').default
@@ -333,5 +335,15 @@ describe('home page', () => {
     wrapper.find(Footer).find(GoogleChrome).simulate('click')
     wrapper.update()
     expect(localStorageMgr.setItem).toHaveBeenCalled()
+=======
+
+  it('does not show endorsement section if no endorsement data provided', () => {
+    const HomePageWrapper = require('../V4HomePage').default
+    const mockProps = getMockProps()
+    delete mockProps.pageContext.data.sections.Endorsements
+
+    const wrapper = shallow(<HomePageWrapper {...mockProps} />)
+    expect(wrapper.find(EndorsementsComponent).exists()).toBe(false)
+>>>>>>> bf6e20f (Json and Images)
   })
 })

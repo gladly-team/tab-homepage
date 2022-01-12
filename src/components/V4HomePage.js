@@ -97,7 +97,6 @@ const HomepageWrapper = ({
   const ogImgURLAbsolute = getAbsoluteURL(
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
   )
-  const canonicalURL = getAbsoluteURL(path)
   return (
     <ThemeProvider theme={responsiveFontSizes(createCauseTheme(styles.colors))}>
       <CssBaseline>
@@ -124,10 +123,12 @@ const HomepageWrapper = ({
           <Mission missionData={missionData} causeId={causeId} />
           <SecuritySection securityData={Security} />
           <FinancialsComponent financialsData={Financials} />
-          <EndorsementsComponent
-            endorsementsData={Endorsements}
-            causeId={causeId}
-          />
+          {Endorsements ? (
+            <EndorsementsComponent
+              endorsementsData={Endorsements}
+              causeId={causeId}
+            />
+          ) : null}
           <FAQ faqData={faq} />
           <Footer
             footerData={footerData}

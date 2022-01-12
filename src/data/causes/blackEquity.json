@@ -10,23 +10,24 @@
     },
     "causeLaunch": {
       "comingSoonTitle": "Tab for Black Equity",
-      "preview": true,
+      "preview": false,
       "enabled": false
     },
     "causeId": "q1FFsAhbV",
     "metadata": {
       "title": "Support Black Equity - Tab for a Cause",
       "ogTitle": "Support Black Equity by Surfing the Web | Tab for a Cause",
-      "url": "/BlackEquity/",
+      "url": "/black-equity/",
       "ogDescription": "Open new tabs, raise money for charities supporting Black equity - for free",
-      "ogImage": "../../img/cats/1.png",
+      "ogImage": "../../img/blackEquity/landing.png",
       "causeSpecificKeywords": "charity, equity, Black, community, racial, educational, bail, pretrial, support, empowerment, African American, POC, WOC, HBCU, college, scholarship, university,systemic racism, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
     },
     "sections": {
       "landing": {
         "title": "Support Black equity, every day",
         "subtitle": "Every tab opened raises money for nonprofit organizations working toward Black empowerment and systemic reform.",
-        "ctaImg": "../../img/blackEquity/landing.png"
+        "ctaImg": "../../img/blackEquity/landing.png",
+        "waveColor": "#A27DF8"
       },
       "moneyRaised": {
         "moneyImg": "../../img/blackEquity/moneyRaised.png"
@@ -47,7 +48,8 @@
             "img": "../../img/blackEquity/charityIntro3.png",
             "text": "A better, more equitable planet"
           }
-        ]
+        ],
+        "waveColor": "#A27DF8"
       },
       "TFACIntro": {
         "titleImg": "../../img/blackEquity/introCTA.png",
@@ -62,10 +64,10 @@
       },
 
       "Mission": {
-        "missionURL": "/cats/",
+        "missionURL": "/black-equity/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
-        "bodyText": "We all want to do our part to help out, but with limited time this can be tough to fit into our jam-packed schedules. We, at Tab for Cats, believe everyone can make a difference and that is why we created a way to do this even if you don't have a ton of time or money. Through our partnership with The Jackson Galaxy Project, you can be sure each tab you open is directly helping shelter cats get adopted into their fur-ever homes.",
+        "bodyText": "We believe everyone should make a difference for racial equity. Through our partnerships with Thurgood Marshall College Fund and the Bail Project, you can be sure each tab you open is advancing Black equity.",
         "image": "../../img/blackEquity/mission.png"
       },
       "Security": {
@@ -80,32 +82,6 @@
         "q2Img": "../../img/cats/q2.png",
         "q3Img": "../../img/cats/q3.png",
         "q4Img": "../../img/cats/q4.png"
-      },
-      "Endorsements": {
-        "disableCenterEndorsement": true,
-        "title": "People are saying good things",
-        "headerQuote": null,
-        "quote": null,
-        "endorser": null,
-        "endorserTitle": null,
-        "endorserImg": null,
-        "smallEndorsements": [
-          {
-            "endorser": "Jess S.",
-            "endorsement": "“FANTASTIC app that lets you do a lot of good things while doing your day to day work, studying for finals, or just surfing the web!”",
-            "img": "../../img/cats/endorser1.png"
-          },
-          {
-            "endorser": "Donny P.",
-            "endorsement": "“As a person who frequently enters wikipedia holes opening 20 tabs at a time.. its great to know that my procrastination can be of some use! Great app, brilliant idea”",
-            "img": "../../img/cats/endorser2.png"
-          },
-          {
-            "endorser": "Brenda J.",
-            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
-            "img": "../../img/cats/endorser3.png"
-          }
-        ]
       },
       "faq": {
         "img": "../../img/blackEquity/FAQ.png",
