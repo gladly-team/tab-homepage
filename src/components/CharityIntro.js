@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
   step: {
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: theme.spacing(3),
+    },
   },
   stepText: {
     textAlign: 'center',

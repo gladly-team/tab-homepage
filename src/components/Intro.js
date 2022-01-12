@@ -6,12 +6,7 @@ import Avatar from '@material-ui/core/Avatar'
 import Typography from '@material-ui/core/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
-import InstallButton from 'src/components/InstallButton'
-import localStorageMgr from 'src/utils/local-storage'
-import {
-  STORAGE_NEW_USER_IS_TAB_V4_BETA,
-  STORAGE_NEW_USER_CAUSE_ID,
-} from 'src/utils/constants'
+import InstallButton from 'src/components/V4InstallButton'
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -183,10 +178,7 @@ const Intro = ({ causeId, introData }) => {
         className={cx.buttonStyles}
         color="secondary"
         size="medium"
-        onBeforeInstall={() => {
-          localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
-          localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
-        }}
+        causeId={causeId}
       />
     </div>
   )

@@ -132,7 +132,7 @@ const HomepageWrapper = ({
           <FAQ faqData={faq} />
           <Footer
             footerData={footerData}
-            beforeInstall={() => {
+            onBeforeInstall={() => {
               localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
               localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
             }}
