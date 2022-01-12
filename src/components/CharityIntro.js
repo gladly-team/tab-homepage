@@ -89,7 +89,6 @@ CharityIntro.propTypes = {
     title: PropTypes.string,
     subTitle: PropTypes.string,
     steps: PropTypes.any,
-    link: PropTypes.string,
   }),
 }
 export default CharityIntro
