@@ -10,7 +10,7 @@
     },
     "causeLaunch": {
       "comingSoonTitle": "Tab for Black Equity",
-      "preview": false,
+      "preview": true,
       "enabled": false
     },
     "causeId": "q1FFsAhbV",
