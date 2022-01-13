@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
     alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
-      marginTop: theme.spacing(4),
-      marginBottom: theme.spacing(4),
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2),
     },
   },
   steps: {
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
-      padding: theme.spacing(2),
+      // padding: theme.spacing(2),
     },
     padding: theme.spacing(2),
   },
@@ -81,9 +81,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: theme.spacing(6),
-    marginBottom: theme.spacing(6),
-    minHeight: '100vh',
+    paddingTop: theme.spacing(6),
+    paddingBottom: theme.spacing(6),
   },
   stepText: {
     display: 'flex',
@@ -91,9 +90,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     padding: theme.spacing(1),
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
-    minHeight: theme.spacing(14),
     [theme.breakpoints.down('sm')]: {
       minHeight: 'unset',
     },

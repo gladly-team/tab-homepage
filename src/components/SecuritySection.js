@@ -11,11 +11,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     width: '100%',
-    minHeight: '100vh',
     backgroundColor: '#fafafa',
     justifyContent: 'center',
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
+    paddingTop: theme.spacing(6),
+    paddingBottom: theme.spacing(6),
   },
   link: {
     color: theme.palette.secondary.main,

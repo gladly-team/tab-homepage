@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     background: 'white',
     alignItems: 'center',
-    minHeight: '100vh',
     justifyContent: 'center',
   },
   row: {
