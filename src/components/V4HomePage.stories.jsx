@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import HomePageWrapper from './V4HomePage'
-import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+import { mobile, seas, cats, blackEquity } from '../../.storybook/boilerPlate'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 export default {
   title: 'Pages/HomePage',
   component: HomePageWrapper,
 }
 
-const Template = (_args, { loaded: { data, previewPage } }) => (
+const Template = (_args, { loaded: { data } }) => (
   <HomePageWrapper location={'/'} pageContext={data} />
 )
 
@@ -29,6 +29,20 @@ MobileSeas.parameters = {
   },
   chromatic: { viewports: [414, 736], delay: 1500 },
 }
+
+export const MobileBlackEquity = mobile(blackEquity(Template.bind({})))
+MobileBlackEquity.loaders = [
+  async () => ({
+    data: await useCauseData('blackEquity'),
+  }),
+]
+MobileBlackEquity.parameters = {
+  viewport: {
+    defaultViewport: 'mobile2',
+  },
+  chromatic: { viewports: [414, 736], delay: 1500 },
+}
+
 export const MobileCats = mobile(cats(Template.bind({})))
 MobileCats.loaders = [
   async () => ({
@@ -51,6 +65,7 @@ FullWidthSeas.loaders = [
 FullWidthSeas.parameters = {
   chromatic: { delay: 1500 },
 }
+
 export const FullWidthSeasPreview = seas(Template.bind({}))
 FullWidthSeasPreview.loaders = [
   async () => {
@@ -74,5 +89,15 @@ FullWidthCats.loaders = [
   }),
 ]
 FullWidthCats.parameters = {
+  chromatic: { delay: 1500 },
+}
+
+export const FullWidthBlackEquity = blackEquity(Template.bind({}))
+FullWidthBlackEquity.loaders = [
+  async () => ({
+    data: await useCauseData('blackEquity'),
+  }),
+]
+FullWidthBlackEquity.parameters = {
   chromatic: { delay: 1500 },
 }

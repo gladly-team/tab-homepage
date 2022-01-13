@@ -1,6 +1,7 @@
 import { useImageData } from './useImageData'
 import catsData from 'src/data/causes/cats.json'
 import seasData from 'src/data/causes/seas.json'
+import blackEquityData from 'src/data/causes/blackEquity.json'
 import set from 'lodash/set'
 import get from 'lodash/get'
 /**
@@ -35,10 +36,21 @@ export const useCauseData = async (cause = 'cats') => {
     case 'seas':
       data = JSON.parse(JSON.stringify(seasData))
       break
+    case 'blackEquity':
+      data = JSON.parse(JSON.stringify(blackEquityData))
+      break
     default:
       data = JSON.parse(JSON.stringify(catsData))
   }
   const keys = keyify(data)
+  console.log(
+    keys.filter(
+      (key) =>
+        (key.toLowerCase().includes('image') ||
+          key.toLowerCase().includes('img')) &&
+        !key.toLowerCase().includes('text')
+    )
+  )
   // replace image paths with mock gatsby image data
   const dataToModify = await Promise.all(
     keys
@@ -49,8 +61,11 @@ export const useCauseData = async (cause = 'cats') => {
           !key.toLowerCase().includes('text')
       )
       .map(async (key) => {
-        const newValue = await useImageData(get(data, key))
-        return { key, newValue }
+        if (get(data, key)) {
+          const newValue = await useImageData(get(data, key))
+          return { key, newValue }
+        }
+        return { key, newValue: null }
       })
   )
   dataToModify.forEach(({ key, newValue }) => set(data, key, newValue))
@@ -80,18 +95,22 @@ export const useCauseData = async (cause = 'cats') => {
       img: data.data.sections.Financials.q3Img,
     },
   ]
+
   // keyify doesnt handle arrays
-  const endorsementDataToModify = await Promise.all(
-    data.data.sections.Endorsements.smallEndorsements.map((endorsement) =>
-      useImageData(endorsement.img)
+  if (data.data.sections.Endorsements) {
+    const endorsementDataToModify = await Promise.all(
+      data.data.sections.Endorsements.smallEndorsements.map((endorsement) =>
+        useImageData(endorsement.img)
+      )
     )
-  )
-  endorsementDataToModify.forEach(
-    (resolvedImage, smallEndorsementsIndex) =>
-      (data.data.sections.Endorsements.smallEndorsements[
-        smallEndorsementsIndex
-      ].img = resolvedImage)
-  )
+    endorsementDataToModify.forEach(
+      (resolvedImage, smallEndorsementsIndex) =>
+        (data.data.sections.Endorsements.smallEndorsements[
+          smallEndorsementsIndex
+        ].img = resolvedImage)
+    )
+  }
+
   const charityIntroDataToModify = await Promise.all(
     data.data.sections.charityIntro.steps.map((step) => useImageData(step.img))
   )
@@ -101,5 +120,6 @@ export const useCauseData = async (cause = 'cats') => {
   )
 
   data.data.path = data.path
+
   return data
 }
