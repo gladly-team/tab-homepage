@@ -4,13 +4,13 @@ import { shallow, mount } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
 import data from 'src/data/causes/cats.json'
 import InstallButton from 'src/components/InstallButton'
-import EndorsementsComponent from 'src/components/Endorsements'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import { act } from 'react-dom/test-utils'
 import Helmet from 'react-helmet'
 import Snackbar from '@material-ui/core/Snackbar'
 import Footer from 'src/components/FooterV2'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
+
 data.data.sections.Financials.pdfs = [
   {
     quarter: 1,
@@ -50,7 +50,10 @@ const getMockProps = () => ({
     pathname: '/',
   },
   pageContext: {
-    data: data.data,
+    data: {
+      path: data.path,
+      ...data.data,
+    },
   },
 })
 
@@ -322,7 +325,7 @@ describe('home page', () => {
     const wrapper = shallow(<HomePageWrapper {...mockProps} />)
     expect(wrapper.find(Snackbar).first().prop('open')).toEqual(true)
   })
-<<<<<<< HEAD
+
   it('calls the onBeforeInstall prop on click and works if it is async', async () => {
     expect.assertions(2)
     const HomePageWrapper = require('../V4HomePage').default
@@ -335,15 +338,5 @@ describe('home page', () => {
     wrapper.find(Footer).find(GoogleChrome).simulate('click')
     wrapper.update()
     expect(localStorageMgr.setItem).toHaveBeenCalled()
-=======
-
-  it('does not show endorsement section if no endorsement data provided', () => {
-    const HomePageWrapper = require('../V4HomePage').default
-    const mockProps = getMockProps()
-    delete mockProps.pageContext.data.sections.Endorsements
-
-    const wrapper = shallow(<HomePageWrapper {...mockProps} />)
-    expect(wrapper.find(EndorsementsComponent).exists()).toBe(false)
->>>>>>> bf6e20f (Json and Images)
   })
 })

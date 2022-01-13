@@ -111,7 +111,7 @@ const HomepageWrapper = ({
             pageURL={absolutePageURL}
           />
           <Helmet>
-            <link rel="canonical" href={canonicalURL} />
+            <link rel="canonical" href={getAbsoluteURL(path)} />
             {referrer || isPreviewPage ? (
               <meta name="robots" content="noindex" />
             ) : null}
@@ -123,12 +123,10 @@ const HomepageWrapper = ({
           <Mission missionData={missionData} causeId={causeId} />
           <SecuritySection securityData={Security} />
           <FinancialsComponent financialsData={Financials} />
-          {Endorsements ? (
-            <EndorsementsComponent
-              endorsementsData={Endorsements}
-              causeId={causeId}
-            />
-          ) : null}
+          <EndorsementsComponent
+            endorsementsData={Endorsements}
+            causeId={causeId}
+          />
           <FAQ faqData={faq} />
           <Footer
             footerData={footerData}

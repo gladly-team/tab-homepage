@@ -14,6 +14,8 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     backgroundColor: '#fafafa',
     justifyContent: 'center',
+    paddingTop: theme.spacing(6),
+    paddingBottom: theme.spacing(6),
   },
   link: {
     color: theme.palette.secondary.main,
@@ -45,22 +47,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     width: '80%',
   },
-  steps: {
-    display: 'flex',
-    flexDirection: 'row',
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(8),
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-    },
-  },
-  step: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2),
-  },
-  stepText: {
-    textAlign: 'center',
-    fontWeight: 'bold',
+  titleImg: {
+    maxHeight: '300px',
   },
 }))
 
@@ -71,7 +59,16 @@ const SecuritySection = ({ securityData }) => {
   return (
     <div className={cx.parent}>
       <div className={cx.column}>
-        <GatsbyImage image={image} alt="" placeholder="none" />
+        <GatsbyImage
+          imgStyle={{
+            objectFit: 'scale-down',
+            maxHeight: '320px',
+          }}
+          className={cx.titleImg}
+          image={image}
+          alt=""
+          placeholder="none"
+        />
         <Typography className={cx.title} color="primary" variant="h1">
           Secure, private, and open source
         </Typography>

@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography'
 import MuiAccordion from '@material-ui/core/Accordion'
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary'
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails'
+import Markdown from 'src/components/Markdown'
 
 const faqData = catsData.data.sections.faq
 
@@ -31,7 +32,7 @@ describe('teamseas page', () => {
         wrapper.find(MuiAccordionSummary).at(i).find(Typography).text()
       ).toEqual(faqData.questions[i].question)
       expect(
-        wrapper.find(MuiAccordionDetails).at(i).find(Typography).text()
+        wrapper.find(MuiAccordionDetails).at(i).find(Markdown).props().children
       ).toEqual(faqData.questions[i].answer)
     }
   })

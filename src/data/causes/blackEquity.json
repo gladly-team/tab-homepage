@@ -17,7 +17,6 @@
     "metadata": {
       "title": "Support Black Equity - Tab for a Cause",
       "ogTitle": "Support Black Equity by Surfing the Web | Tab for a Cause",
-      "url": "/black-equity/",
       "ogDescription": "Open new tabs, raise money for charities supporting Black equity - for free",
       "ogImage": "../../img/blackEquity/landing.png",
       "causeSpecificKeywords": "charity, equity, Black, community, racial, educational, bail, pretrial, support, empowerment, African American, POC, WOC, HBCU, college, scholarship, university,systemic racism, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
@@ -26,8 +25,7 @@
       "landing": {
         "title": "Support Black equity, every day",
         "subtitle": "Every tab opened raises money for nonprofit organizations working toward Black empowerment and systemic reform.",
-        "ctaImg": "../../img/blackEquity/landing.png",
-        "waveColor": "#A27DF8"
+        "ctaImg": "../../img/blackEquity/landing.png"
       },
       "moneyRaised": {
         "moneyImg": "../../img/blackEquity/moneyRaised.png"
@@ -48,8 +46,7 @@
             "img": "../../img/blackEquity/charityIntro3.png",
             "text": "A better, more equitable planet"
           }
-        ],
-        "waveColor": "#A27DF8"
+        ]
       },
       "TFACIntro": {
         "titleImg": "../../img/blackEquity/introCTA.png",
@@ -78,10 +75,31 @@
         "text": "Every tab does make an impact!  Check out how much we've raised together.",
         "buttonText": "See All Financials",
         "ctaImg": "../../img/blackEquity/financials.png",
-        "q1Img": "../../img/cats/q1.png",
-        "q2Img": "../../img/cats/q2.png",
-        "q3Img": "../../img/cats/q3.png",
-        "q4Img": "../../img/cats/q4.png"
+        "q1Img": "../../img/causeshared/q1.png",
+        "q2Img": "../../img/causeshared/q2.png",
+        "q3Img": "../../img/causeshared/q3.png",
+        "q4Img": "../../img/causeshared/q4.png"
+      },
+      "Endorsements": {
+        "disableCenterEndorsement": true,
+        "title": "People are saying good things",
+        "smallEndorsements": [
+          {
+            "endorser": "Jess S.",
+            "endorsement": "“FANTASTIC app that lets you do a lot of good things while doing your day to day work, studying for finals, or just surfing the web!”",
+            "img": "../../img/cats/endorser1.png"
+          },
+          {
+            "endorser": "Donny P.",
+            "endorsement": "“As a person who frequently enters wikipedia holes opening 20 tabs at a time.. its great to know that my procrastination can be of some use! Great app, brilliant idea”",
+            "img": "../../img/cats/endorser2.png"
+          },
+          {
+            "endorser": "Brenda J.",
+            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
+            "img": "../../img/cats/endorser3.png"
+          }
+        ]
       },
       "faq": {
         "img": "../../img/blackEquity/FAQ.png",
@@ -96,11 +114,11 @@
           },
           {
             "question": "What nonprofit does Tab for Black Equity support?",
-            "answer": "Tab for Black Equity supports [The Bail Project] (https://bailproject.org/) and [Thurgood Marshall College Fund] (https://www.tmcf.org/?gclid=CjwKCAiA5t-OBhByEiwAhR-hmzFLgTNoslU9vYn6NAWGC-XBM5zm2kOeuNLPQdo7yFMlEv0PixPbpRoCKEcQAvD_BwE). We are proud to support these incredible organizations that work to uplift their communities towards paths of empowerment and opportunity."
+            "answer": "Tab for Black Equity supports [The Bail Project](https://bailproject.org/) and [Thurgood Marshall College Fund](https://www.tmcf.org/?gclid=CjwKCAiA5t-OBhByEiwAhR-hmzFLgTNoslU9vYn6NAWGC-XBM5zm2kOeuNLPQdo7yFMlEv0PixPbpRoCKEcQAvD_BwE). We are proud to support these incredible organizations that work to uplift their communities towards paths of empowerment and opportunity."
           },
           {
             "question": "How can I find out about new updates and announcements?",
-            "answer": "Stay in touch with us on social media! Follow us @tabforacause on [TikTok] (https://www.tiktok.com/@tabforacause), [Instagram] (https://www.instagram.com/tabforacause/), [Twitter] (https://twitter.com/TabForACause), and [Facebook] (https://www.facebook.com/TabForACause)."
+            "answer": "Stay in touch with us on social media! Follow us @tabforacause on [TikTok](https://www.tiktok.com/@tabforacause), [Instagram](https://www.instagram.com/tabforacause/), [Twitter](https://twitter.com/TabForACause), and [Facebook](https://www.facebook.com/TabForACause)."
           },
           {
             "question": "This all sounds amazing! How else can I help?",

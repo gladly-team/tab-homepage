@@ -9,6 +9,7 @@ import MuiAccordion from '@material-ui/core/Accordion'
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary'
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import Markdown from 'src/components/Markdown'
 
 const useStyles = makeStyles((theme) => ({
   parent: {
@@ -98,7 +99,7 @@ const FAQ = ({ faqData }) => {
         </Typography>
       </MuiAccordionSummary>
       <MuiAccordionDetails>
-        <Typography variant="body2">{question.answer}</Typography>
+        <Markdown>{question.answer}</Markdown>
       </MuiAccordionDetails>
     </MuiAccordion>
   ))
