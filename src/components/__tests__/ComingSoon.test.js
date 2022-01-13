@@ -20,7 +20,10 @@ const getMockProps = () => ({
     pathname: '/',
   },
   pageContext: {
-    data: data.data,
+    data: {
+      path: data.path,
+      ...data.data,
+    },
   },
 })
 

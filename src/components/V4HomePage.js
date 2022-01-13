@@ -36,11 +36,11 @@ import {
 const HomepageWrapper = ({
   pageContext: {
     data: {
+      path,
       causeId,
       styles,
       causeLaunch: { enabled },
       metadata: {
-        url,
         title,
         ogTitle,
         ogDescription,
@@ -97,8 +97,7 @@ const HomepageWrapper = ({
   const ogImgURLAbsolute = getAbsoluteURL(
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
   )
-
-  const canonicalURL = getAbsoluteURL(url)
+  const canonicalURL = getAbsoluteURL(path)
   return (
     <ThemeProvider theme={responsiveFontSizes(createCauseTheme(styles.colors))}>
       <CssBaseline>

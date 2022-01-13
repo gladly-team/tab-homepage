@@ -7,6 +7,22 @@ afterEach(() => {
 })
 
 describe('navigation utils', () => {
+  test('getAbsoluteURL prepends a slash if necessary', () => {
+    // Set the domain env var
+    process.env.GATSBY_DOMAIN = 'some.example.com'
+
+    const getAbsoluteURL = require('../navigation').getAbsoluteURL
+    expect(getAbsoluteURL('blah/')).toBe('https://some.example.com/blah/')
+  })
+
+  test('getAbsoluteURL postpends a slash if necessary', () => {
+    // Set the domain env var
+    process.env.GATSBY_DOMAIN = 'some.example.com'
+
+    const getAbsoluteURL = require('../navigation').getAbsoluteURL
+    expect(getAbsoluteURL('/blah')).toBe('https://some.example.com/blah/')
+  })
+
   test('getAbsoluteURL works for a passed path', () => {
     // Set the domain env var
     process.env.GATSBY_DOMAIN = 'some.example.com'

@@ -103,7 +103,6 @@ exports.createPages = async ({ actions, graphql }) => {
               metadata {
                 title
                 ogTitle
-                url
                 ogDescription
                 ogImage {
                   childImageSharp {
@@ -287,6 +286,7 @@ exports.createPages = async ({ actions, graphql }) => {
   dynamicDataQuery.data.allCausesJson.edges.forEach(
     ({ node: { path, data } }) => {
       const pivotedData = {
+        path,
         causeLaunch: data.causeLaunch,
         metadata: data.metadata,
         sections: {
