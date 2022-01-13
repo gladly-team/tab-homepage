@@ -95,5 +95,12 @@ export const getAbsoluteURL = (path) => {
   if (path.startsWith('http://') || path.startsWith('https://')) {
     return path
   }
+  // Prepend or postpend slashes if url fragment doesn't have them
+  if (!path.startsWith('/')) {
+    path = `/${path}`
+  }
+  if (!path.endsWith('/')) {
+    path = `${path}/`
+  }
   return `${baseURL}${path}`
 }

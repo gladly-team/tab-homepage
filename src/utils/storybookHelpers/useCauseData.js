@@ -99,5 +99,7 @@ export const useCauseData = async (cause = 'cats') => {
     (resolvedImage, stepIndex) =>
       (data.data.sections.charityIntro.steps[stepIndex].img = resolvedImage)
   )
+
+  data.data.path = data.path
   return data
 }

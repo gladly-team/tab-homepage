@@ -80,8 +80,8 @@ const useStyles = makeStyles((theme) => ({
 const ComingSoon = ({
   pageContext: {
     data: {
+      path,
       metadata: {
-        url,
         title,
         ogTitle,
         ogDescription,
@@ -98,7 +98,6 @@ const ComingSoon = ({
   const ogImgURLAbsolute = getAbsoluteURL(
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
   )
-  const canonicalURL = getAbsoluteURL(url)
   var countdownDate = null
   var displayCountdown = null
   // Making the date a fixed time in the future in the Chromatic Env to make this page static
@@ -122,7 +121,7 @@ const ComingSoon = ({
         pageURL={absolutePageURL}
       />
       <Helmet>
-        <link rel="canonical" href={canonicalURL} />
+        <link rel="canonical" href={getAbsoluteURL(path)} />
       </Helmet>
       <AppBar color="primary" position="sticky">
         <Toolbar>
