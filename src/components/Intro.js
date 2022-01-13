@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     direction: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     padding: theme.spacing(1),
     [theme.breakpoints.down('sm')]: {
       minHeight: 'unset',
