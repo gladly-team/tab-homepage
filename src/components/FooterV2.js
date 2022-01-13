@@ -234,7 +234,7 @@ const Footer = ({ onBeforeInstall, footerData: { img } }) => {
                 gutterBottom
                 color="textSecondary"
               >
-                Terms & Conditions
+                Terms
               </Typography>
             </Link>
             <Link to={adblockerWhitelistingURL}>
