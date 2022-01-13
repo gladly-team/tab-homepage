@@ -10,8 +10,8 @@
     },
     "causeLaunch": {
       "comingSoonTitle": "Tab for Cats",
-      "preview": false,
-      "enabled": true
+      "preview": true,
+      "enabled": false
     },
     "causeId": "CA6A5C2uj",
     "metadata": {
