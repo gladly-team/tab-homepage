@@ -10,6 +10,7 @@ import Helmet from 'react-helmet'
 import Snackbar from '@material-ui/core/Snackbar'
 import Footer from 'src/components/FooterV2'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
+
 data.data.sections.Financials.pdfs = [
   {
     quarter: 1,
@@ -49,7 +50,10 @@ const getMockProps = () => ({
     pathname: '/',
   },
   pageContext: {
-    data: data.data,
+    data: {
+      path: data.path,
+      ...data.data,
+    },
   },
 })
 
@@ -321,6 +325,7 @@ describe('home page', () => {
     const wrapper = shallow(<HomePageWrapper {...mockProps} />)
     expect(wrapper.find(Snackbar).first().prop('open')).toEqual(true)
   })
+
   it('calls the onBeforeInstall prop on click and works if it is async', async () => {
     expect.assertions(2)
     const HomePageWrapper = require('../V4HomePage').default
