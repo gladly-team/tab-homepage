@@ -198,25 +198,27 @@ const Endorsements = ({ endorsementsData, causeId }) => {
           </Typography>
         </div>
       </div>
-      <div className={cx.endorserContainer}>
-        <GatsbyImage
-          alt="endorser image"
-          image={endorserImage}
-          className={cx.endorserImage}
-        />
-        <div className={cx.endorserTextContainer}>
-          <Typography variant="h3" color="primary" className={cx.textSpacing}>
-            {headerQuote}
-          </Typography>
-          <Typography variant="subtitle1" className={cx.textSpacing}>
-            {quote}
-          </Typography>
-          <Typography variant="caption" color="primary">
-            {endorser}
-          </Typography>
-          <Typography>{endorserTitle}</Typography>
+      {quote ? (
+        <div className={cx.endorserContainer}>
+          <GatsbyImage
+            alt="endorser image"
+            image={endorserImage}
+            className={cx.endorserImage}
+          />
+          <div className={cx.endorserTextContainer}>
+            <Typography variant="h3" color="primary" className={cx.textSpacing}>
+              {headerQuote}
+            </Typography>
+            <Typography variant="subtitle1" className={cx.textSpacing}>
+              {quote}
+            </Typography>
+            <Typography variant="caption" color="primary">
+              {endorser}
+            </Typography>
+            <Typography>{endorserTitle}</Typography>
+          </div>
         </div>
-      </div>
+      ) : null}
       <div className={cx.endorsementsSlider}>
         <Slider
           dots={true}
