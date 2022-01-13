@@ -32,7 +32,7 @@
       },
       "charityIntro": {
         "title": "Stop wasting tabs, start changing the world.",
-        "subTitle": "Little actions can have big results. With Tab for Black Equity, you can help make a positive impact on charities uplifting Black communities just by opening more browser tabs.",
+        "subTitle": "Little actions can have big results. With Tab for Black Equity, you can support charities uplifting Black communities just by opening more browser tabs.",
         "steps": [
           {
             "img": "../../img/blackEquity/charityIntro1.png",
@@ -64,7 +64,7 @@
         "missionURL": "/black-equity/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
-        "bodyText": "We believe everyone should make a difference for racial equity. Through our partnerships with Thurgood Marshall College Fund and the Bail Project, you can be sure each tab you open is advancing Black equity.",
+        "bodyText": "We believe everyone should make a difference for racial equity. Through our support of Thurgood Marshall College Fund and the Bail Project, you can be sure each tab you open is advancing Black equity.",
         "image": "../../img/blackEquity/mission.png"
       },
       "Security": {
@@ -142,7 +142,7 @@
         "questions": [
           {
             "question": "How does opening tabs raise money for charity?",
-            "answer": "Every time you open a new tab, there will be a few ads in the right corner of your home screen. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
+            "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
           },
           {
             "question": "What type of images can I expect on my new tab page?",
