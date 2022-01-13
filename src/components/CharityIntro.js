@@ -19,10 +19,12 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     width: '80%',
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
+    paddingTop: theme.spacing(6),
+    paddingBottom: theme.spacing(6),
     [theme.breakpoints.down('sm')]: {
       width: '90%',
+      paddingTop: theme.spacing(4),
+      paddingBottom: theme.spacing(4),
     },
   },
   title: {

@@ -13,8 +13,12 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     backgroundColor: '#fafafa',
     justifyContent: 'center',
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(6),
+    },
   },
   link: {
     color: theme.palette.secondary.main,

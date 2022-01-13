@@ -19,6 +19,12 @@ const useStyles = makeStyles((theme) => ({
     background: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: theme.spacing(0),
+      paddingBottom: theme.spacing(0),
+    },
   },
   row: {
     width: '90%',
