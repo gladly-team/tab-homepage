@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 import CharityIntroWave from 'src/components/CharityIntroWave'
 import Typography from '@material-ui/core/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CharityIntro = ({ charityIntroData }) => {
   const cx = useStyles()
+  const theme = useTheme()
   const getStep = (step, index) => {
     const image = getImage(formatImg(step.img))
     return (
@@ -63,11 +64,11 @@ const CharityIntro = ({ charityIntroData }) => {
       </div>
     )
   }
-  const { title, subTitle, steps, waveColor } = charityIntroData
+  const { title, subTitle, steps } = charityIntroData
   const stepComponents = steps.map((step, index) => getStep(step, index))
   return (
     <div className={cx.parent}>
-      <CharityIntroWave color={waveColor} />
+      <CharityIntroWave color={theme.palette.primary.main} />
       <div className={cx.column}>
         <Typography className={cx.title} color="primary" variant="h1">
           {title}
@@ -86,7 +87,6 @@ CharityIntro.propTypes = {
     subTitle: PropTypes.string,
     steps: PropTypes.any,
     link: PropTypes.string,
-    waveColor: PropTypes.string,
   }),
 }
 export default CharityIntro

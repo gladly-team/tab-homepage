@@ -26,8 +26,7 @@
       "landing": {
         "title": "The easiest way to help cats",
         "subtitle": "Every tab opened raises money for cats in need of an extra, helping paw. It’s so easy a cat could do it.",
-        "ctaImg": "../../img/cats/headerImg.png",
-        "waveColor": "#FF6A08"
+        "ctaImg": "../../img/cats/headerImg.png"
       },
       "moneyRaised": {
         "moneyImg": "../../img/cats/moneyRaised.png"
@@ -45,8 +44,7 @@
             "text": "More cats adopted"
           }
         ],
-        "link": "https://greatergood.org/jackson-galaxy",
-        "waveColor": "#FF6A08"
+        "link": "https://greatergood.org/jackson-galaxy"
       },
       "TFACIntro": {
         "titleImg": "../../img/cats/introMain.png",
