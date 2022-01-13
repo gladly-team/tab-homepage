@@ -11,11 +11,14 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     width: '100%',
-    minHeight: '100vh',
     backgroundColor: '#fafafa',
     justifyContent: 'center',
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(6),
+    },
   },
   link: {
     color: theme.palette.secondary.main,
@@ -72,19 +75,17 @@ const SecuritySection = ({ securityData }) => {
         <Typography className={cx.title} color="primary" variant="h1">
           Secure, private, and open source
         </Typography>
-        <Typography className={cx.subtitle}>
+        <Typography className={cx.subtitle} paragraph>
           We are serious about privacy. That’s why our browser extension will
           not (and literally cannot) access any private data beyond our new tab
           page.
         </Typography>
-        <div className={cx.linkText}>
-          <Typography className={cx.subtitleTwo}>
-            Don’t just take our word for it—our code is{' '}
-            <a className={cx.link} href={githubOrganizationURL}>
-              open source!
-            </a>
-          </Typography>
-        </div>
+        <Typography className={cx.subtitleTwo} paragraph>
+          Don’t just take our word for it—our code is{' '}
+          <a className={cx.link} href={githubOrganizationURL}>
+            open source!
+          </a>
+        </Typography>
       </div>
     </div>
   )

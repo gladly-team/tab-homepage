@@ -184,7 +184,7 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
       borderRadius: 2,
     },
     typography: {
-      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif,',
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
       fontSize: baseFontSize,
       useNextVariants: true,
 

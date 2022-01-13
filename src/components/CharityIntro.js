@@ -19,8 +19,12 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     width: '80%',
+    paddingTop: theme.spacing(6),
+    paddingBottom: theme.spacing(6),
     [theme.breakpoints.down('sm')]: {
       width: '90%',
+      paddingTop: theme.spacing(4),
+      paddingBottom: theme.spacing(4),
     },
   },
   title: {
@@ -30,12 +34,14 @@ const useStyles = makeStyles((theme) => ({
   },
   subtitle: {
     textAlign: 'center',
+    marginBottom: theme.spacing(4),
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: '60%',
+    },
   },
   steps: {
     display: 'flex',
     flexDirection: 'row',
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(8),
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
@@ -45,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
-      marginBottom: theme.spacing(3),
+      marginBottom: theme.spacing(2),
     },
   },
   stepText: {

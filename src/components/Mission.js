@@ -19,7 +19,12 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     backgroundColor: '#FFFFFF',
     overflow: 'hidden',
-    minHeight: '100vh',
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(6),
+    },
   },
   column: {
     position: 'relative',

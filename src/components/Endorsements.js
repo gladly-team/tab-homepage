@@ -20,15 +20,14 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 auto',
     display: 'flex',
     flexDirection: 'column',
-    minHeight: '100vh',
     paddingTop: theme.spacing(15.5),
     width: '100%',
     alignItems: 'center',
     background: '#FAFAFA',
     paddingBottom: theme.spacing(9),
     [theme.breakpoints.down('sm')]: {
-      paddingTop: theme.spacing(8),
-      paddingBottom: theme.spacing(8),
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(6),
     },
   },
   reportsContainer: {

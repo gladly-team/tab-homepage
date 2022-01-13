@@ -18,8 +18,13 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     background: 'white',
     alignItems: 'center',
-    minHeight: '100vh',
     justifyContent: 'center',
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: theme.spacing(0),
+      paddingBottom: theme.spacing(0),
+    },
   },
   row: {
     width: '90%',
@@ -88,7 +93,6 @@ const FAQ = ({ faqData }) => {
         root: cx.MuiAccordionRoot,
         expanded: cx.MuiAccordionExpanded,
       }}
-      disableGutters
       key={index}
     >
       <MuiAccordionSummary

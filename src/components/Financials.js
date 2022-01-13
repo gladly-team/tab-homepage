@@ -17,10 +17,15 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 auto',
     display: 'flex',
     flexDirection: 'column',
-    minHeight: '100vh',
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(6),
+    },
   },
   reportsContainer: {
     display: 'flex',
@@ -85,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonStyles: {
     width: theme.spacing(30),
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(6),
   },
 }))
 

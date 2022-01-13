@@ -32,7 +32,7 @@ describe('teamseas page', () => {
         wrapper.find(MuiAccordionSummary).at(i).find(Typography).text()
       ).toEqual(faqData.questions[i].question)
       expect(
-        wrapper.find(MuiAccordionDetails).at(i).find(Markdown).props().children
+        wrapper.find(MuiAccordionDetails).at(i).find(Markdown).children().text()
       ).toEqual(faqData.questions[i].answer)
     }
   })

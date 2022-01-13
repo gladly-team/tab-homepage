@@ -9,14 +9,14 @@
       }
     },
     "causeLaunch": {
-      "comingSoonTitle": "Tab for TeamSeas",
+      "comingSoonTitle": "Tab for #TeamSeas",
       "launchDate": "2021-10-29T13:00:00.000",
       "preview": true,
       "enabled": false
     },
     "causeId": "SGa6zohkY",
     "metadata": {
-      "title": "Tab for TeamSeas - Home",
+      "title": "Tab for #TeamSeas - Home",
       "ogTitle": "Remove trash from the seas for free | Tab for #TeamSeas",
       "ogDescription": "Open browser tabs to clean our seas, for free. It's that easy. Join #teamseas today!",
       "ogImage": "../../img/cats/1.png",
@@ -36,7 +36,7 @@
       },
       "charityIntro": {
         "title": "Stop wasting tabs, start changing the world",
-        "subTitle": "Little actions can have big results: that is why we are supporting #TeamSeas with their goal of cleaning up 30M pounds of trash from our seas. With Tab for #TeamSeas, you can help reach this goal just by opening more browser tabs. It’s free and easy!",
+        "subTitle": "Little actions can have big results: that's why we're supporting #TeamSeas as they remove over 30M pounds of trash from our seas. With Tab for #TeamSeas, you can help clean our oceans just by opening browser tabs. It’s free and easy!",
         "steps": [
           {
             "img": "../../img/seas/charityIntro1.png",
@@ -67,12 +67,12 @@
         "canonicalURL": "/seas/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
-        "bodyText": "We all want to do our part to help out, but with limited time this can be tough to fit into our jam-packed schedules. \n\n We, at Tab for #TeamSeas, believe everyone can make a difference, and that’s why we created a way to do this even if you don't have a ton of time or money. Through our partnership with #TeamSeas, you can be sure each tab you open is directly supporting [Ocean Conservancy](https://oceanconservancy.org/) and [The Ocean Cleanup](https://theoceancleanup.com/).",
+        "bodyText": "We believe everyone should be able to clean up our oceans. Through our partnership with #TeamSeas, you can be sure each tab you open is directly supporting [Ocean Conservancy](https://oceanconservancy.org/) and [The Ocean Cleanup](https://theoceancleanup.com/).",
         "image": "../../img/seas/mission.png"
       },
       "Financials": {
         "title": "Transparent Financials",
-        "text": "Every tab does make an impact!  Check out how much we've raised together.",
+        "text": "Every tab makes an impact. Check out how much we've raised together.",
         "buttonText": "See All Financials",
         "ctaImg": "../../img/seas/financialSeas.png",
         "q1Img": "../../img/cats/q1.png",
@@ -81,32 +81,57 @@
         "q4Img": "../../img/cats/q4.png"
       },
       "Endorsements": {
-        "title": "People are saying good things",
-        "headerQuote": "“It’s the quote that’s the easiest way to raise do good for cats”",
-        "quote": "“We’ve always strived to make sure our partners are doing good by us and our furry friends. Tab for Cats is an exceptional example of what you should be looking forward to doing as a charitable organization. It’s the quote that’s the easiest way to raise do good for cats”",
-        "endorser": "Jackson Galaxy",
-        "endorserTitle": "Owner and founder of the Jackson Galaxy Project, Partner at Greater Good Charities",
-        "endorserImg": "../../img/cats/mainEndorser.png",
         "smallEndorsements": [
           {
-            "endorser": "Jess S.",
-            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
-            "img": "../../img/cats/endorser1.png"
+            "endorser": "Shayne W.",
+            "endorsement": "“FANTASTIC app that lets you do a lot of good things while doing your day to day work, studying for finals, or just surfing the web!”",
+            "img": "../../img/reviews/shayne_w.png"
           },
           {
-            "endorser": "Donny P.",
-            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
-            "img": "../../img/cats/endorser2.png"
+            "endorser": "Benjamin K.",
+            "endorsement": "“Raise money for charity by browsing the internet. Perfectly executed!”",
+            "img": "../../img/reviews/benjamin_k.png"
           },
           {
-            "endorser": "Brenda J.",
-            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
-            "img": "../../img/cats/endorser3.png"
+            "endorser": "Cameron B.",
+            "endorsement": "“As a person who frequently enters wikipedia holes opening 20 tabs at a time.. its great to know that my procrastination can be of some use! Great app, brilliant idea”",
+            "img": "../../img/reviews/cameron_b.png"
           },
           {
-            "endorser": "Brenda J2.",
-            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
-            "img": "../../img/cats/endorser3.png"
+            "endorser": "Chase R.",
+            "endorsement": "“It's wonderful. Unobtrusive, useful, well designed, easy to navigate, and actually pretty fun! There is no reason to not have this extension. It has not affected performance and is never an inconvenience.”",
+            "img": "../../img/reviews/chase_r.png"
+          },
+          
+          {
+            "endorser": "Jonathon B.",
+            "endorsement": "“Love that this gives me, a fool with no money, a way to donate to charity. :)”",
+            "img": "../../img/reviews/johnathan_b.png"
+          },
+          {
+            "endorser": "Ana L.",
+            "endorsement": "“It's a great way to raise money for charity when you don't have a lot of money and don't have the time to go out and try to raise money on your own. Plus I can decide what charity to donate to, and do it on my own time. I love it!”",
+            "img": "../../img/reviews/ana_l.png"
+          },
+          {
+            "endorser": "Alfonzo G.",
+            "endorsement": "“Wonderful service that does great things for people in need, and all you have to do is click a button. So really it's a no brainer, AND as a plus their new UI is really attractive and useful as well. Way better than the default chrome new tab page. So what do you have to lose?”",
+            "img": "../../img/reviews/alfonzo_g.png"
+          },
+          {
+            "endorser": "Abby H.",
+            "endorsement": "“Wonderful and thoughtful idea for an extension! Helping save the world one tab at a time.”",
+            "img": "../../img/reviews/abby_h.png"
+          },
+          {
+            "endorser": "Lucas N.",
+            "endorsement": "“Awesome way to give back while browsing, with absolutely no effort on your end!”",
+            "img": "../../img/reviews/lucas_n.png"
+          },
+          {
+            "endorser": "Toby S.",
+            "endorsement": "“Amazing extension. Such an awesome idea to use ad revenue from people's new tab to donate to charity. I'd rate 6 stars if I could.”",
+            "img": "../../img/reviews/toby_s.png"
           }
         ]
       },
@@ -115,15 +140,11 @@
         "questions": [
           {
             "question": "How does opening tabs raise money for charity?",
-            "answer": "Every time you open a new tab, there will be a few ads in the right corner of your home screen. These ads generate the revenue that funds our charitable impact. And the best part? It’s completely free!"
+            "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It’s completely free!"
           },
           {
-            "question": "Is the new tab page as cute as this page?",
-            "answer": "It might be even cuter! Each day our Tabbers are welcomed with a new adorable cat photo as their background on Tab for Cats."
-          },
-          {
-            "question": "What nonprofit does Tab for Cats support?",
-            "answer": "Tab for Cats supports Greater Good Charities’ The Jackson Galaxy Project. We are proud to support an incredible organization that works to train shelter cats to give them the best opportunity to be adopted."
+            "question": "What nonprofit does Tab for #TeamSeas support?",
+            "answer": "Tab for #TeamSeas directly supports [#TeamSeas](https://teamseas.org), an internet-led initiative working to clean up our oceans, rivers, and lakes around the world. This initiative splits the money raised evenly between [Ocean Conservancy](https://oceanconservancy.org/) and [The Ocean Cleanup](https://theoceancleanup.com/)."
           },
           {
             "question": "How can I find out about new updates and announcements?",
@@ -131,7 +152,7 @@
           },
           {
             "question": "This all sounds amazing! How else can I help?",
-            "answer": "Convincing your friends and family to join Tab for Cats is the most impactful thing you can do! In addition to each person raising more money, as we grow we can negotiate better rates for our ads meaning you can raise funds to help shelter cats even faster."
+            "answer": "You can donate directly to #TeamSeas by visiting [teamseas.org](https://teamseas.org)! Every dollar donated will equal a pound of trash cleaned up from the sea. Also, invite your friends and family to join in! Everybody who joins is helping to clean our seas even faster."
           }
         ]
       },

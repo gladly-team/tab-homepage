@@ -21,11 +21,16 @@ const useStyles = makeStyles((theme) => ({
   titleSection: {
     margin: '0 auto',
     display: 'flex',
+    position: 'relative', // for absolutely-positioned wave
     minHeight: 'calc(100vh - 64px)',
     alignItems: 'center',
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(10),
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
       height: 'auto',
+      paddingTop: theme.spacing(3),
+      paddingBottom: theme.spacing(3),
     },
   },
   title: {
