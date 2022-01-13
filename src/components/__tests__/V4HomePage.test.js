@@ -8,7 +8,8 @@ import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import { act } from 'react-dom/test-utils'
 import Helmet from 'react-helmet'
 import Snackbar from '@material-ui/core/Snackbar'
-
+import Footer from 'src/components/FooterV2'
+import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 data.data.sections.Financials.pdfs = [
   {
     quarter: 1,
@@ -319,5 +320,18 @@ describe('home page', () => {
 
     const wrapper = shallow(<HomePageWrapper {...mockProps} />)
     expect(wrapper.find(Snackbar).first().prop('open')).toEqual(true)
+  })
+  it('calls the onBeforeInstall prop on click and works if it is async', async () => {
+    expect.assertions(2)
+    const HomePageWrapper = require('../V4HomePage').default
+    const getUrlParameterValue =
+      require('src/utils/location').getUrlParameterValue
+    getUrlParameterValue.mockReturnValue(null)
+
+    const wrapper = mount(<HomePageWrapper {...getMockProps()} />)
+    expect(localStorageMgr.setItem).not.toHaveBeenCalled()
+    wrapper.find(Footer).find(GoogleChrome).simulate('click')
+    wrapper.update()
+    expect(localStorageMgr.setItem).toHaveBeenCalled()
   })
 })

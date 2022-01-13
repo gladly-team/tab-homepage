@@ -38,9 +38,12 @@ const useStyles = makeStyles((theme) => ({
   },
   subtitle: {
     textAlign: 'center',
+    width: '80%',
   },
   subtitleTwo: {
-    marginRight: theme.spacing(0.5),
+    margin: '0 auto',
+    textAlign: 'center',
+    width: '80%',
   },
   steps: {
     display: 'flex',
