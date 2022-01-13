@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
@@ -88,8 +88,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Landing = ({ landingData, causeId }) => {
-  const { title, subtitle, waveColor, ctaImg } = landingData
+  const { title, subtitle, ctaImg } = landingData
   const cx = useStyles()
+  const theme = useTheme()
   const ctaImage = getImage(formatImg(ctaImg))
   return (
     <div className="parent">
@@ -132,11 +133,11 @@ const Landing = ({ landingData, causeId }) => {
           <GatsbyImage image={ctaImage} alt={'call to action'} />
         </div>
         <div className={cx.wave}>
-          <Wave color={waveColor} />
+          <Wave color={theme.palette.primary.main} />
         </div>
       </div>
       <div className={cx.waveMobile}>
-        <Wave color={waveColor} />
+        <Wave color={theme.palette.primary.main} />
       </div>
     </div>
   )
@@ -146,7 +147,6 @@ Landing.propTypes = {
   landingData: PropTypes.shape({
     title: PropTypes.string,
     subtitle: PropTypes.string,
-    waveColor: PropTypes.string,
     ctaImg: PropTypes.any,
   }),
 }

@@ -162,7 +162,6 @@ exports.createPages = async ({ actions, graphql }) => {
                   }
                   subTitle
                   title
-                  waveColor
                 }
                 landing {
                   subtitle
@@ -172,7 +171,6 @@ exports.createPages = async ({ actions, graphql }) => {
                       gatsbyImageData(quality: 8)
                     }
                   }
-                  waveColor
                 }
                 moneyRaised {
                   moneyImg {
