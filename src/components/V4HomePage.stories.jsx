@@ -8,7 +8,7 @@ export default {
   component: HomePageWrapper,
 }
 
-const Template = (_args, { loaded: { data, previewPage } }) => (
+const Template = (_args, { loaded: { data } }) => (
   <HomePageWrapper location={'/'} pageContext={data} />
 )
 
@@ -30,6 +30,7 @@ MobileSeas.parameters = {
   chromatic: { viewports: [414, 736], delay: 1500 },
 }
 export const MobileCats = mobile(cats(Template.bind({})))
+
 MobileCats.loaders = [
   async () => ({
     data: await useCauseData('cats'),
@@ -39,7 +40,7 @@ MobileCats.parameters = {
   viewport: {
     defaultViewport: 'mobile2',
   },
-  chromatic: { viewports: [414, 736], delay: 1500 },
+  chromatic: { viewports: [414, 736], delay: 1500, disableSnapshot: true },
 }
 
 export const FullWidthSeas = seas(Template.bind({}))
@@ -49,8 +50,9 @@ FullWidthSeas.loaders = [
   }),
 ]
 FullWidthSeas.parameters = {
-  chromatic: { delay: 1500 },
+  chromatic: { delay: 1500, disableSnapshot: true },
 }
+
 export const FullWidthSeasPreview = seas(Template.bind({}))
 FullWidthSeasPreview.loaders = [
   async () => {
