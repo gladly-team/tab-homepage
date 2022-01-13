@@ -75,19 +75,17 @@ const SecuritySection = ({ securityData }) => {
         <Typography className={cx.title} color="primary" variant="h1">
           Secure, private, and open source
         </Typography>
-        <Typography className={cx.subtitle}>
+        <Typography className={cx.subtitle} paragraph>
           We are serious about privacy. That’s why our browser extension will
           not (and literally cannot) access any private data beyond our new tab
           page.
         </Typography>
-        <div className={cx.linkText}>
-          <Typography className={cx.subtitleTwo}>
-            Don’t just take our word for it—our code is{' '}
-            <a className={cx.link} href={githubOrganizationURL}>
-              open source!
-            </a>
-          </Typography>
-        </div>
+        <Typography className={cx.subtitleTwo} paragraph>
+          Don’t just take our word for it—our code is{' '}
+          <a className={cx.link} href={githubOrganizationURL}>
+            open source!
+          </a>
+        </Typography>
       </div>
     </div>
   )
