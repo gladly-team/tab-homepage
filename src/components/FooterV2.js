@@ -41,6 +41,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
   },
+  tiktok: {
+    marginRight: theme.spacing(1),
+  },
+  social: {
+    marginTop: theme.spacing(1),
+  },
   contentRow: {
     display: 'flex',
     width: '80%',
@@ -68,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#fff',
   },
   columnThree: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(6.5),
     display: 'flex',
     [theme.breakpoints.down(1080)]: {
       width: '100%',
@@ -86,7 +92,12 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     color: '#fff',
   },
-  iconRow: {
+  iconRowOne: {
+    display: 'flex',
+    color: '#fff',
+    marginLeft: theme.spacing(-2),
+  },
+  iconRowTwo: {
     display: 'flex',
     color: '#fff',
   },
@@ -122,11 +133,15 @@ const Footer = ({ onBeforeInstall, footerData: { img } }) => {
           <Link to="/">
             <img src={logo} style={{ height: 43 }} />
           </Link>
-          <Typography variant="subtitle2" color="textSecondary">
+          <Typography
+            variant="subtitle2"
+            color="textSecondary"
+            className={cx.social}
+          >
             Social
           </Typography>
-          <div className={cx.iconRow}>
-            <Link to={tiktokPageURL}>
+          <div className={cx.iconRowOne}>
+            <Link to={tiktokPageURL} className={cx.tiktok}>
               <IconButton classes={{ root: cx.iconButton }}>
                 <SvgIcon
                   viewBox="0 0 50 50"
@@ -162,7 +177,7 @@ const Footer = ({ onBeforeInstall, footerData: { img } }) => {
           <Typography variant="subtitle2" color="textSecondary">
             Browser Compatibility
           </Typography>
-          <div className={cx.iconRow}>
+          <div className={cx.iconRowTwo}>
             <IconButton
               onClick={browserOnClick(chromeExtensionURL)}
               edge="start"
