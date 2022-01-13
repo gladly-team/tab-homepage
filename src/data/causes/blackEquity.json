@@ -1,0 +1,134 @@
+{
+  "path": "black-equity",
+  "data": {
+    "styles": {
+      "colors": {
+        "primary": "#A27DF8",
+        "secondary": "#29BEBA",
+        "primaryContrast": "#15AAA6"
+      }
+    },
+    "causeLaunch": {
+      "comingSoonTitle": "Tab for Black Equity",
+      "preview": false,
+      "enabled": false
+    },
+    "causeId": "q1FFsAhbV",
+    "metadata": {
+      "title": "Support Black Equity - Tab for a Cause",
+      "ogTitle": "Support Black Equity by Surfing the Web | Tab for a Cause",
+      "ogDescription": "Open new tabs, raise money for charities supporting Black equity - for free",
+      "ogImage": "../../img/blackEquity/landing.png",
+      "causeSpecificKeywords": "charity, equity, Black, community, racial, educational, bail, pretrial, support, empowerment, African American, POC, WOC, HBCU, college, scholarship, university,systemic racism, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
+    },
+    "sections": {
+      "landing": {
+        "title": "Support Black equity, every day",
+        "subtitle": "Every tab opened raises money for nonprofit organizations working toward Black empowerment and systemic reform.",
+        "ctaImg": "../../img/blackEquity/landing.png"
+      },
+      "moneyRaised": {
+        "moneyImg": "../../img/blackEquity/moneyRaised.png"
+      },
+      "charityIntro": {
+        "title": "Stop wasting tabs, start changing the world.",
+        "subTitle": "Little actions can have big results. With Tab for Black Equity, you can help make a positive impact on charities uplifting Black communities just by opening more browser tabs.",
+        "steps": [
+          {
+            "img": "../../img/blackEquity/charityIntro1.png",
+            "text": "More young people going to college"
+          },
+          {
+            "img": "../../img/blackEquity/charityIntro2.png",
+            "text": "Bail money for people who wouldn't otherwise have it"
+          },
+          {
+            "img": "../../img/blackEquity/charityIntro3.png",
+            "text": "A better, more equitable planet"
+          }
+        ]
+      },
+      "TFACIntro": {
+        "titleImg": "../../img/blackEquity/introCTA.png",
+        "title": "Make an impact towards Black equity.",
+        "subtitle": "Turn your daily habits into a positive change. Do good, feel good.",
+        "img1": "../../img/blackEquity/intro1.png",
+        "img1Subtext": "##### Open new tabs on your browser.",
+        "img2": "../../img/blackEquity/intro2.png",
+        "img2Subtext": "##### Earn money for charities.",
+        "img3": "../../img/blackEquity/intro3.png",
+        "img3Subtext": "##### Help support systemic change and Black empowerment."
+      },
+
+      "Mission": {
+        "missionURL": "/black-equity/",
+        "titleText": "Our Mission",
+        "subtitleText": "To make giving back easier than ever",
+        "bodyText": "We believe everyone should make a difference for racial equity. Through our partnerships with Thurgood Marshall College Fund and the Bail Project, you can be sure each tab you open is advancing Black equity.",
+        "image": "../../img/blackEquity/mission.png"
+      },
+      "Security": {
+        "titleImg": "../../img/blackEquity/security.png"
+      },
+      "Financials": {
+        "title": "Transparent Financials",
+        "text": "Every tab does make an impact!  Check out how much we've raised together.",
+        "buttonText": "See All Financials",
+        "ctaImg": "../../img/blackEquity/financials.png",
+        "q1Img": "../../img/causeshared/q1.png",
+        "q2Img": "../../img/causeshared/q2.png",
+        "q3Img": "../../img/causeshared/q3.png",
+        "q4Img": "../../img/causeshared/q4.png"
+      },
+      "Endorsements": {
+        "disableCenterEndorsement": true,
+        "title": "People are saying good things",
+        "smallEndorsements": [
+          {
+            "endorser": "Jess S.",
+            "endorsement": "“FANTASTIC app that lets you do a lot of good things while doing your day to day work, studying for finals, or just surfing the web!”",
+            "img": "../../img/cats/endorser1.png"
+          },
+          {
+            "endorser": "Donny P.",
+            "endorsement": "“As a person who frequently enters wikipedia holes opening 20 tabs at a time.. its great to know that my procrastination can be of some use! Great app, brilliant idea”",
+            "img": "../../img/cats/endorser2.png"
+          },
+          {
+            "endorser": "Brenda J.",
+            "endorsement": "“This is the best way for me to feel good about the things I do each day. Can’t complain, completely free, pretty unintrusive”",
+            "img": "../../img/cats/endorser3.png"
+          }
+        ]
+      },
+      "faq": {
+        "img": "../../img/blackEquity/FAQ.png",
+        "questions": [
+          {
+            "question": "How does opening tabs raise money for charity?",
+            "answer": "Every time you open a new tab, there will be a few ads in the right corner of your home screen. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
+          },
+          {
+            "question": "What type of images can I expect on my new tab page?",
+            "answer": "Each day our Tabbers are welcomed with breathtaking images captured by Black photographers. See the collection [here](https://unsplash.com/collections/l26tWeG5IJw/black-equity)."
+          },
+          {
+            "question": "What nonprofit does Tab for Black Equity support?",
+            "answer": "Tab for Black Equity supports [The Bail Project](https://bailproject.org/) and [Thurgood Marshall College Fund](https://www.tmcf.org/?gclid=CjwKCAiA5t-OBhByEiwAhR-hmzFLgTNoslU9vYn6NAWGC-XBM5zm2kOeuNLPQdo7yFMlEv0PixPbpRoCKEcQAvD_BwE). We are proud to support these incredible organizations that work to uplift their communities towards paths of empowerment and opportunity."
+          },
+          {
+            "question": "How can I find out about new updates and announcements?",
+            "answer": "Stay in touch with us on social media! Follow us @tabforacause on [TikTok](https://www.tiktok.com/@tabforacause), [Instagram](https://www.instagram.com/tabforacause/), [Twitter](https://twitter.com/TabForACause), and [Facebook](https://www.facebook.com/TabForACause)."
+          },
+          {
+            "question": "This all sounds amazing! How else can I help?",
+            "answer": "Invite your friends and family to join in! Everybody who joins helps advance Black equity."
+          }
+        ]
+      },
+      "Footer": {
+        "img": null
+      }
+    }
+  }
+}

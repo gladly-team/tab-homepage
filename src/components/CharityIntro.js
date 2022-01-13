@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   step: {
+    flex: '1',
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
@@ -57,6 +58,12 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     fontWeight: 'bold',
   },
+  stepImage: {
+    aspectRatio: 1.333,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
 }))
 
 const CharityIntro = ({ charityIntroData }) => {
@@ -66,7 +73,14 @@ const CharityIntro = ({ charityIntroData }) => {
     const image = getImage(formatImg(step.img))
     return (
       <div className={cx.step} key={`step${index}`}>
-        <GatsbyImage alt="charity intro step" image={image} />
+        <GatsbyImage
+          className={cx.stepImage}
+          imgStyle={{
+            objectFit: 'scale-down',
+          }}
+          alt="charity intro step"
+          image={image}
+        />
         <Typography className={cx.stepText} variant="body1">
           {step.text}
         </Typography>
@@ -96,6 +110,7 @@ CharityIntro.propTypes = {
     subTitle: PropTypes.string,
     steps: PropTypes.any,
     link: PropTypes.string,
+    waveColor: PropTypes.string,
   }),
 }
 export default CharityIntro
