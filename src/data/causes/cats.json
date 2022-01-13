@@ -32,7 +32,7 @@
       },
       "charityIntro": {
         "title": "Stop wasting tabs, start changing the world",
-        "subTitle": "Every cat deserves a home. With Tab for Cats, you can help them find theirs all by opening more browser tabs. It’s free, easy, and supports cats in need.",
+        "subTitle": "Every cat deserves a home. With Tab for Cats, you can help them find theirs all by opening browser tabs. It’s free, easy, and supports cats in need.",
         "steps": [
           {
             "img": "../../img/cats/charityIntro1.png",
@@ -52,7 +52,7 @@
         "img1": "../../img/cats/intro1.png",
         "img1Subtext": "##### Open new tabs on your browser.",
         "img2": "../../img/cats/intro2.png",
-        "img2Subtext": "##### Earn Money for cat training programs.",
+        "img2Subtext": "##### Earn money for cat training programs.",
         "img3": "../../img/cats/intro3.png",
         "img3Subtext": "##### Help get more cats adopted."
       },
@@ -60,7 +60,7 @@
         "missionURL": "/cats/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
-        "bodyText": "We all want to do our part to help out, but with limited time this can be tough to fit into our jam-packed schedules. We, at Tab for Cats, believe everyone can make a difference and that is why we created a way to do this even if you don't have a ton of time or money. Through our partnership with The Jackson Galaxy Project, you can be sure each tab you open is directly helping shelter cats get adopted into their fur-ever homes.",
+        "bodyText": "We believe everyone should be able to give cats the love they deserve. Through our partnership with The Jackson Galaxy Project, you can be sure each tab you open is helping shelter cats get adopted into their fur-ever homes.",
         "image": "../../img/cats/mission.png"
       },
       "Security": {
@@ -68,7 +68,7 @@
       },
       "Financials": {
         "title": "Transparent Financials",
-        "text": "Every tab does make an impact!  Check out how much we've raised together.",
+        "text": "Every tab makes an impact. Check out how much we've raised together.",
         "buttonText": "See All Financials",
         "ctaImg": "../../img/cats/financialsCat.png",
         "q1Img": "../../img/cats/q1.png",
@@ -106,7 +106,7 @@
         "questions": [
           {
             "question": "How does opening tabs raise money for charity?",
-            "answer": "Every time you open a new tab, there will be a few ads in the right corner of your home screen. These ads generate the revenue that funds our charitable impact. And the best part? It’s completely free!"
+            "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It’s completely free!"
           },
           {
             "question": "Is the new tab page as cute as this page?",
