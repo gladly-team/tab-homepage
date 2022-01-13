@@ -29,6 +29,7 @@ MobileSeas.parameters = {
   },
   chromatic: { viewports: [414, 900] },
 }
+
 export const MobileCats = mobile(cats(Template.bind({})))
 MobileCats.loaders = [
   async () => ({
@@ -39,7 +40,7 @@ MobileCats.parameters = {
   viewport: {
     defaultViewport: 'mobile2',
   },
-  chromatic: { viewports: [414, 900] },
+  chromatic: { viewports: [414, 900], disableSnapshot: true },
 }
 
 export const FullWidthSeas = seas(Template.bind({}))
@@ -48,6 +49,7 @@ FullWidthSeas.loaders = [
     data: await useCauseData('seas'),
   }),
 ]
+FullWidthSeas.parameters = {}
 
 export const FullWidthCats = cats(Template.bind({}))
 FullWidthCats.loaders = [
@@ -55,20 +57,23 @@ FullWidthCats.loaders = [
     data: await useCauseData('cats'),
   }),
 ]
+FullWidthCats.parameters = {
+  chromatic: { disableSnapshot: true },
+}
 
 export const FutureMobileCats = mobile(cats(Template.bind({})))
 FutureMobileCats.loaders = [
   async () => {
     var data = await useCauseData('cats')
     data.data.causeLaunch.launchDate = new Date(Date.now() + 5 * 86400000)
-    return {data}
-  }
+    return { data }
+  },
 ]
 FutureMobileCats.parameters = {
   viewport: {
     defaultViewport: 'mobile2',
   },
-  chromatic: { viewports: [414, 900] },
+  chromatic: { viewports: [414, 900], disableSnapshot: true },
 }
 
 export const FutureMobileSeas = mobile(seas(Template.bind({})))
@@ -76,8 +81,8 @@ FutureMobileSeas.loaders = [
   async () => {
     var data = await useCauseData('seas')
     data.data.causeLaunch.launchDate = new Date(Date.now() + 5 * 86400000)
-    return {data}
-  }
+    return { data }
+  },
 ]
 FutureMobileSeas.parameters = {
   viewport: {
