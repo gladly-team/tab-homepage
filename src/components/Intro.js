@@ -34,10 +34,12 @@ const useStyles = makeStyles((theme) => ({
   steps: {
     display: 'flex',
     flexDirection: 'row',
+    paddingTop: theme.spacing(6),
+    padding: theme.spacing(4),
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
+      padding: theme.spacing(2),
     },
-    padding: theme.spacing(2),
   },
   step: {
     display: 'flex',
