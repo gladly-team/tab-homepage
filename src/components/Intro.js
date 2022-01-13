@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
-      padding: theme.spacing(3),
+      padding: theme.spacing(2),
     },
     padding: theme.spacing(2),
   },
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
       height: 'auto',
     },
     [theme.breakpoints.down('sm')]: {
-      margin: theme.spacing(5),
+      margin: theme.spacing(2),
     },
     margin: theme.spacing(2),
   },
@@ -91,8 +91,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     padding: theme.spacing(1),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
     minHeight: theme.spacing(14),
     [theme.breakpoints.down('sm')]: {
       minHeight: 'unset',
