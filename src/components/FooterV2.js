@@ -141,7 +141,7 @@ const Footer = ({ onBeforeInstall, footerData: { img } }) => {
             Social
           </Typography>
           <div className={cx.iconRowOne}>
-            <Link to={tiktokPageURL} className={cx.tiktok}>
+            <Link to={tiktokPageURL} className={cx.tiktok} target="_blank">
               <IconButton classes={{ root: cx.iconButton }}>
                 <SvgIcon
                   viewBox="0 0 50 50"
@@ -156,19 +156,19 @@ const Footer = ({ onBeforeInstall, footerData: { img } }) => {
                 </SvgIcon>
               </IconButton>
             </Link>
-            <Link to={facebookPageURL}>
+            <Link to={facebookPageURL} target="_blank">
               <IconButton edge="start" classes={{ root: cx.iconButton }}>
                 <FacebookIcon classes={{ root: cx.iconStyles }} />
               </IconButton>
             </Link>
 
-            <Link to={instagramPageURL}>
+            <Link to={instagramPageURL} target="_blank">
               <IconButton classes={{ root: cx.iconButton }}>
                 <InstagramIcon classes={{ root: cx.iconStyles }} />
               </IconButton>
             </Link>
 
-            <Link to={twitterPageURL}>
+            <Link to={twitterPageURL} target="_blank">
               <IconButton classes={{ root: cx.iconButton }}>
                 <TwitterIcon classes={{ root: cx.iconStyles }} />
               </IconButton>
