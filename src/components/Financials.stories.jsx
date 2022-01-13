@@ -12,6 +12,7 @@ const Template = (_args, { loaded: { data } }) => {
   const financialsData = data.data.sections.Financials
   return <Financials financialsData={financialsData} />
 }
+
 export const MobileSeas = mobile(seas(Template.bind({})))
 /*
  * loaders are experimental and allow us to use async await which we need in
@@ -29,6 +30,7 @@ MobileSeas.parameters = {
   },
   chromatic: { viewports: [414, 736] },
 }
+
 export const MobileCats = mobile(cats(Template.bind({})))
 MobileCats.loaders = [
   async () => ({
@@ -39,7 +41,7 @@ MobileCats.parameters = {
   viewport: {
     defaultViewport: 'mobile2',
   },
-  chromatic: { viewports: [414, 736] },
+  chromatic: { viewports: [414, 736], disableSnapshot: true },
 }
 
 export const FullWidthSeas = seas(Template.bind({}))
@@ -48,6 +50,7 @@ FullWidthSeas.loaders = [
     data: await useCauseData('seas'),
   }),
 ]
+FullWidthSeas.parameters = {}
 
 export const FullWidthCats = cats(Template.bind({}))
 FullWidthCats.loaders = [
@@ -55,3 +58,6 @@ FullWidthCats.loaders = [
     data: await useCauseData('cats'),
   }),
 ]
+FullWidthCats.parameters = {
+  chromatic: { disableSnapshot: true },
+}
