@@ -3,6 +3,7 @@ import React from 'react'
 import HomePageWrapper from './V4HomePage'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+
 export default {
   title: 'Pages/HomePage',
   component: HomePageWrapper,
