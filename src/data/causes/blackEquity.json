@@ -10,7 +10,7 @@
     },
     "causeLaunch": {
       "comingSoonTitle": "Tab for Black Equity",
-      "preview": false,
+      "preview": true,
       "enabled": false
     },
     "causeId": "q1FFsAhbV",
@@ -32,7 +32,7 @@
       },
       "charityIntro": {
         "title": "Stop wasting tabs, start changing the world.",
-        "subTitle": "Little actions can have big results. With Tab for Black Equity, you can help make a positive impact on charities uplifting Black communities just by opening more browser tabs.",
+        "subTitle": "Little actions can have big results. With Tab for Black Equity, you can support charities uplifting Black communities just by opening more browser tabs.",
         "steps": [
           {
             "img": "../../img/blackEquity/charityIntro1.png",
@@ -50,7 +50,7 @@
       },
       "TFACIntro": {
         "titleImg": "../../img/blackEquity/introCTA.png",
-        "title": "Make an impact towards Black equity.",
+        "title": "Make an impact toward Black equity.",
         "subtitle": "Turn your daily habits into a positive change. Do good, feel good.",
         "img1": "../../img/blackEquity/intro1.png",
         "img1Subtext": "##### Open new tabs on your browser.",
@@ -64,7 +64,7 @@
         "missionURL": "/black-equity/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
-        "bodyText": "We believe everyone should make a difference for racial equity. Through our partnerships with Thurgood Marshall College Fund and the Bail Project, you can be sure each tab you open is advancing Black equity.",
+        "bodyText": "We believe everyone should make a difference for racial equity. Through our support of Thurgood Marshall College Fund and the Bail Project, you can be sure each tab you open is advancing Black equity.",
         "image": "../../img/blackEquity/mission.png"
       },
       "Security": {
@@ -72,7 +72,7 @@
       },
       "Financials": {
         "title": "Transparent Financials",
-        "text": "Every tab does make an impact!  Check out how much we've raised together.",
+        "text": "Every tab makes an impact. Check out how much we've raised together.",
         "buttonText": "See All Financials",
         "ctaImg": "../../img/blackEquity/financials.png",
         "q1Img": "../../img/causeshared/q1.png",
@@ -142,7 +142,7 @@
         "questions": [
           {
             "question": "How does opening tabs raise money for charity?",
-            "answer": "Every time you open a new tab, there will be a few ads in the right corner of your home screen. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
+            "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
           },
           {
             "question": "What type of images can I expect on my new tab page?",
@@ -150,7 +150,7 @@
           },
           {
             "question": "What nonprofit does Tab for Black Equity support?",
-            "answer": "Tab for Black Equity supports [The Bail Project](https://bailproject.org/) and [Thurgood Marshall College Fund](https://www.tmcf.org/?gclid=CjwKCAiA5t-OBhByEiwAhR-hmzFLgTNoslU9vYn6NAWGC-XBM5zm2kOeuNLPQdo7yFMlEv0PixPbpRoCKEcQAvD_BwE). We are proud to support these incredible organizations that work to uplift their communities towards paths of empowerment and opportunity."
+            "answer": "Tab for Black Equity supports [The Bail Project](https://bailproject.org/) and [Thurgood Marshall College Fund](https://www.tmcf.org/?gclid=CjwKCAiA5t-OBhByEiwAhR-hmzFLgTNoslU9vYn6NAWGC-XBM5zm2kOeuNLPQdo7yFMlEv0PixPbpRoCKEcQAvD_BwE). We are proud to support these incredible organizations that work to uplift their communities toward paths of empowerment and opportunity."
           },
           {
             "question": "How can I find out about new updates and announcements?",
