@@ -14,6 +14,8 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     backgroundColor: '#fafafa',
     justifyContent: 'center',
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
   },
   link: {
     color: theme.palette.secondary.main,

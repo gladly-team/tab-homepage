@@ -21,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
   },
   reportsContainer: {
     display: 'flex',
