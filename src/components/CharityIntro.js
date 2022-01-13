@@ -35,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
   subtitle: {
     textAlign: 'center',
     marginBottom: theme.spacing(4),
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: '60%',
+    },
   },
   steps: {
     display: 'flex',
