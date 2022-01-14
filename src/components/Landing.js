@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
   },
   wave: {
     position: 'absolute',
-    bottom: 0,
+    bottom: -2, // avoids a gap appearing on some resolutions
     width: '100%',
     zIndex: -1,
     [theme.breakpoints.down('sm')]: {
@@ -82,10 +82,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   waveMobile: {
+    marginBottom: -2, // avoids a gap appearing on some resolutions
     display: 'none',
-    position: 'static',
     width: '100%',
-    zIndex: -1,
     [theme.breakpoints.down('sm')]: {
       display: 'block',
     },
