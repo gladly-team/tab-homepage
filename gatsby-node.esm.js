@@ -317,31 +317,29 @@ exports.createPages = async ({ actions, graphql }) => {
         styles: data.styles,
       }
       const causeLaunchData = data.causeLaunch
-      if (generateCausePages() || causeLaunchData.enabled) {
+      createPage({
+        path: `${path}/`,
+        component: causeLaunchData.enabled ? HomePageWrapper : ComingSoon,
+        context: {
+          data: pivotedData,
+        },
+      })
+      response.data.allReferrersYaml.edges.forEach(({ node }) => {
+        // Not all referrers will have a vanity URL.
+        if (!node.path || !node.referrerId) {
+          return
+        }
         createPage({
-          path: `${path}/`,
+          path: `${path}/${node.path}/`,
           component: causeLaunchData.enabled ? HomePageWrapper : ComingSoon,
           context: {
             data: pivotedData,
+            referrer: {
+              id: node.referrerId,
+            },
           },
         })
-        response.data.allReferrersYaml.edges.forEach(({ node }) => {
-          // Not all referrers will have a vanity URL.
-          if (!node.path || !node.referrerId) {
-            return
-          }
-          createPage({
-            path: `${path}/${node.path}/`,
-            component: causeLaunchData.enabled ? HomePageWrapper : ComingSoon,
-            context: {
-              data: pivotedData,
-              referrer: {
-                id: node.referrerId,
-              },
-            },
-          })
-        })
-      }
+      })
       createPage({
         path: `${path}/preview/`,
         component: causeLaunchData.preview ? HomePageWrapper : NotFoundPage,
