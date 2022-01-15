@@ -14,6 +14,8 @@ import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
 import AppleSafari from 'mdi-material-ui/AppleSafari'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
+import FooterBlobLeft from 'src/components/FooterBlobLeft'
+import FooterBlobRight from 'src/components/FooterBlobRight'
 import {
   chromeExtensionURL,
   edgeExtensionURL,
@@ -40,6 +42,8 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: 20,
     display: 'flex',
     justifyContent: 'center',
+    overflow: 'hidden',
+    position: 'relative',
   },
   tiktok: {
     marginRight: theme.spacing(1),
@@ -57,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
       content: '',
       flex: '0 1 30%',
     },
+    zIndex: '1',
   },
   columnOne: {
     marginTop: theme.spacing(6.5),
@@ -115,8 +120,28 @@ const useStyles = makeStyles((theme) => ({
   iconButton: {
     borderRadius: '10%',
   },
+  leftBubble: {
+    position: 'absolute',
+    width: theme.spacing(50),
+    left: theme.spacing(10),
+    top: theme.spacing(6),
+    [theme.breakpoints.down('sm')]: {
+      left: theme.spacing(-30),
+    },
+  },
+  rightBubble: {
+    position: 'absolute',
+    width: theme.spacing(40),
+    right: theme.spacing(10),
+    top: theme.spacing(27),
+    [theme.breakpoints.down('sm')]: {
+      right: theme.spacing(-14),
+      top: 'unset',
+      bottom: theme.spacing(-30),
+    },
+  },
 }))
-const Footer = ({ onBeforeInstall, footerData: { img } }) => {
+const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
   const image = getImage(formatImg(img))
   const cx = useStyles()
   const browserOnClick = useCallback(
@@ -128,6 +153,8 @@ const Footer = ({ onBeforeInstall, footerData: { img } }) => {
   )
   return (
     <div className={cx.backgroundContainer}>
+      <FooterBlobLeft color={bubbleColor} innerClassName={cx.leftBubble} />
+      <FooterBlobRight color={bubbleColor} innerClassName={cx.rightBubble} />
       <div className={cx.contentRow}>
         <div className={cx.columnOne}>
           <Link to="/">
@@ -291,7 +318,10 @@ const Footer = ({ onBeforeInstall, footerData: { img } }) => {
 
 Footer.propTypes = {
   onBeforeInstall: PropTypes.func.isRequired,
-  footerData: PropTypes.shape({ img: PropTypes.any }),
+  footerData: PropTypes.shape({
+    img: PropTypes.any,
+    bubbleColor: PropTypes.string,
+  }),
 }
 
 Footer.defaultProps = {}

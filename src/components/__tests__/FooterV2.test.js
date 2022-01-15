@@ -5,8 +5,13 @@ import { shallow, mount } from 'enzyme'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
 import AppleSafari from 'mdi-material-ui/AppleSafari'
+import FooterBlobLeft from '../FooterBlobLeft'
+import FooterBlobRight from '../FooterBlobRight'
 
-const mockProps = { onBeforeInstall: () => {}, footerData: { img: {} } }
+const mockProps = {
+  onBeforeInstall: () => {},
+  footerData: { img: {}, bubbleColor: '#ABABAB' },
+}
 describe('FooterV2', () => {
   it('renders without error', () => {
     const FooterV2 = require('../FooterV2').default
@@ -56,5 +61,17 @@ describe('FooterV2', () => {
     wrapper.find(AppleSafari).simulate('click')
     wrapper.update()
     expect(onBeforeInstallSpy).toHaveBeenCalled()
+  })
+
+  it('sets both FooterLeftBlob and FooterRightBlob to correct colors', () => {
+    const FooterV2 = require('../FooterV2').default
+    const wrapper = shallow(<FooterV2 {...mockProps} />)
+
+    expect(wrapper.find(FooterBlobLeft).first().prop('color')).toEqual(
+      mockProps.footerData.bubbleColor
+    )
+    expect(wrapper.find(FooterBlobRight).first().prop('color')).toEqual(
+      mockProps.footerData.bubbleColor
+    )
   })
 })
