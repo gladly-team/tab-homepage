@@ -91,6 +91,14 @@ const useStyles = makeStyles((theme) => ({
   buttonStyles: {
     width: theme.spacing(30),
     marginTop: theme.spacing(6),
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
+  },
+  linkStyles: {
+    [theme.breakpoints.down('sm')]: {
+      width: '85%',
+    },
   },
 }))
 
@@ -143,7 +151,7 @@ const Financials = ({ financialsData }) => {
           ))}
         </Slider>
       </div>
-      <Link to={financialsURL}>
+      <Link className={cx.linkStyles} to={financialsURL}>
         <Button
           variant="contained"
           color="secondary"

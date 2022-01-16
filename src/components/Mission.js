@@ -42,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     flex: '1',
-    margin: theme.spacing(2),
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
     color: theme.palette.primary.main,
     zIndex: 1,
   },
@@ -119,7 +120,7 @@ const Mission = ({ missionData, causeId }) => {
             {subtitleText}
           </Typography>
           <Markdown>{bodyText}</Markdown>
-          <V4InstallButton causeId={causeId} />
+          <V4InstallButton fullWidth causeId={causeId} />
         </div>
         <GatsbyImage
           image={missionImage}

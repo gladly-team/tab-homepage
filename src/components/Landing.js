@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: '7%',
     },
     [theme.breakpoints.down('sm')]: {
-      width: '80%',
+      width: '85%',
       marginTop: theme.spacing(4),
       paddingLeft: 0,
       marginBottom: theme.spacing(8),
@@ -84,7 +84,9 @@ const useStyles = makeStyles((theme) => ({
   waveMobile: {
     marginBottom: -2, // avoids a gap appearing on some resolutions
     display: 'none',
+    position: 'static',
     width: '100%',
+    zIndex: -1,
     [theme.breakpoints.down('sm')]: {
       display: 'block',
     },
@@ -131,7 +133,7 @@ const Landing = ({ landingData, causeId }) => {
             {title}
           </Typography>
           <Typography className={cx.subtitle}>{subtitle}</Typography>
-          <V4InstallButton causeId={causeId} />
+          <V4InstallButton fullWidth causeId={causeId} />
         </div>
         <div className={cx.halfScreenRight}>
           <GatsbyImage image={ctaImage} alt={'call to action'} />
