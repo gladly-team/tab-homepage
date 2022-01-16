@@ -65,7 +65,7 @@ describe('Test generatePagesForCause', () => {
     })
   })
 
-  it('creates ComingSoon main and referrer pages if cause enabled', () => {
+  it('creates ComingSoon main and referrer pages if cause not enabled', () => {
     const createPage = jest.fn()
     const data = getMockData()
     data.data.causeLaunch.enabled = false
