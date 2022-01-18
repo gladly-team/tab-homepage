@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(3),
     transition: 'transform .1s ease-in-out',
   },
-  image: { alignSelf: 'end' },
+  image: { alignSelf: 'end', height: '100px', width: '103px' },
 }))
 const FinancialQuartersButton = ({ quarterData }) => {
   const cx = useStyles()
