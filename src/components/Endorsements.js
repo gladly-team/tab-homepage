@@ -140,6 +140,9 @@ const useStyles = makeStyles((theme) => ({
   paperText: {
     marginTop: theme.spacing(3),
   },
+  installButton: {
+    marginTop: theme.spacing(4),
+  },
   arrowButton: {
     position: 'absolute',
     right: '1%',
@@ -271,7 +274,7 @@ const Endorsements = ({ endorsementsData, causeId }) => {
           </IconButton>
         </div>
       </div>
-      <V4InstallButton causeId={causeId} />
+      <V4InstallButton causeId={causeId} buttonClassName={cx.installButton} />
     </div>
   )
 }

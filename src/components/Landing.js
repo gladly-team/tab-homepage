@@ -89,6 +89,9 @@ const useStyles = makeStyles((theme) => ({
       display: 'block',
     },
   },
+  installButton: {
+    marginTop: theme.spacing(4),
+  },
 }))
 
 const Landing = ({ landingData, causeId }) => {
@@ -131,7 +134,10 @@ const Landing = ({ landingData, causeId }) => {
             {title}
           </Typography>
           <Typography className={cx.subtitle}>{subtitle}</Typography>
-          <V4InstallButton causeId={causeId} />
+          <V4InstallButton
+            causeId={causeId}
+            buttonClassName={cx.installButton}
+          />
         </div>
         <div className={cx.halfScreenRight}>
           <GatsbyImage image={ctaImage} alt={'call to action'} />
