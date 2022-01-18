@@ -101,6 +101,7 @@ const useStyles = makeStyles((theme) => ({
   },
   titleTypography: {
     marginBottom: theme.spacing(4),
+    marginRight: theme.spacing(3),
   },
 }))
 
