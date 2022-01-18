@@ -48,6 +48,7 @@ class Link extends React.Component {
           style={linkStyle}
           onMouseEnter={this.onHover.bind(this)}
           onMouseLeave={this.onHoverEnd.bind(this)}
+          {...otherProps}
         >
           {children}
         </GatsbyLink>

@@ -13,10 +13,23 @@ import {
 const useStyles = makeStyles((theme) => ({
   buttonStyles: {
     maxWidth: theme.spacing(30),
+    marginTop: theme.spacing(4),
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: 'unset',
+      width: '85%',
+    },
+  },
+  buttonStylesFullWidth: {
+    maxWidth: theme.spacing(30),
+    marginTop: theme.spacing(4),
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: 'unset',
+      width: '100%',
+    },
   },
 }))
 
-const V4InstallButton = ({ causeId, buttonClassName }) => {
+const V4InstallButton = ({ causeId, fullWidth, buttonClassName }) => {
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
   const cx = useStyles()
@@ -29,7 +42,10 @@ const V4InstallButton = ({ causeId, buttonClassName }) => {
         }}
       />
       <InstallButton
-        className={clsx(cx.buttonStyles, buttonClassName)}
+        className={clsx(
+          fullWidth ? cx.buttonStylesFullWidth : cx.buttonStyles,
+          buttonClassName
+        )}
         color="secondary"
         size="medium"
         onBeforeInstall={() => {
@@ -47,5 +63,9 @@ const V4InstallButton = ({ causeId, buttonClassName }) => {
 V4InstallButton.propTypes = {
   causeId: PropTypes.string,
   buttonClassName: PropTypes.string,
+  fullWidth: PropTypes.bool,
+}
+V4InstallButton.defaultProps = {
+  fullWidth: false,
 }
 export default V4InstallButton
