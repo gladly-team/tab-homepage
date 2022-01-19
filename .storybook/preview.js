@@ -10,8 +10,8 @@ const customViewports = {
     name: 'Wide Monitor',
     type: 'desktop',
     styles: {
-      width: '1920px',
-      height: '908px',
+      width: '1800px', // Chromatic max is 1800px
+      height: '850px',
     },
   },
 }

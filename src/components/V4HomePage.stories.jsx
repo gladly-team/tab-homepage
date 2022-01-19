@@ -96,5 +96,5 @@ WideSeas.parameters = {
   viewport: {
     defaultViewport: 'monitor',
   },
-  chromatic: { viewports: [1920, 908], delay: 1500 },
+  chromatic: { viewports: [1800, 850], delay: 1500 },
 }
