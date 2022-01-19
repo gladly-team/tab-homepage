@@ -30,6 +30,7 @@ MobileSeas.parameters = {
   },
   chromatic: { viewports: [414, 736], delay: 1500 },
 }
+
 export const MobileCats = mobile(cats(Template.bind({})))
 
 MobileCats.loaders = [
@@ -78,4 +79,22 @@ FullWidthCats.loaders = [
 ]
 FullWidthCats.parameters = {
   chromatic: { delay: 1500 },
+}
+
+export const WideSeas = seas(Template.bind({}))
+/*
+ * loaders are experimental and allow us to use async await which we need in
+ * order to programatically spoof gatsby images
+ * https://storybook.js.org/docs/react/writing-stories/loaders
+ */
+WideSeas.loaders = [
+  async () => ({
+    data: await useCauseData('seas'),
+  }),
+]
+WideSeas.parameters = {
+  viewport: {
+    defaultViewport: 'monitor',
+  },
+  chromatic: { viewports: [1800, 850], delay: 1500 },
 }

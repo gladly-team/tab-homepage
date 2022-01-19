@@ -1,11 +1,29 @@
 import { ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles'
 import { action } from '@storybook/addon-actions'
+import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 import catsTheme, { tabForTeamSeasTheme } from 'src/themes/theme'
 import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
+const customViewports = {
+  monitor: {
+    name: 'Wide Monitor',
+    type: 'desktop',
+    styles: {
+      width: '1800px', // Chromatic max is 1800px
+      height: '850px',
+    },
+  },
+}
+
 export const parameters = {
   layout: 'fullscreen',
+  viewport: {
+    viewports: {
+      ...MINIMAL_VIEWPORTS,
+      ...customViewports,
+    },
+  },
 }
 export const globalTypes = {
   vertical: {
