@@ -11,6 +11,7 @@ import rightBubble from 'src/img/causeshared/blobRight.svg'
 import V4InstallButton from 'src/components/V4InstallButton'
 const useStyles = makeStyles((theme) => ({
   wrapper: {
+    minHeight: '100vh',
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',

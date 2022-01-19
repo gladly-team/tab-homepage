@@ -7,6 +7,7 @@ import { formatImg } from 'src/utils/formatting'
 import { githubOrganizationURL } from 'src/utils/navigation.js'
 const useStyles = makeStyles((theme) => ({
   parent: {
+    minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

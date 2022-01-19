@@ -252,6 +252,7 @@ const Endorsements = ({ endorsementsData, causeId }) => {
                       height: '43px',
                       width: '43px',
                       marginRight: '16px',
+                      borderRadius: '50%',
                     }}
                   />
                   <Typography variant="caption" color="primary">
