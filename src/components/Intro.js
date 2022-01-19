@@ -101,6 +101,10 @@ const useStyles = makeStyles((theme) => ({
   },
   titleTypography: {
     marginBottom: theme.spacing(4),
+    marginRight: theme.spacing(3),
+    [theme.breakpoints.down('sm')]: {
+      marginRight: theme.spacing(0),
+    },
   },
 }))
 
