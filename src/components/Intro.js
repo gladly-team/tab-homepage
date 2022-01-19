@@ -73,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     marginRight: theme.spacing(2),
     fontFamily: 'Poppins',
+    alignSelf: 'start',
   },
   wrapper: {
     display: 'flex',
