@@ -48,10 +48,7 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '100%',
       height: 'auto',
     },
-    [theme.breakpoints.down('sm')]: {
-      margin: theme.spacing(2),
-    },
-    margin: theme.spacing(2),
+    margin: theme.spacing(3),
   },
   titleImage: {
     maxWidth: '45%',
@@ -76,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     marginRight: theme.spacing(2),
     fontFamily: 'Poppins',
+    alignSelf: 'start',
   },
   wrapper: {
     display: 'flex',
@@ -93,10 +91,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     direction: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     padding: theme.spacing(1),
     [theme.breakpoints.down('sm')]: {
       minHeight: 'unset',
+      justifyContent: 'flex-start',
     },
   },
   titleTypography: {
