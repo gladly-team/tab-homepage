@@ -122,11 +122,13 @@ const useStyles = makeStyles((theme) => ({
   },
   leftBubble: {
     position: 'absolute',
-    width: theme.spacing(50),
-    left: theme.spacing(10),
+    width: theme.spacing(70),
+    left: theme.spacing(-10),
     top: theme.spacing(6),
     [theme.breakpoints.down('sm')]: {
+      width: theme.spacing(50),
       left: theme.spacing(-30),
+      top: theme.spacing(0),
     },
   },
   rightBubble: {
@@ -137,7 +139,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       right: theme.spacing(-14),
       top: 'unset',
-      bottom: theme.spacing(-30),
+      bottom: theme.spacing(-40),
     },
   },
 }))
