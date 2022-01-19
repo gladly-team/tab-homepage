@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
   wrapper: {
     margin: '0 auto',
     display: 'flex',
+    minHeight: '100vh',
     flexDirection: 'column',
     width: '100%',
     justifyContent: 'center',
