@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import InstallButton from 'src/components/InstallButton'
 import localStorageMgr from 'src/utils/local-storage'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
+import clsx from 'clsx'
 import {
   STORAGE_NEW_USER_IS_TAB_V4_BETA,
   STORAGE_NEW_USER_CAUSE_ID,
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const V4InstallButton = ({ causeId, fullWidth }) => {
+const V4InstallButton = ({ causeId, fullWidth, buttonClassName }) => {
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
   const cx = useStyles()
@@ -41,7 +42,10 @@ const V4InstallButton = ({ causeId, fullWidth }) => {
         }}
       />
       <InstallButton
-        className={fullWidth ? cx.buttonStylesFullWidth : cx.buttonStyles}
+        className={clsx(
+          fullWidth ? cx.buttonStylesFullWidth : cx.buttonStyles,
+          buttonClassName
+        )}
         color="secondary"
         size="medium"
         onBeforeInstall={() => {
@@ -58,6 +62,7 @@ const V4InstallButton = ({ causeId, fullWidth }) => {
 
 V4InstallButton.propTypes = {
   causeId: PropTypes.string,
+  buttonClassName: PropTypes.string,
   fullWidth: PropTypes.bool,
 }
 V4InstallButton.defaultProps = {

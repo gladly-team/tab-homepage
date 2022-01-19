@@ -47,6 +47,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
     zIndex: 1,
   },
+  installButton: {
+    marginTop: theme.spacing(4),
+  },
   missionImage: {
     maxHeight: '90%',
     maxWidth: '50%',
@@ -120,7 +123,11 @@ const Mission = ({ missionData, causeId }) => {
             {subtitleText}
           </Typography>
           <Markdown>{bodyText}</Markdown>
-          <V4InstallButton fullWidth causeId={causeId} />
+          <V4InstallButton
+            causeId={causeId}
+            buttonClassName={cx.installButton}
+            fullWidth
+          />
         </div>
         <GatsbyImage
           image={missionImage}

@@ -175,12 +175,7 @@ const Intro = ({ causeId, introData }) => {
           />
         </div>
       </div>
-      <InstallButton
-        className={cx.buttonStyles}
-        color="secondary"
-        size="medium"
-        causeId={causeId}
-      />
+      <InstallButton color="secondary" size="medium" causeId={causeId} />
     </div>
   )
 }
