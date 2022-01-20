@@ -193,7 +193,7 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
         color: primary,
         fontFamily: 'Poppins',
         fontStyle: 'normal',
-        lineHeight: 1,
+        lineHeight: 1.3,
         fontSize: '5rem',
       },
       h2: {
