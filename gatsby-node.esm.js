@@ -261,6 +261,7 @@ exports.createPages = async ({ actions, graphql }) => {
                       gatsbyImageData(quality: 20)
                     }
                   }
+                  bubbleColor
                 }
                 Endorsements {
                   endorser

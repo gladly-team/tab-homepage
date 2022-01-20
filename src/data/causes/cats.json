@@ -163,7 +163,8 @@
         ]
       },
       "Footer": {
-        "img": "../../img/cats/footerCat.png"
+        "img": "../../img/cats/footerCat.png",
+        "bubbleColor": "#FF7616"
       }
     }
   }

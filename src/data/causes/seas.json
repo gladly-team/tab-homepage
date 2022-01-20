@@ -157,7 +157,8 @@
         ]
       },
       "Footer": {
-        "img": "../../img/seas/FooterJellyFish.png"
+        "img": "../../img/seas/FooterJellyFish.png",
+        "bubbleColor": "#4288F0"
       }
     }
   }

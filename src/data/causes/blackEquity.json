@@ -163,7 +163,8 @@
         ]
       },
       "Footer": {
-        "img": null
+        "img": null,
+        "bubbleColor": "#8450FB"
       }
     }
   }
