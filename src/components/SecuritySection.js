@@ -78,8 +78,7 @@ const SecuritySection = ({ securityData }) => {
         </Typography>
         <Typography className={cx.subtitle} paragraph>
           We are serious about privacy. That’s why our browser extension will
-          not (and literally cannot) access any private data beyond our new tab
-          page.
+          not (and cannot) access any private data beyond our new tab page.
         </Typography>
         <Typography className={cx.subtitleTwo} paragraph>
           Don’t just take our word for it—our code is{' '}
