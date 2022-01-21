@@ -38,11 +38,11 @@ const useMoneyRaised = () => {
     // Set an interval to add a penny to the money raised.
     if (!(secondsPerPenny <= 0)) {
       var millisecondsPerPenny = Math.round(Math.abs(secondsPerPenny) * 1000)
-      if (!isChromaticEnv()) {
+      /*if (!isChromaticEnv()) {
         setTimer(
           window.setInterval(incrementAmount.bind(this), millisecondsPerPenny)
         )
-      }
+      }*/
     }
   }
 

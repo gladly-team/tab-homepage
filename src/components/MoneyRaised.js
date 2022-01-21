@@ -3,13 +3,15 @@ import PropTypes from 'prop-types'
 import { commaFormatted, currencyFormatted } from 'src/utils/formatting'
 import useMoneyRaised  from 'src/hooks/useMoneyRaised'
 
-const MoneyRaised = () => {
+const MoneyRaised = ({onLoaded, className}) => {
   const moneyRaised = useMoneyRaised()
+  console.log(moneyRaised)
   var moneyRaisedFormatted = `$${commaFormatted(
     currencyFormatted(moneyRaised)
   )}`
+  console.log(moneyRaisedFormatted)
   return moneyRaised ? (
-    <span className={this.props.className}>{moneyRaisedFormatted}</span>
+    <span className={className}>{moneyRaisedFormatted}</span>
   ) : null
 }
 
