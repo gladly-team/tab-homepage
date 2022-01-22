@@ -96,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Landing = ({ landingData, causeId }) => {
+const Landing = ({ landingData, causeId, moneyRaised }) => {
   const { title, subtitle, ctaImg } = landingData
   const cx = useStyles()
   const theme = useTheme()
@@ -127,6 +127,7 @@ const Landing = ({ landingData, causeId }) => {
             whiteClassName={cx.whiteFont}
             textVariant="subtitle2"
             excludeText
+            moneyRaised={moneyRaised}
           />
         </Toolbar>
       </AppBar>
@@ -162,5 +163,6 @@ Landing.propTypes = {
     subtitle: PropTypes.string,
     ctaImg: PropTypes.any,
   }),
+  moneyRaised: PropTypes.number,
 }
 export default Landing

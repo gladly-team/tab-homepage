@@ -15,12 +15,17 @@ class MoneyRaised extends React.Component {
     super(props)
     this.timer = 0
     this.state = {
-      moneyRaised: 0,
+      moneyRaisedPassed: props.moneyRaised !== undefined,
+      moneyRaised: props.moneyRaised,
     }
   }
 
   componentDidMount() {
-    this.setCounter()
+    if (this.state.moneyRaisedPassed) {
+      this.setCounter()
+    } else {
+      this.props.onLoaded()
+    }
   }
 
   componentWillUnmount() {
@@ -86,6 +91,7 @@ class MoneyRaised extends React.Component {
 MoneyRaised.propTypes = {
   onLoaded: PropTypes.func,
   className: PropTypes.string,
+  moneyRaised: PropTypes.number,
 }
 
 MoneyRaised.defaultProps = {

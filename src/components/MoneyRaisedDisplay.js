@@ -23,6 +23,7 @@ class MoneyRaisedDisplay extends React.Component {
       textVariant,
       longCopy,
       excludeText = false,
+      moneyRaised,
     } = this.props
     return (
       <span style={{ visibility: this.state.show ? 'visible' : 'hidden' }}>
@@ -31,7 +32,10 @@ class MoneyRaisedDisplay extends React.Component {
           color={color}
           variant={textVariant ? textVariant : 'body1'}
         >
-          <MoneyRaised onLoaded={this.show.bind(this)} />
+          <MoneyRaised
+            moneyRaised={moneyRaised}
+            onLoaded={this.show.bind(this)}
+          />
         </Typography>
         {!excludeText && (
           <Typography
@@ -52,6 +56,7 @@ MoneyRaisedDisplay.propTypes = {
   textVariant: Proptypes.string,
   longCopy: Proptypes.bool,
   excludeText: Proptypes.bool,
+  moneyRaised: Proptypes.number,
 }
 
 export default MoneyRaisedDisplay

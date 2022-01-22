@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const LandingMoneyRaised = ({ moneyRaisedData }) => {
+const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
   const cx = useStyles()
   const { moneyImg } = moneyRaisedData
   const moneyImage = getImage(formatImg(moneyImg))
@@ -66,6 +66,7 @@ const LandingMoneyRaised = ({ moneyRaisedData }) => {
             whiteClassName={cx.moneyRaised}
             textVariant={'h1'}
             longCopy
+            moneyRaised={moneyRaised}
           />
         </div>
       </div>
@@ -76,5 +77,6 @@ LandingMoneyRaised.propTypes = {
   moneyRaisedData: PropTypes.shape({
     moneyImg: PropTypes.any,
   }),
+  moneyRaised: PropTypes.number,
 }
 export default LandingMoneyRaised
