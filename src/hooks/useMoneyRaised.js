@@ -20,14 +20,9 @@ const useMoneyRaised = () => {
     return MONEY_RAISED + daysDiff * DOLLARS_PER_DAY_RATE
   }
 
-  const [moneyRaised, setMoneyRaised] = useState(calculateMoneyRaised())
+  const initialMoneyRaised = calculateMoneyRaised()
+  const [moneyRaised, setMoneyRaised] = useState(initialMoneyRaised)
   const [timer, setTimer] = useState(null)
-
-  const incrementAmount = () => {
-    var amountRaised = moneyRaised
-    var newAmountRaised = amountRaised + 0.01
-    setMoneyRaised(newAmountRaised)
-  }
 
   const setCounter = () => {
     const secondsInDay = 60 * 60 * 24
@@ -39,7 +34,10 @@ const useMoneyRaised = () => {
       var millisecondsPerPenny = Math.round(Math.abs(secondsPerPenny) * 1000)
       if (!isChromaticEnv()) {
         setTimer(
-          window.setInterval(() => incrementAmount(), millisecondsPerPenny)
+          window.setInterval(
+            () => setMoneyRaised((old) => old + 0.01),
+            millisecondsPerPenny
+          )
         )
       }
     }
@@ -52,7 +50,7 @@ const useMoneyRaised = () => {
     }
   }, [])
 
-  return { moneyRaised }
+  return moneyRaised
 }
 
 export default useMoneyRaised
