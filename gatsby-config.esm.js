@@ -11,17 +11,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-google-fonts-v2`,
-      options: {
-        fonts: [
-          {
-            family: 'Poppins',
-            weights: ['300', '400', '500', '600', '800', '900'],
-          },
-        ],
-      },
-    },
     // Handle server-side rendering MaterialUI styles:
     // https://github.com/hupe1980/gatsby-plugin-material-ui/tree/master
     {
@@ -88,12 +77,12 @@ module.exports = {
             }
           }
         }`,
-        resolvePages: ({ allSitePage: {nodes: allPages}}) => allPages,
+        resolvePages: ({ allSitePage: { nodes: allPages } }) => allPages,
         // slice in the below expression is to strip trailing slashes from page.path
-        filterPages: (page, excludedRoute) => (page.context.data !== null 
-          && page.context.previewPage !== null) 
-          || page.context.referrer !== null 
-          || page.path.slice(0, -1) === excludedRoute,
+        filterPages: (page, excludedRoute) =>
+          (page.context.data !== null && page.context.previewPage !== null) ||
+          page.context.referrer !== null ||
+          page.path.slice(0, -1) === excludedRoute,
         serialize: (page) => {
           return {
             url: baseURL + page.path,
