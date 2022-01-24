@@ -20,6 +20,10 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
+      - name: Use Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
       - run: yarn
       - name: Build
         run: yarn build
