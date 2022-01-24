@@ -124,7 +124,7 @@ const FAQ = ({ faqData }) => {
             <Typography variant="h1">FAQ</Typography>
             <img className={cx.faqPattern} src={faqPattern} />
           </div>
-          <Typography className={cx.copy} variant="body2">
+          <Typography className={cx.copy}>
             Check out some of our frequently asked questions. We think you’ll
             find what you’re looking for.
           </Typography>

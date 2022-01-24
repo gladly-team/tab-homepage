@@ -57,7 +57,7 @@ describe('Markdown component', () => {
     }
     const wrapper = mount(<Markdown {...mockProps} />)
     const expectedHTML =
-      '<div><p class="MuiTypography-root MuiTypography-body2">hello!</p></div>'
+      '<div><p class="MuiTypography-root MuiTypography-body1">hello!</p></div>'
     expect(wrapper.html()).toEqual(expectedHTML)
   })
 
@@ -69,7 +69,7 @@ describe('Markdown component', () => {
     }
     const wrapper = mount(<Markdown {...mockProps} />)
     const expectedHTML =
-      '<div><p class="MuiTypography-root MuiTypography-body2">well well alert("uh oh")</p></div>'
+      '<div><p class="MuiTypography-root MuiTypography-body1">well well alert("uh oh")</p></div>'
     expect(wrapper.html()).toEqual(expectedHTML)
   })
 })

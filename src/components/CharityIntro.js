@@ -96,7 +96,7 @@ const CharityIntro = ({ charityIntroData }) => {
         <Typography className={cx.title} color="primary" variant="h1">
           {title}
         </Typography>
-        <Typography className={cx.subtitle} variant="body2">
+        <Typography className={cx.subtitle} variant="body1">
           {subTitle}
         </Typography>
         <div className={cx.steps}>{stepComponents}</div>
