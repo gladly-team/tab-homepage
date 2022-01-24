@@ -56,7 +56,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    paddingLeft: '10%',
+    paddingTop: theme.spacing(2),
+    paddingLeft: theme.spacing(8),
+    paddingRight: theme.spacing(2),
     [theme.breakpoints.down(1100)]: {
       width: '47%',
       paddingLeft: '7%',
