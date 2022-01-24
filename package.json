@@ -5,6 +5,7 @@
   "author": "The Tab for a Cause Team",
   "dependencies": {
     "@emotion/react": "^11.7.1",
+    "@fontsource/poppins": "^4.5.0",
     "@fullpage/react-fullpage": "0.1.19",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -20,7 +21,6 @@
     "dotenv-extended": "^2.9.0",
     "gatsby": "^3.14.0",
     "gatsby-plugin-facebook-pixel": "^1.0.5",
-    "gatsby-plugin-google-fonts-v2": "^1.0.0",
     "gatsby-plugin-image": "^2.5.2",
     "gatsby-plugin-material-ui": "^3.0.1",
     "gatsby-plugin-react-helmet": "^4.14.0",
