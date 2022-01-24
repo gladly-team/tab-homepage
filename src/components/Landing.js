@@ -159,7 +159,7 @@ const Landing = ({ landingData, causeId }) => {
             />
           </div>
           <div className={cx.halfScreenRight}>
-            <GatsbyImage image={ctaImage} alt={'call to action'} />
+            <GatsbyImage image={ctaImage} />
           </div>
         </div>
         <div className={cx.wave}>
