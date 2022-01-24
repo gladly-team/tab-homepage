@@ -6,12 +6,20 @@ import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import { formatImg } from 'src/utils/formatting'
 
 const useStyles = makeStyles((theme) => ({
-  parent: {
+  container: {
+    width: '100%',
+    backgroundColor: theme.palette.primary.main,
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  content: {
     width: '100%',
     backgroundColor: theme.palette.primary.main,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'flex-start',
+    maxWidth: theme.customLayout.contentMaxWidth,
   },
   slidingParent: {
     width: '100%',
@@ -53,20 +61,22 @@ const LandingMoneyRaised = ({ moneyRaisedData }) => {
   const { moneyImg } = moneyRaisedData
   const moneyImage = getImage(formatImg(moneyImg))
   return (
-    <div className={cx.parent}>
-      <div className={cx.slidingParent}>
-        <GatsbyImage
-          alt="money raised"
-          className={cx.titleImage}
-          image={moneyImage}
-        />
-        <div>
-          <MoneyRaisedDisplay
-            color={'textSecondary'}
-            whiteClassName={cx.moneyRaised}
-            textVariant={'h1'}
-            longCopy
+    <div className={cx.container}>
+      <div className={cx.content}>
+        <div className={cx.slidingParent}>
+          <GatsbyImage
+            alt="money raised"
+            className={cx.titleImage}
+            image={moneyImage}
           />
+          <div>
+            <MoneyRaisedDisplay
+              color={'textSecondary'}
+              whiteClassName={cx.moneyRaised}
+              textVariant={'h1'}
+              longCopy
+            />
+          </div>
         </div>
       </div>
     </div>
