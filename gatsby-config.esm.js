@@ -45,6 +45,8 @@ module.exports = {
       // If modifying, validate/update on webmaster tools for
       // Google, Bing, etc.
       // https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sitemap
+      // Breaking changes in v5:
+      // https://github.com/gatsbyjs/gatsby/issues/32324
       resolve: `gatsby-plugin-sitemap`,
       options: {
         // Exclude pages that just redirect.
@@ -64,13 +66,12 @@ module.exports = {
             }
           }
         }`,
-        resolvePages: ({ allSitePage: { nodes: allPages } }) => allPages,
-        // slice in the below expression is to strip trailing slashes from page.path
-        filterPages: (page, excludedRoute) =>
-          (page.pageContext.data !== null &&
-            page.pageContext.previewPage !== null) ||
-          page.pageContext.referrer !== null ||
-          page.path.slice(0, -1) === excludedRoute,
+        filterPages: (page, excludedRoute, { withoutTrailingSlash }) => {
+          const isPreviewPage = !!page.pageContext.previewPage
+          const isVanityReferralPage = !!page.pageContext.referrer
+          const isExcluded = withoutTrailingSlash(page.path) === excludedRoute
+          return isPreviewPage || isVanityReferralPage || isExcluded
+        },
         serialize: (page) => {
           return {
             url: baseURL + page.path,
