@@ -10,6 +10,7 @@ import Helmet from 'react-helmet'
 import Snackbar from '@material-ui/core/Snackbar'
 import Footer from 'src/components/FooterV2'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
+import { flushAllPromises } from 'src/utils/test-utils'
 
 data.data.sections.Financials.pdfs = [
   {
@@ -56,11 +57,6 @@ const getMockProps = () => ({
     },
   },
 })
-
-const flushAllPromises = async () => {
-  // eslint-disable-next-line no-undef
-  await new Promise((resolve) => setImmediate(resolve))
-}
 
 afterEach(() => {
   jest.clearAllMocks()

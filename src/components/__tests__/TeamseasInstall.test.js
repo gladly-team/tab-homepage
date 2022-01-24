@@ -8,6 +8,7 @@ import InstallButton from 'src/components/InstallButton'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import { act } from 'react-dom/test-utils'
 import Helmet from 'react-helmet'
+import { flushAllPromises } from 'src/utils/test-utils'
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')
@@ -26,11 +27,6 @@ afterEach(() => {
   localStorageMgr.clear()
   Helmet.rewind()
 })
-
-const flushAllPromises = async () => {
-  // eslint-disable-next-line no-undef
-  await new Promise((resolve) => setImmediate(resolve))
-}
 
 describe('teamseas page', () => {
   it('renders without error', () => {

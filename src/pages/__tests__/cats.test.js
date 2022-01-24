@@ -5,7 +5,7 @@ import { shallow, mount } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
 import InstallButton from 'src/components/InstallButton'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
-import { getTestIdSelector } from 'src/utils/test-utils'
+import { getTestIdSelector, flushAllPromises } from 'src/utils/test-utils'
 import { STORAGE_REFERRAL_DATA_MISSION_ID } from 'src/utils/constants'
 import { act } from 'react-dom/test-utils'
 import Helmet from 'react-helmet'
@@ -24,11 +24,6 @@ const getMockProps = () => ({
   },
   pageContext: {},
 })
-
-const flushAllPromises = async () => {
-  // eslint-disable-next-line no-undef
-  await new Promise((resolve) => setImmediate(resolve))
-}
 
 afterEach(() => {
   jest.clearAllMocks()
