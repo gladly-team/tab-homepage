@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Divider from '@material-ui/core/Divider'
-import { TwitterTweetEmbed } from 'react-twitter-embed'
 import { lightestTextColor } from 'src/themes/theme'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
@@ -445,16 +444,16 @@ const Covid19 = (props) => {
               </p>
               <p>
                 Our community{' '}
-                <span style={{ fontWeight: 'bold' }}>gave 10,000 meals</span> to
-                people in NYC who need it most—just by opening tabs.
+                <span style={{ fontWeight: 'bold' }}>gave 10,000 meals</span> to{' '}
+                <a
+                  href={
+                    'https://twitter.com/FoodBank4NYC/status/1245467268345200641?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1245467268345200641%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Ftab.gladly.io%2Fcovid-19%2F'
+                  }
+                >
+                  people in NYC who need it most
+                </a>{' '}
+                just by opening tabs.
               </p>
-              <div
-                style={{
-                  display: 'block',
-                }}
-              >
-                <TwitterTweetEmbed tweetId={'1245467268345200641'} />
-              </div>
             </div>
             <div
               style={{
