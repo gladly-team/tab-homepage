@@ -29,7 +29,7 @@ export const secondaryContrastTextColor = '#fff'
 export const baseFontSize = 16
 
 const customLayout = {
-  contentMaxWidth: 1480, // limit content width on wide screens
+  contentMaxWidth: 1440, // limit content width on wide screens
 }
 
 const theme = createTheme({
