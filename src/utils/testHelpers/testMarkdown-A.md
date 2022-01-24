@@ -10,7 +10,7 @@
 
 ###### Markdown h6 maps to Typography caption
 
-Our humble paragraph uses Typography body2. And here is...
+Our humble paragraph uses Typography body1. And here is...
 
 ... another paragraph!
 

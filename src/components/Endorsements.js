@@ -262,7 +262,7 @@ const Endorsements = ({ endorsementsData, causeId }) => {
                     {endorsement.endorser}
                   </Typography>
                 </div>
-                <Typography variant="body2" className={cx.paperText}>
+                <Typography className={cx.paperText}>
                   {endorsement.endorsement}
                 </Typography>
               </Paper>

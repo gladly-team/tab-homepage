@@ -228,6 +228,13 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
         lineHeight: 1.43,
         color: '#2E282A',
       },
+      body1: {
+        fontWeight: 400,
+        fontSize: '1.05rem',
+        fontFamily: 'Poppins',
+        lineHeight: 1.3,
+        color: '#2E282A',
+      },
       body2: {
         fontWeight: 300,
         fontSize: '1rem',
