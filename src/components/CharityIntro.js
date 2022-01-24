@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     width: '80%',
+    maxWidth: theme.customLayout.contentMaxWidth,
+    paddingLeft: theme.spacing(6),
+    paddingRight: theme.spacing(6),
     paddingTop: theme.spacing(6),
     paddingBottom: theme.spacing(6),
     [theme.breakpoints.down('sm')]: {
