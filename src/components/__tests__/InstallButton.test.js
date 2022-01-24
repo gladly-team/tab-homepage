@@ -1,10 +1,10 @@
 /* eslint-env jest */
-/* globals setImmediate */
 
 import React from 'react'
 import { shallow } from 'enzyme'
 import Button from '@material-ui/core/Button'
 import getBrowserInfo from 'src/utils/browserDetection'
+import { flushAllPromises } from 'src/utils/test-utils'
 import { safariEnabled } from 'src/utils/featureFlags'
 import { safariExtensionURL } from '../../utils/navigation'
 
@@ -38,7 +38,7 @@ const clickButton = async (wrapper) => {
   wrapper.find('button').first().simulate('click')
 
   // Flush all promises
-  await new Promise((resolve) => setImmediate(resolve))
+  await flushAllPromises()
 }
 
 // Helper to simulate a click on a shallow-rendered button.
@@ -46,7 +46,7 @@ const clickButtonShallow = async (wrapper) => {
   wrapper.find(Button).prop('onClick')()
 
   // Flush all promises
-  await new Promise((resolve) => setImmediate(resolve))
+  await flushAllPromises()
 }
 
 beforeEach(() => {
