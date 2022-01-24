@@ -24,16 +24,26 @@ const useStyles = makeStyles((theme) => ({
   },
   logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
   titleSection: {
-    margin: '0 auto',
     display: 'flex',
+    flexDirection: 'column',
+    margin: '0 auto',
     position: 'relative', // for absolutely-positioned wave
     minHeight: 'calc(100vh - 64px)',
+    [theme.breakpoints.down('sm')]: {
+      height: 'auto',
+    },
+  },
+  content: {
+    maxWidth: theme.customLayout.contentMaxWidth,
+    margin: '0 auto',
+    flex: 1,
+    display: 'flex',
+    position: 'relative', // for absolutely-positioned wave
     alignItems: 'center',
-    paddingTop: theme.spacing(10),
+    paddingTop: theme.spacing(0),
     paddingBottom: theme.spacing(10),
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
-      height: 'auto',
       paddingTop: theme.spacing(3),
       paddingBottom: theme.spacing(3),
     },
@@ -136,19 +146,21 @@ const Landing = ({ landingData, causeId }) => {
         </Toolbar>
       </AppBar>
       <div className={cx.titleSection}>
-        <div className={cx.halfScreenLeft} data-test-id="title-wrapper">
-          <Typography variant="h1" color="primary">
-            {title}
-          </Typography>
-          <Typography className={cx.subtitle}>{subtitle}</Typography>
-          <V4InstallButton
-            causeId={causeId}
-            buttonClassName={cx.installButton}
-            fullWidth
-          />
-        </div>
-        <div className={cx.halfScreenRight}>
-          <GatsbyImage image={ctaImage} alt={'call to action'} />
+        <div className={cx.content}>
+          <div className={cx.halfScreenLeft} data-test-id="title-wrapper">
+            <Typography variant="h1" color="primary">
+              {title}
+            </Typography>
+            <Typography className={cx.subtitle}>{subtitle}</Typography>
+            <V4InstallButton
+              causeId={causeId}
+              buttonClassName={cx.installButton}
+              fullWidth
+            />
+          </div>
+          <div className={cx.halfScreenRight}>
+            <GatsbyImage image={ctaImage} alt={'call to action'} />
+          </div>
         </div>
         <div className={cx.wave}>
           <Wave color={theme.palette.primary.main} />
