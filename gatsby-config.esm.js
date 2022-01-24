@@ -60,28 +60,16 @@ module.exports = {
           allSitePage {
             nodes {
               path
-              context {
-                data {
-                  causeLaunch {
-                    preview
-                    enabled
-                  }
-                }
-                referrer {
-                  id
-                }
-                previewPage {
-                  path
-                }
-              }
+              pageContext
             }
           }
         }`,
         resolvePages: ({ allSitePage: { nodes: allPages } }) => allPages,
         // slice in the below expression is to strip trailing slashes from page.path
         filterPages: (page, excludedRoute) =>
-          (page.context.data !== null && page.context.previewPage !== null) ||
-          page.context.referrer !== null ||
+          (page.pageContext.data !== null &&
+            page.pageContext.previewPage !== null) ||
+          page.pageContext.referrer !== null ||
           page.path.slice(0, -1) === excludedRoute,
         serialize: (page) => {
           return {
