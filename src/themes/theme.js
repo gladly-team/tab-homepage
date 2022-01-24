@@ -28,6 +28,10 @@ export const secondaryMainColor = '#4a90e2'
 export const secondaryContrastTextColor = '#fff'
 export const baseFontSize = 16
 
+const customLayout = {
+  contentMaxWidth: 1480, // limit content width on wide screens
+}
+
 const theme = createTheme({
   body: {
     padding: '0px',
@@ -85,10 +89,12 @@ const theme = createTheme({
       },
     },
   },
+  customLayout,
 })
 
 export default theme
 
+// TODO: remove after generalized home page is live.
 export const tabForTeamSeasTheme = createTheme({
   palette: {
     background: {
@@ -251,4 +257,5 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
         },
       },
     },
+    customLayout,
   })

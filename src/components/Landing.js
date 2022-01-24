@@ -14,6 +14,11 @@ import Wave from 'src/components/Wave'
 import V4InstallButton from 'src/components/V4InstallButton'
 
 const useStyles = makeStyles((theme) => ({
+  toolbar: {
+    maxWidth: theme.customLayout.contentMaxWidth,
+    alignSelf: 'center',
+    width: '100%',
+  },
   whiteFont: {
     color: '#fff',
   },
@@ -104,7 +109,7 @@ const Landing = ({ landingData, causeId }) => {
   return (
     <div className="parent">
       <AppBar color="primary" position="sticky">
-        <Toolbar>
+        <Toolbar className={cx.toolbar}>
           <div className={cx.logoContainer}>
             <div
               data-test-id="logo-container"
