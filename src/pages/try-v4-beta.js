@@ -46,9 +46,7 @@ function TryTabV4BetaPage(props) {
                 redirect(homeURL)
               }}
             />
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
         </div>
       </TextPageContent>

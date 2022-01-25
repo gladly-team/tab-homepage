@@ -367,7 +367,6 @@ class JobsPage extends React.Component {
           <h1 style={{ marginTop: 48, marginBottom: 10 }}>Our Values</h1>
           <Divider
             style={{
-              backgroundColor: lightestTextColor,
               marginBottom: 20,
             }}
           />

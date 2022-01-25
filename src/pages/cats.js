@@ -927,7 +927,7 @@ function Cats({ pageContext, location }) {
                 suggestions, feel free to email us at contact@gladly.io.
               </p>
               <Divider
-                style={{ backgroundColor: lightestTextColor, marginBottom: 20 }}
+                style={{ marginBottom: 20 }}
               />
               <div>
                 <div>

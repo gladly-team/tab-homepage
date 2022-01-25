@@ -150,9 +150,7 @@ function Covid19(props) {
               Organization, and provided supplies to 100 indigenous families.
             </p>
             <p>Will you join in?</p>
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
           <div>
             <div
@@ -211,9 +209,7 @@ function Covid19(props) {
             <p style={{ marginBottom: 60 }}>
               Photo Credit: <a href="https://www.coolearth.org">Cool Earth</a>
             </p>
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
 
           <div>
@@ -275,9 +271,7 @@ function Covid19(props) {
                 Doctors Without Borders
               </a>
             </p>
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
 
           <div>
@@ -346,9 +340,7 @@ function Covid19(props) {
                 No Kid Hungry
               </a>
             </p>
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
 
           <div>
@@ -417,9 +409,7 @@ function Covid19(props) {
                 Evidence Action
               </a>
             </p>
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
 
           <div>
@@ -475,9 +465,7 @@ function Covid19(props) {
                 style={{ width: '100%', maxWidth: 1000 }}
               />
             </div>
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
 
           <div
@@ -529,9 +517,7 @@ function Covid19(props) {
               style={{ width: '100%', maxWidth: 1000 }}
             />
           </div>
-          <Divider
-            style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-          />
+          <Divider style={{ marginTop: 30 }} />
         </div>
 
         <div style={{ marginTop: 60 }}>

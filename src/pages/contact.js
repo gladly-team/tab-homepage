@@ -57,9 +57,7 @@ function ContactPage({ location }) {
             If you have questions, feedback, or tasty cookie recipe suggestions,
             feel free to email us at contact@gladly.io.
           </p>
-          <Divider
-            style={{ backgroundColor: lightestTextColor, marginBottom: 20 }}
-          />
+          <Divider style={{ marginBottom: 20 }} />
           <div>
             <div>
               <p style={{ ...addressStyle, marginBottom: 10 }}>

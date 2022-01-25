@@ -14,9 +14,7 @@ class TextPageHeader extends React.Component {
         }}
       >
         <h1 style={{ marginBottom: 10 }}>{this.props.children}</h1>
-        <Divider
-          style={{ backgroundColor: lightestTextColor, marginBottom: 20 }}
-        />
+        <Divider style={{ marginBottom: 20 }} />
       </div>
     )
   }
