@@ -42,11 +42,14 @@ describe('Markdown component', () => {
       path.resolve(),
       'src/utils/testHelpers/testHTML-A.html'
     )
-    const expectedOutput = await fs.promises.readFile(
+
+    // Accept any class names, but everything else should match.
+    const expectedOutputRegex = await fs.promises.readFile(
       expectedHTMLFilePath,
       'utf-8'
     )
-    expect(wrapper.html()).toEqual(expectedOutput)
+    const expectedOutput = new RegExp(`^${expectedOutputRegex}`)
+    expect(wrapper.html()).toMatch(expectedOutput)
   })
 
   it('renders plain text as a paragraph', () => {
@@ -56,9 +59,11 @@ describe('Markdown component', () => {
       children: 'hello!',
     }
     const wrapper = mount(<Markdown {...mockProps} />)
-    const expectedHTML =
-      '<div><p class="MuiTypography-root MuiTypography-body1">hello!</p></div>'
-    expect(wrapper.html()).toEqual(expectedHTML)
+
+    // Accept any class names, but everything else should match.
+    // https://regex101.com/r/J3acxY/1
+    const expectedHTML = /^<div><p class="([^"]|\\")*">hello!<\/p><\/div>/
+    expect(wrapper.html()).toMatch(expectedHTML)
   })
 
   it('does not render script tags', () => {
@@ -68,8 +73,10 @@ describe('Markdown component', () => {
       children: 'well well <script>alert("uh oh")</script>',
     }
     const wrapper = mount(<Markdown {...mockProps} />)
+
+    // Accept any class names, but everything else should match.
     const expectedHTML =
-      '<div><p class="MuiTypography-root MuiTypography-body1">well well alert("uh oh")</p></div>'
-    expect(wrapper.html()).toEqual(expectedHTML)
+      /^<div><p class="([^"]|\\")*">well well alert\("uh oh"\)<\/p><\/div>/
+    expect(wrapper.html()).toMatch(expectedHTML)
   })
 })
