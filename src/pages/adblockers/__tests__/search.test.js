@@ -4,7 +4,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
 import { getTestIdSelector } from 'src/utils/test-utils'
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 import Layout from 'src/components/Layout'
 
 const getMockProps = () => ({

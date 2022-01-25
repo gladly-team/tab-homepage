@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { mount, shallow } from 'enzyme'
-import Popover from '@material-ui/core/Popover'
+import Popover from '@mui/material/Popover'
 const getMockProps = () => ({
   open: false,
   onClose: () => {},

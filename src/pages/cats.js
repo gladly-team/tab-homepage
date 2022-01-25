@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import {
-  makeStyles,
-  ThemeProvider,
-  responsiveFontSizes,
-} from '@material-ui/core/styles'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import { AlertTitle, Alert } from '@material-ui/lab'
+import { ThemeProvider, StyledEngineProvider, responsiveFontSizes } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import { AlertTitle, Alert } from '@mui/material';
 import defaultTheme, { lightestTextColor } from 'src/themes/theme'
 
 import Section from 'src/components/Section'
@@ -53,8 +50,8 @@ import cat2 from 'src/img/cats/2.png'
 import catsOGImg from 'src/img/cats/cats-og-img.png'
 
 // Icons
-import Star from '@material-ui/icons/Star'
-import StarHalf from '@material-ui/icons/StarHalf'
+import Star from '@mui/icons-material/Star'
+import StarHalf from '@mui/icons-material/StarHalf'
 
 // Reviewer images
 import reviewImgAbbyH from 'src/img/reviews/abby_h.png'
@@ -77,7 +74,7 @@ import {
   STORAGE_NEW_USER_CAUSE_ID,
 } from 'src/utils/constants'
 import { getUrlParameterValue } from 'src/utils/location'
-import Divider from '@material-ui/core/Divider'
+import Divider from '@mui/material/Divider'
 
 const ogImgURLAbsolute = getAbsoluteURL(catsOGImg)
 const canonicalURL = getAbsoluteURL(catsURL)
@@ -92,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
     top: '80px',
     left: 0,
     right: 0,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       position: 'relative',
       top: '10px',
       margin: '0px 10px',
@@ -100,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     maxWidth: '600px',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       width: '100%',
       maxWidth: '100%',
     },
@@ -137,7 +134,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       height: '100%',
     },
   },
@@ -145,7 +142,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     minHeight: '540px',
     alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexWrap: 'wrap',
     },
   },
@@ -154,7 +151,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '100%',
     },
   },
@@ -972,8 +969,10 @@ Cats.propTypes = {
   }),
 }
 const CatsPageWithTheme = (props) => (
-  <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
-    <Cats {...props} />
-  </ThemeProvider>
+  <StyledEngineProvider injectFirst>
+    <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
+      <Cats {...props} />
+    </ThemeProvider>
+  </StyledEngineProvider>
 )
 export default CatsPageWithTheme

@@ -3,7 +3,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import catsData from 'src/data/causes/cats.json'
 import Markdown from 'src/components/Markdown'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')

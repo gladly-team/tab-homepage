@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Paper from '@material-ui/core/Paper'
+import Paper from '@mui/material/Paper'
 import { formatImg } from 'src/utils/formatting'
-import { makeStyles } from '@material-ui/core/styles'
+import makeStyles from '@mui/styles/makeStyles';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const useStyles = makeStyles((theme) => ({

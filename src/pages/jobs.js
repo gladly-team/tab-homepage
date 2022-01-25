@@ -3,23 +3,23 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
-import Paper from '@material-ui/core/Paper'
+import Paper from '@mui/material/Paper'
 import {
   lighterTextColor,
   secondaryMainColor,
   secondaryContrastTextColor,
   lightestTextColor,
 } from 'src/themes/theme'
-import Explore from '@material-ui/icons/Explore'
-import Favorite from '@material-ui/icons/Favorite'
-import Lock from '@material-ui/icons/Lock'
-import Restaurant from '@material-ui/icons/Restaurant'
-import SentimentVerySatisfied from '@material-ui/icons/SentimentVerySatisfied'
-import ShowChart from '@material-ui/icons/ShowChart'
+import Explore from '@mui/icons-material/Explore'
+import Favorite from '@mui/icons-material/Favorite'
+import Lock from '@mui/icons-material/Lock'
+import Restaurant from '@mui/icons-material/Restaurant'
+import SentimentVerySatisfied from '@mui/icons-material/SentimentVerySatisfied'
+import ShowChart from '@mui/icons-material/ShowChart'
 import Layout from 'src/components/Layout'
-import Divider from '@material-ui/core/Divider'
+import Divider from '@mui/material/Divider'
 
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 
 const teamValues = [
   {

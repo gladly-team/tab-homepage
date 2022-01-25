@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
+import makeStyles from '@mui/styles/makeStyles';
+import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 import { githubOrganizationURL } from 'src/utils/navigation.js'
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       paddingTop: theme.spacing(6),
       paddingBottom: theme.spacing(6),
     },
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     width: '80%',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '90%',
     },
   },

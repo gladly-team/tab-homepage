@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
+import makeStyles from '@mui/styles/makeStyles';
+import Typography from '@mui/material/Typography'
 import Markdown from 'src/components/Markdown'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       paddingTop: theme.spacing(6),
       paddingBottom: theme.spacing(6),
     },
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     width: '85%',
     height: '100%',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexDirection: 'column-reverse',
     },
   },
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '50%',
     flex: '1',
     margin: theme.spacing(2),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       maxWidth: 'unset',
     },
   },
@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
     left: theme.spacing(-2),
     top: theme.spacing(4),
     width: theme.spacing(8),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       left: 'unset',
       right: theme.spacing(2),
       top: theme.spacing(46),
@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(50),
     left: theme.spacing(10),
     top: theme.spacing(10),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none',
     },
     color: '#FAFAFA',
@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
     right: theme.spacing(10),
     bottom: theme.spacing(-5),
     overflow: 'hidden',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       right: theme.spacing(-5),
       bottom: theme.spacing(-10),
     },

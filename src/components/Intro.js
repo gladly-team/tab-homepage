@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
+import makeStyles from '@mui/styles/makeStyles';
 import Markdown from './Markdown'
-import Avatar from '@material-ui/core/Avatar'
-import Typography from '@material-ui/core/Typography'
+import Avatar from '@mui/material/Avatar'
+import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 import InstallButton from 'src/components/V4InstallButton'
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexDirection: 'column-reverse',
     },
     width: '80%',
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     color: theme.palette.primary.main,
     alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       marginTop: theme.spacing(2),
       marginBottom: theme.spacing(2),
     },
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     paddingTop: theme.spacing(6),
     padding: theme.spacing(4),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
       padding: theme.spacing(2),
     },
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   titleImage: {
     maxWidth: '45%',
     height: 'auto',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       maxWidth: '100%',
     },
   },
@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       paddingTop: theme.spacing(6),
       paddingBottom: theme.spacing(6),
     },
@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     padding: theme.spacing(1),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       minHeight: 'unset',
       justifyContent: 'flex-start',
     },
@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
   titleTypography: {
     marginBottom: theme.spacing(4),
     marginRight: theme.spacing(3),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       marginRight: theme.spacing(0),
     },
   },

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
+import makeStyles from '@mui/styles/makeStyles';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import { formatImg } from 'src/utils/formatting'
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(4),
     paddingLeft: theme.spacing(20),
     paddingRight: theme.spacing(20),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
       paddingBottom: theme.spacing(6),
       paddingLeft: theme.spacing(2),
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: '40%',
     maxWidth: '40%',
     marginRight: theme.spacing(4),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       minWidth: 'unset',
       maxWidth: 'unset',
       marginRight: 'unset',

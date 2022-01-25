@@ -1,27 +1,23 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import ReactFullpage from '@fullpage/react-fullpage'
-import { ThemeProvider } from '@material-ui/core/styles'
-import grey from '@material-ui/core/colors/grey'
-import green from '@material-ui/core/colors/green'
-import blue from '@material-ui/core/colors/blue'
-// import red from '@material-ui/core/colors/red'
-// import teal from '@material-ui/core/colors/teal'
-// import brown from '@material-ui/core/colors/brown'
-import Button from '@material-ui/core/Button'
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
-import ArrowLeftIcon from '@material-ui/icons/ArrowBack'
-import ArrowRightIcon from '@material-ui/icons/ArrowForward'
-import { makeStyles } from '@material-ui/core/styles'
-import clsx from 'clsx'
 import {
-  // fade,
-  lighten,
-} from '@material-ui/core/styles/colorManipulator'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
-import Typography from '@material-ui/core/Typography'
-import { responsiveFontSizes } from '@material-ui/core/styles'
+// fade,
+ThemeProvider, StyledEngineProvider, lighten
+} from '@mui/material/styles';
+// import red from '@mui/material/colors/red'
+// import teal from '@mui/material/colors/teal'
+// import brown from '@mui/material/colors/brown'
+import Button from '@mui/material/Button'
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
+import ArrowLeftIcon from '@mui/icons-material/ArrowBack'
+import ArrowRightIcon from '@mui/icons-material/ArrowForward'
+import makeStyles from '@mui/styles/makeStyles';
+import clsx from 'clsx'
+import Tabs from '@mui/material/Tabs'
+import Tab from '@mui/material/Tab'
+import Typography from '@mui/material/Typography'
+import { responsiveFontSizes } from '@mui/material/styles'
 
 import HeadTags from 'src/components/HeadTags'
 import MoneyRaised from 'src/components/MoneyRaised'
@@ -64,6 +60,8 @@ import openGraphImg1MGive from 'src/img/million/og-img-1M-give.png'
 import openGraphImg1MHunger from 'src/img/million/og-img-1M-hunger.png'
 import openGraphImg1MRainforestV2 from 'src/img/million/og-img-1M-rainforest-v2.png'
 import openGraphImg1MRead from 'src/img/million/og-img-1M-read.png'
+
+import { grey, green, blue } from '@mui/material/colors';
 
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
@@ -148,15 +146,15 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   menuTab: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       minWidth: 140,
       padding: '6px 12px',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       minWidth: 80,
       padding: '6px 12px',
     },
-    [theme.breakpoints.down(820)]: {
+    [theme.breakpoints.down(undefined)]: {
       display: 'none',
     },
   },
@@ -194,7 +192,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   slideHeaderText: {
-    padding: `0px ${theme.spacing(1)}px`,
+    padding: `0px ${theme.spacing(1)}`,
     color: theme.palette.common.white,
     marginTop: 20,
     textAlign: 'center',
@@ -281,7 +279,7 @@ const useStyles = makeStyles((theme) => ({
   },
   leftRightArrowButton: {
     // Hide the left/right arrows on mobile.
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
   },
@@ -300,7 +298,7 @@ const useStyles = makeStyles((theme) => ({
   moneyRaised: {
     fontWeight: 500,
     display: 'inline-block',
-    padding: `0px ${theme.spacing(1)}px`,
+    padding: `0px ${theme.spacing(1)}`,
     color: theme.palette.common.white,
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -1631,9 +1629,11 @@ MillionPage.defaultProps = {
 // Can't create and use theme in same component (useStyles will not use
 // the custom theme).
 const MillionPageWithTheme = (props) => (
-  <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
-    <MillionPage {...props} />
-  </ThemeProvider>
+  <StyledEngineProvider injectFirst>
+    <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
+      <MillionPage {...props} />
+    </ThemeProvider>
+  </StyledEngineProvider>
 )
 MillionPageWithTheme.displayName = 'MillionPageWithTheme'
 

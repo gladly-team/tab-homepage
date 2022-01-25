@@ -3,10 +3,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import catsData from 'src/data/causes/cats.json'
-import Typography from '@material-ui/core/Typography'
-import MuiAccordion from '@material-ui/core/Accordion'
-import MuiAccordionSummary from '@material-ui/core/AccordionSummary'
-import MuiAccordionDetails from '@material-ui/core/AccordionDetails'
+import Typography from '@mui/material/Typography'
+import MuiAccordion from '@mui/material/Accordion'
+import MuiAccordionSummary from '@mui/material/AccordionSummary'
+import MuiAccordionDetails from '@mui/material/AccordionDetails'
 import Markdown from 'src/components/Markdown'
 
 const faqData = catsData.data.sections.faq

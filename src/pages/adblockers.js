@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
-import Button from '@material-ui/core/Button'
-import Paper from '@material-ui/core/Paper'
+import Button from '@mui/material/Button'
+import Paper from '@mui/material/Paper'
 import {
   secondaryMainColor,
   secondaryContrastTextColor,

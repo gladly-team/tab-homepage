@@ -1,13 +1,13 @@
 import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
-import IconButton from '@material-ui/core/IconButton'
-import FacebookIcon from '@material-ui/icons/Facebook'
-import InstagramIcon from '@material-ui/icons/Instagram'
-import TwitterIcon from '@material-ui/icons/Twitter'
-import Typography from '@material-ui/core/Typography'
-import SvgIcon from '@material-ui/core/SvgIcon'
+import IconButton from '@mui/material/IconButton'
+import FacebookIcon from '@mui/icons-material/Facebook'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import Typography from '@mui/material/Typography'
+import SvgIcon from '@mui/material/SvgIcon'
 import redirect from 'src/utils/redirect'
-import { makeStyles } from '@material-ui/core/styles'
+import makeStyles from '@mui/styles/makeStyles';
 import logo from 'src/img/logo-with-text-white.svg'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
   columnThree: {
     marginTop: theme.spacing(6.5),
     display: 'flex',
-    [theme.breakpoints.down(1080)]: {
+    [theme.breakpoints.down(undefined)]: {
       width: '100%',
       justifyContent: 'center',
     },
@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(70),
     left: theme.spacing(-10),
     top: theme.spacing(6),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: theme.spacing(50),
       left: theme.spacing(-30),
       top: theme.spacing(0),
@@ -136,7 +136,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(40),
     right: theme.spacing(10),
     top: theme.spacing(27),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       right: theme.spacing(-14),
       top: 'unset',
       bottom: theme.spacing(-40),
@@ -171,7 +171,7 @@ const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
           </Typography>
           <div className={cx.iconRowOne}>
             <Link to={tiktokPageURL} className={cx.tiktok} target="_blank">
-              <IconButton classes={{ root: cx.iconButton }}>
+              <IconButton classes={{ root: cx.iconButton }} size="large">
                 <SvgIcon
                   viewBox="0 0 50 50"
                   style={{
@@ -186,19 +186,19 @@ const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
               </IconButton>
             </Link>
             <Link to={facebookPageURL} target="_blank">
-              <IconButton edge="start" classes={{ root: cx.iconButton }}>
+              <IconButton edge="start" classes={{ root: cx.iconButton }} size="large">
                 <FacebookIcon classes={{ root: cx.iconStyles }} />
               </IconButton>
             </Link>
 
             <Link to={instagramPageURL} target="_blank">
-              <IconButton classes={{ root: cx.iconButton }}>
+              <IconButton classes={{ root: cx.iconButton }} size="large">
                 <InstagramIcon classes={{ root: cx.iconStyles }} />
               </IconButton>
             </Link>
 
             <Link to={twitterPageURL} target="_blank">
-              <IconButton classes={{ root: cx.iconButton }}>
+              <IconButton classes={{ root: cx.iconButton }} size="large">
                 <TwitterIcon classes={{ root: cx.iconStyles }} />
               </IconButton>
             </Link>
@@ -211,19 +211,19 @@ const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
               onClick={browserOnClick(chromeExtensionURL)}
               edge="start"
               classes={{ root: cx.iconButton }}
-            >
+              size="large">
               <GoogleChrome className={cx.iconStyles} />
             </IconButton>
             <IconButton
               onClick={browserOnClick(edgeExtensionURL)}
               classes={{ root: cx.iconButton }}
-            >
+              size="large">
               <MicrosoftEdge className={cx.iconStyles} />
             </IconButton>
             <IconButton
               onClick={browserOnClick(safariExtensionURL)}
               classes={{ root: cx.iconButton }}
-            >
+              size="large">
               <AppleSafari className={cx.iconStyles} />
             </IconButton>
           </div>
@@ -315,7 +315,7 @@ const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 Footer.propTypes = {

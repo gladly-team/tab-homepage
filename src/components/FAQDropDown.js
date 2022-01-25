@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
-import ButtonBase from '@material-ui/core/ButtonBase'
+import withStyles from '@mui/styles/withStyles';
+import ButtonBase from '@mui/material/ButtonBase'
 
 const styles = {
   buttonBase: {

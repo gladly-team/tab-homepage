@@ -1,16 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  makeStyles,
-  ThemeProvider,
-  responsiveFontSizes,
-} from '@material-ui/core/styles'
+import { ThemeProvider, StyledEngineProvider, responsiveFontSizes } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import Paper from '@mui/material/Paper'
+import Typography from '@mui/material/Typography'
 import { tabForTeamSeasTheme } from 'src/themes/theme'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import openGraphImg from 'src/img/seasOG.png'
@@ -178,10 +175,12 @@ Seas.propTypes = {
   }),
 }
 const SeasPageWithTheme = (props) => (
-  <ThemeProvider
-    theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
-  >
-    <Seas {...props} />
-  </ThemeProvider>
+  <StyledEngineProvider injectFirst>
+    <ThemeProvider
+      theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
+    >
+      <Seas {...props} />
+    </ThemeProvider>
+  </StyledEngineProvider>
 )
 export default SeasPageWithTheme

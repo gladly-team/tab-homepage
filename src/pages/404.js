@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 import Helmet from 'react-helmet'
 import Link from 'src/components/Link'
 import { homeURL } from 'src/utils/navigation'
-import { withTheme } from '@material-ui/styles'
+import { withTheme } from '@mui/styles'
 import * as styles from './404.module.css'
 import Layout from 'src/components/Layout'
 

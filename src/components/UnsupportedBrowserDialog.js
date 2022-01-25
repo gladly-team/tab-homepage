@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/styles'
-import Dialog from '@material-ui/core/Dialog'
-import DialogActions from '@material-ui/core/DialogActions'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
+import { withStyles } from '@mui/styles'
+import Dialog from '@mui/material/Dialog'
+import DialogActions from '@mui/material/DialogActions'
+import DialogContent from '@mui/material/DialogContent'
+import DialogTitle from '@mui/material/DialogTitle'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
 
 const styles = {
   dialogTitleText: {
@@ -20,7 +20,7 @@ class UnsupportedBrowserDialog extends React.Component {
 
     return (
       <Dialog {...other}>
-        <DialogTitle disableTypography>
+        <DialogTitle>
           <Typography variant="h6" className={classes.dialogTitleText}>
             This browser isn't supported
           </Typography>
@@ -35,7 +35,7 @@ class UnsupportedBrowserDialog extends React.Component {
           </Button>
         </DialogActions>
       </Dialog>
-    )
+    );
   }
 }
 

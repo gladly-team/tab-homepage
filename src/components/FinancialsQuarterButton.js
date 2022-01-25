@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Paper from '@material-ui/core/Paper'
+import Paper from '@mui/material/Paper'
 import { lighterTextColor } from 'src/themes/theme'
 
 class FinancialsQuarterButton extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react'
 import Proptypes from 'prop-types'
 import MoneyRaised from 'src/components/MoneyRaised'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 class MoneyRaisedDisplay extends React.Component {
   constructor(props) {
     super(props)

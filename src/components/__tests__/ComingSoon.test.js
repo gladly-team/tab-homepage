@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { mount, shallow } from 'enzyme'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 import data from 'src/data/causes/cats.json'
 import Countdown from 'react-countdown'
 import { mockDate } from 'src/utils/test-utils'

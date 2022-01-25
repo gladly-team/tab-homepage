@@ -3,7 +3,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import data from 'src/data/causes/cats.json'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 import { getTestIdSelector } from 'src/utils/test-utils'
 
 jest.mock('src/utils/local-storage')

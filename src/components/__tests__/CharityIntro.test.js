@@ -3,7 +3,7 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 import catsData from 'src/data/causes/cats.json'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 
 var charityIntroData = catsData.data.sections.charityIntro
 const getMockProps = () => ({

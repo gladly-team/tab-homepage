@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
+import { useTheme } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import { homeURL } from 'src/utils/navigation'
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexDirection: 'column-reverse',
       height: 'auto',
       paddingTop: theme.spacing(3),
@@ -42,11 +43,11 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     paddingLeft: '10%',
-    [theme.breakpoints.down(1100)]: {
+    [theme.breakpoints.down(undefined)]: {
       width: '47%',
       paddingLeft: '7%',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '85%',
       marginTop: theme.spacing(4),
       paddingLeft: 0,
@@ -60,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     position: 'absolute',
     right: 0,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       position: 'relative',
       width: '100%',
     },
@@ -77,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: -2, // avoids a gap appearing on some resolutions
     width: '100%',
     zIndex: -1,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none',
     },
   },
@@ -87,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'static',
     width: '100%',
     zIndex: -1,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'block',
     },
   },

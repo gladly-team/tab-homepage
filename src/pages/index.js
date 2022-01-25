@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-// import Container from '@material-ui/core/Container'
-// import Paper from '@material-ui/core/Paper'
-// import Typography from '@material-ui/core/Typography'
+// import Container from '@mui/material/Container'
+// import Paper from '@mui/material/Paper'
+// import Typography from '@mui/material/Typography'
 
 import Layout from 'src/components/Layout'
 import Section from 'src/components/Section'
@@ -39,8 +39,8 @@ import {
 import { getUrlParameterValue } from 'src/utils/location'
 
 // Icons
-import Star from '@material-ui/icons/Star'
-import StarHalf from '@material-ui/icons/StarHalf'
+import Star from '@mui/icons-material/Star'
+import StarHalf from '@mui/icons-material/StarHalf'
 // import Firefox from 'mdi-material-ui/Firefox'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'

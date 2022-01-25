@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
+import { useTheme } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import CharityIntroWave from 'src/components/CharityIntroWave'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     width: '80%',
     paddingTop: theme.spacing(6),
     paddingBottom: theme.spacing(6),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '90%',
       paddingTop: theme.spacing(4),
       paddingBottom: theme.spacing(4),
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   steps: {
     display: 'flex',
     flexDirection: 'row',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
     },
   },
@@ -50,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     flex: '1',
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       marginBottom: theme.spacing(2),
     },
   },

@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/core/styles'
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
 
 // Text on white background
 export const textColor = 'rgba(33, 33, 33, 0.82)'
@@ -28,7 +28,7 @@ export const secondaryMainColor = '#4a90e2'
 export const secondaryContrastTextColor = '#fff'
 export const baseFontSize = 16
 
-const theme = createTheme({
+const theme = createTheme(adaptV4Theme({
   body: {
     padding: '0px',
   },
@@ -85,11 +85,11 @@ const theme = createTheme({
       },
     },
   },
-})
+}))
 
 export default theme
 
-export const tabForTeamSeasTheme = createTheme({
+export const tabForTeamSeasTheme = createTheme(adaptV4Theme({
   palette: {
     background: {
       // This value changes the HTML background color:
@@ -160,10 +160,10 @@ export const tabForTeamSeasTheme = createTheme({
       },
     },
   },
-})
+}))
 
 export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
-  createTheme({
+  createTheme(adaptV4Theme({
     palette: {
       background: {
         default: '#FBF3E9',
@@ -258,4 +258,4 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
         },
       },
     },
-  })
+  }))

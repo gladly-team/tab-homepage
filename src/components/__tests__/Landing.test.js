@@ -3,7 +3,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 import seasData from 'src/data/causes/seas.json'
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')

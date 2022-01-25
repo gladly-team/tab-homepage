@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import {
-  makeStyles,
-  ThemeProvider,
-  responsiveFontSizes,
-} from '@material-ui/core/styles'
+import { ThemeProvider, StyledEngineProvider, responsiveFontSizes } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import CssBaseline from '@material-ui/core/CssBaseline'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import CssBaseline from '@mui/material/CssBaseline'
 import InstallButton from 'src/components/InstallButton'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 import { tabForTeamSeasTheme } from 'src/themes/theme'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import openGraphImg from 'src/img/seasOG.png'
@@ -41,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     height: 'calc(100vh - 64px)',
     alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexDirection: 'column-reverse',
       height: 'auto',
     },
@@ -55,11 +52,11 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     paddingLeft: '10%',
-    [theme.breakpoints.down(1100)]: {
+    [theme.breakpoints.down(undefined)]: {
       width: '47%',
       paddingLeft: '7%',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '80%',
       marginTop: theme.spacing(4),
       paddingLeft: 0,
@@ -73,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     position: 'absolute',
     right: 0,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       position: 'relative',
       width: '100%',
     },
@@ -90,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     width: '100%',
     zIndex: -1,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none',
     },
   },
@@ -99,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     width: '100%',
     zIndex: -1,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'block',
     },
   },
@@ -243,12 +240,14 @@ Seas.propTypes = {
   }),
 }
 const SeasPageWithTheme = (props) => (
-  <ThemeProvider
-    theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
-  >
-    <CssBaseline>
-      <Seas {...props} />
-    </CssBaseline>
-  </ThemeProvider>
+  <StyledEngineProvider injectFirst>
+    <ThemeProvider
+      theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
+    >
+      <CssBaseline>
+        <Seas {...props} />
+      </CssBaseline>
+    </ThemeProvider>
+  </StyledEngineProvider>
 )
 export default SeasPageWithTheme

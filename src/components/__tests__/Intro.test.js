@@ -4,7 +4,7 @@ import { mount, shallow } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
 import catsData from 'src/data/causes/cats.json'
 import Markdown from 'src/components/Markdown'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 import InstallButton from 'src/components/InstallButton'
 
 jest.mock('src/utils/local-storage')

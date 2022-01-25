@@ -1,15 +1,15 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
+import makeStyles from '@mui/styles/makeStyles';
+import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import Paper from '@material-ui/core/Paper'
-import IconButton from '@material-ui/core/IconButton'
+import Paper from '@mui/material/Paper'
+import IconButton from '@mui/material/IconButton'
 import { formatImg } from 'src/utils/formatting'
 import Slider from 'react-slick'
 // Icons
-import Star from '@material-ui/icons/Star'
-import StarHalf from '@material-ui/icons/StarHalf'
+import Star from '@mui/icons-material/Star'
+import StarHalf from '@mui/icons-material/StarHalf'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     background: '#FAFAFA',
     paddingBottom: theme.spacing(9),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       paddingTop: theme.spacing(6),
       paddingBottom: theme.spacing(6),
     },
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     width: '86%',
     marginTop: theme.spacing(4),
-    [theme.breakpoints.down('1150')]: {
+    [theme.breakpoints.down(undefined)]: {
       display: 'none',
     },
   },
@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     width: '96%',
     maxWidth: '800px',
     marginTop: theme.spacing(4),
-    [theme.breakpoints.down('1150')]: {
+    [theme.breakpoints.down(undefined)]: {
       display: 'flex',
     },
   },
@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     marginTop: theme.spacing(9),
     justifyContent: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       marginTop: theme.spacing(7),
     },
   },
@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     width: '70%',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '90%',
     },
   },
@@ -104,7 +104,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
     display: 'flex',
     alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       marginTop: theme.spacing(4),
     },
   },
@@ -133,7 +133,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(2.5),
     paddingRight: theme.spacing(2.5),
     transition: 'transform .1s ease-in-out',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       maxWidth: 340,
     },
   },
@@ -146,7 +146,7 @@ const useStyles = makeStyles((theme) => ({
   arrowButton: {
     position: 'absolute',
     right: '1%',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none',
     },
   },
@@ -270,14 +270,14 @@ const Endorsements = ({ endorsementsData, causeId }) => {
           ))}
         </Slider>
         <div className={cx.arrowButton}>
-          <IconButton onClick={() => sliderRef.current.slickNext()}>
+          <IconButton onClick={() => sliderRef.current.slickNext()} size="large">
             <Arrow />
           </IconButton>
         </div>
       </div>
       <V4InstallButton causeId={causeId} buttonClassName={cx.installButton} />
     </div>
-  )
+  );
 }
 Endorsements.propTypes = {
   causeId: PropTypes.string,

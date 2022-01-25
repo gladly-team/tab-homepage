@@ -11,7 +11,7 @@ import Header from 'src/components/Header'
 import Footer from 'src/components/Footer'
 import HeadTags from 'src/components/HeadTags'
 
-import { ThemeProvider } from '@material-ui/styles'
+import { ThemeProvider, StyledEngineProvider } from '@mui/styles';
 import defaultTheme from 'src/themes/theme'
 import { getAbsoluteURL } from 'src/utils/navigation'
 
@@ -21,34 +21,36 @@ export const Layout = (props) => {
   const { brand, children, location } = props
   const absoluteUrl = getAbsoluteURL(location.pathname)
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          height: '100vh',
-          background: '#fff',
-        }}
-      >
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={defaultTheme}>
         <div
           style={{
-            flex: '1 0 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            height: '100vh',
+            background: '#fff',
           }}
         >
-          <HeadTags pageURL={absoluteUrl} />
-          <Header brand={brand} />
           <div
             style={{
-              paddingTop: 0,
+              flex: '1 0 auto',
             }}
           >
-            {children}
+            <HeadTags pageURL={absoluteUrl} />
+            <Header brand={brand} />
+            <div
+              style={{
+                paddingTop: 0,
+              }}
+            >
+              {children}
+            </div>
           </div>
+          <Footer style={{ flexShrink: 0 }} />
         </div>
-        <Footer style={{ flexShrink: 0 }} />
-      </div>
-    </ThemeProvider>
-  )
+      </ThemeProvider>
+    </StyledEngineProvider>
+  );
 }
 
 Layout.propTypes = {

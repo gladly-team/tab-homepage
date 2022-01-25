@@ -1,5 +1,5 @@
 import React from 'react'
-import Divider from '@material-ui/core/Divider'
+import Divider from '@mui/material/Divider'
 import PropTypes from 'prop-types'
 import Facebook from 'mdi-material-ui/Facebook'
 import Instagram from 'mdi-material-ui/Instagram'

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 import getBrowserInfo from 'src/utils/browserDetection'
 import { flushAllPromises } from 'src/utils/test-utils'
 import { safariEnabled } from 'src/utils/featureFlags'
@@ -12,7 +12,7 @@ jest.mock('src/utils/browserDetection')
 jest.mock('src/utils/location')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/analytics/logEvent')
-jest.mock('@material-ui/core/Button')
+jest.mock('@mui/material/Button')
 jest.mock('src/utils/featureFlags')
 
 afterEach(() => {

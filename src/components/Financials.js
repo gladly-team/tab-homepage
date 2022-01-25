@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
+import makeStyles from '@mui/styles/makeStyles';
+import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Link from 'src/components/Link'
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 import { formatImg } from 'src/utils/formatting'
 import FinancialsQuartersButton from 'src/components/FinancialsHomePageButton'
 import { financialsURL } from 'src/utils/navigation'
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       paddingTop: theme.spacing(6),
       paddingBottom: theme.spacing(6),
     },
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     width: '86%',
     marginTop: theme.spacing(4),
-    [theme.breakpoints.down('1150')]: {
+    [theme.breakpoints.down(undefined)]: {
       display: 'none',
     },
   },
@@ -43,14 +43,14 @@ const useStyles = makeStyles((theme) => ({
     width: '96%',
     maxWidth: '800px',
     marginTop: theme.spacing(4),
-    [theme.breakpoints.down('1150')]: {
+    [theme.breakpoints.down(undefined)]: {
       display: 'flex',
     },
   },
   titleSectionWrapper: {
     display: 'flex',
     width: '100%',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
       height: 'auto',
     },
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '5%',
     flexDirection: 'column',
     justifyContent: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '80%',
       marginTop: theme.spacing(4),
       paddingLeft: 0,
@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     marginLeft: '5%',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       position: 'relative',
       width: '90%',
       maxWidth: '600px',
@@ -92,12 +92,12 @@ const useStyles = makeStyles((theme) => ({
   buttonStyles: {
     width: theme.spacing(30),
     marginTop: theme.spacing(6),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '100%',
     },
   },
   linkStyles: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '85%',
     },
   },

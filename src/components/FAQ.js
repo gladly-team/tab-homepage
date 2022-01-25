@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
+import makeStyles from '@mui/styles/makeStyles';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 import faqPattern from 'src/img/causeshared/faqTitlePattern.png'
-import MuiAccordion from '@material-ui/core/Accordion'
-import MuiAccordionSummary from '@material-ui/core/AccordionSummary'
-import MuiAccordionDetails from '@material-ui/core/AccordionDetails'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import MuiAccordion from '@mui/material/Accordion'
+import MuiAccordionSummary from '@mui/material/AccordionSummary'
+import MuiAccordionDetails from '@mui/material/AccordionDetails'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Markdown from 'src/components/Markdown'
 
 const useStyles = makeStyles((theme) => ({
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       paddingTop: theme.spacing(0),
       paddingBottom: theme.spacing(0),
     },
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'flex-start',
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(8),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
     },
   },
@@ -42,13 +42,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     paddingLeft: theme.spacing(3),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       paddingLeft: theme.spacing(0),
     },
   },
   titleImage: {
     maxWidth: '35%',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       maxWidth: 'unset',
     },
   },
