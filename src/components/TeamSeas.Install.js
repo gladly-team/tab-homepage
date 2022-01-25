@@ -1,3 +1,6 @@
+// This page will soon be removed.
+/* eslint-disable */
+
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import {
@@ -236,6 +239,7 @@ function Seas({ pageContext, location }) {
     </div>
   )
 }
+
 Seas.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
@@ -246,6 +250,7 @@ Seas.propTypes = {
     }),
   }),
 }
+
 function SeasPageWithTheme(props) {
   return (
     <StyledEngineProvider injectFirst>
@@ -256,6 +261,8 @@ function SeasPageWithTheme(props) {
           <Seas {...props} />
         </CssBaseline>
       </ThemeProvider>
-         </StyledEngineProvider>
+    </StyledEngineProvider>
+  )
 }
+
 export default SeasPageWithTheme

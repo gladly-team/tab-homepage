@@ -169,6 +169,7 @@ function Seas({ location }) {
     </div>
   )
 }
+
 Seas.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
@@ -179,6 +180,7 @@ Seas.propTypes = {
     }),
   }),
 }
+
 function SeasPageWithTheme(props) {
   return (
     <StyledEngineProvider injectFirst>
@@ -187,6 +189,8 @@ function SeasPageWithTheme(props) {
       >
         <Seas {...props} />
       </ThemeProvider>
-         </StyledEngineProvider>
+    </StyledEngineProvider>
+  )
 }
+
 export default SeasPageWithTheme

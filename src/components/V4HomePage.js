@@ -68,19 +68,20 @@ function HomepageWrapper({
   location,
 }) {
   const isPreviewPage = !!(!enabled && previewPage)
-  const hasReferrer = () =>
+  const hasReferrer = !!(
     referrer || !isNaN(parseInt(getUrlParameterValue('r')))
+  )
 
   // store referrer id
   useEffect(() => {
     // Check for a referrer's vanity URL.
-    if (hasReferrer()) {
+    if (hasReferrer) {
       localStorageMgr.setItem(
         STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
         get(referrer, 'id') || parseInt(getUrlParameterValue('r'))
       )
     }
-  }, [])
+  }, [hasReferrer, referrer])
 
   // store user referral
   useEffect(() => {
@@ -96,7 +97,7 @@ function HomepageWrapper({
     if (enabled && previewPage) {
       navigate(previewPage.path)
     }
-  }, [])
+  }, [enabled, previewPage])
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
   const ogImgURLAbsolute = getAbsoluteURL(
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')

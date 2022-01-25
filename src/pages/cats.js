@@ -1,3 +1,6 @@
+// This page will soon be removed.
+/* eslint-disable */
+
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import {

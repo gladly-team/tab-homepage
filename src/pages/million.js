@@ -732,19 +732,13 @@ function MillionPage({
           className={clsx(classes.sectionContent, classes.topBackgroundInner)}
         >
           <Center className={classes.hiddenUntilPageRendered}>
-            <Typography
-              variant="h5"
-              className={clsx(classes.moneyRaisedText)}
-            >
+            <Typography variant="h5" className={clsx(classes.moneyRaisedText)}>
               Together, your tabs have raised
             </Typography>
             <Typography variant="h1" className={clsx(classes.moneyRaised)}>
               <MoneyRaised />
             </Typography>
-            <Typography
-              variant="h5"
-              className={clsx(classes.moneyRaisedText)}
-            >
+            <Typography variant="h5" className={clsx(classes.moneyRaisedText)}>
               for incredible causes
             </Typography>
           </Center>
@@ -814,10 +808,7 @@ function MillionPage({
       content: (
         <>
           <div className={classes.slidesFixedHeader}>
-            <Typography
-              variant="h5"
-              className={clsx(classes.slideHeaderText)}
-            >
+            <Typography variant="h5" className={clsx(classes.slideHeaderText)}>
               Tabbers have raised enough to...
             </Typography>
           </div>
@@ -1224,10 +1215,7 @@ function MillionPage({
       content: (
         <>
           <div className={classes.slidesFixedHeader}>
-            <Typography
-              variant="h5"
-              className={clsx(classes.slideHeaderText)}
-            >
+            <Typography variant="h5" className={clsx(classes.slideHeaderText)}>
               Join us as we celebrate each day leading up to $1M.
             </Typography>
           </div>
@@ -1639,8 +1627,10 @@ function MillionPageWithTheme(props) {
       <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
         <MillionPage {...props} />
       </ThemeProvider>
-         </StyledEngineProvider>
+    </StyledEngineProvider>
+  )
 }
+
 MillionPageWithTheme.displayName = 'MillionPageWithTheme'
 
 export default MillionPageWithTheme

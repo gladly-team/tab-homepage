@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import favicon from 'src/img/logo32x32.png'
+import faviconImg from 'src/img/logo32x32.png'
 import openGraphImg from 'src/img/opengraph-img.png'
 import { domain, getAbsoluteURL } from 'src/utils/navigation'
 
@@ -57,7 +57,7 @@ HeadTags.propTypes = {
 }
 
 HeadTags.defaultProps = {
-  favicon,
+  faviconImg,
   title: 'Tab for a Cause',
   titleTemplate: '%s - Tab for a Cause',
   ogTitle: 'Join me on Tab for a Cause!',
