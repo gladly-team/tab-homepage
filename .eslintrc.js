@@ -2,6 +2,40 @@ module.exports = {
   extends: ['airbnb', 'prettier'],
   plugins: ['prettier', 'react-hooks'],
   rules: {
+    /**
+     *  START FIXME: rules disabled for incremental fixes
+     * */
+    'react/forbid-prop-types': 0,
+    'import/no-extraneous-dependencies': 0,
+    'react/require-default-props': 0,
+    'react/default-props-match-prop-types': 0,
+    'react/jsx-props-no-spreading': 0,
+    'react/jsx-no-useless-fragment': 0,
+    'jsx-a11y/alt-text': 0,
+    'react/destructuring-assignment': 0,
+    'react/prefer-stateless-function': 0,
+    'no-plusplus': 0,
+    'no-restricted-globals': 0,
+    radix: 0,
+    'new-cap': 0,
+    'block-scoped-var': 0,
+    'import/prefer-default-export': 0,
+    'no-return-assign': 0,
+    'no-underscore-dangle': 0,
+    'no-redeclare': 0,
+    'import/no-named-as-default': 0,
+    'no-undef': 0,
+    'no-console': 0,
+    'react/jsx-no-bind': 0,
+    'import/no-named-as-default-member': 0,
+    'no-redeclare': 0,
+    'no-param-reassign': 0,
+    'class-methods-use-this': 0,
+
+    /**
+     *  END FIXME: rules disabled for incremental fixes
+     * */
+
     'prettier/prettier': 'error',
     'react/no-unescaped-entities': 0,
     'react/jsx-filename-extension': 0,
@@ -33,13 +67,12 @@ module.exports = {
       },
     ],
     'react-hooks/exhaustive-deps': 'error',
-    'no-console': 'error',
   },
   overrides: [
     // Set Jest rules only for test files.
     // https://stackoverflow.com/a/49211283
     {
-      files: ['**/*.test.js', '**/__mocks__/**/*.js'],
+      files: ['**/*.test.js', '**/__mocks__/**/*.js', '**/__tests__/**/*.js'],
       extends: ['plugin:jest/recommended'],
       env: {
         jest: true,
@@ -48,6 +81,15 @@ module.exports = {
       rules: {
         'global-require': 0,
         'react/jsx-props-no-spreading': 0,
+
+        /**
+         *  START FIXME: rules disabled for incremental fixes
+         * */
+        'jest/expect-expect': 0,
+
+        /**
+         *  END FIXME: rules disabled for incremental fixes
+         * */
       },
     },
     {
