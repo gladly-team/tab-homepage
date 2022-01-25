@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import React from 'react'
-import { shallow, mount } from 'src/utils/testHelpers/componentTesting'
+import { mount } from 'src/utils/testHelpers/componentTesting'
 import localStorageMgr from 'src/utils/local-storage'
 import data from 'src/data/causes/cats.json'
 import InstallButton from 'src/components/InstallButton'
@@ -67,7 +67,7 @@ afterEach(() => {
 describe('home page', () => {
   it('renders without error', () => {
     const HomePageWrapper = require('../V4HomePage').default
-    shallow(<HomePageWrapper {...getMockProps()} />)
+    mount(<HomePageWrapper {...getMockProps()} />)
   })
 
   it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage and the cause id', () => {
@@ -276,7 +276,7 @@ describe('home page', () => {
       preview: false,
     }
 
-    const wrapper = shallow(<HomePageWrapper {...mockProps} />)
+    const wrapper = mount(<HomePageWrapper {...mockProps} />)
     expect(wrapper.find(Snackbar).first().prop('open')).toEqual(false)
   })
 
@@ -291,7 +291,7 @@ describe('home page', () => {
       path: '/test/',
     }
 
-    const wrapper = shallow(<HomePageWrapper {...mockProps} />)
+    const wrapper = mount(<HomePageWrapper {...mockProps} />)
     expect(wrapper.find(Snackbar).first().prop('open')).toEqual(true)
   })
 

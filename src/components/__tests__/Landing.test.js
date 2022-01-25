@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow, mount } from 'src/utils/testHelpers/componentTesting'
+import { mount } from 'src/utils/testHelpers/componentTesting'
 import localStorageMgr from 'src/utils/local-storage'
 import Typography from '@mui/material/Typography'
 import seasData from 'src/data/causes/seas.json'
@@ -23,7 +23,7 @@ afterEach(() => {
 describe('landing component', () => {
   it('renders without error', () => {
     const Landing = require('../Landing').default
-    shallow(<Landing {...getMockProps()} />)
+    mount(<Landing {...getMockProps()} />)
   })
 
   it('sets the title correctly according to the cause data', async () => {

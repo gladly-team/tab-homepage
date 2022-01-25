@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'src/utils/testHelpers/componentTesting'
+import { mount } from 'src/utils/testHelpers/componentTesting'
 
 describe('FinancialsHomePageButton', () => {
   it('renders without error', () => {
@@ -12,7 +12,7 @@ describe('FinancialsHomePageButton', () => {
       year: 2018,
       pdfUrl: '/',
     }
-    shallow(<FinancialsHomePageButton quarterData={quarterData} />)
+    mount(<FinancialsHomePageButton quarterData={quarterData} />)
   })
 
   it('links to the provided PDF URL', () => {
@@ -23,7 +23,7 @@ describe('FinancialsHomePageButton', () => {
       year: 2018,
       pdfUrl: 'https://example.com/some-link/q2.pdf',
     }
-    const wrapper = shallow(
+    const wrapper = mount(
       <FinancialsHomePageButton quarterData={quarterData} />
     )
     expect(wrapper.find('a').first().prop('href')).toBe(
@@ -39,17 +39,9 @@ describe('FinancialsHomePageButton', () => {
       year: 2018,
       pdfUrl: '/',
     }
-    const wrapper = shallow(
+    const wrapper = mount(
       <FinancialsHomePageButton quarterData={quarterData} />
     )
     expect(wrapper.find('span').first().text()).toEqual('Q2 2018')
-    wrapper.setProps({
-      quarterData: {
-        quarter: 3,
-        year: 2012,
-        pdfUrl: '/',
-      },
-    })
-    expect(wrapper.find('span').first().text()).toEqual('Q3 2012')
   })
 })
