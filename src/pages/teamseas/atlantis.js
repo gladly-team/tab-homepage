@@ -18,7 +18,8 @@ function TestSeas({ pageContext, location }) {
       >
         <SeasPageWithTheme pageContext={pageContext} location={location} />
       </div>
-         </div>
+    </div>
+  )
 }
 
 TestSeas.propTypes = {

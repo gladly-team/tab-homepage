@@ -242,7 +242,8 @@ function PrivacyPolicyPage({ location }) {
           </p>
         </TextPageContent>
       </div>
-         </Layout>
+    </Layout>
+  )
 }
 
 PrivacyPolicyPage.propTypes = {

@@ -35,7 +35,7 @@ describe('test-utils tests', () => {
     )
   })
 
-  it('mockCurrentTimeOnly correctly overrides constructors', () => {
+  it('mockCurrentTimeOnly correctly overrides constructors, test 2', () => {
     mockDate.on()
     expect(origDate).not.toEqual(Date)
     mockDate.off()

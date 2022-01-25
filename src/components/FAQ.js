@@ -94,7 +94,7 @@ function FAQ({ faqData }) {
         root: cx.MuiAccordionRoot,
         expanded: cx.MuiAccordionExpanded,
       }}
-      key={index}
+      key={question}
     >
       <MuiAccordionSummary
         expandIcon={<ExpandMoreIcon className={cx.expandIcon} />}
@@ -134,10 +134,12 @@ function FAQ({ faqData }) {
     </div>
   )
 }
+
 FAQ.propTypes = {
   faqData: PropTypes.shape({
     img: PropTypes.any,
     questions: PropTypes.array,
   }),
 }
+
 export default FAQ

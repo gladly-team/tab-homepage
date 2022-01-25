@@ -161,13 +161,4 @@ describe('index page', () => {
     )
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
-
-  it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
-    const IndexPage = require('../index').default
-    const { getUrlParameterValue } = require('src/utils/location')
-    getUrlParameterValue.mockReturnValue(null)
-
-    shallow(<IndexPage {...getMockProps()} />)
-    expect(localStorageMgr.setItem).not.toHaveBeenCalled()
-  })
 })

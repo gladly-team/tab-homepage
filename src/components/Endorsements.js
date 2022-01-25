@@ -153,6 +153,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
+
 function Arrow() {
   return (
     <svg
@@ -169,8 +170,10 @@ function Arrow() {
         strokeWidth="8"
         strokeLinecap="round"
       />
-         </svg>
+    </svg>
+  )
 }
+
 function Endorsements({ endorsementsData, causeId }) {
   const {
     title,
@@ -285,6 +288,7 @@ function Endorsements({ endorsementsData, causeId }) {
     </div>
   )
 }
+
 Endorsements.propTypes = {
   causeId: PropTypes.string,
   endorsementsData: PropTypes.shape({
@@ -297,4 +301,5 @@ Endorsements.propTypes = {
     smallEndorsements: PropTypes.any,
   }),
 }
+
 export default Endorsements

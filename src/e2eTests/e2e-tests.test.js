@@ -22,6 +22,8 @@ const tests = init({
 describe('Tab: acceptance tests', () => {
   jest.retryTimes(3)
   tests.forEach(({ description, test, testTimeout }) =>
+    // Uses title from tab-e2e's test definitions.
+    // eslint-disable-next-line jest/valid-title
     it(description, test, testTimeout)
   )
 })

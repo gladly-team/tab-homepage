@@ -22,7 +22,7 @@ describe('FooterBlobRight component', () => {
     expect(wrapper.find('path').first().prop('fill')).toEqual(mockProps.color)
   })
 
-  it('sets the wave color correctly according to props', async () => {
+  it('sets the class name correctly according to props', async () => {
     const mockProps = getMockProps()
     const FooterBlobRight = require('../FooterBlobRight').default
     const wrapper = shallow(<FooterBlobRight {...mockProps} />)

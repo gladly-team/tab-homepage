@@ -167,15 +167,6 @@ describe('teamseas page', () => {
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
 
-  it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
-    const SeasPageWithTheme = require('../TeamSeas.Install').default
-    const { getUrlParameterValue } = require('src/utils/location')
-    getUrlParameterValue.mockReturnValue(null)
-
-    mount(<SeasPageWithTheme {...getMockProps()} />)
-    expect(localStorageMgr.setItem).not.toHaveBeenCalled()
-  })
-
   it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage and the cause id', () => {
     const TeamSeasPageWithTheme = require('../TeamSeas.Install').default
     const { getUrlParameterValue } = require('src/utils/location')

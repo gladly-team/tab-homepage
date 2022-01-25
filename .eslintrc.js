@@ -28,9 +28,20 @@ module.exports = {
     'no-console': 0,
     'react/jsx-no-bind': 0,
     'import/no-named-as-default-member': 0,
-    'no-redeclare': 0,
     'no-param-reassign': 0,
     'class-methods-use-this': 0,
+    'react/no-access-state-in-setstate': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'react/no-unused-prop-types': 0,
+    'react/no-unused-state': 0,
+    'no-unused-vars': 0,
+    'import/extensions': 0,
+    'no-nested-ternary': 0,
+    'vars-on-top': 0,
+    'prefer-destructuring': 0,
+    'no-var': 0,
+    'react/sort-comp': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
 
     /**
      *  END FIXME: rules disabled for incremental fixes
@@ -51,21 +62,6 @@ module.exports = {
       },
     ],
     'react-hooks/rules-of-hooks': 'error',
-    'lines-around-comment': [
-      'error',
-      {
-        beforeLineComment: true,
-        allowBlockStart: true,
-        allowBlockEnd: true,
-        allowObjectStart: true,
-        allowObjectEnd: true,
-        allowArrayStart: true,
-        allowArrayEnd: true,
-        allowClassStart: true,
-        allowClassEnd: true,
-        applyDefaultIgnorePatterns: true,
-      },
-    ],
     'react-hooks/exhaustive-deps': 'error',
   },
   overrides: [
@@ -86,6 +82,7 @@ module.exports = {
          *  START FIXME: rules disabled for incremental fixes
          * */
         'jest/expect-expect': 0,
+        'import/no-import-module-exports': 0,
 
         /**
          *  END FIXME: rules disabled for incremental fixes

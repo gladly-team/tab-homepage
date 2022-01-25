@@ -6,7 +6,8 @@ import {
   ThemeProvider,
   StyledEngineProvider,
   lighten,
-, responsiveFontSizes } from '@mui/material/styles';
+  responsiveFontSizes,
+} from '@mui/material/styles'
 // import red from '@mui/material/colors/red'
 // import teal from '@mui/material/colors/teal'
 // import brown from '@mui/material/colors/brown'
@@ -14,7 +15,7 @@ import Button from '@mui/material/Button'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import ArrowLeftIcon from '@mui/icons-material/ArrowBack'
 import ArrowRightIcon from '@mui/icons-material/ArrowForward'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import clsx from 'clsx'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
@@ -451,7 +452,7 @@ Section.defaultProps = {
 function Slide({ children, className, style = {} }) {
   const classes = useStyles()
   return (
-    <div className={'slide'}>
+    <div className="slide">
       <div className={clsx(classes.slideContent, className)} style={style}>
         {children}
       </div>
@@ -471,13 +472,7 @@ Slide.defaultProps = {
   className: '',
 }
 
-function ArrowButton({
-  children,
-  className,
-  dark,
-  onClick,
-  arrowDirection,
-}) {
+function ArrowButton({ children, className, dark, onClick, arrowDirection }) {
   const classes = useStyles({ dark })
   let ArrowIcon
   switch (arrowDirection) {
@@ -713,7 +708,7 @@ function MillionPage({
 
   // Generate classes
   const isInDarkSection = sections[currentSectionIndex].dark
-  let classes = useStyles({
+  const classes = useStyles({
     isInDarkSection,
     isPageReady,
     dark: !isInDarkSection,
@@ -738,16 +733,16 @@ function MillionPage({
         >
           <Center className={classes.hiddenUntilPageRendered}>
             <Typography
-              variant={'h5'}
+              variant="h5"
               className={clsx(classes.moneyRaisedText)}
             >
               Together, your tabs have raised
             </Typography>
-            <Typography variant={'h1'} className={clsx(classes.moneyRaised)}>
+            <Typography variant="h1" className={clsx(classes.moneyRaised)}>
               <MoneyRaised />
             </Typography>
             <Typography
-              variant={'h5'}
+              variant="h5"
               className={clsx(classes.moneyRaisedText)}
             >
               for incredible causes
@@ -756,7 +751,7 @@ function MillionPage({
           <ArrowButtonContainer className={classes.hiddenUntilPageRendered}>
             <ArrowButton onClick={() => window.fullpage_api.moveSectionDown()}>
               <Typography
-                variant={'body1'}
+                variant="body1"
                 className={classes.arrowText}
                 style={{ margin: '0px 12px' }}
               >
@@ -773,24 +768,24 @@ function MillionPage({
         <div className={classes.sectionContent}>
           <Center>
             <Typography
-              variant={'h5'}
+              variant="h5"
               className={clsx(classes.moneyRaisedText)}
               gutterBottom
             >
               We never imagined we would
             </Typography>
             <Typography
-              variant={'h1'}
+              variant="h1"
               className={clsx(classes.moneyRaised, classes.bottomThankYouText)}
               gutterBottom
             >
               #TabForAMillion
             </Typography>
-            <Typography variant={'body2'} style={{ maxWidth: 540 }} paragraph>
+            <Typography variant="body2" style={{ maxWidth: 540 }} paragraph>
               When we first launched Tab for a Cause, we thought it was a fun
               idea to do a little good, for free.
             </Typography>
-            <Typography variant={'body2'} style={{ maxWidth: 540 }} paragraph>
+            <Typography variant="body2" style={{ maxWidth: 540 }} paragraph>
               What we didn't expect was{' '}
               <span style={{ fontWeight: 'bold' }}>you</span>. Soon, the little
               good became a lot of good. And here we are.
@@ -803,7 +798,7 @@ function MillionPage({
               dark
             >
               <Typography
-                variant={'body1'}
+                variant="body1"
                 className={clsx(classes.arrowText, classes.whiteColor)}
                 style={{ margin: '0px 12px' }}
               >
@@ -820,7 +815,7 @@ function MillionPage({
         <>
           <div className={classes.slidesFixedHeader}>
             <Typography
-              variant={'h5'}
+              variant="h5"
               className={clsx(classes.slideHeaderText)}
             >
               Tabbers have raised enough to...
@@ -836,13 +831,13 @@ function MillionPage({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     protect 5,000 acres of rainforest
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through Conservation International
@@ -890,13 +885,13 @@ function MillionPage({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     give over 6,000 children a month of emergency nutrition
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through Save the Children
@@ -944,13 +939,13 @@ function MillionPage({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     keep over 200 girls in school
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through Room to Read
@@ -998,13 +993,13 @@ function MillionPage({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     provide access to clean water to over 12,000 people
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through Water.org
@@ -1052,14 +1047,14 @@ function MillionPage({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     provide life-saving malnutrition treatment to over 1,500
                     children
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through Action Against Hunger
@@ -1107,13 +1102,13 @@ function MillionPage({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     fund over $41,000 in direct cash transfers
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through GiveDirectly
@@ -1161,13 +1156,13 @@ function MillionPage({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     give learning materials to over 3,500 students
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through Educate!
@@ -1230,7 +1225,7 @@ function MillionPage({
         <>
           <div className={classes.slidesFixedHeader}>
             <Typography
-              variant={'h5'}
+              variant="h5"
               className={clsx(classes.slideHeaderText)}
             >
               Join us as we celebrate each day leading up to $1M.
@@ -1243,7 +1238,7 @@ function MillionPage({
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
-                variant={'h4'}
+                variant="h4"
                 className={clsx(
                   classes.whiteColor,
                   classes.impactTextSupporting
@@ -1252,7 +1247,7 @@ function MillionPage({
               >
                 #MillionaireMonday
               </Typography>
-              <Typography variant={'body2'} className={classes.whiteColor}>
+              <Typography variant="body2" className={classes.whiteColor}>
                 For us, it was as easy as opening tabs. For multi-millionaires,
                 it’s as easy as writing a check. Join us each Monday on{' '}
                 <Link
@@ -1284,7 +1279,7 @@ function MillionPage({
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
-                variant={'h4'}
+                variant="h4"
                 className={clsx(
                   classes.whiteColor,
                   classes.impactTextSupporting
@@ -1293,7 +1288,7 @@ function MillionPage({
               >
                 #TabberTuesday
               </Typography>
-              <Typography variant={'body2'} className={classes.whiteColor}>
+              <Typography variant="body2" className={classes.whiteColor}>
                 Tab for a Cause would not be possible without you. We would love
                 to hear why you use it! DM us on{' '}
                 <Link
@@ -1334,7 +1329,7 @@ function MillionPage({
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
-                variant={'h4'}
+                variant="h4"
                 className={clsx(
                   classes.whiteColor,
                   classes.impactTextSupporting
@@ -1343,7 +1338,7 @@ function MillionPage({
               >
                 #WelcomeWednesday
               </Typography>
-              <Typography variant={'body2'} className={classes.whiteColor}>
+              <Typography variant="body2" className={classes.whiteColor}>
                 Despite this incredible milestone, most people haven't heard of
                 Tab for a Cause. Make sure your friends' tabs aren't going to
                 waste. Text, email, call, DM, Snap, whatever it takes, make sure
@@ -1359,7 +1354,7 @@ function MillionPage({
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
-                variant={'h4'}
+                variant="h4"
                 className={clsx(
                   classes.whiteColor,
                   classes.impactTextSupporting
@@ -1368,7 +1363,7 @@ function MillionPage({
               >
                 #ThankfulThursday
               </Typography>
-              <Typography variant={'body2'} className={classes.whiteColor}>
+              <Typography variant="body2" className={classes.whiteColor}>
                 On social media, share which Tab for a Cause nonprofit partner
                 or spotlight campaign you're most thankful for with
                 #TabForAMillion and #ThankfulThursday.
@@ -1382,7 +1377,7 @@ function MillionPage({
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
-                variant={'h4'}
+                variant="h4"
                 className={clsx(
                   classes.whiteColor,
                   classes.impactTextSupporting
@@ -1391,7 +1386,7 @@ function MillionPage({
               >
                 #FriendFriday
               </Typography>
-              <Typography variant={'body2'} className={classes.whiteColor}>
+              <Typography variant="body2" className={classes.whiteColor}>
                 We are proud to support nine incredible nonprofit partners who
                 turn our tabs into concrete impact. Check out what they have to
                 say about Tab for a Cause on{' '}
@@ -1453,20 +1448,20 @@ function MillionPage({
         <div className={classes.sectionContent}>
           <Center>
             <Typography
-              variant={'h1'}
+              variant="h1"
               className={clsx(classes.moneyRaised, classes.bottomThankYouText)}
               gutterBottom
             >
               Thank you.
             </Typography>
             <div className={classes.thankYouTextContainer}>
-              <Typography variant={'body2'} gutterBottom>
+              <Typography variant="body2" gutterBottom>
                 This milestone took a village to accomplish, and we couldn't be
                 more proud of the Tabbing community. From the bottoms of our
                 hearts, thank you.
               </Typography>
               <div className={classes.thanksShareWrapper}>
-                <Typography variant={'body2'} gutterBottom>
+                <Typography variant="body2" gutterBottom>
                   Share this achievement:
                 </Typography>
                 <SocialShare
@@ -1532,7 +1527,7 @@ function MillionPage({
         <div className={classes.logoContainer}>
           <Link to={homeURL}>
             <img
-              data-test-id={'tab-logo-with-text'}
+              data-test-id="tab-logo-with-text"
               src={isInDarkSection ? logoWithTextWhite : logoWithText}
               style={{ height: 40 }}
             />
@@ -1562,7 +1557,7 @@ function MillionPage({
 
         <div className={classes.installButtonContainer}>
           <InstallButton
-            size={'medium'}
+            size="medium"
             color="primary"
             style={{
               minWidth: 180,
@@ -1576,7 +1571,7 @@ function MillionPage({
         </div>
       </div>
       <ReactFullpage
-        licenseKey={'7F2A2647-CD094CE7-B5D7C859-577BFB5C'}
+        licenseKey="7F2A2647-CD094CE7-B5D7C859-577BFB5C"
         scrollingSpeed={450}
         onLeave={(_, destination) => {
           if (destination) {
@@ -1639,11 +1634,12 @@ MillionPage.defaultProps = {
 // Can't create and use theme in same component (useStyles will not use
 // the custom theme).
 function MillionPageWithTheme(props) {
-  return <StyledEngineProvider injectFirst>
-    <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
-      <MillionPage {...props} />
-    </ThemeProvider>
-  </StyledEngineProvider>
+  return (
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
+        <MillionPage {...props} />
+      </ThemeProvider>
+         </StyledEngineProvider>
 }
 MillionPageWithTheme.displayName = 'MillionPageWithTheme'
 

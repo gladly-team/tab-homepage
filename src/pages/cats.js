@@ -967,6 +967,7 @@ function Cats({ pageContext, location }) {
     </div>
   )
 }
+
 Cats.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
@@ -977,12 +978,15 @@ Cats.propTypes = {
     }),
   }),
 }
+
 function CatsPageWithTheme(props) {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
         <Cats {...props} />
       </ThemeProvider>
-         </StyledEngineProvider>
+    </StyledEngineProvider>
+  )
 }
+
 export default CatsPageWithTheme

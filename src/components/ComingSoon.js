@@ -207,6 +207,7 @@ function ComingSoon({
     </div>
   )
 }
+
 ComingSoon.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
@@ -218,6 +219,7 @@ ComingSoon.propTypes = {
     data: PropTypes.any,
   }),
 }
+
 function ComingSoonWithTheme(props) {
   return (
     <StyledEngineProvider injectFirst>
@@ -230,11 +232,14 @@ function ComingSoonWithTheme(props) {
           <ComingSoon {...props} />
         </CssBaseline>
       </ThemeProvider>
-         </StyledEngineProvider>
+    </StyledEngineProvider>
+  )
 }
+
 ComingSoonWithTheme.propTypes = {
   pageContext: PropTypes.shape({
     data: PropTypes.any,
   }),
 }
+
 export default ComingSoonWithTheme

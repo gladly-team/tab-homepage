@@ -231,16 +231,6 @@ describe('home page', () => {
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
 
-  it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
-    const HomePageWrapper = require('../V4HomePage').default
-
-    const { getUrlParameterValue } = require('src/utils/location')
-    getUrlParameterValue.mockReturnValue(null)
-
-    mount(<HomePageWrapper {...getMockProps()} />)
-    expect(localStorageMgr.setItem).not.toHaveBeenCalled()
-  })
-
   it('does not store a referrer ID in local storage when the URL param referrer ID value is not an integer', () => {
     const HomePageWrapper = require('../V4HomePage').default
 
@@ -276,15 +266,6 @@ describe('home page', () => {
       'bobert'
     )
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
-  })
-
-  it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
-    const HomePageWrapper = require('../V4HomePage').default
-    const { getUrlParameterValue } = require('src/utils/location')
-    getUrlParameterValue.mockReturnValue(null)
-
-    mount(<HomePageWrapper {...getMockProps()} />)
-    expect(localStorageMgr.setItem).not.toHaveBeenCalled()
   })
 
   it('does not show snackbar if page enabled, or if no page preview', () => {

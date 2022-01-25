@@ -275,7 +275,8 @@ function TermsPage({ location }) {
           </p>
         </TextPageContent>
       </div>
-         </Layout>
+    </Layout>
+  )
 }
 
 TermsPage.propTypes = {

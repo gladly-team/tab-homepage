@@ -52,6 +52,8 @@ export const useCauseData = async (cause = 'cats') => {
           !key.toLowerCase().includes('text')
       )
       .map(async (key) => {
+        // useImageData is not a hook, just named with "use".
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const newValue = await useImageData(get(data, key))
         return { key, newValue }
       })
@@ -87,6 +89,8 @@ export const useCauseData = async (cause = 'cats') => {
   // keyify doesnt handle arrays
   const endorsementDataToModify = await Promise.all(
     data.data.sections.Endorsements.smallEndorsements.map((endorsement) =>
+      // useImageData is not a hook.
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       useImageData(endorsement.img)
     )
   )
@@ -97,6 +101,8 @@ export const useCauseData = async (cause = 'cats') => {
       ].img = resolvedImage)
   )
   const charityIntroDataToModify = await Promise.all(
+    // useImageData is not a hook.
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     data.data.sections.charityIntro.steps.map((step) => useImageData(step.img))
   )
   charityIntroDataToModify.forEach(

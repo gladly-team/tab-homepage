@@ -285,12 +285,7 @@ function PlantTreesPage(props) {
             >
               {photos.map((photo) => (
                 <div key={photo.src}>
-                  <img
-
-                    // TODO
-                    // alt={'An area before and after planting trees.'}
-                    src={photo.src}
-                  />
+                  <img alt="" src={photo.src} />
                 </div>
               ))}
             </Slider>
