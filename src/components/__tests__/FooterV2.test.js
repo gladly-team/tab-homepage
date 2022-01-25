@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow, mount } from 'src/utils/testHelpers/componentTesting'
+import { mount } from 'src/utils/testHelpers/componentTesting'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
 import AppleSafari from 'mdi-material-ui/AppleSafari'
@@ -15,7 +15,7 @@ const mockProps = {
 describe('FooterV2', () => {
   it('renders without error', () => {
     const FooterV2 = require('../FooterV2').default
-    shallow(<FooterV2 {...mockProps} />)
+    mount(<FooterV2 {...mockProps} />)
   })
 
   it('clicking on the chrome icon sets local storage info', () => {
@@ -65,7 +65,7 @@ describe('FooterV2', () => {
 
   it('sets both FooterLeftBlob and FooterRightBlob to correct colors', () => {
     const FooterV2 = require('../FooterV2').default
-    const wrapper = shallow(<FooterV2 {...mockProps} />)
+    const wrapper = mount(<FooterV2 {...mockProps} />)
 
     expect(wrapper.find(FooterBlobLeft).first().prop('color')).toEqual(
       mockProps.footerData.bubbleColor

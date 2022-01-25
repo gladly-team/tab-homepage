@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import React from 'react'
-import { shallow, mount } from 'src/utils/testHelpers/componentTesting'
+import { mount } from 'src/utils/testHelpers/componentTesting'
 import localStorageMgr from 'src/utils/local-storage'
 import catsData from 'src/data/causes/cats.json'
 import Markdown from 'src/components/Markdown'
@@ -23,7 +23,7 @@ afterEach(() => {
 describe('intro component', () => {
   it('renders without error', () => {
     const Intro = require('../Intro').default
-    shallow(<Intro {...getMockProps()} />)
+    mount(<Intro {...getMockProps()} />)
   })
 
   it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage and the cause id', () => {
@@ -47,7 +47,7 @@ describe('intro component', () => {
   it('renders correct step text', () => {
     const Intro = require('../Intro').default
     const mockProps = getMockProps()
-    const introComponent = shallow(<Intro {...mockProps} />)
+    const introComponent = mount(<Intro {...mockProps} />)
 
     const step1 = introComponent.find(Markdown).at(1)
     expect(step1.props().children).toEqual(mockProps.introData.img1Subtext)
@@ -62,7 +62,7 @@ describe('intro component', () => {
   it('renders correct title and subtitle', () => {
     const Intro = require('../Intro').default
     const mockProps = getMockProps()
-    const introComponent = shallow(<Intro {...mockProps} />)
+    const introComponent = mount(<Intro {...mockProps} />)
 
     const titleMarkdown = introComponent.find(Typography).first()
     expect(titleMarkdown.text()).toEqual(mockProps.introData.title)

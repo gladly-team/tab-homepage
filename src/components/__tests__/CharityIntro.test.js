@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow, mount } from 'src/utils/testHelpers/componentTesting'
+import { mount } from 'src/utils/testHelpers/componentTesting'
 import catsData from 'src/data/causes/cats.json'
 import Typography from '@mui/material/Typography'
 
@@ -13,7 +13,7 @@ const getMockProps = () => ({
 describe('CharityIntro component', () => {
   it('renders without error', () => {
     const CharityIntro = require('../CharityIntro').default
-    shallow(<CharityIntro {...getMockProps()} />)
+    mount(<CharityIntro {...getMockProps()} />)
   })
 
   it('renders title and subtitle text', () => {
