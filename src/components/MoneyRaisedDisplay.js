@@ -25,6 +25,9 @@ class MoneyRaisedDisplay extends React.Component {
       excludeText = false,
       moneyRaised,
     } = this.props
+    if (moneyRaised === null) {
+      return null
+    }
     return (
       <span style={{ visibility: this.state.show ? 'visible' : 'hidden' }}>
         <Typography
