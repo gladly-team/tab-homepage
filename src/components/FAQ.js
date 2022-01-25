@@ -94,7 +94,7 @@ function FAQ({ faqData }) {
         root: cx.MuiAccordionRoot,
         expanded: cx.MuiAccordionExpanded,
       }}
-      key={question}
+      key={question.question}
     >
       <MuiAccordionSummary
         expandIcon={<ExpandMoreIcon className={cx.expandIcon} />}
