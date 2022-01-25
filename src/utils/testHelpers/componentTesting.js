@@ -7,6 +7,7 @@ import {
 import { shallow as enzymeShallow, mount as enzymeMount } from 'enzyme'
 import defaultTheme from 'src/themes/theme'
 
+// TODO: stop using this as we move to React testing library.
 export const shallow = (Component, ...otherArgs) =>
   enzymeShallow(
     <StyledEngineProvider injectFirst>
@@ -14,6 +15,13 @@ export const shallow = (Component, ...otherArgs) =>
     </StyledEngineProvider>,
     ...otherArgs
   )
+    .dive()
+    .dive()
+    .dive()
+    .dive()
+    .dive()
+    .dive()
+    .dive()
 
 export const mount = (Component, ...otherArgs) =>
   enzymeMount(
