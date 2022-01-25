@@ -1,12 +1,10 @@
 {
   "presets": [
-    "@babel/preset-react",
-    "@babel/preset-env",
     [
       "babel-preset-gatsby",
       {
         "targets": {
-          "browsers": [">0.25%", "not dead"]
+          "browsers": ["> 0.5%, last 2 versions, Firefox ESR, not dead, not IE 11, maintained node versions"]
         }
       }
     ]
@@ -17,13 +15,6 @@
       "alias": {
         "src": "./src/"
       }
-    }],
-    ["@babel/plugin-transform-runtime",
-      {
-        "regenerator": true
-      }
-    ],
-    ["@babel/plugin-proposal-class-properties"],
-    ["react-require"],
+    }]
   ]
 }

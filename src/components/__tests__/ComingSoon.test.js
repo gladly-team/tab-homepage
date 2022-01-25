@@ -5,13 +5,20 @@ import { shallow, mount } from 'src/utils/testHelpers/componentTesting'
 import Typography from '@mui/material/Typography'
 import data from 'src/data/causes/cats.json'
 import Countdown from 'react-countdown'
-import { mockDate, getTestIdSelector } from 'src/utils/test-utils'
+import MockDate from 'mockdate'
+import { getTestIdSelector } from 'src/utils/test-utils'
 import { isChromaticEnv } from '../../utils/featureFlags'
 
 jest.mock('../../utils/featureFlags')
 
+const mockNow = '2017-06-22T01:13:28.000Z'
+
+beforeEach(() => {
+  MockDate.set(mockNow)
+})
+
 afterEach(() => {
-  mockDate.off()
+  MockDate.reset()
 })
 
 const getMockProps = () => ({
@@ -66,7 +73,6 @@ describe('ComingSoon page component', () => {
   })
 
   it('does not render a countdown if the start date is in the past', async () => {
-    mockDate.on()
     const mockProps = getMockProps()
     mockProps.pageContext.data.causeLaunch.launchDate =
       '2022-10-29T13:00:00.000'
@@ -76,9 +82,6 @@ describe('ComingSoon page component', () => {
   })
 
   it('sets the sets a fixed date in chromatic environment', async () => {
-    mockDate.on('2017-06-22T01:13:28.000Z', {
-      mockCurrentTimeOnly: true,
-    })
     isChromaticEnv.mockReturnValue(true)
     const mockProps = getMockProps()
     mockProps.pageContext.data.causeLaunch.launchDate =
