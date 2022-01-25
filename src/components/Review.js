@@ -25,17 +25,14 @@ class Review extends React.Component {
       >
         <Paper
           className={styles.reviewPaper} // responsive styling
-          style={Object.assign(
-            {},
-            {
-              width: 'auto',
-              paddingTop: 40,
-              paddingBottom: 40,
-              paddingLeft: 20,
-              paddingRight: 20,
-            },
-            style
-          )}
+          style={{
+            width: 'auto',
+            paddingTop: 40,
+            paddingBottom: 40,
+            paddingLeft: 20,
+            paddingRight: 20,
+            ...style,
+          }}
         >
           <div
             style={{

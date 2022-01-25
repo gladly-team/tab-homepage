@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Link from 'src/components/Link'
@@ -11,6 +11,7 @@ import { financialsURL } from 'src/utils/navigation'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+
 const useStyles = makeStyles((theme) => ({
   logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
   wrapper: {
@@ -103,7 +104,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Financials = ({ financialsData }) => {
+function Financials({ financialsData }) {
   const { title, text, buttonText, ctaImg, pdfs } = financialsData
   const cx = useStyles()
   const Image = getImage(formatImg(ctaImg))
@@ -132,9 +133,9 @@ const Financials = ({ financialsData }) => {
       </div>
       <div className={cx.reportsSlider}>
         <Slider
-          centerMode={true}
-          dots={true}
-          focusOnSelect={true}
+          centerMode
+          dots
+          focusOnSelect
           arrows={false}
           slidesToShow={2}
           style={{ width: '100%' }}

@@ -6,6 +6,7 @@ import { financialsURL } from 'src/utils/navigation'
 import data from 'src/data/causes/cats.json'
 import Link from 'src/components/Link'
 import { Typography } from '@mui/material'
+
 const getMockProps = () => {
   data.data.sections.Financials.pdfs = [
     {

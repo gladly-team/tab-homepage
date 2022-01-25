@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles';
-import Markdown from './Markdown'
+import makeStyles from '@mui/styles/makeStyles'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 import InstallButton from 'src/components/V4InstallButton'
+import Markdown from './Markdown'
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -107,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Intro = ({ causeId, introData }) => {
+function Intro({ causeId, introData }) {
   const {
     title,
     titleImg,
@@ -140,7 +140,7 @@ const Intro = ({ causeId, introData }) => {
         <GatsbyImage
           className={cx.titleImage}
           image={titleImage}
-          alt={'intro title'}
+          alt="intro title"
         />
       </div>
       <div className={cx.steps}>
@@ -152,7 +152,7 @@ const Intro = ({ causeId, introData }) => {
           <GatsbyImage
             className={cx.stepImage}
             image={image1}
-            alt={'intro step 1'}
+            alt="intro step 1"
           />
         </div>
         <div className={cx.step}>
@@ -163,7 +163,7 @@ const Intro = ({ causeId, introData }) => {
           <GatsbyImage
             className={cx.stepImage}
             image={image2}
-            alt={'intro step 2'}
+            alt="intro step 2"
           />
         </div>
         <div className={cx.step}>
@@ -174,7 +174,7 @@ const Intro = ({ causeId, introData }) => {
           <GatsbyImage
             className={cx.stepImage}
             image={image3}
-            alt={'intro step 3'}
+            alt="intro step 3"
           />
         </div>
       </div>

@@ -1,12 +1,13 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Paper from '@mui/material/Paper'
 import IconButton from '@mui/material/IconButton'
 import { formatImg } from 'src/utils/formatting'
 import Slider from 'react-slick'
+
 // Icons
 import Star from '@mui/icons-material/Star'
 import StarHalf from '@mui/icons-material/StarHalf'
@@ -14,6 +15,7 @@ import StarHalf from '@mui/icons-material/StarHalf'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import V4InstallButton from './V4InstallButton'
+
 const useStyles = makeStyles((theme) => ({
   logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
   wrapper: {
@@ -151,24 +153,25 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-const Arrow = () => (
-  <svg
-    width="57"
-    height="58"
-    viewBox="0 0 57 58"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle cx="28.4765" cy="29.0829" r="28.121" fill="#FBF3E9" />
-    <path
-      d="M23.8652 17.8593L34.3817 28.3758C34.7723 28.7664 34.7723 29.3995 34.3817 29.79L23.8652 40.3066"
-      stroke="#29BEBA"
-      strokeWidth="8"
-      strokeLinecap="round"
-    />
-  </svg>
-)
-const Endorsements = ({ endorsementsData, causeId }) => {
+function Arrow() {
+  return (
+    <svg
+      width="57"
+      height="58"
+      viewBox="0 0 57 58"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="28.4765" cy="29.0829" r="28.121" fill="#FBF3E9" />
+      <path
+        d="M23.8652 17.8593L34.3817 28.3758C34.7723 28.7664 34.7723 29.3995 34.3817 29.79L23.8652 40.3066"
+        stroke="#29BEBA"
+        strokeWidth="8"
+        strokeLinecap="round"
+      />
+         </svg>
+}
+function Endorsements({ endorsementsData, causeId }) {
   const {
     title,
     endorser,
@@ -223,9 +226,9 @@ const Endorsements = ({ endorsementsData, causeId }) => {
       ) : null}
       <div className={cx.endorsementsSlider}>
         <Slider
-          dots={true}
+          dots
           ref={sliderRef}
-          focusOnSelect={true}
+          focusOnSelect
           arrows={false}
           style={{ width: '100%' }}
           slidesToShow={3}
@@ -270,14 +273,17 @@ const Endorsements = ({ endorsementsData, causeId }) => {
           ))}
         </Slider>
         <div className={cx.arrowButton}>
-          <IconButton onClick={() => sliderRef.current.slickNext()} size="large">
+          <IconButton
+            onClick={() => sliderRef.current.slickNext()}
+            size="large"
+          >
             <Arrow />
           </IconButton>
         </div>
       </div>
       <V4InstallButton causeId={causeId} buttonClassName={cx.installButton} />
     </div>
-  );
+  )
 }
 Endorsements.propTypes = {
   causeId: PropTypes.string,

@@ -29,7 +29,7 @@ const installButtonBlock = (
     }}
   >
     <InstallButton
-      size={'medium'}
+      size="medium"
       onUnsupportedBrowserInstallClick={() => {
         redirect(homeURL)
       }}
@@ -69,7 +69,7 @@ const faqs = [
     answerElem: (
       <p>
         We are working with the{' '}
-        <a href={'https://edenprojects.org/'}>Eden Reforestation Project</a> to
+        <a href="https://edenprojects.org/">Eden Reforestation Project</a> to
         plant trees around the world. They work with local communities in
         Madagascar, Haiti, Nepal, Mozambique, and Indonesia to plant, protect,
         and care for native tree species.
@@ -82,7 +82,7 @@ const faqs = [
       <p>
         Trees are an incredibly effective way to address habit loss, erosion,
         and CO2.{' '}
-        <a href={'https://edenprojects.org/the-problem-and-the-solution/'}>
+        <a href="https://edenprojects.org/the-problem-and-the-solution/">
           Read what Eden Reforestation Project says about their work.
         </a>
       </p>
@@ -113,11 +113,7 @@ const faqs = [
             As we increase the amount of money we are donating to charities, we
             are able to support more unique projects like launching this
             partnership with Eden Project or{' '}
-            <a
-              href={
-                'https://www.roomtoread.org/the-latest/guest-blogger-how-opening-tabs-for-a-cause-launched-a-library-in-vietnam/'
-              }
-            >
+            <a href="https://www.roomtoread.org/the-latest/guest-blogger-how-opening-tabs-for-a-cause-launched-a-library-in-vietnam/">
               building a school library through Room to Read
             </a>
             .
@@ -152,7 +148,7 @@ const faqs = [
     answerElem: (
       <p>
         Great question! In fact,{' '}
-        <a href={'https://en.wikipedia.org/wiki/Banana#Description'}>
+        <a href="https://en.wikipedia.org/wiki/Banana#Description">
           banana plants are <span style={{ fontWeight: 'bold' }}>not</span>{' '}
           trees.
         </a>{' '}
@@ -178,13 +174,13 @@ const photos = [
   { src: edenPhotoNepalNurseryDirector },
 ]
 
-const PlantTreesPage = (props) => {
+function PlantTreesPage(props) {
   const { location } = props
   const openGraphTitle = 'Plant Trees for Free'
   const openGraphDescription =
     'We are planting a tree for every person who joins Tab for a Cause from now until January 5, 2021.'
   return (
-    <Layout brand={'tab'} location={location}>
+    <Layout brand="tab" location={location}>
       <TextPageContent>
         <Helmet title={openGraphTitle}>
           <meta property="og:title" content={openGraphTitle} />
@@ -208,6 +204,7 @@ const PlantTreesPage = (props) => {
             style={{
               marginTop: 10,
               marginBottom: 40,
+
               // Full page width CSS
               display: 'block',
               width: '100vw',
@@ -216,11 +213,12 @@ const PlantTreesPage = (props) => {
               right: '50%',
               marginLeft: '-50vw',
               marginRight: '-50vw',
+
               // End full page width CSS
             }}
           >
             <img
-              alt={'An area before and after planting trees.'}
+              alt="An area before and after planting trees."
               src={edenPhotoBeforeAfter}
             />
           </div>
@@ -252,6 +250,7 @@ const PlantTreesPage = (props) => {
           style={{
             marginTop: 30,
             marginBottom: 40,
+
             // Full page width CSS
             display: 'block',
             width: '100vw',
@@ -260,6 +259,7 @@ const PlantTreesPage = (props) => {
             right: '50%',
             marginLeft: '-50vw',
             marginRight: '-50vw',
+
             // End full page width CSS
             overflow: 'hidden', // preventing horizontal page scroll
             paddingBottom: 30, // show dot sliders
@@ -286,6 +286,7 @@ const PlantTreesPage = (props) => {
               {photos.map((photo) => (
                 <div key={photo.src}>
                   <img
+
                     // TODO
                     // alt={'An area before and after planting trees.'}
                     src={photo.src}
@@ -388,7 +389,7 @@ const PlantTreesPage = (props) => {
             </p>
             <p>
               You can{' '}
-              <a href={'https://shop.spreadshirt.com/tab-for-a-cause/'}>
+              <a href="https://shop.spreadshirt.com/tab-for-a-cause/">
                 shop merchandise here
               </a>
               , and we'll plant 20 trees for each shirt, sweatshirt, or tote

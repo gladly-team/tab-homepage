@@ -42,7 +42,7 @@ describe('Endorsements Section', () => {
   it('does not show large quote or endorser if no endorsement data provided', () => {
     expect.assertions(2)
     const Endorsements = require('../Endorsements').default
-    var mockProps = getMockProps()
+    const mockProps = getMockProps()
     delete mockProps.endorsementsData.quote
     const wrapper = shallow(<Endorsements {...mockProps} />)
     expect(wrapper.find(getTestIdSelector('endorser-picture')).exists()).toBe(

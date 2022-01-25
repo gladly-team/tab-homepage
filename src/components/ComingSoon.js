@@ -1,8 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import get from 'lodash/get'
-import { ThemeProvider, StyledEngineProvider, responsiveFontSizes } from '@mui/material/styles';
-import makeStyles from '@mui/styles/makeStyles';
+import {
+  ThemeProvider,
+  StyledEngineProvider,
+  responsiveFontSizes,
+} from '@mui/material/styles'
+import makeStyles from '@mui/styles/makeStyles'
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
 import AppBar from '@mui/material/AppBar'
@@ -74,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
   },
 }))
-const ComingSoon = ({
+function ComingSoon({
   pageContext: {
     data: {
       path,
@@ -89,14 +93,15 @@ const ComingSoon = ({
     },
   },
   location,
-}) => {
+}) {
   const cx = useStyles()
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
   const ogImgURLAbsolute = getAbsoluteURL(
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
   )
-  var countdownDate = null
-  var displayCountdown = null
+  let countdownDate = null
+  let displayCountdown = null
+
   // Making the date a fixed time in the future in the Chromatic Env to make this page static
   if (launchDate) {
     countdownDate = isChromaticEnv()
@@ -213,19 +218,20 @@ ComingSoon.propTypes = {
     data: PropTypes.any,
   }),
 }
-const ComingSoonWithTheme = (props) => (
-  <StyledEngineProvider injectFirst>
-    <ThemeProvider
-      theme={responsiveFontSizes(
-        createCauseTheme(props.pageContext.data.styles.colors)
-      )}
-    >
-      <CssBaseline>
-        <ComingSoon {...props} />
-      </CssBaseline>
-    </ThemeProvider>
-  </StyledEngineProvider>
-)
+function ComingSoonWithTheme(props) {
+  return (
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider
+        theme={responsiveFontSizes(
+          createCauseTheme(props.pageContext.data.styles.colors)
+        )}
+      >
+        <CssBaseline>
+          <ComingSoon {...props} />
+        </CssBaseline>
+      </ThemeProvider>
+         </StyledEngineProvider>
+}
 ComingSoonWithTheme.propTypes = {
   pageContext: PropTypes.shape({
     data: PropTypes.any,

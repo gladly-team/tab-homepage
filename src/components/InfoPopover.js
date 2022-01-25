@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Popover from '@mui/material/Popover'
 import { makeStyles } from '@mui/styles'
 import { primaryMainColor } from 'src/themes/theme'
+
 const useStyles = makeStyles({
   paper: {
     borderRadius: 5,
@@ -11,7 +12,7 @@ const useStyles = makeStyles({
     maxWidth: '50%',
   },
 })
-const InfoPopover = (props) => {
+function InfoPopover(props) {
   const { anchorEl, children, onClose, open, ...otherProps } = props
   const cx = useStyles()
   return (

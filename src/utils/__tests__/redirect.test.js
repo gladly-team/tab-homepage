@@ -5,6 +5,7 @@ import {
   homeURL,
   edgeExtensionURL,
   safariExtensionURL,
+
   // firefoxExtensionURL,
 } from 'src/utils/navigation'
 import getBrowserInfo from 'src/utils/browserDetection'

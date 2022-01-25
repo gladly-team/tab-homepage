@@ -11,6 +11,7 @@ import {
 import {
   chromeExtensionURL,
   edgeExtensionURL,
+
   // firefoxExtensionURL,
   safariExtensionURL,
 } from 'src/utils/navigation'
@@ -26,6 +27,7 @@ class InstallButton extends React.Component {
       // One of: 'chrome', 'firefox', or 'other'
       browser: UNSUPPORTED_BROWSER,
       mobile: false,
+
       // true when we are done detecting the browser and OS
       // in a client environment
       clientReady: false,
@@ -58,8 +60,8 @@ class InstallButton extends React.Component {
     const mobile = browserInfo.isMobile()
     this.setState(
       {
-        browser: browser,
-        mobile: mobile,
+        browser,
+        mobile,
       },
       callback
     )
@@ -114,19 +116,18 @@ class InstallButton extends React.Component {
     // Customize text to browser and device
     if (this.state.mobile) {
       return 'Get it Now'
-    } else {
-      switch (this.state.browser) {
-        case CHROME_BROWSER:
-          return 'Add to Chrome'
-        case EDGE_BROWSER:
-          return 'Add to Edge'
-        case FIREFOX_BROWSER:
-          return 'Get it Now'
-        case SAFARI_BROWSER:
-          return safariEnabled() ? 'Add to Safari' : 'Get it Now'
-        default:
-          return 'Get it Now'
-      }
+    }
+    switch (this.state.browser) {
+      case CHROME_BROWSER:
+        return 'Add to Chrome'
+      case EDGE_BROWSER:
+        return 'Add to Edge'
+      case FIREFOX_BROWSER:
+        return 'Get it Now'
+      case SAFARI_BROWSER:
+        return safariEnabled() ? 'Add to Safari' : 'Get it Now'
+      default:
+        return 'Get it Now'
     }
   }
 

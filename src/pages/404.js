@@ -5,8 +5,8 @@ import Helmet from 'react-helmet'
 import Link from 'src/components/Link'
 import { homeURL } from 'src/utils/navigation'
 import { withTheme } from '@mui/styles'
-import * as styles from './404.module.css'
 import Layout from 'src/components/Layout'
+import * as styles from './404.module.css'
 
 class NotFoundPage extends React.Component {
   render() {
@@ -23,7 +23,7 @@ class NotFoundPage extends React.Component {
             alignItems: 'center',
           }}
         >
-          <Helmet title={'Missing page'}>
+          <Helmet title="Missing page">
             <meta property="og:title" content={openGraphTitle} />
             <meta property="og:description" content={openGraphDescription} />
             <meta name="twitter:title" content={openGraphTitle} />

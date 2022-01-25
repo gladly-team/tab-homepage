@@ -4,8 +4,8 @@ import { showDownloadPage } from '../utils/featureFlags'
 import SeasPageWithTheme from '../components/TeamSeas.Install'
 import SeasPageComingSoonWithTheme from '../components/TeamSeas.ComingSoon'
 
-const Seas = ({ pageContext, location }) =>
-  showDownloadPage() ? (
+function Seas({ pageContext, location }) {
+  return showDownloadPage() ? (
     <SeasPageWithTheme pageContext={pageContext} location={location} />
   ) : (
     <SeasPageComingSoonWithTheme
@@ -13,6 +13,7 @@ const Seas = ({ pageContext, location }) =>
       location={location}
     />
   )
+}
 
 Seas.propTypes = {
   location: PropTypes.shape({

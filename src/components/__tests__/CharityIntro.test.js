@@ -5,7 +5,7 @@ import { mount, shallow } from 'enzyme'
 import catsData from 'src/data/causes/cats.json'
 import Typography from '@mui/material/Typography'
 
-var charityIntroData = catsData.data.sections.charityIntro
+const charityIntroData = catsData.data.sections.charityIntro
 const getMockProps = () => ({
   charityIntroData,
 })
@@ -32,7 +32,7 @@ describe('CharityIntro component', () => {
 
     const typography = wrapper.find(Typography)
 
-    for (var i = 0; i < charityIntroData.steps.length; i++) {
+    for (let i = 0; i < charityIntroData.steps.length; i++) {
       expect(typography.at(i + 2).text()).toEqual(
         charityIntroData.steps[i].text
       )

@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { ThemeProvider, StyledEngineProvider, responsiveFontSizes } from '@mui/material/styles';
-import makeStyles from '@mui/styles/makeStyles';
+import {
+  ThemeProvider,
+  StyledEngineProvider,
+  responsiveFontSizes,
+} from '@mui/material/styles'
+import makeStyles from '@mui/styles/makeStyles'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import { AlertTitle, Alert } from '@mui/material';
+import { AlertTitle, Alert } from '@mui/material'
 import defaultTheme, { lightestTextColor } from 'src/themes/theme'
 
 import Section from 'src/components/Section'
@@ -21,6 +25,7 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import 'src/pages/cats.css'
 import HeadTags from 'src/components/HeadTags'
+
 // Images
 import landingImg from 'src/img/cats/mockPage1.png'
 import landingImg2 from 'src/img/cats/mockPage2.png'
@@ -173,15 +178,17 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 12,
   },
 }))
-const Cats = ({ pageContext, location }) => {
+function Cats({ pageContext, location }) {
   const cx = useStyles()
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
   const [isReferral, setIsReferral] = useState(false)
   const [isMission, setIsMission] = useState(false)
+
   // store referrer id
   useEffect(() => {
     let referrerId = null
+
     // Check for a referrer's vanity URL.
     if (pageContext && pageContext.referrer) {
       referrerId = pageContext.referrer.id
@@ -207,6 +214,7 @@ const Cats = ({ pageContext, location }) => {
       setIsReferral(true)
     }
   }, [])
+
   // squad id
   useEffect(() => {
     const missionId = getUrlParameterValue('m')
@@ -605,6 +613,7 @@ const Cats = ({ pageContext, location }) => {
                       <div>
                         <p
                           variant="body2"
+
                           // className={classes.dropdownText}
                         >
                           Like with Tab for a Cause, our number one priority is
@@ -968,11 +977,12 @@ Cats.propTypes = {
     }),
   }),
 }
-const CatsPageWithTheme = (props) => (
-  <StyledEngineProvider injectFirst>
-    <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
-      <Cats {...props} />
-    </ThemeProvider>
-  </StyledEngineProvider>
-)
+function CatsPageWithTheme(props) {
+  return (
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
+        <Cats {...props} />
+      </ThemeProvider>
+         </StyledEngineProvider>
+}
 export default CatsPageWithTheme

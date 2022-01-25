@@ -19,27 +19,24 @@ export const getTestIdSelector = (testId) => {
  * @return {object} The mock window.location
  */
 export const mockWindowLocation = (host = null, overrides = {}) => {
-  const hostToUse = host ? host : 'example.com'
+  const hostToUse = host || 'example.com'
   const urlParamStr = overrides.search || ''
-  return Object.assign(
-    {},
-    {
-      ancestorOrigins: {},
-      assign: () => {},
-      hash: '',
-      href: `https://${hostToUse}/${urlParamStr}`,
-      host: hostToUse,
-      hostname: hostToUse,
-      origin: `https://${hostToUse}`,
-      pathname: '/',
-      port: '',
-      protocol: 'https:',
-      reload: () => {},
-      replace: () => {},
-      search: '',
-    },
-    overrides
-  )
+  return {
+    ancestorOrigins: {},
+    assign: () => {},
+    hash: '',
+    href: `https://${hostToUse}/${urlParamStr}`,
+    host: hostToUse,
+    hostname: hostToUse,
+    origin: `https://${hostToUse}`,
+    pathname: '/',
+    port: '',
+    protocol: 'https:',
+    reload: () => {},
+    replace: () => {},
+    search: '',
+    ...overrides,
+  }
 }
 
 /**

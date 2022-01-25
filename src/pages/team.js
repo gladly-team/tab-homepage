@@ -13,7 +13,7 @@ import imgAlec from 'src/img/team/alec.jpg'
 import imgIlana from 'src/img/team/Ilana.jpg'
 import Layout from 'src/components/Layout'
 
-const TeamPage = ({ location }) => {
+function TeamPage({ location }) {
   const team = [
     {
       name: 'Alex Groth',
@@ -44,9 +44,9 @@ const TeamPage = ({ location }) => {
   const openGraphTitle = 'Our Team - Tab for a Cause'
   const openGraphDescription = 'Meet the team behind Tab for a Cause.'
   return (
-    <Layout brand={'all'} location={location}>
+    <Layout brand="all" location={location}>
       <div>
-        <Helmet title={'Team'}>
+        <Helmet title="Team">
           <meta property="og:title" content={openGraphTitle} />
           <meta property="og:description" content={openGraphDescription} />
           <meta name="twitter:title" content={openGraphTitle} />

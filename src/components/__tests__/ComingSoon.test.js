@@ -5,9 +5,8 @@ import { mount, shallow } from 'enzyme'
 import Typography from '@mui/material/Typography'
 import data from 'src/data/causes/cats.json'
 import Countdown from 'react-countdown'
-import { mockDate } from 'src/utils/test-utils'
+import { mockDate, getTestIdSelector } from 'src/utils/test-utils'
 import { isChromaticEnv } from '../../utils/featureFlags'
-import { getTestIdSelector } from 'src/utils/test-utils'
 
 jest.mock('../../utils/featureFlags')
 

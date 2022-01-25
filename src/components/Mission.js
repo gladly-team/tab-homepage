@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import Typography from '@mui/material/Typography'
 import Markdown from 'src/components/Markdown'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -9,6 +9,7 @@ import heartSquiggle from 'src/img/causeshared/mission_squiggle.png'
 import leftBubble from 'src/img/causeshared/blobLeft.svg'
 import rightBubble from 'src/img/causeshared/blobRight.svg'
 import V4InstallButton from 'src/components/V4InstallButton'
+
 const useStyles = makeStyles((theme) => ({
   wrapper: {
     minHeight: '100vh',
@@ -106,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Mission = ({ missionData, causeId }) => {
+function Mission({ missionData, causeId }) {
   const { titleText, subtitleText, bodyText, image } = missionData
   const cx = useStyles()
   const missionImage = getImage(formatImg(image))

@@ -119,8 +119,8 @@ class AdblockersPage extends React.Component {
       'Learn how to whitelist your adblocker to raise money for charity with every browser tab you open.'
 
     // Get the instructions element for the selected adblocker.
-    var instructions = null
-    const selectedAdblockerCode = this.state.selectedAdblockerCode
+    let instructions = null
+    const { selectedAdblockerCode } = this.state
     if (selectedAdblockerCode) {
       const adblockerInfo = adblockers.find(
         (ab) => ab.code === selectedAdblockerCode
@@ -135,9 +135,9 @@ class AdblockersPage extends React.Component {
       }
     }
     return (
-      <Layout brand={'tab'} location={location}>
+      <Layout brand="tab" location={location}>
         <TextPageContent>
-          <Helmet title={'Whitelisting Your Adblocker'}>
+          <Helmet title="Whitelisting Your Adblocker">
             <meta property="og:title" content={openGraphTitle} />
             <meta property="og:description" content={openGraphDescription} />
             <meta name="twitter:title" content={openGraphTitle} />
@@ -168,18 +168,16 @@ class AdblockersPage extends React.Component {
                     this,
                     adblocker.code
                   )}
-                  style={Object.assign(
-                    {
-                      marginLeft: 8,
-                      marginRight: 8,
-                      color: selected
-                        ? secondaryContrastTextColor
-                        : secondaryMainColor,
-                    },
-                    selected && {
+                  style={{
+                    marginLeft: 8,
+                    marginRight: 8,
+                    color: selected
+                      ? secondaryContrastTextColor
+                      : secondaryMainColor,
+                    ...(selected && {
                       background: secondaryMainColor,
-                    }
-                  )}
+                    }),
+                  }}
                 >
                   {adblocker.name}
                 </Button>
@@ -187,7 +185,7 @@ class AdblockersPage extends React.Component {
             })}
           </div>
           <div
-            data-test-id={'adblocker-instructions-container'}
+            data-test-id="adblocker-instructions-container"
             style={{ marginTop: 30, marginBottom: 30 }}
           >
             {instructions}

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import * as styles from './ReviewCarousel.module.css'
 import clsx from 'clsx'
+import * as styles from './ReviewCarousel.module.css'
 
 class ReviewCarousel extends React.Component {
   render() {
@@ -22,9 +22,9 @@ class ReviewCarousel extends React.Component {
         }}
       >
         <Slider
-          centerMode={true}
-          dots={true}
-          focusOnSelect={true}
+          centerMode
+          dots
+          focusOnSelect
           slidesToShow={3}
           responsive={[
             {

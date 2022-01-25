@@ -65,9 +65,7 @@ describe('InstallButton', () => {
 
   it('allows overriding Button props', () => {
     const InstallButton = require('../InstallButton').default
-    const wrapper = shallow(
-      <InstallButton size={'small'} color={'secondary'} />
-    )
+    const wrapper = shallow(<InstallButton size="small" color="secondary" />)
     const elem = wrapper.find(Button).first()
     expect(elem.prop('size')).toEqual('small')
     expect(elem.prop('color')).toEqual('secondary')
@@ -136,6 +134,7 @@ describe('InstallButton', () => {
   it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Firefox desktop', async () => {
     expect.assertions(1)
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', false))
+
     // Silence expected console.info log
     jest.spyOn(console, 'info').mockImplementationOnce(() => {})
     const InstallButton = require('../InstallButton').default
@@ -220,6 +219,7 @@ describe('InstallButton', () => {
     await clickButtonShallow(wrapper)
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
+
   // FIREFOX IS CURRENTLY NOT SUPPORTED
   it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Firefox mobile', async () => {
     expect.assertions(1)
@@ -395,8 +395,7 @@ describe('InstallButton', () => {
   it('calls downloadButtonClick analytics event on click', async () => {
     expect.assertions(1)
 
-    const downloadButtonClick =
-      require('src/utils/analytics/logEvent').downloadButtonClick
+    const { downloadButtonClick } = require('src/utils/analytics/logEvent')
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
     await clickButtonShallow(wrapper)

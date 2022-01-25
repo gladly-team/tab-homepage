@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { ThemeProvider, StyledEngineProvider, responsiveFontSizes } from '@mui/material/styles';
-import makeStyles from '@mui/styles/makeStyles';
+import {
+  ThemeProvider,
+  StyledEngineProvider,
+  responsiveFontSizes,
+} from '@mui/material/styles'
+import makeStyles from '@mui/styles/makeStyles'
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
 import AppBar from '@mui/material/AppBar'
@@ -102,13 +106,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Seas = ({ pageContext, location }) => {
+function Seas({ pageContext, location }) {
   const cx = useStyles()
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
+
   // store referrer id
   useEffect(() => {
     let referrerId = null
+
     // Check for a referrer's vanity URL.
     if (pageContext && pageContext.referrer) {
       referrerId = pageContext.referrer.id
@@ -124,6 +130,7 @@ const Seas = ({ pageContext, location }) => {
         referrerId
       )
   }, [])
+
   // store user referral
   useEffect(() => {
     const userReferrerId = getUrlParameterValue('u')
@@ -210,14 +217,14 @@ const Seas = ({ pageContext, location }) => {
           />
         </div>
         <div className={cx.halfScreenRight}>
-          <img src={headerImg}></img>
+          <img src={headerImg} />
         </div>
         <div className={cx.wave}>
-          <Wave color={'#5094FB'} />
+          <Wave color="#5094FB" />
         </div>
       </div>
       <div className={cx.waveMobile}>
-        <Wave color={'#5094FB'} />
+        <Wave color="#5094FB" />
       </div>
       <UnsupportedBrowserDialog
         open={showUnsupportedBrowserMessage}
@@ -239,15 +246,16 @@ Seas.propTypes = {
     }),
   }),
 }
-const SeasPageWithTheme = (props) => (
-  <StyledEngineProvider injectFirst>
-    <ThemeProvider
-      theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
-    >
-      <CssBaseline>
-        <Seas {...props} />
-      </CssBaseline>
-    </ThemeProvider>
-  </StyledEngineProvider>
-)
+function SeasPageWithTheme(props) {
+  return (
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider
+        theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
+      >
+        <CssBaseline>
+          <Seas {...props} />
+        </CssBaseline>
+      </ThemeProvider>
+         </StyledEngineProvider>
+}
 export default SeasPageWithTheme

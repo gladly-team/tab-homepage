@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import {
   EmailIcon,
   EmailShareButton,
@@ -25,7 +25,7 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const SocialShare = (props) => {
+function SocialShare(props) {
   const {
     EmailShareButtonProps,
     FacebookShareButtonProps,
@@ -47,6 +47,7 @@ const SocialShare = (props) => {
           <FacebookShareButton
             {...FacebookShareButtonProps}
             url={url}
+
             // hashtag={'tabsTransformed'}
           >
             <FacebookIcon size={iconSize} round />
@@ -58,6 +59,7 @@ const SocialShare = (props) => {
           <TwitterShareButton
             {...TwitterShareButtonProps}
             url={url}
+
             // hashtags={['tabsTransformed']}
           >
             <TwitterIcon size={iconSize} round />

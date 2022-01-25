@@ -1,7 +1,7 @@
 const DEBUG = false
 
 const facebookAnalytics = (...args) => {
-  var fbq = window.fbq
+  const { fbq } = window
   if (!fbq) {
     console.error('Facebook analytics is not available on `window.fbq`.')
     return

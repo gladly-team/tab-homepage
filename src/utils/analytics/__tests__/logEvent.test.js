@@ -9,9 +9,9 @@ afterEach(() => {
 })
 
 describe('logEvent', () => {
-  test('downloadButtonClick resolves and fires fbq ', async () => {
+  test('downloadButtonClick resolves and fires fbq', async () => {
     expect.assertions(1)
-    const downloadButtonClick = require('../logEvent').downloadButtonClick
+    const { downloadButtonClick } = require('../logEvent')
     downloadButtonClick()
     expect(fbq).toHaveBeenCalled()
   })

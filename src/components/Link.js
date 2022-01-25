@@ -28,13 +28,13 @@ class Link extends React.Component {
   render() {
     const { children, to, style, hoverStyle, ...otherProps } = this.props
 
-    const linkStyle = Object.assign(
+    const linkStyle = {
       // we already set textDecoration to none in typography.js but this is
       // for storybook which does not use the gatsby typography plugin
-      { textDecoration: 'none' },
-      style,
-      this.state.hover ? hoverStyle : null
-    )
+      textDecoration: 'none',
+      ...style,
+      ...(this.state.hover ? hoverStyle : null),
+    }
 
     // This assumes that any internal link (intended for Gatsby) starts
     // with exactly one slash, and that anything else is external.

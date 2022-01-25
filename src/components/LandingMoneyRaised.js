@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import { formatImg } from 'src/utils/formatting'
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const LandingMoneyRaised = ({ moneyRaisedData }) => {
+function LandingMoneyRaised({ moneyRaisedData }) {
   const cx = useStyles()
   const { moneyImg } = moneyRaisedData
   const moneyImage = getImage(formatImg(moneyImg))
@@ -62,9 +62,9 @@ const LandingMoneyRaised = ({ moneyRaisedData }) => {
         />
         <div>
           <MoneyRaisedDisplay
-            color={'textSecondary'}
+            color="textSecondary"
             whiteClassName={cx.moneyRaised}
-            textVariant={'h1'}
+            textVariant="h1"
             longCopy
           />
         </div>

@@ -35,7 +35,7 @@ class UnsupportedBrowserDialog extends React.Component {
           </Button>
         </DialogActions>
       </Dialog>
-    );
+    )
   }
 }
 

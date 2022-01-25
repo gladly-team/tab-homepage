@@ -8,13 +8,10 @@ class TextPageHeader extends React.Component {
     const { style } = this.props
     return (
       <div
-        style={Object.assign(
-          {},
-          {
-            margin: 0,
-          },
-          style
-        )}
+        style={{
+          margin: 0,
+          ...style,
+        }}
       >
         <h1 style={{ marginBottom: 10 }}>{this.props.children}</h1>
         <Divider

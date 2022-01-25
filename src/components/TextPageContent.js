@@ -6,17 +6,14 @@ class TextPageContent extends React.Component {
     const { style } = this.props
     return (
       <div
-        style={Object.assign(
-          {},
-          {
-            maxWidth: 760,
-            width: '100%',
-            margin: '0px auto',
-            padding: 20,
-            textAlign: 'left',
-          },
-          style
-        )}
+        style={{
+          maxWidth: 760,
+          width: '100%',
+          margin: '0px auto',
+          padding: 20,
+          textAlign: 'left',
+          ...style,
+        }}
       >
         {this.props.children}
       </div>

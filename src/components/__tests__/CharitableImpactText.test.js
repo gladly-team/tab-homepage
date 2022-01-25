@@ -47,7 +47,7 @@ describe('CharitableImpactText', () => {
   it('capitalizes text if "capitalize" prop is true', () => {
     const CharitableImpactText = require('../CharitableImpactText').default
     jest.useFakeTimers()
-    const wrapper = shallow(<CharitableImpactText capitalize={true} />)
+    const wrapper = shallow(<CharitableImpactText capitalize />)
     expect(wrapper.find('span').last().text()).toBe('Preserve oceans')
   })
 })

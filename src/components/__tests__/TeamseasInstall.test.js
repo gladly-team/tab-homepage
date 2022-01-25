@@ -3,12 +3,12 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import localStorageMgr from 'src/utils/local-storage'
-import { getTestIdSelector } from 'src/utils/test-utils'
+import { getTestIdSelector, flushAllPromises } from 'src/utils/test-utils'
 import InstallButton from 'src/components/InstallButton'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import { act } from 'react-dom/test-utils'
 import Helmet from 'react-helmet'
-import { flushAllPromises } from 'src/utils/test-utils'
+
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')
@@ -102,8 +102,7 @@ describe('teamseas page', () => {
   it('stores the referrer ID in local storage when it is included as a URL parameter', () => {
     const SeasPageWithTheme = require('../TeamSeas.Install').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
@@ -124,8 +123,7 @@ describe('teamseas page', () => {
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const SeasPageWithTheme = require('../TeamSeas.Install').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
 
     mount(<SeasPageWithTheme {...getMockProps()} />)
@@ -135,8 +133,7 @@ describe('teamseas page', () => {
   it('does not store a referrer ID in local storage when the URL param referrer ID value is not an integer', () => {
     const SeasPageWithTheme = require('../TeamSeas.Install').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
@@ -152,8 +149,7 @@ describe('teamseas page', () => {
 
   it('stores the referring user in local storage when it is included as a URL parameter', () => {
     const SeasPageWithTheme = require('../TeamSeas.Install').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'u':
@@ -173,8 +169,7 @@ describe('teamseas page', () => {
 
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const SeasPageWithTheme = require('../TeamSeas.Install').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
 
     mount(<SeasPageWithTheme {...getMockProps()} />)
@@ -183,8 +178,7 @@ describe('teamseas page', () => {
 
   it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage and the cause id', () => {
     const TeamSeasPageWithTheme = require('../TeamSeas.Install').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
 
     const wrapper = mount(<TeamSeasPageWithTheme {...getMockProps()} />)
@@ -202,8 +196,7 @@ describe('teamseas page', () => {
 
   it('the InstallButton onUnsupportedBrowserInstallClick shows unsupported browser model', async () => {
     const TeamSeasPageWithTheme = require('../TeamSeas.Install').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
     const wrapper = mount(<TeamSeasPageWithTheme {...getMockProps()} />)
     await act(async () => {

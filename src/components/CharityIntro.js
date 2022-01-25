@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useTheme } from '@mui/material/styles';
-import makeStyles from '@mui/styles/makeStyles';
+import { useTheme } from '@mui/material/styles'
+import makeStyles from '@mui/styles/makeStyles'
 import CharityIntroWave from 'src/components/CharityIntroWave'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const CharityIntro = ({ charityIntroData }) => {
+function CharityIntro({ charityIntroData }) {
   const cx = useStyles()
   const theme = useTheme()
   const getStep = (step, index) => {

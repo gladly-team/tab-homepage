@@ -72,8 +72,7 @@ describe('home page', () => {
 
   it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage and the cause id', () => {
     const HomePageWrapper = require('../V4HomePage').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
 
     const wrapper = mount(<HomePageWrapper {...getMockProps()} />)
@@ -91,8 +90,7 @@ describe('home page', () => {
 
   it('the InstallButton onUnsupportedBrowserInstallClick shows unsupported browser model', async () => {
     const HomePageWrapper = require('../V4HomePage').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
     const wrapper = mount(<HomePageWrapper {...getMockProps()} />)
     await act(async () => {
@@ -109,8 +107,7 @@ describe('home page', () => {
 
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const HomePageWrapper = require('../V4HomePage').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
 
     mount(<HomePageWrapper {...getMockProps()} />)
@@ -216,8 +213,7 @@ describe('home page', () => {
   it('stores the referrer ID in local storage when it is included as a URL parameter', () => {
     const HomePageWrapper = require('../V4HomePage').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
@@ -238,8 +234,7 @@ describe('home page', () => {
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const HomePageWrapper = require('../V4HomePage').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
 
     mount(<HomePageWrapper {...getMockProps()} />)
@@ -249,8 +244,7 @@ describe('home page', () => {
   it('does not store a referrer ID in local storage when the URL param referrer ID value is not an integer', () => {
     const HomePageWrapper = require('../V4HomePage').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
@@ -266,8 +260,7 @@ describe('home page', () => {
 
   it('stores the referring user in local storage when it is included as a URL parameter', () => {
     const HomePageWrapper = require('../V4HomePage').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'u':
@@ -287,8 +280,7 @@ describe('home page', () => {
 
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const HomePageWrapper = require('../V4HomePage').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
 
     mount(<HomePageWrapper {...getMockProps()} />)
@@ -325,8 +317,7 @@ describe('home page', () => {
   it('calls the onBeforeInstall prop on click and works if it is async', async () => {
     expect.assertions(2)
     const HomePageWrapper = require('../V4HomePage').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
 
     const wrapper = mount(<HomePageWrapper {...getMockProps()} />)

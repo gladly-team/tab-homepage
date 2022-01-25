@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import { AlertTitle, Alert } from '@mui/material';
+import { AlertTitle, Alert } from '@mui/material'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
 import { orderBy } from 'lodash/collection'
 import FinancialsQuarterButton from 'src/components/FinancialsQuarterButton'
 import Layout from 'src/components/Layout'
 
-const FinancialsPage = ({ data, location }) => {
+function FinancialsPage({ data, location }) {
   const financialsEdges = data.allFinancialsYaml.edges
   const sortedFinancialsEdges = orderBy(
     financialsEdges,
@@ -20,9 +20,9 @@ const FinancialsPage = ({ data, location }) => {
   const openGraphDescription =
     'See our expenses and how much money Tabbers have raised for each charity.'
   return (
-    <Layout brand={'all'} location={location}>
+    <Layout brand="all" location={location}>
       <div>
-        <Helmet title={'Financials'}>
+        <Helmet title="Financials">
           <meta property="og:title" content={openGraphTitle} />
           <meta property="og:description" content={openGraphDescription} />
           <meta name="twitter:title" content={openGraphTitle} />
@@ -41,6 +41,7 @@ const FinancialsPage = ({ data, location }) => {
           <div style={{ marginBottom: 16 }}>
             <Alert
               severity="info"
+
               // classes={{ icon: cx.alertIcon, root: cx.alertRoot }}
             >
               <AlertTitle>Looking for cats?</AlertTitle>

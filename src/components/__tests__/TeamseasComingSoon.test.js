@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { mount } from 'enzyme'
+
 const getMockProps = () => ({
   location: {
     pathname: '/',

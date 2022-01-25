@@ -8,26 +8,23 @@ class Section extends React.Component {
     const { background, fullWidth, style, wrap, className } = this.props
     return (
       <div
-        style={Object.assign(
-          {},
-          {
-            background: background === 'light' ? '#fff' : lightestShadingColor,
-            width: '100%',
-            margin: '0px auto',
-            paddingTop: 40,
-            paddingBottom: 40,
-            display: 'flex',
-            alignContent: 'center',
-            justifyContent: wrap === 'normal' ? 'flex-end' : 'flex-start',
-            flexWrap: wrap === 'normal' ? 'wrap' : 'wrap-reverse',
-          },
-          fullWidth
+        style={{
+          background: background === 'light' ? '#fff' : lightestShadingColor,
+          width: '100%',
+          margin: '0px auto',
+          paddingTop: 40,
+          paddingBottom: 40,
+          display: 'flex',
+          alignContent: 'center',
+          justifyContent: wrap === 'normal' ? 'flex-end' : 'flex-start',
+          flexWrap: wrap === 'normal' ? 'wrap' : 'wrap-reverse',
+          ...(fullWidth
             ? null
             : {
                 maxWidth: 1600,
-              },
-          style
-        )}
+              }),
+          ...style,
+        }}
         className={className}
       >
         {this.props.children}

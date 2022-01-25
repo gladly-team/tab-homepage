@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import { isNil } from 'lodash/lang'
 
-var mockStorage = {}
+let mockStorage = {}
 
 export default {
   getItem: jest.fn((key) => {

@@ -12,13 +12,13 @@ import { homeURL } from 'src/utils/navigation'
 import localStorageMgr from 'src/utils/local-storage'
 import { STORAGE_NEW_USER_IS_TAB_V4_BETA } from 'src/utils/constants'
 
-const TryTabV4BetaPage = (props) => {
+function TryTabV4BetaPage(props) {
   const { location } = props
   const openGraphTitle = 'Try Tab V4 Beta'
   const openGraphDescription =
     'Test out the latest, in-progress version of Tab for a Cause.'
   return (
-    <Layout brand={'tab'} location={location}>
+    <Layout brand="tab" location={location}>
       <TextPageContent>
         <Helmet title={openGraphTitle}>
           <meta property="og:title" content={openGraphTitle} />
@@ -38,7 +38,7 @@ const TryTabV4BetaPage = (props) => {
               unstable, so it may be buggy, but you can try it out here:
             </p>
             <InstallButton
-              size={'medium'}
+              size="medium"
               onBeforeInstall={() => {
                 localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
               }}

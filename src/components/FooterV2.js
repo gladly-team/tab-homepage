@@ -7,7 +7,7 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import Typography from '@mui/material/Typography'
 import SvgIcon from '@mui/material/SvgIcon'
 import redirect from 'src/utils/redirect'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import logo from 'src/img/logo-with-text-white.svg'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
@@ -143,7 +143,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
+function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
   const image = getImage(formatImg(img))
   const cx = useStyles()
   const browserOnClick = useCallback(
@@ -186,7 +186,11 @@ const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
               </IconButton>
             </Link>
             <Link to={facebookPageURL} target="_blank">
-              <IconButton edge="start" classes={{ root: cx.iconButton }} size="large">
+              <IconButton
+                edge="start"
+                classes={{ root: cx.iconButton }}
+                size="large"
+              >
                 <FacebookIcon classes={{ root: cx.iconStyles }} />
               </IconButton>
             </Link>
@@ -211,19 +215,22 @@ const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
               onClick={browserOnClick(chromeExtensionURL)}
               edge="start"
               classes={{ root: cx.iconButton }}
-              size="large">
+              size="large"
+            >
               <GoogleChrome className={cx.iconStyles} />
             </IconButton>
             <IconButton
               onClick={browserOnClick(edgeExtensionURL)}
               classes={{ root: cx.iconButton }}
-              size="large">
+              size="large"
+            >
               <MicrosoftEdge className={cx.iconStyles} />
             </IconButton>
             <IconButton
               onClick={browserOnClick(safariExtensionURL)}
               classes={{ root: cx.iconButton }}
-              size="large">
+              size="large"
+            >
               <AppleSafari className={cx.iconStyles} />
             </IconButton>
           </div>
@@ -315,7 +322,7 @@ const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 Footer.propTypes = {

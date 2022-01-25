@@ -10,7 +10,7 @@ import remarkRehype from 'remark-rehype'
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
 import rehypeReact from 'rehype-react'
 import Typography from '@mui/material/Typography'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 
 const useStyles = makeStyles((theme) => ({
   anchor: {
@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-//TODO: Convert this back to the link component. Unclear why it's not working.
-const MarkdownLink = ({ href, children, ...otherProps }) => {
+// TODO: Convert this back to the link component. Unclear why it's not working.
+function MarkdownLink({ href, children, ...otherProps }) {
   const cx = useStyles()
   return (
     <a
@@ -68,7 +68,7 @@ const processor = unified()
     },
   })
 
-const Markdown = ({ children }) => {
+function Markdown({ children }) {
   const elems = useMemo(
     () => processor.processSync(children).result,
     [children]

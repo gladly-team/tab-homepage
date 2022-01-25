@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Paper from '@mui/material/Paper'
 import { formatImg } from 'src/utils/formatting'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const useStyles = makeStyles((theme) => ({
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: { alignSelf: 'end', height: '100px', width: '103px' },
 }))
-const FinancialQuartersButton = ({ quarterData }) => {
+function FinancialQuartersButton({ quarterData }) {
   const cx = useStyles()
   const Image = getImage(formatImg(quarterData.img))
   return (

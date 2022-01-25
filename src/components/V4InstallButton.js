@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import InstallButton from 'src/components/InstallButton'
 import localStorageMgr from 'src/utils/local-storage'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const V4InstallButton = ({ causeId, fullWidth, buttonClassName }) => {
+function V4InstallButton({ causeId, fullWidth, buttonClassName }) {
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
   const cx = useStyles()

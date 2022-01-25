@@ -28,8 +28,7 @@ describe('intro component', () => {
 
   it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage and the cause id', () => {
     const Intro = require('../Intro').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
 
     const wrapper = mount(<Intro {...getMockProps()} />)
@@ -47,27 +46,27 @@ describe('intro component', () => {
 
   it('renders correct step text', () => {
     const Intro = require('../Intro').default
-    var mockProps = getMockProps()
-    var introComponent = shallow(<Intro {...mockProps} />)
+    const mockProps = getMockProps()
+    const introComponent = shallow(<Intro {...mockProps} />)
 
-    var step1 = introComponent.find(Markdown).at(1)
+    const step1 = introComponent.find(Markdown).at(1)
     expect(step1.props().children).toEqual(mockProps.introData.img1Subtext)
-    var step2 = introComponent.find(Markdown).at(2)
+    const step2 = introComponent.find(Markdown).at(2)
     expect(step2.props().children).toEqual(mockProps.introData.img2Subtext)
-    var step3 = introComponent.find(Markdown).at(3)
+    const step3 = introComponent.find(Markdown).at(3)
     expect(step3.props().children).toEqual(mockProps.introData.img3Subtext)
   })
 
-  //TODO: Add test for step images
+  // TODO: Add test for step images
 
   it('renders correct title and subtitle', () => {
     const Intro = require('../Intro').default
-    var mockProps = getMockProps()
-    var introComponent = shallow(<Intro {...mockProps} />)
+    const mockProps = getMockProps()
+    const introComponent = shallow(<Intro {...mockProps} />)
 
-    var titleMarkdown = introComponent.find(Typography).first()
+    const titleMarkdown = introComponent.find(Typography).first()
     expect(titleMarkdown.text()).toEqual(mockProps.introData.title)
-    var subtitleMarkdown = introComponent.find(Markdown).first()
+    const subtitleMarkdown = introComponent.find(Markdown).first()
     expect(subtitleMarkdown.props().children).toEqual(
       mockProps.introData.subtitle
     )

@@ -3,7 +3,11 @@ import get from 'lodash/get'
 import PropTypes from 'prop-types'
 import CssBaseline from '@mui/material/CssBaseline'
 import Helmet from 'react-helmet'
-import { ThemeProvider, StyledEngineProvider, responsiveFontSizes } from '@mui/material/styles';
+import {
+  ThemeProvider,
+  StyledEngineProvider,
+  responsiveFontSizes,
+} from '@mui/material/styles'
 import { getUrlParameterValue } from 'src/utils/location'
 import { createCauseTheme } from 'src/themes/theme'
 import HeadTags from 'src/components/HeadTags'
@@ -15,7 +19,6 @@ import EndorsementsComponent from 'src/components/Endorsements'
 import Mission from 'src/components/Mission'
 import Footer from 'src/components/FooterV2'
 import Intro from 'src/components/Intro'
-import SecuritySection from './SecuritySection'
 import LandingMoneyRaised from 'src/components/LandingMoneyRaised'
 import CharityIntro from 'src/components/CharityIntro'
 import FAQ from 'src/components/FAQ'
@@ -26,14 +29,13 @@ import { navigate } from 'gatsby'
 import {
   STORAGE_NEW_USER_IS_TAB_V4_BETA,
   STORAGE_NEW_USER_CAUSE_ID,
-} from 'src/utils/constants'
-import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
   KEY_WORDS,
 } from 'src/utils/constants'
+import SecuritySection from './SecuritySection'
 
-const HomepageWrapper = ({
+function HomepageWrapper({
   pageContext: {
     data: {
       path,
@@ -64,10 +66,11 @@ const HomepageWrapper = ({
     previewPage,
   },
   location,
-}) => {
+}) {
   const isPreviewPage = !!(!enabled && previewPage)
   const hasReferrer = () =>
     referrer || !isNaN(parseInt(getUrlParameterValue('r')))
+
   // store referrer id
   useEffect(() => {
     // Check for a referrer's vanity URL.
@@ -78,6 +81,7 @@ const HomepageWrapper = ({
       )
     }
   }, [])
+
   // store user referral
   useEffect(() => {
     const userReferrerId = getUrlParameterValue('u')
@@ -99,7 +103,9 @@ const HomepageWrapper = ({
   )
   return (
     <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={responsiveFontSizes(createCauseTheme(styles.colors))}>
+      <ThemeProvider
+        theme={responsiveFontSizes(createCauseTheme(styles.colors))}
+      >
         <CssBaseline>
           <div>
             <HeadTags
@@ -147,7 +153,7 @@ const HomepageWrapper = ({
         </CssBaseline>
       </ThemeProvider>
     </StyledEngineProvider>
-  );
+  )
 }
 HomepageWrapper.propTypes = {
   location: PropTypes.shape({

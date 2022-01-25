@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 import { githubOrganizationURL } from 'src/utils/navigation.js'
+
 const useStyles = makeStyles((theme) => ({
   parent: {
     minHeight: '100vh',
@@ -56,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const SecuritySection = ({ securityData }) => {
+function SecuritySection({ securityData }) {
   const cx = useStyles()
   const { titleImg } = securityData
   const image = getImage(formatImg(titleImg))

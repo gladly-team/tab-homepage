@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import ReactFullpage from '@fullpage/react-fullpage'
 import {
-// fade,
-ThemeProvider, StyledEngineProvider, lighten
-} from '@mui/material/styles';
+  // fade,
+  ThemeProvider,
+  StyledEngineProvider,
+  lighten,
+, responsiveFontSizes } from '@mui/material/styles';
 // import red from '@mui/material/colors/red'
 // import teal from '@mui/material/colors/teal'
 // import brown from '@mui/material/colors/brown'
@@ -17,7 +19,6 @@ import clsx from 'clsx'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
-import { responsiveFontSizes } from '@mui/material/styles'
 
 import HeadTags from 'src/components/HeadTags'
 import MoneyRaised from 'src/components/MoneyRaised'
@@ -61,7 +62,7 @@ import openGraphImg1MHunger from 'src/img/million/og-img-1M-hunger.png'
 import openGraphImg1MRainforestV2 from 'src/img/million/og-img-1M-rainforest-v2.png'
 import openGraphImg1MRead from 'src/img/million/og-img-1M-read.png'
 
-import { grey, green, blue } from '@mui/material/colors';
+import { grey, green, blue } from '@mui/material/colors'
 
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
@@ -127,6 +128,7 @@ const useStyles = makeStyles((theme) => ({
     // Leaving in menu logic in case we add more page content,
     // but the menu seems unncessary now.
     display: 'none',
+
     // display: 'flex',
     flex: 3,
     margin: '0px 10px',
@@ -352,36 +354,43 @@ const useStyles = makeStyles((theme) => ({
   },
   waterImgBackground: {
     backgroundImage: `url("${waterImg}")`,
+
     // backgroundColor: fade(blue[700], 0.8),
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
   },
   forestImgBackground: {
     backgroundImage: `url("${forestImg}")`,
+
     // backgroundColor: fade(darken(green[900], 0.1), 0.7),
     backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
   actionAgainstHungerBackgroundImg: {
     backgroundImage: `url("${actionAgainstHungerImg}")`,
+
     // backgroundColor: fade(darken(red[900], 0.2), 0.6),
     backgroundColor: 'rgba(0, 0, 0, 0.45)',
   },
   giveDirectlyBackgroundImg: {
     backgroundImage: `url("${giveDirectlyImg}")`,
+
     // backgroundColor: fade(teal[900], 0.7),
     backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
   roomToReadBackgroundImg: {
     backgroundImage: `url("${roomToReadImg}")`,
+
     // backgroundColor: fade(brown[700], 0.8),
     backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
   saveTheChildrenBackgroundImg: {
     backgroundImage: `url("${saveTheChildrenImg}")`,
+
     // backgroundColor: fade(darken(red[900], 0.4), 0.7),
     backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
   schoolBackgroundImg: {
     backgroundImage: `url("${schoolImg}")`,
+
     // backgroundColor: fade(brown[900], 0.6),
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
@@ -403,12 +412,13 @@ const useStyles = makeStyles((theme) => ({
   },
   bottomThankYouText: {
     color: theme.palette.common.white,
+
     // Matches the aurora effect on the top section.
     background: 'linear-gradient(45deg, #32a6ff 0%, #3f6fff 49%, #8d54ff 82%)',
   },
 }))
 
-const Section = ({ id, children, className, autoHeight }) => {
+function Section({ id, children, className, autoHeight }) {
   return (
     <div
       data-anchor={id}
@@ -438,7 +448,7 @@ Section.defaultProps = {
   className: '',
 }
 
-const Slide = ({ children, className, style = {} }) => {
+function Slide({ children, className, style = {} }) {
   const classes = useStyles()
   return (
     <div className={'slide'}>
@@ -461,13 +471,13 @@ Slide.defaultProps = {
   className: '',
 }
 
-const ArrowButton = ({
+function ArrowButton({
   children,
   className,
   dark,
   onClick,
   arrowDirection,
-}) => {
+}) {
   const classes = useStyles({ dark })
   let ArrowIcon
   switch (arrowDirection) {
@@ -515,7 +525,7 @@ ArrowButton.defaultProps = {
   onClick: () => {},
 }
 
-const ArrowButtonContainer = ({ children, className }) => {
+function ArrowButtonContainer({ children, className }) {
   const classes = useStyles()
   return (
     <div className={clsx(classes.arrowButtonContainer, className)}>
@@ -535,7 +545,7 @@ ArrowButtonContainer.defaultProps = {
   className: undefined,
 }
 
-const Center = ({ children, className }) => {
+function Center({ children, className }) {
   const classes = useStyles()
   return <div className={clsx(classes.center, className)}>{children}</div>
 }
@@ -551,10 +561,10 @@ Center.defaultProps = {
   className: undefined,
 }
 
-const MillionPage = ({
+function MillionPage({
   location: { pathname },
   pageContext: { impactStat } = {},
-}) => {
+}) {
   // We generate subpages to make each impact stat shareable.
   // Set the open graph info based on the specific impact stat.
   let title = '$1M Raised'
@@ -1628,13 +1638,13 @@ MillionPage.defaultProps = {
 
 // Can't create and use theme in same component (useStyles will not use
 // the custom theme).
-const MillionPageWithTheme = (props) => (
-  <StyledEngineProvider injectFirst>
+function MillionPageWithTheme(props) {
+  return <StyledEngineProvider injectFirst>
     <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
       <MillionPage {...props} />
     </ThemeProvider>
   </StyledEngineProvider>
-)
+}
 MillionPageWithTheme.displayName = 'MillionPageWithTheme'
 
 export default MillionPageWithTheme

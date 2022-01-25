@@ -12,9 +12,7 @@ class IconWrapper extends React.Component {
 
   render() {
     const { hoverStyle, style } = this.props
-    const iconStyle = this.state.hover
-      ? Object.assign({}, style, hoverStyle)
-      : style
+    const iconStyle = this.state.hover ? { ...style, ...hoverStyle } : style
     return (
       <div
         onMouseEnter={() => this.setState({ hover: true })}

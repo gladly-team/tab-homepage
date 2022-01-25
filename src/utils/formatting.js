@@ -8,10 +8,10 @@ export const commaFormatted = (amount) => {
   if (amount === undefined || amount === null) {
     return '0'
   }
-  var delimiter = ',' // replace comma if desired
+  const delimiter = ',' // replace comma if desired
   amount = amount.toString()
-  var i = amount
-  var d = null
+  let i = amount
+  let d = null
   if (amount.indexOf('.') > -1) {
     var a = amount.split('.', 2)
     d = a[1]
@@ -20,15 +20,15 @@ export const commaFormatted = (amount) => {
   if (isNaN(i)) {
     return ''
   }
-  var minus = ''
+  let minus = ''
   if (i < 0) {
     minus = '-'
   }
   i = Math.abs(i)
-  var n = i.toString()
+  let n = i.toString()
   a = []
   while (n.length > 3) {
-    var nn = n.substr(n.length - 3)
+    const nn = n.substr(n.length - 3)
     a.unshift(nn)
     n = n.substr(0, n.length - 3)
   }
@@ -41,7 +41,7 @@ export const commaFormatted = (amount) => {
   } else if (d.length < 1) {
     amount = n
   } else {
-    amount = n + '.' + d
+    amount = `${n}.${d}`
   }
   amount = minus + amount
   return amount
@@ -56,18 +56,18 @@ export const currencyFormatted = (amount) => {
   if (amount === undefined || amount === null) {
     return '0.00'
   }
-  var i = parseFloat(amount)
+  let i = parseFloat(amount)
   if (isNaN(i)) {
     i = 0.0
   }
-  var minus = ''
+  let minus = ''
   if (i < 0) {
     minus = '-'
   }
   i = Math.abs(i)
   i = parseInt((i + 0.005) * 100)
-  i = i / 100
-  var s = i.toString()
+  i /= 100
+  let s = i.toString()
   if (s.indexOf('.') < 0) {
     s += '.00'
   }

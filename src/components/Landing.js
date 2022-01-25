@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useTheme } from '@mui/material/styles';
-import makeStyles from '@mui/styles/makeStyles';
+import { useTheme } from '@mui/material/styles'
+import makeStyles from '@mui/styles/makeStyles'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
@@ -97,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Landing = ({ landingData, causeId }) => {
+function Landing({ landingData, causeId }) {
   const { title, subtitle, ctaImg } = landingData
   const cx = useStyles()
   const theme = useTheme()
@@ -144,7 +144,7 @@ const Landing = ({ landingData, causeId }) => {
           />
         </div>
         <div className={cx.halfScreenRight}>
-          <GatsbyImage image={ctaImage} alt={'call to action'} />
+          <GatsbyImage image={ctaImage} alt="call to action" />
         </div>
         <div className={cx.wave}>
           <Wave color={theme.palette.primary.main} />

@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import qs from 'qs'
-import { STORAGE_NEW_USER_IS_TAB_V4_BETA } from 'src/utils/constants'
+import {
+  STORAGE_NEW_USER_IS_TAB_V4_BETA,
+  STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
+} from 'src/utils/constants'
 import { catsURL } from 'src/utils/navigation'
 import redirect, { directToAppExtension } from 'src/utils/redirect'
 import localStorageMgr from 'src/utils/local-storage'
-import { STORAGE_REFERRAL_DATA_REFERRING_CHANNEL } from 'src/utils/constants'
 import logo from 'src/img/logo-with-text.svg'
 import catLaptop from 'src/img/cats/cats_macbookgrey_front.png'
 
-const GetExtensionRedirectPage = (props) => {
+function GetExtensionRedirectPage(props) {
   const [timeUntilRedirect, setTimeUntilRedirect] = useState(5)
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -20,6 +22,7 @@ const GetExtensionRedirectPage = (props) => {
   try {
     // set v4 to true
     localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
+
     // If there is a referrer, save it to local storage.
     const { location: { search = '' } = {} } = props
     const queryParams = qs.parse(search, { ignoreQueryPrefix: true })

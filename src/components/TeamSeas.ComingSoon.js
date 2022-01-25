@@ -1,7 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ThemeProvider, StyledEngineProvider, responsiveFontSizes } from '@mui/material/styles';
-import makeStyles from '@mui/styles/makeStyles';
+import {
+  ThemeProvider,
+  StyledEngineProvider,
+  responsiveFontSizes,
+} from '@mui/material/styles'
+import makeStyles from '@mui/styles/makeStyles'
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
 import AppBar from '@mui/material/AppBar'
@@ -44,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     left: 0,
     zIndex: '-1',
+
     // Needs to match shading in extension new tab page.
     backgroundColor: `rgba(0, 0, 0, 0.3)`,
   },
@@ -75,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.main,
   },
 }))
-const Seas = ({ location }) => {
+function Seas({ location }) {
   const cx = useStyles()
 
   const absolutePageURL = getAbsoluteURL(location.pathname)
@@ -118,7 +123,7 @@ const Seas = ({ location }) => {
         </Toolbar>
       </AppBar>
       <div className={cx.background}>
-        <div className={cx.tint}></div>
+        <div className={cx.tint} />
       </div>
       <div className={cx.titleSection}>
         <Typography variant="h2" color="inherit">
@@ -128,7 +133,7 @@ const Seas = ({ location }) => {
           COMING SOON IN:
         </Typography>
         <Countdown
-          date={'2021-10-29T13:00:00.000'}
+          date="2021-10-29T13:00:00.000"
           intervalDelay={0}
           precision={3}
           renderer={({ hours, minutes, seconds, days }) => (
@@ -174,13 +179,14 @@ Seas.propTypes = {
     }),
   }),
 }
-const SeasPageWithTheme = (props) => (
-  <StyledEngineProvider injectFirst>
-    <ThemeProvider
-      theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
-    >
-      <Seas {...props} />
-    </ThemeProvider>
-  </StyledEngineProvider>
-)
+function SeasPageWithTheme(props) {
+  return (
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider
+        theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
+      >
+        <Seas {...props} />
+      </ThemeProvider>
+         </StyledEngineProvider>
+}
 export default SeasPageWithTheme

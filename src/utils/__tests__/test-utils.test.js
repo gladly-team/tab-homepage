@@ -2,7 +2,7 @@
 
 import { mockDate } from 'src/utils/test-utils'
 
-var origDate = Date
+const origDate = Date
 
 afterEach(() => {
   mockDate.off()
@@ -20,7 +20,7 @@ describe('test-utils tests', () => {
   })
 
   it('on mock date uses input dateStr', () => {
-    var otherTime = '2012-05-21T13:59:46.000Z'
+    const otherTime = '2012-05-21T13:59:46.000Z'
     mockDate.on(otherTime)
     expect(new Date()).toEqual(new origDate(otherTime))
     expect(Date.now()).toEqual(new origDate(otherTime).getTime())

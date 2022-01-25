@@ -49,17 +49,14 @@ class Footer extends React.Component {
     return (
       <div
         id={id}
-        style={Object.assign(
-          {},
-          {
-            background: lightestShadingColor,
-            paddingTop: 1,
-            paddingBottom: 20,
-            paddingLeft: 40,
-            paddingRight: 40,
-          },
-          style
-        )}
+        style={{
+          background: lightestShadingColor,
+          paddingTop: 1,
+          paddingBottom: 20,
+          paddingLeft: 40,
+          paddingRight: 40,
+          ...style,
+        }}
       >
         <Divider style={{ width: '100%', marginBottom: 20 }} />
         <div

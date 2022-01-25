@@ -3,6 +3,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import MoneyRaised from 'src/components/MoneyRaised'
+
 jest.mock('src/components/MoneyRaised')
 
 describe('MoneyRaisedDisplay', () => {

@@ -4,6 +4,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import seasData from 'src/data/causes/seas.json'
 import MoneyRaisedDisplay from '../MoneyRaisedDisplay'
+
 const getMockProps = () => ({
   moneyRaisedData: seasData.data.sections.moneyRaised,
 })

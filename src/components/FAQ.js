@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 import Typography from '@mui/material/Typography'
@@ -82,13 +82,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const FAQ = ({ faqData }) => {
+function FAQ({ faqData }) {
   const { img, questions } = faqData
   const cx = useStyles()
   const image = getImage(formatImg(img))
   const questionComponents = questions.map((question, index) => (
     <MuiAccordion
-      square={true}
+      square
       elevation={0}
       classes={{
         root: cx.MuiAccordionRoot,

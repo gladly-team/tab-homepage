@@ -3,6 +3,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Helmet from 'react-helmet'
+
 jest.mock('src/img/opengraph-img.png', () => '/static/some-image.png')
 
 const getMockProps = () => ({
