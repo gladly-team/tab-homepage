@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import Helmet from 'react-helmet'
 import FinancialsQuarterButton from 'src/components/FinancialsQuarterButton'
 import Layout from 'src/components/Layout'

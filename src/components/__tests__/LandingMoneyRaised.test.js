@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import seasData from 'src/data/causes/seas.json'
 import MoneyRaisedDisplay from '../MoneyRaisedDisplay'
 

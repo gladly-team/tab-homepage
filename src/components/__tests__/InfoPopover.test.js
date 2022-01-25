@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { mount, shallow } from 'enzyme'
+import { shallow, mount } from 'src/utils/testHelpers/componentTesting'
 import Popover from '@mui/material/Popover'
 
 const getMockProps = () => ({

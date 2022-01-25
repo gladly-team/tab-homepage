@@ -3,7 +3,7 @@
 import fs from 'fs'
 import path from 'path'
 import React from 'react'
-import { mount } from 'enzyme'
+import { mount } from 'src/utils/testHelpers/componentTesting'
 
 jest.mock('src/components/Link')
 

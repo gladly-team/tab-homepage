@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import data from 'src/data/causes/cats.json'
 import { Typography } from '@mui/material'
 import { getTestIdSelector } from 'src/utils/test-utils'

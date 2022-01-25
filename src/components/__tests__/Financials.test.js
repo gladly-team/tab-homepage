@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import { financialsURL } from 'src/utils/navigation'
 import data from 'src/data/causes/cats.json'
 import Link from 'src/components/Link'

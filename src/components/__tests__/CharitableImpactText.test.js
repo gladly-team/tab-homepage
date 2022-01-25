@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import impactTexts from 'src/utils/impactTexts'
 
 jest.mock('src/utils/impactTexts', () => {

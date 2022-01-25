@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import { isChromaticEnv } from '../../utils/featureFlags'
 
 jest.mock('../../utils/featureFlags')

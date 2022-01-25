@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import React from 'react'
-import { mount } from 'enzyme'
+import { mount } from 'src/utils/testHelpers/componentTesting'
 import SeasPageWithTheme from '../../components/TeamSeas.Install'
 import SeasPageComingSoonWithTheme from '../../components/TeamSeas.ComingSoon'
 import { showDownloadPage } from '../../utils/featureFlags'

@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { shallow, mount } from 'src/utils/testHelpers/componentTesting'
 import localStorageMgr from 'src/utils/local-storage'
 import data from 'src/data/causes/cats.json'
 import InstallButton from 'src/components/InstallButton'

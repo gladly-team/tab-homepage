@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import React from 'react'
-import { mount, shallow } from 'enzyme'
+import { shallow, mount } from 'src/utils/testHelpers/componentTesting'
 import localStorageMgr from 'src/utils/local-storage'
 import catsData from 'src/data/causes/cats.json'
 import Markdown from 'src/components/Markdown'

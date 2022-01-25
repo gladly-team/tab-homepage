@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import redirect, { directToAppExtension } from 'src/utils/redirect'
 import localStorageMgr from 'src/utils/local-storage'
 import { STORAGE_REFERRAL_DATA_REFERRING_CHANNEL } from 'src/utils/constants'

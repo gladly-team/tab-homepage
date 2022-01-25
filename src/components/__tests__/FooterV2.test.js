@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { shallow, mount } from 'src/utils/testHelpers/componentTesting'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
 import AppleSafari from 'mdi-material-ui/AppleSafari'
