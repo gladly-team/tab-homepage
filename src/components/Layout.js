@@ -11,7 +11,11 @@ import Header from 'src/components/Header'
 import Footer from 'src/components/Footer'
 import HeadTags from 'src/components/HeadTags'
 
-import { ThemeProvider, StyledEngineProvider } from '@mui/styles';
+import {
+  ThemeProvider,
+  StyledEngineProvider,
+  responsiveFontSizes,
+} from '@mui/material/styles'
 import defaultTheme from 'src/themes/theme'
 import { getAbsoluteURL } from 'src/utils/navigation'
 
@@ -50,7 +54,7 @@ export const Layout = (props) => {
         </div>
       </ThemeProvider>
     </StyledEngineProvider>
-  );
+  )
 }
 
 Layout.propTypes = {
