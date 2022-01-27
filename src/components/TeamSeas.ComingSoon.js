@@ -1,11 +1,11 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
-import PropTypes from 'prop-types'
 import {
+  styled,
   ThemeProvider,
   StyledEngineProvider,
   responsiveFontSizes,
 } from '@mui/material/styles'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
 import AppBar from '@mui/material/AppBar'
@@ -21,7 +21,7 @@ import seaImg from 'src/img/seas/ocean.jpg'
 import Link from 'src/components/Link'
 import Countdown from 'react-countdown'
 
-const PREFIX = 'SeasPageWithTheme';
+const PREFIX = 'SeasPageWithTheme'
 
 const classes = {
   logoContainer: `${PREFIX}-logoContainer`,
@@ -30,82 +30,82 @@ const classes = {
   titleSection: `${PREFIX}-titleSection`,
   comingSoon: `${PREFIX}-comingSoon`,
   countdownPaper: `${PREFIX}-countdownPaper`,
-  countdownFont: `${PREFIX}-countdownFont`
-};
+  countdownFont: `${PREFIX}-countdownFont`,
+}
 
-const StyledStyledEngineProvider = styled(StyledEngineProvider)((
-  {
-    theme
-  }
-) => ({
-  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+const StyledStyledEngineProvider = styled(StyledEngineProvider)(
+  ({ theme }) => ({
+    [`& .${classes.logoContainer}`]: {
+      flex: 1,
+      display: 'flex',
+      flexDirection: 'row',
+    },
 
-  [`& .${classes.background}`]: {
-    backgroundImage: `url("${seaImg}")`,
-    boxShadow: 'rgba(0, 0, 0, 0.5) 0px 0px 120px inset',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
-    WebkitBackgroundSize: 'cover',
-    MozBackgroundSize: 'cover',
-    backgroundSize: 'cover',
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    zIndex: '-2',
-  },
+    [`& .${classes.background}`]: {
+      backgroundImage: `url("${seaImg}")`,
+      boxShadow: 'rgba(0, 0, 0, 0.5) 0px 0px 120px inset',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed',
+      WebkitBackgroundSize: 'cover',
+      MozBackgroundSize: 'cover',
+      backgroundSize: 'cover',
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      right: 0,
+      left: 0,
+      zIndex: '-2',
+    },
 
-  [`& .${classes.tint}`]: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    zIndex: '-1',
+    [`& .${classes.tint}`]: {
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      right: 0,
+      left: 0,
+      zIndex: '-1',
 
-    // Needs to match shading in extension new tab page.
-    backgroundColor: `rgba(0, 0, 0, 0.3)`,
-  },
+      // Needs to match shading in extension new tab page.
+      backgroundColor: `rgba(0, 0, 0, 0.3)`,
+    },
 
-  [`& .${classes.titleSection}`]: {
-    margin: '0 auto',
-    display: 'flex',
-    height: 'calc(100vh - 64px)',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#fff',
-  },
+    [`& .${classes.titleSection}`]: {
+      margin: '0 auto',
+      display: 'flex',
+      height: 'calc(100vh - 64px)',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: '#fff',
+    },
 
-  [`& .${classes.comingSoon}`]: {
-    marginBottom: theme.spacing(2),
-  },
+    [`& .${classes.comingSoon}`]: {
+      marginBottom: theme.spacing(2),
+    },
 
-  [`& .${classes.countdownPaper}`]: {
-    borderRadius: '50%',
-    height: '150px',
-    width: '150px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    border: `1px solid ${theme.palette.secondary.main}`,
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(2),
-  },
+    [`& .${classes.countdownPaper}`]: {
+      borderRadius: '50%',
+      height: '150px',
+      width: '150px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      border: `1px solid ${theme.palette.secondary.main}`,
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(2),
+    },
 
-  [`& .${classes.countdownFont}`]: {
-    color: theme.palette.secondary.main,
-  }
-}));
+    [`& .${classes.countdownFont}`]: {
+      color: theme.palette.secondary.main,
+    },
+  })
+)
 
 const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
 const canonicalURL = getAbsoluteURL(seasURL)
 function Seas({ location }) {
-
-
   const absolutePageURL = getAbsoluteURL(location.pathname)
   return (
     <div>
@@ -123,7 +123,7 @@ function Seas({ location }) {
       </Helmet>
       <AppBar color="primary" position="sticky">
         <Toolbar>
-          <div className={cx.logoContainer}>
+          <div className={classes.logoContainer}>
             <div
               data-test-id="logo-container"
               style={{
@@ -145,14 +145,14 @@ function Seas({ location }) {
           <MoneyRaisedDisplay color="inherit" />
         </Toolbar>
       </AppBar>
-      <div className={cx.background}>
-        <div className={cx.tint} />
+      <div className={classes.background}>
+        <div className={classes.tint} />
       </div>
-      <div className={cx.titleSection}>
+      <div className={classes.titleSection}>
         <Typography variant="h2" color="inherit">
           TAB FOR #TEAMSEAS
         </Typography>
-        <Typography variant="h3" color="inherit" className={cx.comingSoon}>
+        <Typography variant="h3" color="inherit" className={classes.comingSoon}>
           COMING SOON IN:
         </Typography>
         <Countdown
@@ -161,26 +161,26 @@ function Seas({ location }) {
           precision={3}
           renderer={({ hours, minutes, seconds, days }) => (
             <div style={{ display: 'flex' }}>
-              <Paper className={cx.countdownPaper}>
-                <Typography variant="h4" className={cx.countdownFont}>
+              <Paper className={classes.countdownPaper}>
+                <Typography variant="h4" className={classes.countdownFont}>
                   {days}
                 </Typography>
                 <Typography>days</Typography>
               </Paper>
-              <Paper className={cx.countdownPaper}>
-                <Typography variant="h4" className={cx.countdownFont}>
+              <Paper className={classes.countdownPaper}>
+                <Typography variant="h4" className={classes.countdownFont}>
                   {hours}
                 </Typography>
                 <Typography>hours</Typography>
               </Paper>
-              <Paper className={cx.countdownPaper}>
-                <Typography variant="h4" className={cx.countdownFont}>
+              <Paper className={classes.countdownPaper}>
+                <Typography variant="h4" className={classes.countdownFont}>
                   {minutes}
                 </Typography>
                 <Typography>minutes</Typography>
               </Paper>
-              <Paper className={cx.countdownPaper}>
-                <Typography variant="h4" className={cx.countdownFont}>
+              <Paper className={classes.countdownPaper}>
+                <Typography variant="h4" className={classes.countdownFont}>
                   {seconds}
                 </Typography>
                 <Typography>seconds</Typography>
@@ -213,7 +213,7 @@ function SeasPageWithTheme(props) {
         <Seas {...props} />
       </ThemeProvider>
     </StyledStyledEngineProvider>
-  );
+  )
 }
 
 export default SeasPageWithTheme

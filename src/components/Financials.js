@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -12,7 +12,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-const PREFIX = 'Financials';
+const PREFIX = 'Financials'
 
 const classes = {
   logoContainer: `${PREFIX}-logoContainer`,
@@ -25,15 +25,15 @@ const classes = {
   halfScreenLeft: `${PREFIX}-halfScreenLeft`,
   subtitle: `${PREFIX}-subtitle`,
   buttonStyles: `${PREFIX}-buttonStyles`,
-  linkStyles: `${PREFIX}-linkStyles`
-};
+  linkStyles: `${PREFIX}-linkStyles`,
+}
 
-const Root = styled('div')((
-  {
-    theme
-  }
-) => ({
-  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+const Root = styled('div')(({ theme }) => ({
+  [`& .${classes.logoContainer}`]: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'row',
+  },
 
   [`& .${classes.wrapper}`]: {
     margin: '0 auto',
@@ -131,17 +131,17 @@ const Root = styled('div')((
     [theme.breakpoints.down('md')]: {
       width: '85%',
     },
-  }
-}));
+  },
+}))
 
 function Financials({ financialsData }) {
   const { title, text, buttonText, ctaImg, pdfs } = financialsData
 
   const Image = getImage(formatImg(ctaImg))
   return (
-    <Root className={cx.wrapper}>
-      <div className={cx.titleSectionWrapper}>
-        <div className={cx.halfScreenLeft}>
+    <Root className={classes.wrapper}>
+      <div className={classes.titleSectionWrapper}>
+        <div className={classes.halfScreenLeft}>
           <GatsbyImage
             image={Image}
             alt=""
@@ -149,19 +149,19 @@ function Financials({ financialsData }) {
             backgroundColor="transparent"
           />
         </div>
-        <div className={cx.halfScreenRight}>
+        <div className={classes.halfScreenRight}>
           <Typography variant="h2" color="primary">
             {title}
           </Typography>
-          <Typography className={cx.subtitle}>{text}</Typography>
+          <Typography className={classes.subtitle}>{text}</Typography>
         </div>
       </div>
-      <div className={cx.reportsContainer}>
+      <div className={classes.reportsContainer}>
         {pdfs.map((pdf) => (
           <FinancialsQuartersButton key={pdf.quarter} quarterData={pdf} />
         ))}
       </div>
-      <div className={cx.reportsSlider}>
+      <div className={classes.reportsSlider}>
         <Slider
           centerMode
           dots
@@ -183,18 +183,18 @@ function Financials({ financialsData }) {
           ))}
         </Slider>
       </div>
-      <Link className={cx.linkStyles} to={financialsURL}>
+      <Link className={classes.linkStyles} to={financialsURL}>
         <Button
           variant="contained"
           color="secondary"
           size="large"
-          className={cx.buttonStyles}
+          className={classes.buttonStyles}
         >
           {buttonText}
         </Button>
       </Link>
     </Root>
-  );
+  )
 }
 Financials.propTypes = {
   financialsData: PropTypes.shape({

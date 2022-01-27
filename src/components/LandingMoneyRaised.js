@@ -1,24 +1,20 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import { formatImg } from 'src/utils/formatting'
 
-const PREFIX = 'LandingMoneyRaised';
+const PREFIX = 'LandingMoneyRaised'
 
 const classes = {
   parent: `${PREFIX}-parent`,
   slidingParent: `${PREFIX}-slidingParent`,
   titleImage: `${PREFIX}-titleImage`,
-  moneyRaised: `${PREFIX}-moneyRaised`
-};
+  moneyRaised: `${PREFIX}-moneyRaised`,
+}
 
-const Root = styled('div')((
-  {
-    theme
-  }
-) => ({
+const Root = styled('div')(({ theme }) => ({
   [`& .${classes.parent}`]: {
     width: '100%',
     backgroundColor: theme.palette.primary.main,
@@ -61,32 +57,31 @@ const Root = styled('div')((
 
   [`& .${classes.moneyRaised}`]: {
     marginBottom: theme.spacing(2),
-  }
-}));
+  },
+}))
 
 function LandingMoneyRaised({ moneyRaisedData }) {
-
   const { moneyImg } = moneyRaisedData
   const moneyImage = getImage(formatImg(moneyImg))
   return (
-    <Root className={cx.parent}>
-      <div className={cx.slidingParent}>
+    <Root className={classes.parent}>
+      <div className={classes.slidingParent}>
         <GatsbyImage
           alt="money raised"
-          className={cx.titleImage}
+          className={classes.titleImage}
           image={moneyImage}
         />
         <div>
           <MoneyRaisedDisplay
             color="textSecondary"
-            whiteClassName={cx.moneyRaised}
+            whiteClassName={classes.moneyRaised}
             textVariant="h1"
             longCopy
           />
         </div>
       </div>
     </Root>
-  );
+  )
 }
 LandingMoneyRaised.propTypes = {
   moneyRaisedData: PropTypes.shape({

@@ -1,12 +1,12 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 import { githubOrganizationURL } from 'src/utils/navigation.js'
 
-const PREFIX = 'SecuritySection';
+const PREFIX = 'SecuritySection'
 
 const classes = {
   parent: `${PREFIX}-parent`,
@@ -16,14 +16,10 @@ const classes = {
   title: `${PREFIX}-title`,
   subtitle: `${PREFIX}-subtitle`,
   subtitleTwo: `${PREFIX}-subtitleTwo`,
-  titleImg: `${PREFIX}-titleImg`
-};
+  titleImg: `${PREFIX}-titleImg`,
+}
 
-const Root = styled('div')((
-  {
-    theme
-  }
-) => ({
+const Root = styled('div')(({ theme }) => ({
   [`& .${classes.parent}`]: {
     minHeight: '100vh',
     display: 'flex',
@@ -78,42 +74,41 @@ const Root = styled('div')((
 
   [`& .${classes.titleImg}`]: {
     maxHeight: '300px',
-  }
-}));
+  },
+}))
 
 function SecuritySection({ securityData }) {
-
   const { titleImg } = securityData
   const image = getImage(formatImg(titleImg))
   return (
-    <Root className={cx.parent}>
-      <div className={cx.column}>
+    <Root className={classes.parent}>
+      <div className={classes.column}>
         <GatsbyImage
           imgStyle={{
             objectFit: 'scale-down',
             maxHeight: '320px',
           }}
-          className={cx.titleImg}
+          className={classes.titleImg}
           image={image}
           alt=""
           placeholder="none"
         />
-        <Typography className={cx.title} color="primary" variant="h1">
+        <Typography className={classes.title} color="primary" variant="h1">
           Secure, private, and open source
         </Typography>
-        <Typography className={cx.subtitle} paragraph>
+        <Typography className={classes.subtitle} paragraph>
           We are serious about privacy. That’s why our browser extension will
           not (and cannot) access any private data beyond our new tab page.
         </Typography>
-        <Typography className={cx.subtitleTwo} paragraph>
+        <Typography className={classes.subtitleTwo} paragraph>
           Don’t just take our word for it—our code is{' '}
-          <a className={cx.link} href={githubOrganizationURL}>
+          <a className={classes.link} href={githubOrganizationURL}>
             open source!
           </a>
         </Typography>
       </div>
     </Root>
-  );
+  )
 }
 SecuritySection.propTypes = {
   securityData: PropTypes.shape({

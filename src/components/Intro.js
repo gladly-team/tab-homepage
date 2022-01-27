@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
@@ -8,7 +8,7 @@ import { formatImg } from 'src/utils/formatting'
 import InstallButton from 'src/components/V4InstallButton'
 import Markdown from './Markdown'
 
-const PREFIX = 'Intro';
+const PREFIX = 'Intro'
 
 const classes = {
   title: `${PREFIX}-title`,
@@ -21,14 +21,10 @@ const classes = {
   numberCircle: `${PREFIX}-numberCircle`,
   wrapper: `${PREFIX}-wrapper`,
   stepText: `${PREFIX}-stepText`,
-  titleTypography: `${PREFIX}-titleTypography`
-};
+  titleTypography: `${PREFIX}-titleTypography`,
+}
 
-const Root = styled('div')((
-  {
-    theme
-  }
-) => ({
+const Root = styled('div')(({ theme }) => ({
   [`& .${classes.title}`]: {
     display: 'flex',
     flexDirection: 'row',
@@ -134,8 +130,8 @@ const Root = styled('div')((
     [theme.breakpoints.down('md')]: {
       marginRight: theme.spacing(0),
     },
-  }
-}));
+  },
+}))
 
 function Intro({ causeId, introData }) {
   const {
@@ -155,11 +151,11 @@ function Intro({ causeId, introData }) {
   const image2 = getImage(formatImg(img2))
   const image3 = getImage(formatImg(img3))
   return (
-    <Root className={cx.wrapper}>
-      <div className={cx.title}>
-        <div className={cx.titleText}>
+    <Root className={classes.wrapper}>
+      <div className={classes.title}>
+        <div className={classes.titleText}>
           <Typography
-            className={cx.titleTypography}
+            className={classes.titleTypography}
             variant="h1"
             color="primary"
           >
@@ -168,41 +164,41 @@ function Intro({ causeId, introData }) {
           <Markdown>{subtitle}</Markdown>
         </div>
         <GatsbyImage
-          className={cx.titleImage}
+          className={classes.titleImage}
           image={titleImage}
           alt="intro title"
         />
       </div>
-      <div className={cx.steps}>
-        <div className={cx.step}>
-          <div className={cx.stepText}>
-            <Avatar className={cx.numberCircle}>1</Avatar>
+      <div className={classes.steps}>
+        <div className={classes.step}>
+          <div className={classes.stepText}>
+            <Avatar className={classes.numberCircle}>1</Avatar>
             <Markdown>{img1Subtext}</Markdown>
           </div>
           <GatsbyImage
-            className={cx.stepImage}
+            className={classes.stepImage}
             image={image1}
             alt="intro step 1"
           />
         </div>
-        <div className={cx.step}>
-          <div className={cx.stepText}>
-            <Avatar className={cx.numberCircle}>2</Avatar>
+        <div className={classes.step}>
+          <div className={classes.stepText}>
+            <Avatar className={classes.numberCircle}>2</Avatar>
             <Markdown>{img2Subtext}</Markdown>
           </div>
           <GatsbyImage
-            className={cx.stepImage}
+            className={classes.stepImage}
             image={image2}
             alt="intro step 2"
           />
         </div>
-        <div className={cx.step}>
-          <div className={cx.stepText}>
-            <Avatar className={cx.numberCircle}>3</Avatar>
+        <div className={classes.step}>
+          <div className={classes.stepText}>
+            <Avatar className={classes.numberCircle}>3</Avatar>
             <Markdown>{img3Subtext}</Markdown>
           </div>
           <GatsbyImage
-            className={cx.stepImage}
+            className={classes.stepImage}
             image={image3}
             alt="intro step 3"
           />
@@ -210,7 +206,7 @@ function Intro({ causeId, introData }) {
       </div>
       <InstallButton color="secondary" size="medium" causeId={causeId} />
     </Root>
-  );
+  )
 }
 Intro.propTypes = {
   causeId: PropTypes.string,

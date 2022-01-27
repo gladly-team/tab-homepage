@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import InstallButton from 'src/components/InstallButton'
 import localStorageMgr from 'src/utils/local-storage'
@@ -10,19 +10,15 @@ import {
   STORAGE_NEW_USER_CAUSE_ID,
 } from 'src/utils/constants'
 
-const PREFIX = 'V4InstallButton';
+const PREFIX = 'V4InstallButton'
 
 const classes = {
   buttonStyles: `${PREFIX}-buttonStyles`,
-  buttonStylesFullWidth: `${PREFIX}-buttonStylesFullWidth`
-};
+  buttonStylesFullWidth: `${PREFIX}-buttonStylesFullWidth`,
+}
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled('div')((
-  {
-    theme
-  }
-) => ({
+const Root = styled('div')(({ theme }) => ({
   [`& .${classes.buttonStyles}`]: {
     maxWidth: theme.spacing(30),
     marginTop: theme.spacing(4),
@@ -39,15 +35,15 @@ const Root = styled('div')((
       maxWidth: 'unset',
       width: '100%',
     },
-  }
-}));
+  },
+}))
 
 function V4InstallButton({ causeId, fullWidth, buttonClassName }) {
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
 
   return (
-    (<Root>
+    <Root>
       <UnsupportedBrowserDialog
         open={showUnsupportedBrowserMessage}
         onClose={() => {
@@ -56,7 +52,7 @@ function V4InstallButton({ causeId, fullWidth, buttonClassName }) {
       />
       <InstallButton
         className={clsx(
-          fullWidth ? cx.buttonStylesFullWidth : cx.buttonStyles,
+          fullWidth ? classes.buttonStylesFullWidth : classes.buttonStyles,
           buttonClassName
         )}
         color="secondary"
@@ -69,8 +65,8 @@ function V4InstallButton({ causeId, fullWidth, buttonClassName }) {
           setShowUnsupportedBrowserMessage(true)
         }}
       />
-    </Root>)
-  );
+    </Root>
+  )
 }
 
 V4InstallButton.propTypes = {

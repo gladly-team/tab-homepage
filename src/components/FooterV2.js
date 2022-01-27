@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import IconButton from '@mui/material/IconButton'
 import FacebookIcon from '@mui/icons-material/Facebook'
@@ -35,7 +35,7 @@ import {
 } from 'src/utils/navigation'
 import Link from 'src/components/Link'
 
-const PREFIX = 'Footer';
+const PREFIX = 'Footer'
 
 const classes = {
   logoContainer: `${PREFIX}-logoContainer`,
@@ -54,15 +54,15 @@ const classes = {
   imgClassName: `${PREFIX}-imgClassName`,
   iconButton: `${PREFIX}-iconButton`,
   leftBubble: `${PREFIX}-leftBubble`,
-  rightBubble: `${PREFIX}-rightBubble`
-};
+  rightBubble: `${PREFIX}-rightBubble`,
+}
 
-const Root = styled('div')((
-  {
-    theme
-  }
-) => ({
-  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+const Root = styled('div')(({ theme }) => ({
+  [`& .${classes.logoContainer}`]: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'row',
+  },
 
   [`& .${classes.backgroundContainer}`]: {
     background: theme.palette.primary.main,
@@ -183,8 +183,8 @@ const Root = styled('div')((
       top: 'unset',
       bottom: theme.spacing(-40),
     },
-  }
-}));
+  },
+}))
 
 function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
   const image = getImage(formatImg(img))
@@ -197,24 +197,27 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
     [onBeforeInstall]
   )
   return (
-    <Root className={cx.backgroundContainer}>
-      <FooterBlobLeft color={bubbleColor} innerClassName={cx.leftBubble} />
-      <FooterBlobRight color={bubbleColor} innerClassName={cx.rightBubble} />
-      <div className={cx.contentRow}>
-        <div className={cx.columnOne}>
+    <Root className={classes.backgroundContainer}>
+      <FooterBlobLeft color={bubbleColor} innerClassName={classes.leftBubble} />
+      <FooterBlobRight
+        color={bubbleColor}
+        innerClassName={classes.rightBubble}
+      />
+      <div className={classes.contentRow}>
+        <div className={classes.columnOne}>
           <Link to="/">
             <img src={logo} style={{ height: 43 }} />
           </Link>
           <Typography
             variant="subtitle2"
             color="textSecondary"
-            className={cx.social}
+            className={classes.social}
           >
             Social
           </Typography>
-          <div className={cx.iconRowOne}>
-            <Link to={tiktokPageURL} className={cx.tiktok} target="_blank">
-              <IconButton classes={{ root: cx.iconButton }} size="large">
+          <div className={classes.iconRowOne}>
+            <Link to={tiktokPageURL} className={classes.tiktok} target="_blank">
+              <IconButton classes={{ root: classes.iconButton }} size="large">
                 <SvgIcon
                   viewBox="0 0 50 50"
                   style={{
@@ -231,55 +234,55 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
             <Link to={facebookPageURL} target="_blank">
               <IconButton
                 edge="start"
-                classes={{ root: cx.iconButton }}
+                classes={{ root: classes.iconButton }}
                 size="large"
               >
-                <FacebookIcon classes={{ root: cx.iconStyles }} />
+                <FacebookIcon classes={{ root: classes.iconStyles }} />
               </IconButton>
             </Link>
 
             <Link to={instagramPageURL} target="_blank">
-              <IconButton classes={{ root: cx.iconButton }} size="large">
-                <InstagramIcon classes={{ root: cx.iconStyles }} />
+              <IconButton classes={{ root: classes.iconButton }} size="large">
+                <InstagramIcon classes={{ root: classes.iconStyles }} />
               </IconButton>
             </Link>
 
             <Link to={twitterPageURL} target="_blank">
-              <IconButton classes={{ root: cx.iconButton }} size="large">
-                <TwitterIcon classes={{ root: cx.iconStyles }} />
+              <IconButton classes={{ root: classes.iconButton }} size="large">
+                <TwitterIcon classes={{ root: classes.iconStyles }} />
               </IconButton>
             </Link>
           </div>
           <Typography variant="subtitle2" color="textSecondary">
             Browser Compatibility
           </Typography>
-          <div className={cx.iconRowTwo}>
+          <div className={classes.iconRowTwo}>
             <IconButton
               onClick={browserOnClick(chromeExtensionURL)}
               edge="start"
-              classes={{ root: cx.iconButton }}
+              classes={{ root: classes.iconButton }}
               size="large"
             >
-              <GoogleChrome className={cx.iconStyles} />
+              <GoogleChrome className={classes.iconStyles} />
             </IconButton>
             <IconButton
               onClick={browserOnClick(edgeExtensionURL)}
-              classes={{ root: cx.iconButton }}
+              classes={{ root: classes.iconButton }}
               size="large"
             >
-              <MicrosoftEdge className={cx.iconStyles} />
+              <MicrosoftEdge className={classes.iconStyles} />
             </IconButton>
             <IconButton
               onClick={browserOnClick(safariExtensionURL)}
-              classes={{ root: cx.iconButton }}
+              classes={{ root: classes.iconButton }}
               size="large"
             >
-              <AppleSafari className={cx.iconStyles} />
+              <AppleSafari className={classes.iconStyles} />
             </IconButton>
           </div>
         </div>
-        <div className={cx.columnTwo}>
-          <div className={cx.subColumn}>
+        <div className={classes.columnTwo}>
+          <div className={classes.subColumn}>
             <Link to={externalHelpURL}>
               <Typography
                 variant="subtitle2"
@@ -326,7 +329,7 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
               </Typography>
             </Link>
           </div>
-          <div className={cx.subColumnTwo}>
+          <div className={classes.subColumnTwo}>
             <Link to={teamURL}>
               <Typography
                 variant="subtitle2"
@@ -356,16 +359,16 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
             </Link>
           </div>
         </div>
-        <div className={cx.columnThree}>
+        <div className={classes.columnThree}>
           <GatsbyImage
             image={image}
             alt="footer"
-            imgClassName={cx.imgClassName}
+            imgClassName={classes.imgClassName}
           />
         </div>
       </div>
     </Root>
-  );
+  )
 }
 
 Footer.propTypes = {

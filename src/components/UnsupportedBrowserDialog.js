@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import Dialog from '@mui/material/Dialog'
 import DialogActions from '@mui/material/DialogActions'
@@ -8,21 +8,21 @@ import DialogTitle from '@mui/material/DialogTitle'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
-const PREFIX = 'UnsupportedBrowserDialog';
+const PREFIX = 'UnsupportedBrowserDialog'
 
 const classes = {
-  dialogTitleText: `${PREFIX}-dialogTitleText`
-};
+  dialogTitleText: `${PREFIX}-dialogTitleText`,
+}
 
 const StyledDialog = styled(Dialog)({
   [`& .${classes.dialogTitleText}`]: {
     color: 'rgba(33, 33, 33, 0.82)', // same as h1 text color from theme
   },
-});
+})
 
 class UnsupportedBrowserDialog extends React.Component {
   render() {
-    const { onClose,  ...other } = this.props
+    const { onClose, ...other } = this.props
 
     return (
       <StyledDialog {...other}>
@@ -41,7 +41,7 @@ class UnsupportedBrowserDialog extends React.Component {
           </Button>
         </DialogActions>
       </StyledDialog>
-    );
+    )
   }
 }
 
@@ -50,4 +50,4 @@ UnsupportedBrowserDialog.propTypes = {
   onClose: PropTypes.func.isRequired,
 }
 
-export default (UnsupportedBrowserDialog)
+export default UnsupportedBrowserDialog

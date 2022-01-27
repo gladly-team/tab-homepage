@@ -198,7 +198,7 @@ function Seas({ pageContext, location }) {
       </Helmet>
       <AppBar color="primary" position="sticky">
         <Toolbar>
-          <div className={cx.logoContainer}>
+          <div className={classes.logoContainer}>
             <div
               data-test-id="logo-container"
               style={{
@@ -220,18 +220,18 @@ function Seas({ pageContext, location }) {
           <MoneyRaisedDisplay color="inherit" />
         </Toolbar>
       </AppBar>
-      <div className={cx.titleSection}>
-        <div className={cx.halfScreenLeft}>
+      <div className={classes.titleSection}>
+        <div className={classes.halfScreenLeft}>
           <Typography variant="h1" color="primary">
             The easiest way to save our seas
           </Typography>
-          <Typography className={cx.subtitle}>
+          <Typography className={classes.subtitle}>
             Every tab opened raises money for #TeamSeas, an internet-led
             movement raising $30 million to clean up 30 million pounds of trash
             from our oceans, rivers, and lakes.
           </Typography>
           <InstallButton
-            className={cx.buttonStyles}
+            className={classes.buttonStyles}
             color="secondary"
             size="medium"
             onBeforeInstall={() => {
@@ -246,14 +246,14 @@ function Seas({ pageContext, location }) {
             }}
           />
         </div>
-        <div className={cx.halfScreenRight}>
+        <div className={classes.halfScreenRight}>
           <img src={headerImg} />
         </div>
-        <div className={cx.wave}>
+        <div className={classes.wave}>
           <Wave color="#5094FB" />
         </div>
       </div>
-      <div className={cx.waveMobile}>
+      <div className={classes.waveMobile}>
         <Wave color="#5094FB" />
       </div>
       <UnsupportedBrowserDialog

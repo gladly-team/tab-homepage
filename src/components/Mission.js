@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import Typography from '@mui/material/Typography'
 import Markdown from 'src/components/Markdown'
@@ -10,7 +10,7 @@ import leftBubble from 'src/img/causeshared/blobLeft.svg'
 import rightBubble from 'src/img/causeshared/blobRight.svg'
 import V4InstallButton from 'src/components/V4InstallButton'
 
-const PREFIX = 'Mission';
+const PREFIX = 'Mission'
 
 const classes = {
   wrapper: `${PREFIX}-wrapper`,
@@ -23,14 +23,10 @@ const classes = {
   subtitle: `${PREFIX}-subtitle`,
   squiggle: `${PREFIX}-squiggle`,
   leftBubble: `${PREFIX}-leftBubble`,
-  rightBubble: `${PREFIX}-rightBubble`
-};
+  rightBubble: `${PREFIX}-rightBubble`,
+}
 
-const Root = styled('div')((
-  {
-    theme
-  }
-) => ({
+const Root = styled('div')(({ theme }) => ({
   [`& .${classes.wrapper}`]: {
     minHeight: '100vh',
     position: 'relative',
@@ -134,43 +130,43 @@ const Root = styled('div')((
       right: theme.spacing(-5),
       bottom: theme.spacing(-10),
     },
-  }
-}));
+  },
+}))
 
 function Mission({ missionData, causeId }) {
   const { titleText, subtitleText, bodyText, image } = missionData
 
   const missionImage = getImage(formatImg(image))
   return (
-    <Root className={cx.wrapper}>
-      <img className={cx.squiggle} src={heartSquiggle} />
-      <img className={cx.leftBubble} src={leftBubble} />
-      <img className={cx.rightBubble} src={rightBubble} />
-      <div className={cx.column}>
-        <div className={cx.textContainer}>
+    <Root className={classes.wrapper}>
+      <img className={classes.squiggle} src={heartSquiggle} />
+      <img className={classes.leftBubble} src={leftBubble} />
+      <img className={classes.rightBubble} src={rightBubble} />
+      <div className={classes.column}>
+        <div className={classes.textContainer}>
           <Typography variant="h1" color="primary">
             {titleText}
           </Typography>
-          <Typography className={cx.subtitle} variant="h5" color="primary">
+          <Typography className={classes.subtitle} variant="h5" color="primary">
             {subtitleText}
           </Typography>
           <Markdown>{bodyText}</Markdown>
           <V4InstallButton
             causeId={causeId}
-            buttonClassName={cx.installButton}
+            buttonClassName={classes.installButton}
             fullWidth
           />
         </div>
         <GatsbyImage
           image={missionImage}
-          className={cx.missionImage}
+          className={classes.missionImage}
           alt=""
           placeholder="none"
           backgroundColor="transparent"
         />
       </div>
     </Root>
-  );
+  )
 }
 Mission.propTypes = {
   missionData: PropTypes.shape({

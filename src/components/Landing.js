@@ -1,7 +1,6 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles'
 import PropTypes from 'prop-types'
-import { useTheme } from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
@@ -14,7 +13,7 @@ import Link from 'src/components/Link'
 import Wave from 'src/components/Wave'
 import V4InstallButton from 'src/components/V4InstallButton'
 
-const PREFIX = 'Landing';
+const PREFIX = 'Landing'
 
 const classes = {
   whiteFont: `${PREFIX}-whiteFont`,
@@ -27,19 +26,19 @@ const classes = {
   buttonStyles: `${PREFIX}-buttonStyles`,
   wave: `${PREFIX}-wave`,
   waveMobile: `${PREFIX}-waveMobile`,
-  installButton: `${PREFIX}-installButton`
-};
+  installButton: `${PREFIX}-installButton`,
+}
 
-const Root = styled('div')((
-  {
-    theme
-  }
-) => ({
+const Root = styled('div')(({ theme }) => ({
   [`& .${classes.whiteFont}`]: {
     color: '#fff',
   },
 
-  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+  [`& .${classes.logoContainer}`]: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'row',
+  },
 
   [`& .${classes.titleSection}`]: {
     margin: '0 auto',
@@ -124,8 +123,8 @@ const Root = styled('div')((
 
   [`& .${classes.installButton}`]: {
     marginTop: theme.spacing(4),
-  }
-}));
+  },
+}))
 
 function Landing({ landingData, causeId }) {
   const { title, subtitle, ctaImg } = landingData
@@ -136,7 +135,7 @@ function Landing({ landingData, causeId }) {
     <Root className="parent">
       <AppBar color="primary" position="sticky">
         <Toolbar>
-          <div className={cx.logoContainer}>
+          <div className={classes.logoContainer}>
             <div
               data-test-id="logo-container"
               style={{
@@ -155,36 +154,36 @@ function Landing({ landingData, causeId }) {
             </div>
           </div>
           <MoneyRaisedDisplay
-            whiteClassName={cx.whiteFont}
+            whiteClassName={classes.whiteFont}
             textVariant="subtitle2"
             excludeText
           />
         </Toolbar>
       </AppBar>
-      <div className={cx.titleSection}>
-        <div className={cx.halfScreenLeft} data-test-id="title-wrapper">
+      <div className={classes.titleSection}>
+        <div className={classes.halfScreenLeft} data-test-id="title-wrapper">
           <Typography variant="h1" color="primary">
             {title}
           </Typography>
-          <Typography className={cx.subtitle}>{subtitle}</Typography>
+          <Typography className={classes.subtitle}>{subtitle}</Typography>
           <V4InstallButton
             causeId={causeId}
-            buttonClassName={cx.installButton}
+            buttonClassName={classes.installButton}
             fullWidth
           />
         </div>
-        <div className={cx.halfScreenRight}>
+        <div className={classes.halfScreenRight}>
           <GatsbyImage image={ctaImage} alt="call to action" />
         </div>
-        <div className={cx.wave}>
+        <div className={classes.wave}>
           <Wave color={theme.palette.primary.main} />
         </div>
       </div>
-      <div className={cx.waveMobile}>
+      <div className={classes.waveMobile}>
         <Wave color={theme.palette.primary.main} />
       </div>
     </Root>
-  );
+  )
 }
 Landing.propTypes = {
   causeId: PropTypes.string,

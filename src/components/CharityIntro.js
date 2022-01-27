@@ -1,13 +1,12 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles'
 import PropTypes from 'prop-types'
-import { useTheme } from '@mui/material/styles'
 import CharityIntroWave from 'src/components/CharityIntroWave'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 
-const PREFIX = 'CharityIntro';
+const PREFIX = 'CharityIntro'
 
 const classes = {
   parent: `${PREFIX}-parent`,
@@ -17,14 +16,10 @@ const classes = {
   steps: `${PREFIX}-steps`,
   step: `${PREFIX}-step`,
   stepText: `${PREFIX}-stepText`,
-  stepImage: `${PREFIX}-stepImage`
-};
+  stepImage: `${PREFIX}-stepImage`,
+}
 
-const Root = styled('div')((
-  {
-    theme
-  }
-) => ({
+const Root = styled('div')(({ theme }) => ({
   [`& .${classes.parent}`]: {
     display: 'flex',
     flexDirection: 'column',
@@ -88,43 +83,42 @@ const Root = styled('div')((
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  }
-}));
+  },
+}))
 
 function CharityIntro({ charityIntroData }) {
-
   const theme = useTheme()
   const getStep = (step, index) => {
     const image = getImage(formatImg(step.img))
     return (
-      <Root className={cx.step} key={`step${index}`}>
+      <Root className={classes.step} key={`step${index}`}>
         <GatsbyImage
-          className={cx.stepImage}
+          className={classes.stepImage}
           imgStyle={{
             objectFit: 'scale-down',
           }}
           alt="charity intro step"
           image={image}
         />
-        <Typography className={cx.stepText} variant="body1">
+        <Typography className={classes.stepText} variant="body1">
           {step.text}
         </Typography>
       </Root>
-    );
+    )
   }
   const { title, subTitle, steps } = charityIntroData
   const stepComponents = steps.map((step, index) => getStep(step, index))
   return (
-    <div className={cx.parent}>
+    <div className={classes.parent}>
       <CharityIntroWave color={theme.palette.primary.main} />
-      <div className={cx.column}>
-        <Typography className={cx.title} color="primary" variant="h1">
+      <div className={classes.column}>
+        <Typography className={classes.title} color="primary" variant="h1">
           {title}
         </Typography>
-        <Typography className={cx.subtitle} variant="body1">
+        <Typography className={classes.subtitle} variant="body1">
           {subTitle}
         </Typography>
-        <div className={cx.steps}>{stepComponents}</div>
+        <div className={classes.steps}>{stepComponents}</div>
       </div>
     </div>
   )

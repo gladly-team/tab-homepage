@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
@@ -11,7 +11,7 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Markdown from 'src/components/Markdown'
 
-const PREFIX = 'FAQ';
+const PREFIX = 'FAQ'
 
 const classes = {
   parent: `${PREFIX}-parent`,
@@ -22,14 +22,10 @@ const classes = {
   faqPattern: `${PREFIX}-faqPattern`,
   copy: `${PREFIX}-copy`,
   expandIcon: `${PREFIX}-expandIcon`,
-  MuiAccordionRoot: `${PREFIX}-MuiAccordionRoot`
-};
+  MuiAccordionRoot: `${PREFIX}-MuiAccordionRoot`,
+}
 
-const Root = styled('div')((
-  {
-    theme
-  }
-) => ({
+const Root = styled('div')(({ theme }) => ({
   [`& .${classes.parent}`]: {
     display: 'flex',
     flexDirection: 'column',
@@ -102,8 +98,8 @@ const Root = styled('div')((
       paddingTop: '0px',
     },
     borderBottom: '2px #F9EBDC solid',
-  }
-}));
+  },
+}))
 
 function FAQ({ faqData }) {
   const { img, questions } = faqData
@@ -114,13 +110,13 @@ function FAQ({ faqData }) {
       square
       elevation={0}
       classes={{
-        root: cx.MuiAccordionRoot,
-        expanded: cx.MuiAccordionExpanded,
+        root: classes.MuiAccordionRoot,
+        expanded: classes.MuiAccordionExpanded,
       }}
       key={question.question}
     >
       <MuiAccordionSummary
-        expandIcon={<ExpandMoreIcon className={cx.expandIcon} />}
+        expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
       >
         <Typography variant="caption" color="primary">
           {question.question}
@@ -132,22 +128,22 @@ function FAQ({ faqData }) {
     </MuiAccordion>
   ))
   return (
-    <Root className={cx.parent}>
-      <div className={cx.row}>
+    <Root className={classes.parent}>
+      <div className={classes.row}>
         <GatsbyImage
           alt="faq image"
           imgStyle={{
             objectFit: 'scale-down',
           }}
-          className={cx.titleImage}
+          className={classes.titleImage}
           image={image}
         />
-        <div className={cx.faqSection}>
-          <div className={cx.titleAndPattern}>
+        <div className={classes.faqSection}>
+          <div className={classes.titleAndPattern}>
             <Typography variant="h1">FAQ</Typography>
-            <img className={cx.faqPattern} src={faqPattern} />
+            <img className={classes.faqPattern} src={faqPattern} />
           </div>
-          <Typography className={cx.copy}>
+          <Typography className={classes.copy}>
             Check out some of our frequently asked questions. We think you’ll
             find what you’re looking for.
           </Typography>
@@ -155,7 +151,7 @@ function FAQ({ faqData }) {
         </div>
       </div>
     </Root>
-  );
+  )
 }
 
 FAQ.propTypes = {
