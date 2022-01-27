@@ -99,7 +99,7 @@ SocialShare.propTypes = {
     separator: PropTypes.string,
   }),
   FacebookShareButtonProps: PropTypes.shape({
-    quote: PropTypes.string.isRequired,
+    quote: PropTypes.string,
     hashtag: PropTypes.string,
   }),
   RedditShareButtonProps: PropTypes.shape({
