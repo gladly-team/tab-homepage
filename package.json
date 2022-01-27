@@ -7,7 +7,7 @@
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@fontsource/poppins": "^4.5.0",
-    "@fullpage/react-fullpage": "0.1.19",
+    "@fullpage/react-fullpage": "0.1.18",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
