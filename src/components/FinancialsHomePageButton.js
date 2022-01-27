@@ -1,13 +1,26 @@
 import React from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
 import Paper from '@mui/material/Paper'
 import { formatImg } from 'src/utils/formatting'
-import makeStyles from '@mui/styles/makeStyles'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-const useStyles = makeStyles((theme) => ({
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  Paper: {
+const PREFIX = 'FinancialQuartersButton';
+
+const classes = {
+  logoContainer: `${PREFIX}-logoContainer`,
+  Paper: `${PREFIX}-Paper`,
+  image: `${PREFIX}-image`
+};
+
+const Root = styled('div')((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+
+  [`& .${classes.Paper}`]: {
     width: 240,
     height: 100,
     display: 'flex',
@@ -16,13 +29,15 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(3),
     transition: 'transform .1s ease-in-out',
   },
-  image: { alignSelf: 'end', height: '100px', width: '103px' },
-}))
+
+  [`& .${classes.image}`]: { alignSelf: 'end', height: '100px', width: '103px' }
+}));
+
 function FinancialQuartersButton({ quarterData }) {
-  const cx = useStyles()
+
   const Image = getImage(formatImg(quarterData.img))
   return (
-    <div>
+    <Root>
       {/* PDF is outside of Gatsby, so don't use a Link component */}
       <a href={quarterData.pdfUrl} style={{ textDecoration: 'none' }}>
         <Paper elevation={1} className={cx.Paper}>
@@ -36,8 +51,8 @@ function FinancialQuartersButton({ quarterData }) {
           <span>{`Q${quarterData.quarter} ${quarterData.year}`}</span>
         </Paper>
       </a>
-    </div>
-  )
+    </Root>
+  );
 }
 FinancialQuartersButton.propTypes = {
   quarterData: PropTypes.shape({

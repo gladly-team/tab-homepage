@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
 import IconButton from '@mui/material/IconButton'
 import FacebookIcon from '@mui/icons-material/Facebook'
@@ -7,7 +8,6 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import Typography from '@mui/material/Typography'
 import SvgIcon from '@mui/material/SvgIcon'
 import redirect from 'src/utils/redirect'
-import makeStyles from '@mui/styles/makeStyles'
 import logo from 'src/img/logo-with-text-white.svg'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
@@ -35,9 +35,36 @@ import {
 } from 'src/utils/navigation'
 import Link from 'src/components/Link'
 
-const useStyles = makeStyles((theme) => ({
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  backgroundContainer: {
+const PREFIX = 'Footer';
+
+const classes = {
+  logoContainer: `${PREFIX}-logoContainer`,
+  backgroundContainer: `${PREFIX}-backgroundContainer`,
+  tiktok: `${PREFIX}-tiktok`,
+  social: `${PREFIX}-social`,
+  contentRow: `${PREFIX}-contentRow`,
+  columnOne: `${PREFIX}-columnOne`,
+  columnTwo: `${PREFIX}-columnTwo`,
+  columnThree: `${PREFIX}-columnThree`,
+  subColumn: `${PREFIX}-subColumn`,
+  subColumnTwo: `${PREFIX}-subColumnTwo`,
+  iconRowOne: `${PREFIX}-iconRowOne`,
+  iconRowTwo: `${PREFIX}-iconRowTwo`,
+  iconStyles: `${PREFIX}-iconStyles`,
+  imgClassName: `${PREFIX}-imgClassName`,
+  iconButton: `${PREFIX}-iconButton`,
+  leftBubble: `${PREFIX}-leftBubble`,
+  rightBubble: `${PREFIX}-rightBubble`
+};
+
+const Root = styled('div')((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+
+  [`& .${classes.backgroundContainer}`]: {
     background: theme.palette.primary.main,
     paddingBottom: 20,
     display: 'flex',
@@ -45,13 +72,16 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     position: 'relative',
   },
-  tiktok: {
+
+  [`& .${classes.tiktok}`]: {
     marginRight: theme.spacing(1),
   },
-  social: {
+
+  [`& .${classes.social}`]: {
     marginTop: theme.spacing(1),
   },
-  contentRow: {
+
+  [`& .${classes.contentRow}`]: {
     display: 'flex',
     width: '80%',
     justifyContent: 'space-between',
@@ -63,14 +93,16 @@ const useStyles = makeStyles((theme) => ({
     },
     zIndex: '1',
   },
-  columnOne: {
+
+  [`& .${classes.columnOne}`]: {
     marginTop: theme.spacing(6.5),
     display: 'flex',
     flexDirection: 'column',
     color: '#fff',
     minWidth: theme.spacing(36),
   },
-  columnTwo: {
+
+  [`& .${classes.columnTwo}`]: {
     marginTop: theme.spacing(6.5),
     width: theme.spacing(38),
     display: 'flex',
@@ -78,7 +110,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     color: '#fff',
   },
-  columnThree: {
+
+  [`& .${classes.columnThree}`]: {
     marginTop: theme.spacing(6.5),
     display: 'flex',
     [theme.breakpoints.down(undefined)]: {
@@ -86,27 +119,32 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'center',
     },
   },
-  subColumn: {
+
+  [`& .${classes.subColumn}`]: {
     display: 'flex',
     flexDirection: 'column',
     color: '#fff',
     width: theme.spacing(30),
   },
-  subColumnTwo: {
+
+  [`& .${classes.subColumnTwo}`]: {
     display: 'flex',
     flexDirection: 'column',
     color: '#fff',
   },
-  iconRowOne: {
+
+  [`& .${classes.iconRowOne}`]: {
     display: 'flex',
     color: '#fff',
     marginLeft: theme.spacing(-2),
   },
-  iconRowTwo: {
+
+  [`& .${classes.iconRowTwo}`]: {
     display: 'flex',
     color: '#fff',
   },
-  iconStyles: {
+
+  [`& .${classes.iconStyles}`]: {
     color: theme.palette.primary.main,
     backgroundColor: '#fff',
     padding: theme.spacing(0.25),
@@ -114,13 +152,16 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(4),
     borderRadius: theme.spacing(0.5),
   },
-  imgClassName: {
+
+  [`& .${classes.imgClassName}`]: {
     height: 'auto !important',
   },
-  iconButton: {
+
+  [`& .${classes.iconButton}`]: {
     borderRadius: '10%',
   },
-  leftBubble: {
+
+  [`& .${classes.leftBubble}`]: {
     position: 'absolute',
     width: theme.spacing(70),
     left: theme.spacing(-10),
@@ -131,7 +172,8 @@ const useStyles = makeStyles((theme) => ({
       top: theme.spacing(0),
     },
   },
-  rightBubble: {
+
+  [`& .${classes.rightBubble}`]: {
     position: 'absolute',
     width: theme.spacing(40),
     right: theme.spacing(10),
@@ -141,11 +183,12 @@ const useStyles = makeStyles((theme) => ({
       top: 'unset',
       bottom: theme.spacing(-40),
     },
-  },
-}))
+  }
+}));
+
 function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
   const image = getImage(formatImg(img))
-  const cx = useStyles()
+
   const browserOnClick = useCallback(
     (extensionUrl) => async () => {
       await onBeforeInstall()
@@ -154,7 +197,7 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
     [onBeforeInstall]
   )
   return (
-    <div className={cx.backgroundContainer}>
+    <Root className={cx.backgroundContainer}>
       <FooterBlobLeft color={bubbleColor} innerClassName={cx.leftBubble} />
       <FooterBlobRight color={bubbleColor} innerClassName={cx.rightBubble} />
       <div className={cx.contentRow}>
@@ -321,8 +364,8 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
           />
         </div>
       </div>
-    </div>
-  )
+    </Root>
+  );
 }
 
 Footer.propTypes = {

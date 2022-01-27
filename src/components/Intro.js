@@ -1,6 +1,6 @@
 import React from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -8,8 +8,28 @@ import { formatImg } from 'src/utils/formatting'
 import InstallButton from 'src/components/V4InstallButton'
 import Markdown from './Markdown'
 
-const useStyles = makeStyles((theme) => ({
-  title: {
+const PREFIX = 'Intro';
+
+const classes = {
+  title: `${PREFIX}-title`,
+  titleMarkdown: `${PREFIX}-titleMarkdown`,
+  titleText: `${PREFIX}-titleText`,
+  steps: `${PREFIX}-steps`,
+  step: `${PREFIX}-step`,
+  titleImage: `${PREFIX}-titleImage`,
+  stepImage: `${PREFIX}-stepImage`,
+  numberCircle: `${PREFIX}-numberCircle`,
+  wrapper: `${PREFIX}-wrapper`,
+  stepText: `${PREFIX}-stepText`,
+  titleTypography: `${PREFIX}-titleTypography`
+};
+
+const Root = styled('div')((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.title}`]: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -19,10 +39,12 @@ const useStyles = makeStyles((theme) => ({
     },
     width: '80%',
   },
-  titleMarkdown: {
+
+  [`& .${classes.titleMarkdown}`]: {
     color: theme.palette.primary.main,
   },
-  titleText: {
+
+  [`& .${classes.titleText}`]: {
     flexDirection: 'column',
     color: theme.palette.primary.main,
     alignItems: 'center',
@@ -31,7 +53,8 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(2),
     },
   },
-  steps: {
+
+  [`& .${classes.steps}`]: {
     display: 'flex',
     flexDirection: 'row',
     paddingTop: theme.spacing(6),
@@ -41,7 +64,8 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(2),
     },
   },
-  step: {
+
+  [`& .${classes.step}`]: {
     display: 'flex',
     flexDirection: 'column',
     '& img': {
@@ -50,18 +74,21 @@ const useStyles = makeStyles((theme) => ({
     },
     margin: theme.spacing(3),
   },
-  titleImage: {
+
+  [`& .${classes.titleImage}`]: {
     maxWidth: '45%',
     height: 'auto',
     [theme.breakpoints.down('md')]: {
       maxWidth: '100%',
     },
   },
-  stepImage: {
+
+  [`& .${classes.stepImage}`]: {
     maxWidth: '100%',
     height: 'auto',
   },
-  numberCircle: {
+
+  [`& .${classes.numberCircle}`]: {
     borderRadius: '50%',
     width: '36px',
     height: '36px',
@@ -75,7 +102,8 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Poppins',
     alignSelf: 'start',
   },
-  wrapper: {
+
+  [`& .${classes.wrapper}`]: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -87,7 +115,8 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(6),
     },
   },
-  stepText: {
+
+  [`& .${classes.stepText}`]: {
     display: 'flex',
     direction: 'row',
     alignItems: 'center',
@@ -98,14 +127,15 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'flex-start',
     },
   },
-  titleTypography: {
+
+  [`& .${classes.titleTypography}`]: {
     marginBottom: theme.spacing(4),
     marginRight: theme.spacing(3),
     [theme.breakpoints.down('md')]: {
       marginRight: theme.spacing(0),
     },
-  },
-}))
+  }
+}));
 
 function Intro({ causeId, introData }) {
   const {
@@ -119,13 +149,13 @@ function Intro({ causeId, introData }) {
     img3Subtext,
     img3,
   } = introData
-  const cx = useStyles()
+
   const titleImage = getImage(formatImg(titleImg))
   const image1 = getImage(formatImg(img1))
   const image2 = getImage(formatImg(img2))
   const image3 = getImage(formatImg(img3))
   return (
-    <div className={cx.wrapper}>
+    <Root className={cx.wrapper}>
       <div className={cx.title}>
         <div className={cx.titleText}>
           <Typography
@@ -179,8 +209,8 @@ function Intro({ causeId, introData }) {
         </div>
       </div>
       <InstallButton color="secondary" size="medium" causeId={causeId} />
-    </div>
-  )
+    </Root>
+  );
 }
 Intro.propTypes = {
   causeId: PropTypes.string,

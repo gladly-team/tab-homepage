@@ -1,19 +1,33 @@
 import React from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import { formatImg } from 'src/utils/formatting'
 
-const useStyles = makeStyles((theme) => ({
-  parent: {
+const PREFIX = 'LandingMoneyRaised';
+
+const classes = {
+  parent: `${PREFIX}-parent`,
+  slidingParent: `${PREFIX}-slidingParent`,
+  titleImage: `${PREFIX}-titleImage`,
+  moneyRaised: `${PREFIX}-moneyRaised`
+};
+
+const Root = styled('div')((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.parent}`]: {
     width: '100%',
     backgroundColor: theme.palette.primary.main,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
   },
-  slidingParent: {
+
+  [`& .${classes.slidingParent}`]: {
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
@@ -32,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(-16),
     },
   },
-  titleImage: {
+
+  [`& .${classes.titleImage}`]: {
     minWidth: '40%',
     maxWidth: '40%',
     marginRight: theme.spacing(4),
@@ -43,17 +58,18 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(3),
     },
   },
-  moneyRaised: {
+
+  [`& .${classes.moneyRaised}`]: {
     marginBottom: theme.spacing(2),
-  },
-}))
+  }
+}));
 
 function LandingMoneyRaised({ moneyRaisedData }) {
-  const cx = useStyles()
+
   const { moneyImg } = moneyRaisedData
   const moneyImage = getImage(formatImg(moneyImg))
   return (
-    <div className={cx.parent}>
+    <Root className={cx.parent}>
       <div className={cx.slidingParent}>
         <GatsbyImage
           alt="money raised"
@@ -69,8 +85,8 @@ function LandingMoneyRaised({ moneyRaisedData }) {
           />
         </div>
       </div>
-    </div>
-  )
+    </Root>
+  );
 }
 LandingMoneyRaised.propTypes = {
   moneyRaisedData: PropTypes.shape({

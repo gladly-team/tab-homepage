@@ -1,6 +1,6 @@
 import React from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 import Typography from '@mui/material/Typography'
@@ -11,8 +11,26 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Markdown from 'src/components/Markdown'
 
-const useStyles = makeStyles((theme) => ({
-  parent: {
+const PREFIX = 'FAQ';
+
+const classes = {
+  parent: `${PREFIX}-parent`,
+  row: `${PREFIX}-row`,
+  faqSection: `${PREFIX}-faqSection`,
+  titleImage: `${PREFIX}-titleImage`,
+  titleAndPattern: `${PREFIX}-titleAndPattern`,
+  faqPattern: `${PREFIX}-faqPattern`,
+  copy: `${PREFIX}-copy`,
+  expandIcon: `${PREFIX}-expandIcon`,
+  MuiAccordionRoot: `${PREFIX}-MuiAccordionRoot`
+};
+
+const Root = styled('div')((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.parent}`]: {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
@@ -27,7 +45,8 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(0),
     },
   },
-  row: {
+
+  [`& .${classes.row}`]: {
     width: '90%',
     display: 'flex',
     flexDirection: 'row',
@@ -38,7 +57,8 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'column',
     },
   },
-  faqSection: {
+
+  [`& .${classes.faqSection}`]: {
     display: 'flex',
     flexDirection: 'column',
     paddingLeft: theme.spacing(3),
@@ -46,28 +66,34 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: theme.spacing(0),
     },
   },
-  titleImage: {
+
+  [`& .${classes.titleImage}`]: {
     maxWidth: '35%',
     [theme.breakpoints.down('md')]: {
       maxWidth: 'unset',
     },
   },
-  titleAndPattern: {
+
+  [`& .${classes.titleAndPattern}`]: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  faqPattern: {
+
+  [`& .${classes.faqPattern}`]: {
     height: theme.spacing(12),
   },
-  copy: {
+
+  [`& .${classes.copy}`]: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
   },
-  expandIcon: {
+
+  [`& .${classes.expandIcon}`]: {
     color: theme.palette.secondary.main,
   },
-  MuiAccordionRoot: {
+
+  [`& .${classes.MuiAccordionRoot}`]: {
     '&::before': {
       backgroundColor: 'transparent',
       top: '0px',
@@ -76,12 +102,12 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: '0px',
     },
     borderBottom: '2px #F9EBDC solid',
-  },
-}))
+  }
+}));
 
 function FAQ({ faqData }) {
   const { img, questions } = faqData
-  const cx = useStyles()
+
   const image = getImage(formatImg(img))
   const questionComponents = questions.map((question, index) => (
     <MuiAccordion
@@ -106,7 +132,7 @@ function FAQ({ faqData }) {
     </MuiAccordion>
   ))
   return (
-    <div className={cx.parent}>
+    <Root className={cx.parent}>
       <div className={cx.row}>
         <GatsbyImage
           alt="faq image"
@@ -128,8 +154,8 @@ function FAQ({ faqData }) {
           {questionComponents}
         </div>
       </div>
-    </div>
-  )
+    </Root>
+  );
 }
 
 FAQ.propTypes = {

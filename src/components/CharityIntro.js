@@ -1,21 +1,39 @@
 import React from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
 import { useTheme } from '@mui/material/styles'
-import makeStyles from '@mui/styles/makeStyles'
 import CharityIntroWave from 'src/components/CharityIntroWave'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 
-const useStyles = makeStyles((theme) => ({
-  parent: {
+const PREFIX = 'CharityIntro';
+
+const classes = {
+  parent: `${PREFIX}-parent`,
+  column: `${PREFIX}-column`,
+  title: `${PREFIX}-title`,
+  subtitle: `${PREFIX}-subtitle`,
+  steps: `${PREFIX}-steps`,
+  step: `${PREFIX}-step`,
+  stepText: `${PREFIX}-stepText`,
+  stepImage: `${PREFIX}-stepImage`
+};
+
+const Root = styled('div')((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.parent}`]: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     width: '100%',
     backgroundColor: 'white',
   },
-  column: {
+
+  [`& .${classes.column}`]: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -28,26 +46,30 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(4),
     },
   },
-  title: {
+
+  [`& .${classes.title}`]: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
     textAlign: 'center',
   },
-  subtitle: {
+
+  [`& .${classes.subtitle}`]: {
     textAlign: 'center',
     marginBottom: theme.spacing(4),
     [theme.breakpoints.up('sm')]: {
       maxWidth: '60%',
     },
   },
-  steps: {
+
+  [`& .${classes.steps}`]: {
     display: 'flex',
     flexDirection: 'row',
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
     },
   },
-  step: {
+
+  [`& .${classes.step}`]: {
     flex: '1',
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
@@ -55,25 +77,27 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(2),
     },
   },
-  stepText: {
+
+  [`& .${classes.stepText}`]: {
     textAlign: 'center',
     fontWeight: 'bold',
   },
-  stepImage: {
+
+  [`& .${classes.stepImage}`]: {
     aspectRatio: 1.333,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  },
-}))
+  }
+}));
 
 function CharityIntro({ charityIntroData }) {
-  const cx = useStyles()
+
   const theme = useTheme()
   const getStep = (step, index) => {
     const image = getImage(formatImg(step.img))
     return (
-      <div className={cx.step} key={`step${index}`}>
+      <Root className={cx.step} key={`step${index}`}>
         <GatsbyImage
           className={cx.stepImage}
           imgStyle={{
@@ -85,8 +109,8 @@ function CharityIntro({ charityIntroData }) {
         <Typography className={cx.stepText} variant="body1">
           {step.text}
         </Typography>
-      </div>
-    )
+      </Root>
+    );
   }
   const { title, subTitle, steps } = charityIntroData
   const stepComponents = steps.map((step, index) => getStep(step, index))

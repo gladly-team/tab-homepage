@@ -1,11 +1,11 @@
 import React from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
 import {
   ThemeProvider,
   StyledEngineProvider,
   responsiveFontSizes,
 } from '@mui/material/styles'
-import makeStyles from '@mui/styles/makeStyles'
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
 import AppBar from '@mui/material/AppBar'
@@ -21,11 +21,26 @@ import seaImg from 'src/img/seas/ocean.jpg'
 import Link from 'src/components/Link'
 import Countdown from 'react-countdown'
 
-const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
-const canonicalURL = getAbsoluteURL(seasURL)
-const useStyles = makeStyles((theme) => ({
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  background: {
+const PREFIX = 'SeasPageWithTheme';
+
+const classes = {
+  logoContainer: `${PREFIX}-logoContainer`,
+  background: `${PREFIX}-background`,
+  tint: `${PREFIX}-tint`,
+  titleSection: `${PREFIX}-titleSection`,
+  comingSoon: `${PREFIX}-comingSoon`,
+  countdownPaper: `${PREFIX}-countdownPaper`,
+  countdownFont: `${PREFIX}-countdownFont`
+};
+
+const StyledStyledEngineProvider = styled(StyledEngineProvider)((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+
+  [`& .${classes.background}`]: {
     backgroundImage: `url("${seaImg}")`,
     boxShadow: 'rgba(0, 0, 0, 0.5) 0px 0px 120px inset',
     backgroundRepeat: 'no-repeat',
@@ -41,7 +56,8 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     zIndex: '-2',
   },
-  tint: {
+
+  [`& .${classes.tint}`]: {
     position: 'absolute',
     top: 0,
     bottom: 0,
@@ -52,7 +68,8 @@ const useStyles = makeStyles((theme) => ({
     // Needs to match shading in extension new tab page.
     backgroundColor: `rgba(0, 0, 0, 0.3)`,
   },
-  titleSection: {
+
+  [`& .${classes.titleSection}`]: {
     margin: '0 auto',
     display: 'flex',
     height: 'calc(100vh - 64px)',
@@ -61,10 +78,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     color: '#fff',
   },
-  comingSoon: {
+
+  [`& .${classes.comingSoon}`]: {
     marginBottom: theme.spacing(2),
   },
-  countdownPaper: {
+
+  [`& .${classes.countdownPaper}`]: {
     borderRadius: '50%',
     height: '150px',
     width: '150px',
@@ -76,12 +95,16 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(2),
   },
-  countdownFont: {
+
+  [`& .${classes.countdownFont}`]: {
     color: theme.palette.secondary.main,
-  },
-}))
+  }
+}));
+
+const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
+const canonicalURL = getAbsoluteURL(seasURL)
 function Seas({ location }) {
-  const cx = useStyles()
+
 
   const absolutePageURL = getAbsoluteURL(location.pathname)
   return (
@@ -183,14 +206,14 @@ Seas.propTypes = {
 
 function SeasPageWithTheme(props) {
   return (
-    <StyledEngineProvider injectFirst>
+    <StyledStyledEngineProvider injectFirst>
       <ThemeProvider
         theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
       >
         <Seas {...props} />
       </ThemeProvider>
-    </StyledEngineProvider>
-  )
+    </StyledStyledEngineProvider>
+  );
 }
 
 export default SeasPageWithTheme

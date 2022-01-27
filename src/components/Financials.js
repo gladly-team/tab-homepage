@@ -1,6 +1,6 @@
 import React from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Link from 'src/components/Link'
@@ -12,9 +12,30 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-const useStyles = makeStyles((theme) => ({
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  wrapper: {
+const PREFIX = 'Financials';
+
+const classes = {
+  logoContainer: `${PREFIX}-logoContainer`,
+  wrapper: `${PREFIX}-wrapper`,
+  reportsContainer: `${PREFIX}-reportsContainer`,
+  reportsSlider: `${PREFIX}-reportsSlider`,
+  titleSectionWrapper: `${PREFIX}-titleSectionWrapper`,
+  title: `${PREFIX}-title`,
+  halfScreenRight: `${PREFIX}-halfScreenRight`,
+  halfScreenLeft: `${PREFIX}-halfScreenLeft`,
+  subtitle: `${PREFIX}-subtitle`,
+  buttonStyles: `${PREFIX}-buttonStyles`,
+  linkStyles: `${PREFIX}-linkStyles`
+};
+
+const Root = styled('div')((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+
+  [`& .${classes.wrapper}`]: {
     margin: '0 auto',
     display: 'flex',
     minHeight: '100vh',
@@ -29,7 +50,8 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(6),
     },
   },
-  reportsContainer: {
+
+  [`& .${classes.reportsContainer}`]: {
     display: 'flex',
     justifyContent: 'space-between',
     width: '86%',
@@ -38,7 +60,8 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
-  reportsSlider: {
+
+  [`& .${classes.reportsSlider}`]: {
     display: 'none',
     justifyContent: 'space-between',
     width: '96%',
@@ -48,7 +71,8 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
     },
   },
-  titleSectionWrapper: {
+
+  [`& .${classes.titleSectionWrapper}`]: {
     display: 'flex',
     width: '100%',
     [theme.breakpoints.down('md')]: {
@@ -56,10 +80,12 @@ const useStyles = makeStyles((theme) => ({
       height: 'auto',
     },
   },
-  title: {
+
+  [`& .${classes.title}`]: {
     color: theme.palette.primary.main,
   },
-  halfScreenRight: {
+
+  [`& .${classes.halfScreenRight}`]: {
     width: '40%',
     display: 'flex',
     marginLeft: '5%',
@@ -73,7 +99,8 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
     },
   },
-  halfScreenLeft: {
+
+  [`& .${classes.halfScreenLeft}`]: {
     width: '45%',
     display: 'flex',
     flexDirection: 'column',
@@ -87,29 +114,32 @@ const useStyles = makeStyles((theme) => ({
       margin: '0 auto',
     },
   },
-  subtitle: {
+
+  [`& .${classes.subtitle}`]: {
     marginTop: theme.spacing(2),
   },
-  buttonStyles: {
+
+  [`& .${classes.buttonStyles}`]: {
     width: theme.spacing(30),
     marginTop: theme.spacing(6),
     [theme.breakpoints.down('md')]: {
       width: '100%',
     },
   },
-  linkStyles: {
+
+  [`& .${classes.linkStyles}`]: {
     [theme.breakpoints.down('md')]: {
       width: '85%',
     },
-  },
-}))
+  }
+}));
 
 function Financials({ financialsData }) {
   const { title, text, buttonText, ctaImg, pdfs } = financialsData
-  const cx = useStyles()
+
   const Image = getImage(formatImg(ctaImg))
   return (
-    <div className={cx.wrapper}>
+    <Root className={cx.wrapper}>
       <div className={cx.titleSectionWrapper}>
         <div className={cx.halfScreenLeft}>
           <GatsbyImage
@@ -163,8 +193,8 @@ function Financials({ financialsData }) {
           {buttonText}
         </Button>
       </Link>
-    </div>
-  )
+    </Root>
+  );
 }
 Financials.propTypes = {
   financialsData: PropTypes.shape({

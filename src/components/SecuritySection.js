@@ -1,13 +1,30 @@
 import React from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 import { githubOrganizationURL } from 'src/utils/navigation.js'
 
-const useStyles = makeStyles((theme) => ({
-  parent: {
+const PREFIX = 'SecuritySection';
+
+const classes = {
+  parent: `${PREFIX}-parent`,
+  link: `${PREFIX}-link`,
+  column: `${PREFIX}-column`,
+  linkText: `${PREFIX}-linkText`,
+  title: `${PREFIX}-title`,
+  subtitle: `${PREFIX}-subtitle`,
+  subtitleTwo: `${PREFIX}-subtitleTwo`,
+  titleImg: `${PREFIX}-titleImg`
+};
+
+const Root = styled('div')((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.parent}`]: {
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
@@ -22,11 +39,13 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(6),
     },
   },
-  link: {
+
+  [`& .${classes.link}`]: {
     color: theme.palette.secondary.main,
     textDecoration: 'none',
   },
-  column: {
+
+  [`& .${classes.column}`]: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -35,34 +54,39 @@ const useStyles = makeStyles((theme) => ({
       width: '90%',
     },
   },
-  linkText: {
+
+  [`& .${classes.linkText}`]: {
     marginTop: theme.spacing(1),
   },
-  title: {
+
+  [`& .${classes.title}`]: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
     textAlign: 'center',
   },
-  subtitle: {
+
+  [`& .${classes.subtitle}`]: {
     textAlign: 'center',
     width: '80%',
   },
-  subtitleTwo: {
+
+  [`& .${classes.subtitleTwo}`]: {
     margin: '0 auto',
     textAlign: 'center',
     width: '80%',
   },
-  titleImg: {
+
+  [`& .${classes.titleImg}`]: {
     maxHeight: '300px',
-  },
-}))
+  }
+}));
 
 function SecuritySection({ securityData }) {
-  const cx = useStyles()
+
   const { titleImg } = securityData
   const image = getImage(formatImg(titleImg))
   return (
-    <div className={cx.parent}>
+    <Root className={cx.parent}>
       <div className={cx.column}>
         <GatsbyImage
           imgStyle={{
@@ -88,8 +112,8 @@ function SecuritySection({ securityData }) {
           </a>
         </Typography>
       </div>
-    </div>
-  )
+    </Root>
+  );
 }
 SecuritySection.propTypes = {
   securityData: PropTypes.shape({

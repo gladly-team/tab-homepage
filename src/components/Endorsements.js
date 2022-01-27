@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Paper from '@mui/material/Paper'
@@ -16,9 +16,38 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import V4InstallButton from './V4InstallButton'
 
-const useStyles = makeStyles((theme) => ({
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  wrapper: {
+const PREFIX = 'Endorsements';
+
+const classes = {
+  logoContainer: `${PREFIX}-logoContainer`,
+  wrapper: `${PREFIX}-wrapper`,
+  reportsContainer: `${PREFIX}-reportsContainer`,
+  ratingContainer: `${PREFIX}-ratingContainer`,
+  starsContainer: `${PREFIX}-starsContainer`,
+  ratingsText: `${PREFIX}-ratingsText`,
+  reportsSlider: `${PREFIX}-reportsSlider`,
+  titleSectionWrapper: `${PREFIX}-titleSectionWrapper`,
+  endorserContainer: `${PREFIX}-endorserContainer`,
+  endorserTextContainer: `${PREFIX}-endorserTextContainer`,
+  endorserImage: `${PREFIX}-endorserImage`,
+  endorsementsSlider: `${PREFIX}-endorsementsSlider`,
+  textSpacing: `${PREFIX}-textSpacing`,
+  endorsementPaper: `${PREFIX}-endorsementPaper`,
+  endorsementPaperTitleContainer: `${PREFIX}-endorsementPaperTitleContainer`,
+  Paper: `${PREFIX}-Paper`,
+  paperText: `${PREFIX}-paperText`,
+  installButton: `${PREFIX}-installButton`,
+  arrowButton: `${PREFIX}-arrowButton`
+};
+
+const Root = styled('div')((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+
+  [`& .${classes.wrapper}`]: {
     margin: '0 auto',
     display: 'flex',
     flexDirection: 'column',
@@ -32,7 +61,8 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(6),
     },
   },
-  reportsContainer: {
+
+  [`& .${classes.reportsContainer}`]: {
     display: 'flex',
     justifyContent: 'space-between',
     width: '86%',
@@ -41,7 +71,8 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
-  ratingContainer: {
+
+  [`& .${classes.ratingContainer}`]: {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -51,15 +82,18 @@ const useStyles = makeStyles((theme) => ({
     width: 'fitContent',
     marginTop: theme.spacing(4),
   },
-  starsContainer: {
+
+  [`& .${classes.starsContainer}`]: {
     display: 'flex',
     alignItems: 'center',
     margin: theme.spacing(0.5),
   },
-  ratingsText: {
+
+  [`& .${classes.ratingsText}`]: {
     margin: theme.spacing(0.5),
   },
-  reportsSlider: {
+
+  [`& .${classes.reportsSlider}`]: {
     display: 'none',
     justifyContent: 'space-between',
     width: '96%',
@@ -69,14 +103,16 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
     },
   },
-  titleSectionWrapper: {
+
+  [`& .${classes.titleSectionWrapper}`]: {
     display: 'flex',
     textAlign: 'center',
     alignItems: 'center',
     flexDirection: 'column',
     width: '80%',
   },
-  endorserContainer: {
+
+  [`& .${classes.endorserContainer}`]: {
     display: 'flex',
     width: '90%',
     flexWrap: 'wrap',
@@ -86,7 +122,8 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(7),
     },
   },
-  endorserTextContainer: {
+
+  [`& .${classes.endorserTextContainer}`]: {
     display: 'flex',
     flexDirection: 'column',
     width: '70%',
@@ -94,12 +131,14 @@ const useStyles = makeStyles((theme) => ({
       width: '90%',
     },
   },
-  endorserImage: {
+
+  [`& .${classes.endorserImage}`]: {
     width: '240px',
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
   },
-  endorsementsSlider: {
+
+  [`& .${classes.endorsementsSlider}`]: {
     width: '96%',
     maxWidth: '1400px',
     marginTop: theme.spacing(10),
@@ -110,22 +149,26 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(4),
     },
   },
-  textSpacing: {
+
+  [`& .${classes.textSpacing}`]: {
     marginBottom: theme.spacing(2),
   },
-  endorsementPaper: {
+
+  [`& .${classes.endorsementPaper}`]: {
     // react slick applies inline styling to children, this makes it look better
     display: 'flex !important',
     justifyContent: 'center',
     padding: theme.spacing(1),
   },
-  endorsementPaperTitleContainer: {
+
+  [`& .${classes.endorsementPaperTitleContainer}`]: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     height: 'fit-content',
   },
-  Paper: {
+
+  [`& .${classes.Paper}`]: {
     width: 456,
     height: 240,
     display: 'flex',
@@ -139,20 +182,23 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 340,
     },
   },
-  paperText: {
+
+  [`& .${classes.paperText}`]: {
     marginTop: theme.spacing(3),
   },
-  installButton: {
+
+  [`& .${classes.installButton}`]: {
     marginTop: theme.spacing(4),
   },
-  arrowButton: {
+
+  [`& .${classes.arrowButton}`]: {
     position: 'absolute',
     right: '1%',
     [theme.breakpoints.down('md')]: {
       display: 'none',
     },
-  },
-}))
+  }
+}));
 
 function Arrow() {
   return (
@@ -184,11 +230,11 @@ function Endorsements({ endorsementsData, causeId }) {
     quote,
     smallEndorsements,
   } = endorsementsData
-  const cx = useStyles()
+
   const endorserImage = getImage(formatImg(endorserImg))
   const sliderRef = useRef()
   return (
-    <div className={cx.wrapper}>
+    <Root className={cx.wrapper}>
       <div className={cx.titleSectionWrapper}>
         <Typography variant="h2" color="primary">
           {title}
@@ -285,8 +331,8 @@ function Endorsements({ endorsementsData, causeId }) {
         </div>
       </div>
       <V4InstallButton causeId={causeId} buttonClassName={cx.installButton} />
-    </div>
-  )
+    </Root>
+  );
 }
 
 Endorsements.propTypes = {

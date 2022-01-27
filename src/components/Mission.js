@@ -1,6 +1,6 @@
 import React from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles'
 import Typography from '@mui/material/Typography'
 import Markdown from 'src/components/Markdown'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -10,8 +10,28 @@ import leftBubble from 'src/img/causeshared/blobLeft.svg'
 import rightBubble from 'src/img/causeshared/blobRight.svg'
 import V4InstallButton from 'src/components/V4InstallButton'
 
-const useStyles = makeStyles((theme) => ({
-  wrapper: {
+const PREFIX = 'Mission';
+
+const classes = {
+  wrapper: `${PREFIX}-wrapper`,
+  column: `${PREFIX}-column`,
+  textContainer: `${PREFIX}-textContainer`,
+  installButton: `${PREFIX}-installButton`,
+  missionImage: `${PREFIX}-missionImage`,
+  titleText: `${PREFIX}-titleText`,
+  missionLink: `${PREFIX}-missionLink`,
+  subtitle: `${PREFIX}-subtitle`,
+  squiggle: `${PREFIX}-squiggle`,
+  leftBubble: `${PREFIX}-leftBubble`,
+  rightBubble: `${PREFIX}-rightBubble`
+};
+
+const Root = styled('div')((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.wrapper}`]: {
     minHeight: '100vh',
     position: 'relative',
     display: 'flex',
@@ -28,7 +48,8 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(6),
     },
   },
-  column: {
+
+  [`& .${classes.column}`]: {
     position: 'relative',
     display: 'flex',
     flexDirection: 'row',
@@ -40,7 +61,8 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'column-reverse',
     },
   },
-  textContainer: {
+
+  [`& .${classes.textContainer}`]: {
     display: 'flex',
     flexDirection: 'column',
     flex: '1',
@@ -49,10 +71,12 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
     zIndex: 1,
   },
-  installButton: {
+
+  [`& .${classes.installButton}`]: {
     marginTop: theme.spacing(4),
   },
-  missionImage: {
+
+  [`& .${classes.missionImage}`]: {
     maxHeight: '90%',
     maxWidth: '50%',
     flex: '1',
@@ -61,17 +85,21 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 'unset',
     },
   },
-  titleText: {},
-  missionLink: {
+
+  [`& .${classes.titleText}`]: {},
+
+  [`& .${classes.missionLink}`]: {
     marginTop: theme.spacing(4),
   },
-  subtitle: {
+
+  [`& .${classes.subtitle}`]: {
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
     fontWeight: 900,
     fontFamily: 'Poppins',
   },
-  squiggle: {
+
+  [`& .${classes.squiggle}`]: {
     position: 'absolute',
     zIndex: '1',
     left: theme.spacing(-2),
@@ -84,7 +112,8 @@ const useStyles = makeStyles((theme) => ({
       width: theme.spacing(12),
     },
   },
-  leftBubble: {
+
+  [`& .${classes.leftBubble}`]: {
     position: 'absolute',
     width: theme.spacing(50),
     left: theme.spacing(10),
@@ -94,7 +123,8 @@ const useStyles = makeStyles((theme) => ({
     },
     color: '#FAFAFA',
   },
-  rightBubble: {
+
+  [`& .${classes.rightBubble}`]: {
     position: 'absolute',
     width: theme.spacing(40),
     right: theme.spacing(10),
@@ -104,15 +134,15 @@ const useStyles = makeStyles((theme) => ({
       right: theme.spacing(-5),
       bottom: theme.spacing(-10),
     },
-  },
-}))
+  }
+}));
 
 function Mission({ missionData, causeId }) {
   const { titleText, subtitleText, bodyText, image } = missionData
-  const cx = useStyles()
+
   const missionImage = getImage(formatImg(image))
   return (
-    <div className={cx.wrapper}>
+    <Root className={cx.wrapper}>
       <img className={cx.squiggle} src={heartSquiggle} />
       <img className={cx.leftBubble} src={leftBubble} />
       <img className={cx.rightBubble} src={rightBubble} />
@@ -139,8 +169,8 @@ function Mission({ missionData, causeId }) {
           backgroundColor="transparent"
         />
       </div>
-    </div>
-  )
+    </Root>
+  );
 }
 Mission.propTypes = {
   missionData: PropTypes.shape({

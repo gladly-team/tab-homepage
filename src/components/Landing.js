@@ -1,7 +1,7 @@
 import React from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
 import { useTheme } from '@mui/material/styles'
-import makeStyles from '@mui/styles/makeStyles'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
@@ -14,12 +14,34 @@ import Link from 'src/components/Link'
 import Wave from 'src/components/Wave'
 import V4InstallButton from 'src/components/V4InstallButton'
 
-const useStyles = makeStyles((theme) => ({
-  whiteFont: {
+const PREFIX = 'Landing';
+
+const classes = {
+  whiteFont: `${PREFIX}-whiteFont`,
+  logoContainer: `${PREFIX}-logoContainer`,
+  titleSection: `${PREFIX}-titleSection`,
+  title: `${PREFIX}-title`,
+  halfScreenLeft: `${PREFIX}-halfScreenLeft`,
+  halfScreenRight: `${PREFIX}-halfScreenRight`,
+  subtitle: `${PREFIX}-subtitle`,
+  buttonStyles: `${PREFIX}-buttonStyles`,
+  wave: `${PREFIX}-wave`,
+  waveMobile: `${PREFIX}-waveMobile`,
+  installButton: `${PREFIX}-installButton`
+};
+
+const Root = styled('div')((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.whiteFont}`]: {
     color: '#fff',
   },
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  titleSection: {
+
+  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+
+  [`& .${classes.titleSection}`]: {
     margin: '0 auto',
     display: 'flex',
     position: 'relative', // for absolutely-positioned wave
@@ -34,10 +56,12 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(3),
     },
   },
-  title: {
+
+  [`& .${classes.title}`]: {
     color: theme.palette.primary.main,
   },
-  halfScreenLeft: {
+
+  [`& .${classes.halfScreenLeft}`]: {
     width: '50%',
     display: 'flex',
     flexDirection: 'column',
@@ -54,7 +78,8 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(8),
     },
   },
-  halfScreenRight: {
+
+  [`& .${classes.halfScreenRight}`]: {
     width: '50%',
     display: 'flex',
     flexDirection: 'column',
@@ -66,14 +91,17 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
-  subtitle: {
+
+  [`& .${classes.subtitle}`]: {
     marginTop: theme.spacing(2),
   },
-  buttonStyles: {
+
+  [`& .${classes.buttonStyles}`]: {
     maxWidth: theme.spacing(30),
     marginTop: theme.spacing(1.5),
   },
-  wave: {
+
+  [`& .${classes.wave}`]: {
     position: 'absolute',
     bottom: -2, // avoids a gap appearing on some resolutions
     width: '100%',
@@ -82,7 +110,8 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
-  waveMobile: {
+
+  [`& .${classes.waveMobile}`]: {
     marginBottom: -2, // avoids a gap appearing on some resolutions
     display: 'none',
     position: 'static',
@@ -92,18 +121,19 @@ const useStyles = makeStyles((theme) => ({
       display: 'block',
     },
   },
-  installButton: {
+
+  [`& .${classes.installButton}`]: {
     marginTop: theme.spacing(4),
-  },
-}))
+  }
+}));
 
 function Landing({ landingData, causeId }) {
   const { title, subtitle, ctaImg } = landingData
-  const cx = useStyles()
+
   const theme = useTheme()
   const ctaImage = getImage(formatImg(ctaImg))
   return (
-    <div className="parent">
+    <Root className="parent">
       <AppBar color="primary" position="sticky">
         <Toolbar>
           <div className={cx.logoContainer}>
@@ -153,8 +183,8 @@ function Landing({ landingData, causeId }) {
       <div className={cx.waveMobile}>
         <Wave color={theme.palette.primary.main} />
       </div>
-    </div>
-  )
+    </Root>
+  );
 }
 Landing.propTypes = {
   causeId: PropTypes.string,
