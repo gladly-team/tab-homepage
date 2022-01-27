@@ -10,12 +10,11 @@ module.exports = {
     siteUrl: `https://${domain}`, // Used in gatsby-plugin-sitemap
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    // Handle server-side rendering MaterialUI styles:
-    // https://github.com/hupe1980/gatsby-plugin-material-ui/tree/master
-    {
-      resolve: `gatsby-plugin-material-ui`,
-    },
+    'gatsby-plugin-top-layout',
+    'gatsby-plugin-react-helmet',
+
+    // See: https://github.com/mui-org/material-ui/tree/master/examples/gatsby
+    'gatsby-plugin-mui-emotion',
     {
       resolve: `gatsby-plugin-typography`,
       options: {
