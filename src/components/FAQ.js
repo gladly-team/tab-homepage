@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 import Typography from '@mui/material/Typography'
 import faqPattern from 'src/img/causeshared/faqTitlePattern.png'
-import MuiAccordion from '@mui/material/Accordion'
+import MuiAccordion, { accordionClasses } from '@mui/material/Accordion'
 import MuiAccordionSummary from '@mui/material/AccordionSummary'
 import MuiAccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -72,10 +72,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: 'transparent',
       top: '0px',
     },
-    '& .Mui-expanded': {
-      marginTop: '0px',
-    },
-    '& .MuiAccordionDetails-root': {
+    [`& .${accordionClasses.root}`]: {
       paddingTop: '0px',
     },
     borderBottom: '2px #F9EBDC solid',
