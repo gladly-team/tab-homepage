@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import PropTypes from 'prop-types'
-import withStyles from '@mui/styles/withStyles'
+import makeStyles from '@mui/styles/makeStyles'
 import ButtonBase from '@mui/material/ButtonBase'
 
-const styles = {
+const useStyles = makeStyles((theme) => ({
   buttonBase: {
     borderRadius: 2,
   },
@@ -13,49 +13,36 @@ const styles = {
     cursor: 'pointer',
   },
   dropdownText: {},
-}
+}))
 
-class FAQDropDown extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isPopoverOpen: false,
-    }
-    this.anchorEl = null
-  }
-
-  render() {
-    const { classes, dropdown, text } = this.props
-    const { isPopoverOpen } = this.state
-    return (
-      <>
-        <ButtonBase className={classes.buttonBase}>
-          <div
-            ref={(anchorEl) => (this.anchorEl = anchorEl)}
-            onClick={() => {
-              this.setState({
-                isPopoverOpen: !this.state.open,
-              })
-            }}
-            style={{
-              cursor: 'pointer',
-            }}
-          >
-            {text}
-          </div>
-        </ButtonBase>
-        {dropdown({
-          open: isPopoverOpen,
-          onClose: () => {
-            this.setState({
-              isPopoverOpen: false,
-            })
-          },
-          anchorElement: this.anchorEl,
-        })}
-      </>
-    )
-  }
+function FAQDropDown({ dropdown, text }) {
+  const classes = useStyles()
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false)
+  const anchorEl = useRef()
+  return (
+    <>
+      <ButtonBase className={classes.buttonBase}>
+        <div
+          ref={anchorEl}
+          onClick={() => {
+            setIsPopoverOpen((curState) => !curstate)
+          }}
+          style={{
+            cursor: 'pointer',
+          }}
+        >
+          {text}
+        </div>
+      </ButtonBase>
+      {dropdown({
+        open: isPopoverOpen,
+        onClose: () => {
+          setIsPopoverOpen(false)
+        },
+        anchorElement: anchorEl,
+      })}
+    </>
+  )
 }
 
 FAQDropDown.propTypes = {
