@@ -88,7 +88,7 @@ const Root = styled('div')(({ theme }) => ({
     flexWrap: 'wrap',
     flexFlow: 'row',
     '&::after': {
-      content: '',
+      content: "''",
       flex: '0 1 30%',
     },
     zIndex: '1',
