@@ -128,7 +128,7 @@ const useStyles = makeStyles((theme) => ({
   menuContainer: {
     // Leaving in menu logic in case we add more page content,
     // but the menu seems unncessary now.
-    display: 'none',
+    visibility: 'hidden',
 
     // display: 'flex',
     flex: 3,
