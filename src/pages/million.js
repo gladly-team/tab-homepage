@@ -1,10 +1,10 @@
+/* globals window */
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import ReactFullpage from '@fullpage/react-fullpage'
 import {
   // fade,
   ThemeProvider,
-  StyledEngineProvider,
   lighten,
   responsiveFontSizes,
 } from '@mui/material/styles'
