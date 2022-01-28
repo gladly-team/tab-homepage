@@ -54,4 +54,4 @@ FAQDropDown.propTypes = {
 
 FAQDropDown.defaultProps = {}
 
-export default withStyles(styles, { withTheme: true })(FAQDropDown)
+export default FAQDropDown
