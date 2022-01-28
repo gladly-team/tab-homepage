@@ -177,6 +177,8 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
   createTheme({
     palette: {
       background: {
+        // This value changes the HTML background color:
+        // https://material-ui.com/api/css-baseline/
         default: '#FBF3E9',
       },
       primary: {
