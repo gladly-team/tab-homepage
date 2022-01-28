@@ -24,6 +24,7 @@ module.exports = {
     'no-underscore-dangle': 0,
     'no-redeclare': 0,
     'import/no-named-as-default': 0,
+    'no-unused-vars': 0,
     'no-console': 0,
     'react/jsx-no-bind': 0,
     'import/no-named-as-default-member': 0,
@@ -108,6 +109,8 @@ module.exports = {
   globals: {
     // Polyfilled in Next.js 9.4.
     fetch: 'writable',
+    window: true, // TODO: remove this
+    Image: true,
   },
   settings: {
     // Handle linting for absolute imports.
