@@ -2,6 +2,7 @@
 /* eslint-disable */
 
 import React, { useEffect, useState } from 'react'
+import { styled } from '@material-ui/core/styles';
 import PropTypes from 'prop-types'
 import {
   ThemeProvider,
@@ -34,11 +35,28 @@ import Link from 'src/components/Link'
 import Wave from 'src/components/Wave'
 import Footer from 'src/components/FooterV2'
 
-const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
-const canonicalURL = getAbsoluteURL(seasURL)
-const useStyles = makeStyles((theme) => ({
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  titleSection: {
+const PREFIX = 'SeasPageWithTheme';
+
+const classes = {
+  logoContainer: `${PREFIX}-logoContainer`,
+  titleSection: `${PREFIX}-titleSection`,
+  title: `${PREFIX}-title`,
+  halfScreenLeft: `${PREFIX}-halfScreenLeft`,
+  halfScreenRight: `${PREFIX}-halfScreenRight`,
+  subtitle: `${PREFIX}-subtitle`,
+  buttonStyles: `${PREFIX}-buttonStyles`,
+  wave: `${PREFIX}-wave`,
+  waveMobile: `${PREFIX}-waveMobile`
+};
+
+const StyledThemeProvider = styled(ThemeProvider)((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+
+  [`& .${classes.titleSection}`]: {
     margin: '0 auto',
     display: 'flex',
     height: 'calc(100vh - 64px)',
@@ -48,10 +66,12 @@ const useStyles = makeStyles((theme) => ({
       height: 'auto',
     },
   },
-  title: {
+
+  [`& .${classes.title}`]: {
     color: theme.palette.primary.main,
   },
-  halfScreenLeft: {
+
+  [`& .${classes.halfScreenLeft}`]: {
     width: '50%',
     display: 'flex',
     flexDirection: 'column',
@@ -68,7 +88,8 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(8),
     },
   },
-  halfScreenRight: {
+
+  [`& .${classes.halfScreenRight}`]: {
     width: '55%',
     display: 'flex',
     flexDirection: 'column',
@@ -80,14 +101,17 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
-  subtitle: {
+
+  [`& .${classes.subtitle}`]: {
     marginTop: theme.spacing(2),
   },
-  buttonStyles: {
+
+  [`& .${classes.buttonStyles}`]: {
     maxWidth: theme.spacing(30),
     marginTop: theme.spacing(1.5),
   },
-  wave: {
+
+  [`& .${classes.wave}`]: {
     position: 'absolute',
     bottom: 0,
     width: '100%',
@@ -96,7 +120,8 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
-  waveMobile: {
+
+  [`& .${classes.waveMobile}`]: {
     display: 'none',
     position: 'absolute',
     width: '100%',
@@ -104,11 +129,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       display: 'block',
     },
-  },
-}))
+  }
+}));
+
+const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
+const canonicalURL = getAbsoluteURL(seasURL)
 
 function Seas({ pageContext, location }) {
-  const classes = useStyles()
+
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
 
@@ -251,14 +279,14 @@ Seas.propTypes = {
 
 function SeasPageWithTheme(props) {
   return (
-      <ThemeProvider
-        theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
-      >
-        <CssBaseline>
-          <Seas {...props} />
-        </CssBaseline>
-      </ThemeProvider>
-  )
+    <StyledThemeProvider
+      theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
+    >
+      <CssBaseline>
+        <Seas {...props} />
+      </CssBaseline>
+    </StyledThemeProvider>
+  );
 }
 
 export default SeasPageWithTheme
