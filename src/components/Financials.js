@@ -106,12 +106,12 @@ const useStyles = makeStyles((theme) => ({
 
 function Financials({ financialsData }) {
   const { title, text, buttonText, ctaImg, pdfs } = financialsData
-  const cx = useStyles()
+  const classes = useStyles()
   const Image = getImage(formatImg(ctaImg))
   return (
-    <div className={cx.wrapper}>
-      <div className={cx.titleSectionWrapper}>
-        <div className={cx.halfScreenLeft}>
+    <div className={classes.wrapper}>
+      <div className={classes.titleSectionWrapper}>
+        <div className={classes.halfScreenLeft}>
           <GatsbyImage
             image={Image}
             alt=""
@@ -119,19 +119,19 @@ function Financials({ financialsData }) {
             backgroundColor="transparent"
           />
         </div>
-        <div className={cx.halfScreenRight}>
+        <div className={classes.halfScreenRight}>
           <Typography variant="h2" color="primary">
             {title}
           </Typography>
-          <Typography className={cx.subtitle}>{text}</Typography>
+          <Typography className={classes.subtitle}>{text}</Typography>
         </div>
       </div>
-      <div className={cx.reportsContainer}>
+      <div className={classes.reportsContainer}>
         {pdfs.map((pdf) => (
           <FinancialsQuartersButton key={pdf.quarter} quarterData={pdf} />
         ))}
       </div>
-      <div className={cx.reportsSlider}>
+      <div className={classes.reportsSlider}>
         <Slider
           centerMode
           dots
@@ -153,12 +153,12 @@ function Financials({ financialsData }) {
           ))}
         </Slider>
       </div>
-      <Link className={cx.linkStyles} to={financialsURL}>
+      <Link className={classes.linkStyles} to={financialsURL}>
         <Button
           variant="contained"
           color="secondary"
           size="large"
-          className={cx.buttonStyles}
+          className={classes.buttonStyles}
         >
           {buttonText}
         </Button>

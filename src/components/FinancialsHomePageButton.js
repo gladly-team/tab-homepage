@@ -19,17 +19,17 @@ const useStyles = makeStyles((theme) => ({
   image: { alignSelf: 'end', height: '100px', width: '103px' },
 }))
 function FinancialQuartersButton({ quarterData }) {
-  const cx = useStyles()
+  const classes = useStyles()
   const Image = getImage(formatImg(quarterData.img))
   return (
     <div>
       {/* PDF is outside of Gatsby, so don't use a Link component */}
       <a href={quarterData.pdfUrl} style={{ textDecoration: 'none' }}>
-        <Paper elevation={1} className={cx.Paper}>
+        <Paper elevation={1} className={classes.Paper}>
           <GatsbyImage
             image={Image}
             alt=""
-            className={cx.image}
+            className={classes.image}
             placeholder="none"
             backgroundColor="transparent"
           />

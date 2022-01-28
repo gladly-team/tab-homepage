@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 })
 function InfoPopover(props) {
   const { anchorEl, children, onClose, open, ...otherProps } = props
-  const cx = useStyles()
+  const classes = useStyles()
   return (
     <Popover
       open={open}
@@ -24,7 +24,7 @@ function InfoPopover(props) {
       transformOrigin={{ horizontal: 'left', vertical: 'top' }}
       {...otherProps}
       classes={{
-        paper: cx.paper,
+        paper: classes.paper,
       }}
     >
       <div style={{ margin: '15px' }}>{children}</div>

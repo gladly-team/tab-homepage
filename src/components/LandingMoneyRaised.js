@@ -49,21 +49,21 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function LandingMoneyRaised({ moneyRaisedData }) {
-  const cx = useStyles()
+  const classes = useStyles()
   const { moneyImg } = moneyRaisedData
   const moneyImage = getImage(formatImg(moneyImg))
   return (
-    <div className={cx.parent}>
-      <div className={cx.slidingParent}>
+    <div className={classes.parent}>
+      <div className={classes.slidingParent}>
         <GatsbyImage
           alt="money raised"
-          className={cx.titleImage}
+          className={classes.titleImage}
           image={moneyImage}
         />
         <div>
           <MoneyRaisedDisplay
             color="textSecondary"
-            whiteClassName={cx.moneyRaised}
+            whiteClassName={classes.moneyRaised}
             textVariant="h1"
             longCopy
           />

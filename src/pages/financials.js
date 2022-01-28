@@ -42,7 +42,7 @@ function FinancialsPage({ data, location }) {
             <Alert
               severity="info"
 
-              // classes={{ icon: cx.alertIcon, root: cx.alertRoot }}
+              // classes={{ icon: classes.alertIcon, root: classes.alertRoot }}
             >
               <AlertTitle>Looking for cats?</AlertTitle>
               <div>

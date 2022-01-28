@@ -94,7 +94,7 @@ function ComingSoon({
   },
   location,
 }) {
-  const cx = useStyles()
+  const classes = useStyles()
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
   const ogImgURLAbsolute = getAbsoluteURL(
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
@@ -127,7 +127,7 @@ function ComingSoon({
       </Helmet>
       <AppBar color="primary" position="sticky">
         <Toolbar>
-          <div className={cx.logoContainer}>
+          <div className={classes.logoContainer}>
             <div
               data-test-id="logo-container"
               style={{
@@ -146,12 +146,12 @@ function ComingSoon({
             </div>
           </div>
 
-          <MoneyRaisedDisplay whiteClassName={cx.whiteFont} />
+          <MoneyRaisedDisplay whiteClassName={classes.whiteFont} />
         </Toolbar>
       </AppBar>
-      <div className={cx.titleSection} data-test-id="coming-soon-body">
+      <div className={classes.titleSection} data-test-id="coming-soon-body">
         <Typography
-          className={cx.titleText}
+          className={classes.titleText}
           variant="h2"
           color="inherit"
           align="center"
@@ -162,7 +162,7 @@ function ComingSoon({
           variant="h3"
           color="inherit"
           align="center"
-          className={cx.comingSoon}
+          className={classes.comingSoon}
         >
           COMING SOON
         </Typography>
@@ -173,27 +173,27 @@ function ComingSoon({
             precision={3}
             renderer={({ hours, minutes, seconds, days }) => {
               return (
-                <div className={cx.countdownContainer}>
-                  <Paper className={cx.countdownPaper}>
-                    <Typography variant="h4" className={cx.countdownFont}>
+                <div className={classes.countdownContainer}>
+                  <Paper className={classes.countdownPaper}>
+                    <Typography variant="h4" className={classes.countdownFont}>
                       {days}
                     </Typography>
                     <Typography>days</Typography>
                   </Paper>
-                  <Paper className={cx.countdownPaper}>
-                    <Typography variant="h4" className={cx.countdownFont}>
+                  <Paper className={classes.countdownPaper}>
+                    <Typography variant="h4" className={classes.countdownFont}>
                       {hours}
                     </Typography>
                     <Typography>hours</Typography>
                   </Paper>
-                  <Paper className={cx.countdownPaper}>
-                    <Typography variant="h4" className={cx.countdownFont}>
+                  <Paper className={classes.countdownPaper}>
+                    <Typography variant="h4" className={classes.countdownFont}>
                       {minutes}
                     </Typography>
                     <Typography>minutes</Typography>
                   </Paper>
-                  <Paper className={cx.countdownPaper}>
-                    <Typography variant="h4" className={cx.countdownFont}>
+                  <Paper className={classes.countdownPaper}>
+                    <Typography variant="h4" className={classes.countdownFont}>
                       {seconds}
                     </Typography>
                     <Typography>seconds</Typography>

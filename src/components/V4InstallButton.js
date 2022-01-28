@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 function V4InstallButton({ causeId, fullWidth, buttonClassName }) {
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
-  const cx = useStyles()
+  const classes = useStyles()
   return (
     <>
       <UnsupportedBrowserDialog
@@ -43,7 +43,7 @@ function V4InstallButton({ causeId, fullWidth, buttonClassName }) {
       />
       <InstallButton
         className={clsx(
-          fullWidth ? cx.buttonStylesFullWidth : cx.buttonStyles,
+          fullWidth ? classes.buttonStylesFullWidth : classes.buttonStyles,
           buttonClassName
         )}
         color="secondary"

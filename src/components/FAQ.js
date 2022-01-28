@@ -81,20 +81,20 @@ const useStyles = makeStyles((theme) => ({
 
 function FAQ({ faqData }) {
   const { img, questions } = faqData
-  const cx = useStyles()
+  const classes = useStyles()
   const image = getImage(formatImg(img))
   const questionComponents = questions.map((question, index) => (
     <MuiAccordion
       square
       elevation={0}
       classes={{
-        root: cx.MuiAccordionRoot,
-        expanded: cx.MuiAccordionExpanded,
+        root: classes.MuiAccordionRoot,
+        expanded: classes.MuiAccordionExpanded,
       }}
       key={question.question}
     >
       <MuiAccordionSummary
-        expandIcon={<ExpandMoreIcon className={cx.expandIcon} />}
+        expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
       >
         <Typography variant="caption" color="primary">
           {question.question}
@@ -106,22 +106,22 @@ function FAQ({ faqData }) {
     </MuiAccordion>
   ))
   return (
-    <div className={cx.parent}>
-      <div className={cx.row}>
+    <div className={classes.parent}>
+      <div className={classes.row}>
         <GatsbyImage
           alt="faq image"
           imgStyle={{
             objectFit: 'scale-down',
           }}
-          className={cx.titleImage}
+          className={classes.titleImage}
           image={image}
         />
-        <div className={cx.faqSection}>
-          <div className={cx.titleAndPattern}>
+        <div className={classes.faqSection}>
+          <div className={classes.titleAndPattern}>
             <Typography variant="h1">FAQ</Typography>
-            <img className={cx.faqPattern} src={faqPattern} />
+            <img className={classes.faqPattern} src={faqPattern} />
           </div>
-          <Typography className={cx.copy}>
+          <Typography className={classes.copy}>
             Check out some of our frequently asked questions. We think you’ll
             find what you’re looking for.
           </Typography>

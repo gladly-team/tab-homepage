@@ -184,40 +184,44 @@ function Endorsements({ endorsementsData, causeId }) {
     quote,
     smallEndorsements,
   } = endorsementsData
-  const cx = useStyles()
+  const classes = useStyles()
   const endorserImage = getImage(formatImg(endorserImg))
   const sliderRef = useRef()
   return (
-    <div className={cx.wrapper}>
-      <div className={cx.titleSectionWrapper}>
+    <div className={classes.wrapper}>
+      <div className={classes.titleSectionWrapper}>
         <Typography variant="h2" color="primary">
           {title}
         </Typography>
-        <div className={cx.ratingContainer}>
-          <div className={cx.starsContainer}>
+        <div className={classes.ratingContainer}>
+          <div className={classes.starsContainer}>
             <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
             <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
             <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
             <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
             <StarHalf style={{ color: '#ffc533', width: 18, height: 18 }} />
           </div>
-          <Typography className={cx.ratingsText}>
+          <Typography className={classes.ratingsText}>
             215,000+ people are Tabbing on Chrome
           </Typography>
         </div>
       </div>
       {quote ? (
-        <div className={cx.endorserContainer}>
+        <div className={classes.endorserContainer}>
           <GatsbyImage
             alt="endorser image"
             image={endorserImage}
-            className={cx.endorserImage}
+            className={classes.endorserImage}
           />
-          <div className={cx.endorserTextContainer}>
-            <Typography variant="h3" color="primary" className={cx.textSpacing}>
+          <div className={classes.endorserTextContainer}>
+            <Typography
+              variant="h3"
+              color="primary"
+              className={classes.textSpacing}
+            >
               {headerQuote}
             </Typography>
-            <Typography variant="subtitle1" className={cx.textSpacing}>
+            <Typography variant="subtitle1" className={classes.textSpacing}>
               {quote}
             </Typography>
             <Typography variant="caption" color="primary">
@@ -227,7 +231,7 @@ function Endorsements({ endorsementsData, causeId }) {
           </div>
         </div>
       ) : null}
-      <div className={cx.endorsementsSlider}>
+      <div className={classes.endorsementsSlider}>
         <Slider
           dots
           ref={sliderRef}
@@ -251,9 +255,12 @@ function Endorsements({ endorsementsData, causeId }) {
           ]}
         >
           {smallEndorsements.map((endorsement) => (
-            <div className={cx.endorsementPaper} key={endorsement.endorser}>
-              <Paper className={cx.Paper} elevation={3}>
-                <div className={cx.endorsementPaperTitleContainer}>
+            <div
+              className={classes.endorsementPaper}
+              key={endorsement.endorser}
+            >
+              <Paper className={classes.Paper} elevation={3}>
+                <div className={classes.endorsementPaperTitleContainer}>
                   <GatsbyImage
                     alt="endorsement image"
                     image={getImage(formatImg(endorsement.img))}
@@ -268,14 +275,14 @@ function Endorsements({ endorsementsData, causeId }) {
                     {endorsement.endorser}
                   </Typography>
                 </div>
-                <Typography className={cx.paperText}>
+                <Typography className={classes.paperText}>
                   {endorsement.endorsement}
                 </Typography>
               </Paper>
             </div>
           ))}
         </Slider>
-        <div className={cx.arrowButton}>
+        <div className={classes.arrowButton}>
           <IconButton
             onClick={() => sliderRef.current.slickNext()}
             size="large"
@@ -284,7 +291,10 @@ function Endorsements({ endorsementsData, causeId }) {
           </IconButton>
         </div>
       </div>
-      <V4InstallButton causeId={causeId} buttonClassName={cx.installButton} />
+      <V4InstallButton
+        causeId={causeId}
+        buttonClassName={classes.installButton}
+      />
     </div>
   )
 }

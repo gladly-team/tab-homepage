@@ -58,32 +58,32 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function SecuritySection({ securityData }) {
-  const cx = useStyles()
+  const classes = useStyles()
   const { titleImg } = securityData
   const image = getImage(formatImg(titleImg))
   return (
-    <div className={cx.parent}>
-      <div className={cx.column}>
+    <div className={classes.parent}>
+      <div className={classes.column}>
         <GatsbyImage
           imgStyle={{
             objectFit: 'scale-down',
             maxHeight: '320px',
           }}
-          className={cx.titleImg}
+          className={classes.titleImg}
           image={image}
           alt=""
           placeholder="none"
         />
-        <Typography className={cx.title} color="primary" variant="h1">
+        <Typography className={classes.title} color="primary" variant="h1">
           Secure, private, and open source
         </Typography>
-        <Typography className={cx.subtitle} paragraph>
+        <Typography className={classes.subtitle} paragraph>
           We are serious about privacy. That’s why our browser extension will
           not (and cannot) access any private data beyond our new tab page.
         </Typography>
-        <Typography className={cx.subtitleTwo} paragraph>
+        <Typography className={classes.subtitleTwo} paragraph>
           Don’t just take our word for it—our code is{' '}
-          <a className={cx.link} href={githubOrganizationURL}>
+          <a className={classes.link} href={githubOrganizationURL}>
             open source!
           </a>
         </Typography>

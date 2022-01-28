@@ -119,17 +119,17 @@ function Intro({ causeId, introData }) {
     img3Subtext,
     img3,
   } = introData
-  const cx = useStyles()
+  const classes = useStyles()
   const titleImage = getImage(formatImg(titleImg))
   const image1 = getImage(formatImg(img1))
   const image2 = getImage(formatImg(img2))
   const image3 = getImage(formatImg(img3))
   return (
-    <div className={cx.wrapper}>
-      <div className={cx.title}>
-        <div className={cx.titleText}>
+    <div className={classes.wrapper}>
+      <div className={classes.title}>
+        <div className={classes.titleText}>
           <Typography
-            className={cx.titleTypography}
+            className={classes.titleTypography}
             variant="h1"
             color="primary"
           >
@@ -138,41 +138,41 @@ function Intro({ causeId, introData }) {
           <Markdown>{subtitle}</Markdown>
         </div>
         <GatsbyImage
-          className={cx.titleImage}
+          className={classes.titleImage}
           image={titleImage}
           alt="intro title"
         />
       </div>
-      <div className={cx.steps}>
-        <div className={cx.step}>
-          <div className={cx.stepText}>
-            <Avatar className={cx.numberCircle}>1</Avatar>
+      <div className={classes.steps}>
+        <div className={classes.step}>
+          <div className={classes.stepText}>
+            <Avatar className={classes.numberCircle}>1</Avatar>
             <Markdown>{img1Subtext}</Markdown>
           </div>
           <GatsbyImage
-            className={cx.stepImage}
+            className={classes.stepImage}
             image={image1}
             alt="intro step 1"
           />
         </div>
-        <div className={cx.step}>
-          <div className={cx.stepText}>
-            <Avatar className={cx.numberCircle}>2</Avatar>
+        <div className={classes.step}>
+          <div className={classes.stepText}>
+            <Avatar className={classes.numberCircle}>2</Avatar>
             <Markdown>{img2Subtext}</Markdown>
           </div>
           <GatsbyImage
-            className={cx.stepImage}
+            className={classes.stepImage}
             image={image2}
             alt="intro step 2"
           />
         </div>
-        <div className={cx.step}>
-          <div className={cx.stepText}>
-            <Avatar className={cx.numberCircle}>3</Avatar>
+        <div className={classes.step}>
+          <div className={classes.stepText}>
+            <Avatar className={classes.numberCircle}>3</Avatar>
             <Markdown>{img3Subtext}</Markdown>
           </div>
           <GatsbyImage
-            className={cx.stepImage}
+            className={classes.stepImage}
             image={image3}
             alt="intro step 3"
           />

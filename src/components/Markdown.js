@@ -21,13 +21,13 @@ const useStyles = makeStyles((theme) => ({
 
 // TODO: Convert this back to the link component. Unclear why it's not working.
 function MarkdownLink({ href, children, ...otherProps }) {
-  const cx = useStyles()
+  const classes = useStyles()
   return (
     <a
       rel="noopener noreferrer"
       target="_blank"
       href={href}
-      className={cx.anchor}
+      className={classes.anchor}
       {...otherProps}
     >
       {children}

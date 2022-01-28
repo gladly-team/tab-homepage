@@ -182,7 +182,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 function Cats({ pageContext, location }) {
-  const cx = useStyles()
+  const classes = useStyles()
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
   const [isReferral, setIsReferral] = useState(false)
@@ -228,7 +228,7 @@ function Cats({ pageContext, location }) {
   }, [])
   const installButton = (
     <InstallButton
-      classes={{ contained: cx.mainInstallButton }}
+      classes={{ contained: classes.mainInstallButton }}
       onBeforeInstall={() => {
         localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
         localStorageMgr.setItem(
@@ -242,12 +242,12 @@ function Cats({ pageContext, location }) {
     />
   )
   const mockImagesArray = [
-    <img key="6" className={cx.image} src={landingImg6} />,
-    <img key="4" className={cx.image} src={landingImg4} />,
-    <img key="2" className={cx.image} src={landingImg2} />,
-    <img key="3" className={cx.image} src={landingImg3} />,
-    <img key="5" className={cx.image} src={landingImg5} />,
-    <img key="1" className={cx.image} src={landingImg} />,
+    <img key="6" className={classes.image} src={landingImg6} />,
+    <img key="4" className={classes.image} src={landingImg4} />,
+    <img key="2" className={classes.image} src={landingImg2} />,
+    <img key="3" className={classes.image} src={landingImg3} />,
+    <img key="5" className={classes.image} src={landingImg5} />,
+    <img key="1" className={classes.image} src={landingImg} />,
   ]
   const absolutePageURL = getAbsoluteURL(location.pathname)
   return (
@@ -263,7 +263,7 @@ function Cats({ pageContext, location }) {
       />
       <AppBar color="primary" position="sticky">
         <Toolbar>
-          <div className={cx.logoContainer}>
+          <div className={classes.logoContainer}>
             <div
               data-test-id="logo-container"
               style={{
@@ -288,14 +288,14 @@ function Cats({ pageContext, location }) {
                   STORAGE_CATS_CAUSE_ID
                 )
               }}
-              classes={{ contained: cx.MuiButtonContained }}
+              classes={{ contained: classes.MuiButtonContained }}
               onUnsupportedBrowserInstallClick={() => {
                 setShowUnsupportedBrowserMessage(true)
               }}
             />
           </div>
 
-          <MoneyRaisedDisplay whiteClassName={cx.whiteFont} />
+          <MoneyRaisedDisplay whiteClassName={classes.whiteFont} />
         </Toolbar>
       </AppBar>
 
@@ -306,11 +306,11 @@ function Cats({ pageContext, location }) {
             <meta name="robots" content="noindex" />
           ) : null}
         </Helmet>
-        <div className={cx.SectionHeight}>
+        <div className={classes.SectionHeight}>
           {isMission ? (
             <Alert
               severity="info"
-              classes={{ icon: cx.alertIcon, root: cx.alertRoot }}
+              classes={{ icon: classes.alertIcon, root: classes.alertRoot }}
               data-test-id="mission-text"
             >
               <AlertTitle>
@@ -322,7 +322,7 @@ function Cats({ pageContext, location }) {
           ) : isReferral ? (
             <Alert
               severity="info"
-              classes={{ icon: cx.alertIcon, root: cx.alertRoot }}
+              classes={{ icon: classes.alertIcon, root: classes.alertRoot }}
               data-test-id="referral-text"
             >
               <AlertTitle>Your friend sent you a gift</AlertTitle>By signing up
@@ -354,7 +354,7 @@ function Cats({ pageContext, location }) {
                 alignItems: 'center',
               }}
             >
-              <h1 className={cx.title}>Tab For Cats</h1>
+              <h1 className={classes.title}>Tab For Cats</h1>
               <p
                 style={{ width: '80%', textAlign: 'center', fontSize: '25px' }}
               >
@@ -394,9 +394,9 @@ function Cats({ pageContext, location }) {
           </Section>
         </div>
         <Section background="dark" fullWidth>
-          <div className={cx.sectionSplit}>
-            <div className={cx.halfPage}>
-              <h1 className={cx.title}>How Does it Work?</h1>
+          <div className={classes.sectionSplit}>
+            <div className={classes.halfPage}>
+              <h1 className={classes.title}>How Does it Work?</h1>
               <p style={{ width: '80%', textAlign: 'justify' }}>
                 We have partnered with The{' '}
                 <Link to="https://greatergood.org/jackson-galaxy">
@@ -416,7 +416,7 @@ function Cats({ pageContext, location }) {
                 the bank.
               </p>
             </div>
-            <div className={cx.halfPage}>
+            <div className={classes.halfPage}>
               <img
                 src={cat1}
                 style={{
@@ -437,7 +437,7 @@ function Cats({ pageContext, location }) {
               minHeight: '540px',
             }}
           >
-            <h1 className={cx.title}>We Show Our Work.</h1>
+            <h1 className={classes.title}>We Show Our Work.</h1>
             <p
               style={{
                 width: '80%',
@@ -573,7 +573,7 @@ function Cats({ pageContext, location }) {
           </ReviewCarousel>
         </Section>
         <Section style={{ justifyContent: 'center', minHeight: '540px' }}>
-          <h1 className={cx.title}>Frequently Asked Questions</h1>
+          <h1 className={classes.title}>Frequently Asked Questions</h1>
           <div
             style={{
               maxWidth: '986px',
@@ -582,7 +582,7 @@ function Cats({ pageContext, location }) {
               flexWrap: 'wrap',
             }}
           >
-            <div className={cx.halfPage}>
+            <div className={classes.halfPage}>
               <div
                 style={{
                   display: 'flex',
@@ -873,7 +873,7 @@ function Cats({ pageContext, location }) {
                 />
               </div>
             </div>
-            <div className={cx.halfPage}>
+            <div className={classes.halfPage}>
               <img
                 src={cat2}
                 style={{
@@ -893,7 +893,7 @@ function Cats({ pageContext, location }) {
               minHeight: '540px',
             }}
           >
-            <h1 className={cx.title}>Contact Us</h1>
+            <h1 className={classes.title}>Contact Us</h1>
             <div
               style={{
                 width: '80%',
@@ -935,17 +935,17 @@ function Cats({ pageContext, location }) {
                     style={{
                       marginBottom: 10,
                     }}
-                    className={cx.address}
+                    className={classes.address}
                   >
                     Tab for a Cause is built with love at:
                   </p>
-                  <p className={cx.address}>Gladly, Inc.</p>
-                  <p className={cx.address}>204 E 2nd Ave</p>
-                  <p className={cx.address}>San Mateo, CA 94401</p>
+                  <p className={classes.address}>Gladly, Inc.</p>
+                  <p className={classes.address}>204 E 2nd Ave</p>
+                  <p className={classes.address}>San Mateo, CA 94401</p>
                 </div>
                 <div>
                   <br />
-                  <p className={cx.address}>
+                  <p className={classes.address}>
                     <Link to={externalHelpURL}>Help</Link>
                     {' / '}
                     <Link to={financialsURL}>Financials</Link>

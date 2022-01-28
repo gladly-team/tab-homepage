@@ -99,14 +99,14 @@ const useStyles = makeStyles((theme) => ({
 
 function Landing({ landingData, causeId }) {
   const { title, subtitle, ctaImg } = landingData
-  const cx = useStyles()
+  const classes = useStyles()
   const theme = useTheme()
   const ctaImage = getImage(formatImg(ctaImg))
   return (
     <div className="parent">
       <AppBar color="primary" position="sticky">
         <Toolbar>
-          <div className={cx.logoContainer}>
+          <div className={classes.logoContainer}>
             <div
               data-test-id="logo-container"
               style={{
@@ -125,32 +125,32 @@ function Landing({ landingData, causeId }) {
             </div>
           </div>
           <MoneyRaisedDisplay
-            whiteClassName={cx.whiteFont}
+            whiteClassName={classes.whiteFont}
             textVariant="subtitle2"
             excludeText
           />
         </Toolbar>
       </AppBar>
-      <div className={cx.titleSection}>
-        <div className={cx.halfScreenLeft} data-test-id="title-wrapper">
+      <div className={classes.titleSection}>
+        <div className={classes.halfScreenLeft} data-test-id="title-wrapper">
           <Typography variant="h1" color="primary">
             {title}
           </Typography>
-          <Typography className={cx.subtitle}>{subtitle}</Typography>
+          <Typography className={classes.subtitle}>{subtitle}</Typography>
           <V4InstallButton
             causeId={causeId}
-            buttonClassName={cx.installButton}
+            buttonClassName={classes.installButton}
             fullWidth
           />
         </div>
-        <div className={cx.halfScreenRight}>
+        <div className={classes.halfScreenRight}>
           <GatsbyImage image={ctaImage} alt="call to action" />
         </div>
-        <div className={cx.wave}>
+        <div className={classes.wave}>
           <Wave color={theme.palette.primary.main} />
         </div>
       </div>
-      <div className={cx.waveMobile}>
+      <div className={classes.waveMobile}>
         <Wave color={theme.palette.primary.main} />
       </div>
     </div>

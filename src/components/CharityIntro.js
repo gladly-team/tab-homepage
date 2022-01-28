@@ -68,21 +68,21 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function CharityIntro({ charityIntroData }) {
-  const cx = useStyles()
+  const classes = useStyles()
   const theme = useTheme()
   const getStep = (step, index) => {
     const image = getImage(formatImg(step.img))
     return (
-      <div className={cx.step} key={`step${index}`}>
+      <div className={classes.step} key={`step${index}`}>
         <GatsbyImage
-          className={cx.stepImage}
+          className={classes.stepImage}
           imgStyle={{
             objectFit: 'scale-down',
           }}
           alt="charity intro step"
           image={image}
         />
-        <Typography className={cx.stepText} variant="body1">
+        <Typography className={classes.stepText} variant="body1">
           {step.text}
         </Typography>
       </div>
@@ -91,16 +91,16 @@ function CharityIntro({ charityIntroData }) {
   const { title, subTitle, steps } = charityIntroData
   const stepComponents = steps.map((step, index) => getStep(step, index))
   return (
-    <div className={cx.parent}>
+    <div className={classes.parent}>
       <CharityIntroWave color={theme.palette.primary.main} />
-      <div className={cx.column}>
-        <Typography className={cx.title} color="primary" variant="h1">
+      <div className={classes.column}>
+        <Typography className={classes.title} color="primary" variant="h1">
           {title}
         </Typography>
-        <Typography className={cx.subtitle} variant="body1">
+        <Typography className={classes.subtitle} variant="body1">
           {subTitle}
         </Typography>
-        <div className={cx.steps}>{stepComponents}</div>
+        <div className={classes.steps}>{stepComponents}</div>
       </div>
     </div>
   )
