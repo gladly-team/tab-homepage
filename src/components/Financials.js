@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles'
+import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Link from 'src/components/Link'
@@ -12,126 +12,134 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-const useStyles = makeStyles((theme) => ({
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  wrapper: {
-    margin: '0 auto',
-    display: 'flex',
-    minHeight: '100vh',
-    flexDirection: 'column',
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-    [theme.breakpoints.down('md')]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6),
-    },
+const DivWrapper = styled('div')(({ theme }) => ({
+  margin: '0 auto',
+  display: 'flex',
+  minHeight: '100vh',
+  flexDirection: 'column',
+  width: '100%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  paddingTop: theme.spacing(8),
+  paddingBottom: theme.spacing(8),
+
+  [theme.breakpoints.down('md')]: {
+    paddingTop: theme.spacing(6),
+    paddingBottom: theme.spacing(6),
   },
-  reportsContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '86%',
-    marginTop: theme.spacing(4),
-    [theme.breakpoints.down(undefined)]: {
-      display: 'none',
-    },
-  },
-  reportsSlider: {
+}))
+
+const DivReportsContainer = styled('div')(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'space-between',
+  width: '86%',
+  marginTop: theme.spacing(4),
+
+  [theme.breakpoints.down(undefined)]: {
     display: 'none',
-    justifyContent: 'space-between',
-    width: '96%',
-    maxWidth: '800px',
+  },
+}))
+
+const DivReportsSlider = styled('div')(({ theme }) => ({
+  display: 'none',
+  justifyContent: 'space-between',
+  width: '96%',
+  maxWidth: '800px',
+  marginTop: theme.spacing(4),
+
+  [theme.breakpoints.down(undefined)]: {
+    display: 'flex',
+  },
+}))
+
+const DivTitleSectionWrapper = styled('div')(({ theme }) => ({
+  display: 'flex',
+  width: '100%',
+
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'column',
+    height: 'auto',
+  },
+}))
+
+const DivHalfScreenRight = styled('div')(({ theme }) => ({
+  width: '40%',
+  display: 'flex',
+  marginLeft: '5%',
+  flexDirection: 'column',
+  justifyContent: 'center',
+
+  [theme.breakpoints.down('md')]: {
+    width: '80%',
     marginTop: theme.spacing(4),
-    [theme.breakpoints.down(undefined)]: {
-      display: 'flex',
-    },
+    paddingLeft: 0,
+    margin: '0 auto',
+    alignItems: 'center',
   },
-  titleSectionWrapper: {
-    display: 'flex',
+}))
+
+const DivHalfScreenLeft = styled('div')(({ theme }) => ({
+  width: '45%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  marginLeft: '5%',
+
+  [theme.breakpoints.down('md')]: {
+    position: 'relative',
+    width: '90%',
+    maxWidth: '600px',
+    left: 'auto',
+    margin: '0 auto',
+  },
+}))
+
+const TypographySubtitle = styled(Typography)(({ theme }) => ({
+  marginTop: theme.spacing(2),
+}))
+
+const ButtonButtonStyles = styled(Button)(({ theme }) => ({
+  width: theme.spacing(30),
+  marginTop: theme.spacing(6),
+
+  [theme.breakpoints.down('md')]: {
     width: '100%',
-    [theme.breakpoints.down('md')]: {
-      flexDirection: 'column',
-      height: 'auto',
-    },
   },
-  title: {
-    color: theme.palette.primary.main,
-  },
-  halfScreenRight: {
-    width: '40%',
-    display: 'flex',
-    marginLeft: '5%',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    [theme.breakpoints.down('md')]: {
-      width: '80%',
-      marginTop: theme.spacing(4),
-      paddingLeft: 0,
-      margin: '0 auto',
-      alignItems: 'center',
-    },
-  },
-  halfScreenLeft: {
-    width: '45%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    marginLeft: '5%',
-    [theme.breakpoints.down('md')]: {
-      position: 'relative',
-      width: '90%',
-      maxWidth: '600px',
-      left: 'auto',
-      margin: '0 auto',
-    },
-  },
-  subtitle: {
-    marginTop: theme.spacing(2),
-  },
-  buttonStyles: {
-    width: theme.spacing(30),
-    marginTop: theme.spacing(6),
-    [theme.breakpoints.down('md')]: {
-      width: '100%',
-    },
-  },
-  linkStyles: {
-    [theme.breakpoints.down('md')]: {
-      width: '85%',
-    },
+}))
+
+const LinkLinkStyles = styled(Link)(({ theme }) => ({
+  [theme.breakpoints.down('md')]: {
+    width: '85%',
   },
 }))
 
 function Financials({ financialsData }) {
   const { title, text, buttonText, ctaImg, pdfs } = financialsData
-  const classes = useStyles()
   const Image = getImage(formatImg(ctaImg))
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.titleSectionWrapper}>
-        <div className={classes.halfScreenLeft}>
+    <DivWrapper>
+      <DivTitleSectionWrapper>
+        <DivHalfScreenLeft>
           <GatsbyImage
             image={Image}
             alt=""
             placeholder="none"
             backgroundColor="transparent"
           />
-        </div>
-        <div className={classes.halfScreenRight}>
+        </DivHalfScreenLeft>
+        <DivHalfScreenRight>
           <Typography variant="h2" color="primary">
             {title}
           </Typography>
-          <Typography className={classes.subtitle}>{text}</Typography>
-        </div>
-      </div>
-      <div className={classes.reportsContainer}>
+          <TypographySubtitle>{text}</TypographySubtitle>
+        </DivHalfScreenRight>
+      </DivTitleSectionWrapper>
+      <DivReportsContainer>
         {pdfs.map((pdf) => (
           <FinancialsQuartersButton key={pdf.quarter} quarterData={pdf} />
         ))}
-      </div>
-      <div className={classes.reportsSlider}>
+      </DivReportsContainer>
+      <DivReportsSlider>
         <Slider
           centerMode
           dots
@@ -152,18 +160,13 @@ function Financials({ financialsData }) {
             <FinancialsQuartersButton key={pdf.quarter} quarterData={pdf} />
           ))}
         </Slider>
-      </div>
-      <Link className={classes.linkStyles} to={financialsURL}>
-        <Button
-          variant="contained"
-          color="secondary"
-          size="large"
-          className={classes.buttonStyles}
-        >
+      </DivReportsSlider>
+      <LinkLinkStyles to={financialsURL}>
+        <ButtonButtonStyles variant="contained" color="secondary" size="large">
           {buttonText}
-        </Button>
-      </Link>
-    </div>
+        </ButtonButtonStyles>
+      </LinkLinkStyles>
+    </DivWrapper>
   )
 }
 Financials.propTypes = {
