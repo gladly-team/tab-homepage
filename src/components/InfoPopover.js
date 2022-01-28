@@ -2,7 +2,6 @@ import React from 'react'
 import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import Popover from '@mui/material/Popover'
-import { makeStyles } from '@mui/styles'
 import { primaryMainColor } from 'src/themes/theme'
 
 const PREFIX = 'InfoPopover'

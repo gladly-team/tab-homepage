@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import {
   ThemeProvider,
 } from '@mui/material/styles'
-import makeStyles from '@mui/styles/makeStyles'
+
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import { AlertTitle, Alert } from '@mui/material'

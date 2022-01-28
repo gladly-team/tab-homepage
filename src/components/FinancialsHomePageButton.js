@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import Paper from '@mui/material/Paper'
 import { formatImg } from 'src/utils/formatting'
-import makeStyles from '@mui/styles/makeStyles'
+
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const PREFIX = 'FinancialQuartersButton'

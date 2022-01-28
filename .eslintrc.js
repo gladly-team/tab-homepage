@@ -34,7 +34,6 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 0,
     'react/no-unused-prop-types': 0,
     'react/no-unused-state': 0,
-    'no-unused-vars': 0,
     'import/extensions': 0,
     'no-nested-ternary': 0,
     'vars-on-top': 0,

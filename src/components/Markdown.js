@@ -11,7 +11,6 @@ import remarkRehype from 'remark-rehype'
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
 import rehypeReact from 'rehype-react'
 import Typography from '@mui/material/Typography'
-import makeStyles from '@mui/styles/makeStyles'
 
 const Anchor = styled('a')(({ theme }) => ({
   color: theme.palette.primary.main,

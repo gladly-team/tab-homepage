@@ -8,7 +8,6 @@ import {
   ThemeProvider,
   responsiveFontSizes,
 } from '@mui/material/styles'
-import makeStyles from '@mui/styles/makeStyles'
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
 import AppBar from '@mui/material/AppBar'
