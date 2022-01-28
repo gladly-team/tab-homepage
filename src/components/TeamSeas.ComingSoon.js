@@ -1,7 +1,10 @@
 import React from 'react'
-import { styled } from '@material-ui/core/styles'
+import {
+  styled,
+  ThemeProvider,
+  responsiveFontSizes,
+} from '@mui/material/styles'
 import PropTypes from 'prop-types'
-import { ThemeProvider, responsiveFontSizes } from '@mui/material/styles'
 import makeStyles from '@mui/styles/makeStyles'
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'

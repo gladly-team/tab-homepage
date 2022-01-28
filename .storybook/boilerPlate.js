@@ -1,4 +1,4 @@
-import { StyledEngineProvider, ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles'
+import { StyledEngineProvider, ThemeProvider, responsiveFontSizes } from '@mui/material/styles'
 import { action } from '@storybook/addon-actions'
 import { createCauseTheme } from 'src/themes/theme'
 import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls'

@@ -1,4 +1,4 @@
-import { StyledEngineProvider, ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles'
+import { StyledEngineProvider, ThemeProvider, responsiveFontSizes } from '@mui/material/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { action } from '@storybook/addon-actions'
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'

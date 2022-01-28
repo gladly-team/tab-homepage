@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from '@material-ui/core/styles'
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import Popover from '@mui/material/Popover'
 import { makeStyles } from '@mui/styles'
