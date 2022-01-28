@@ -68,8 +68,8 @@
   "scripts": {
     "build": "GATSBY_TELEMETRY_DISABLED=1 gatsby build",
     "develop": "SHOW_CATS_PAGE=true GATSBY_TELEMETRY_DISABLED=1 GATSBY_GENERATE_CAUSE_PAGES=true gatsby develop",
-    "format": "eslint --fix 'src/**/*.js'",
-    "lint": "eslint \"src/**/*.js\"",
+    "format": "yarn run eslint --fix",
+    "lint": "eslint \"src/**/*.{js,jsx}\"",
     "serve": "GATSBY_TELEMETRY_DISABLED=1 gatsby serve",
     "test": "yarn run lint && jest --env=jsdom --coverage --testPathIgnorePatterns=e2e-tests",
     "test:e2e": "dotenv-extended --defaults=./.env yarn jest --testPathPattern=e2e-tests.test --watchAll=false",
