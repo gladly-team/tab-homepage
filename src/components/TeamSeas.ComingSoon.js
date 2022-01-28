@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 import { ThemeProvider, responsiveFontSizes } from '@mui/material/styles'
 import makeStyles from '@mui/styles/makeStyles'
@@ -18,7 +18,7 @@ import seaImg from 'src/img/seas/ocean.jpg'
 import Link from 'src/components/Link'
 import Countdown from 'react-countdown'
 
-const PREFIX = 'SeasPageWithTheme';
+const PREFIX = 'SeasPageWithTheme'
 
 const classes = {
   logoContainer: `${PREFIX}-logoContainer`,
@@ -27,15 +27,15 @@ const classes = {
   titleSection: `${PREFIX}-titleSection`,
   comingSoon: `${PREFIX}-comingSoon`,
   countdownPaper: `${PREFIX}-countdownPaper`,
-  countdownFont: `${PREFIX}-countdownFont`
-};
+  countdownFont: `${PREFIX}-countdownFont`,
+}
 
-const StyledThemeProvider = styled(ThemeProvider)((
-  {
-    theme
-  }
-) => ({
-  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+const StyledThemeProvider = styled(ThemeProvider)(({ theme }) => ({
+  [`& .${classes.logoContainer}`]: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'row',
+  },
 
   [`& .${classes.background}`]: {
     backgroundImage: `url("${seaImg}")`,
@@ -95,14 +95,12 @@ const StyledThemeProvider = styled(ThemeProvider)((
 
   [`& .${classes.countdownFont}`]: {
     color: theme.palette.secondary.main,
-  }
-}));
+  },
+}))
 
 const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
 const canonicalURL = getAbsoluteURL(seasURL)
 function Seas({ location }) {
-
-
   const absolutePageURL = getAbsoluteURL(location.pathname)
   return (
     <div>
@@ -208,7 +206,7 @@ function SeasPageWithTheme(props) {
     >
       <Seas {...props} />
     </StyledThemeProvider>
-  );
+  )
 }
 
 export default SeasPageWithTheme

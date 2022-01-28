@@ -1,25 +1,25 @@
 import React from 'react'
-import { styled } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 import Paper from '@mui/material/Paper'
 import { formatImg } from 'src/utils/formatting'
 import makeStyles from '@mui/styles/makeStyles'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-const PREFIX = 'FinancialQuartersButton';
+const PREFIX = 'FinancialQuartersButton'
 
 const classes = {
   logoContainer: `${PREFIX}-logoContainer`,
   Paper: `${PREFIX}-Paper`,
-  image: `${PREFIX}-image`
-};
+  image: `${PREFIX}-image`,
+}
 
-const Root = styled('div')((
-  {
-    theme
-  }
-) => ({
-  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+const Root = styled('div')(({ theme }) => ({
+  [`& .${classes.logoContainer}`]: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'row',
+  },
 
   [`& .${classes.Paper}`]: {
     width: 240,
@@ -31,11 +31,14 @@ const Root = styled('div')((
     transition: 'transform .1s ease-in-out',
   },
 
-  [`& .${classes.image}`]: { alignSelf: 'end', height: '100px', width: '103px' }
-}));
+  [`& .${classes.image}`]: {
+    alignSelf: 'end',
+    height: '100px',
+    width: '103px',
+  },
+}))
 
 function FinancialQuartersButton({ quarterData }) {
-
   const Image = getImage(formatImg(quarterData.img))
   return (
     <Root>
@@ -53,7 +56,7 @@ function FinancialQuartersButton({ quarterData }) {
         </Paper>
       </a>
     </Root>
-  );
+  )
 }
 FinancialQuartersButton.propTypes = {
   quarterData: PropTypes.shape({
