@@ -2,13 +2,13 @@
 /* eslint-disable */
 
 import React, { useEffect, useState } from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
 import {
   ThemeProvider,
   StyledEngineProvider,
   responsiveFontSizes,
 } from '@mui/material/styles'
-import makeStyles from '@mui/styles/makeStyles'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import { AlertTitle, Alert } from '@mui/material'
@@ -84,14 +84,42 @@ import {
 import { getUrlParameterValue } from 'src/utils/location'
 import Divider from '@mui/material/Divider'
 
-const ogImgURLAbsolute = getAbsoluteURL(catsOGImg)
-const canonicalURL = getAbsoluteURL(catsURL)
-const useStyles = makeStyles((theme) => ({
-  whiteFont: {
+const PREFIX = 'CatsPageWithTheme';
+
+const classes = {
+  whiteFont: `${PREFIX}-whiteFont`,
+  alertIcon: `${PREFIX}-alertIcon`,
+  alertRoot: `${PREFIX}-alertRoot`,
+  image: `${PREFIX}-image`,
+  MuiButtonContained: `${PREFIX}-MuiButtonContained`,
+  mainInstallButton: `${PREFIX}-mainInstallButton`,
+  backgroundImageEnter: `${PREFIX}-backgroundImageEnter`,
+  backgroundImageEnterActive: `${PREFIX}-backgroundImageEnterActive`,
+  backgroundImageAppear: `${PREFIX}-backgroundImageAppear`,
+  backgroundImageAppearActive: `${PREFIX}-backgroundImageAppearActive`,
+  backgroundImageExit: `${PREFIX}-backgroundImageExit`,
+  backgroundImageExitActive: `${PREFIX}-backgroundImageExitActive`,
+  SectionHeight: `${PREFIX}-SectionHeight`,
+  sectionSplit: `${PREFIX}-sectionSplit`,
+  halfPage: `${PREFIX}-halfPage`,
+  logo: `${PREFIX}-logo`,
+  logoContainer: `${PREFIX}-logoContainer`,
+  title: `${PREFIX}-title`,
+  address: `${PREFIX}-address`
+};
+
+const StyledStyledEngineProvider = styled(StyledEngineProvider)((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.whiteFont}`]: {
     color: '#fff',
   },
-  alertIcon: { flexDirection: 'column', justifyContent: 'center' },
-  alertRoot: {
+
+  [`& .${classes.alertIcon}`]: { flexDirection: 'column', justifyContent: 'center' },
+
+  [`& .${classes.alertRoot}`]: {
     margin: '0px 40px',
     position: 'absolute',
     top: '80px',
@@ -103,41 +131,51 @@ const useStyles = makeStyles((theme) => ({
       margin: '0px 10px',
     },
   },
-  image: {
+
+  [`& .${classes.image}`]: {
     maxWidth: '600px',
     [theme.breakpoints.down('lg')]: {
       width: '100%',
       maxWidth: '100%',
     },
   },
-  MuiButtonContained: {
+
+  [`& .${classes.MuiButtonContained}`]: {
     boxShadow: 'none',
   },
-  mainInstallButton: {
+
+  [`& .${classes.mainInstallButton}`]: {
     borderRadius: '20px',
   },
-  backgroundImageEnter: {
+
+  [`& .${classes.backgroundImageEnter}`]: {
     opacity: 0,
   },
-  backgroundImageEnterActive: {
+
+  [`& .${classes.backgroundImageEnterActive}`]: {
     opacity: 1,
     transition: 'opacity 2000ms',
   },
-  backgroundImageAppear: {
+
+  [`& .${classes.backgroundImageAppear}`]: {
     opacity: 0,
   },
-  backgroundImageAppearActive: {
+
+  [`& .${classes.backgroundImageAppearActive}`]: {
     opacity: 1,
     transition: 'opacity 2000ms',
   },
-  backgroundImageExit: {
+
+  [`& .${classes.backgroundImageExit}`]: {
     opacity: 1,
   },
-  backgroundImageExitActive: {
+
+  [`& .${classes.backgroundImageExitActive}`]: {
     opacity: 0,
     transition: 'opacity 2000ms',
   },
-  SectionHeight: {
+
+  [`& .${classes.SectionHeight}`]: {
     height: 'calc(100vh - 64px)',
     display: 'flex',
     flexDirection: 'column',
@@ -146,7 +184,8 @@ const useStyles = makeStyles((theme) => ({
       height: '100%',
     },
   },
-  sectionSplit: {
+
+  [`& .${classes.sectionSplit}`]: {
     display: 'flex',
     minHeight: '540px',
     alignItems: 'center',
@@ -154,7 +193,8 @@ const useStyles = makeStyles((theme) => ({
       flexWrap: 'wrap',
     },
   },
-  halfPage: {
+
+  [`& .${classes.halfPage}`]: {
     width: '50%',
     display: 'flex',
     flexDirection: 'column',
@@ -163,26 +203,33 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
-  logo: {
+
+  [`& .${classes.logo}`]: {
     width: 40,
     height: 40,
   },
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  title: {
+
+  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+
+  [`& .${classes.title}`]: {
     fontSize: '65px',
     color: 'black',
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: '30px',
   },
-  address: {
+
+  [`& .${classes.address}`]: {
     margin: 0,
     fontStyle: 'italic',
     fontSize: 12,
-  },
-}))
+  }
+}));
+
+const ogImgURLAbsolute = getAbsoluteURL(catsOGImg)
+const canonicalURL = getAbsoluteURL(catsURL)
 function Cats({ pageContext, location }) {
-  const classes = useStyles()
+
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
   const [isReferral, setIsReferral] = useState(false)
@@ -984,12 +1031,12 @@ Cats.propTypes = {
 
 function CatsPageWithTheme(props) {
   return (
-    <StyledEngineProvider injectFirst>
+    <StyledStyledEngineProvider injectFirst>
       <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
         <Cats {...props} />
       </ThemeProvider>
-    </StyledEngineProvider>
-  )
+    </StyledStyledEngineProvider>
+  );
 }
 
 export default CatsPageWithTheme
