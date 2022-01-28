@@ -1,5 +1,5 @@
 import { StyledEngineProvider, ThemeProvider, responsiveFontSizes } from '@mui/material/styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
+import CssBaseline from '@mui/material/CssBaseline'
 import { action } from '@storybook/addon-actions'
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 import catsTheme, { tabForTeamSeasTheme } from 'src/themes/theme'

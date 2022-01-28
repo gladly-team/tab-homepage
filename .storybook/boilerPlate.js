@@ -2,7 +2,7 @@ import { StyledEngineProvider, ThemeProvider, responsiveFontSizes } from '@mui/m
 import { action } from '@storybook/addon-actions'
 import { createCauseTheme } from 'src/themes/theme'
 import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls'
-import CssBaseline from '@material-ui/core/CssBaseline'
+import CssBaseline from '@mui/material/CssBaseline'
 import catsData from 'src/data/causes/cats.json'
 import seasData from 'src/data/causes/seas.json'
 
