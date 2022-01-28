@@ -131,7 +131,11 @@ function Landing({ landingData, causeId }) {
               </Link>
             </div>
           </DivLogoContainer>
-          <MoneyRaisedDisplay textVariant="subtitle2" excludeText />
+          <MoneyRaisedDisplay
+            color="#fff"
+            textVariant="subtitle2"
+            excludeText
+          />
         </Toolbar>
       </AppBar>
       <DivTitleSection>
