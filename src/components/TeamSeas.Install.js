@@ -281,9 +281,7 @@ function SeasPageWithTheme(props) {
     <StyledThemeProvider
       theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
     >
-      <CssBaseline>
         <Seas {...props} />
-      </CssBaseline>
     </StyledThemeProvider>
   );
 }
