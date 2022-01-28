@@ -1,7 +1,7 @@
 // Pass props through to lots of wrapper components.
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useMemo } from 'react'
-import { styled } from '@material-ui/core/styles'
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 
 // Pinned to v9 because of transpiling issues (see next.config.js for info)
@@ -13,32 +13,22 @@ import rehypeReact from 'rehype-react'
 import Typography from '@mui/material/Typography'
 import makeStyles from '@mui/styles/makeStyles'
 
-const PREFIX = 'Markdown'
-
-const classes = {
-  anchor: `${PREFIX}-anchor`,
-}
-
-// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled('div')(({ theme }) => ({
-  [`& .${classes.anchor}`]: {
-    color: theme.palette.primary.main,
-    textDecoration: 'underline',
-  },
+const Anchor = styled('a')(({ theme }) => ({
+  color: theme.palette.primary.main,
+  textDecoration: 'underline',
 }))
 
 // TODO: Convert this back to the link component. Unclear why it's not working.
 function MarkdownLink({ href, children, ...otherProps }) {
   return (
-    <a
+    <Anchor
       rel="noopener noreferrer"
       target="_blank"
       href={href}
-      className={classes.anchor}
       {...otherProps}
     >
       {children}
-    </a>
+    </Anchor>
   )
 }
 MarkdownLink.displayName = 'MarkdownLink'
@@ -80,7 +70,7 @@ function Markdown({ children }) {
     () => processor.processSync(children).result,
     [children]
   )
-  return <Root>{elems}</Root>
+  return <>{elems}</>
 }
 
 Markdown.displayName = 'Markdown'
