@@ -21,7 +21,7 @@ function FooterBlobLeft({ color, style }) {
 
 FooterBlobLeft.propTypes = {
   color: PropTypes.string.isRequired,
-  style: PropTypes.string.isRequired,
+  style: PropTypes.object.isRequired,
 }
 
 export default FooterBlobLeft

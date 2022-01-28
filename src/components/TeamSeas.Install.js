@@ -235,7 +235,7 @@ function Seas({ pageContext, location }) {
           setShowUnsupportedBrowserMessage(false)
         }}
       />
-      <Footer onBeforeInstall={onBeforeInstall} footerData={{ img: {} }} />
+      <Footer onBeforeInstall={onBeforeInstall} footerData={{ img: {}, bubbleColor: 'grey' }} />
     </div>
   )
 }

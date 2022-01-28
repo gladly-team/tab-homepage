@@ -8,6 +8,21 @@ import AppleSafari from 'mdi-material-ui/AppleSafari'
 import FooterBlobLeft from '../FooterBlobLeft'
 import FooterBlobRight from '../FooterBlobRight'
 
+jest.mock(
+  '../FooterBlobLeft',
+  () =>
+    function MockComp() {
+      return <span />
+    }
+)
+jest.mock(
+  '../FooterBlobRight',
+  () =>
+    function MockComp() {
+      return <span />
+    }
+)
+
 const mockProps = {
   onBeforeInstall: () => {},
   footerData: { img: {}, bubbleColor: '#ABABAB' },

@@ -181,7 +181,12 @@ function Endorsements({ endorsementsData, causeId }) {
     smallEndorsements,
   } = endorsementsData
   const endorserImage = getImage(formatImg(endorserImg))
+
+  // Need react-slick to forward the ref:
+  // https://github.com/akiran/react-slick/issues/1690
+  // https://github.com/akiran/react-slick/issues/1821
   const sliderRef = useRef()
+
   return (
     <DivWrapper>
       <DivTitleSectionWrapper>

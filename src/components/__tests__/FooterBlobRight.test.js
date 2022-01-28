@@ -5,7 +5,7 @@ import { shallow } from 'src/utils/testHelpers/componentTesting'
 
 const getMockProps = () => ({
   color: '#ffffff',
-  innerClassName: 'test-class',
+  style: { width: '77%' },
 })
 
 describe('FooterBlobRight component', () => {
@@ -26,9 +26,6 @@ describe('FooterBlobRight component', () => {
     const mockProps = getMockProps()
     const FooterBlobRight = require('../FooterBlobRight').default
     const wrapper = shallow(<FooterBlobRight {...mockProps} />)
-
-    expect(wrapper.find('svg').first().prop('className')).toEqual(
-      mockProps.innerClassName
-    )
+    expect(wrapper.find('svg').first().prop('style')).toEqual({ width: '77%' })
   })
 })
