@@ -1,10 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  ThemeProvider,
-  StyledEngineProvider,
-  responsiveFontSizes,
-} from '@mui/material/styles'
+import { ThemeProvider, responsiveFontSizes } from '@mui/material/styles'
 import makeStyles from '@mui/styles/makeStyles'
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
@@ -183,13 +179,11 @@ Seas.propTypes = {
 
 function SeasPageWithTheme(props) {
   return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider
-        theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
-      >
-        <Seas {...props} />
-      </ThemeProvider>
-    </StyledEngineProvider>
+    <ThemeProvider
+      theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
+    >
+      <Seas {...props} />
+    </ThemeProvider>
   )
 }
 

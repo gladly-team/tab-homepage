@@ -1,11 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import get from 'lodash/get'
-import {
-  ThemeProvider,
-  StyledEngineProvider,
-  responsiveFontSizes,
-} from '@mui/material/styles'
+import { ThemeProvider, responsiveFontSizes } from '@mui/material/styles'
 import makeStyles from '@mui/styles/makeStyles'
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
@@ -20,7 +16,6 @@ import Link from 'src/components/Link'
 import Countdown from 'react-countdown'
 import { createCauseTheme } from 'src/themes/theme'
 import { KEY_WORDS } from 'src/utils/constants'
-import CssBaseline from '@mui/material/CssBaseline'
 import { isChromaticEnv } from 'src/utils/featureFlags'
 
 const useStyles = makeStyles((theme) => ({
@@ -222,17 +217,13 @@ ComingSoon.propTypes = {
 
 function ComingSoonWithTheme(props) {
   return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider
-        theme={responsiveFontSizes(
-          createCauseTheme(props.pageContext.data.styles.colors)
-        )}
-      >
-        <CssBaseline>
-          <ComingSoon {...props} />
-        </CssBaseline>
-      </ThemeProvider>
-    </StyledEngineProvider>
+    <ThemeProvider
+      theme={responsiveFontSizes(
+        createCauseTheme(props.pageContext.data.styles.colors)
+      )}
+    >
+      <ComingSoon {...props} />
+    </ThemeProvider>
   )
 }
 

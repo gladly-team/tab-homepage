@@ -1,9 +1,9 @@
-import { ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles'
+import { StyledEngineProvider, ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
 import { action } from '@storybook/addon-actions'
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 import catsTheme, { tabForTeamSeasTheme } from 'src/themes/theme'
 import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls'
-import CssBaseline from '@material-ui/core/CssBaseline'
 
 const customViewports = {
   monitor: {
@@ -66,15 +66,17 @@ export const decorators = [
         break
     }
     return (
-      <ThemeProvider theme={responsiveFontSizes(theme)}>
-        <CssBaseline>
-          <style>
-            @import
-            url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800;900&display=swap');
-          </style>
-          <Story />
-        </CssBaseline>
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={responsiveFontSizes(theme)}>
+          <CssBaseline>
+            <style>
+              @import
+              url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800;900&display=swap');
+            </style>
+            <Story />
+          </CssBaseline>
+        </ThemeProvider>
+      </StyledEngineProvider>
     )
   }),
 ]

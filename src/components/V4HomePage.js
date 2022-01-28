@@ -1,13 +1,8 @@
 import React, { useEffect } from 'react'
 import get from 'lodash/get'
 import PropTypes from 'prop-types'
-import CssBaseline from '@mui/material/CssBaseline'
 import Helmet from 'react-helmet'
-import {
-  ThemeProvider,
-  StyledEngineProvider,
-  responsiveFontSizes,
-} from '@mui/material/styles'
+import { ThemeProvider, responsiveFontSizes } from '@mui/material/styles'
 import { getUrlParameterValue } from 'src/utils/location'
 import { createCauseTheme } from 'src/themes/theme'
 import HeadTags from 'src/components/HeadTags'
@@ -103,59 +98,54 @@ function HomepageWrapper({
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
   )
   return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider
-        theme={responsiveFontSizes(createCauseTheme(styles.colors))}
-      >
-        <CssBaseline>
-          <div>
-            <HeadTags
-              title={title}
-              titleTemplate="Tab for a Cause"
-              ogTitle={ogTitle}
-              ogDescription={ogDescription}
-              ogImage={ogImgURLAbsolute}
-              keywords={KEY_WORDS.concat(causeSpecificKeywords)}
-              pageURL={absolutePageURL}
-            />
-            <Helmet>
-              <link rel="canonical" href={getAbsoluteURL(path)} />
-              {referrer || isPreviewPage ? (
-                <meta name="robots" content="noindex" />
-              ) : null}
-            </Helmet>
-            <Landing landingData={landing} causeId={causeId} />
-            <LandingMoneyRaised moneyRaisedData={moneyRaised} />
-            <CharityIntro charityIntroData={charityIntro} />
-            <Intro introData={TFACIntro} />
-            <Mission missionData={missionData} causeId={causeId} />
-            <SecuritySection securityData={Security} />
-            <FinancialsComponent financialsData={Financials} />
-            <EndorsementsComponent
-              endorsementsData={Endorsements}
-              causeId={causeId}
-            />
-            <FAQ faqData={faq} />
-            <Footer
-              footerData={footerData}
-              onBeforeInstall={() => {
-                localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
-                localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
-              }}
-            />
-            <Snackbar open={isPreviewPage}>
-              <Alert severity="info" sx={{ width: '100%' }}>
-                <AlertTitle>Shh! This page is secret!</AlertTitle>
-                You probably got here because the Tab for a Cause team shared it
-                with you, but please don’t share it with others.
-              </Alert>
-            </Snackbar>
-          </div>
-        </CssBaseline>
-      </ThemeProvider>
-    </StyledEngineProvider>
+    <ThemeProvider theme={responsiveFontSizes(createCauseTheme(styles.colors))}>
+      <div>
+        <HeadTags
+          title={title}
+          titleTemplate="Tab for a Cause"
+          ogTitle={ogTitle}
+          ogDescription={ogDescription}
+          ogImage={ogImgURLAbsolute}
+          keywords={KEY_WORDS.concat(causeSpecificKeywords)}
+          pageURL={absolutePageURL}
+        />
+        <Helmet>
+          <link rel="canonical" href={getAbsoluteURL(path)} />
+          {referrer || isPreviewPage ? (
+            <meta name="robots" content="noindex" />
+          ) : null}
+        </Helmet>
+        <Landing landingData={landing} causeId={causeId} />
+        <LandingMoneyRaised moneyRaisedData={moneyRaised} />
+        <CharityIntro charityIntroData={charityIntro} />
+        <Intro introData={TFACIntro} />
+        <Mission missionData={missionData} causeId={causeId} />
+        <SecuritySection securityData={Security} />
+        <FinancialsComponent financialsData={Financials} />
+        <EndorsementsComponent
+          endorsementsData={Endorsements}
+          causeId={causeId}
+        />
+        <FAQ faqData={faq} />
+        <Footer
+          footerData={footerData}
+          onBeforeInstall={() => {
+            localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
+            localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
+          }}
+        />
+        <Snackbar open={isPreviewPage}>
+          <Alert severity="info" sx={{ width: '100%' }}>
+            <AlertTitle>Shh! This page is secret!</AlertTitle>
+            You probably got here because the Tab for a Cause team shared it
+            with you, but please don’t share it with others.
+          </Alert>
+        </Snackbar>
+      </div>
+    </ThemeProvider>
   )
 }
+
 HomepageWrapper.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
@@ -170,4 +160,5 @@ HomepageWrapper.propTypes = {
     }),
   }),
 }
+
 export default HomepageWrapper

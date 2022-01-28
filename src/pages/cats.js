@@ -5,14 +5,12 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import {
   ThemeProvider,
-  StyledEngineProvider,
-  responsiveFontSizes,
 } from '@mui/material/styles'
 import makeStyles from '@mui/styles/makeStyles'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import { AlertTitle, Alert } from '@mui/material'
-import defaultTheme, { lightestTextColor } from 'src/themes/theme'
+import { lightestTextColor } from 'src/themes/theme'
 
 import Section from 'src/components/Section'
 import InstallButton from 'src/components/InstallButton'
@@ -982,14 +980,4 @@ Cats.propTypes = {
   }),
 }
 
-function CatsPageWithTheme(props) {
-  return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
-        <Cats {...props} />
-      </ThemeProvider>
-    </StyledEngineProvider>
-  )
-}
-
-export default CatsPageWithTheme
+export default Cats

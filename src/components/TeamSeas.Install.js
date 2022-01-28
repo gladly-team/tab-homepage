@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import {
   ThemeProvider,
-  StyledEngineProvider,
   responsiveFontSizes,
 } from '@mui/material/styles'
 import makeStyles from '@mui/styles/makeStyles'
@@ -13,7 +12,6 @@ import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import CssBaseline from '@mui/material/CssBaseline'
 import InstallButton from 'src/components/InstallButton'
 import Typography from '@mui/material/Typography'
 import { tabForTeamSeasTheme } from 'src/themes/theme'
@@ -253,7 +251,6 @@ Seas.propTypes = {
 
 function SeasPageWithTheme(props) {
   return (
-    <StyledEngineProvider injectFirst>
       <ThemeProvider
         theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
       >
@@ -261,7 +258,6 @@ function SeasPageWithTheme(props) {
           <Seas {...props} />
         </CssBaseline>
       </ThemeProvider>
-    </StyledEngineProvider>
   )
 }
 

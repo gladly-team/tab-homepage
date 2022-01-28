@@ -1623,11 +1623,9 @@ MillionPage.defaultProps = {
 // the custom theme).
 function MillionPageWithTheme(props) {
   return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
-        <MillionPage {...props} />
-      </ThemeProvider>
-    </StyledEngineProvider>
+    <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
+      <MillionPage {...props} />
+    </ThemeProvider>
   )
 }
 
