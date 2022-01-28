@@ -2,13 +2,13 @@
 /* eslint-disable */
 
 import React, { useEffect, useState } from 'react'
-import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
 import {
   ThemeProvider,
   StyledEngineProvider,
   responsiveFontSizes,
 } from '@mui/material/styles'
+import makeStyles from '@mui/styles/makeStyles'
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
 import AppBar from '@mui/material/AppBar'
@@ -36,28 +36,11 @@ import Link from 'src/components/Link'
 import Wave from 'src/components/Wave'
 import Footer from 'src/components/FooterV2'
 
-const PREFIX = 'SeasPageWithTheme';
-
-const classes = {
-  logoContainer: `${PREFIX}-logoContainer`,
-  titleSection: `${PREFIX}-titleSection`,
-  title: `${PREFIX}-title`,
-  halfScreenLeft: `${PREFIX}-halfScreenLeft`,
-  halfScreenRight: `${PREFIX}-halfScreenRight`,
-  subtitle: `${PREFIX}-subtitle`,
-  buttonStyles: `${PREFIX}-buttonStyles`,
-  wave: `${PREFIX}-wave`,
-  waveMobile: `${PREFIX}-waveMobile`
-};
-
-const StyledStyledEngineProvider = styled(StyledEngineProvider)((
-  {
-    theme
-  }
-) => ({
-  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
-
-  [`& .${classes.titleSection}`]: {
+const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
+const canonicalURL = getAbsoluteURL(seasURL)
+const useStyles = makeStyles((theme) => ({
+  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
+  titleSection: {
     margin: '0 auto',
     display: 'flex',
     height: 'calc(100vh - 64px)',
@@ -67,12 +50,10 @@ const StyledStyledEngineProvider = styled(StyledEngineProvider)((
       height: 'auto',
     },
   },
-
-  [`& .${classes.title}`]: {
+  title: {
     color: theme.palette.primary.main,
   },
-
-  [`& .${classes.halfScreenLeft}`]: {
+  halfScreenLeft: {
     width: '50%',
     display: 'flex',
     flexDirection: 'column',
@@ -89,8 +70,7 @@ const StyledStyledEngineProvider = styled(StyledEngineProvider)((
       marginBottom: theme.spacing(8),
     },
   },
-
-  [`& .${classes.halfScreenRight}`]: {
+  halfScreenRight: {
     width: '55%',
     display: 'flex',
     flexDirection: 'column',
@@ -102,17 +82,14 @@ const StyledStyledEngineProvider = styled(StyledEngineProvider)((
       width: '100%',
     },
   },
-
-  [`& .${classes.subtitle}`]: {
+  subtitle: {
     marginTop: theme.spacing(2),
   },
-
-  [`& .${classes.buttonStyles}`]: {
+  buttonStyles: {
     maxWidth: theme.spacing(30),
     marginTop: theme.spacing(1.5),
   },
-
-  [`& .${classes.wave}`]: {
+  wave: {
     position: 'absolute',
     bottom: 0,
     width: '100%',
@@ -121,8 +98,7 @@ const StyledStyledEngineProvider = styled(StyledEngineProvider)((
       display: 'none',
     },
   },
-
-  [`& .${classes.waveMobile}`]: {
+  waveMobile: {
     display: 'none',
     position: 'absolute',
     width: '100%',
@@ -130,14 +106,11 @@ const StyledStyledEngineProvider = styled(StyledEngineProvider)((
     [theme.breakpoints.down('md')]: {
       display: 'block',
     },
-  }
-}));
-
-const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
-const canonicalURL = getAbsoluteURL(seasURL)
+  },
+}))
 
 function Seas({ pageContext, location }) {
-
+  const classes = useStyles()
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
 
@@ -280,7 +253,7 @@ Seas.propTypes = {
 
 function SeasPageWithTheme(props) {
   return (
-    <StyledStyledEngineProvider injectFirst>
+    <StyledEngineProvider injectFirst>
       <ThemeProvider
         theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
       >
@@ -288,8 +261,8 @@ function SeasPageWithTheme(props) {
           <Seas {...props} />
         </CssBaseline>
       </ThemeProvider>
-    </StyledStyledEngineProvider>
-  );
+    </StyledEngineProvider>
+  )
 }
 
 export default SeasPageWithTheme

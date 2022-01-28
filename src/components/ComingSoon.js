@@ -1,5 +1,4 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
 import get from 'lodash/get'
 import {
@@ -7,6 +6,7 @@ import {
   StyledEngineProvider,
   responsiveFontSizes,
 } from '@mui/material/styles'
+import makeStyles from '@mui/styles/makeStyles'
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
 import AppBar from '@mui/material/AppBar'
@@ -23,31 +23,12 @@ import { KEY_WORDS } from 'src/utils/constants'
 import CssBaseline from '@mui/material/CssBaseline'
 import { isChromaticEnv } from 'src/utils/featureFlags'
 
-const PREFIX = 'ComingSoonWithTheme';
-
-const classes = {
-  whiteFont: `${PREFIX}-whiteFont`,
-  logoContainer: `${PREFIX}-logoContainer`,
-  titleSection: `${PREFIX}-titleSection`,
-  comingSoon: `${PREFIX}-comingSoon`,
-  countdownPaper: `${PREFIX}-countdownPaper`,
-  countdownFont: `${PREFIX}-countdownFont`,
-  countdownContainer: `${PREFIX}-countdownContainer`,
-  titleText: `${PREFIX}-titleText`
-};
-
-const StyledStyledEngineProvider = styled(StyledEngineProvider)((
-  {
-    theme
-  }
-) => ({
-  [`& .${classes.whiteFont}`]: {
+const useStyles = makeStyles((theme) => ({
+  whiteFont: {
     color: '#fff',
   },
-
-  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
-
-  [`& .${classes.titleSection}`]: {
+  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
+  titleSection: {
     backgroundColor: theme.palette.primary.main,
     filter: 'brightness(85%)',
     margin: '0 auto',
@@ -62,12 +43,10 @@ const StyledStyledEngineProvider = styled(StyledEngineProvider)((
       paddingBottom: theme.spacing(2),
     },
   },
-
-  [`& .${classes.comingSoon}`]: {
+  comingSoon: {
     marginBottom: theme.spacing(2),
   },
-
-  [`& .${classes.countdownPaper}`]: {
+  countdownPaper: {
     borderRadius: '50%',
     height: '150px',
     width: '150px',
@@ -85,24 +64,20 @@ const StyledStyledEngineProvider = styled(StyledEngineProvider)((
       marginBottom: theme.spacing(1),
     },
   },
-
-  [`& .${classes.countdownFont}`]: {
+  countdownFont: {
     color: theme.palette.secondary.main,
   },
-
-  [`& .${classes.countdownContainer}`]: {
+  countdownContainer: {
     display: 'flex',
     flexDirection: 'row',
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
     },
   },
-
-  [`& .${classes.titleText}`]: {
+  titleText: {
     textTransform: 'uppercase',
-  }
-}));
-
+  },
+}))
 function ComingSoon({
   pageContext: {
     data: {
@@ -119,7 +94,7 @@ function ComingSoon({
   },
   location,
 }) {
-
+  const classes = useStyles()
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
   const ogImgURLAbsolute = getAbsoluteURL(
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
@@ -247,7 +222,7 @@ ComingSoon.propTypes = {
 
 function ComingSoonWithTheme(props) {
   return (
-    <StyledStyledEngineProvider injectFirst>
+    <StyledEngineProvider injectFirst>
       <ThemeProvider
         theme={responsiveFontSizes(
           createCauseTheme(props.pageContext.data.styles.colors)
@@ -257,8 +232,8 @@ function ComingSoonWithTheme(props) {
           <ComingSoon {...props} />
         </CssBaseline>
       </ThemeProvider>
-    </StyledStyledEngineProvider>
-  );
+    </StyledEngineProvider>
+  )
 }
 
 ComingSoonWithTheme.propTypes = {

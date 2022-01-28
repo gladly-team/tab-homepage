@@ -1,29 +1,22 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
 import Popover from '@mui/material/Popover'
+import { makeStyles } from '@mui/styles'
 import { primaryMainColor } from 'src/themes/theme'
 
-const PREFIX = 'InfoPopover';
-
-const classes = {
-  paper: `${PREFIX}-paper`
-};
-
-const StyledPopover = styled(Popover)({
-  [`& .${classes.paper}`]: {
+const useStyles = makeStyles({
+  paper: {
     borderRadius: 5,
     border: `1px solid${primaryMainColor}`,
     boxShadow: '0 3px 5px 2px rgba(128, 128, 128,.7)',
     maxWidth: '50%',
   },
-});
-
+})
 function InfoPopover(props) {
   const { anchorEl, children, onClose, open, ...otherProps } = props
-
+  const classes = useStyles()
   return (
-    <StyledPopover
+    <Popover
       open={open}
       anchorEl={anchorEl}
       onClose={onClose}
@@ -35,8 +28,8 @@ function InfoPopover(props) {
       }}
     >
       <div style={{ margin: '15px' }}>{children}</div>
-    </StyledPopover>
-  );
+    </Popover>
+  )
 }
 InfoPopover.displayName = 'InfoPopover'
 InfoPopover.propTypes = {

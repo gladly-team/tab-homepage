@@ -1,6 +1,6 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
+import makeStyles from '@mui/styles/makeStyles'
 import {
   EmailIcon,
   EmailShareButton,
@@ -14,24 +14,16 @@ import {
   TwitterShareButton,
 } from 'react-share'
 
-const PREFIX = 'SocialShare';
-
-const classes = {
-  root: `${PREFIX}-root`,
-  button: `${PREFIX}-button`
-};
-
-const Root = styled('div')(() => ({
-  [`&.${classes.root}`]: {
+const useStyles = makeStyles(() => ({
+  root: {
     display: 'flex',
     justifyContent: 'center',
     padding: 0,
   },
-
-  [`& .${classes.button}`]: {
+  button: {
     padding: 4,
-  }
-}));
+  },
+}))
 
 function SocialShare(props) {
   const {
@@ -44,12 +36,12 @@ function SocialShare(props) {
   } = props
   const iconSize = 32
 
-
+  const classes = useStyles()
 
   // Note: hashtags for Facebook and Twitter are hardcoded.
   // We may want to move them server-side if we use them often.
   return (
-    <Root className={classes.root}>
+    <div className={classes.root}>
       {FacebookShareButtonProps ? (
         <div className={classes.button}>
           <FacebookShareButton
@@ -95,8 +87,8 @@ function SocialShare(props) {
           </EmailShareButton>
         </div>
       ) : null}
-    </Root>
-  );
+    </div>
+  )
 }
 
 SocialShare.propTypes = {
