@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function FooterBlobLeft({ color, innerClassName }) {
+function FooterBlobLeft({ color, style }) {
   return (
     <svg
-      className={innerClassName}
+      style={style}
       width="661"
       height="647"
       viewBox="0 0 661 647"
@@ -21,7 +21,7 @@ function FooterBlobLeft({ color, innerClassName }) {
 
 FooterBlobLeft.propTypes = {
   color: PropTypes.string.isRequired,
-  innerClassName: PropTypes.string.isRequired,
+  style: PropTypes.string.isRequired,
 }
 
 export default FooterBlobLeft

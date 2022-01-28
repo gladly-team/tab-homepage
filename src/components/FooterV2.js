@@ -7,7 +7,7 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import Typography from '@mui/material/Typography'
 import SvgIcon from '@mui/material/SvgIcon'
 import redirect from 'src/utils/redirect'
-import makeStyles from '@mui/styles/makeStyles'
+import { styled, useTheme } from '@mui/material/styles'
 import logo from 'src/img/logo-with-text-white.svg'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
@@ -35,117 +35,91 @@ import {
 } from 'src/utils/navigation'
 import Link from 'src/components/Link'
 
-const useStyles = makeStyles((theme) => ({
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  backgroundContainer: {
-    background: theme.palette.primary.main,
-    paddingBottom: 20,
-    display: 'flex',
+const DivBackgroundContainer = styled('div')(({ theme }) => ({
+  background: theme.palette.primary.main,
+  paddingBottom: 20,
+  display: 'flex',
+  justifyContent: 'center',
+  overflow: 'hidden',
+  position: 'relative',
+}))
+
+const LinkTiktok = styled(Link)(({ theme }) => ({
+  marginRight: theme.spacing(1),
+}))
+
+const TypographySocial = styled(Typography)(({ theme }) => ({
+  marginTop: theme.spacing(1),
+}))
+
+const DivContentRow = styled('div')(({ theme }) => ({
+  display: 'flex',
+  width: '80%',
+  justifyContent: 'space-between',
+  flexWrap: 'wrap',
+  zIndex: '1',
+}))
+
+const DivColumnOne = styled('div')(({ theme }) => ({
+  marginTop: theme.spacing(6.5),
+  display: 'flex',
+  flexDirection: 'column',
+  color: '#fff',
+  minWidth: theme.spacing(36),
+  flex: 1,
+}))
+
+const DivColumnTwo = styled('div')(({ theme }) => ({
+  marginTop: theme.spacing(6.5),
+  width: theme.spacing(38),
+  display: 'flex',
+  flexWrap: 'wrap',
+  flexDirection: 'row',
+  color: '#fff',
+  flex: 2,
+  justifyContent: 'center',
+}))
+
+const DivColumnThree = styled('div')(({ theme }) => ({
+  paddingLeft: theme.spacing(2),
+  paddingRight: theme.spacing(2),
+  paddingTop: theme.spacing(6),
+  paddingBottom: theme.spacing(6),
+  display: 'flex',
+  flex: 1,
+
+  [theme.breakpoints.down('lg')]: {
+    flexGrow: 1,
     justifyContent: 'center',
-    overflow: 'hidden',
-    position: 'relative',
-  },
-  tiktok: {
-    marginRight: theme.spacing(1),
-  },
-  social: {
-    marginTop: theme.spacing(1),
-  },
-  contentRow: {
-    display: 'flex',
-    width: '80%',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-    flexFlow: 'row',
-    '&::after': {
-      content: '',
-      flex: '0 1 30%',
-    },
-    zIndex: '1',
-  },
-  columnOne: {
-    marginTop: theme.spacing(6.5),
-    display: 'flex',
-    flexDirection: 'column',
-    color: '#fff',
-    minWidth: theme.spacing(36),
-  },
-  columnTwo: {
-    marginTop: theme.spacing(6.5),
-    width: theme.spacing(38),
-    display: 'flex',
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    color: '#fff',
-  },
-  columnThree: {
-    marginTop: theme.spacing(6.5),
-    display: 'flex',
-    [theme.breakpoints.down(undefined)]: {
-      width: '100%',
-      justifyContent: 'center',
-    },
-  },
-  subColumn: {
-    display: 'flex',
-    flexDirection: 'column',
-    color: '#fff',
-    width: theme.spacing(30),
-  },
-  subColumnTwo: {
-    display: 'flex',
-    flexDirection: 'column',
-    color: '#fff',
-  },
-  iconRowOne: {
-    display: 'flex',
-    color: '#fff',
-    marginLeft: theme.spacing(-2),
-  },
-  iconRowTwo: {
-    display: 'flex',
-    color: '#fff',
-  },
-  iconStyles: {
-    color: theme.palette.primary.main,
-    backgroundColor: '#fff',
-    padding: theme.spacing(0.25),
-    height: theme.spacing(4),
-    width: theme.spacing(4),
-    borderRadius: theme.spacing(0.5),
-  },
-  imgClassName: {
-    height: 'auto !important',
-  },
-  iconButton: {
-    borderRadius: '10%',
-  },
-  leftBubble: {
-    position: 'absolute',
-    width: theme.spacing(70),
-    left: theme.spacing(-10),
-    top: theme.spacing(6),
-    [theme.breakpoints.down('md')]: {
-      width: theme.spacing(50),
-      left: theme.spacing(-30),
-      top: theme.spacing(0),
-    },
-  },
-  rightBubble: {
-    position: 'absolute',
-    width: theme.spacing(40),
-    right: theme.spacing(10),
-    top: theme.spacing(27),
-    [theme.breakpoints.down('md')]: {
-      right: theme.spacing(-14),
-      top: 'unset',
-      bottom: theme.spacing(-40),
-    },
   },
 }))
+
+const DivSubColumn = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  color: '#fff',
+  width: theme.spacing(30),
+}))
+
+const DivSubColumnTwo = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  color: '#fff',
+}))
+
+const DivIconRowOne = styled('div')(({ theme }) => ({
+  display: 'flex',
+  color: '#fff',
+  marginLeft: theme.spacing(-2),
+}))
+
+const DivIconRowTwo = styled('div')(({ theme }) => ({
+  display: 'flex',
+  color: '#fff',
+}))
+
 function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
   const image = getImage(formatImg(img))
-  const classes = useStyles()
   const browserOnClick = useCallback(
     (extensionUrl) => async () => {
       await onBeforeInstall()
@@ -153,28 +127,59 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
     },
     [onBeforeInstall]
   )
+  const theme = useTheme()
+  const iconButtonStyles = {
+    borderRadius: '10%',
+  }
+  const iconStyles = {
+    color: theme.palette.primary.main,
+    backgroundColor: '#fff',
+    padding: theme.spacing(0.25),
+    height: theme.spacing(4),
+    width: theme.spacing(4),
+    borderRadius: theme.spacing(0.5),
+  }
   return (
-    <div className={classes.backgroundContainer}>
-      <FooterBlobLeft color={bubbleColor} innerClassName={classes.leftBubble} />
+    <DivBackgroundContainer>
+      <FooterBlobLeft
+        color={bubbleColor}
+        style={{
+          position: 'absolute',
+          width: theme.spacing(70),
+          left: theme.spacing(-10),
+          top: theme.spacing(6),
+          [theme.breakpoints.down('md')]: {
+            width: theme.spacing(50),
+            left: theme.spacing(-30),
+            top: theme.spacing(0),
+          },
+        }}
+      />
       <FooterBlobRight
         color={bubbleColor}
-        innerClassName={classes.rightBubble}
+        style={{
+          position: 'absolute',
+          width: theme.spacing(40),
+          right: theme.spacing(10),
+          top: theme.spacing(27),
+          [theme.breakpoints.down('md')]: {
+            right: theme.spacing(-14),
+            top: 'unset',
+            bottom: theme.spacing(-40),
+          },
+        }}
       />
-      <div className={classes.contentRow}>
-        <div className={classes.columnOne}>
+      <DivContentRow>
+        <DivColumnOne>
           <Link to="/">
             <img src={logo} style={{ height: 43 }} />
           </Link>
-          <Typography
-            variant="subtitle2"
-            color="textSecondary"
-            className={classes.social}
-          >
+          <TypographySocial variant="subtitle2" color="textSecondary">
             Social
-          </Typography>
-          <div className={classes.iconRowOne}>
-            <Link to={tiktokPageURL} className={classes.tiktok} target="_blank">
-              <IconButton classes={{ root: classes.iconButton }} size="large">
+          </TypographySocial>
+          <DivIconRowOne>
+            <LinkTiktok to={tiktokPageURL} target="_blank">
+              <IconButton style={iconButtonStyles} size="large">
                 <SvgIcon
                   viewBox="0 0 50 50"
                   style={{
@@ -187,59 +192,55 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
                   <path d="M41,4H9C6.243,4,4,6.243,4,9v32c0,2.757,2.243,5,5,5h32c2.757,0,5-2.243,5-5V9C46,6.243,43.757,4,41,4z M37.006,22.323 c-0.227,0.021-0.457,0.035-0.69,0.035c-2.623,0-4.928-1.349-6.269-3.388c0,5.349,0,11.435,0,11.537c0,4.709-3.818,8.527-8.527,8.527 s-8.527-3.818-8.527-8.527s3.818-8.527,8.527-8.527c0.178,0,0.352,0.016,0.527,0.027v4.202c-0.175-0.021-0.347-0.053-0.527-0.053 c-2.404,0-4.352,1.948-4.352,4.352s1.948,4.352,4.352,4.352s4.527-1.894,4.527-4.298c0-0.095,0.042-19.594,0.042-19.594h4.016 c0.378,3.591,3.277,6.425,6.901,6.685V22.323z" />
                 </SvgIcon>
               </IconButton>
-            </Link>
+            </LinkTiktok>
             <Link to={facebookPageURL} target="_blank">
-              <IconButton
-                edge="start"
-                classes={{ root: classes.iconButton }}
-                size="large"
-              >
-                <FacebookIcon classes={{ root: classes.iconStyles }} />
+              <IconButton edge="start" style={iconButtonStyles} size="large">
+                <FacebookIcon style={iconStyles} />
               </IconButton>
             </Link>
 
             <Link to={instagramPageURL} target="_blank">
-              <IconButton classes={{ root: classes.iconButton }} size="large">
-                <InstagramIcon classes={{ root: classes.iconStyles }} />
+              <IconButton style={iconButtonStyles} size="large">
+                <InstagramIcon style={iconStyles} />
               </IconButton>
             </Link>
 
             <Link to={twitterPageURL} target="_blank">
-              <IconButton classes={{ root: classes.iconButton }} size="large">
-                <TwitterIcon classes={{ root: classes.iconStyles }} />
+              <IconButton style={iconButtonStyles} size="large">
+                <TwitterIcon style={iconStyles} />
               </IconButton>
             </Link>
-          </div>
+          </DivIconRowOne>
           <Typography variant="subtitle2" color="textSecondary">
             Browser Compatibility
           </Typography>
-          <div className={classes.iconRowTwo}>
+          <DivIconRowTwo>
             <IconButton
               onClick={browserOnClick(chromeExtensionURL)}
               edge="start"
-              classes={{ root: classes.iconButton }}
+              style={iconButtonStyles}
               size="large"
             >
-              <GoogleChrome className={classes.iconStyles} />
+              <GoogleChrome style={iconStyles} />
             </IconButton>
             <IconButton
               onClick={browserOnClick(edgeExtensionURL)}
-              classes={{ root: classes.iconButton }}
+              style={iconButtonStyles}
               size="large"
             >
-              <MicrosoftEdge className={classes.iconStyles} />
+              <MicrosoftEdge style={iconStyles} />
             </IconButton>
             <IconButton
               onClick={browserOnClick(safariExtensionURL)}
-              classes={{ root: classes.iconButton }}
+              style={iconButtonStyles}
               size="large"
             >
-              <AppleSafari className={classes.iconStyles} />
+              <AppleSafari style={iconStyles} />
             </IconButton>
-          </div>
-        </div>
-        <div className={classes.columnTwo}>
-          <div className={classes.subColumn}>
+          </DivIconRowTwo>
+        </DivColumnOne>
+        <DivColumnTwo>
+          <DivSubColumn>
             <Link to={externalHelpURL}>
               <Typography
                 variant="subtitle2"
@@ -285,8 +286,8 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
                 Ad Blockers
               </Typography>
             </Link>
-          </div>
-          <div className={classes.subColumnTwo}>
+          </DivSubColumn>
+          <DivSubColumnTwo>
             <Link to={teamURL}>
               <Typography
                 variant="subtitle2"
@@ -314,17 +315,17 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
                 Jobs
               </Typography>
             </Link>
-          </div>
-        </div>
-        <div className={classes.columnThree}>
+          </DivSubColumnTwo>
+        </DivColumnTwo>
+        <DivColumnThree>
           <GatsbyImage
             image={image}
             alt="footer"
-            imgClassName={classes.imgClassName}
+            // style={{ height: 'auto !important' }}
           />
-        </div>
-      </div>
-    </div>
+        </DivColumnThree>
+      </DivContentRow>
+    </DivBackgroundContainer>
   )
 }
 
