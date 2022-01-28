@@ -1,13 +1,14 @@
 import React from 'react'
-import FAQ from './FAQ'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+import FAQ from './FAQ'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+
 export default {
   title: 'Components/FAQ',
   component: FAQ,
 }
 
-const Template = (_args, { loaded: { data } }) => {
+function Template(_args, { loaded: { data } }) {
   const faqData = data.data.sections.faq
   return <FAQ faqData={faqData} />
 }

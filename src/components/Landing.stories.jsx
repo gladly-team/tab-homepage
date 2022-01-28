@@ -1,13 +1,14 @@
 import React from 'react'
-import Landing from './Landing'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+import Landing from './Landing'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+
 export default {
   title: 'Components/Landing',
   component: Landing,
 }
 
-const Template = (_args, { loaded: { data } }) => {
+function Template(_args, { loaded: { data } }) {
   const landingData = data.data.sections.landing
   return <Landing landingData={landingData} />
 }

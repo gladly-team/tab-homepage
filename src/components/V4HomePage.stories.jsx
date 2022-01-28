@@ -1,17 +1,17 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
+import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 import HomePageWrapper from './V4HomePage'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
-import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 
 export default {
   title: 'Pages/HomePage',
   component: HomePageWrapper,
 }
 
-const Template = (_args, { loaded: { data } }) => (
-  <HomePageWrapper location={'/'} pageContext={data} />
-)
+function Template(_args, { loaded: { data } }) {
+  return <HomePageWrapper location="/" pageContext={data} />
+}
 
 export const MobileSeas = mobile(seas(Template.bind({})))
 /*
@@ -58,7 +58,7 @@ FullWidthSeas.parameters = {
 export const FullWidthSeasPreview = seas(Template.bind({}))
 FullWidthSeasPreview.loaders = [
   async () => {
-    var data = await useCauseData('seas')
+    const data = await useCauseData('seas')
     data.causeLaunch = {
       enabled: false,
       preview: true,

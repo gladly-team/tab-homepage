@@ -1,13 +1,14 @@
 import React from 'react'
-import SecuritySection from './SecuritySection'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+import SecuritySection from './SecuritySection'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+
 export default {
   title: 'Components/SecuritySection',
   component: SecuritySection,
 }
 
-const Template = (_args, { loaded: { data } }) => {
+function Template(_args, { loaded: { data } }) {
   const SecuritySectionData = data.data.sections.Security
   return <SecuritySection securityData={SecuritySectionData} />
 }

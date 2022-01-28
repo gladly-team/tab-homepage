@@ -1,14 +1,14 @@
 import React from 'react'
+import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 import Endorsements from './Endorsements'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
-import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 
 export default {
   title: 'Components/Endorsements',
   component: Endorsements,
 }
 
-const Template = (_args, { loaded: { data } }) => {
+function Template(_args, { loaded: { data } }) {
   const {
     sections: { Endorsements: endorsementsData },
     styles,

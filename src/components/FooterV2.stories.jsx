@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
+import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 import FooterV2 from './FooterV2'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
-import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+
 export default {
   title: 'Components/FooterV2',
   component: FooterV2,
 }
 
-const Template = (_args, { loaded: { data } }) => {
+function Template(_args, { loaded: { data } }) {
   const footerData = data.data.sections.Footer
   return <FooterV2 onBeforeInstall={() => {}} footerData={footerData} />
 }

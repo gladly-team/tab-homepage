@@ -1,13 +1,14 @@
 import React from 'react'
-import Mission from './Mission'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+import Mission from './Mission'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+
 export default {
   title: 'Components/Mission',
   component: Mission,
 }
 
-const Template = (_args, { loaded: { data } }) => {
+function Template(_args, { loaded: { data } }) {
   const missionData = data.data.sections.Mission
   return <Mission missionData={missionData} causeId={data.data.causeId} />
 }
