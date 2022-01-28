@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles'
+import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import Markdown from 'src/components/Markdown'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -10,136 +10,135 @@ import leftBubble from 'src/img/causeshared/blobLeft.svg'
 import rightBubble from 'src/img/causeshared/blobRight.svg'
 import V4InstallButton from 'src/components/V4InstallButton'
 
-const useStyles = makeStyles((theme) => ({
-  wrapper: {
-    minHeight: '100vh',
-    position: 'relative',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    backgroundColor: '#FFFFFF',
-    overflow: 'hidden',
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-    [theme.breakpoints.down('md')]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6),
-    },
+const DivWrapper = styled('div')(({ theme }) => ({
+  minHeight: '100vh',
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  backgroundColor: '#FFFFFF',
+  overflow: 'hidden',
+  paddingTop: theme.spacing(8),
+  paddingBottom: theme.spacing(8),
+
+  [theme.breakpoints.down('md')]: {
+    paddingTop: theme.spacing(6),
+    paddingBottom: theme.spacing(6),
   },
-  column: {
-    position: 'relative',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '85%',
-    height: '100%',
-    [theme.breakpoints.down('md')]: {
-      flexDirection: 'column-reverse',
-    },
+}))
+
+const DivColumn = styled('div')(({ theme }) => ({
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '85%',
+  height: '100%',
+
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'column-reverse',
   },
-  textContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    flex: '1',
-    marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-    color: theme.palette.primary.main,
-    zIndex: 1,
+}))
+
+const DivTextContainer = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  flex: '1',
+  marginTop: theme.spacing(2),
+  marginBottom: theme.spacing(2),
+  color: theme.palette.primary.main,
+  zIndex: 1,
+}))
+
+const GatsbyImageMissionImage = styled(GatsbyImage)(({ theme }) => ({
+  maxHeight: '90%',
+  maxWidth: '50%',
+  flex: '1',
+  margin: theme.spacing(2),
+
+  [theme.breakpoints.down('md')]: {
+    maxWidth: 'unset',
   },
-  installButton: {
-    marginTop: theme.spacing(4),
+}))
+
+const TypographySubtitle = styled(Typography)(({ theme }) => ({
+  paddingTop: theme.spacing(2),
+  paddingBottom: theme.spacing(2),
+  fontWeight: 900,
+  fontFamily: 'Poppins',
+}))
+
+const ImgSquiggle = styled('img')(({ theme }) => ({
+  position: 'absolute',
+  zIndex: '1',
+  left: theme.spacing(-2),
+  top: theme.spacing(4),
+  width: theme.spacing(8),
+
+  [theme.breakpoints.down('md')]: {
+    left: 'unset',
+    right: theme.spacing(2),
+    top: theme.spacing(46),
+    width: theme.spacing(12),
   },
-  missionImage: {
-    maxHeight: '90%',
-    maxWidth: '50%',
-    flex: '1',
-    margin: theme.spacing(2),
-    [theme.breakpoints.down('md')]: {
-      maxWidth: 'unset',
-    },
+}))
+
+const ImgLeftBubble = styled('img')(({ theme }) => ({
+  position: 'absolute',
+  width: theme.spacing(50),
+  left: theme.spacing(10),
+  top: theme.spacing(10),
+
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
   },
-  titleText: {},
-  missionLink: {
-    marginTop: theme.spacing(4),
-  },
-  subtitle: {
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
-    fontWeight: 900,
-    fontFamily: 'Poppins',
-  },
-  squiggle: {
-    position: 'absolute',
-    zIndex: '1',
-    left: theme.spacing(-2),
-    top: theme.spacing(4),
-    width: theme.spacing(8),
-    [theme.breakpoints.down('md')]: {
-      left: 'unset',
-      right: theme.spacing(2),
-      top: theme.spacing(46),
-      width: theme.spacing(12),
-    },
-  },
-  leftBubble: {
-    position: 'absolute',
-    width: theme.spacing(50),
-    left: theme.spacing(10),
-    top: theme.spacing(10),
-    [theme.breakpoints.down('md')]: {
-      display: 'none',
-    },
-    color: '#FAFAFA',
-  },
-  rightBubble: {
-    position: 'absolute',
-    width: theme.spacing(40),
-    right: theme.spacing(10),
-    bottom: theme.spacing(-5),
-    overflow: 'hidden',
-    [theme.breakpoints.down('md')]: {
-      right: theme.spacing(-5),
-      bottom: theme.spacing(-10),
-    },
+
+  color: '#FAFAFA',
+}))
+
+const ImgRightBubble = styled('img')(({ theme }) => ({
+  position: 'absolute',
+  width: theme.spacing(40),
+  right: theme.spacing(10),
+  bottom: theme.spacing(-5),
+  overflow: 'hidden',
+
+  [theme.breakpoints.down('md')]: {
+    right: theme.spacing(-5),
+    bottom: theme.spacing(-10),
   },
 }))
 
 function Mission({ missionData, causeId }) {
   const { titleText, subtitleText, bodyText, image } = missionData
-  const classes = useStyles()
   const missionImage = getImage(formatImg(image))
   return (
-    <div className={classes.wrapper}>
-      <img className={classes.squiggle} src={heartSquiggle} />
-      <img className={classes.leftBubble} src={leftBubble} />
-      <img className={classes.rightBubble} src={rightBubble} />
-      <div className={classes.column}>
-        <div className={classes.textContainer}>
+    <DivWrapper>
+      <ImgSquiggle src={heartSquiggle} />
+      <ImgLeftBubble src={leftBubble} />
+      <ImgRightBubble src={rightBubble} />
+      <DivColumn>
+        <DivTextContainer>
           <Typography variant="h1" color="primary">
             {titleText}
           </Typography>
-          <Typography className={classes.subtitle} variant="h5" color="primary">
+          <TypographySubtitle variant="h5" color="primary">
             {subtitleText}
-          </Typography>
+          </TypographySubtitle>
           <Markdown>{bodyText}</Markdown>
-          <V4InstallButton
-            causeId={causeId}
-            buttonClassName={classes.installButton}
-            fullWidth
-          />
-        </div>
-        <GatsbyImage
+          <V4InstallButton causeId={causeId} fullWidth />
+        </DivTextContainer>
+        <GatsbyImageMissionImage
           image={missionImage}
-          className={classes.missionImage}
           alt=""
           placeholder="none"
           backgroundColor="transparent"
         />
-      </div>
-    </div>
+      </DivColumn>
+    </DivWrapper>
   )
 }
 Mission.propTypes = {
