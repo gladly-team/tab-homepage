@@ -1,22 +1,18 @@
 import React, { useRef, useState } from 'react'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import ButtonBase from '@mui/material/ButtonBase'
 
-const PREFIX = 'FAQDropDown';
+const PREFIX = 'FAQDropDown'
 
 const classes = {
   buttonBase: `${PREFIX}-buttonBase`,
   FAQDropDownText: `${PREFIX}-FAQDropDownText`,
-  dropdownText: `${PREFIX}-dropdownText`
-};
+  dropdownText: `${PREFIX}-dropdownText`,
+}
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled('div')((
-  {
-    theme
-  }
-) => ({
+const Root = styled('div')(({ theme }) => ({
   [`& .${classes.buttonBase}`]: {
     borderRadius: 2,
   },
@@ -27,15 +23,14 @@ const Root = styled('div')((
     cursor: 'pointer',
   },
 
-  [`& .${classes.dropdownText}`]: {}
-}));
+  [`& .${classes.dropdownText}`]: {},
+}))
 
 function FAQDropDown({ dropdown, text }) {
-
   const [isPopoverOpen, setIsPopoverOpen] = useState(false)
   const anchorEl = useRef()
   return (
-    (<Root>
+    <Root>
       <ButtonBase className={classes.buttonBase}>
         <div
           ref={anchorEl}
@@ -56,8 +51,8 @@ function FAQDropDown({ dropdown, text }) {
         },
         anchorElement: anchorEl,
       })}
-    </Root>)
-  );
+    </Root>
+  )
 }
 
 FAQDropDown.propTypes = {
