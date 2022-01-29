@@ -78,7 +78,7 @@ const DivColumnTwo = styled('div')(({ theme }) => ({
   flexDirection: 'row',
   color: '#fff',
   flex: 2,
-  justifyContent: 'center',
+  justifyContent: 'flex-start',
   [theme.breakpoints.down('md')]: {
     justifyContent: 'flex-start',
   },
@@ -86,10 +86,10 @@ const DivColumnTwo = styled('div')(({ theme }) => ({
 
 const DivColumnThree = styled('div')(({ theme }) => ({
   marginTop: theme.spacing(6),
+  minWidth: 100,
   display: 'flex',
   flex: 1,
   [theme.breakpoints.down('lg')]: {
-    flexGrow: 1,
     justifyContent: 'center',
     paddingBottom: theme.spacing(6),
   },
@@ -97,16 +97,17 @@ const DivColumnThree = styled('div')(({ theme }) => ({
 
 const DivSubColumn = styled('div')(({ theme }) => ({
   display: 'flex',
+  flexShrink: 0,
   flexDirection: 'column',
   color: '#fff',
-  width: 240,
+  width: 200,
 }))
 
 const DivSubColumnTwo = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   color: '#fff',
-  width: 240,
+  width: 300,
 }))
 
 const DivIconRowOne = styled('div')(({ theme }) => ({
