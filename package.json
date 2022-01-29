@@ -127,26 +127,5 @@
     "tab-e2e": "^2.0.2",
     "typescript": "^4.5.5",
     "webpack": "^5.67.0"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!**/e2eTests/**",
-      "!**/__tests__/**"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-    },
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.js"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>[/\\\\](build|dist|docs|public|node_modules|.cache)[/\\\\]"
-    ],
-    "testEnvironment": "node",
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ]
   }
 }
