@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
+import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
@@ -55,7 +56,7 @@ const TypographySocial = styled(Typography)(({ theme }) => ({
 const DivContentRow = styled('div')(({ theme }) => ({
   display: 'flex',
   width: '80%',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-start',
   flexWrap: 'wrap',
   zIndex: '1',
 }))
@@ -73,24 +74,24 @@ const DivColumnTwo = styled('div')(({ theme }) => ({
   marginTop: theme.spacing(6.5),
   width: theme.spacing(38),
   display: 'flex',
-  flexWrap: 'wrap',
+  flexWrap: 'nowrap',
   flexDirection: 'row',
   color: '#fff',
   flex: 2,
   justifyContent: 'center',
+  [theme.breakpoints.down('md')]: {
+    justifyContent: 'flex-start',
+  },
 }))
 
 const DivColumnThree = styled('div')(({ theme }) => ({
-  paddingLeft: theme.spacing(2),
-  paddingRight: theme.spacing(2),
-  paddingTop: theme.spacing(6),
-  paddingBottom: theme.spacing(6),
+  marginTop: theme.spacing(6),
   display: 'flex',
   flex: 1,
-
   [theme.breakpoints.down('lg')]: {
     flexGrow: 1,
     justifyContent: 'center',
+    paddingBottom: theme.spacing(6),
   },
 }))
 
@@ -98,13 +99,14 @@ const DivSubColumn = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   color: '#fff',
-  width: theme.spacing(30),
+  width: 240,
 }))
 
 const DivSubColumnTwo = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   color: '#fff',
+  width: 240,
 }))
 
 const DivIconRowOne = styled('div')(({ theme }) => ({
@@ -171,9 +173,11 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
       />
       <DivContentRow>
         <DivColumnOne>
-          <Link to="/">
-            <img src={logo} style={{ height: 43 }} />
-          </Link>
+          <Box sx={{ mb: 1 }}>
+            <Link to="/">
+              <img src={logo} style={{ height: 43 }} />
+            </Link>
+          </Box>
           <TypographySocial variant="subtitle2" color="textSecondary">
             Social
           </TypographySocial>
@@ -318,11 +322,9 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
           </DivSubColumnTwo>
         </DivColumnTwo>
         <DivColumnThree>
-          <GatsbyImage
-            image={image}
-            alt="footer"
-            // style={{ height: 'auto !important' }}
-          />
+          <Box>
+            <GatsbyImage image={image} alt="footer" />
+          </Box>
         </DivColumnThree>
       </DivContentRow>
     </DivBackgroundContainer>
