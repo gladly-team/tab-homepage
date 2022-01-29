@@ -25,35 +25,33 @@ export function Layout(props) {
   const { brand, children, location } = props
   const absoluteUrl = getAbsoluteURL(location.pathname)
   return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={defaultTheme}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100vh',
+          background: '#fff',
+        }}
+      >
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            height: '100vh',
-            background: '#fff',
+            flex: '1 0 auto',
           }}
         >
+          <HeadTags pageURL={absoluteUrl} />
+          <Header brand={brand} />
           <div
             style={{
-              flex: '1 0 auto',
+              paddingTop: 0,
             }}
           >
-            <HeadTags pageURL={absoluteUrl} />
-            <Header brand={brand} />
-            <div
-              style={{
-                paddingTop: 0,
-              }}
-            >
-              {children}
-            </div>
+            {children}
           </div>
-          <Footer style={{ flexShrink: 0 }} />
         </div>
-      </ThemeProvider>
-    </StyledEngineProvider>
+        <Footer style={{ flexShrink: 0 }} />
+      </div>
+    </ThemeProvider>
   )
 }
 

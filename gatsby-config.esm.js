@@ -10,7 +10,10 @@ module.exports = {
     siteUrl: `https://${domain}`, // Used in gatsby-plugin-sitemap
   },
   plugins: [
+    // From:
+    // https://github.com/mui-org/material-ui/tree/master/examples/gatsby
     'gatsby-plugin-top-layout',
+
     'gatsby-plugin-react-helmet',
 
     // Might eventually be easy to drop this plugin. See:

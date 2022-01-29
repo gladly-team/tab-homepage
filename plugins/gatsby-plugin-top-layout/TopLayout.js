@@ -16,14 +16,10 @@ function TopLayout(props) {
       <Helmet>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Helmet>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider
-          theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}
-        >
-          <CssBaseline />
-          {props.children}
-        </ThemeProvider>
-      </StyledEngineProvider>
+      <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
+        <CssBaseline />
+        {props.children}
+      </ThemeProvider>
     </>
   )
 }
