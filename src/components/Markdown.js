@@ -3,8 +3,6 @@
 import React, { useMemo } from 'react'
 import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
-
-// Pinned to v9 becauseof transpiling issues (see next.config.js for info)
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
