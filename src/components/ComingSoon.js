@@ -6,6 +6,7 @@ import {
 } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import get from 'lodash/get'
+import dayjs from 'dayjs'
 
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
@@ -127,10 +128,8 @@ function ComingSoon({
 
   // Making the date a fixed time in the future in the Chromatic Env to make this page static
   if (launchDate) {
-    countdownDate = isChromaticEnv()
-      ? new Date(new Date().getTime() + 86400000)
-      : new Date(launchDate)
-    displayCountdown = countdownDate && new Date() < countdownDate
+    countdownDate = isChromaticEnv() ? dayjs().add(1, 'day') : dayjs(launchDate)
+    displayCountdown = countdownDate && dayjs().isBefore(countdownDate)
   } else {
     displayCountdown = false
   }
@@ -200,7 +199,7 @@ function ComingSoon({
                   <Typography variant="h4" className={classes.countdownFont}>
                     {days}
                   </Typography>
-                  <Typography>days</Typography>
+                  <Typography>{days === 1 ? 'day' : 'days'}</Typography>
                 </Paper>
                 <Paper className={classes.countdownPaper}>
                   <Typography variant="h4" className={classes.countdownFont}>
