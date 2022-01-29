@@ -22,6 +22,27 @@ jest.mock(
       return <span />
     }
 )
+jest.mock(
+  'mdi-material-ui/GoogleChrome',
+  () =>
+    function MockComp() {
+      return <span />
+    }
+)
+jest.mock(
+  'mdi-material-ui/MicrosoftEdge',
+  () =>
+    function MockComp() {
+      return <span />
+    }
+)
+jest.mock(
+  'mdi-material-ui/AppleSafari',
+  () =>
+    function MockComp() {
+      return <span />
+    }
+)
 
 const mockProps = {
   onBeforeInstall: () => {},

@@ -60,6 +60,13 @@ jest.mock(
       return <div />
     }
 )
+jest.mock(
+  'mdi-material-ui/GoogleChrome',
+  () =>
+    function MockComp() {
+      return <span />
+    }
+)
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')
