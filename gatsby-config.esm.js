@@ -13,8 +13,10 @@ module.exports = {
     'gatsby-plugin-top-layout',
     'gatsby-plugin-react-helmet',
 
-    // See: https://github.com/mui-org/material-ui/tree/master/examples/gatsby
-    'gatsby-plugin-mui-emotion',
+    // Might eventually be easy to drop this plugin. See:
+    // https://github.com/hupe1980/gatsby-plugin-material-ui/issues/70
+    // https://github.com/mui-org/material-ui/tree/master/examples/gatsby
+    `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

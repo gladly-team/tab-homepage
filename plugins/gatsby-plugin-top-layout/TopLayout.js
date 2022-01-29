@@ -10,7 +10,7 @@ import {
 // eslint-disable-next-line import/no-relative-packages
 import defaultTheme from '../../src/themes/theme'
 
-export default function TopLayout(props) {
+function TopLayout(props) {
   return (
     <>
       <Helmet>
@@ -31,3 +31,5 @@ export default function TopLayout(props) {
 TopLayout.propTypes = {
   children: PropTypes.node,
 }
+
+export default TopLayout

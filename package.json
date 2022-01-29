@@ -23,6 +23,7 @@
     "gatsby": "^4.5.5",
     "gatsby-plugin-facebook-pixel": "^1.0.5",
     "gatsby-plugin-image": "^2.5.2",
+    "gatsby-plugin-material-ui": "^4.0.2",
     "gatsby-plugin-react-helmet": "^5.5.0",
     "gatsby-plugin-robots-txt": "^1.7.0",
     "gatsby-plugin-sentry": "^1.0.1",
