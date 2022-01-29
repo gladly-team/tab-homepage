@@ -1,9 +1,18 @@
 import { StyledEngineProvider, ThemeProvider, responsiveFontSizes } from '@mui/material/styles'
+
+// https://mui.com/guides/migration-v4/#storybook-emotion-with-v5
+import { ThemeProvider as Emotion10ThemeProvider } from 'emotion-theming';
+
 import CssBaseline from '@mui/material/CssBaseline'
 import { action } from '@storybook/addon-actions'
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
-import catsTheme, { tabForTeamSeasTheme } from 'src/themes/theme'
-import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls'
+import defaultTheme from 'src/themes/theme'
+
+import '@fontsource/poppins/300.css'
+import '@fontsource/poppins/400.css'
+import '@fontsource/poppins/500.css'
+import '@fontsource/poppins/800.css'
+import '@fontsource/poppins/900.css'
 
 const customViewports = {
   monitor: {
@@ -50,33 +59,18 @@ window.___navigate = (pathname) => {
   action('NavigateTo:')(pathname)
 }
 
+const withThemeProvider = (Story, context) => {
+  return (
+    <Emotion10ThemeProvider theme={defaultTheme}>
+        <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
+        <CssBaseline />
+        <Story {...context} />
+      </ThemeProvider>
+    </Emotion10ThemeProvider>
+  );
+};
+
 // global theming
 export const decorators = [
-  withGlobals((Story, { vertical }) => {
-    let theme
-    switch (vertical) {
-      case 'seas':
-        theme = tabForTeamSeasTheme
-        break
-      case 'cats':
-        theme = catsTheme
-        break
-      default:
-        theme = tabForTeamSeasTheme
-        break
-    }
-    return (
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={responsiveFontSizes(theme)}>
-          <CssBaseline>
-            <style>
-              @import
-              url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800;900&display=swap');
-            </style>
-            <Story />
-          </CssBaseline>
-        </ThemeProvider>
-      </StyledEngineProvider>
-    )
-  }),
+  withThemeProvider
 ]
