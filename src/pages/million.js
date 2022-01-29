@@ -1,5 +1,5 @@
 /* globals window */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import ReactFullpage from '@fullpage/react-fullpage'
 import {
@@ -15,8 +15,12 @@ import Button from '@mui/material/Button'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import ArrowLeftIcon from '@mui/icons-material/ArrowBack'
 import ArrowRightIcon from '@mui/icons-material/ArrowForward'
+
+// Don't use makeStyles or clsx for new components. This page
+// was not updated when migrating to MUI v5.
 import makeStyles from '@mui/styles/makeStyles'
 import clsx from 'clsx'
+
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
@@ -77,6 +81,8 @@ const CHILDREN = 'children'
 const EDUCATE = 'educate'
 const MATCH = 'match' // millionaire matching subpage
 
+// Don't use makeStyles or clsx for new components. This page
+// was not updated when migrating to MUI v5.
 const useStyles = makeStyles((theme) => ({
   '@global': {
     '.fp-slidesNav': {
@@ -1500,6 +1506,13 @@ function MillionPage({
     },
   }
 
+  // A workaround to avoid styling problems. This page
+  // was not updated when migrating to MUI v5.
+  const [shouldRenderContent, setShouldRenderContent] = useState()
+  useEffect(() => {
+    setShouldRenderContent(true)
+  }, [])
+
   return (
     <div>
       <HeadTags
@@ -1509,88 +1522,91 @@ function MillionPage({
         ogImage={ogImage}
         pageURL={pathname}
       />
-      {/* Set a full page background while Fullpage is loading */}
-      <div className={classes.pageBackground} />
-      <div className={classes.header}>
-        <div className={classes.logoContainer}>
-          <Link to={homeURL}>
-            <img
-              data-test-id="tab-logo-with-text"
-              src={isInDarkSection ? logoWithTextWhite : logoWithText}
-              style={{ height: 40 }}
-            />
-          </Link>
-        </div>
-        <div className={classes.menuContainer}>
-          <Tabs
-            value={currentMenuTabIndex}
-            id={MENU_ID}
-            indicatorColor="primary"
-            className={clsx(classes.menu, classes.hiddenUntilPageRendered)}
-          >
-            {menuItems.map((menuItem) => {
-              return (
-                <Tab
-                  key={menuItem.id}
-                  label={menuItem.text}
-                  className={classes.menuTab}
-                  onClick={() => {
-                    window.fullpage_api.moveTo(menuItem.linkTo)
-                  }}
+      {shouldRenderContent ? (
+        <>
+          <div className={classes.pageBackground} />
+          <div className={classes.header}>
+            <div className={classes.logoContainer}>
+              <Link to={homeURL}>
+                <img
+                  data-test-id="tab-logo-with-text"
+                  src={isInDarkSection ? logoWithTextWhite : logoWithText}
+                  style={{ height: 40 }}
                 />
-              )
-            })}
-          </Tabs>
-        </div>
+              </Link>
+            </div>
+            <div className={classes.menuContainer}>
+              <Tabs
+                value={currentMenuTabIndex}
+                id={MENU_ID}
+                indicatorColor="primary"
+                className={clsx(classes.menu, classes.hiddenUntilPageRendered)}
+              >
+                {menuItems.map((menuItem) => {
+                  return (
+                    <Tab
+                      key={menuItem.id}
+                      label={menuItem.text}
+                      className={classes.menuTab}
+                      onClick={() => {
+                        window.fullpage_api.moveTo(menuItem.linkTo)
+                      }}
+                    />
+                  )
+                })}
+              </Tabs>
+            </div>
 
-        <div className={classes.installButtonContainer}>
-          <InstallButton
-            size="medium"
-            color="primary"
-            style={{
-              minWidth: 180,
-              paddingLeft: 10,
-              paddingRight: 10,
+            <div className={classes.installButtonContainer}>
+              <InstallButton
+                size="medium"
+                color="primary"
+                style={{
+                  minWidth: 180,
+                  paddingLeft: 10,
+                  paddingRight: 10,
+                }}
+                onUnsupportedBrowserInstallClick={() => {
+                  redirect(homeURL)
+                }}
+              />
+            </div>
+          </div>
+          <ReactFullpage
+            licenseKey="7F2A2647-CD094CE7-B5D7C859-577BFB5C"
+            scrollingSpeed={450}
+            onLeave={(_, destination) => {
+              if (destination) {
+                setCurrentSectionIndex(destination.index || 0)
+              }
             }}
-            onUnsupportedBrowserInstallClick={() => {
-              redirect(homeURL)
+            afterRender={() => {
+              setIsPageReady(true)
+            }}
+            controlArrows={false}
+            slidesNavigation // show nav dots on slides pages
+            render={() => {
+              return (
+                <ReactFullpage.Wrapper menu={MENU_ID}>
+                  {sections.map((section) => {
+                    const sectionInfo = sectionData[section.id]
+                    return (
+                      <Section
+                        id={section.id}
+                        key={section.id}
+                        className={sectionInfo.className}
+                        autoHeight={sectionInfo.autoHeight || false}
+                      >
+                        {sectionInfo.content}
+                      </Section>
+                    )
+                  })}
+                </ReactFullpage.Wrapper>
+              )
             }}
           />
-        </div>
-      </div>
-      <ReactFullpage
-        licenseKey="7F2A2647-CD094CE7-B5D7C859-577BFB5C"
-        scrollingSpeed={450}
-        onLeave={(_, destination) => {
-          if (destination) {
-            setCurrentSectionIndex(destination.index || 0)
-          }
-        }}
-        afterRender={() => {
-          setIsPageReady(true)
-        }}
-        controlArrows={false}
-        slidesNavigation // show nav dots on slides pages
-        render={() => {
-          return (
-            <ReactFullpage.Wrapper menu={MENU_ID}>
-              {sections.map((section) => {
-                const sectionInfo = sectionData[section.id]
-                return (
-                  <Section
-                    id={section.id}
-                    key={section.id}
-                    className={sectionInfo.className}
-                    autoHeight={sectionInfo.autoHeight || false}
-                  >
-                    {sectionInfo.content}
-                  </Section>
-                )
-              })}
-            </ReactFullpage.Wrapper>
-          )
-        }}
-      />
+        </>
+      ) : null}
     </div>
   )
 }
