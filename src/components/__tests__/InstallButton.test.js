@@ -19,15 +19,13 @@ afterEach(() => {
   jest.clearAllMocks()
 })
 
-const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
-  return {
-    isChrome: () => browser === 'chrome',
-    isEdge: () => browser === 'edge',
-    isFirefox: () => browser === 'firefox',
-    isSafari: () => browser === 'safari',
-    isMobile: () => mobile,
-  }
-}
+const createMockBrowserInfo = (browser = 'chrome', mobile = false) => ({
+  isChrome: () => browser === 'chrome',
+  isEdge: () => browser === 'edge',
+  isFirefox: () => browser === 'firefox',
+  isSafari: () => browser === 'safari',
+  isMobile: () => mobile,
+})
 
 // Helper to simulate a click on a button rendered with `mount`.
 // Note: Enzyme 3.9.0 apparently doesn't support `mount` with

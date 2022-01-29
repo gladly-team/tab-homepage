@@ -194,36 +194,34 @@ function ComingSoon({
             date={countdownDate}
             intervalDelay={0}
             precision={3}
-            renderer={({ hours, minutes, seconds, days }) => {
-              return (
-                <div className={classes.countdownContainer}>
-                  <Paper className={classes.countdownPaper}>
-                    <Typography variant="h4" className={classes.countdownFont}>
-                      {days}
-                    </Typography>
-                    <Typography>days</Typography>
-                  </Paper>
-                  <Paper className={classes.countdownPaper}>
-                    <Typography variant="h4" className={classes.countdownFont}>
-                      {hours}
-                    </Typography>
-                    <Typography>hours</Typography>
-                  </Paper>
-                  <Paper className={classes.countdownPaper}>
-                    <Typography variant="h4" className={classes.countdownFont}>
-                      {minutes}
-                    </Typography>
-                    <Typography>minutes</Typography>
-                  </Paper>
-                  <Paper className={classes.countdownPaper}>
-                    <Typography variant="h4" className={classes.countdownFont}>
-                      {seconds}
-                    </Typography>
-                    <Typography>seconds</Typography>
-                  </Paper>
-                </div>
-              )
-            }}
+            renderer={({ hours, minutes, seconds, days }) => (
+              <div className={classes.countdownContainer}>
+                <Paper className={classes.countdownPaper}>
+                  <Typography variant="h4" className={classes.countdownFont}>
+                    {days}
+                  </Typography>
+                  <Typography>days</Typography>
+                </Paper>
+                <Paper className={classes.countdownPaper}>
+                  <Typography variant="h4" className={classes.countdownFont}>
+                    {hours}
+                  </Typography>
+                  <Typography>hours</Typography>
+                </Paper>
+                <Paper className={classes.countdownPaper}>
+                  <Typography variant="h4" className={classes.countdownFont}>
+                    {minutes}
+                  </Typography>
+                  <Typography>minutes</Typography>
+                </Paper>
+                <Paper className={classes.countdownPaper}>
+                  <Typography variant="h4" className={classes.countdownFont}>
+                    {seconds}
+                  </Typography>
+                  <Typography>seconds</Typography>
+                </Paper>
+              </div>
+            )}
           />
         ) : null}
       </div>

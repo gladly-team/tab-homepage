@@ -7,12 +7,10 @@ import { Typography } from '@mui/material'
 import { getTestIdSelector } from 'src/utils/test-utils'
 
 jest.mock('src/utils/local-storage')
-const getMockProps = () => {
-  return {
-    endorsementsData: data.data.sections.Endorsements,
-    causeId: 'SGa6zohkY',
-  }
-}
+const getMockProps = () => ({
+  endorsementsData: data.data.sections.Endorsements,
+  causeId: 'SGa6zohkY',
+})
 
 // We suppress a console error of "Function components cannot be
 // given refs". We need react-slick to forward the ref:

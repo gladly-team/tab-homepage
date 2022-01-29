@@ -14,14 +14,12 @@ jest.mock('src/utils/browserDetection')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/local-storage')
 
-const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
-  return {
-    isChrome: () => browser === 'chrome',
-    isEdge: () => browser === 'edge',
-    isFirefox: () => browser === 'firefox',
-    isMobile: () => mobile,
-  }
-}
+const createMockBrowserInfo = (browser = 'chrome', mobile = false) => ({
+  isChrome: () => browser === 'chrome',
+  isEdge: () => browser === 'edge',
+  isFirefox: () => browser === 'firefox',
+  isMobile: () => mobile,
+})
 const getMockProps = () => ({
   location: {
     search: '',

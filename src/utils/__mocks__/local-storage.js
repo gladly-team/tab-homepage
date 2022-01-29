@@ -4,9 +4,7 @@ import { isNil } from 'lodash/lang'
 let mockStorage = {}
 
 export default {
-  getItem: jest.fn((key) => {
-    return mockStorage[key]
-  }),
+  getItem: jest.fn((key) => mockStorage[key]),
   setItem: jest.fn((key, val) => {
     if (!isNil(val)) {
       mockStorage[key] = String(val)

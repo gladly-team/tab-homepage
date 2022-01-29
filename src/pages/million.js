@@ -147,13 +147,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'flex-end',
   },
-  menu: ({ isInDarkSection }) => {
-    return {
-      color: isInDarkSection
-        ? theme.palette.common.white
-        : theme.palette.text.primary,
-    }
-  },
+  menu: ({ isInDarkSection }) => ({
+    color: isInDarkSection
+      ? theme.palette.common.white
+      : theme.palette.text.primary,
+  }),
   menuTab: {
     [theme.breakpoints.down('lg')]: {
       minWidth: 140,
@@ -338,12 +336,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     textAlign: 'center',
   },
-  hiddenUntilPageRendered: ({ isPageReady }) => {
-    return {
-      opacity: isPageReady ? 100 : 0,
-      transition: 'opacity 0.5s ease-in-out',
-    }
-  },
+  hiddenUntilPageRendered: ({ isPageReady }) => ({
+    opacity: isPageReady ? 100 : 0,
+    transition: 'opacity 0.5s ease-in-out',
+  }),
   impactSlide: {
     display: 'flex',
     flexDirection: 'column',
@@ -1542,18 +1538,16 @@ function MillionPage({
                 indicatorColor="primary"
                 className={clsx(classes.menu, classes.hiddenUntilPageRendered)}
               >
-                {menuItems.map((menuItem) => {
-                  return (
-                    <Tab
-                      key={menuItem.id}
-                      label={menuItem.text}
-                      className={classes.menuTab}
-                      onClick={() => {
-                        window.fullpage_api.moveTo(menuItem.linkTo)
-                      }}
-                    />
-                  )
-                })}
+                {menuItems.map((menuItem) => (
+                  <Tab
+                    key={menuItem.id}
+                    label={menuItem.text}
+                    className={classes.menuTab}
+                    onClick={() => {
+                      window.fullpage_api.moveTo(menuItem.linkTo)
+                    }}
+                  />
+                ))}
               </Tabs>
             </div>
 
@@ -1585,25 +1579,23 @@ function MillionPage({
             }}
             controlArrows={false}
             slidesNavigation // show nav dots on slides pages
-            render={() => {
-              return (
-                <ReactFullpage.Wrapper menu={MENU_ID}>
-                  {sections.map((section) => {
-                    const sectionInfo = sectionData[section.id]
-                    return (
-                      <Section
-                        id={section.id}
-                        key={section.id}
-                        className={sectionInfo.className}
-                        autoHeight={sectionInfo.autoHeight || false}
-                      >
-                        {sectionInfo.content}
-                      </Section>
-                    )
-                  })}
-                </ReactFullpage.Wrapper>
-              )
-            }}
+            render={() => (
+              <ReactFullpage.Wrapper menu={MENU_ID}>
+                {sections.map((section) => {
+                  const sectionInfo = sectionData[section.id]
+                  return (
+                    <Section
+                      id={section.id}
+                      key={section.id}
+                      className={sectionInfo.className}
+                      autoHeight={sectionInfo.autoHeight || false}
+                    >
+                      {sectionInfo.content}
+                    </Section>
+                  )
+                })}
+              </ReactFullpage.Wrapper>
+            )}
           />
         </>
       ) : null}

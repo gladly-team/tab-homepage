@@ -378,60 +378,58 @@ class JobsPage extends React.Component {
               marginBottom: 40,
             }}
           >
-            {teamValues.map((teamValue) => {
-              return (
-                <Paper
-                  key={teamValue.name}
-                  elevation={1}
-                  style={{
-                    maxWidth: 300,
-                    textAlign: 'center',
-                    margin: 20,
-                  }}
-                >
-                  <span>
-                    <span
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        marginBottom: 10,
-                        background: secondaryMainColor,
-                        padding: 10,
-                      }}
-                    >
-                      {teamValue.iconComponent ? (
-                        <teamValue.iconComponent
-                          style={{
-                            color: secondaryContrastTextColor,
-                            width: 32,
-                            height: 32,
-                          }}
-                        />
-                      ) : null}
-                      <h3
+            {teamValues.map((teamValue) => (
+              <Paper
+                key={teamValue.name}
+                elevation={1}
+                style={{
+                  maxWidth: 300,
+                  textAlign: 'center',
+                  margin: 20,
+                }}
+              >
+                <span>
+                  <span
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginBottom: 10,
+                      background: secondaryMainColor,
+                      padding: 10,
+                    }}
+                  >
+                    {teamValue.iconComponent ? (
+                      <teamValue.iconComponent
                         style={{
                           color: secondaryContrastTextColor,
-                          marginBottom: 0,
-                          marginLeft: 10,
+                          width: 32,
+                          height: 32,
                         }}
-                      >
-                        {teamValue.name}
-                      </h3>
-                    </span>
-                    <p
+                      />
+                    ) : null}
+                    <h3
                       style={{
-                        fontSize: 16,
-                        color: lighterTextColor,
-                        margin: 20,
+                        color: secondaryContrastTextColor,
+                        marginBottom: 0,
+                        marginLeft: 10,
                       }}
                     >
-                      {teamValue.description}
-                    </p>
+                      {teamValue.name}
+                    </h3>
                   </span>
-                </Paper>
-              )
-            })}
+                  <p
+                    style={{
+                      fontSize: 16,
+                      color: lighterTextColor,
+                      margin: 20,
+                    }}
+                  >
+                    {teamValue.description}
+                  </p>
+                </span>
+              </Paper>
+            ))}
           </div>
         </TextPageContent>
       </Layout>

@@ -7,9 +7,7 @@
  * @return {string} The CSS selector to select an element with
  *   data-test-id=`testId`
  */
-export const getTestIdSelector = (testId) => {
-  return `[data-test-id="${testId}"]`
-}
+export const getTestIdSelector = (testId) => `[data-test-id="${testId}"]`
 
 /**
  * Return a mock window.location object.

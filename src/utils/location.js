@@ -4,9 +4,7 @@
  * Return window.location. Useful to make components more testable.
  * @return {object} window.location
  */
-const getLocation = () => {
-  return window.location
-}
+const getLocation = () => window.location
 
 /**
  * Return the value of a URL parameter

@@ -58,14 +58,12 @@ function FinancialsPage({ data, location }) {
               justifyContent: 'center',
             }}
           >
-            {sortedFinancialsEdges.map((quarter) => {
-              return (
-                <FinancialsQuarterButton
-                  key={`Q${quarter.node.quarter}${quarter.node.year}`}
-                  quarterData={quarter.node}
-                />
-              )
-            })}
+            {sortedFinancialsEdges.map((quarter) => (
+              <FinancialsQuarterButton
+                key={`Q${quarter.node.quarter}${quarter.node.year}`}
+                quarterData={quarter.node}
+              />
+            ))}
           </div>
         </TextPageContent>
       </div>

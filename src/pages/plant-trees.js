@@ -293,14 +293,12 @@ function PlantTreesPage(props) {
         </div>
         <div style={{ padding: '12px 0px' }}>
           <h2>FAQ</h2>
-          {faqs.map((faq) => {
-            return (
-              <div key={faq.question} style={{ padding: '10px 0px' }}>
-                <p style={{ fontWeight: 'bold' }}>{faq.question}</p>
-                {faq.answerElem}
-              </div>
-            )
-          })}
+          {faqs.map((faq) => (
+            <div key={faq.question} style={{ padding: '10px 0px' }}>
+              <p style={{ fontWeight: 'bold' }}>{faq.question}</p>
+              {faq.answerElem}
+            </div>
+          ))}
         </div>
         <div id="challenge" style={{ padding: '12px 0px' }}>
           <h2>TikTok & Instagram Challenge</h2>

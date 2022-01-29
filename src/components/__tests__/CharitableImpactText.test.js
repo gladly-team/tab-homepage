@@ -4,19 +4,17 @@ import React from 'react'
 import { shallow } from 'src/utils/testHelpers/componentTesting'
 import impactTexts from 'src/utils/impactTexts'
 
-jest.mock('src/utils/impactTexts', () => {
-  return [
-    'preserve oceans',
-    'feed children',
-    'build libraries',
-    'send emergency aid',
-    'train entrepreneurs',
-    'plant trees',
-    'prevent disease',
-    'give clean water',
-    'protect human rights',
-  ]
-})
+jest.mock('src/utils/impactTexts', () => [
+  'preserve oceans',
+  'feed children',
+  'build libraries',
+  'send emergency aid',
+  'train entrepreneurs',
+  'plant trees',
+  'prevent disease',
+  'give clean water',
+  'protect human rights',
+])
 
 describe('CharitableImpactText', () => {
   it('renders without error', () => {
