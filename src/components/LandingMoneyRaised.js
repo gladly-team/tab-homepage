@@ -47,7 +47,7 @@ const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
   },
 }))
 
-function LandingMoneyRaised({ moneyRaisedData }) {
+function LandingMoneyRaised({ moneyRaisedData, moneyRaised }) {
   const { moneyImg } = moneyRaisedData
   const moneyImage = getImage(formatImg(moneyImg))
   return (
@@ -55,7 +55,12 @@ function LandingMoneyRaised({ moneyRaisedData }) {
       <DivSlidingParent>
         <GatsbyImageTitleImage alt="money raised" image={moneyImage} />
         <div>
-          <MoneyRaisedDisplay color="textSecondary" textVariant="h1" longCopy />
+          <MoneyRaisedDisplay
+            color="textSecondary"
+            textVariant="h1"
+            longCopy
+            moneyRaised={moneyRaised}
+          />
         </div>
       </DivSlidingParent>
     </DivParent>
@@ -65,5 +70,6 @@ LandingMoneyRaised.propTypes = {
   moneyRaisedData: PropTypes.shape({
     moneyImg: PropTypes.any,
   }),
+  moneyRaised: PropTypes.number,
 }
 export default LandingMoneyRaised

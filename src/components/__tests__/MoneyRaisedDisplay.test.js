@@ -21,4 +21,10 @@ describe('MoneyRaisedDisplay', () => {
     wrapper.update()
     expect(wrapper.first().prop('style').visibility).toBe('visible')
   })
+
+  it('does not render anything if passed in a null moneyRaised value', () => {
+    const MoneyRaisedDisplay = require('../MoneyRaisedDisplay').default
+    const wrapper = shallow(<MoneyRaisedDisplay moneyRaised={null} />)
+    expect(wrapper.isEmptyRender()).toBe(true)
+  })
 })

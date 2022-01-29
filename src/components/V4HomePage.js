@@ -32,6 +32,7 @@ import {
   STORAGE_REFERRAL_DATA_REFERRING_USER,
   KEY_WORDS,
 } from 'src/utils/constants'
+import useMoneyRaised from '../hooks/useMoneyRaised'
 import SecuritySection from './SecuritySection'
 
 const Root = styled('div')(() => ({
@@ -117,6 +118,7 @@ function V4HomePage({
   const ogImgURLAbsolute = getAbsoluteURL(
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
   )
+  const moneyRaisedAmount = useMoneyRaised()
   return (
     <Root>
       <HeadTags
@@ -135,8 +137,15 @@ function V4HomePage({
         ) : null}
       </Helmet>
       <Background />
-      <Landing landingData={landing} causeId={causeId} />
-      <LandingMoneyRaised moneyRaisedData={moneyRaised} />
+      <Landing
+        moneyRaised={moneyRaisedAmount}
+        landingData={landing}
+        causeId={causeId}
+      />
+      <LandingMoneyRaised
+        moneyRaised={moneyRaisedAmount}
+        moneyRaisedData={moneyRaised}
+      />
       <CharityIntro charityIntroData={charityIntro} />
       <Intro introData={TFACIntro} />
       <Mission missionData={missionData} causeId={causeId} />

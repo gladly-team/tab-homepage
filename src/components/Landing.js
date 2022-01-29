@@ -105,7 +105,7 @@ const DivWaveMobile = styled('div')(({ theme }) => ({
   },
 }))
 
-function Landing({ landingData, causeId }) {
+function Landing({ landingData, causeId, moneyRaised }) {
   const { title, subtitle, ctaImg } = landingData
   const theme = useTheme()
   const ctaImage = getImage(formatImg(ctaImg))
@@ -135,6 +135,7 @@ function Landing({ landingData, causeId }) {
             color="#fff"
             textVariant="subtitle2"
             excludeText
+            moneyRaised={moneyRaised}
           />
         </Toolbar>
       </AppBar>
@@ -159,6 +160,7 @@ function Landing({ landingData, causeId }) {
     </div>
   )
 }
+
 Landing.propTypes = {
   causeId: PropTypes.string,
   landingData: PropTypes.shape({
@@ -166,5 +168,7 @@ Landing.propTypes = {
     subtitle: PropTypes.string,
     ctaImg: PropTypes.any,
   }),
+  moneyRaised: PropTypes.number,
 }
+
 export default Landing

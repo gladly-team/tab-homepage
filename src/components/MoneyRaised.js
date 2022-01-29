@@ -10,6 +10,7 @@ const MONEY_RAISED = 1057100.0
 const MONEY_RAISED_UPDATE_TIME = moment('2021-01-07T16:30:00.000Z')
 const DOLLARS_PER_DAY_RATE = 700.0
 
+// todo: Turn this into a functional component so we can just reuse the hook here
 class MoneyRaised extends React.Component {
   constructor(props) {
     super(props)
@@ -20,7 +21,11 @@ class MoneyRaised extends React.Component {
   }
 
   componentDidMount() {
-    this.setCounter()
+    if (this.props.moneyRaised !== undefined) {
+      this.props.onLoaded()
+    } else {
+      this.setCounter()
+    }
   }
 
   componentWillUnmount() {
@@ -73,12 +78,18 @@ class MoneyRaised extends React.Component {
   }
 
   render() {
-    if (!this.state.moneyRaised) {
-      return null
+    const { moneyRaised } = this.props
+    let moneyRaisedValue
+    if (moneyRaised !== undefined) {
+      moneyRaisedValue = moneyRaised
+    } else {
+      if (!this.state.moneyRaised) {
+        return null
+      }
+      moneyRaisedValue = this.state.moneyRaised
     }
-    const { moneyRaised } = this.state
     const moneyRaisedFormatted = `$${commaFormatted(
-      currencyFormatted(moneyRaised)
+      currencyFormatted(moneyRaisedValue)
     )}`
     return <span className={this.props.className}>{moneyRaisedFormatted}</span>
   }
@@ -87,6 +98,7 @@ class MoneyRaised extends React.Component {
 MoneyRaised.propTypes = {
   onLoaded: PropTypes.func,
   className: PropTypes.string,
+  moneyRaised: PropTypes.number,
 }
 
 MoneyRaised.defaultProps = {
