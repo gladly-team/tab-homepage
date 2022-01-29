@@ -161,7 +161,7 @@ const useStyles = makeStyles((theme) => ({
       minWidth: 80,
       padding: '6px 12px',
     },
-    [theme.breakpoints.down(undefined)]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
   },

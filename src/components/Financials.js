@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Link from 'src/components/Link'
 import Button from '@mui/material/Button'
@@ -33,9 +34,7 @@ const DivReportsContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-between',
   width: '86%',
-  marginTop: theme.spacing(4),
-
-  [theme.breakpoints.down(undefined)]: {
+  [theme.breakpoints.down('lg')]: {
     display: 'none',
   },
 }))
@@ -46,8 +45,7 @@ const DivReportsSlider = styled('div')(({ theme }) => ({
   width: '96%',
   maxWidth: '800px',
   marginTop: theme.spacing(4),
-
-  [theme.breakpoints.down(undefined)]: {
+  [theme.breakpoints.down('lg')]: {
     display: 'flex',
   },
 }))
@@ -84,6 +82,7 @@ const DivHalfScreenLeft = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
   marginLeft: '5%',
+  padding: theme.spacing(1),
 
   [theme.breakpoints.down('md')]: {
     position: 'relative',
@@ -99,7 +98,6 @@ const TypographySubtitle = styled(Typography)(({ theme }) => ({
 }))
 
 const ButtonButtonStyles = styled(Button)(({ theme }) => ({
-  width: theme.spacing(30),
   marginTop: theme.spacing(6),
 
   [theme.breakpoints.down('md')]: {
@@ -136,7 +134,9 @@ function Financials({ financialsData }) {
       </DivTitleSectionWrapper>
       <DivReportsContainer>
         {pdfs.map((pdf) => (
-          <FinancialsQuartersButton key={pdf.quarter} quarterData={pdf} />
+          <Box sx={{ m: 1 }}>
+            <FinancialsQuartersButton key={pdf.quarter} quarterData={pdf} />
+          </Box>
         ))}
       </DivReportsContainer>
       <DivReportsSlider>
@@ -149,15 +149,23 @@ function Financials({ financialsData }) {
           style={{ width: '100%' }}
           responsive={[
             {
-              breakpoint: 650,
+              breakpoint: 600,
               settings: {
                 slidesToShow: 1,
+              },
+            },
+            {
+              breakpoint: 1200,
+              settings: {
+                slidesToShow: 2,
               },
             },
           ]}
         >
           {pdfs.map((pdf) => (
-            <FinancialsQuartersButton key={pdf.quarter} quarterData={pdf} />
+            <Box sx={{ m: 1 }}>
+              <FinancialsQuartersButton key={pdf.quarter} quarterData={pdf} />
+            </Box>
           ))}
         </Slider>
       </DivReportsSlider>

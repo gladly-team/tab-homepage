@@ -76,7 +76,7 @@ const StyledThemeProvider = styled(ThemeProvider)((
     flexDirection: 'column',
     justifyContent: 'center',
     paddingLeft: '10%',
-    [theme.breakpoints.down(undefined)]: {
+    [theme.breakpoints.down('sm')]: {
       width: '47%',
       paddingLeft: '7%',
     },
