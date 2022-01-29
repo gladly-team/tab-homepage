@@ -2,7 +2,11 @@ import React, { useEffect } from 'react'
 import get from 'lodash/get'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { ThemeProvider, responsiveFontSizes } from '@mui/material/styles'
+import {
+  ThemeProvider,
+  responsiveFontSizes,
+  styled,
+} from '@mui/material/styles'
 import { getUrlParameterValue } from 'src/utils/location'
 import { createCauseTheme } from 'src/themes/theme'
 import HeadTags from 'src/components/HeadTags'
@@ -29,6 +33,22 @@ import {
   KEY_WORDS,
 } from 'src/utils/constants'
 import SecuritySection from './SecuritySection'
+
+const Root = styled('div')(() => ({
+  position: 'relative',
+}))
+
+const Background = styled('div')(() => ({
+  // This is only because our root theme has a background of white.
+  // If we unify theming and set background to beiges, we can remove this.
+  background: '#FBF3E9', // beige background
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+  zIndex: -10, // below wave SVGs
+}))
 
 function V4HomePage({
   pageContext: {
@@ -98,11 +118,7 @@ function V4HomePage({
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
   )
   return (
-    <div
-      style={{
-        background: '#FBF3E9', // beige background
-      }}
-    >
+    <Root>
       <HeadTags
         title={title}
         titleTemplate="Tab for a Cause"
@@ -118,6 +134,7 @@ function V4HomePage({
           <meta name="robots" content="noindex" />
         ) : null}
       </Helmet>
+      <Background />
       <Landing landingData={landing} causeId={causeId} />
       <LandingMoneyRaised moneyRaisedData={moneyRaised} />
       <CharityIntro charityIntroData={charityIntro} />
@@ -144,7 +161,7 @@ function V4HomePage({
           you, but please don’t share it with others.
         </Alert>
       </Snackbar>
-    </div>
+    </Root>
   )
 }
 
