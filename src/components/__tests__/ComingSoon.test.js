@@ -55,14 +55,12 @@ describe('ComingSoon page component', () => {
 
   it('sets the date in Countdown Component correctly according to the cause data', async () => {
     const mockProps = getMockProps()
-    mockProps.pageContext.data.causeLaunch.launchDate =
-      '2022-10-29T13:00:00.000'
+    const dateISO = '2022-10-29T13:00:00.000Z'
+    mockProps.pageContext.data.causeLaunch.launchDate = dateISO
     const ComingSoon = require('../ComingSoon').default
     const wrapper = mount(<ComingSoon {...mockProps} />)
     const countdown = wrapper.find(Countdown).first()
-    expect(countdown.props().date).toEqual(
-      new Date(mockProps.pageContext.data.causeLaunch.launchDate)
-    )
+    expect(countdown.props().date).toEqual(dateISO)
   })
 
   it('does not render a countdown if theres no date', async () => {
@@ -74,8 +72,8 @@ describe('ComingSoon page component', () => {
 
   it('does not render a countdown if the start date is in the past', async () => {
     const mockProps = getMockProps()
-    mockProps.pageContext.data.causeLaunch.launchDate =
-      '2022-10-29T13:00:00.000'
+    const dateISO = '2022-10-29T13:00:00.000Z'
+    mockProps.pageContext.data.causeLaunch.launchDate = dateISO
     const ComingSoon = require('../ComingSoon').default
     const wrapper = shallow(<ComingSoon {...mockProps} />)
     expect(wrapper.find(Countdown).exists()).toBe(false)
@@ -84,13 +82,13 @@ describe('ComingSoon page component', () => {
   it('sets the sets a fixed date in chromatic environment', async () => {
     isChromaticEnv.mockReturnValue(true)
     const mockProps = getMockProps()
-    mockProps.pageContext.data.causeLaunch.launchDate =
-      '2022-10-29T13:00:00.000'
+    const dateISO = '2022-10-29T13:00:00.000Z'
+    mockProps.pageContext.data.causeLaunch.launchDate = dateISO
     const ComingSoon = require('../ComingSoon').default
     const wrapper = mount(<ComingSoon {...mockProps} />)
     const countdown = wrapper.find(Countdown).first()
-    expect(countdown.props().date).toEqual(
-      new Date(new Date().getTime() + 86400000)
-    )
+
+    // Mock current time + 1 day.
+    expect(countdown.props().date).toEqual('2017-06-23T01:13:28.000Z')
   })
 })

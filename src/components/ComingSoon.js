@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   styled,
   ThemeProvider,
@@ -124,15 +124,21 @@ function ComingSoon({
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
   )
   let countdownDate = null
-  let displayCountdown = null
-
-  // Making the date a fixed time in the future in the Chromatic Env to make this page static
   if (launchDate) {
-    countdownDate = isChromaticEnv() ? dayjs().add(1, 'day') : dayjs(launchDate)
-    displayCountdown = countdownDate && dayjs().isBefore(countdownDate)
-  } else {
-    displayCountdown = false
+    countdownDate = isChromaticEnv()
+      ? // Making the date a fixed time in the future in the Chromatic env
+        // to avoid unnecessary UI changes
+        dayjs().add(1, 'day').toISOString()
+      : dayjs(launchDate).toISOString()
   }
+  const [displayCountdown, setDisplayCountdown] = useState(false)
+  useEffect(() => {
+    if (countdownDate) {
+      setDisplayCountdown(dayjs().isBefore(countdownDate))
+    } else {
+      setDisplayCountdown(false)
+    }
+  }, [countdownDate, setDisplayCountdown])
   return (
     <Root>
       <HeadTags
