@@ -113,7 +113,7 @@
     "eslint-plugin-storybook": "^0.5.6",
     "esm": "^3.2.25",
     "gatsby-plugin-s3": "^0.3.8",
-    "graphql": "^14.0.0",
+    "graphql": "^16.3.0",
     "if-env": "^1.0.4",
     "jest": "^27.4.7",
     "jquery": "^3.6.0",
