@@ -122,7 +122,7 @@ function Landing({ landingData, causeId }) {
                 alignItems: 'center',
               }}
             >
-              <Link to={homeURL}>
+              <Link to={homeURL} style={{ display: 'flex' }}>
                 <img
                   data-test-id="tab-logo-with-text"
                   src={logoWhite}
