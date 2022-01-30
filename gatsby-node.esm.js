@@ -85,7 +85,15 @@ exports.createPages = async ({ actions, graphql }) => {
                 ogDescription
                 ogImage {
                   childImageSharp {
-                    gatsbyImageData(quality: 20)
+                    # https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#image-options
+                    gatsbyImageData(
+                      formats: [PNG]
+                      width: 1200
+                      height: 628
+                      backgroundColor: "white"
+                      transformOptions: { fit: CONTAIN, cropFocus: CENTER }
+                      pngOptions: {}
+                    )
                   }
                 }
                 causeSpecificKeywords

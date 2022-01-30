@@ -120,7 +120,7 @@ function V4HomePage({
   }, [enabled, previewPage])
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
   const ogImgURLAbsolute = getAbsoluteURL(
-    get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
+    get(ogImage, 'childImageSharp.gatsbyImageData.images.fallback.src', '')
   )
   const moneyRaisedAmount = useMoneyRaised()
   return (
