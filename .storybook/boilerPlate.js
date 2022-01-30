@@ -7,14 +7,18 @@ import seasData from 'src/data/causes/seas.json'
 
 const seasTheme = createCauseTheme(seasData.data.styles.colors)
 const catsTheme = createCauseTheme(catsData.data.styles.colors)
+
 export const mobile = (template) => (props, loaders) =>
-  <div style={{ width: 414 }}>{template(props, loaders)}</div>
+  template(props, loaders)
+
+
 export const seas = (template) => (props, loaders) =>
   (
     <ThemeProvider theme={responsiveFontSizes(seasTheme)}>
       <CssBaseline>{template(props, loaders)}</CssBaseline>
     </ThemeProvider>
   )
+
 export const cats = (template) => (props, loaders) =>
   (
     <ThemeProvider theme={responsiveFontSizes(catsTheme)}>
