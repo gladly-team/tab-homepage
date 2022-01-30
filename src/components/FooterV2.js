@@ -123,7 +123,7 @@ const DivIconRowTwo = styled('div')(({ theme }) => ({
 }))
 
 function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
-  const image = getImage(formatImg(img))
+  const image = img ? getImage(formatImg(img)) : null
   const browserOnClick = useCallback(
     (extensionUrl) => async () => {
       await onBeforeInstall()
@@ -330,9 +330,11 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
           </DivSubColumnTwo>
         </DivColumnTwo>
         <DivColumnThree>
-          <Box>
-            <GatsbyImage image={image} alt="footer" />
-          </Box>
+          {image ? (
+            <Box>
+              <GatsbyImage image={image} alt="footer" />
+            </Box>
+          ) : null}
         </DivColumnThree>
       </DivContentRow>
     </DivBackgroundContainer>
