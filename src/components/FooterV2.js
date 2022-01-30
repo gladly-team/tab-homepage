@@ -86,12 +86,13 @@ const DivColumnTwo = styled('div')(({ theme }) => ({
 
 const DivColumnThree = styled('div')(({ theme }) => ({
   marginTop: theme.spacing(6),
-  minWidth: 100,
+  minWidth: 120,
   display: 'flex',
   flex: 1,
-  [theme.breakpoints.down('lg')]: {
+  [theme.breakpoints.down('md')]: {
     justifyContent: 'center',
     paddingBottom: theme.spacing(6),
+    minWidth: 180,
   },
 }))
 
@@ -144,34 +145,40 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
   }
   return (
     <DivBackgroundContainer>
-      <FooterBlobLeft
-        color={bubbleColor}
-        style={{
+      <Box
+        sx={{
           position: 'absolute',
-          width: theme.spacing(70),
-          left: theme.spacing(-10),
-          top: theme.spacing(6),
-          [theme.breakpoints.down('md')]: {
-            width: theme.spacing(50),
-            left: theme.spacing(-30),
-            top: theme.spacing(0),
+          width: 660,
+          height: 560,
+          left: {
+            xs: -440,
+            md: -100,
+          },
+          top: {
+            xs: 0,
+            md: 80,
           },
         }}
-      />
-      <FooterBlobRight
-        color={bubbleColor}
-        style={{
+      >
+        <FooterBlobLeft color={bubbleColor} />
+      </Box>
+      <Box
+        sx={{
           position: 'absolute',
-          width: theme.spacing(40),
-          right: theme.spacing(10),
-          top: theme.spacing(27),
-          [theme.breakpoints.down('md')]: {
-            right: theme.spacing(-14),
-            top: 'unset',
-            bottom: theme.spacing(-40),
+          width: 320,
+          height: 570,
+          right: {
+            xs: 0,
+            md: 200,
+          },
+          bottom: {
+            xs: -440,
+            md: -480,
           },
         }}
-      />
+      >
+        <FooterBlobRight color={bubbleColor} />
+      </Box>
       <DivContentRow>
         <DivColumnOne>
           <Box sx={{ mb: 1 }}>
