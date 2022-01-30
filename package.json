@@ -69,12 +69,13 @@
     "format": "yarn run eslint --fix",
     "lint": "eslint \"{src,plugins}/**/*.{js,jsx}\"",
     "serve": "GATSBY_TELEMETRY_DISABLED=1 gatsby serve",
+    "jest": "jest",
     "test": "yarn run lint && jest --env=jsdom --coverage --testPathIgnorePatterns=e2e-tests",
-    "test:e2e": "dotenv-extended --defaults=./.env yarn jest --testPathPattern=e2e-tests.test --watchAll=false",
+    "test:e2e": "dotenv-extended --defaults=./.env RUNNING_E2E_TESTS=true jest --testPathPattern=e2e-tests.test --watchAll=false",
     "test:watch": "jest --env=jsdom --testPathIgnorePatterns=e2e-tests --watch",
     "deploy": "gatsby-plugin-s3 deploy",
-    "storybook": "start-storybook -p 6006 --no-open",
-    "build-storybook": "build-storybook"
+    "storybook": "RUNNING_STORYBOOK=true start-storybook -p 6006 --no-open",
+    "build-storybook": "RUNNING_STORYBOOK=true build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",
