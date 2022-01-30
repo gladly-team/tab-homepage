@@ -9,8 +9,7 @@ const seasTheme = createCauseTheme(seasData.data.styles.colors)
 const catsTheme = createCauseTheme(catsData.data.styles.colors)
 
 export const mobile = (template) => (props, loaders) =>
-  template(props, loaders)
-
+    <div style={{ width: 414 }}>{template(props, loaders)}</div>
 
 export const seas = (template) => (props, loaders) =>
   (
