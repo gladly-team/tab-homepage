@@ -20,6 +20,6 @@ function FooterBlobRight({ color, style }) {
 }
 FooterBlobRight.propTypes = {
   color: PropTypes.string.isRequired,
-  style: PropTypes.object.isRequired,
+  style: PropTypes.object,
 }
 export default FooterBlobRight
