@@ -1,5 +1,5 @@
 {
-  "path": "cats2",
+  "path": "cats",
   "data": {
     "styles": {
       "colors": {
@@ -11,7 +11,7 @@
     "causeLaunch": {
       "comingSoonTitle": "Tab for Cats",
       "preview": true,
-      "enabled": false
+      "enabled": true
     },
     "causeId": "CA6A5C2uj",
     "metadata": {

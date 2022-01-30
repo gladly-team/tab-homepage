@@ -16,8 +16,6 @@ exports.createPages = async ({ actions, graphql }) => {
 
   // Create landing page variants for referrers.
   const homepage = path.resolve(`src/pages/index.js`)
-  const catsLandingPage = path.resolve(`src/pages/cats.js`)
-  const seasLandingPage = path.resolve('src/pages/teamseas.js')
   const allReferrersResponse = await graphql(`
     {
       allReferrersYaml(limit: 5000) {
@@ -39,24 +37,6 @@ exports.createPages = async ({ actions, graphql }) => {
     createPage({
       path: `${node.path}/`,
       component: homepage,
-      context: {
-        referrer: {
-          id: node.referrerId,
-        },
-      },
-    })
-    createPage({
-      path: `cats/${node.path}/`,
-      component: catsLandingPage,
-      context: {
-        referrer: {
-          id: node.referrerId,
-        },
-      },
-    })
-    createPage({
-      path: `teamseas/${node.path}/`,
-      component: seasLandingPage,
       context: {
         referrer: {
           id: node.referrerId,
