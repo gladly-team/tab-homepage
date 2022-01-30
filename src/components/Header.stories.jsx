@@ -7,7 +7,9 @@ export default {
   component: Header,
 }
 
-const Template = (args) => <Header {...args} />
+function Template(args) {
+  return <Header {...args} />
+}
 export const TabForACause = Template.bind({})
 TabForACause.args = {
   brand: 'tab',

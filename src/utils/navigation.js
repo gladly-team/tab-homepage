@@ -49,6 +49,7 @@ export const facebookPageURL = 'https://www.facebook.com/TabForACause'
 export const instagramPageURL = 'https://www.instagram.com/tabforacause/'
 export const twitterPageURL = 'https://twitter.com/TabForACause'
 export const tiktokPageURL = 'https://www.tiktok.com/@tabforacause'
+
 // Github
 export const githubOrganizationURL = 'https://github.com/gladly-team/'
 export const githubTabRepoURL = 'https://github.com/gladly-team/tab'
@@ -95,11 +96,13 @@ export const getAbsoluteURL = (path) => {
   if (path.startsWith('http://') || path.startsWith('https://')) {
     return path
   }
+
   // Prepend or postpend slashes if url fragment doesn't have them
   if (!path.startsWith('/')) {
     path = `/${path}`
   }
-  if (!path.endsWith('/')) {
+  const assumedStaticFile = path.indexOf('.') > -1
+  if (!path.endsWith('/') && !assumedStaticFile) {
     path = `${path}/`
   }
   return `${baseURL}${path}`

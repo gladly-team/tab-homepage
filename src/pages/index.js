@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-// import Container from '@material-ui/core/Container'
-// import Paper from '@material-ui/core/Paper'
-// import Typography from '@material-ui/core/Typography'
+
+// import Container from '@mui/material/Container'
+// import Paper from '@mui/material/Paper'
+// import Typography from '@mui/material/Typography'
 
 import Layout from 'src/components/Layout'
 import Section from 'src/components/Section'
@@ -17,6 +18,7 @@ import {
   chromeExtensionURL,
   edgeExtensionURL,
   financialsURL,
+
   // firefoxExtensionURL,
   githubTabRepoURL,
   githubTabExtensionsRepoURL,
@@ -39,8 +41,9 @@ import {
 import { getUrlParameterValue } from 'src/utils/location'
 
 // Icons
-import Star from '@material-ui/icons/Star'
-import StarHalf from '@material-ui/icons/StarHalf'
+import Star from '@mui/icons-material/Star'
+import StarHalf from '@mui/icons-material/StarHalf'
+
 // import Firefox from 'mdi-material-ui/Firefox'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
@@ -69,9 +72,8 @@ import reviewImgLucasN from 'src/img/reviews/lucas_n.png'
 import reviewImgShayneW from 'src/img/reviews/shayne_w.png'
 import reviewImgTobyS from 'src/img/reviews/toby_s.png'
 
-import { homepageImg, homepageMainText } from './index.module.css'
-
 import { safariEnabled } from 'src/utils/featureFlags'
+import { homepageImg, homepageMainText } from './index.module.css'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -179,6 +181,7 @@ class IndexPage extends React.Component {
     )
 
     const UrgentNotification = null
+
     // const UrgentNotification = (
     //   <div
     //     style={{
@@ -233,7 +236,7 @@ class IndexPage extends React.Component {
             ) : null}
           </Helmet>
           {UrgentNotification}
-          <Section wrap={'reverse'}>
+          <Section wrap="reverse">
             <img
               src={browserLandingPageImg}
               className={homepageImg} // responsive styling
@@ -380,8 +383,8 @@ class IndexPage extends React.Component {
             </div>
           </Section>
           <Section
-            background={'dark'}
-            fullWidth={true}
+            background="dark"
+            fullWidth
             style={{
               flexDirection: 'column',
               justifyContent: 'center',
@@ -477,7 +480,7 @@ class IndexPage extends React.Component {
               }}
             />
           </Section>
-          <Section wrap={'reverse'}>
+          <Section wrap="reverse">
             <img
               src={waterImg}
               className={homepageImg} // responsive styling
@@ -516,8 +519,8 @@ class IndexPage extends React.Component {
             </div>
           </Section>
           <Section
-            background={'dark'}
-            fullWidth={true}
+            background="dark"
+            fullWidth
             style={{
               display: 'block',
               flexDirection: 'unset',

@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react'
 import get from 'lodash/get'
 import PropTypes from 'prop-types'
-import CssBaseline from '@material-ui/core/CssBaseline'
 import Helmet from 'react-helmet'
-import { ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles'
+import {
+  ThemeProvider,
+  responsiveFontSizes,
+  styled,
+} from '@mui/material/styles'
 import { getUrlParameterValue } from 'src/utils/location'
 import { createCauseTheme } from 'src/themes/theme'
 import HeadTags from 'src/components/HeadTags'
@@ -15,26 +18,40 @@ import EndorsementsComponent from 'src/components/Endorsements'
 import Mission from 'src/components/Mission'
 import Footer from 'src/components/FooterV2'
 import Intro from 'src/components/Intro'
-import SecuritySection from './SecuritySection'
 import LandingMoneyRaised from 'src/components/LandingMoneyRaised'
 import CharityIntro from 'src/components/CharityIntro'
 import FAQ from 'src/components/FAQ'
-import Snackbar from '@material-ui/core/Snackbar'
-import Alert from '@material-ui/lab/Alert'
-import AlertTitle from '@material-ui/lab/AlertTitle'
+import Snackbar from '@mui/material/Snackbar'
+import Alert from '@mui/material/Alert'
+import AlertTitle from '@mui/material/AlertTitle'
 import { navigate } from 'gatsby'
 import {
   STORAGE_NEW_USER_IS_TAB_V4_BETA,
   STORAGE_NEW_USER_CAUSE_ID,
-} from 'src/utils/constants'
-import {
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
   KEY_WORDS,
 } from 'src/utils/constants'
 import useMoneyRaised from '../hooks/useMoneyRaised'
+import SecuritySection from './SecuritySection'
 
-const HomepageWrapper = ({
+const Root = styled('div')(() => ({
+  position: 'relative',
+}))
+
+const Background = styled('div')(() => ({
+  // This is only because our root theme has a background of white.
+  // If we unify theming and set background to beiges, we can remove this.
+  background: '#FBF3E9', // beige background
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+  zIndex: -10, // below wave SVGs
+}))
+
+function V4HomePage({
   pageContext: {
     data: {
       path,
@@ -65,20 +82,27 @@ const HomepageWrapper = ({
     previewPage,
   },
   location,
-}) => {
+}) {
+  // Don't run if a cause ID is missing.
+  if (!causeId) {
+    throw new Error('A cause ID is missing.')
+  }
   const isPreviewPage = !!(!enabled && previewPage)
-  const hasReferrer = () =>
+  const hasReferrer = !!(
     referrer || !isNaN(parseInt(getUrlParameterValue('r')))
+  )
+
   // store referrer id
   useEffect(() => {
     // Check for a referrer's vanity URL.
-    if (hasReferrer()) {
+    if (hasReferrer) {
       localStorageMgr.setItem(
         STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
         get(referrer, 'id') || parseInt(getUrlParameterValue('r'))
       )
     }
-  }, [])
+  }, [hasReferrer, referrer])
+
   // store user referral
   useEffect(() => {
     const userReferrerId = getUrlParameterValue('u')
@@ -93,70 +117,68 @@ const HomepageWrapper = ({
     if (enabled && previewPage) {
       navigate(previewPage.path)
     }
-  }, [])
+  }, [enabled, previewPage])
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
   const ogImgURLAbsolute = getAbsoluteURL(
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
   )
   const moneyRaisedAmount = useMoneyRaised()
   return (
-    <ThemeProvider theme={responsiveFontSizes(createCauseTheme(styles.colors))}>
-      <CssBaseline>
-        <div>
-          <HeadTags
-            title={title}
-            titleTemplate="Tab for a Cause"
-            ogTitle={ogTitle}
-            ogDescription={ogDescription}
-            ogImage={ogImgURLAbsolute}
-            keywords={KEY_WORDS.concat(causeSpecificKeywords)}
-            pageURL={absolutePageURL}
-          />
-          <Helmet>
-            <link rel="canonical" href={getAbsoluteURL(path)} />
-            {referrer || isPreviewPage ? (
-              <meta name="robots" content="noindex" />
-            ) : null}
-          </Helmet>
-          <Landing
-            moneyRaised={moneyRaisedAmount}
-            landingData={landing}
-            causeId={causeId}
-          />
-          <LandingMoneyRaised
-            moneyRaised={moneyRaisedAmount}
-            moneyRaisedData={moneyRaised}
-          />
-          <CharityIntro charityIntroData={charityIntro} />
-          <Intro introData={TFACIntro} />
-          <Mission missionData={missionData} causeId={causeId} />
-          <SecuritySection securityData={Security} />
-          <FinancialsComponent financialsData={Financials} />
-          <EndorsementsComponent
-            endorsementsData={Endorsements}
-            causeId={causeId}
-          />
-          <FAQ faqData={faq} />
-          <Footer
-            footerData={footerData}
-            onBeforeInstall={() => {
-              localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
-              localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
-            }}
-          />
-          <Snackbar open={isPreviewPage}>
-            <Alert severity="info" sx={{ width: '100%' }}>
-              <AlertTitle>Shh! This page is secret!</AlertTitle>
-              You probably got here because the Tab for a Cause team shared it
-              with you, but please don’t share it with others.
-            </Alert>
-          </Snackbar>
-        </div>
-      </CssBaseline>
-    </ThemeProvider>
+    <Root>
+      <HeadTags
+        title={title}
+        titleTemplate="Tab for a Cause"
+        ogTitle={ogTitle}
+        ogDescription={ogDescription}
+        ogImage={ogImgURLAbsolute}
+        keywords={KEY_WORDS.concat(causeSpecificKeywords)}
+        pageURL={absolutePageURL}
+      />
+      <Helmet>
+        <link rel="canonical" href={getAbsoluteURL(path)} />
+        {referrer || isPreviewPage ? (
+          <meta name="robots" content="noindex" />
+        ) : null}
+      </Helmet>
+      <Background />
+      <Landing
+        moneyRaised={moneyRaisedAmount}
+        landingData={landing}
+        causeId={causeId}
+      />
+      <LandingMoneyRaised
+        moneyRaised={moneyRaisedAmount}
+        moneyRaisedData={moneyRaised}
+      />
+      <CharityIntro charityIntroData={charityIntro} />
+      <Intro introData={TFACIntro} causeId={causeId} />
+      <Mission missionData={missionData} causeId={causeId} />
+      <SecuritySection securityData={Security} />
+      <FinancialsComponent financialsData={Financials} />
+      <EndorsementsComponent
+        endorsementsData={Endorsements}
+        causeId={causeId}
+      />
+      <FAQ faqData={faq} />
+      <Footer
+        footerData={footerData}
+        onBeforeInstall={() => {
+          localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
+          localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
+        }}
+      />
+      <Snackbar open={isPreviewPage}>
+        <Alert severity="info" sx={{ width: '100%' }}>
+          <AlertTitle>Shh! This page is secret!</AlertTitle>
+          You probably got here because the Tab for a Cause team shared it with
+          you, but please don’t share it with others.
+        </Alert>
+      </Snackbar>
+    </Root>
   )
 }
-HomepageWrapper.propTypes = {
+
+V4HomePage.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
@@ -170,4 +192,22 @@ HomepageWrapper.propTypes = {
     }),
   }),
 }
-export default HomepageWrapper
+
+function V4HomePageWithTheme(props) {
+  return (
+    <ThemeProvider
+      theme={responsiveFontSizes(
+        createCauseTheme(props.pageContext.data.styles.colors)
+      )}
+    >
+      <V4HomePage {...props} />
+    </ThemeProvider>
+  )
+}
+
+V4HomePageWithTheme.propTypes = {
+  pageContext: PropTypes.shape({
+    data: PropTypes.any,
+  }),
+}
+export default V4HomePageWithTheme

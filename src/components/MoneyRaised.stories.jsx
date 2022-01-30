@@ -7,5 +7,7 @@ export default {
   component: MoneyRaised,
 }
 
-const Template = (args) => <MoneyRaised {...args} />
+function Template(args) {
+  return <MoneyRaised {...args} />
+}
 export const Default = Template.bind({})

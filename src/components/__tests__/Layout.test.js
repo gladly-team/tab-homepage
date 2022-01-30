@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import Header from 'src/components/Header'
 import Footer from 'src/components/Footer'
 import HeadTags from 'src/components/HeadTags'

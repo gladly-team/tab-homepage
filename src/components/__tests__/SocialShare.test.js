@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import {
   EmailIcon,
   EmailShareButton,
@@ -93,6 +93,7 @@ describe('SocialShare component', () => {
       ...mockProps.FacebookShareButtonProps,
       children: expect.any(Object),
       url: mockProps.url,
+
       // hashtag: 'tabsTransformed',
     })
   })
@@ -183,6 +184,7 @@ describe('SocialShare component', () => {
       ...mockProps.TwitterShareButtonProps,
       children: expect.any(Object),
       url: mockProps.url,
+
       // hashtags: ['tabsTransformed'],
     })
   })

@@ -49,29 +49,26 @@ class CharitableImpactText extends React.Component {
     const key = `key-${this.state.textIndex}`
     return (
       <span
-        style={Object.assign(
-          {},
-          {
-            display: 'inline-block',
-            minWidth: '10em',
-            color: primaryMainColor,
-            borderBottomColor: primaryMainColor,
-            paddingBottom: 1,
-            borderBottomWidth: '0.07em',
-            borderBottomStyle: 'solid',
-            whiteSpace: 'nowrap',
-            textAlign: 'center',
-            marginLeft: 2,
-            marginRight: 2,
-            position: 'relative',
-            overflow: 'hidden',
-            height: '1.4em',
-            verticalAlign: 'top',
-          },
-          style
-        )}
+        style={{
+          display: 'inline-block',
+          minWidth: '10em',
+          color: primaryMainColor,
+          borderBottomColor: primaryMainColor,
+          paddingBottom: 1,
+          borderBottomWidth: '0.07em',
+          borderBottomStyle: 'solid',
+          whiteSpace: 'nowrap',
+          textAlign: 'center',
+          marginLeft: 2,
+          marginRight: 2,
+          position: 'relative',
+          overflow: 'hidden',
+          height: '1.4em',
+          verticalAlign: 'top',
+          ...style,
+        }}
       >
-        <TransitionGroup component={'span'}>
+        <TransitionGroup component="span">
           <CSSTransition
             key={key}
             timeout={140}

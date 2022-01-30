@@ -1,22 +1,20 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import impactTexts from 'src/utils/impactTexts'
 
-jest.mock('src/utils/impactTexts', () => {
-  return [
-    'preserve oceans',
-    'feed children',
-    'build libraries',
-    'send emergency aid',
-    'train entrepreneurs',
-    'plant trees',
-    'prevent disease',
-    'give clean water',
-    'protect human rights',
-  ]
-})
+jest.mock('src/utils/impactTexts', () => [
+  'preserve oceans',
+  'feed children',
+  'build libraries',
+  'send emergency aid',
+  'train entrepreneurs',
+  'plant trees',
+  'prevent disease',
+  'give clean water',
+  'protect human rights',
+])
 
 describe('CharitableImpactText', () => {
   it('renders without error', () => {
@@ -47,7 +45,7 @@ describe('CharitableImpactText', () => {
   it('capitalizes text if "capitalize" prop is true', () => {
     const CharitableImpactText = require('../CharitableImpactText').default
     jest.useFakeTimers()
-    const wrapper = shallow(<CharitableImpactText capitalize={true} />)
+    const wrapper = shallow(<CharitableImpactText capitalize />)
     expect(wrapper.find('span').last().text()).toBe('Preserve oceans')
   })
 })

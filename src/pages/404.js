@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 import Helmet from 'react-helmet'
 import Link from 'src/components/Link'
 import { homeURL } from 'src/utils/navigation'
-import { withTheme } from '@material-ui/styles'
-import * as styles from './404.module.css'
+import { withTheme } from '@mui/styles'
 import Layout from 'src/components/Layout'
+import * as styles from './404.module.css'
 
 class NotFoundPage extends React.Component {
   render() {
@@ -23,7 +23,7 @@ class NotFoundPage extends React.Component {
             alignItems: 'center',
           }}
         >
-          <Helmet title={'Missing page'}>
+          <Helmet title="Missing page">
             <meta property="og:title" content={openGraphTitle} />
             <meta property="og:description" content={openGraphDescription} />
             <meta name="twitter:title" content={openGraphTitle} />

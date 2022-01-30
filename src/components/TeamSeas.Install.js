@@ -1,17 +1,19 @@
+// This page will soon be removed.
+/* eslint-disable */
+
 import React, { useEffect, useState } from 'react'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types'
 import {
-  makeStyles,
   ThemeProvider,
   responsiveFontSizes,
-} from '@material-ui/core/styles'
+} from '@mui/material/styles'
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import CssBaseline from '@material-ui/core/CssBaseline'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
 import InstallButton from 'src/components/InstallButton'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 import { tabForTeamSeasTheme } from 'src/themes/theme'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import openGraphImg from 'src/img/seasOG.png'
@@ -32,86 +34,115 @@ import Link from 'src/components/Link'
 import Wave from 'src/components/Wave'
 import Footer from 'src/components/FooterV2'
 
-const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
-const canonicalURL = getAbsoluteURL(seasURL)
-const useStyles = makeStyles((theme) => ({
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  titleSection: {
+const PREFIX = 'SeasPageWithTheme';
+
+const classes = {
+  logoContainer: `${PREFIX}-logoContainer`,
+  titleSection: `${PREFIX}-titleSection`,
+  title: `${PREFIX}-title`,
+  halfScreenLeft: `${PREFIX}-halfScreenLeft`,
+  halfScreenRight: `${PREFIX}-halfScreenRight`,
+  subtitle: `${PREFIX}-subtitle`,
+  buttonStyles: `${PREFIX}-buttonStyles`,
+  wave: `${PREFIX}-wave`,
+  waveMobile: `${PREFIX}-waveMobile`
+};
+
+const StyledThemeProvider = styled(ThemeProvider)((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.logoContainer}`]: { flex: 1, display: 'flex', flexDirection: 'row' },
+
+  [`& .${classes.titleSection}`]: {
     margin: '0 auto',
     display: 'flex',
     height: 'calc(100vh - 64px)',
     alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexDirection: 'column-reverse',
       height: 'auto',
     },
   },
-  title: {
+
+  [`& .${classes.title}`]: {
     color: theme.palette.primary.main,
   },
-  halfScreenLeft: {
+
+  [`& .${classes.halfScreenLeft}`]: {
     width: '50%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     paddingLeft: '10%',
-    [theme.breakpoints.down(1100)]: {
+    [theme.breakpoints.down('sm')]: {
       width: '47%',
       paddingLeft: '7%',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '80%',
       marginTop: theme.spacing(4),
       paddingLeft: 0,
       marginBottom: theme.spacing(8),
     },
   },
-  halfScreenRight: {
+
+  [`& .${classes.halfScreenRight}`]: {
     width: '55%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     position: 'absolute',
     right: 0,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       position: 'relative',
       width: '100%',
     },
   },
-  subtitle: {
+
+  [`& .${classes.subtitle}`]: {
     marginTop: theme.spacing(2),
   },
-  buttonStyles: {
+
+  [`& .${classes.buttonStyles}`]: {
     maxWidth: theme.spacing(30),
     marginTop: theme.spacing(1.5),
   },
-  wave: {
+
+  [`& .${classes.wave}`]: {
     position: 'absolute',
     bottom: 0,
     width: '100%',
     zIndex: -1,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none',
     },
   },
-  waveMobile: {
+
+  [`& .${classes.waveMobile}`]: {
     display: 'none',
     position: 'absolute',
     width: '100%',
     zIndex: -1,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'block',
     },
-  },
-}))
+  }
+}));
 
-const Seas = ({ pageContext, location }) => {
-  const cx = useStyles()
+const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
+const canonicalURL = getAbsoluteURL(seasURL)
+
+function Seas({ pageContext, location }) {
+
   const [showUnsupportedBrowserMessage, setShowUnsupportedBrowserMessage] =
     useState(false)
+
   // store referrer id
   useEffect(() => {
     let referrerId = null
+
     // Check for a referrer's vanity URL.
     if (pageContext && pageContext.referrer) {
       referrerId = pageContext.referrer.id
@@ -127,6 +158,7 @@ const Seas = ({ pageContext, location }) => {
         referrerId
       )
   }, [])
+
   // store user referral
   useEffect(() => {
     const userReferrerId = getUrlParameterValue('u')
@@ -164,7 +196,7 @@ const Seas = ({ pageContext, location }) => {
       </Helmet>
       <AppBar color="primary" position="sticky">
         <Toolbar>
-          <div className={cx.logoContainer}>
+          <div className={classes.logoContainer}>
             <div
               data-test-id="logo-container"
               style={{
@@ -186,18 +218,18 @@ const Seas = ({ pageContext, location }) => {
           <MoneyRaisedDisplay color="inherit" />
         </Toolbar>
       </AppBar>
-      <div className={cx.titleSection}>
-        <div className={cx.halfScreenLeft}>
+      <div className={classes.titleSection}>
+        <div className={classes.halfScreenLeft}>
           <Typography variant="h1" color="primary">
             The easiest way to save our seas
           </Typography>
-          <Typography className={cx.subtitle}>
+          <Typography className={classes.subtitle}>
             Every tab opened raises money for #TeamSeas, an internet-led
             movement raising $30 million to clean up 30 million pounds of trash
             from our oceans, rivers, and lakes.
           </Typography>
           <InstallButton
-            className={cx.buttonStyles}
+            className={classes.buttonStyles}
             color="secondary"
             size="medium"
             onBeforeInstall={() => {
@@ -212,15 +244,15 @@ const Seas = ({ pageContext, location }) => {
             }}
           />
         </div>
-        <div className={cx.halfScreenRight}>
-          <img src={headerImg}></img>
+        <div className={classes.halfScreenRight}>
+          <img src={headerImg} />
         </div>
-        <div className={cx.wave}>
-          <Wave color={'#5094FB'} />
+        <div className={classes.wave}>
+          <Wave color="#5094FB" />
         </div>
       </div>
-      <div className={cx.waveMobile}>
-        <Wave color={'#5094FB'} />
+      <div className={classes.waveMobile}>
+        <Wave color="#5094FB" />
       </div>
       <UnsupportedBrowserDialog
         open={showUnsupportedBrowserMessage}
@@ -228,10 +260,11 @@ const Seas = ({ pageContext, location }) => {
           setShowUnsupportedBrowserMessage(false)
         }}
       />
-      <Footer onBeforeInstall={onBeforeInstall} footerData={{ img: {} }} />
+      <Footer onBeforeInstall={onBeforeInstall} footerData={{ img: {}, bubbleColor: 'grey' }} />
     </div>
   )
 }
+
 Seas.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
@@ -242,13 +275,15 @@ Seas.propTypes = {
     }),
   }),
 }
-const SeasPageWithTheme = (props) => (
-  <ThemeProvider
-    theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
-  >
-    <CssBaseline>
-      <Seas {...props} />
-    </CssBaseline>
-  </ThemeProvider>
-)
+
+function SeasPageWithTheme(props) {
+  return (
+    <StyledThemeProvider
+      theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
+    >
+        <Seas {...props} />
+    </StyledThemeProvider>
+  );
+}
+
 export default SeasPageWithTheme

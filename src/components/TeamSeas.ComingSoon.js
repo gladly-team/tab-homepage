@@ -1,16 +1,17 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import {
-  makeStyles,
+  styled,
   ThemeProvider,
   responsiveFontSizes,
-} from '@material-ui/core/styles'
+} from '@mui/material/styles'
+import PropTypes from 'prop-types'
+
 import Helmet from 'react-helmet'
 import HeadTags from 'src/components/HeadTags'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import Paper from '@mui/material/Paper'
+import Typography from '@mui/material/Typography'
 import { tabForTeamSeasTheme } from 'src/themes/theme'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import openGraphImg from 'src/img/seasOG.png'
@@ -20,11 +21,26 @@ import seaImg from 'src/img/seas/ocean.jpg'
 import Link from 'src/components/Link'
 import Countdown from 'react-countdown'
 
-const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
-const canonicalURL = getAbsoluteURL(seasURL)
-const useStyles = makeStyles((theme) => ({
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  background: {
+const PREFIX = 'SeasPageWithTheme'
+
+const classes = {
+  logoContainer: `${PREFIX}-logoContainer`,
+  background: `${PREFIX}-background`,
+  tint: `${PREFIX}-tint`,
+  titleSection: `${PREFIX}-titleSection`,
+  comingSoon: `${PREFIX}-comingSoon`,
+  countdownPaper: `${PREFIX}-countdownPaper`,
+  countdownFont: `${PREFIX}-countdownFont`,
+}
+
+const StyledThemeProvider = styled(ThemeProvider)(({ theme }) => ({
+  [`& .${classes.logoContainer}`]: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'row',
+  },
+
+  [`& .${classes.background}`]: {
     backgroundImage: `url("${seaImg}")`,
     boxShadow: 'rgba(0, 0, 0, 0.5) 0px 0px 120px inset',
     backgroundRepeat: 'no-repeat',
@@ -40,17 +56,20 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     zIndex: '-2',
   },
-  tint: {
+
+  [`& .${classes.tint}`]: {
     position: 'absolute',
     top: 0,
     bottom: 0,
     right: 0,
     left: 0,
     zIndex: '-1',
+
     // Needs to match shading in extension new tab page.
     backgroundColor: `rgba(0, 0, 0, 0.3)`,
   },
-  titleSection: {
+
+  [`& .${classes.titleSection}`]: {
     margin: '0 auto',
     display: 'flex',
     height: 'calc(100vh - 64px)',
@@ -59,10 +78,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     color: '#fff',
   },
-  comingSoon: {
+
+  [`& .${classes.comingSoon}`]: {
     marginBottom: theme.spacing(2),
   },
-  countdownPaper: {
+
+  [`& .${classes.countdownPaper}`]: {
     borderRadius: '50%',
     height: '150px',
     width: '150px',
@@ -74,13 +95,15 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(2),
   },
-  countdownFont: {
+
+  [`& .${classes.countdownFont}`]: {
     color: theme.palette.secondary.main,
   },
 }))
-const Seas = ({ location }) => {
-  const cx = useStyles()
 
+const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
+const canonicalURL = getAbsoluteURL(seasURL)
+function Seas({ location }) {
   const absolutePageURL = getAbsoluteURL(location.pathname)
   return (
     <div>
@@ -98,7 +121,7 @@ const Seas = ({ location }) => {
       </Helmet>
       <AppBar color="primary" position="sticky">
         <Toolbar>
-          <div className={cx.logoContainer}>
+          <div className={classes.logoContainer}>
             <div
               data-test-id="logo-container"
               style={{
@@ -120,42 +143,42 @@ const Seas = ({ location }) => {
           <MoneyRaisedDisplay color="inherit" />
         </Toolbar>
       </AppBar>
-      <div className={cx.background}>
-        <div className={cx.tint}></div>
+      <div className={classes.background}>
+        <div className={classes.tint} />
       </div>
-      <div className={cx.titleSection}>
+      <div className={classes.titleSection}>
         <Typography variant="h2" color="inherit">
           TAB FOR #TEAMSEAS
         </Typography>
-        <Typography variant="h3" color="inherit" className={cx.comingSoon}>
+        <Typography variant="h3" color="inherit" className={classes.comingSoon}>
           COMING SOON IN:
         </Typography>
         <Countdown
-          date={'2021-10-29T13:00:00.000'}
+          date="2021-10-29T13:00:00.000"
           intervalDelay={0}
           precision={3}
           renderer={({ hours, minutes, seconds, days }) => (
             <div style={{ display: 'flex' }}>
-              <Paper className={cx.countdownPaper}>
-                <Typography variant="h4" className={cx.countdownFont}>
+              <Paper className={classes.countdownPaper}>
+                <Typography variant="h4" className={classes.countdownFont}>
                   {days}
                 </Typography>
                 <Typography>days</Typography>
               </Paper>
-              <Paper className={cx.countdownPaper}>
-                <Typography variant="h4" className={cx.countdownFont}>
+              <Paper className={classes.countdownPaper}>
+                <Typography variant="h4" className={classes.countdownFont}>
                   {hours}
                 </Typography>
                 <Typography>hours</Typography>
               </Paper>
-              <Paper className={cx.countdownPaper}>
-                <Typography variant="h4" className={cx.countdownFont}>
+              <Paper className={classes.countdownPaper}>
+                <Typography variant="h4" className={classes.countdownFont}>
                   {minutes}
                 </Typography>
                 <Typography>minutes</Typography>
               </Paper>
-              <Paper className={cx.countdownPaper}>
-                <Typography variant="h4" className={cx.countdownFont}>
+              <Paper className={classes.countdownPaper}>
+                <Typography variant="h4" className={classes.countdownFont}>
                   {seconds}
                 </Typography>
                 <Typography>seconds</Typography>
@@ -167,6 +190,7 @@ const Seas = ({ location }) => {
     </div>
   )
 }
+
 Seas.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
@@ -177,11 +201,15 @@ Seas.propTypes = {
     }),
   }),
 }
-const SeasPageWithTheme = (props) => (
-  <ThemeProvider
-    theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
-  >
-    <Seas {...props} />
-  </ThemeProvider>
-)
+
+function SeasPageWithTheme(props) {
+  return (
+    <StyledThemeProvider
+      theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
+    >
+      <Seas {...props} />
+    </StyledThemeProvider>
+  )
+}
+
 export default SeasPageWithTheme

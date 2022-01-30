@@ -3,6 +3,7 @@ import { mockWindowLocation } from 'src/utils/test-utils'
 
 // Override the getLocation function for testing
 const location = require('../location')
+
 location.getLocation = jest.fn(() => mockWindowLocation())
 
 describe('location utils', () => {

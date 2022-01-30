@@ -1,13 +1,14 @@
 import React from 'react'
-import LandingMoneyRaised from './LandingMoneyRaised'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+import LandingMoneyRaised from './LandingMoneyRaised'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+
 export default {
   title: 'Components/LandingMoneyRaised',
   component: LandingMoneyRaised,
 }
 
-const Template = (_args, { loaded: { data } }) => {
+function Template(_args, { loaded: { data } }) {
   const moneyRaisedData = data.data.sections.moneyRaised
   return <LandingMoneyRaised moneyRaisedData={moneyRaisedData} />
 }

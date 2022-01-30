@@ -1,104 +1,103 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
+import { styled } from '@mui/material/styles'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 import faqPattern from 'src/img/causeshared/faqTitlePattern.png'
-import MuiAccordion from '@material-ui/core/Accordion'
-import MuiAccordionSummary from '@material-ui/core/AccordionSummary'
-import MuiAccordionDetails from '@material-ui/core/AccordionDetails'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import MuiAccordion, { accordionClasses } from '@mui/material/Accordion'
+import MuiAccordionSummary from '@mui/material/AccordionSummary'
+import MuiAccordionDetails from '@mui/material/AccordionDetails'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Markdown from 'src/components/Markdown'
 
-const useStyles = makeStyles((theme) => ({
-  parent: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    minHeight: '100vh',
-    background: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
-    [theme.breakpoints.down('sm')]: {
-      paddingTop: theme.spacing(0),
-      paddingBottom: theme.spacing(0),
-    },
-  },
-  row: {
-    width: '90%',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(8),
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-    },
-  },
-  faqSection: {
-    display: 'flex',
-    flexDirection: 'column',
-    paddingLeft: theme.spacing(3),
-    [theme.breakpoints.down('sm')]: {
-      paddingLeft: theme.spacing(0),
-    },
-  },
-  titleImage: {
-    maxWidth: '35%',
-    [theme.breakpoints.down('sm')]: {
-      maxWidth: 'unset',
-    },
-  },
-  titleAndPattern: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  faqPattern: {
-    height: theme.spacing(12),
-  },
-  copy: {
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(3),
-  },
-  expandIcon: {
-    color: theme.palette.secondary.main,
-  },
-  MuiAccordionRoot: {
-    '&::before': {
-      backgroundColor: 'transparent',
-      top: '0px',
-    },
-    '& .Mui-expanded': {
-      marginTop: '0px',
-    },
-    '& .MuiAccordionDetails-root': {
-      paddingTop: '0px',
-    },
-    borderBottom: '2px #F9EBDC solid',
+const ExpandMoreIconExpandIcon = styled(ExpandMoreIcon)(({ theme }) => ({
+  color: theme.palette.secondary.main,
+}))
+
+const DivParent = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  width: '100%',
+  minHeight: '100vh',
+  background: 'white',
+  alignItems: 'center',
+  justifyContent: 'center',
+  paddingTop: theme.spacing(2),
+  paddingBottom: theme.spacing(2),
+
+  [theme.breakpoints.down('md')]: {
+    paddingTop: theme.spacing(0),
+    paddingBottom: theme.spacing(0),
   },
 }))
 
-const FAQ = ({ faqData }) => {
+const DivRow = styled('div')(({ theme }) => ({
+  width: '90%',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  marginTop: theme.spacing(8),
+  marginBottom: theme.spacing(8),
+
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'column',
+  },
+}))
+
+const DivFaqSection = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  paddingLeft: theme.spacing(3),
+
+  [theme.breakpoints.down('md')]: {
+    paddingLeft: theme.spacing(0),
+  },
+}))
+
+const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
+  maxWidth: '35%',
+
+  [theme.breakpoints.down('md')]: {
+    maxWidth: 'unset',
+  },
+}))
+
+const DivTitleAndPattern = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+}))
+
+const ImgFaqPattern = styled('img')(({ theme }) => ({
+  height: theme.spacing(12),
+}))
+
+const TypographyCopy = styled(Typography)(({ theme }) => ({
+  marginTop: theme.spacing(3),
+  marginBottom: theme.spacing(3),
+}))
+
+function FAQ({ faqData }) {
   const { img, questions } = faqData
-  const cx = useStyles()
   const image = getImage(formatImg(img))
   const questionComponents = questions.map((question, index) => (
     <MuiAccordion
-      square={true}
+      square
       elevation={0}
-      classes={{
-        root: cx.MuiAccordionRoot,
-        expanded: cx.MuiAccordionExpanded,
+      key={question.question}
+      sx={{
+        '&::before': {
+          backgroundColor: 'transparent',
+          top: '0px',
+        },
+        [`& .${accordionClasses.root}`]: {
+          paddingTop: '0px',
+        },
+        borderBottom: '2px #F9EBDC solid',
       }}
-      key={index}
     >
-      <MuiAccordionSummary
-        expandIcon={<ExpandMoreIcon className={cx.expandIcon} />}
-      >
+      <MuiAccordionSummary expandIcon={<ExpandMoreIconExpandIcon />}>
         <Typography variant="caption" color="primary">
           {question.question}
         </Typography>
@@ -109,35 +108,36 @@ const FAQ = ({ faqData }) => {
     </MuiAccordion>
   ))
   return (
-    <div className={cx.parent}>
-      <div className={cx.row}>
-        <GatsbyImage
+    <DivParent>
+      <DivRow>
+        <GatsbyImageTitleImage
           alt="faq image"
           imgStyle={{
             objectFit: 'scale-down',
           }}
-          className={cx.titleImage}
           image={image}
         />
-        <div className={cx.faqSection}>
-          <div className={cx.titleAndPattern}>
+        <DivFaqSection>
+          <DivTitleAndPattern>
             <Typography variant="h1">FAQ</Typography>
-            <img className={cx.faqPattern} src={faqPattern} />
-          </div>
-          <Typography className={cx.copy}>
+            <ImgFaqPattern src={faqPattern} />
+          </DivTitleAndPattern>
+          <TypographyCopy>
             Check out some of our frequently asked questions. We think you’ll
             find what you’re looking for.
-          </Typography>
+          </TypographyCopy>
           {questionComponents}
-        </div>
-      </div>
-    </div>
+        </DivFaqSection>
+      </DivRow>
+    </DivParent>
   )
 }
+
 FAQ.propTypes = {
   faqData: PropTypes.shape({
     img: PropTypes.any,
     questions: PropTypes.array,
   }),
 }
+
 export default FAQ

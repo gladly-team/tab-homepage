@@ -1,11 +1,11 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { mount, shallow } from 'enzyme'
+import { mount } from 'src/utils/testHelpers/componentTesting'
 import catsData from 'src/data/causes/cats.json'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 
-var charityIntroData = catsData.data.sections.charityIntro
+const charityIntroData = catsData.data.sections.charityIntro
 const getMockProps = () => ({
   charityIntroData,
 })
@@ -13,7 +13,7 @@ const getMockProps = () => ({
 describe('CharityIntro component', () => {
   it('renders without error', () => {
     const CharityIntro = require('../CharityIntro').default
-    shallow(<CharityIntro {...getMockProps()} />)
+    mount(<CharityIntro {...getMockProps()} />)
   })
 
   it('renders title and subtitle text', () => {
@@ -32,7 +32,7 @@ describe('CharityIntro component', () => {
 
     const typography = wrapper.find(Typography)
 
-    for (var i = 0; i < charityIntroData.steps.length; i++) {
+    for (let i = 0; i < charityIntroData.steps.length; i++) {
       expect(typography.at(i + 2).text()).toEqual(
         charityIntroData.steps[i].text
       )

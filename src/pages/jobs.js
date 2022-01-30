@@ -3,23 +3,23 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
-import Paper from '@material-ui/core/Paper'
+import Paper from '@mui/material/Paper'
 import {
   lighterTextColor,
   secondaryMainColor,
   secondaryContrastTextColor,
   lightestTextColor,
 } from 'src/themes/theme'
-import Explore from '@material-ui/icons/Explore'
-import Favorite from '@material-ui/icons/Favorite'
-import Lock from '@material-ui/icons/Lock'
-import Restaurant from '@material-ui/icons/Restaurant'
-import SentimentVerySatisfied from '@material-ui/icons/SentimentVerySatisfied'
-import ShowChart from '@material-ui/icons/ShowChart'
+import Explore from '@mui/icons-material/Explore'
+import Favorite from '@mui/icons-material/Favorite'
+import Lock from '@mui/icons-material/Lock'
+import Restaurant from '@mui/icons-material/Restaurant'
+import SentimentVerySatisfied from '@mui/icons-material/SentimentVerySatisfied'
+import ShowChart from '@mui/icons-material/ShowChart'
 import Layout from 'src/components/Layout'
-import Divider from '@material-ui/core/Divider'
+import Divider from '@mui/material/Divider'
 
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 
 const teamValues = [
   {
@@ -60,7 +60,7 @@ const teamValues = [
   },
 ]
 
-const ApplyButton = (props) => {
+function ApplyButton(props) {
   const { email = 'jobs@tabforacause.org', children, ...otherProps } = props
   return (
     <a href={`mailto:${email}`}>
@@ -367,7 +367,6 @@ class JobsPage extends React.Component {
           <h1 style={{ marginTop: 48, marginBottom: 10 }}>Our Values</h1>
           <Divider
             style={{
-              backgroundColor: lightestTextColor,
               marginBottom: 20,
             }}
           />
@@ -379,60 +378,58 @@ class JobsPage extends React.Component {
               marginBottom: 40,
             }}
           >
-            {teamValues.map((teamValue) => {
-              return (
-                <Paper
-                  key={teamValue.name}
-                  elevation={1}
-                  style={{
-                    maxWidth: 300,
-                    textAlign: 'center',
-                    margin: 20,
-                  }}
-                >
-                  <span>
-                    <span
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        marginBottom: 10,
-                        background: secondaryMainColor,
-                        padding: 10,
-                      }}
-                    >
-                      {teamValue.iconComponent ? (
-                        <teamValue.iconComponent
-                          style={{
-                            color: secondaryContrastTextColor,
-                            width: 32,
-                            height: 32,
-                          }}
-                        />
-                      ) : null}
-                      <h3
+            {teamValues.map((teamValue) => (
+              <Paper
+                key={teamValue.name}
+                elevation={1}
+                style={{
+                  maxWidth: 300,
+                  textAlign: 'center',
+                  margin: 20,
+                }}
+              >
+                <span>
+                  <span
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginBottom: 10,
+                      background: secondaryMainColor,
+                      padding: 10,
+                    }}
+                  >
+                    {teamValue.iconComponent ? (
+                      <teamValue.iconComponent
                         style={{
                           color: secondaryContrastTextColor,
-                          marginBottom: 0,
-                          marginLeft: 10,
+                          width: 32,
+                          height: 32,
                         }}
-                      >
-                        {teamValue.name}
-                      </h3>
-                    </span>
-                    <p
+                      />
+                    ) : null}
+                    <h3
                       style={{
-                        fontSize: 16,
-                        color: lighterTextColor,
-                        margin: 20,
+                        color: secondaryContrastTextColor,
+                        marginBottom: 0,
+                        marginLeft: 10,
                       }}
                     >
-                      {teamValue.description}
-                    </p>
+                      {teamValue.name}
+                    </h3>
                   </span>
-                </Paper>
-              )
-            })}
+                  <p
+                    style={{
+                      fontSize: 16,
+                      color: lighterTextColor,
+                      margin: 20,
+                    }}
+                  >
+                    {teamValue.description}
+                  </p>
+                </span>
+              </Paper>
+            ))}
           </div>
         </TextPageContent>
       </Layout>

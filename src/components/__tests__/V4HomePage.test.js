@@ -1,13 +1,13 @@
 /* eslint-env jest */
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'src/utils/testHelpers/componentTesting'
 import localStorageMgr from 'src/utils/local-storage'
 import data from 'src/data/causes/cats.json'
 import InstallButton from 'src/components/InstallButton'
 import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import { act } from 'react-dom/test-utils'
 import Helmet from 'react-helmet'
-import Snackbar from '@material-ui/core/Snackbar'
+import Snackbar from '@mui/material/Snackbar'
 import Footer from 'src/components/FooterV2'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import { flushAllPromises } from 'src/utils/test-utils'
@@ -38,6 +38,35 @@ data.data.sections.Financials.pdfs = [
     img: data.data.sections.Financials.q3Img,
   },
 ]
+
+jest.mock(
+  'src/components/FooterBlobLeft',
+  () =>
+    function MockComp() {
+      return <div />
+    }
+)
+jest.mock(
+  'src/components/FooterBlobRight',
+  () =>
+    function MockComp() {
+      return <div />
+    }
+)
+jest.mock(
+  'src/components/Endorsements',
+  () =>
+    function MockComp() {
+      return <div />
+    }
+)
+jest.mock(
+  'mdi-material-ui/GoogleChrome',
+  () =>
+    function MockComp() {
+      return <span />
+    }
+)
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')
@@ -67,13 +96,12 @@ afterEach(() => {
 describe('home page', () => {
   it('renders without error', () => {
     const HomePageWrapper = require('../V4HomePage').default
-    shallow(<HomePageWrapper {...getMockProps()} />)
+    mount(<HomePageWrapper {...getMockProps()} />)
   })
 
   it('the InstallButton onBeforeInstall sets the "Tab V4 enabled" flag in local storage and the cause id', () => {
     const HomePageWrapper = require('../V4HomePage').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
 
     const wrapper = mount(<HomePageWrapper {...getMockProps()} />)
@@ -91,8 +119,7 @@ describe('home page', () => {
 
   it('the InstallButton onUnsupportedBrowserInstallClick shows unsupported browser model', async () => {
     const HomePageWrapper = require('../V4HomePage').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
     const wrapper = mount(<HomePageWrapper {...getMockProps()} />)
     await act(async () => {
@@ -109,8 +136,7 @@ describe('home page', () => {
 
   it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
     const HomePageWrapper = require('../V4HomePage').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
 
     mount(<HomePageWrapper {...getMockProps()} />)
@@ -216,8 +242,7 @@ describe('home page', () => {
   it('stores the referrer ID in local storage when it is included as a URL parameter', () => {
     const HomePageWrapper = require('../V4HomePage').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
@@ -235,22 +260,10 @@ describe('home page', () => {
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
 
-  it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
-    const HomePageWrapper = require('../V4HomePage').default
-
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
-    getUrlParameterValue.mockReturnValue(null)
-
-    mount(<HomePageWrapper {...getMockProps()} />)
-    expect(localStorageMgr.setItem).not.toHaveBeenCalled()
-  })
-
   it('does not store a referrer ID in local storage when the URL param referrer ID value is not an integer', () => {
     const HomePageWrapper = require('../V4HomePage').default
 
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'r':
@@ -266,8 +279,7 @@ describe('home page', () => {
 
   it('stores the referring user in local storage when it is included as a URL parameter', () => {
     const HomePageWrapper = require('../V4HomePage').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockImplementation((param) => {
       switch (param) {
         case 'u':
@@ -285,16 +297,6 @@ describe('home page', () => {
     expect(localStorageMgr.setItem).toHaveBeenCalledTimes(1)
   })
 
-  it('does not store a referrer ID in local storage when the referrer ID is not in the URL params', () => {
-    const HomePageWrapper = require('../V4HomePage').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
-    getUrlParameterValue.mockReturnValue(null)
-
-    mount(<HomePageWrapper {...getMockProps()} />)
-    expect(localStorageMgr.setItem).not.toHaveBeenCalled()
-  })
-
   it('does not show snackbar if page enabled, or if no page preview', () => {
     const HomePageWrapper = require('../V4HomePage').default
     const mockProps = getMockProps()
@@ -303,7 +305,7 @@ describe('home page', () => {
       preview: false,
     }
 
-    const wrapper = shallow(<HomePageWrapper {...mockProps} />)
+    const wrapper = mount(<HomePageWrapper {...mockProps} />)
     expect(wrapper.find(Snackbar).first().prop('open')).toEqual(false)
   })
 
@@ -318,15 +320,14 @@ describe('home page', () => {
       path: '/test/',
     }
 
-    const wrapper = shallow(<HomePageWrapper {...mockProps} />)
+    const wrapper = mount(<HomePageWrapper {...mockProps} />)
     expect(wrapper.find(Snackbar).first().prop('open')).toEqual(true)
   })
 
   it('calls the onBeforeInstall prop on click and works if it is async', async () => {
     expect.assertions(2)
     const HomePageWrapper = require('../V4HomePage').default
-    const getUrlParameterValue =
-      require('src/utils/location').getUrlParameterValue
+    const { getUrlParameterValue } = require('src/utils/location')
     getUrlParameterValue.mockReturnValue(null)
 
     const wrapper = mount(<HomePageWrapper {...getMockProps()} />)

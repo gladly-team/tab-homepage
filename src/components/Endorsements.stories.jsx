@@ -1,19 +1,26 @@
 import React from 'react'
+import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 import Endorsements from './Endorsements'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
-import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 
 export default {
   title: 'Components/Endorsements',
   component: Endorsements,
 }
 
-const Template = (_args, { loaded: { data } }) => {
+function Template(_args, { loaded: { data } }) {
   const {
+    causeId,
     sections: { Endorsements: endorsementsData },
     styles,
   } = data.data
-  return <Endorsements endorsementsData={endorsementsData} styles={styles} />
+  return (
+    <Endorsements
+      endorsementsData={endorsementsData}
+      causeId={causeId}
+      styles={styles}
+    />
+  )
 }
 export const MobileSeas = mobile(seas(Template.bind({})))
 /*

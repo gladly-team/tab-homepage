@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Divider from '@material-ui/core/Divider'
+import Divider from '@mui/material/Divider'
 import { lightestTextColor } from 'src/themes/theme'
 
 class TextPageHeader extends React.Component {
@@ -8,18 +8,13 @@ class TextPageHeader extends React.Component {
     const { style } = this.props
     return (
       <div
-        style={Object.assign(
-          {},
-          {
-            margin: 0,
-          },
-          style
-        )}
+        style={{
+          margin: 0,
+          ...style,
+        }}
       >
         <h1 style={{ marginBottom: 10 }}>{this.props.children}</h1>
-        <Divider
-          style={{ backgroundColor: lightestTextColor, marginBottom: 20 }}
-        />
+        <Divider style={{ marginBottom: 20 }} />
       </div>
     )
   }

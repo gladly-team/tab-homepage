@@ -10,11 +10,29 @@ module.exports = {
     siteUrl: `https://${domain}`, // Used in gatsby-plugin-sitemap
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    // Handle server-side rendering MaterialUI styles:
-    // https://github.com/hupe1980/gatsby-plugin-material-ui/tree/master
+    // From:
+    // https://github.com/mui-org/material-ui/tree/master/examples/gatsby
+    'gatsby-plugin-top-layout',
+
+    'gatsby-plugin-react-helmet',
+
+    // Might eventually be easy to drop this plugin. See:
+    // https://github.com/hupe1980/gatsby-plugin-material-ui/issues/70
+    // https://github.com/mui-org/material-ui/tree/master/examples/gatsby
+    `gatsby-plugin-material-ui`,
+
     {
-      resolve: `gatsby-plugin-material-ui`,
+      // At this point, this is only really used for favicon functionality.
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Tab for a Cause`,
+        short_name: `Tab`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#9d4ba3`,
+        display: `browser`,
+        icon: `src/img/logo32x32.png`,
+      },
     },
     {
       resolve: `gatsby-plugin-typography`,
@@ -45,6 +63,8 @@ module.exports = {
       // If modifying, validate/update on webmaster tools for
       // Google, Bing, etc.
       // https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sitemap
+      // Breaking changes in v5:
+      // https://github.com/gatsbyjs/gatsby/issues/32324
       resolve: `gatsby-plugin-sitemap`,
       options: {
         // Exclude pages that just redirect.
@@ -60,29 +80,16 @@ module.exports = {
           allSitePage {
             nodes {
               path
-              context {
-                data {
-                  causeLaunch {
-                    preview
-                    enabled
-                  }
-                }
-                referrer {
-                  id
-                }
-                previewPage {
-                  path
-                }
-              }
+              pageContext
             }
           }
         }`,
-        resolvePages: ({ allSitePage: { nodes: allPages } }) => allPages,
-        // slice in the below expression is to strip trailing slashes from page.path
-        filterPages: (page, excludedRoute) =>
-          (page.context.data !== null && page.context.previewPage !== null) ||
-          page.context.referrer !== null ||
-          page.path.slice(0, -1) === excludedRoute,
+        filterPages: (page, excludedRoute, { withoutTrailingSlash }) => {
+          const isPreviewPage = !!page.pageContext.previewPage
+          const isVanityReferralPage = !!page.pageContext.referrer
+          const isExcluded = withoutTrailingSlash(page.path) === excludedRoute
+          return isPreviewPage || isVanityReferralPage || isExcluded
+        },
         serialize: (page) => {
           return {
             url: baseURL + page.path,

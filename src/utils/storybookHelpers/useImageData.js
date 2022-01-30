@@ -28,14 +28,15 @@ export const useImageData = async (filename, layout = 'constrained') => {
   const imageData = {
     childImageSharp: {
       gatsbyImageData: {
-        layout: layout,
+        layout,
         backgroundColor: 'transparent',
         images: {
           fallback: {
-            src: src,
+            src,
             sizes: `(min-width: ${resolution.width}) ${resolution.width}, 100vw`,
           },
         },
+
         // we set width and height to the native resolution of the image so that Gatsby
         // image will properly resize the image in responsive layouts
         width: resolution.width,

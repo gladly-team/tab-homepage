@@ -12,7 +12,7 @@ exports[`Footer matches expected snapshot 1`] = `
     }
   }
 >
-  <WithStyles(ForwardRef(Divider))
+  <ForwardRef(Divider)
     style={
       Object {
         "marginBottom": 20,
@@ -236,7 +236,7 @@ exports[`Footer matches expected snapshot 1`] = `
               }
             }
           >
-            <Memo(ForwardRef) />
+            <Memo(ForwardRef(FacebookIcon)) />
           </IconWrapper>
         </Link>
         <Link
@@ -262,7 +262,7 @@ exports[`Footer matches expected snapshot 1`] = `
               }
             }
           >
-            <Memo(ForwardRef) />
+            <Memo(ForwardRef(InstagramIcon)) />
           </IconWrapper>
         </Link>
         <Link
@@ -288,7 +288,7 @@ exports[`Footer matches expected snapshot 1`] = `
               }
             }
           >
-            <Memo(ForwardRef) />
+            <Memo(ForwardRef(TwitterIcon)) />
           </IconWrapper>
         </Link>
       </div>

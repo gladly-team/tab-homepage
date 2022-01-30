@@ -11,10 +11,12 @@ import {
   edgeExtensionURL,
   catsURL,
   safariExtensionURL,
+
   // firefoxExtensionURL,
 } from 'src/utils/navigation'
 import getBrowserInfo from 'src/utils/browserDetection'
 import { safariEnabled } from 'src/utils/featureFlags'
+
 /**
  * Set window.location to the value of "url". Helpful to make
  * components more testable. This is for external URLs only. For
@@ -65,6 +67,7 @@ export const directToAppExtension = (cats = false) => {
         ? catsURL
         : homeURL
       break
+
     // Firefox is temporarily not supported :(
     // case FIREFOX_BROWSER:
     //   redirectUrl = firefoxExtensionURL

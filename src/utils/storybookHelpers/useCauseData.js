@@ -1,8 +1,9 @@
-import { useImageData } from './useImageData'
 import catsData from 'src/data/causes/cats.json'
 import seasData from 'src/data/causes/seas.json'
 import set from 'lodash/set'
 import get from 'lodash/get'
+import { useImageData } from './useImageData'
+
 /**
  * util function
  * deeply get all keys of object
@@ -11,8 +12,9 @@ const keyify = (obj, prefix = '') =>
   Object.keys(obj).reduce((res, el) => {
     if (Array.isArray(obj[el])) {
       return res
-    } else if (typeof obj[el] === 'object' && obj[el] !== null) {
-      return [...res, ...keyify(obj[el], prefix + el + '.')]
+    }
+    if (typeof obj[el] === 'object' && obj[el] !== null) {
+      return [...res, ...keyify(obj[el], `${prefix + el}.`)]
     }
     return [...res, prefix + el]
   }, [])
@@ -39,6 +41,7 @@ export const useCauseData = async (cause = 'cats') => {
       data = JSON.parse(JSON.stringify(catsData))
   }
   const keys = keyify(data)
+
   // replace image paths with mock gatsby image data
   const dataToModify = await Promise.all(
     keys
@@ -49,6 +52,8 @@ export const useCauseData = async (cause = 'cats') => {
           !key.toLowerCase().includes('text')
       )
       .map(async (key) => {
+        // useImageData is not a hook, just named with "use".
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const newValue = await useImageData(get(data, key))
         return { key, newValue }
       })
@@ -80,9 +85,12 @@ export const useCauseData = async (cause = 'cats') => {
       img: data.data.sections.Financials.q3Img,
     },
   ]
+
   // keyify doesnt handle arrays
   const endorsementDataToModify = await Promise.all(
     data.data.sections.Endorsements.smallEndorsements.map((endorsement) =>
+      // useImageData is not a hook.
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       useImageData(endorsement.img)
     )
   )
@@ -93,6 +101,8 @@ export const useCauseData = async (cause = 'cats') => {
       ].img = resolvedImage)
   )
   const charityIntroDataToModify = await Promise.all(
+    // useImageData is not a hook.
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     data.data.sections.charityIntro.steps.map((step) => useImageData(step.img))
   )
   charityIntroDataToModify.forEach(

@@ -1,8 +1,8 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
-import Paper from '@material-ui/core/Paper'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
+import Paper from '@mui/material/Paper'
 
 describe('FinancialsQuarterButton', () => {
   it('renders without error', () => {

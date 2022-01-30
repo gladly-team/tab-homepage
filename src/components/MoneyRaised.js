@@ -44,8 +44,8 @@ class MoneyRaised extends React.Component {
   }
 
   incrementAmount() {
-    var amountRaised = this.state.moneyRaised
-    var newAmountRaised = amountRaised + 0.01
+    const amountRaised = this.state.moneyRaised
+    const newAmountRaised = amountRaised + 0.01
     this.setState({
       moneyRaised: newAmountRaised,
     })
@@ -53,6 +53,7 @@ class MoneyRaised extends React.Component {
 
   setCounter() {
     const secondsInDay = 60 * 60 * 24
+
     // Recalculate based on time that elapsed since the base amount.
     const secondsPerPenny = secondsInDay / DOLLARS_PER_DAY_RATE / 100
     this.setState(
@@ -66,7 +67,7 @@ class MoneyRaised extends React.Component {
 
     // Set an interval to add a penny to the money raised.
     if (!(secondsPerPenny <= 0)) {
-      var millisecondsPerPenny = Math.round(Math.abs(secondsPerPenny) * 1000)
+      const millisecondsPerPenny = Math.round(Math.abs(secondsPerPenny) * 1000)
       if (!isChromaticEnv()) {
         this.timer = window.setInterval(
           this.incrementAmount.bind(this),
@@ -87,8 +88,7 @@ class MoneyRaised extends React.Component {
       }
       moneyRaisedValue = this.state.moneyRaised
     }
-
-    var moneyRaisedFormatted = `$${commaFormatted(
+    const moneyRaisedFormatted = `$${commaFormatted(
       currencyFormatted(moneyRaisedValue)
     )}`
     return <span className={this.props.className}>{moneyRaisedFormatted}</span>

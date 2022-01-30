@@ -5,6 +5,7 @@ import {
   homeURL,
   edgeExtensionURL,
   safariExtensionURL,
+
   // firefoxExtensionURL,
 } from 'src/utils/navigation'
 import getBrowserInfo from 'src/utils/browserDetection'
@@ -14,15 +15,13 @@ jest.mock('src/utils/browserDetection')
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/featureFlags')
 
-const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
-  return {
-    isChrome: () => browser === 'chrome',
-    isEdge: () => browser === 'edge',
-    isFirefox: () => browser === 'firefox',
-    isSafari: () => browser === 'safari',
-    isMobile: () => mobile,
-  }
-}
+const createMockBrowserInfo = (browser = 'chrome', mobile = false) => ({
+  isChrome: () => browser === 'chrome',
+  isEdge: () => browser === 'edge',
+  isFirefox: () => browser === 'firefox',
+  isSafari: () => browser === 'safari',
+  isMobile: () => mobile,
+})
 
 beforeEach(() => {
   getBrowserInfo.mockReturnValue(createMockBrowserInfo())

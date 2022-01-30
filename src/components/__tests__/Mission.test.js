@@ -1,9 +1,9 @@
 /* eslint-env jest */
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount } from 'src/utils/testHelpers/componentTesting'
 import catsData from 'src/data/causes/cats.json'
 import Markdown from 'src/components/Markdown'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
 
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')
@@ -20,13 +20,13 @@ afterEach(() => {
 describe('mission page', () => {
   it('renders without error', () => {
     const Mission = require('../Mission').default
-    shallow(<Mission {...getMockProps()} />)
+    mount(<Mission {...getMockProps()} />)
   })
 
   it('renders correct text, subtitle and body', () => {
     const mockProps = getMockProps()
     const Mission = require('../Mission').default
-    const wrapper = shallow(<Mission {...mockProps} />)
+    const wrapper = mount(<Mission {...mockProps} />)
 
     const title = wrapper.find(Typography).first()
     expect(title.text()).toEqual(mockProps.missionData.titleText)

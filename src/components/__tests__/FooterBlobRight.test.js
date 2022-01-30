@@ -1,10 +1,11 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
+
 const getMockProps = () => ({
   color: '#ffffff',
-  innerClassName: 'test-class',
+  style: { width: '77%' },
 })
 
 describe('FooterBlobRight component', () => {
@@ -21,13 +22,10 @@ describe('FooterBlobRight component', () => {
     expect(wrapper.find('path').first().prop('fill')).toEqual(mockProps.color)
   })
 
-  it('sets the wave color correctly according to props', async () => {
+  it('sets the class name correctly according to props', async () => {
     const mockProps = getMockProps()
     const FooterBlobRight = require('../FooterBlobRight').default
     const wrapper = shallow(<FooterBlobRight {...mockProps} />)
-
-    expect(wrapper.find('svg').first().prop('className')).toEqual(
-      mockProps.innerClassName
-    )
+    expect(wrapper.find('svg').first().prop('style')).toEqual({ width: '77%' })
   })
 })

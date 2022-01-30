@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/core/styles'
+import { createTheme } from '@mui/material/styles'
 
 // Text on white background
 export const textColor = 'rgba(33, 33, 33, 0.82)'
@@ -28,6 +28,7 @@ export const secondaryMainColor = '#4a90e2'
 export const secondaryContrastTextColor = '#fff'
 export const baseFontSize = 16
 
+// TODO: fix theming of divider
 const theme = createTheme({
   body: {
     padding: '0px',
@@ -41,6 +42,7 @@ const theme = createTheme({
     primary: {
       // light: will be calculated from palette.primary.main,
       main: primaryMainColor,
+
       // dark: will be calculated from palette.primary.main,
       contrastText: primaryContrastTextColor,
     },
@@ -50,6 +52,7 @@ const theme = createTheme({
     secondary: {
       // light: will be calculated from palette.primary.main,
       main: secondaryMainColor,
+
       // dark: will be calculated from palette.primary.main,
       contrastText: secondaryContrastTextColor,
     },
@@ -72,16 +75,19 @@ const theme = createTheme({
       color: '#2E282A',
     },
   },
-  overrides: {
+  components: {
     MuiButton: {
-      // Name of the styleSheet
-      root: {
-        fontWeight: '500',
+      styleOverrides: {
+        root: {
+          fontWeight: '500',
+        },
       },
     },
     MuiDivider: {
-      root: {
-        backgroundColor: lighterShadingColor,
+      styleOverrides: {
+        root: {
+          backgroundColor: 'transparent',
+        },
       },
     },
   },
@@ -102,12 +108,14 @@ export const tabForTeamSeasTheme = createTheme({
     primary: {
       // light: will be calculated from palette.primary.main,
       main: '#5094FB',
+
       // dark: will be calculated from palette.primary.main,
       contrastText: primaryContrastTextColor,
     },
     secondary: {
       // light: will be calculated from palette.primary.main,
       main: '#29BEBA',
+
       // dark: will be calculated from palette.primary.main,
       contrastText: secondaryContrastTextColor,
     },
@@ -143,20 +151,23 @@ export const tabForTeamSeasTheme = createTheme({
       fontWeight: 700,
     },
   },
-  overrides: {
+  components: {
     MuiButton: {
-      // Name of the styleSheet
-      root: {
-        fontWeight: '800',
-        fontFamily: 'Poppins',
-      },
-      contained: {
-        borderRadius: 24,
+      styleOverrides: {
+        root: {
+          fontWeight: '800',
+          fontFamily: 'Poppins',
+        },
+        contained: {
+          borderRadius: 24,
+        },
       },
     },
     MuiDivider: {
-      root: {
-        backgroundColor: lighterShadingColor,
+      styleOverrides: {
+        root: {
+          backgroundColor: 'transparent',
+        },
       },
     },
   },
@@ -166,6 +177,8 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
   createTheme({
     palette: {
       background: {
+        // This value changes the HTML background color:
+        // https://material-ui.com/api/css-baseline/
         default: '#FBF3E9',
       },
       primary: {
@@ -242,19 +255,23 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
         color: '#2E282A',
       },
     },
-    overrides: {
+    components: {
       MuiButton: {
-        root: {
-          fontWeight: '800',
-          fontFamily: 'Poppins',
-        },
-        contained: {
-          borderRadius: 24,
+        styleOverrides: {
+          root: {
+            fontWeight: '800',
+            fontFamily: 'Poppins',
+          },
+          contained: {
+            borderRadius: 24,
+          },
         },
       },
       MuiDivider: {
-        root: {
-          backgroundColor: lighterShadingColor,
+        styleOverrides: {
+          root: {
+            backgroundColor: 'transparent',
+          },
         },
       },
     },

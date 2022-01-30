@@ -1,8 +1,8 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
-import Button from '@material-ui/core/Button'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
+import Button from '@mui/material/Button'
 import getBrowserInfo from 'src/utils/browserDetection'
 import { flushAllPromises } from 'src/utils/test-utils'
 import { safariEnabled } from 'src/utils/featureFlags'
@@ -12,22 +12,20 @@ jest.mock('src/utils/browserDetection')
 jest.mock('src/utils/location')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/analytics/logEvent')
-jest.mock('@material-ui/core/Button')
+jest.mock('@mui/material/Button')
 jest.mock('src/utils/featureFlags')
 
 afterEach(() => {
   jest.clearAllMocks()
 })
 
-const createMockBrowserInfo = (browser = 'chrome', mobile = false) => {
-  return {
-    isChrome: () => browser === 'chrome',
-    isEdge: () => browser === 'edge',
-    isFirefox: () => browser === 'firefox',
-    isSafari: () => browser === 'safari',
-    isMobile: () => mobile,
-  }
-}
+const createMockBrowserInfo = (browser = 'chrome', mobile = false) => ({
+  isChrome: () => browser === 'chrome',
+  isEdge: () => browser === 'edge',
+  isFirefox: () => browser === 'firefox',
+  isSafari: () => browser === 'safari',
+  isMobile: () => mobile,
+})
 
 // Helper to simulate a click on a button rendered with `mount`.
 // Note: Enzyme 3.9.0 apparently doesn't support `mount` with
@@ -65,9 +63,7 @@ describe('InstallButton', () => {
 
   it('allows overriding Button props', () => {
     const InstallButton = require('../InstallButton').default
-    const wrapper = shallow(
-      <InstallButton size={'small'} color={'secondary'} />
-    )
+    const wrapper = shallow(<InstallButton size="small" color="secondary" />)
     const elem = wrapper.find(Button).first()
     expect(elem.prop('size')).toEqual('small')
     expect(elem.prop('color')).toEqual('secondary')
@@ -136,6 +132,7 @@ describe('InstallButton', () => {
   it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Firefox desktop', async () => {
     expect.assertions(1)
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('firefox', false))
+
     // Silence expected console.info log
     jest.spyOn(console, 'info').mockImplementationOnce(() => {})
     const InstallButton = require('../InstallButton').default
@@ -220,6 +217,7 @@ describe('InstallButton', () => {
     await clickButtonShallow(wrapper)
     expect(mockOnUnsupportedBrowserInstallClick).toHaveBeenCalled()
   })
+
   // FIREFOX IS CURRENTLY NOT SUPPORTED
   it('calls the onUnsupportedBrowserInstallClick prop when the user tries to install with the Firefox mobile', async () => {
     expect.assertions(1)
@@ -395,8 +393,7 @@ describe('InstallButton', () => {
   it('calls downloadButtonClick analytics event on click', async () => {
     expect.assertions(1)
 
-    const downloadButtonClick =
-      require('src/utils/analytics/logEvent').downloadButtonClick
+    const { downloadButtonClick } = require('src/utils/analytics/logEvent')
     const InstallButton = require('../InstallButton').default
     const wrapper = shallow(<InstallButton />)
     await clickButtonShallow(wrapper)

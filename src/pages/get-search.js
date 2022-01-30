@@ -5,6 +5,7 @@ import {
   CHROME_BROWSER,
   FIREFOX_BROWSER,
   UNSUPPORTED_BROWSER,
+  SEARCH_STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
 } from 'src/utils/constants'
 import {
   homeURL,
@@ -13,7 +14,6 @@ import {
 } from 'src/utils/navigation'
 import redirect from 'src/utils/redirect'
 import localStorageMgr from 'src/utils/local-storage'
-import { SEARCH_STORAGE_REFERRAL_DATA_REFERRING_CHANNEL } from 'src/utils/constants'
 import getBrowserInfo from 'src/utils/browserDetection'
 
 // We put this page on tab.gladly.io for convenience so we can

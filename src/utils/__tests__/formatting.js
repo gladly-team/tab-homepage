@@ -2,7 +2,7 @@
 
 describe('formatting utils', () => {
   it('comma-formats correctly', () => {
-    const commaFormatted = require('../formatting').commaFormatted
+    const { commaFormatted } = require('../formatting')
     expect(commaFormatted('460932.44')).toBe('460,932.44')
     expect(commaFormatted('460932')).toBe('460,932')
     expect(commaFormatted('123456789')).toBe('123,456,789')
@@ -16,7 +16,7 @@ describe('formatting utils', () => {
   })
 
   it('formats currency correctly', () => {
-    const currencyFormatted = require('../formatting').currencyFormatted
+    const { currencyFormatted } = require('../formatting')
     expect(currencyFormatted('460932.44')).toBe('460932.44')
     expect(currencyFormatted('460932')).toBe('460932.00')
     expect(currencyFormatted('460932.1')).toBe('460932.10')

@@ -1,15 +1,17 @@
 import React from 'react'
-import Intro from './Intro'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+import Intro from './Intro'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+
 export default {
   title: 'Components/Intro',
   component: Intro,
 }
 
-const Template = (_args, { loaded: { data } }) => {
+function Template(_args, { loaded: { data } }) {
+  const { causeId } = data.data
   const introData = data.data.sections.TFACIntro
-  return <Intro introData={introData} />
+  return <Intro introData={introData} causeId={causeId} />
 }
 
 export const MobileSeas = mobile(seas(Template.bind({})))

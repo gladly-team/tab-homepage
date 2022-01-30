@@ -1,113 +1,127 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
-import Markdown from './Markdown'
-import Avatar from '@material-ui/core/Avatar'
-import Typography from '@material-ui/core/Typography'
+import { styled } from '@mui/material/styles'
+import Avatar from '@mui/material/Avatar'
+import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
-import InstallButton from 'src/components/V4InstallButton'
+import V4InstallButton from 'src/components/V4InstallButton'
+import Markdown from './Markdown'
 
-const useStyles = makeStyles((theme) => ({
-  title: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column-reverse',
-    },
-    width: '80%',
+const DivTitle = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'column-reverse',
   },
-  titleMarkdown: {
-    color: theme.palette.primary.main,
-  },
-  titleText: {
-    flexDirection: 'column',
-    color: theme.palette.primary.main,
-    alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
-      marginTop: theme.spacing(2),
-      marginBottom: theme.spacing(2),
-    },
-  },
-  steps: {
-    display: 'flex',
-    flexDirection: 'row',
-    paddingTop: theme.spacing(6),
-    padding: theme.spacing(4),
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-      padding: theme.spacing(2),
-    },
-  },
-  step: {
-    display: 'flex',
-    flexDirection: 'column',
-    '& img': {
-      maxWidth: '100%',
-      height: 'auto',
-    },
-    margin: theme.spacing(3),
-  },
-  titleImage: {
-    maxWidth: '45%',
-    height: 'auto',
-    [theme.breakpoints.down('sm')]: {
-      maxWidth: '100%',
-    },
-  },
-  stepImage: {
-    maxWidth: '100%',
-    height: 'auto',
-  },
-  numberCircle: {
-    borderRadius: '50%',
-    width: '36px',
-    height: '36px',
-    padding: '8px',
-    background: theme.palette.primary.main,
-    border: '2px solid',
-    borderColor: theme.palette.primary.main,
-    color: '#fff',
-    textAlign: 'center',
-    marginRight: theme.spacing(2),
-    fontFamily: 'Poppins',
-    alignSelf: 'start',
-  },
-  wrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-    [theme.breakpoints.down('sm')]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6),
-    },
-  },
-  stepText: {
-    display: 'flex',
-    direction: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: theme.spacing(1),
-    [theme.breakpoints.down('sm')]: {
-      minHeight: 'unset',
-      justifyContent: 'flex-start',
-    },
-  },
-  titleTypography: {
-    marginBottom: theme.spacing(4),
-    marginRight: theme.spacing(3),
-    [theme.breakpoints.down('sm')]: {
-      marginRight: theme.spacing(0),
-    },
+
+  width: '80%',
+}))
+
+const DivTitleText = styled('div')(({ theme }) => ({
+  flexDirection: 'column',
+  color: theme.palette.primary.main,
+  alignItems: 'center',
+
+  [theme.breakpoints.down('md')]: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
   },
 }))
 
-const Intro = ({ causeId, introData }) => {
+const DivSteps = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'row',
+  paddingTop: theme.spacing(6),
+  padding: theme.spacing(4),
+
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'column',
+    padding: theme.spacing(2),
+  },
+}))
+
+const DivStep = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+
+  '& img': {
+    maxWidth: '100%',
+    height: 'auto',
+  },
+
+  margin: theme.spacing(3),
+}))
+
+const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
+  maxWidth: '45%',
+  height: 'auto',
+
+  [theme.breakpoints.down('md')]: {
+    maxWidth: '100%',
+  },
+}))
+
+const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
+  maxWidth: '100%',
+  height: 'auto',
+}))
+
+const AvatarNumberCircle = styled(Avatar)(({ theme }) => ({
+  borderRadius: '50%',
+  width: '36px',
+  height: '36px',
+  padding: '8px',
+  background: theme.palette.primary.main,
+  border: '2px solid',
+  borderColor: theme.palette.primary.main,
+  color: '#fff',
+  textAlign: 'center',
+  marginRight: theme.spacing(2),
+  fontFamily: 'Poppins',
+  alignSelf: 'start',
+}))
+
+const DivWrapper = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  paddingTop: theme.spacing(8),
+  paddingBottom: theme.spacing(8),
+
+  [theme.breakpoints.down('md')]: {
+    paddingTop: theme.spacing(6),
+    paddingBottom: theme.spacing(6),
+  },
+}))
+
+const DivStepText = styled('div')(({ theme }) => ({
+  display: 'flex',
+  direction: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: theme.spacing(1),
+
+  [theme.breakpoints.down('md')]: {
+    minHeight: 'unset',
+    justifyContent: 'flex-start',
+  },
+}))
+
+const TypographyTitleTypography = styled(Typography)(({ theme }) => ({
+  marginBottom: theme.spacing(4),
+  marginRight: theme.spacing(3),
+
+  [theme.breakpoints.down('md')]: {
+    marginRight: theme.spacing(0),
+  },
+}))
+
+function Intro({ causeId, introData }) {
   const {
     title,
     titleImg,
@@ -119,71 +133,50 @@ const Intro = ({ causeId, introData }) => {
     img3Subtext,
     img3,
   } = introData
-  const cx = useStyles()
   const titleImage = getImage(formatImg(titleImg))
   const image1 = getImage(formatImg(img1))
   const image2 = getImage(formatImg(img2))
   const image3 = getImage(formatImg(img3))
   return (
-    <div className={cx.wrapper}>
-      <div className={cx.title}>
-        <div className={cx.titleText}>
-          <Typography
-            className={cx.titleTypography}
-            variant="h1"
-            color="primary"
-          >
+    <DivWrapper>
+      <DivTitle>
+        <DivTitleText>
+          <TypographyTitleTypography variant="h1" color="primary">
             {title}
-          </Typography>
+          </TypographyTitleTypography>
           <Markdown>{subtitle}</Markdown>
-        </div>
-        <GatsbyImage
-          className={cx.titleImage}
-          image={titleImage}
-          alt={'intro title'}
-        />
-      </div>
-      <div className={cx.steps}>
-        <div className={cx.step}>
-          <div className={cx.stepText}>
-            <Avatar className={cx.numberCircle}>1</Avatar>
+        </DivTitleText>
+        <GatsbyImageTitleImage image={titleImage} alt="intro title" />
+      </DivTitle>
+      <DivSteps>
+        <DivStep>
+          <DivStepText>
+            <AvatarNumberCircle>1</AvatarNumberCircle>
             <Markdown>{img1Subtext}</Markdown>
-          </div>
-          <GatsbyImage
-            className={cx.stepImage}
-            image={image1}
-            alt={'intro step 1'}
-          />
-        </div>
-        <div className={cx.step}>
-          <div className={cx.stepText}>
-            <Avatar className={cx.numberCircle}>2</Avatar>
+          </DivStepText>
+          <GatsbyImageStepImage image={image1} alt="intro step 1" />
+        </DivStep>
+        <DivStep>
+          <DivStepText>
+            <AvatarNumberCircle>2</AvatarNumberCircle>
             <Markdown>{img2Subtext}</Markdown>
-          </div>
-          <GatsbyImage
-            className={cx.stepImage}
-            image={image2}
-            alt={'intro step 2'}
-          />
-        </div>
-        <div className={cx.step}>
-          <div className={cx.stepText}>
-            <Avatar className={cx.numberCircle}>3</Avatar>
+          </DivStepText>
+          <GatsbyImageStepImage image={image2} alt="intro step 2" />
+        </DivStep>
+        <DivStep>
+          <DivStepText>
+            <AvatarNumberCircle>3</AvatarNumberCircle>
             <Markdown>{img3Subtext}</Markdown>
-          </div>
-          <GatsbyImage
-            className={cx.stepImage}
-            image={image3}
-            alt={'intro step 3'}
-          />
-        </div>
-      </div>
-      <InstallButton color="secondary" size="medium" causeId={causeId} />
-    </div>
+          </DivStepText>
+          <GatsbyImageStepImage image={image3} alt="intro step 3" />
+        </DivStep>
+      </DivSteps>
+      <V4InstallButton color="secondary" size="medium" causeId={causeId} />
+    </DivWrapper>
   )
 }
 Intro.propTypes = {
-  causeId: PropTypes.string,
+  causeId: PropTypes.string.isRequired,
   introData: PropTypes.shape({
     title: PropTypes.string,
     titleImg: PropTypes.any,

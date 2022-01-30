@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Paper from '@material-ui/core/Paper'
+import Paper from '@mui/material/Paper'
 import { lighterTextColor } from 'src/themes/theme'
 
 class FinancialsQuarterButton extends React.Component {
@@ -23,25 +23,23 @@ class FinancialsQuarterButton extends React.Component {
         <a href={quarterData.pdfUrl}>
           <Paper
             elevation={this.state.hover ? 2 : 1}
-            style={Object.assign(
-              {
-                width: 140,
-                height: 140,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                transition: 'transform .1s ease-in-out',
-              },
-              this.state.hover
+            style={{
+              width: 140,
+              height: 140,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              transition: 'transform .1s ease-in-out',
+              ...(this.state.hover
                 ? {
                     transform: 'scale(1.06)',
                   }
-                : null
-            )}
+                : null),
+            }}
           >
-            <span
-              style={{ color: lighterTextColor }}
-            >{`Q${quarterData.quarter} ${quarterData.year}`}</span>
+            <span style={{ color: lighterTextColor }}>
+              {`Q${quarterData.quarter} ${quarterData.year}`}
+            </span>
           </Paper>
         </a>
       </div>

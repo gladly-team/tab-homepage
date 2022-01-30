@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import { isChromaticEnv } from '../../utils/featureFlags'
 
 jest.mock('../../utils/featureFlags')
@@ -28,7 +28,7 @@ describe('MoneyRaised', () => {
   it('does not advance in chromatic environment', () => {
     isChromaticEnv.mockReturnValue(true)
     const MoneyRaised = require('../MoneyRaised').default
-    var moneyRaisedComponent = shallow(<MoneyRaised />)
+    const moneyRaisedComponent = shallow(<MoneyRaised />)
     expect(setInterval).not.toHaveBeenCalled()
     expect(moneyRaisedComponent.state().moneyRaised).toEqual(1057100.0)
   })
@@ -36,7 +36,7 @@ describe('MoneyRaised', () => {
   it('advances in non-chromatic environment', () => {
     isChromaticEnv.mockReturnValue(false)
     const MoneyRaised = require('../MoneyRaised').default
-    var moneyRaisedComponent = shallow(<MoneyRaised />)
+    const moneyRaisedComponent = shallow(<MoneyRaised />)
     expect(setInterval).toHaveBeenCalled()
     expect(moneyRaisedComponent.state().moneyRaised).not.toEqual(1057100.0)
   })

@@ -11,13 +11,17 @@ import Header from 'src/components/Header'
 import Footer from 'src/components/Footer'
 import HeadTags from 'src/components/HeadTags'
 
-import { ThemeProvider } from '@material-ui/styles'
+import {
+  ThemeProvider,
+  StyledEngineProvider,
+  responsiveFontSizes,
+} from '@mui/material/styles'
 import defaultTheme from 'src/themes/theme'
 import { getAbsoluteURL } from 'src/utils/navigation'
 
 // Use flexbox to make sure the footer sticks to the bottom of the page:
 // https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-3
-export const Layout = (props) => {
+export function Layout(props) {
   const { brand, children, location } = props
   const absoluteUrl = getAbsoluteURL(location.pathname)
   return (

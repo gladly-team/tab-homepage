@@ -1,37 +1,31 @@
 // Pass props through to lots of wrapper components.
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useMemo } from 'react'
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
-
-// Pinned to v9 because of transpiling issues (see next.config.js for info)
-import unified from 'unified'
+import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
 import rehypeReact from 'rehype-react'
-import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
+import Typography from '@mui/material/Typography'
 
-const useStyles = makeStyles((theme) => ({
-  anchor: {
-    color: theme.palette.primary.main,
-    textDecoration: 'underline',
-  },
+const Anchor = styled('a')(({ theme }) => ({
+  color: theme.palette.primary.main,
+  textDecoration: 'underline',
 }))
 
-//TODO: Convert this back to the link component. Unclear why it's not working.
-const MarkdownLink = ({ href, children, ...otherProps }) => {
-  const cx = useStyles()
+// TODO: Convert this back to the link component. Unclear why it's not working.
+function MarkdownLink({ href, children, ...otherProps }) {
   return (
-    <a
+    <Anchor
       rel="noopener noreferrer"
       target="_blank"
       href={href}
-      className={cx.anchor}
       {...otherProps}
     >
       {children}
-    </a>
+    </Anchor>
   )
 }
 MarkdownLink.displayName = 'MarkdownLink'
@@ -68,7 +62,7 @@ const processor = unified()
     },
   })
 
-const Markdown = ({ children }) => {
+function Markdown({ children }) {
   const elems = useMemo(
     () => processor.processSync(children).result,
     [children]

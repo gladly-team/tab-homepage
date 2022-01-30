@@ -1,6 +1,7 @@
 import React from 'react'
+import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles'
+
 import {
   EmailIcon,
   EmailShareButton,
@@ -14,18 +15,26 @@ import {
   TwitterShareButton,
 } from 'react-share'
 
-const useStyles = makeStyles(() => ({
-  root: {
+const PREFIX = 'SocialShare'
+
+const classes = {
+  root: `${PREFIX}-root`,
+  button: `${PREFIX}-button`,
+}
+
+const Root = styled('div')(() => ({
+  [`&.${classes.root}`]: {
     display: 'flex',
     justifyContent: 'center',
     padding: 0,
   },
-  button: {
+
+  [`& .${classes.button}`]: {
     padding: 4,
   },
 }))
 
-const SocialShare = (props) => {
+function SocialShare(props) {
   const {
     EmailShareButtonProps,
     FacebookShareButtonProps,
@@ -36,17 +45,16 @@ const SocialShare = (props) => {
   } = props
   const iconSize = 32
 
-  const classes = useStyles()
-
   // Note: hashtags for Facebook and Twitter are hardcoded.
   // We may want to move them server-side if we use them often.
   return (
-    <div className={classes.root}>
+    <Root className={classes.root}>
       {FacebookShareButtonProps ? (
         <div className={classes.button}>
           <FacebookShareButton
             {...FacebookShareButtonProps}
             url={url}
+
             // hashtag={'tabsTransformed'}
           >
             <FacebookIcon size={iconSize} round />
@@ -58,6 +66,7 @@ const SocialShare = (props) => {
           <TwitterShareButton
             {...TwitterShareButtonProps}
             url={url}
+
             // hashtags={['tabsTransformed']}
           >
             <TwitterIcon size={iconSize} round />
@@ -85,7 +94,7 @@ const SocialShare = (props) => {
           </EmailShareButton>
         </div>
       ) : null}
-    </div>
+    </Root>
   )
 }
 
@@ -97,7 +106,7 @@ SocialShare.propTypes = {
     separator: PropTypes.string,
   }),
   FacebookShareButtonProps: PropTypes.shape({
-    quote: PropTypes.string.isRequired,
+    quote: PropTypes.string,
     hashtag: PropTypes.string,
   }),
   RedditShareButtonProps: PropTypes.shape({

@@ -1,10 +1,10 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import Helmet from 'react-helmet'
 import { getTestIdSelector } from 'src/utils/test-utils'
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 import Layout from 'src/components/Layout'
 
 const getMockProps = () => ({

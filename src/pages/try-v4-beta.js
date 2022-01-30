@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Divider from '@material-ui/core/Divider'
+import Divider from '@mui/material/Divider'
 import { lightestTextColor } from 'src/themes/theme'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
@@ -12,13 +12,13 @@ import { homeURL } from 'src/utils/navigation'
 import localStorageMgr from 'src/utils/local-storage'
 import { STORAGE_NEW_USER_IS_TAB_V4_BETA } from 'src/utils/constants'
 
-const TryTabV4BetaPage = (props) => {
+function TryTabV4BetaPage(props) {
   const { location } = props
   const openGraphTitle = 'Try Tab V4 Beta'
   const openGraphDescription =
     'Test out the latest, in-progress version of Tab for a Cause.'
   return (
-    <Layout brand={'tab'} location={location}>
+    <Layout brand="tab" location={location}>
       <TextPageContent>
         <Helmet title={openGraphTitle}>
           <meta property="og:title" content={openGraphTitle} />
@@ -38,7 +38,7 @@ const TryTabV4BetaPage = (props) => {
               unstable, so it may be buggy, but you can try it out here:
             </p>
             <InstallButton
-              size={'medium'}
+              size="medium"
               onBeforeInstall={() => {
                 localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
               }}
@@ -46,9 +46,7 @@ const TryTabV4BetaPage = (props) => {
                 redirect(homeURL)
               }}
             />
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
         </div>
       </TextPageContent>

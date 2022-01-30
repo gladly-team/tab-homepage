@@ -1,11 +1,12 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount } from 'src/utils/testHelpers/componentTesting'
 import { financialsURL } from 'src/utils/navigation'
 import data from 'src/data/causes/cats.json'
 import Link from 'src/components/Link'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
+
 const getMockProps = () => {
   data.data.sections.Financials.pdfs = [
     {
@@ -41,14 +42,14 @@ describe('Financials Section', () => {
     expect.assertions(1)
     const Financials = require('../Financials').default
     expect(() =>
-      shallow(<Financials financialsData={getMockProps()} />)
+      mount(<Financials financialsData={getMockProps()} />)
     ).not.toThrow()
   })
 
   it('sets the title correctly', () => {
     expect.assertions(1)
     const Financials = require('../Financials').default
-    const wrapper = shallow(<Financials financialsData={getMockProps()} />)
+    const wrapper = mount(<Financials financialsData={getMockProps()} />)
     const title = wrapper.find(Typography).first()
     expect(title.prop('children')).toBe(getMockProps().title)
   })
@@ -56,13 +57,13 @@ describe('Financials Section', () => {
   it('sets the subtitle correctly', () => {
     expect.assertions(1)
     const Financials = require('../Financials').default
-    const wrapper = shallow(<Financials financialsData={getMockProps()} />)
+    const wrapper = mount(<Financials financialsData={getMockProps()} />)
     const title = wrapper.find(Typography).at(1)
     expect(title.prop('children')).toBe(getMockProps().text)
   })
   it('links to the financials page url', () => {
     const Financials = require('../Financials').default
-    const wrapper = shallow(<Financials financialsData={getMockProps()} />)
+    const wrapper = mount(<Financials financialsData={getMockProps()} />)
     expect(wrapper.find(Link).prop('to')).toBe(financialsURL)
   })
 })

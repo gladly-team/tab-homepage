@@ -1,7 +1,8 @@
 import React from 'react'
 import Proptypes from 'prop-types'
 import MoneyRaised from 'src/components/MoneyRaised'
-import Typography from '@material-ui/core/Typography'
+import Typography from '@mui/material/Typography'
+
 class MoneyRaisedDisplay extends React.Component {
   constructor(props) {
     super(props)
@@ -31,9 +32,9 @@ class MoneyRaisedDisplay extends React.Component {
     return (
       <span style={{ visibility: this.state.show ? 'visible' : 'hidden' }}>
         <Typography
-          className={whiteClassName ? whiteClassName : undefined}
+          className={whiteClassName || undefined}
           color={color}
-          variant={textVariant ? textVariant : 'body1'}
+          variant={textVariant || 'body1'}
         >
           <MoneyRaised
             moneyRaised={moneyRaised}
@@ -43,8 +44,8 @@ class MoneyRaisedDisplay extends React.Component {
         {!excludeText && (
           <Typography
             color={color}
-            variant={'caption'}
-            className={whiteClassName ? whiteClassName : undefined}
+            variant="caption"
+            className={whiteClassName || undefined}
           >
             raised for charity{longCopy ? ', just by surfing the web' : null}
           </Typography>

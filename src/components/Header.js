@@ -5,7 +5,7 @@ import logoWithText from 'src/img/logo-with-text.svg'
 import searchLogoWithText from 'src/img/search-logo-with-text.svg'
 import { homeURL, searchHomeURL } from 'src/utils/navigation'
 
-const Header = (props) => {
+function Header(props) {
   const { brand } = props
   return (
     <div
@@ -17,7 +17,7 @@ const Header = (props) => {
       }}
     >
       <div
-        data-test-id={'logo-container'}
+        data-test-id="logo-container"
         style={{
           display: 'flex',
           justifyContent: 'flex-start',
@@ -27,7 +27,7 @@ const Header = (props) => {
         {brand === 'tab' || brand === 'all' ? (
           <Link to={homeURL}>
             <img
-              data-test-id={'tab-logo-with-text'}
+              data-test-id="tab-logo-with-text"
               src={logoWithText}
               style={{ height: 40 }}
             />
@@ -39,7 +39,7 @@ const Header = (props) => {
         {brand === 'search' || brand === 'all' ? (
           <Link to={searchHomeURL}>
             <img
-              data-test-id={'search-logo-with-text'}
+              data-test-id="search-logo-with-text"
               src={searchLogoWithText}
               style={{ height: 40 }}
             />

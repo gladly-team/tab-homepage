@@ -1,14 +1,14 @@
 import React from 'react'
+import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 import Financials from './Financials'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
-import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 
 export default {
   title: 'Components/Financials',
   component: Financials,
 }
 
-const Template = (_args, { loaded: { data } }) => {
+function Template(_args, { loaded: { data } }) {
   const financialsData = data.data.sections.Financials
   return <Financials financialsData={financialsData} />
 }

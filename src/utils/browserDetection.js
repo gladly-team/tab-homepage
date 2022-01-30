@@ -23,22 +23,14 @@ const getBrowserInfo = () => {
   }
   const browser = Bowser.getParser(window.navigator.userAgent)
   return {
-    isChrome: () => {
-      return browser.isBrowser('Chrome') || browser.isBrowser('Chromium')
-    },
-    isEdge: () => {
-      return browser.isBrowser('Microsoft Edge')
-    },
-    isFirefox: () => {
-      return browser.isBrowser('Firefox')
-    },
-    isSafari: () => {
-      return browser.isBrowser('Safari')
-    },
-    isMobile: () => {
+    isChrome: () =>
+      browser.isBrowser('Chrome') || browser.isBrowser('Chromium'),
+    isEdge: () => browser.isBrowser('Microsoft Edge'),
+    isFirefox: () => browser.isBrowser('Firefox'),
+    isSafari: () => browser.isBrowser('Safari'),
+    isMobile: () =>
       // https://github.com/lancedikson/bowser/blob/master/src/constants.js#L86
-      return browser.getPlatformType() === 'mobile'
-    },
+      browser.getPlatformType() === 'mobile',
   }
 }
 

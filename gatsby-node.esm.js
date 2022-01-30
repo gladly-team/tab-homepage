@@ -1,49 +1,7 @@
 /* globals exports */
 
 import path from 'path'
-
-// This should be private, we should either bring in a module or write helpers to allow testing of
-// private methods.
-export const generatePagesForCause = (createPage, pagePath, data, allReferrerEdges) => {
-  const HomePageWrapper = path.resolve('src/components/V4HomePage.js')
-  const NotFoundPage = path.resolve('src/pages/404.js')
-  const ComingSoon = path.resolve('src/components/ComingSoon.js')
-
-  const causeLaunchData = data.causeLaunch
-  createPage({
-    path: `${pagePath}/`,
-    component: causeLaunchData.enabled ? HomePageWrapper : ComingSoon,
-    context: {
-      data,
-    },
-  })
-  allReferrerEdges.forEach(({ node }) => {
-    // Not all referrers will have a vanity URL.
-    if (!node.path || !node.referrerId) {
-      return
-    }
-    createPage({
-      path: `${pagePath}/${node.path}/`,
-      component: causeLaunchData.enabled ? HomePageWrapper : ComingSoon,
-      context: {
-        data,
-        referrer: {
-          id: node.referrerId,
-        },
-      },
-    })
-  })
-  createPage({
-    path: `${pagePath}/preview/`,
-    component: causeLaunchData.preview ? HomePageWrapper : NotFoundPage,
-    context: {
-      data,
-      previewPage: {
-        path: `../../${pagePath}/`,
-      },
-    },
-  })
-}
+import generatePagesForCause from './generatePagesForCause'
 
 /**
  * Implement Gatsby's Node APIs in this file.
@@ -58,8 +16,6 @@ exports.createPages = async ({ actions, graphql }) => {
 
   // Create landing page variants for referrers.
   const homepage = path.resolve(`src/pages/index.js`)
-  const catsLandingPage = path.resolve(`src/pages/cats.js`)
-  const seasLandingPage = path.resolve('src/pages/teamseas.js')
   const allReferrersResponse = await graphql(`
     {
       allReferrersYaml(limit: 5000) {
@@ -81,24 +37,6 @@ exports.createPages = async ({ actions, graphql }) => {
     createPage({
       path: `${node.path}/`,
       component: homepage,
-      context: {
-        referrer: {
-          id: node.referrerId,
-        },
-      },
-    })
-    createPage({
-      path: `cats/${node.path}/`,
-      component: catsLandingPage,
-      context: {
-        referrer: {
-          id: node.referrerId,
-        },
-      },
-    })
-    createPage({
-      path: `teamseas/${node.path}/`,
-      component: seasLandingPage,
       context: {
         referrer: {
           id: node.referrerId,
@@ -134,6 +72,7 @@ exports.createPages = async ({ actions, graphql }) => {
         edges {
           node {
             data {
+              causeId
               causeLaunch {
                 comingSoonTitle
                 launchDate
@@ -325,9 +264,13 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `)
   dynamicDataQuery.data.allCausesJson.edges.forEach(
-    ({ node: { path, data } }) => {
+    ({ node: { path: pagePath, data } }) => {
+      if (!data.causeId) {
+        throw new Error('A cause ID is missing.')
+      }
       const pivotedData = {
-        path,
+        path: pagePath,
+        causeId: data.causeId,
         causeLaunch: data.causeLaunch,
         metadata: data.metadata,
         sections: {
@@ -357,7 +300,7 @@ exports.createPages = async ({ actions, graphql }) => {
         },
         styles: data.styles,
       }
-      generatePagesForCause(createPage, path, pivotedData, allReferrerEdges)
+      generatePagesForCause(createPage, pagePath, pivotedData, allReferrerEdges)
     }
   )
 }

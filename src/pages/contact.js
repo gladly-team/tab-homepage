@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Divider from '@material-ui/core/Divider'
+import Divider from '@mui/material/Divider'
 import { lightestTextColor } from 'src/themes/theme'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
@@ -15,7 +15,7 @@ import {
 } from 'src/utils/navigation'
 import Layout from 'src/components/Layout'
 
-const ContactPage = ({ location }) => {
+function ContactPage({ location }) {
   const pageTitle = 'Contact Us'
   const openGraphTitle = 'Contact Us - Tab for a Cause'
   const openGraphDescription = 'Get in touch with Tab for a Cause.'
@@ -25,7 +25,7 @@ const ContactPage = ({ location }) => {
     fontSize: 12,
   }
   return (
-    <Layout brand={'all'} location={location}>
+    <Layout brand="all" location={location}>
       <div>
         <Helmet title={pageTitle}>
           <meta property="og:title" content={openGraphTitle} />
@@ -57,12 +57,10 @@ const ContactPage = ({ location }) => {
             If you have questions, feedback, or tasty cookie recipe suggestions,
             feel free to email us at contact@gladly.io.
           </p>
-          <Divider
-            style={{ backgroundColor: lightestTextColor, marginBottom: 20 }}
-          />
+          <Divider style={{ marginBottom: 20 }} />
           <div>
             <div>
-              <p style={Object.assign({}, addressStyle, { marginBottom: 10 })}>
+              <p style={{ ...addressStyle, marginBottom: 10 }}>
                 Tab for a Cause is built with love at:
               </p>
               <p style={addressStyle}>Gladly, Inc.</p>

@@ -1,27 +1,29 @@
-import React, { useState } from 'react'
+/* globals window */
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import ReactFullpage from '@fullpage/react-fullpage'
-import { ThemeProvider } from '@material-ui/core/styles'
-import grey from '@material-ui/core/colors/grey'
-import green from '@material-ui/core/colors/green'
-import blue from '@material-ui/core/colors/blue'
-// import red from '@material-ui/core/colors/red'
-// import teal from '@material-ui/core/colors/teal'
-// import brown from '@material-ui/core/colors/brown'
-import Button from '@material-ui/core/Button'
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
-import ArrowLeftIcon from '@material-ui/icons/ArrowBack'
-import ArrowRightIcon from '@material-ui/icons/ArrowForward'
-import { makeStyles } from '@material-ui/core/styles'
-import clsx from 'clsx'
 import {
   // fade,
+  ThemeProvider,
   lighten,
-} from '@material-ui/core/styles/colorManipulator'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
-import Typography from '@material-ui/core/Typography'
-import { responsiveFontSizes } from '@material-ui/core/styles'
+  responsiveFontSizes,
+} from '@mui/material/styles'
+// import red from '@mui/material/colors/red'
+// import teal from '@mui/material/colors/teal'
+// import brown from '@mui/material/colors/brown'
+import Button from '@mui/material/Button'
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
+import ArrowLeftIcon from '@mui/icons-material/ArrowBack'
+import ArrowRightIcon from '@mui/icons-material/ArrowForward'
+
+// Don't use makeStyles or clsx for new components. This page
+// was not updated when migrating to MUI v5.
+import makeStyles from '@mui/styles/makeStyles'
+import clsx from 'clsx'
+
+import Tabs from '@mui/material/Tabs'
+import Tab from '@mui/material/Tab'
+import Typography from '@mui/material/Typography'
 
 import HeadTags from 'src/components/HeadTags'
 import MoneyRaised from 'src/components/MoneyRaised'
@@ -65,6 +67,8 @@ import openGraphImg1MHunger from 'src/img/million/og-img-1M-hunger.png'
 import openGraphImg1MRainforestV2 from 'src/img/million/og-img-1M-rainforest-v2.png'
 import openGraphImg1MRead from 'src/img/million/og-img-1M-read.png'
 
+import { grey, green, blue } from '@mui/material/colors'
+
 const DARK_BACKGROUND = grey['800']
 const LIGHT_BACKGROUND = grey['50']
 
@@ -77,6 +81,8 @@ const CHILDREN = 'children'
 const EDUCATE = 'educate'
 const MATCH = 'match' // millionaire matching subpage
 
+// Don't use makeStyles or clsx for new components. This page
+// was not updated when migrating to MUI v5.
 const useStyles = makeStyles((theme) => ({
   '@global': {
     '.fp-slidesNav': {
@@ -128,7 +134,8 @@ const useStyles = makeStyles((theme) => ({
   menuContainer: {
     // Leaving in menu logic in case we add more page content,
     // but the menu seems unncessary now.
-    display: 'none',
+    visibility: 'hidden',
+
     // display: 'flex',
     flex: 3,
     margin: '0px 10px',
@@ -140,23 +147,21 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'flex-end',
   },
-  menu: ({ isInDarkSection }) => {
-    return {
-      color: isInDarkSection
-        ? theme.palette.common.white
-        : theme.palette.text.primary,
-    }
-  },
+  menu: ({ isInDarkSection }) => ({
+    color: isInDarkSection
+      ? theme.palette.common.white
+      : theme.palette.text.primary,
+  }),
   menuTab: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       minWidth: 140,
       padding: '6px 12px',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       minWidth: 80,
       padding: '6px 12px',
     },
-    [theme.breakpoints.down(820)]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
   },
@@ -194,7 +199,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   slideHeaderText: {
-    padding: `0px ${theme.spacing(1)}px`,
+    padding: `0px ${theme.spacing(1)}`,
     color: theme.palette.common.white,
     marginTop: 20,
     textAlign: 'center',
@@ -281,7 +286,7 @@ const useStyles = makeStyles((theme) => ({
   },
   leftRightArrowButton: {
     // Hide the left/right arrows on mobile.
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
   },
@@ -300,7 +305,7 @@ const useStyles = makeStyles((theme) => ({
   moneyRaised: {
     fontWeight: 500,
     display: 'inline-block',
-    padding: `0px ${theme.spacing(1)}px`,
+    padding: `0px ${theme.spacing(1)}`,
     color: theme.palette.common.white,
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -331,12 +336,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     textAlign: 'center',
   },
-  hiddenUntilPageRendered: ({ isPageReady }) => {
-    return {
-      opacity: isPageReady ? 100 : 0,
-      transition: 'opacity 0.5s ease-in-out',
-    }
-  },
+  hiddenUntilPageRendered: ({ isPageReady }) => ({
+    opacity: isPageReady ? 100 : 0,
+    transition: 'opacity 0.5s ease-in-out',
+  }),
   impactSlide: {
     display: 'flex',
     flexDirection: 'column',
@@ -354,36 +357,43 @@ const useStyles = makeStyles((theme) => ({
   },
   waterImgBackground: {
     backgroundImage: `url("${waterImg}")`,
+
     // backgroundColor: fade(blue[700], 0.8),
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
   },
   forestImgBackground: {
     backgroundImage: `url("${forestImg}")`,
+
     // backgroundColor: fade(darken(green[900], 0.1), 0.7),
     backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
   actionAgainstHungerBackgroundImg: {
     backgroundImage: `url("${actionAgainstHungerImg}")`,
+
     // backgroundColor: fade(darken(red[900], 0.2), 0.6),
     backgroundColor: 'rgba(0, 0, 0, 0.45)',
   },
   giveDirectlyBackgroundImg: {
     backgroundImage: `url("${giveDirectlyImg}")`,
+
     // backgroundColor: fade(teal[900], 0.7),
     backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
   roomToReadBackgroundImg: {
     backgroundImage: `url("${roomToReadImg}")`,
+
     // backgroundColor: fade(brown[700], 0.8),
     backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
   saveTheChildrenBackgroundImg: {
     backgroundImage: `url("${saveTheChildrenImg}")`,
+
     // backgroundColor: fade(darken(red[900], 0.4), 0.7),
     backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
   schoolBackgroundImg: {
     backgroundImage: `url("${schoolImg}")`,
+
     // backgroundColor: fade(brown[900], 0.6),
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
@@ -405,12 +415,13 @@ const useStyles = makeStyles((theme) => ({
   },
   bottomThankYouText: {
     color: theme.palette.common.white,
+
     // Matches the aurora effect on the top section.
     background: 'linear-gradient(45deg, #32a6ff 0%, #3f6fff 49%, #8d54ff 82%)',
   },
 }))
 
-const Section = ({ id, children, className, autoHeight }) => {
+function Section({ id, children, className, autoHeight }) {
   return (
     <div
       data-anchor={id}
@@ -440,10 +451,10 @@ Section.defaultProps = {
   className: '',
 }
 
-const Slide = ({ children, className, style = {} }) => {
+function Slide({ children, className, style = {} }) {
   const classes = useStyles()
   return (
-    <div className={'slide'}>
+    <div className="slide">
       <div className={clsx(classes.slideContent, className)} style={style}>
         {children}
       </div>
@@ -463,13 +474,7 @@ Slide.defaultProps = {
   className: '',
 }
 
-const ArrowButton = ({
-  children,
-  className,
-  dark,
-  onClick,
-  arrowDirection,
-}) => {
+function ArrowButton({ children, className, dark, onClick, arrowDirection }) {
   const classes = useStyles({ dark })
   let ArrowIcon
   switch (arrowDirection) {
@@ -517,7 +522,7 @@ ArrowButton.defaultProps = {
   onClick: () => {},
 }
 
-const ArrowButtonContainer = ({ children, className }) => {
+function ArrowButtonContainer({ children, className }) {
   const classes = useStyles()
   return (
     <div className={clsx(classes.arrowButtonContainer, className)}>
@@ -537,7 +542,7 @@ ArrowButtonContainer.defaultProps = {
   className: undefined,
 }
 
-const Center = ({ children, className }) => {
+function Center({ children, className }) {
   const classes = useStyles()
   return <div className={clsx(classes.center, className)}>{children}</div>
 }
@@ -553,10 +558,10 @@ Center.defaultProps = {
   className: undefined,
 }
 
-const MillionPage = ({
+function MillionPage({
   location: { pathname },
   pageContext: { impactStat } = {},
-}) => {
+}) {
   // We generate subpages to make each impact stat shareable.
   // Set the open graph info based on the specific impact stat.
   let title = '$1M Raised'
@@ -705,7 +710,7 @@ const MillionPage = ({
 
   // Generate classes
   const isInDarkSection = sections[currentSectionIndex].dark
-  let classes = useStyles({
+  const classes = useStyles({
     isInDarkSection,
     isPageReady,
     dark: !isInDarkSection,
@@ -729,26 +734,20 @@ const MillionPage = ({
           className={clsx(classes.sectionContent, classes.topBackgroundInner)}
         >
           <Center className={classes.hiddenUntilPageRendered}>
-            <Typography
-              variant={'h5'}
-              className={clsx(classes.moneyRaisedText)}
-            >
+            <Typography variant="h5" className={clsx(classes.moneyRaisedText)}>
               Together, your tabs have raised
             </Typography>
-            <Typography variant={'h1'} className={clsx(classes.moneyRaised)}>
+            <Typography variant="h1" className={clsx(classes.moneyRaised)}>
               <MoneyRaised />
             </Typography>
-            <Typography
-              variant={'h5'}
-              className={clsx(classes.moneyRaisedText)}
-            >
+            <Typography variant="h5" className={clsx(classes.moneyRaisedText)}>
               for incredible causes
             </Typography>
           </Center>
           <ArrowButtonContainer className={classes.hiddenUntilPageRendered}>
             <ArrowButton onClick={() => window.fullpage_api.moveSectionDown()}>
               <Typography
-                variant={'body1'}
+                variant="body1"
                 className={classes.arrowText}
                 style={{ margin: '0px 12px' }}
               >
@@ -765,24 +764,24 @@ const MillionPage = ({
         <div className={classes.sectionContent}>
           <Center>
             <Typography
-              variant={'h5'}
+              variant="h5"
               className={clsx(classes.moneyRaisedText)}
               gutterBottom
             >
               We never imagined we would
             </Typography>
             <Typography
-              variant={'h1'}
+              variant="h1"
               className={clsx(classes.moneyRaised, classes.bottomThankYouText)}
               gutterBottom
             >
               #TabForAMillion
             </Typography>
-            <Typography variant={'body2'} style={{ maxWidth: 540 }} paragraph>
+            <Typography variant="body2" style={{ maxWidth: 540 }} paragraph>
               When we first launched Tab for a Cause, we thought it was a fun
               idea to do a little good, for free.
             </Typography>
-            <Typography variant={'body2'} style={{ maxWidth: 540 }} paragraph>
+            <Typography variant="body2" style={{ maxWidth: 540 }} paragraph>
               What we didn't expect was{' '}
               <span style={{ fontWeight: 'bold' }}>you</span>. Soon, the little
               good became a lot of good. And here we are.
@@ -795,7 +794,7 @@ const MillionPage = ({
               dark
             >
               <Typography
-                variant={'body1'}
+                variant="body1"
                 className={clsx(classes.arrowText, classes.whiteColor)}
                 style={{ margin: '0px 12px' }}
               >
@@ -811,10 +810,7 @@ const MillionPage = ({
       content: (
         <>
           <div className={classes.slidesFixedHeader}>
-            <Typography
-              variant={'h5'}
-              className={clsx(classes.slideHeaderText)}
-            >
+            <Typography variant="h5" className={clsx(classes.slideHeaderText)}>
               Tabbers have raised enough to...
             </Typography>
           </div>
@@ -828,13 +824,13 @@ const MillionPage = ({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     protect 5,000 acres of rainforest
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through Conservation International
@@ -882,13 +878,13 @@ const MillionPage = ({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     give over 6,000 children a month of emergency nutrition
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through Save the Children
@@ -936,13 +932,13 @@ const MillionPage = ({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     keep over 200 girls in school
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through Room to Read
@@ -990,13 +986,13 @@ const MillionPage = ({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     provide access to clean water to over 12,000 people
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through Water.org
@@ -1044,14 +1040,14 @@ const MillionPage = ({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     provide life-saving malnutrition treatment to over 1,500
                     children
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through Action Against Hunger
@@ -1099,13 +1095,13 @@ const MillionPage = ({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     fund over $41,000 in direct cash transfers
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through GiveDirectly
@@ -1153,13 +1149,13 @@ const MillionPage = ({
               <div className={classes.impactSlide}>
                 <Center className={classes.impactTextContainer}>
                   <Typography
-                    variant={'h2'}
+                    variant="h2"
                     className={classes.impactTextPrimary}
                   >
                     give learning materials to over 3,500 students
                   </Typography>
                   <Typography
-                    variant={'h5'}
+                    variant="h5"
                     className={classes.impactTextSupporting}
                   >
                     through Educate!
@@ -1221,10 +1217,7 @@ const MillionPage = ({
       content: (
         <>
           <div className={classes.slidesFixedHeader}>
-            <Typography
-              variant={'h5'}
-              className={clsx(classes.slideHeaderText)}
-            >
+            <Typography variant="h5" className={clsx(classes.slideHeaderText)}>
               Join us as we celebrate each day leading up to $1M.
             </Typography>
           </div>
@@ -1235,7 +1228,7 @@ const MillionPage = ({
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
-                variant={'h4'}
+                variant="h4"
                 className={clsx(
                   classes.whiteColor,
                   classes.impactTextSupporting
@@ -1244,7 +1237,7 @@ const MillionPage = ({
               >
                 #MillionaireMonday
               </Typography>
-              <Typography variant={'body2'} className={classes.whiteColor}>
+              <Typography variant="body2" className={classes.whiteColor}>
                 For us, it was as easy as opening tabs. For multi-millionaires,
                 it’s as easy as writing a check. Join us each Monday on{' '}
                 <Link
@@ -1276,7 +1269,7 @@ const MillionPage = ({
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
-                variant={'h4'}
+                variant="h4"
                 className={clsx(
                   classes.whiteColor,
                   classes.impactTextSupporting
@@ -1285,7 +1278,7 @@ const MillionPage = ({
               >
                 #TabberTuesday
               </Typography>
-              <Typography variant={'body2'} className={classes.whiteColor}>
+              <Typography variant="body2" className={classes.whiteColor}>
                 Tab for a Cause would not be possible without you. We would love
                 to hear why you use it! DM us on{' '}
                 <Link
@@ -1326,7 +1319,7 @@ const MillionPage = ({
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
-                variant={'h4'}
+                variant="h4"
                 className={clsx(
                   classes.whiteColor,
                   classes.impactTextSupporting
@@ -1335,7 +1328,7 @@ const MillionPage = ({
               >
                 #WelcomeWednesday
               </Typography>
-              <Typography variant={'body2'} className={classes.whiteColor}>
+              <Typography variant="body2" className={classes.whiteColor}>
                 Despite this incredible milestone, most people haven't heard of
                 Tab for a Cause. Make sure your friends' tabs aren't going to
                 waste. Text, email, call, DM, Snap, whatever it takes, make sure
@@ -1351,7 +1344,7 @@ const MillionPage = ({
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
-                variant={'h4'}
+                variant="h4"
                 className={clsx(
                   classes.whiteColor,
                   classes.impactTextSupporting
@@ -1360,7 +1353,7 @@ const MillionPage = ({
               >
                 #ThankfulThursday
               </Typography>
-              <Typography variant={'body2'} className={classes.whiteColor}>
+              <Typography variant="body2" className={classes.whiteColor}>
                 On social media, share which Tab for a Cause nonprofit partner
                 or spotlight campaign you're most thankful for with
                 #TabForAMillion and #ThankfulThursday.
@@ -1374,7 +1367,7 @@ const MillionPage = ({
           >
             <Center className={classes.scheduleSlideTextContainer}>
               <Typography
-                variant={'h4'}
+                variant="h4"
                 className={clsx(
                   classes.whiteColor,
                   classes.impactTextSupporting
@@ -1383,7 +1376,7 @@ const MillionPage = ({
               >
                 #FriendFriday
               </Typography>
-              <Typography variant={'body2'} className={classes.whiteColor}>
+              <Typography variant="body2" className={classes.whiteColor}>
                 We are proud to support nine incredible nonprofit partners who
                 turn our tabs into concrete impact. Check out what they have to
                 say about Tab for a Cause on{' '}
@@ -1445,20 +1438,20 @@ const MillionPage = ({
         <div className={classes.sectionContent}>
           <Center>
             <Typography
-              variant={'h1'}
+              variant="h1"
               className={clsx(classes.moneyRaised, classes.bottomThankYouText)}
               gutterBottom
             >
               Thank you.
             </Typography>
             <div className={classes.thankYouTextContainer}>
-              <Typography variant={'body2'} gutterBottom>
+              <Typography variant="body2" gutterBottom>
                 This milestone took a village to accomplish, and we couldn't be
                 more proud of the Tabbing community. From the bottoms of our
                 hearts, thank you.
               </Typography>
               <div className={classes.thanksShareWrapper}>
-                <Typography variant={'body2'} gutterBottom>
+                <Typography variant="body2" gutterBottom>
                   Share this achievement:
                 </Typography>
                 <SocialShare
@@ -1509,6 +1502,13 @@ const MillionPage = ({
     },
   }
 
+  // A workaround to avoid styling problems. This page
+  // was not updated when migrating to MUI v5.
+  const [shouldRenderContent, setShouldRenderContent] = useState()
+  useEffect(() => {
+    setShouldRenderContent(true)
+  }, [])
+
   return (
     <div>
       <HeadTags
@@ -1518,88 +1518,87 @@ const MillionPage = ({
         ogImage={ogImage}
         pageURL={pathname}
       />
-      {/* Set a full page background while Fullpage is loading */}
-      <div className={classes.pageBackground} />
-      <div className={classes.header}>
-        <div className={classes.logoContainer}>
-          <Link to={homeURL}>
-            <img
-              data-test-id={'tab-logo-with-text'}
-              src={isInDarkSection ? logoWithTextWhite : logoWithText}
-              style={{ height: 40 }}
-            />
-          </Link>
-        </div>
-        <div className={classes.menuContainer}>
-          <Tabs
-            value={currentMenuTabIndex}
-            id={MENU_ID}
-            indicatorColor="primary"
-            className={clsx(classes.menu, classes.hiddenUntilPageRendered)}
-          >
-            {menuItems.map((menuItem) => {
-              return (
-                <Tab
-                  key={menuItem.id}
-                  label={menuItem.text}
-                  className={classes.menuTab}
-                  onClick={() => {
-                    window.fullpage_api.moveTo(menuItem.linkTo)
-                  }}
+      {shouldRenderContent ? (
+        <>
+          <div className={classes.pageBackground} />
+          <div className={classes.header}>
+            <div className={classes.logoContainer}>
+              <Link to={homeURL}>
+                <img
+                  data-test-id="tab-logo-with-text"
+                  src={isInDarkSection ? logoWithTextWhite : logoWithText}
+                  style={{ height: 40 }}
                 />
-              )
-            })}
-          </Tabs>
-        </div>
+              </Link>
+            </div>
+            <div className={classes.menuContainer}>
+              <Tabs
+                value={currentMenuTabIndex}
+                id={MENU_ID}
+                indicatorColor="primary"
+                className={clsx(classes.menu, classes.hiddenUntilPageRendered)}
+              >
+                {menuItems.map((menuItem) => (
+                  <Tab
+                    key={menuItem.id}
+                    label={menuItem.text}
+                    className={classes.menuTab}
+                    onClick={() => {
+                      window.fullpage_api.moveTo(menuItem.linkTo)
+                    }}
+                  />
+                ))}
+              </Tabs>
+            </div>
 
-        <div className={classes.installButtonContainer}>
-          <InstallButton
-            size={'medium'}
-            color="primary"
-            style={{
-              minWidth: 180,
-              paddingLeft: 10,
-              paddingRight: 10,
+            <div className={classes.installButtonContainer}>
+              <InstallButton
+                size="medium"
+                color="primary"
+                style={{
+                  minWidth: 180,
+                  paddingLeft: 10,
+                  paddingRight: 10,
+                }}
+                onUnsupportedBrowserInstallClick={() => {
+                  redirect(homeURL)
+                }}
+              />
+            </div>
+          </div>
+          <ReactFullpage
+            licenseKey="7F2A2647-CD094CE7-B5D7C859-577BFB5C"
+            scrollingSpeed={450}
+            onLeave={(_, destination) => {
+              if (destination) {
+                setCurrentSectionIndex(destination.index || 0)
+              }
             }}
-            onUnsupportedBrowserInstallClick={() => {
-              redirect(homeURL)
+            afterRender={() => {
+              setIsPageReady(true)
             }}
+            controlArrows={false}
+            slidesNavigation // show nav dots on slides pages
+            render={() => (
+              <ReactFullpage.Wrapper menu={MENU_ID}>
+                {sections.map((section) => {
+                  const sectionInfo = sectionData[section.id]
+                  return (
+                    <Section
+                      id={section.id}
+                      key={section.id}
+                      className={sectionInfo.className}
+                      autoHeight={sectionInfo.autoHeight || false}
+                    >
+                      {sectionInfo.content}
+                    </Section>
+                  )
+                })}
+              </ReactFullpage.Wrapper>
+            )}
           />
-        </div>
-      </div>
-      <ReactFullpage
-        licenseKey={'7F2A2647-CD094CE7-B5D7C859-577BFB5C'}
-        scrollingSpeed={450}
-        onLeave={(_, destination) => {
-          if (destination) {
-            setCurrentSectionIndex(destination.index || 0)
-          }
-        }}
-        afterRender={() => {
-          setIsPageReady(true)
-        }}
-        controlArrows={false}
-        slidesNavigation // show nav dots on slides pages
-        render={() => {
-          return (
-            <ReactFullpage.Wrapper menu={MENU_ID}>
-              {sections.map((section) => {
-                const sectionInfo = sectionData[section.id]
-                return (
-                  <Section
-                    id={section.id}
-                    key={section.id}
-                    className={sectionInfo.className}
-                    autoHeight={sectionInfo.autoHeight || false}
-                  >
-                    {sectionInfo.content}
-                  </Section>
-                )
-              })}
-            </ReactFullpage.Wrapper>
-          )
-        }}
-      />
+        </>
+      ) : null}
     </div>
   )
 }
@@ -1630,11 +1629,14 @@ MillionPage.defaultProps = {
 
 // Can't create and use theme in same component (useStyles will not use
 // the custom theme).
-const MillionPageWithTheme = (props) => (
-  <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
-    <MillionPage {...props} />
-  </ThemeProvider>
-)
+function MillionPageWithTheme(props) {
+  return (
+    <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
+      <MillionPage {...props} />
+    </ThemeProvider>
+  )
+}
+
 MillionPageWithTheme.displayName = 'MillionPageWithTheme'
 
 export default MillionPageWithTheme

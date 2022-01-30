@@ -1,14 +1,15 @@
 import React from 'react'
-import CharityIntro from './CharityIntro'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+import CharityIntro from './CharityIntro'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+
 export default {
   title: 'Components/CharityIntro',
   component: CharityIntro,
 }
 
-const Template = (_args, { loaded: { data } }) => {
-  const charityIntro = data.data.sections.charityIntro
+function Template(_args, { loaded: { data } }) {
+  const { charityIntro } = data.data.sections
   return <CharityIntro charityIntroData={charityIntro} />
 }
 export const MobileSeas = mobile(seas(Template.bind({})))

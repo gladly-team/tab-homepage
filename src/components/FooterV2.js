@@ -1,13 +1,14 @@
 import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
-import IconButton from '@material-ui/core/IconButton'
-import FacebookIcon from '@material-ui/icons/Facebook'
-import InstagramIcon from '@material-ui/icons/Instagram'
-import TwitterIcon from '@material-ui/icons/Twitter'
-import Typography from '@material-ui/core/Typography'
-import SvgIcon from '@material-ui/core/SvgIcon'
+import Box from '@mui/material/Box'
+import IconButton from '@mui/material/IconButton'
+import FacebookIcon from '@mui/icons-material/Facebook'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import Typography from '@mui/material/Typography'
+import SvgIcon from '@mui/material/SvgIcon'
 import redirect from 'src/utils/redirect'
-import { makeStyles } from '@material-ui/core/styles'
+import { styled, useTheme } from '@mui/material/styles'
 import logo from 'src/img/logo-with-text-white.svg'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
 import MicrosoftEdge from 'mdi-material-ui/MicrosoftEdge'
@@ -35,117 +36,94 @@ import {
 } from 'src/utils/navigation'
 import Link from 'src/components/Link'
 
-const useStyles = makeStyles((theme) => ({
-  logoContainer: { flex: 1, display: 'flex', flexDirection: 'row' },
-  backgroundContainer: {
-    background: theme.palette.primary.main,
-    paddingBottom: 20,
-    display: 'flex',
-    justifyContent: 'center',
-    overflow: 'hidden',
-    position: 'relative',
-  },
-  tiktok: {
-    marginRight: theme.spacing(1),
-  },
-  social: {
-    marginTop: theme.spacing(1),
-  },
-  contentRow: {
-    display: 'flex',
-    width: '80%',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-    flexFlow: 'row',
-    '&::after': {
-      content: '',
-      flex: '0 1 30%',
-    },
-    zIndex: '1',
-  },
-  columnOne: {
-    marginTop: theme.spacing(6.5),
-    display: 'flex',
-    flexDirection: 'column',
-    color: '#fff',
-    minWidth: theme.spacing(36),
-  },
-  columnTwo: {
-    marginTop: theme.spacing(6.5),
-    width: theme.spacing(38),
-    display: 'flex',
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    color: '#fff',
-  },
-  columnThree: {
-    marginTop: theme.spacing(6.5),
-    display: 'flex',
-    [theme.breakpoints.down(1080)]: {
-      width: '100%',
-      justifyContent: 'center',
-    },
-  },
-  subColumn: {
-    display: 'flex',
-    flexDirection: 'column',
-    color: '#fff',
-    width: theme.spacing(30),
-  },
-  subColumnTwo: {
-    display: 'flex',
-    flexDirection: 'column',
-    color: '#fff',
-  },
-  iconRowOne: {
-    display: 'flex',
-    color: '#fff',
-    marginLeft: theme.spacing(-2),
-  },
-  iconRowTwo: {
-    display: 'flex',
-    color: '#fff',
-  },
-  iconStyles: {
-    color: theme.palette.primary.main,
-    backgroundColor: '#fff',
-    padding: theme.spacing(0.25),
-    height: theme.spacing(4),
-    width: theme.spacing(4),
-    borderRadius: theme.spacing(0.5),
-  },
-  imgClassName: {
-    height: 'auto !important',
-  },
-  iconButton: {
-    borderRadius: '10%',
-  },
-  leftBubble: {
-    position: 'absolute',
-    width: theme.spacing(70),
-    left: theme.spacing(-10),
-    top: theme.spacing(6),
-    [theme.breakpoints.down('sm')]: {
-      width: theme.spacing(50),
-      left: theme.spacing(-30),
-      top: theme.spacing(0),
-    },
-  },
-  rightBubble: {
-    position: 'absolute',
-    width: theme.spacing(40),
-    right: theme.spacing(10),
-    top: theme.spacing(27),
-    [theme.breakpoints.down('sm')]: {
-      right: theme.spacing(-14),
-      top: 'unset',
-      bottom: theme.spacing(-40),
-    },
+const DivBackgroundContainer = styled('div')(({ theme }) => ({
+  background: theme.palette.primary.main,
+  paddingBottom: 20,
+  display: 'flex',
+  justifyContent: 'center',
+  overflow: 'hidden',
+  position: 'relative',
+}))
+
+const LinkTiktok = styled(Link)(({ theme }) => ({
+  marginRight: theme.spacing(1),
+}))
+
+const TypographySocial = styled(Typography)(({ theme }) => ({
+  marginTop: theme.spacing(1),
+}))
+
+const DivContentRow = styled('div')(({ theme }) => ({
+  display: 'flex',
+  width: '80%',
+  justifyContent: 'flex-start',
+  flexWrap: 'wrap',
+  zIndex: '1',
+}))
+
+const DivColumnOne = styled('div')(({ theme }) => ({
+  marginTop: theme.spacing(6.5),
+  display: 'flex',
+  flexDirection: 'column',
+  color: '#fff',
+  minWidth: theme.spacing(36),
+  flex: 1,
+}))
+
+const DivColumnTwo = styled('div')(({ theme }) => ({
+  marginTop: theme.spacing(6.5),
+  width: theme.spacing(38),
+  display: 'flex',
+  flexWrap: 'nowrap',
+  flexDirection: 'row',
+  color: '#fff',
+  flex: 2,
+  justifyContent: 'flex-start',
+  [theme.breakpoints.down('md')]: {
+    justifyContent: 'flex-start',
   },
 }))
-const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
+
+const DivColumnThree = styled('div')(({ theme }) => ({
+  marginTop: theme.spacing(6),
+  minWidth: 120,
+  display: 'flex',
+  flex: 1,
+  [theme.breakpoints.down('md')]: {
+    justifyContent: 'center',
+    paddingBottom: theme.spacing(6),
+    minWidth: 180,
+  },
+}))
+
+const DivSubColumn = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexShrink: 0,
+  flexDirection: 'column',
+  color: '#fff',
+  width: 200,
+}))
+
+const DivSubColumnTwo = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  color: '#fff',
+  width: 300,
+}))
+
+const DivIconRowOne = styled('div')(({ theme }) => ({
+  display: 'flex',
+  color: '#fff',
+  marginLeft: theme.spacing(-2),
+}))
+
+const DivIconRowTwo = styled('div')(({ theme }) => ({
+  display: 'flex',
+  color: '#fff',
+}))
+
+function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
   const image = getImage(formatImg(img))
-  const cx = useStyles()
   const browserOnClick = useCallback(
     (extensionUrl) => async () => {
       await onBeforeInstall()
@@ -153,25 +131,67 @@ const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
     },
     [onBeforeInstall]
   )
+  const theme = useTheme()
+  const iconButtonStyles = {
+    borderRadius: '10%',
+  }
+  const iconStyles = {
+    color: theme.palette.primary.main,
+    backgroundColor: '#fff',
+    padding: theme.spacing(0.25),
+    height: theme.spacing(4),
+    width: theme.spacing(4),
+    borderRadius: theme.spacing(0.5),
+  }
   return (
-    <div className={cx.backgroundContainer}>
-      <FooterBlobLeft color={bubbleColor} innerClassName={cx.leftBubble} />
-      <FooterBlobRight color={bubbleColor} innerClassName={cx.rightBubble} />
-      <div className={cx.contentRow}>
-        <div className={cx.columnOne}>
-          <Link to="/">
-            <img src={logo} style={{ height: 43 }} />
-          </Link>
-          <Typography
-            variant="subtitle2"
-            color="textSecondary"
-            className={cx.social}
-          >
+    <DivBackgroundContainer>
+      <Box
+        sx={{
+          position: 'absolute',
+          width: 660,
+          height: 560,
+          left: {
+            xs: -440,
+            md: -100,
+          },
+          top: {
+            xs: 0,
+            md: 80,
+          },
+        }}
+      >
+        <FooterBlobLeft color={bubbleColor} />
+      </Box>
+      <Box
+        sx={{
+          position: 'absolute',
+          width: 320,
+          height: 570,
+          right: {
+            xs: 0,
+            md: 200,
+          },
+          bottom: {
+            xs: -440,
+            md: -480,
+          },
+        }}
+      >
+        <FooterBlobRight color={bubbleColor} />
+      </Box>
+      <DivContentRow>
+        <DivColumnOne>
+          <Box sx={{ mb: 1 }}>
+            <Link to="/">
+              <img src={logo} style={{ height: 43 }} />
+            </Link>
+          </Box>
+          <TypographySocial variant="subtitle2" color="textSecondary">
             Social
-          </Typography>
-          <div className={cx.iconRowOne}>
-            <Link to={tiktokPageURL} className={cx.tiktok} target="_blank">
-              <IconButton classes={{ root: cx.iconButton }}>
+          </TypographySocial>
+          <DivIconRowOne>
+            <LinkTiktok to={tiktokPageURL} target="_blank">
+              <IconButton style={iconButtonStyles} size="large">
                 <SvgIcon
                   viewBox="0 0 50 50"
                   style={{
@@ -184,52 +204,55 @@ const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
                   <path d="M41,4H9C6.243,4,4,6.243,4,9v32c0,2.757,2.243,5,5,5h32c2.757,0,5-2.243,5-5V9C46,6.243,43.757,4,41,4z M37.006,22.323 c-0.227,0.021-0.457,0.035-0.69,0.035c-2.623,0-4.928-1.349-6.269-3.388c0,5.349,0,11.435,0,11.537c0,4.709-3.818,8.527-8.527,8.527 s-8.527-3.818-8.527-8.527s3.818-8.527,8.527-8.527c0.178,0,0.352,0.016,0.527,0.027v4.202c-0.175-0.021-0.347-0.053-0.527-0.053 c-2.404,0-4.352,1.948-4.352,4.352s1.948,4.352,4.352,4.352s4.527-1.894,4.527-4.298c0-0.095,0.042-19.594,0.042-19.594h4.016 c0.378,3.591,3.277,6.425,6.901,6.685V22.323z" />
                 </SvgIcon>
               </IconButton>
-            </Link>
+            </LinkTiktok>
             <Link to={facebookPageURL} target="_blank">
-              <IconButton edge="start" classes={{ root: cx.iconButton }}>
-                <FacebookIcon classes={{ root: cx.iconStyles }} />
+              <IconButton edge="start" style={iconButtonStyles} size="large">
+                <FacebookIcon style={iconStyles} />
               </IconButton>
             </Link>
 
             <Link to={instagramPageURL} target="_blank">
-              <IconButton classes={{ root: cx.iconButton }}>
-                <InstagramIcon classes={{ root: cx.iconStyles }} />
+              <IconButton style={iconButtonStyles} size="large">
+                <InstagramIcon style={iconStyles} />
               </IconButton>
             </Link>
 
             <Link to={twitterPageURL} target="_blank">
-              <IconButton classes={{ root: cx.iconButton }}>
-                <TwitterIcon classes={{ root: cx.iconStyles }} />
+              <IconButton style={iconButtonStyles} size="large">
+                <TwitterIcon style={iconStyles} />
               </IconButton>
             </Link>
-          </div>
+          </DivIconRowOne>
           <Typography variant="subtitle2" color="textSecondary">
             Browser Compatibility
           </Typography>
-          <div className={cx.iconRowTwo}>
+          <DivIconRowTwo>
             <IconButton
               onClick={browserOnClick(chromeExtensionURL)}
               edge="start"
-              classes={{ root: cx.iconButton }}
+              style={iconButtonStyles}
+              size="large"
             >
-              <GoogleChrome className={cx.iconStyles} />
+              <GoogleChrome style={iconStyles} />
             </IconButton>
             <IconButton
               onClick={browserOnClick(edgeExtensionURL)}
-              classes={{ root: cx.iconButton }}
+              style={iconButtonStyles}
+              size="large"
             >
-              <MicrosoftEdge className={cx.iconStyles} />
+              <MicrosoftEdge style={iconStyles} />
             </IconButton>
             <IconButton
               onClick={browserOnClick(safariExtensionURL)}
-              classes={{ root: cx.iconButton }}
+              style={iconButtonStyles}
+              size="large"
             >
-              <AppleSafari className={cx.iconStyles} />
+              <AppleSafari style={iconStyles} />
             </IconButton>
-          </div>
-        </div>
-        <div className={cx.columnTwo}>
-          <div className={cx.subColumn}>
+          </DivIconRowTwo>
+        </DivColumnOne>
+        <DivColumnTwo>
+          <DivSubColumn>
             <Link to={externalHelpURL}>
               <Typography
                 variant="subtitle2"
@@ -275,8 +298,8 @@ const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
                 Ad Blockers
               </Typography>
             </Link>
-          </div>
-          <div className={cx.subColumnTwo}>
+          </DivSubColumn>
+          <DivSubColumnTwo>
             <Link to={teamURL}>
               <Typography
                 variant="subtitle2"
@@ -304,17 +327,15 @@ const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
                 Jobs
               </Typography>
             </Link>
-          </div>
-        </div>
-        <div className={cx.columnThree}>
-          <GatsbyImage
-            image={image}
-            alt="footer"
-            imgClassName={cx.imgClassName}
-          />
-        </div>
-      </div>
-    </div>
+          </DivSubColumnTwo>
+        </DivColumnTwo>
+        <DivColumnThree>
+          <Box>
+            <GatsbyImage image={image} alt="footer" />
+          </Box>
+        </DivColumnThree>
+      </DivContentRow>
+    </DivBackgroundContainer>
   )
 }
 

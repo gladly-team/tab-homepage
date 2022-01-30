@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import favicon from 'src/img/logo32x32.png'
+import faviconImg from 'src/img/logo32x32.png'
 import openGraphImg from 'src/img/opengraph-img.png'
 import { domain, getAbsoluteURL } from 'src/utils/navigation'
 
 const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
 
-const HeadTags = ({
+function HeadTags({
   favicon,
   title,
   titleTemplate,
@@ -17,14 +17,19 @@ const HeadTags = ({
   keywords,
   twitterHandle,
   pageURL,
-}) => {
+}) {
   const absolutePageURL = getAbsoluteURL(pageURL)
   return (
     <Helmet titleTemplate={titleTemplate} defaultTitle={title}>
       <meta name="description" content={ogDescription} />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={absolutePageURL} />
-      <link rel="icon" href={favicon} />
+      {/*
+        Gatsby doesn't set the favicon correctly:
+        https://github.com/nfl/react-helmet/issues/430
+        Instead, we use gatsby-plugin-manifest.
+      */}
+      {/* <link rel="icon" href={favicon} /> */}
       <meta property="og:type" content="website" />
       <meta property="fb:app_id" content="774381839264847" />
       <meta property="og:url" content={absolutePageURL} />
@@ -57,7 +62,7 @@ HeadTags.propTypes = {
 }
 
 HeadTags.defaultProps = {
-  favicon: favicon,
+  faviconImg,
   title: 'Tab for a Cause',
   titleTemplate: '%s - Tab for a Cause',
   ogTitle: 'Join me on Tab for a Cause!',

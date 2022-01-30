@@ -1,13 +1,13 @@
 /* eslint-env jest */
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow } from 'src/utils/testHelpers/componentTesting'
 import { Link as GatsbyLink } from 'gatsby'
 
 describe('Link', () => {
   it('renders without error', () => {
     const Link = require('../Link').default
-    shallow(<Link to={'/'} />)
+    shallow(<Link to="/" />)
   })
 
   it('uses GatsbyLink when navigating to a relative URL', () => {
@@ -36,7 +36,7 @@ describe('Link', () => {
     const Link = require('../Link').default
     const someStyle = { fontSize: 12, color: '#cdcdcd', textDecoration: 'none' }
     const wrapper = shallow(
-      <Link to={'/'} style={someStyle} hoverStyle={{ color: 'red' }} />
+      <Link to="/" style={someStyle} hoverStyle={{ color: 'red' }} />
     )
     expect(wrapper.find(GatsbyLink).props().style).toEqual(someStyle)
   })
@@ -46,7 +46,7 @@ describe('Link', () => {
     const someStyle = { fontSize: 12, color: '#cdcdcd', textDecoration: 'none' }
     const wrapper = shallow(
       <Link
-        to={'https://tab.gladly.io/'}
+        to="https://tab.gladly.io/"
         style={someStyle}
         hoverStyle={{ color: 'red' }}
       />
@@ -58,7 +58,7 @@ describe('Link', () => {
     const Link = require('../Link').default
     const someStyle = { fontSize: 12, color: '#cdcdcd' }
     const wrapper = shallow(
-      <Link to={'/'} style={someStyle} hoverStyle={{ color: 'red' }} />
+      <Link to="/" style={someStyle} hoverStyle={{ color: 'red' }} />
     )
     wrapper.find(GatsbyLink).simulate('mouseenter')
     expect(wrapper.find(GatsbyLink).props().style).toEqual({
@@ -73,7 +73,7 @@ describe('Link', () => {
     const someStyle = { fontSize: 12, color: '#cdcdcd' }
     const wrapper = shallow(
       <Link
-        to={'https://tab.gladly.io/'}
+        to="https://tab.gladly.io/"
         style={someStyle}
         hoverStyle={{ color: 'red' }}
       />

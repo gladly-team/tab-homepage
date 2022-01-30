@@ -12,6 +12,7 @@ const useMoneyRaised = () => {
   const [moneyRaised, setMoneyRaised] = useState(null)
   const [timer, setTimer] = useState(null)
 
+  // TODO: can use useInterval hook (see tab-web repo)
   const setCounter = () => {
     const secondsInDay = 60 * 60 * 24
     const now = moment()
@@ -41,11 +42,13 @@ const useMoneyRaised = () => {
   }
 
   useEffect(() => {
-    setCounter()
+    if (!timer) {
+      setCounter()
+    }
     return function cleanup() {
       window.clearInterval(timer)
     }
-  }, [])
+  }, [timer])
 
   return moneyRaised
 }

@@ -1,16 +1,17 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
+import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 import ComingSoon from './ComingSoon'
 import { mobile, seas, cats } from '../../.storybook/boilerPlate'
-import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
+
 export default {
   title: 'Pages/ComingSoon',
   component: ComingSoon,
 }
 
-const Template = (_args, { loaded: { data } }) => (
-  <ComingSoon location={'/'} pageContext={data} />
-)
+function Template(_args, { loaded: { data } }) {
+  return <ComingSoon location="/" pageContext={data} />
+}
 
 export const MobileSeas = mobile(seas(Template.bind({})))
 /*
@@ -19,9 +20,11 @@ export const MobileSeas = mobile(seas(Template.bind({})))
  * https://storybook.js.org/docs/react/writing-stories/loaders
  */
 MobileSeas.loaders = [
-  async () => ({
-    data: await useCauseData('seas'),
-  }),
+  async () => {
+    const data = await useCauseData('seas')
+    delete data.data.causeLaunch.launchDate
+    return { data }
+  },
 ]
 MobileSeas.parameters = {
   viewport: {
@@ -64,7 +67,7 @@ FullWidthCats.parameters = {
 export const FutureMobileCats = mobile(cats(Template.bind({})))
 FutureMobileCats.loaders = [
   async () => {
-    var data = await useCauseData('cats')
+    const data = await useCauseData('cats')
     data.data.causeLaunch.launchDate = new Date(Date.now() + 5 * 86400000)
     return { data }
   },
@@ -79,7 +82,7 @@ FutureMobileCats.parameters = {
 export const FutureMobileSeas = mobile(seas(Template.bind({})))
 FutureMobileSeas.loaders = [
   async () => {
-    var data = await useCauseData('seas')
+    const data = await useCauseData('seas')
     data.data.causeLaunch.launchDate = new Date(Date.now() + 5 * 86400000)
     return { data }
   },

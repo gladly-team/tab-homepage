@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Divider from '@material-ui/core/Divider'
+import Divider from '@mui/material/Divider'
 import { lightestTextColor } from 'src/themes/theme'
 import TextPageContent from 'src/components/TextPageContent'
 import TextPageHeader from 'src/components/TextPageHeader'
@@ -25,7 +25,7 @@ const installButtonBlock = (
     }}
   >
     <InstallButton
-      size={'medium'}
+      size="medium"
       onUnsupportedBrowserInstallClick={() => {
         redirect(homeURL)
       }}
@@ -96,7 +96,7 @@ const faqs = [
   },
 ]
 
-const Covid19 = (props) => {
+function Covid19(props) {
   const { location } = props
   const openGraphTitle = 'Support COVID-19 Relief for Free'
   const openGraphDescription =
@@ -112,7 +112,7 @@ const Covid19 = (props) => {
     marginBottom: 10,
   }
   return (
-    <Layout brand={'tab'} location={location}>
+    <Layout brand="tab" location={location}>
       <TextPageContent>
         <Helmet title={openGraphTitle}>
           <meta property="og:title" content={openGraphTitle} />
@@ -150,9 +150,7 @@ const Covid19 = (props) => {
               Organization, and provided supplies to 100 indigenous families.
             </p>
             <p>Will you join in?</p>
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
           <div>
             <div
@@ -172,9 +170,7 @@ const Covid19 = (props) => {
               </p>
               <p>
                 As a long-term partner with many rainforest communities,{' '}
-                <a
-                  href={'https://www.coolearth.org/rainforest-resilience-fund/'}
-                >
+                <a href="https://www.coolearth.org/rainforest-resilience-fund/">
                   Cool Earth
                 </a>{' '}
                 is working to provide food and hygiene equipment to keep people
@@ -190,6 +186,7 @@ const Covid19 = (props) => {
               style={{
                 marginTop: 30,
                 marginBottom: 6,
+
                 // Full page width CSS
                 display: 'flex',
                 justifyContent: 'center',
@@ -199,21 +196,20 @@ const Covid19 = (props) => {
                 right: '50%',
                 marginLeft: '-50vw',
                 marginRight: '-50vw',
+
                 // End full page width CSS
               }}
             >
               <img
-                alt={'Cool Earth Rainforest Resilience Fund'}
+                alt="Cool Earth Rainforest Resilience Fund"
                 src={CoolEarthImg}
                 style={{ width: '100%', maxWidth: 1000 }}
               />
             </div>
             <p style={{ marginBottom: 60 }}>
-              Photo Credit: <a href={'https://www.coolearth.org'}>Cool Earth</a>
+              Photo Credit: <a href="https://www.coolearth.org">Cool Earth</a>
             </p>
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
 
           <div>
@@ -231,7 +227,7 @@ const Covid19 = (props) => {
               <p>
                 As COVID-19 continues to spread, it will stress health systems
                 around the globe. We supported{' '}
-                <a href={'https://www.doctorswithoutborders.org/covid19'}>
+                <a href="https://www.doctorswithoutborders.org/covid19">
                   Doctors Without Borders
                 </a>{' '}
                 and their efforts to ensure access to quality healthcare around
@@ -249,6 +245,7 @@ const Covid19 = (props) => {
               style={{
                 marginTop: 30,
                 marginBottom: 6,
+
                 // Full page width CSS
                 display: 'flex',
                 justifyContent: 'center',
@@ -258,24 +255,23 @@ const Covid19 = (props) => {
                 right: '50%',
                 marginLeft: '-50vw',
                 marginRight: '-50vw',
+
                 // End full page width CSS
               }}
             >
               <img
-                alt={'Doctors Without Borders in action'}
+                alt="Doctors Without Borders in action"
                 src={DoctorsWithoutBordersImg}
                 style={{ width: '100%', maxWidth: 1000 }}
               />
             </div>
             <p style={{ marginBottom: 60 }}>
               Photo Credit:{' '}
-              <a href={'https://www.doctorswithoutborders.org'}>
+              <a href="https://www.doctorswithoutborders.org">
                 Doctors Without Borders
               </a>
             </p>
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
 
           <div>
@@ -300,7 +296,7 @@ const Covid19 = (props) => {
               </p>
               <p>
                 To help combat this, we supported{' '}
-                <a href={'https://www.nokidhungry.org/coronavirus'}>
+                <a href="https://www.nokidhungry.org/coronavirus">
                   No Kid Hungry
                 </a>{' '}
                 in their efforts to make sure all children have access to
@@ -318,6 +314,7 @@ const Covid19 = (props) => {
               style={{
                 marginTop: 30,
                 marginBottom: 6,
+
                 // Full page width CSS
                 display: 'flex',
                 justifyContent: 'center',
@@ -327,24 +324,23 @@ const Covid19 = (props) => {
                 right: '50%',
                 marginLeft: '-50vw',
                 marginRight: '-50vw',
+
                 // End full page width CSS
               }}
             >
               <img
-                alt={'A food bank'}
+                alt="A food bank"
                 src={NoKidHungryPhoto}
                 style={{ width: '100%', maxWidth: 1000 }}
               />
             </div>
             <p style={{ marginBottom: 60 }}>
               Photo Credit:{' '}
-              <a href={'https://www.nokidhungry.org/coronavirus'}>
+              <a href="https://www.nokidhungry.org/coronavirus">
                 No Kid Hungry
               </a>
             </p>
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
 
           <div>
@@ -368,11 +364,7 @@ const Covid19 = (props) => {
               </p>
               <p>
                 Our community raised money for{' '}
-                <a
-                  href={
-                    'https://www.evidenceaction.org/responding-to-covid-19/'
-                  }
-                >
+                <a href="https://www.evidenceaction.org/responding-to-covid-19/">
                   Evidence Action
                 </a>{' '}
                 as they rapidly provide access to clean water and sanitation to
@@ -391,6 +383,7 @@ const Covid19 = (props) => {
               style={{
                 marginTop: 30,
                 marginBottom: 6,
+
                 // Full page width CSS
                 display: 'flex',
                 justifyContent: 'center',
@@ -400,6 +393,7 @@ const Covid19 = (props) => {
                 right: '50%',
                 marginLeft: '-50vw',
                 marginRight: '-50vw',
+
                 // End full page width CSS
               }}
             >
@@ -411,15 +405,11 @@ const Covid19 = (props) => {
             </div>
             <p style={{ marginBottom: 60 }}>
               Photo Credit:{' '}
-              <a
-                href={'https://www.evidenceaction.org/responding-to-covid-19/'}
-              >
+              <a href="https://www.evidenceaction.org/responding-to-covid-19/">
                 Evidence Action
               </a>
             </p>
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
 
           <div>
@@ -437,7 +427,7 @@ const Covid19 = (props) => {
               <p>
                 COVID-19 has strained the ability of food banks to take care of
                 people in need. We supported the work of the{' '}
-                <a href={'https://www.foodbanknyc.org/covid-19/'}>
+                <a href="https://www.foodbanknyc.org/covid-19/">
                   Food Bank for New York City
                 </a>
                 , which is keeping families fed during this crisis.
@@ -445,11 +435,7 @@ const Covid19 = (props) => {
               <p>
                 Our community{' '}
                 <span style={{ fontWeight: 'bold' }}>gave 10,000 meals</span> to{' '}
-                <a
-                  href={
-                    'https://twitter.com/FoodBank4NYC/status/1245467268345200641?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1245467268345200641%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Ftab.gladly.io%2Fcovid-19%2F'
-                  }
-                >
+                <a href="https://twitter.com/FoodBank4NYC/status/1245467268345200641?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1245467268345200641%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Ftab.gladly.io%2Fcovid-19%2F">
                   people in NYC who need it most
                 </a>{' '}
                 just by opening tabs.
@@ -459,6 +445,7 @@ const Covid19 = (props) => {
               style={{
                 marginTop: 40,
                 marginBottom: 60,
+
                 // Full page width CSS
                 display: 'flex',
                 justifyContent: 'center',
@@ -468,18 +455,17 @@ const Covid19 = (props) => {
                 right: '50%',
                 marginLeft: '-50vw',
                 marginRight: '-50vw',
+
                 // End full page width CSS
               }}
             >
               <img
-                alt={'A food bank'}
+                alt="A food bank"
                 src={foodBankNYCPhoto}
                 style={{ width: '100%', maxWidth: 1000 }}
               />
             </div>
-            <Divider
-              style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-            />
+            <Divider style={{ marginTop: 30 }} />
           </div>
 
           <div
@@ -499,11 +485,7 @@ const Covid19 = (props) => {
                 raised thousands of dollars
               </span>{' '}
               for the World Health Organization's{' '}
-              <a
-                href={
-                  'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate'
-                }
-              >
+              <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate">
                 COVID-19 Solidarity Fund
               </a>{' '}
               and their partners in a massive effort to help countries prevent,
@@ -515,6 +497,7 @@ const Covid19 = (props) => {
             style={{
               marginTop: 40,
               marginBottom: 40,
+
               // Full page width CSS
               display: 'flex',
               justifyContent: 'center',
@@ -524,6 +507,7 @@ const Covid19 = (props) => {
               right: '50%',
               marginLeft: '-50vw',
               marginRight: '-50vw',
+
               // End full page width CSS
             }}
           >
@@ -533,21 +517,17 @@ const Covid19 = (props) => {
               style={{ width: '100%', maxWidth: 1000 }}
             />
           </div>
-          <Divider
-            style={{ backgroundColor: lightestTextColor, marginTop: 30 }}
-          />
+          <Divider style={{ marginTop: 30 }} />
         </div>
 
         <div style={{ marginTop: 60 }}>
           <h2>FAQ</h2>
-          {faqs.map((faq) => {
-            return (
-              <div key={faq.question} style={{ padding: '10px 0px' }}>
-                <p style={{ fontWeight: 'bold' }}>{faq.question}</p>
-                {faq.answerElem}
-              </div>
-            )
-          })}
+          {faqs.map((faq) => (
+            <div key={faq.question} style={{ padding: '10px 0px' }}>
+              <p style={{ fontWeight: 'bold' }}>{faq.question}</p>
+              {faq.answerElem}
+            </div>
+          ))}
         </div>
       </TextPageContent>
     </Layout>
