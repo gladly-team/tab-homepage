@@ -24,7 +24,12 @@ function HeadTags({
       <meta name="description" content={ogDescription} />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={absolutePageURL} />
-      <link rel="icon" href={favicon} />
+      {/*
+        Gatsby doesn't set the favicon correctly:
+        https://github.com/nfl/react-helmet/issues/430
+        Instead, we use gatsby-plugin-manifest.
+      */}
+      {/* <link rel="icon" href={favicon} /> */}
       <meta property="og:type" content="website" />
       <meta property="fb:app_id" content="774381839264847" />
       <meta property="og:url" content={absolutePageURL} />

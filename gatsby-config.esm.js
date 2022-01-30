@@ -20,6 +20,20 @@ module.exports = {
     // https://github.com/hupe1980/gatsby-plugin-material-ui/issues/70
     // https://github.com/mui-org/material-ui/tree/master/examples/gatsby
     `gatsby-plugin-material-ui`,
+
+    {
+      // At this point, this is only really used for favicon functionality.
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Tab for a Cause`,
+        short_name: `Tab`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#9d4ba3`,
+        display: `browser`,
+        icon: `src/img/logo32x32.png`,
+      },
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
