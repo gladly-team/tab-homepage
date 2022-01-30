@@ -83,6 +83,10 @@ function V4HomePage({
   },
   location,
 }) {
+  // Don't run if a cause ID is missing.
+  if (!causeId) {
+    throw new Error('A cause ID is missing.')
+  }
   const isPreviewPage = !!(!enabled && previewPage)
   const hasReferrer = !!(
     referrer || !isNaN(parseInt(getUrlParameterValue('r')))
@@ -147,7 +151,7 @@ function V4HomePage({
         moneyRaisedData={moneyRaised}
       />
       <CharityIntro charityIntroData={charityIntro} />
-      <Intro introData={TFACIntro} />
+      <Intro introData={TFACIntro} causeId={causeId} />
       <Mission missionData={missionData} causeId={causeId} />
       <SecuritySection securityData={Security} />
       <FinancialsComponent financialsData={Financials} />

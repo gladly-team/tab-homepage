@@ -5,7 +5,7 @@ import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
-import InstallButton from 'src/components/V4InstallButton'
+import V4InstallButton from 'src/components/V4InstallButton'
 import Markdown from './Markdown'
 
 const DivTitle = styled('div')(({ theme }) => ({
@@ -171,12 +171,12 @@ function Intro({ causeId, introData }) {
           <GatsbyImageStepImage image={image3} alt="intro step 3" />
         </DivStep>
       </DivSteps>
-      <InstallButton color="secondary" size="medium" causeId={causeId} />
+      <V4InstallButton color="secondary" size="medium" causeId={causeId} />
     </DivWrapper>
   )
 }
 Intro.propTypes = {
-  causeId: PropTypes.string,
+  causeId: PropTypes.string.isRequired,
   introData: PropTypes.shape({
     title: PropTypes.string,
     titleImg: PropTypes.any,

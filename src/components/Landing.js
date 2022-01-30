@@ -162,7 +162,7 @@ function Landing({ landingData, causeId, moneyRaised }) {
 }
 
 Landing.propTypes = {
-  causeId: PropTypes.string,
+  causeId: PropTypes.string.isRequired,
   landingData: PropTypes.shape({
     title: PropTypes.string,
     subtitle: PropTypes.string,

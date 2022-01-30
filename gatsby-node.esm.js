@@ -92,6 +92,7 @@ exports.createPages = async ({ actions, graphql }) => {
         edges {
           node {
             data {
+              causeId
               causeLaunch {
                 comingSoonTitle
                 launchDate
@@ -283,9 +284,13 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `)
   dynamicDataQuery.data.allCausesJson.edges.forEach(
-    ({ node: { path, data } }) => {
+    ({ node: { path: pagePath, data } }) => {
+      if (!data.causeId) {
+        throw new Error('A cause ID is missing.')
+      }
       const pivotedData = {
-        path,
+        path: pagePath,
+        causeId: data.causeId,
         causeLaunch: data.causeLaunch,
         metadata: data.metadata,
         sections: {
@@ -315,7 +320,7 @@ exports.createPages = async ({ actions, graphql }) => {
         },
         styles: data.styles,
       }
-      generatePagesForCause(createPage, path, pivotedData, allReferrerEdges)
+      generatePagesForCause(createPage, pagePath, pivotedData, allReferrerEdges)
     }
   )
 }

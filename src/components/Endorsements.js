@@ -289,7 +289,7 @@ function Endorsements({ endorsementsData, causeId }) {
 }
 
 Endorsements.propTypes = {
-  causeId: PropTypes.string,
+  causeId: PropTypes.string.isRequired,
   endorsementsData: PropTypes.shape({
     title: PropTypes.string,
     endorser: PropTypes.string,
