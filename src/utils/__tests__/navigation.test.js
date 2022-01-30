@@ -15,12 +15,22 @@ describe('navigation utils', () => {
     expect(getAbsoluteURL('blah/')).toBe('https://some.example.com/blah/')
   })
 
-  test('getAbsoluteURL postpends a slash if necessary', () => {
+  test('getAbsoluteURL postpends a slash if necessary by default', () => {
     // Set the domain env var
     process.env.GATSBY_DOMAIN = 'some.example.com'
 
     const { getAbsoluteURL } = require('../navigation')
     expect(getAbsoluteURL('/blah')).toBe('https://some.example.com/blah/')
+  })
+
+  test('getAbsoluteURL does not postpend a slash if the path contains a period (assume static file)', () => {
+    // Set the domain env var
+    process.env.GATSBY_DOMAIN = 'some.example.com'
+
+    const { getAbsoluteURL } = require('../navigation')
+    expect(getAbsoluteURL('/blah.png')).toBe(
+      'https://some.example.com/blah.png'
+    )
   })
 
   test('getAbsoluteURL works for a passed path', () => {

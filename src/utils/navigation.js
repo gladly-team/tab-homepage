@@ -101,7 +101,8 @@ export const getAbsoluteURL = (path) => {
   if (!path.startsWith('/')) {
     path = `/${path}`
   }
-  if (!path.endsWith('/')) {
+  const assumedStaticFile = path.indexOf('.') > -1
+  if (!path.endsWith('/') && !assumedStaticFile) {
     path = `${path}/`
   }
   return `${baseURL}${path}`
