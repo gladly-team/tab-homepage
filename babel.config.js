@@ -1,5 +1,6 @@
 module.exports = {
   presets: [
+    '@babel/preset-react',
     // https://github.com/babel/babel/issues/11622#issuecomment-644141879
     ['@babel/preset-env', { loose: true }],
 
@@ -15,6 +16,7 @@ module.exports = {
     ],
   ],
   plugins: [
+    '@babel/plugin-transform-runtime',
     // Fix compatibility with Storybook:
     // https://github.com/babel/babel/issues/11622#issuecomment-644141879
     ['@babel/plugin-proposal-class-properties', { loose: true }],
