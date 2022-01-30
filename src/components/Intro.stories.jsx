@@ -9,8 +9,9 @@ export default {
 }
 
 function Template(_args, { loaded: { data } }) {
+  const { causeId } = data.data
   const introData = data.data.sections.TFACIntro
-  return <Intro introData={introData} />
+  return <Intro introData={introData} causeId={causeId} />
 }
 
 export const MobileSeas = mobile(seas(Template.bind({})))

@@ -10,10 +10,17 @@ export default {
 
 function Template(_args, { loaded: { data } }) {
   const {
+    causeId,
     sections: { Endorsements: endorsementsData },
     styles,
   } = data.data
-  return <Endorsements endorsementsData={endorsementsData} styles={styles} />
+  return (
+    <Endorsements
+      endorsementsData={endorsementsData}
+      causeId={causeId}
+      styles={styles}
+    />
+  )
 }
 export const MobileSeas = mobile(seas(Template.bind({})))
 /*
