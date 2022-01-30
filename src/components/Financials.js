@@ -134,8 +134,8 @@ function Financials({ financialsData }) {
       </DivTitleSectionWrapper>
       <DivReportsContainer>
         {pdfs.map((pdf) => (
-          <Box sx={{ m: 1 }}>
-            <FinancialsQuartersButton key={pdf.quarter} quarterData={pdf} />
+          <Box sx={{ m: 1 }} key={pdf.quarter}>
+            <FinancialsQuartersButton quarterData={pdf} />
           </Box>
         ))}
       </DivReportsContainer>
@@ -163,8 +163,8 @@ function Financials({ financialsData }) {
           ]}
         >
           {pdfs.map((pdf) => (
-            <Box sx={{ m: 1 }}>
-              <FinancialsQuartersButton key={pdf.quarter} quarterData={pdf} />
+            <Box sx={{ m: 1 }} key={pdf.quarter}>
+              <FinancialsQuartersButton quarterData={pdf} />
             </Box>
           ))}
         </Slider>
