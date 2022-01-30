@@ -1,5 +1,5 @@
 var isRunningStorybook = process.env.RUNNING_STORYBOOK === 'true'
-var useLooseMode = !isRunningStorybook
+var useLooseMode = isRunningStorybook
 module.exports = {
   presets: [
     // Storybook requires loose mode enabled.
