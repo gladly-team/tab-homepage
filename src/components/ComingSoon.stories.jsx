@@ -20,9 +20,11 @@ export const MobileSeas = mobile(seas(Template.bind({})))
  * https://storybook.js.org/docs/react/writing-stories/loaders
  */
 MobileSeas.loaders = [
-  async () => ({
-    data: await useCauseData('seas'),
-  }),
+  async () => {
+    const data = await useCauseData('seas')
+    delete data.data.causeLaunch.launchDate
+    return { data }
+  },
 ]
 MobileSeas.parameters = {
   viewport: {
