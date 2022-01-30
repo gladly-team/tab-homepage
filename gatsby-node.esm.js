@@ -92,7 +92,7 @@ exports.createPages = async ({ actions, graphql }) => {
                       height: 628
                       backgroundColor: "white"
                       transformOptions: { fit: CONTAIN, cropFocus: CENTER }
-                      pngOptions: {}
+                      pngOptions: { quality: 100 }
                     )
                   }
                 }
