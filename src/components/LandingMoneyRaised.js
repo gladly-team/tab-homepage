@@ -53,7 +53,7 @@ function LandingMoneyRaised({ moneyRaisedData, moneyRaised }) {
   return (
     <DivParent>
       <DivSlidingParent>
-        <GatsbyImageTitleImage alt="money raised" image={moneyImage} />
+        <GatsbyImageTitleImage alt="" image={moneyImage} />
         <div>
           <MoneyRaisedDisplay
             color="textSecondary"

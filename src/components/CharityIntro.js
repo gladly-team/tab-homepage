@@ -85,7 +85,7 @@ function CharityIntro({ charityIntroData }) {
           imgStyle={{
             objectFit: 'scale-down',
           }}
-          alt="charity intro step"
+          alt=""
           image={image}
         />
         <TypographyStepText variant="body1">{step.text}</TypographyStepText>
