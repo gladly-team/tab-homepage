@@ -131,6 +131,7 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
               pl: {
                 lg: theme.spacing(16),
                 md: theme.spacing(8),
+                sm: theme.spacing(6),
                 xs: theme.spacing(4),
               },
               pr: 4,
@@ -143,7 +144,7 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
               },
               maxWidth: {
                 md: 'unset',
-                xs: 600,
+                xs: 660,
               },
             }}
           >
