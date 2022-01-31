@@ -5,6 +5,7 @@ import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
+import PageContentBox from 'src/components/PageContentBox'
 import V4InstallButton from 'src/components/V4InstallButton'
 import Markdown from './Markdown'
 
@@ -37,7 +38,6 @@ const DivSteps = styled('div')(({ theme }) => ({
   flexDirection: 'row',
   paddingTop: theme.spacing(6),
   padding: theme.spacing(4),
-
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     padding: theme.spacing(2),
@@ -47,26 +47,22 @@ const DivSteps = styled('div')(({ theme }) => ({
 const DivStep = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-
-  '& img': {
-    maxWidth: '100%',
-    height: 'auto',
+  margin: theme.spacing(8),
+  [theme.breakpoints.down('lg')]: {
+    margin: theme.spacing(4),
   },
-
-  margin: theme.spacing(3),
+  [theme.breakpoints.down('md')]: {
+    margin: theme.spacing(2),
+  },
 }))
 
 const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: '45%',
+  maxWidth: 550,
   height: 'auto',
-
-  [theme.breakpoints.down('md')]: {
-    maxWidth: '100%',
-  },
 }))
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: '100%',
+  maxWidth: 400,
   height: 'auto',
 }))
 
@@ -83,20 +79,6 @@ const AvatarNumberCircle = styled(Avatar)(({ theme }) => ({
   marginRight: theme.spacing(2),
   fontFamily: 'Poppins',
   alignSelf: 'start',
-}))
-
-const DivWrapper = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  paddingTop: theme.spacing(8),
-  paddingBottom: theme.spacing(8),
-
-  [theme.breakpoints.down('md')]: {
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
-  },
 }))
 
 const DivStepText = styled('div')(({ theme }) => ({
@@ -138,7 +120,22 @@ const Intro = ({ causeId, introData }) => {
   const image2 = getImage(formatImg(img2))
   const image3 = getImage(formatImg(img3))
   return (
-    <DivWrapper>
+    <PageContentBox
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: {
+          md: 8,
+          xs: 6,
+        },
+        paddingBottom: {
+          md: 8,
+          xs: 6,
+        },
+      }}
+    >
       <DivTitle>
         <DivTitleText>
           <TypographyTitleTypography variant="h1" color="primary">
@@ -172,7 +169,7 @@ const Intro = ({ causeId, introData }) => {
         </DivStep>
       </DivSteps>
       <V4InstallButton color="secondary" size="medium" causeId={causeId} />
-    </DivWrapper>
+    </PageContentBox>
   )
 }
 Intro.propTypes = {

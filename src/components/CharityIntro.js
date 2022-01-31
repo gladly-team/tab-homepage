@@ -14,7 +14,7 @@ const TypographyStepText = styled(Typography)(({ theme }) => ({
 }))
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: 660,
+  maxWidth: 400,
   aspectRatio: 1.333,
   display: 'flex',
   flexDirection: 'column',
@@ -30,22 +30,13 @@ const CharityIntro = ({ charityIntroData }) => {
         key={`step${index}`}
         sx={{
           flex: '1',
-          ml: {
-            md: 4,
+          m: {
+            md: 2,
+            sm: 4,
             xs: 0,
           },
-          mr: {
-            md: 4,
-            xs: 0,
-          },
-          mt: {
-            md: 4,
-            xs: 1,
-          },
-          mb: {
-            md: 4,
-            xs: 1,
-          },
+          mt: 2,
+          mb: 2,
         }}
       >
         <GatsbyImageStepImage
