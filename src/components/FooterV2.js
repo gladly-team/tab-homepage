@@ -190,7 +190,11 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
             Social
           </TypographySocial>
           <DivIconRowOne>
-            <LinkTiktok to={tiktokPageURL} target="_blank">
+            <LinkTiktok
+              to={tiktokPageURL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IconButton style={iconButtonStyles} size="large">
                 <SvgIcon
                   viewBox="0 0 50 50"
@@ -205,19 +209,27 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
                 </SvgIcon>
               </IconButton>
             </LinkTiktok>
-            <Link to={facebookPageURL} target="_blank">
+            <Link
+              to={facebookPageURL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IconButton edge="start" style={iconButtonStyles} size="large">
                 <FacebookIcon style={iconStyles} />
               </IconButton>
             </Link>
 
-            <Link to={instagramPageURL} target="_blank">
+            <Link
+              to={instagramPageURL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IconButton style={iconButtonStyles} size="large">
                 <InstagramIcon style={iconStyles} />
               </IconButton>
             </Link>
 
-            <Link to={twitterPageURL} target="_blank">
+            <Link to={twitterPageURL} target="_blank" rel="noopener noreferrer">
               <IconButton style={iconButtonStyles} size="large">
                 <TwitterIcon style={iconStyles} />
               </IconButton>
