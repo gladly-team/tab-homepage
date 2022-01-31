@@ -47,7 +47,7 @@ const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
   },
 }))
 
-function LandingMoneyRaised({ moneyRaisedData, moneyRaised }) {
+const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
   const { moneyImg } = moneyRaisedData
   const moneyImage = getImage(formatImg(moneyImg))
   return (

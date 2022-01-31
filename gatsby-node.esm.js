@@ -28,7 +28,7 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     }
   `)
-  var allReferrerEdges = allReferrersResponse.data.allReferrersYaml.edges
+  const allReferrerEdges = allReferrersResponse.data.allReferrersYaml.edges
   allReferrerEdges.forEach(({ node }) => {
     // Not all referrers will have a vanity URL.
     if (!node.path || !node.referrerId) {

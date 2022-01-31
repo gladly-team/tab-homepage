@@ -19,7 +19,7 @@ const StyledPopover = styled(Popover)({
   },
 })
 
-function InfoPopover(props) {
+const InfoPopover = (props) => {
   const { anchorEl, children, onClose, open, ...otherProps } = props
 
   return (

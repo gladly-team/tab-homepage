@@ -112,7 +112,7 @@ const ImgRightBubble = styled('img')(({ theme }) => ({
   },
 }))
 
-function Mission({ missionData, causeId }) {
+const Mission = ({ missionData, causeId }) => {
   const { titleText, subtitleText, bodyText, image } = missionData
   const missionImage = getImage(formatImg(image))
   return (

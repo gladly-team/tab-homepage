@@ -174,7 +174,7 @@ const photos = [
   { src: edenPhotoNepalNurseryDirector },
 ]
 
-function PlantTreesPage(props) {
+const PlantTreesPage = (props) => {
   const { location } = props
   const openGraphTitle = 'Plant Trees for Free'
   const openGraphDescription =

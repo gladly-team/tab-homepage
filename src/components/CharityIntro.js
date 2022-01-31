@@ -75,7 +75,7 @@ const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
   alignItems: 'center',
 }))
 
-function CharityIntro({ charityIntroData }) {
+const CharityIntro = ({ charityIntroData }) => {
   const theme = useTheme()
   const getStep = (step, index) => {
     const image = getImage(formatImg(step.img))

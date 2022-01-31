@@ -34,7 +34,7 @@ const Root = styled('div')(() => ({
   },
 }))
 
-function SocialShare(props) {
+const SocialShare = (props) => {
   const {
     EmailShareButtonProps,
     FacebookShareButtonProps,

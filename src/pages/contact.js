@@ -15,7 +15,7 @@ import {
 } from 'src/utils/navigation'
 import Layout from 'src/components/Layout'
 
-function ContactPage({ location }) {
+const ContactPage = ({ location }) => {
   const pageTitle = 'Contact Us'
   const openGraphTitle = 'Contact Us - Tab for a Cause'
   const openGraphDescription = 'Get in touch with Tab for a Cause.'

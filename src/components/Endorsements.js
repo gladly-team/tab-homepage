@@ -150,27 +150,25 @@ const DivArrowButton = styled('div')(({ theme }) => ({
   },
 }))
 
-function Arrow() {
-  return (
-    <svg
-      width="57"
-      height="58"
-      viewBox="0 0 57 58"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle cx="28.4765" cy="29.0829" r="28.121" fill="#FBF3E9" />
-      <path
-        d="M23.8652 17.8593L34.3817 28.3758C34.7723 28.7664 34.7723 29.3995 34.3817 29.79L23.8652 40.3066"
-        stroke="#29BEBA"
-        strokeWidth="8"
-        strokeLinecap="round"
-      />
-    </svg>
-  )
-}
+const Arrow = () => (
+  <svg
+    width="57"
+    height="58"
+    viewBox="0 0 57 58"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="28.4765" cy="29.0829" r="28.121" fill="#FBF3E9" />
+    <path
+      d="M23.8652 17.8593L34.3817 28.3758C34.7723 28.7664 34.7723 29.3995 34.3817 29.79L23.8652 40.3066"
+      stroke="#29BEBA"
+      strokeWidth="8"
+      strokeLinecap="round"
+    />
+  </svg>
+)
 
-function Endorsements({ endorsementsData, causeId }) {
+const Endorsements = ({ endorsementsData, causeId }) => {
   const {
     title,
     endorser,

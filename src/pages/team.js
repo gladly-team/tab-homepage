@@ -13,7 +13,7 @@ import imgAlec from 'src/img/team/alec.jpg'
 import imgIlana from 'src/img/team/Ilana.jpg'
 import Layout from 'src/components/Layout'
 
-function TeamPage({ location }) {
+const TeamPage = ({ location }) => {
   const team = [
     {
       name: 'Alex Groth',

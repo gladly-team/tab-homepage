@@ -122,7 +122,7 @@ const DivIconRowTwo = styled('div')(({ theme }) => ({
   color: '#fff',
 }))
 
-function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
+const Footer = ({ onBeforeInstall, footerData: { img, bubbleColor } }) => {
   const image = img ? getImage(formatImg(img)) : null
   const browserOnClick = useCallback(
     (extensionUrl) => async () => {

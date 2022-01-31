@@ -10,19 +10,17 @@ import {
 // eslint-disable-next-line import/no-relative-packages
 import defaultTheme from '../../src/themes/theme'
 
-function TopLayout(props) {
-  return (
-    <>
-      <Helmet>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Helmet>
-      <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
-        <CssBaseline />
-        {props.children}
-      </ThemeProvider>
-    </>
-  )
-}
+const TopLayout = (props) => (
+  <>
+    <Helmet>
+      <meta name="viewport" content="initial-scale=1, width=device-width" />
+    </Helmet>
+    <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
+      <CssBaseline />
+      {props.children}
+    </ThemeProvider>
+  </>
+)
 
 TopLayout.propTypes = {
   children: PropTypes.node,

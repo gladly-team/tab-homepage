@@ -105,7 +105,7 @@ const DivWaveMobile = styled('div')(({ theme }) => ({
   },
 }))
 
-function Landing({ landingData, causeId, moneyRaised }) {
+const Landing = ({ landingData, causeId, moneyRaised }) => {
   const { title, subtitle, ctaImg } = landingData
   const theme = useTheme()
   const ctaImage = getImage(formatImg(ctaImg))

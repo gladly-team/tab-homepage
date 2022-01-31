@@ -121,7 +121,7 @@ const TypographyTitleTypography = styled(Typography)(({ theme }) => ({
   },
 }))
 
-function Intro({ causeId, introData }) {
+const Intro = ({ causeId, introData }) => {
   const {
     title,
     titleImg,

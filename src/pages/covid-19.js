@@ -96,7 +96,7 @@ const faqs = [
   },
 ]
 
-function Covid19(props) {
+const Covid19 = (props) => {
   const { location } = props
   const openGraphTitle = 'Support COVID-19 Relief for Free'
   const openGraphDescription =

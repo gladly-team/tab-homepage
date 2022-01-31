@@ -111,7 +111,7 @@ const LinkLinkStyles = styled(Link)(({ theme }) => ({
   },
 }))
 
-function Financials({ financialsData }) {
+const Financials = ({ financialsData }) => {
   const { title, text, buttonText, ctaImg, pdfs } = financialsData
   const Image = getImage(formatImg(ctaImg))
   return (

@@ -9,7 +9,7 @@ import { orderBy } from 'lodash/collection'
 import FinancialsQuarterButton from 'src/components/FinancialsQuarterButton'
 import Layout from 'src/components/Layout'
 
-function FinancialsPage({ data, location }) {
+const FinancialsPage = ({ data, location }) => {
   const financialsEdges = data.allFinancialsYaml.edges
   const sortedFinancialsEdges = orderBy(
     financialsEdges,

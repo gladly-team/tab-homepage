@@ -421,21 +421,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Section({ id, children, className, autoHeight }) {
-  return (
-    <div
-      data-anchor={id}
-      className={clsx({
-        section: true,
-        'fp-auto-height': autoHeight,
-        sectionWrapper: true,
-        [className]: true,
-      })}
-    >
-      {children}
-    </div>
-  )
-}
+const Section = ({ id, children, className, autoHeight }) => (
+  <div
+    data-anchor={id}
+    className={clsx({
+      section: true,
+      'fp-auto-height': autoHeight,
+      sectionWrapper: true,
+      [className]: true,
+    })}
+  >
+    {children}
+  </div>
+)
 Section.propTypes = {
   id: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
@@ -451,7 +449,7 @@ Section.defaultProps = {
   className: '',
 }
 
-function Slide({ children, className, style = {} }) {
+const Slide = ({ children, className, style = {} }) => {
   const classes = useStyles()
   return (
     <div className="slide">
@@ -474,7 +472,13 @@ Slide.defaultProps = {
   className: '',
 }
 
-function ArrowButton({ children, className, dark, onClick, arrowDirection }) {
+const ArrowButton = ({
+  children,
+  className,
+  dark,
+  onClick,
+  arrowDirection,
+}) => {
   const classes = useStyles({ dark })
   let ArrowIcon
   switch (arrowDirection) {
@@ -522,7 +526,7 @@ ArrowButton.defaultProps = {
   onClick: () => {},
 }
 
-function ArrowButtonContainer({ children, className }) {
+const ArrowButtonContainer = ({ children, className }) => {
   const classes = useStyles()
   return (
     <div className={clsx(classes.arrowButtonContainer, className)}>
@@ -542,7 +546,7 @@ ArrowButtonContainer.defaultProps = {
   className: undefined,
 }
 
-function Center({ children, className }) {
+const Center = ({ children, className }) => {
   const classes = useStyles()
   return <div className={clsx(classes.center, className)}>{children}</div>
 }
@@ -558,10 +562,10 @@ Center.defaultProps = {
   className: undefined,
 }
 
-function MillionPage({
+const MillionPage = ({
   location: { pathname },
   pageContext: { impactStat } = {},
-}) {
+}) => {
   // We generate subpages to make each impact stat shareable.
   // Set the open graph info based on the specific impact stat.
   let title = '$1M Raised'
@@ -1629,13 +1633,11 @@ MillionPage.defaultProps = {
 
 // Can't create and use theme in same component (useStyles will not use
 // the custom theme).
-function MillionPageWithTheme(props) {
-  return (
-    <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
-      <MillionPage {...props} />
-    </ThemeProvider>
-  )
-}
+const MillionPageWithTheme = (props) => (
+  <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
+    <MillionPage {...props} />
+  </ThemeProvider>
+)
 
 MillionPageWithTheme.displayName = 'MillionPageWithTheme'
 
