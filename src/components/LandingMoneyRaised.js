@@ -33,44 +33,46 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
         alignItems: 'center',
       }}
     >
-      <Box
-        sx={{
-          width: '100%',
-          display: 'flex',
-          flexDirection: {
-            md: 'row',
-            xs: 'column',
-          },
-          alignItems: 'center',
-          backgroundColor: 'transparent',
-          pt: {
-            md: 4,
-            xs: -16,
-          },
-          pb: {
-            md: 4,
-            xs: 6,
-          },
-          pl: {
-            md: 20,
-            xs: 2,
-          },
-          pr: {
-            md: 20,
-            xs: 2,
-          },
-        }}
-      >
-        <GatsbyImageTitleImage alt="money raised" image={moneyImage} />
-        <div>
-          <MoneyRaisedDisplay
-            color="textSecondary"
-            textVariant="h1"
-            longCopy
-            moneyRaised={moneyRaised}
-          />
-        </div>
-      </Box>
+      <PageContentBox>
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: {
+              md: 'row',
+              xs: 'column',
+            },
+            alignItems: 'center',
+            backgroundColor: 'transparent',
+            pt: {
+              md: 4,
+              xs: -16,
+            },
+            pb: {
+              md: 4,
+              xs: 6,
+            },
+            pl: {
+              md: 20,
+              xs: 2,
+            },
+            pr: {
+              md: 20,
+              xs: 2,
+            },
+          }}
+        >
+          <GatsbyImageTitleImage alt="money raised" image={moneyImage} />
+          <div>
+            <MoneyRaisedDisplay
+              color="textSecondary"
+              textVariant="h1"
+              longCopy
+              moneyRaised={moneyRaised}
+            />
+          </div>
+        </Box>
+      </PageContentBox>
     </Box>
   )
 }
