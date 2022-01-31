@@ -48,7 +48,10 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
               md: 'row',
               xs: 'column',
             },
-            alignItems: 'center',
+            alignItems: {
+              md: 'center',
+              xs: 'flex-start',
+            },
             backgroundColor: 'transparent',
             pt: {
               md: 4,
@@ -60,6 +63,7 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
             },
             pl: {
               md: 12,
+              sm: 4,
               xs: 0,
             },
             pr: {
@@ -77,23 +81,31 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
             sx={{
               display: 'flex',
               flexDirection: 'column',
+              minWidth: {
+                // Avoid shifting text when the counter width changes.
+                xl: '40%',
+                lg: '54%',
+                md: '54%',
+                sm: '70%',
+                xs: '90%',
+              },
               pl: {
-                md: 2,
-                sm: 0,
+                sm: 4,
+                xs: 4,
               },
             }}
           >
             <Typography
               variant="h1"
               sx={{
-                typography: (theme) => ({
-                  xl: 'theme.typography.h1',
-                  lg: 'theme.typography.h2',
-                  md: 'theme.typography.h3',
-                  sm: 'theme.typography.h2',
-                  xs: 'theme.typography.h3',
-                }),
                 color: 'text.secondary',
+                fontSize: {
+                  xl: '5rem',
+                  lg: '4.2rem',
+                  md: '3rem',
+                  sm: '3.5rem',
+                  xs: '3rem',
+                },
               }}
             >
               {moneyRaisedFormatted}
