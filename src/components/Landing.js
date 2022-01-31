@@ -133,7 +133,7 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
               },
               marginBottom: {
                 md: 0,
-                xs: 4,
+                xs: 8,
               },
             }}
           >

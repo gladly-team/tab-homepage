@@ -46,7 +46,7 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
             backgroundColor: 'transparent',
             pt: {
               md: 4,
-              xs: -16,
+              xs: 0,
             },
             pb: {
               md: 4,
@@ -59,6 +59,10 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
             pr: {
               md: 20,
               xs: 2,
+            },
+            mt: {
+              md: 0,
+              xs: -16,
             },
           }}
         >
