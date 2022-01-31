@@ -50,6 +50,13 @@ module.exports = {
     'react/no-unescaped-entities': 0,
     'react/jsx-filename-extension': 0,
     'react/jsx-one-expression-per-line': 0,
+    'react/function-component-definition': [
+      1,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
 
     // The jsx-wrap-multilines rule conflicts with Prettier.
     // https://github.com/prettier/prettier/issues/1009#issuecomment-286993938
