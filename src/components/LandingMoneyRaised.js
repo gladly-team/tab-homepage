@@ -2,37 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from '@mui/material/styles'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import Box from '@mui/material/Box'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
+import PageContentBox from 'src/components/PageContentBox'
 import { formatImg } from 'src/utils/formatting'
-
-const DivParent = styled('div')(({ theme }) => ({
-  width: '100%',
-  backgroundColor: theme.palette.primary.main,
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-}))
-
-const DivSlidingParent = styled('div')(({ theme }) => ({
-  width: '100%',
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  backgroundColor: 'transparent',
-  paddingTop: theme.spacing(4),
-  paddingBottom: theme.spacing(4),
-  paddingLeft: theme.spacing(20),
-  paddingRight: theme.spacing(20),
-
-  [theme.breakpoints.down('md')]: {
-    flexDirection: 'column',
-    paddingBottom: theme.spacing(6),
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2),
-    paddingTop: theme.spacing(0),
-    marginTop: theme.spacing(-16),
-  },
-}))
 
 const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
   minWidth: '40%',
@@ -51,8 +24,43 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
   const { moneyImg } = moneyRaisedData
   const moneyImage = getImage(formatImg(moneyImg))
   return (
-    <DivParent>
-      <DivSlidingParent>
+    <Box
+      sx={{
+        width: '100%',
+        backgroundColor: 'primary.main',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+      }}
+    >
+      <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: {
+            md: 'row',
+            xs: 'column',
+          },
+          alignItems: 'center',
+          backgroundColor: 'transparent',
+          pt: {
+            md: 4,
+            xs: -16,
+          },
+          pb: {
+            md: 4,
+            xs: 6,
+          },
+          pl: {
+            md: 20,
+            xs: 2,
+          },
+          pr: {
+            md: 20,
+            xs: 2,
+          },
+        }}
+      >
         <GatsbyImageTitleImage alt="money raised" image={moneyImage} />
         <div>
           <MoneyRaisedDisplay
@@ -62,8 +70,8 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
             moneyRaised={moneyRaised}
           />
         </div>
-      </DivSlidingParent>
-    </DivParent>
+      </Box>
+    </Box>
   )
 }
 LandingMoneyRaised.propTypes = {
