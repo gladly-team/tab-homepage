@@ -8,7 +8,7 @@ import PageContentBox from 'src/components/PageContentBox'
 import { formatImg } from 'src/utils/formatting'
 
 const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: 660,
+  maxWidth: 500,
   marginRight: theme.spacing(4),
 
   [theme.breakpoints.down('md')]: {
