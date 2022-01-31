@@ -67,14 +67,18 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
           }}
         >
           <GatsbyImageTitleImage alt="" image={moneyImage} />
-          <div>
+          <Box sx={{ maxWidth: '100%' }}>
+            {/*
+             * TODO: refactor/eliminate MoneyRaisedDisplay to make it
+             *  easier to make responsive.
+             */}
             <MoneyRaisedDisplay
               color="textSecondary"
               textVariant="h1"
               longCopy
               moneyRaised={moneyRaised}
             />
-          </div>
+          </Box>
         </Box>
       </PageContentBox>
     </Box>
