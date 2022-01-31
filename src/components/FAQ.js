@@ -78,7 +78,7 @@ const TypographyCopy = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(3),
 }))
 
-function FAQ({ faqData }) {
+const FAQ = ({ faqData }) => {
   const { img, questions } = faqData
   const image = getImage(formatImg(img))
   const questionComponents = questions.map((question, index) => (

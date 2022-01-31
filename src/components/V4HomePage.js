@@ -51,7 +51,7 @@ const Background = styled('div')(() => ({
   zIndex: -10, // below wave SVGs
 }))
 
-function V4HomePage({
+const V4HomePage = ({
   pageContext: {
     data: {
       path,
@@ -82,7 +82,7 @@ function V4HomePage({
     previewPage,
   },
   location,
-}) {
+}) => {
   // Don't run if a cause ID is missing.
   if (!causeId) {
     throw new Error('A cause ID is missing.')
@@ -196,17 +196,15 @@ V4HomePage.propTypes = {
   }),
 }
 
-function V4HomePageWithTheme(props) {
-  return (
-    <ThemeProvider
-      theme={responsiveFontSizes(
-        createCauseTheme(props.pageContext.data.styles.colors)
-      )}
-    >
-      <V4HomePage {...props} />
-    </ThemeProvider>
-  )
-}
+const V4HomePageWithTheme = (props) => (
+  <ThemeProvider
+    theme={responsiveFontSizes(
+      createCauseTheme(props.pageContext.data.styles.colors)
+    )}
+  >
+    <V4HomePage {...props} />
+  </ThemeProvider>
+)
 
 V4HomePageWithTheme.propTypes = {
   pageContext: PropTypes.shape({

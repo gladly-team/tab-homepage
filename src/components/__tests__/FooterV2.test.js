@@ -8,41 +8,11 @@ import AppleSafari from 'mdi-material-ui/AppleSafari'
 import FooterBlobLeft from '../FooterBlobLeft'
 import FooterBlobRight from '../FooterBlobRight'
 
-jest.mock(
-  '../FooterBlobLeft',
-  () =>
-    function MockComp() {
-      return <span />
-    }
-)
-jest.mock(
-  '../FooterBlobRight',
-  () =>
-    function MockComp() {
-      return <span />
-    }
-)
-jest.mock(
-  'mdi-material-ui/GoogleChrome',
-  () =>
-    function MockComp() {
-      return <span />
-    }
-)
-jest.mock(
-  'mdi-material-ui/MicrosoftEdge',
-  () =>
-    function MockComp() {
-      return <span />
-    }
-)
-jest.mock(
-  'mdi-material-ui/AppleSafari',
-  () =>
-    function MockComp() {
-      return <span />
-    }
-)
+jest.mock('../FooterBlobLeft', () => () => <span />)
+jest.mock('../FooterBlobRight', () => () => <span />)
+jest.mock('mdi-material-ui/GoogleChrome', () => () => <span />)
+jest.mock('mdi-material-ui/MicrosoftEdge', () => () => <span />)
+jest.mock('mdi-material-ui/AppleSafari', () => () => <span />)
 
 const mockProps = {
   onBeforeInstall: () => {},

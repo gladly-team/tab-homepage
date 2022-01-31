@@ -1,8 +1,8 @@
 /* globals process */
 
-var domain = process.env.GATSBY_DOMAIN || 'tab.gladly.io'
-var protocol = 'https'
-var baseURL = `${protocol}://${domain}`
+const domain = process.env.GATSBY_DOMAIN || 'tab.gladly.io'
+const protocol = 'https'
+const baseURL = `${protocol}://${domain}`
 
 module.exports = {
   siteMetadata: {
@@ -90,13 +90,11 @@ module.exports = {
           const isExcluded = withoutTrailingSlash(page.path) === excludedRoute
           return isPreviewPage || isVanityReferralPage || isExcluded
         },
-        serialize: (page) => {
-          return {
-            url: baseURL + page.path,
-            changefreq: `daily`,
-            priority: 0.7,
-          }
-        },
+        serialize: (page) => ({
+          url: baseURL + page.path,
+          changefreq: `daily`,
+          priority: 0.7,
+        }),
       },
     },
     {

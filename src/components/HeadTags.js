@@ -7,7 +7,7 @@ import { domain, getAbsoluteURL } from 'src/utils/navigation'
 
 const openGraphImgAbsolutePath = getAbsoluteURL(openGraphImg)
 
-function HeadTags({
+const HeadTags = ({
   favicon,
   title,
   titleTemplate,
@@ -17,7 +17,7 @@ function HeadTags({
   keywords,
   twitterHandle,
   pageURL,
-}) {
+}) => {
   const absolutePageURL = getAbsoluteURL(pageURL)
   return (
     <Helmet titleTemplate={titleTemplate} defaultTitle={title}>

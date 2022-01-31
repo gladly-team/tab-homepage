@@ -60,7 +60,7 @@ const GatsbyImageTitleImg = styled(GatsbyImage)(({ theme }) => ({
   maxHeight: '300px',
 }))
 
-function SecuritySection({ securityData }) {
+const SecuritySection = ({ securityData }) => {
   const { titleImg } = securityData
   const image = getImage(formatImg(titleImg))
   return (

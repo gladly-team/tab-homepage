@@ -38,7 +38,7 @@ const Root = styled('div')(({ theme }) => ({
   },
 }))
 
-function FinancialQuartersButton({ quarterData }) {
+const FinancialQuartersButton = ({ quarterData }) => {
   const Image = getImage(formatImg(quarterData.img))
   return (
     <Root>

@@ -5,7 +5,7 @@ import logoWithText from 'src/img/logo-with-text.svg'
 import searchLogoWithText from 'src/img/search-logo-with-text.svg'
 import { homeURL, searchHomeURL } from 'src/utils/navigation'
 
-function Header(props) {
+const Header = (props) => {
   const { brand } = props
   return (
     <div

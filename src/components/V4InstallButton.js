@@ -39,7 +39,7 @@ const Root = styled('div')(({ theme }) => ({
   },
 }))
 
-function V4InstallButton({ causeId, fullWidth, buttonClassName }) {
+const V4InstallButton = ({ causeId, fullWidth, buttonClassName }) => {
   // Don't run if a cause ID is missing.
   if (!causeId) {
     throw new Error('A cause ID is missing in an install button.')

@@ -103,7 +103,7 @@ const Root = styled('div')(({ theme }) => ({
   },
 }))
 
-function ComingSoon({
+const ComingSoon = ({
   pageContext: {
     data: {
       path,
@@ -118,7 +118,7 @@ function ComingSoon({
     },
   },
   location,
-}) {
+}) => {
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
   const ogImgURLAbsolute = getAbsoluteURL(
     get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
@@ -246,17 +246,15 @@ ComingSoon.propTypes = {
   }),
 }
 
-function ComingSoonWithTheme(props) {
-  return (
-    <ThemeProvider
-      theme={responsiveFontSizes(
-        createCauseTheme(props.pageContext.data.styles.colors)
-      )}
-    >
-      <ComingSoon {...props} />
-    </ThemeProvider>
-  )
-}
+const ComingSoonWithTheme = (props) => (
+  <ThemeProvider
+    theme={responsiveFontSizes(
+      createCauseTheme(props.pageContext.data.styles.colors)
+    )}
+  >
+    <ComingSoon {...props} />
+  </ThemeProvider>
+)
 
 ComingSoonWithTheme.propTypes = {
   pageContext: PropTypes.shape({

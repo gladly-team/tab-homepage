@@ -60,7 +60,7 @@ const teamValues = [
   },
 ]
 
-function ApplyButton(props) {
+const ApplyButton = (props) => {
   const { email = 'jobs@tabforacause.org', children, ...otherProps } = props
   return (
     <a href={`mailto:${email}`}>

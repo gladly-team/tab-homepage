@@ -39,34 +39,10 @@ data.data.sections.Financials.pdfs = [
   },
 ]
 
-jest.mock(
-  'src/components/FooterBlobLeft',
-  () =>
-    function MockComp() {
-      return <div />
-    }
-)
-jest.mock(
-  'src/components/FooterBlobRight',
-  () =>
-    function MockComp() {
-      return <div />
-    }
-)
-jest.mock(
-  'src/components/Endorsements',
-  () =>
-    function MockComp() {
-      return <div />
-    }
-)
-jest.mock(
-  'mdi-material-ui/GoogleChrome',
-  () =>
-    function MockComp() {
-      return <span />
-    }
-)
+jest.mock('src/components/FooterBlobLeft', () => () => <span />)
+jest.mock('src/components/FooterBlobRight', () => () => <span />)
+jest.mock('src/components/Endorsements', () => () => <span />)
+jest.mock('mdi-material-ui/GoogleChrome', () => () => <span />)
 jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')

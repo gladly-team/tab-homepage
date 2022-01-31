@@ -16,18 +16,11 @@ const Anchor = styled('a')(({ theme }) => ({
 }))
 
 // TODO: Convert this back to the link component. Unclear why it's not working.
-function MarkdownLink({ href, children, ...otherProps }) {
-  return (
-    <Anchor
-      rel="noopener noreferrer"
-      target="_blank"
-      href={href}
-      {...otherProps}
-    >
-      {children}
-    </Anchor>
-  )
-}
+const MarkdownLink = ({ href, children, ...otherProps }) => (
+  <Anchor rel="noopener noreferrer" target="_blank" href={href} {...otherProps}>
+    {children}
+  </Anchor>
+)
 MarkdownLink.displayName = 'MarkdownLink'
 MarkdownLink.propTypes = {
   href: PropTypes.string.isRequired,
@@ -62,7 +55,7 @@ const processor = unified()
     },
   })
 
-function Markdown({ children }) {
+const Markdown = ({ children }) => {
   const elems = useMemo(
     () => processor.processSync(children).result,
     [children]

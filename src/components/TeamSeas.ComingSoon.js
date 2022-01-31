@@ -103,7 +103,7 @@ const StyledThemeProvider = styled(ThemeProvider)(({ theme }) => ({
 
 const ogImgURLAbsolute = getAbsoluteURL(openGraphImg)
 const canonicalURL = getAbsoluteURL(seasURL)
-function Seas({ location }) {
+const Seas = ({ location }) => {
   const absolutePageURL = getAbsoluteURL(location.pathname)
   return (
     <div>
@@ -202,14 +202,12 @@ Seas.propTypes = {
   }),
 }
 
-function SeasPageWithTheme(props) {
-  return (
-    <StyledThemeProvider
-      theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
-    >
-      <Seas {...props} />
-    </StyledThemeProvider>
-  )
-}
+const SeasPageWithTheme = (props) => (
+  <StyledThemeProvider
+    theme={responsiveFontSizes(tabForTeamSeasTheme, { factor: 3.4 })}
+  >
+    <Seas {...props} />
+  </StyledThemeProvider>
+)
 
 export default SeasPageWithTheme

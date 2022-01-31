@@ -12,7 +12,7 @@ import { homeURL } from 'src/utils/navigation'
 import localStorageMgr from 'src/utils/local-storage'
 import { STORAGE_NEW_USER_IS_TAB_V4_BETA } from 'src/utils/constants'
 
-function TryTabV4BetaPage(props) {
+const TryTabV4BetaPage = (props) => {
   const { location } = props
   const openGraphTitle = 'Try Tab V4 Beta'
   const openGraphDescription =
