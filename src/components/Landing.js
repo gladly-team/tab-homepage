@@ -134,7 +134,11 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
                 sm: theme.spacing(6),
                 xs: theme.spacing(4),
               },
-              pr: 4,
+              pr: {
+                lg: 4,
+                md: 1,
+                xs: 2,
+              },
               marginTop: {
                 xs: 0,
               },
@@ -144,14 +148,14 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
               },
               maxWidth: {
                 md: 'unset',
-                xs: 660,
+                xs: 600,
               },
             }}
           >
             <Typography variant="h1" color="primary">
               {title}
             </Typography>
-            <Box sx={{ mt: 2, mr: { md: 4, xs: 2 }, mb: 0, ml: 0 }}>
+            <Box sx={{ mt: 2, mr: { lg: 14, md: 4, xs: 2 }, mb: 0, ml: 0 }}>
               <Typography>{subtitle}</Typography>
             </Box>
             <V4InstallButton causeId={causeId} fullWidth />
