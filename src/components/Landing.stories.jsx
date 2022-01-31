@@ -1,7 +1,11 @@
 import React from 'react'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 import Landing from './Landing'
-import { mobile, seas, cats } from '../../.storybook/boilerPlate'
+import {
+  seas,
+  cats,
+  defaultChromaticViewports,
+} from '../../.storybook/boilerPlate'
 
 export default {
   title: 'Components/Landing',
@@ -13,51 +17,26 @@ function Template(_args, { loaded: { data } }) {
   const landingData = data.data.sections.landing
   return <Landing landingData={landingData} causeId={causeId} />
 }
-export const MobileSeas = mobile(seas(Template.bind({})))
-/*
- * loaders are experimental and allow us to use async await which we need in
- * order to programatically spoof gatsby images
- * https://storybook.js.org/docs/react/writing-stories/loaders
- */
-MobileSeas.loaders = [
+export const SeasCause = seas(Template.bind({}))
+
+SeasCause.loaders = [
   async () => ({
     data: await useCauseData('seas'),
   }),
 ]
-MobileSeas.parameters = {
-  viewport: {
-    defaultViewport: 'mobile2',
-  },
-  chromatic: { viewports: [414, 736] },
+SeasCause.parameters = {
+  chromatic: { viewports: [...defaultChromaticViewports] },
 }
 
-export const MobileCats = mobile(cats(Template.bind({})))
-MobileCats.loaders = [
+export const CatsCause = cats(Template.bind({}))
+CatsCause.loaders = [
   async () => ({
     data: await useCauseData('cats'),
   }),
 ]
-MobileCats.parameters = {
-  viewport: {
-    defaultViewport: 'mobile2',
+CatsCause.parameters = {
+  chromatic: {
+    viewports: [...defaultChromaticViewports],
+    disableSnapshot: true,
   },
-  chromatic: { viewports: [414, 736], disableSnapshot: true },
-}
-
-export const FullWidthSeas = seas(Template.bind({}))
-FullWidthSeas.loaders = [
-  async () => ({
-    data: await useCauseData('seas'),
-  }),
-]
-FullWidthSeas.parameters = {}
-
-export const FullWidthCats = cats(Template.bind({}))
-FullWidthCats.loaders = [
-  async () => ({
-    data: await useCauseData('cats'),
-  }),
-]
-FullWidthCats.parameters = {
-  chromatic: { disableSnapshot: true },
 }

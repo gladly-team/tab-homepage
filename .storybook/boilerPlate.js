@@ -8,9 +8,6 @@ import seasData from 'src/data/causes/seas.json'
 const seasTheme = createCauseTheme(seasData.data.styles.colors)
 const catsTheme = createCauseTheme(catsData.data.styles.colors)
 
-export const mobile = (template) => (props, loaders) =>
-    <div style={{ width: 414 }}>{template(props, loaders)}</div>
-
 export const seas = (template) => (props, loaders) =>
   (
     <ThemeProvider theme={responsiveFontSizes(seasTheme)}>
@@ -24,3 +21,11 @@ export const cats = (template) => (props, loaders) =>
       <CssBaseline>{template(props, loaders)}</CssBaseline>
     </ThemeProvider>
   )
+
+export const SMALL_MOBILE_WIDTH_PX = 320
+export const LARGE_MOBILE_WIDTH_PX = 414
+export const TABLET_WIDTH_PX = 834
+export const DESKTOP_WIDTH_PX = 1400
+export const WIDE_MONITOR_WIDTH_PX = 1800 // Chromatic max is 1800px
+
+export const defaultChromaticViewports = [LARGE_MOBILE_WIDTH_PX, DESKTOP_WIDTH_PX]
