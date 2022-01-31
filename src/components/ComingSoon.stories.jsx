@@ -27,9 +27,6 @@ SeasCause.loaders = [
   },
 ]
 SeasCause.parameters = {
-  viewport: {
-    defaultViewport: 'mobile2',
-  },
   chromatic: { viewports: [...defaultChromaticViewports] },
 }
 
@@ -40,9 +37,6 @@ CatsCause.loaders = [
   }),
 ]
 CatsCause.parameters = {
-  viewport: {
-    defaultViewport: 'mobile2',
-  },
   chromatic: {
     viewports: [...defaultChromaticViewports],
     disableSnapshot: true,
@@ -58,8 +52,5 @@ FutureSeasCause.loaders = [
   },
 ]
 FutureSeasCause.parameters = {
-  viewport: {
-    defaultViewport: 'mobile2',
-  },
   chromatic: { viewports: [...defaultChromaticViewports] },
 }

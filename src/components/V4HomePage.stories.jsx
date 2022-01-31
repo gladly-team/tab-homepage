@@ -36,10 +36,6 @@ SeasCause.loaders = [
   }),
 ]
 SeasCause.parameters = {
-  viewport: {
-    defaultViewport: 'mobile2',
-  },
-
   // In this full page snapshot, test all viewport widths.
   chromatic: {
     viewports: [
@@ -59,9 +55,6 @@ CatsCause.loaders = [
   }),
 ]
 CatsCause.parameters = {
-  viewport: {
-    defaultViewport: 'mobile2',
-  },
   chromatic: {
     viewports: [...defaultChromaticViewports],
     delay: 1500,

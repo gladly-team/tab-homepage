@@ -15,6 +15,14 @@ import '@fontsource/poppins/800.css'
 import '@fontsource/poppins/900.css'
 
 const customViewports = {
+  laptop: {
+    name: 'Laptop',
+    type: 'desktop',
+    styles: {
+      width: '1400px',
+      height: '780px',
+    },
+  },
   monitor: {
     name: 'Wide Monitor',
     type: 'desktop',
@@ -32,17 +40,10 @@ export const parameters = {
       ...MINIMAL_VIEWPORTS,
       ...customViewports,
     },
+    defaultViewport: 'laptop',
   },
 }
-export const globalTypes = {
-  vertical: {
-    name: 'Vertical',
-    description: 'the vertical experience you want',
-    defaultValue: 'seas',
-    options: ['seas', 'cats'],
-    control: { type: 'radio' },
-  },
-}
+
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
 // This global object isn't set in storybook context, requiring you to override it to empty functions (no-op),
