@@ -133,14 +133,14 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
               },
               marginBottom: {
                 md: 0,
-                xs: 8,
+                xs: 4,
               },
             }}
           >
             <Typography variant="h1" color="primary">
               {title}
             </Typography>
-            <Box sx={{ m: 2 }}>
+            <Box sx={{ mt: 2, mr: { md: 4, xs: 2 }, mb: 0, ml: 0 }}>
               <Typography>{subtitle}</Typography>
             </Box>
             <V4InstallButton causeId={causeId} fullWidth />
