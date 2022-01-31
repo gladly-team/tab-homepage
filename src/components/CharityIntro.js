@@ -30,7 +30,12 @@ const CharityIntro = ({ charityIntroData }) => {
         key={`step${index}`}
         sx={{
           flex: '1',
-          m: {
+          ml: {
+            md: 2,
+            sm: 4,
+            xs: 0,
+          },
+          mr: {
             md: 2,
             sm: 4,
             xs: 0,
@@ -121,7 +126,7 @@ const CharityIntro = ({ charityIntroData }) => {
                 xs: 1,
               },
               maxWidth: {
-                md: '75%',
+                md: '70%',
                 xs: '85%',
               },
             }}
