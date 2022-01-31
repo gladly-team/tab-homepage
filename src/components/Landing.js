@@ -4,7 +4,9 @@ import { useTheme, styled } from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import PageContentBox from 'src/components/PageContentBox'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import { homeURL } from 'src/utils/navigation'
 import logoWhite from 'src/img/logo-with-text-white.svg'
@@ -17,64 +19,6 @@ const DivLogoContainer = styled('div')(({ theme }) => ({
   flex: 1,
   display: 'flex',
   flexDirection: 'row',
-}))
-
-const DivTitleSection = styled('div')(({ theme }) => ({
-  margin: '0 auto',
-  display: 'flex',
-
-  // for absolutely-positioned wave
-  position: 'relative',
-
-  minHeight: 'calc(100vh - 64px)',
-  alignItems: 'center',
-  paddingTop: theme.spacing(10),
-  paddingBottom: theme.spacing(10),
-
-  [theme.breakpoints.down('md')]: {
-    flexDirection: 'column-reverse',
-    height: 'auto',
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
-  },
-}))
-
-const DivHalfScreenLeft = styled('div')(({ theme }) => ({
-  width: '50%',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  paddingLeft: '10%',
-
-  [theme.breakpoints.down('sm')]: {
-    width: '47%',
-    paddingLeft: '7%',
-  },
-
-  [theme.breakpoints.down('md')]: {
-    width: '85%',
-    marginTop: theme.spacing(4),
-    paddingLeft: 0,
-    marginBottom: theme.spacing(8),
-  },
-}))
-
-const DivHalfScreenRight = styled('div')(({ theme }) => ({
-  width: '50%',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  position: 'absolute',
-  right: 0,
-
-  [theme.breakpoints.down('md')]: {
-    position: 'relative',
-    width: '100%',
-  },
-}))
-
-const TypographySubtitle = styled(Typography)(({ theme }) => ({
-  marginTop: theme.spacing(2),
 }))
 
 const DivWave = styled('div')(({ theme }) => ({
@@ -112,48 +56,114 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
   return (
     <div>
       <AppBar color="primary" position="sticky">
-        <Toolbar>
-          <DivLogoContainer>
-            <div
-              data-test-id="logo-container"
-              style={{
-                display: 'flex',
-                justifyContent: 'flex-start',
-                alignItems: 'center',
-              }}
-            >
-              <Link to={homeURL} style={{ display: 'flex' }}>
-                <img
-                  data-test-id="tab-logo-with-text"
-                  src={logoWhite}
-                  style={{ height: 40 }}
-                />
-              </Link>
-            </div>
-          </DivLogoContainer>
-          <MoneyRaisedDisplay
-            color="#fff"
-            textVariant="subtitle2"
-            excludeText
-            moneyRaised={moneyRaised}
-          />
-        </Toolbar>
+        <PageContentBox
+          sx={{
+            alignSelf: 'center',
+          }}
+        >
+          <Toolbar>
+            <DivLogoContainer>
+              <div
+                data-test-id="logo-container"
+                style={{
+                  display: 'flex',
+                  justifyContent: 'flex-start',
+                  alignItems: 'center',
+                }}
+              >
+                <Link to={homeURL} style={{ display: 'flex' }}>
+                  <img
+                    data-test-id="tab-logo-with-text"
+                    src={logoWhite}
+                    style={{ height: 40 }}
+                  />
+                </Link>
+              </div>
+            </DivLogoContainer>
+            <MoneyRaisedDisplay
+              color="#fff"
+              textVariant="subtitle2"
+              excludeText
+              moneyRaised={moneyRaised}
+            />
+          </Toolbar>
+        </PageContentBox>
       </AppBar>
-      <DivTitleSection>
-        <DivHalfScreenLeft data-test-id="title-wrapper">
-          <Typography variant="h1" color="primary">
-            {title}
-          </Typography>
-          <TypographySubtitle>{subtitle}</TypographySubtitle>
-          <V4InstallButton causeId={causeId} fullWidth />
-        </DivHalfScreenLeft>
-        <DivHalfScreenRight>
-          <GatsbyImage image={ctaImage} alt="call to action" />
-        </DivHalfScreenRight>
+      <Box
+        sx={{
+          // for absolutely-positioned wave
+          position: 'relative',
+        }}
+      >
+        <PageContentBox
+          sx={{
+            display: 'flex',
+            flex: 1,
+            minHeight: 'calc(100vh - 64px)',
+            alignItems: 'center',
+            paddingTop: {
+              md: 0,
+              xs: 3,
+            },
+            paddingBottom: {
+              md: 10,
+              xs: 3,
+            },
+
+            flexDirection: {
+              md: 'row',
+              xs: 'column-reverse',
+            },
+          }}
+        >
+          <Box
+            data-test-id="title-wrapper"
+            sx={{
+              flex: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              pl: {
+                md: theme.spacing(18),
+                xs: theme.spacing(4),
+              },
+              pr: 4,
+              marginTop: {
+                xs: 0,
+              },
+              marginBottom: {
+                md: 0,
+                xs: 8,
+              },
+            }}
+          >
+            <Typography variant="h1" color="primary">
+              {title}
+            </Typography>
+            <Box sx={{ m: 2 }}>
+              <Typography>{subtitle}</Typography>
+            </Box>
+            <V4InstallButton causeId={causeId} fullWidth />
+          </Box>
+          <Box
+            sx={{
+              flex: 5,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              pl: 0,
+              pr: 0,
+              mt: 0,
+              mb: 0,
+            }}
+          >
+            <GatsbyImage image={ctaImage} alt="call to action" />
+          </Box>
+        </PageContentBox>
         <DivWave>
           <Wave color={theme.palette.primary.main} />
         </DivWave>
-      </DivTitleSection>
+      </Box>
       <DivWaveMobile>
         <Wave color={theme.palette.primary.main} />
       </DivWaveMobile>
