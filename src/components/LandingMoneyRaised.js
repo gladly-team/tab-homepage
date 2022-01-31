@@ -3,9 +3,14 @@ import PropTypes from 'prop-types'
 import { styled } from '@mui/material/styles'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import PageContentBox from 'src/components/PageContentBox'
-import { formatImg } from 'src/utils/formatting'
+import {
+  formatImg,
+  commaFormatted,
+  currencyFormatted,
+} from 'src/utils/formatting'
 
 const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
   maxWidth: 500,
@@ -21,6 +26,9 @@ const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
 const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
   const { moneyImg } = moneyRaisedData
   const moneyImage = getImage(formatImg(moneyImg))
+  const moneyRaisedFormatted = `$${commaFormatted(
+    currencyFormatted(moneyRaised)
+  )}`
   return (
     <Box
       sx={{
@@ -51,12 +59,12 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
               xs: 6,
             },
             pl: {
-              md: 20,
-              xs: 2,
+              md: 12,
+              xs: 0,
             },
             pr: {
-              md: 20,
-              xs: 2,
+              md: 12,
+              xs: 0,
             },
             mt: {
               md: 0,
@@ -65,17 +73,34 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
           }}
         >
           <GatsbyImageTitleImage alt="" image={moneyImage} />
-          <Box sx={{ maxWidth: '100%' }}>
-            {/*
-             * TODO: refactor/eliminate MoneyRaisedDisplay to make it
-             *  easier to make responsive.
-             */}
-            <MoneyRaisedDisplay
-              color="textSecondary"
-              textVariant="h1"
-              longCopy
-              moneyRaised={moneyRaised}
-            />
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              pl: {
+                md: 2,
+                sm: 0,
+              },
+            }}
+          >
+            <Typography
+              variant="h1"
+              sx={{
+                typography: (theme) => ({
+                  xl: 'theme.typography.h1',
+                  lg: 'theme.typography.h2',
+                  md: 'theme.typography.h3',
+                  sm: 'theme.typography.h2',
+                  xs: 'theme.typography.h3',
+                }),
+                color: 'text.secondary',
+              }}
+            >
+              {moneyRaisedFormatted}
+            </Typography>
+            <Typography variant="caption" color="textSecondary">
+              raised for charity
+            </Typography>
           </Box>
         </Box>
       </PageContentBox>
