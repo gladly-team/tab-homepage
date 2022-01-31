@@ -100,11 +100,14 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
               sx={{
                 color: 'text.secondary',
                 fontSize: {
+                  // KJ: we should be able to use the MUI theme here, but I
+                  // couldn't get it work as expected. Unclear if an MUI
+                  // bug or if I don't understand the precedence rules.
                   xl: '5rem',
                   lg: '4.2rem',
                   md: '3rem',
                   sm: '3.5rem',
-                  xs: '3rem',
+                  xs: '2.8rem',
                 },
               }}
             >
