@@ -105,8 +105,8 @@ const CharityIntro = ({ charityIntroData }) => {
               pt: 1,
               pb: 1,
               maxWidth: {
-                md: '80%',
-                xs: '100%',
+                md: '90%',
+                xs: '95%',
               },
             }}
           >
@@ -121,8 +121,8 @@ const CharityIntro = ({ charityIntroData }) => {
                 xs: 1,
               },
               maxWidth: {
-                md: '60%',
-                xs: '100%',
+                md: '75%',
+                xs: '85%',
               },
             }}
           >
