@@ -8,6 +8,7 @@ import {
   defaultChromaticViewports,
   SMALL_MOBILE_WIDTH_PX,
   TABLET_WIDTH_PX,
+  DESKTOP_WIDTH_PX,
   WIDE_MONITOR_WIDTH_PX,
 } from '../../.storybook/boilerPlate'
 
@@ -56,8 +57,7 @@ CatsCause.loaders = [
 ]
 CatsCause.parameters = {
   chromatic: {
-    viewports: [...defaultChromaticViewports],
+    viewports: [DESKTOP_WIDTH_PX],
     delay: 1500,
-    disableSnapshot: true,
   },
 }
