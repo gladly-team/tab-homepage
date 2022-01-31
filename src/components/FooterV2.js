@@ -344,7 +344,7 @@ function Footer({ onBeforeInstall, footerData: { img, bubbleColor } }) {
         <DivColumnThree>
           {image ? (
             <Box>
-              <GatsbyImage image={image} alt="footer" />
+              <GatsbyImage image={image} alt="" />
             </Box>
           ) : null}
         </DivColumnThree>

@@ -146,7 +146,7 @@ function Intro({ causeId, introData }) {
           </TypographyTitleTypography>
           <Markdown>{subtitle}</Markdown>
         </DivTitleText>
-        <GatsbyImageTitleImage image={titleImage} alt="intro title" />
+        <GatsbyImageTitleImage image={titleImage} alt="" />
       </DivTitle>
       <DivSteps>
         <DivStep>
@@ -154,21 +154,21 @@ function Intro({ causeId, introData }) {
             <AvatarNumberCircle>1</AvatarNumberCircle>
             <Markdown>{img1Subtext}</Markdown>
           </DivStepText>
-          <GatsbyImageStepImage image={image1} alt="intro step 1" />
+          <GatsbyImageStepImage image={image1} alt="" />
         </DivStep>
         <DivStep>
           <DivStepText>
             <AvatarNumberCircle>2</AvatarNumberCircle>
             <Markdown>{img2Subtext}</Markdown>
           </DivStepText>
-          <GatsbyImageStepImage image={image2} alt="intro step 2" />
+          <GatsbyImageStepImage image={image2} alt="" />
         </DivStep>
         <DivStep>
           <DivStepText>
             <AvatarNumberCircle>3</AvatarNumberCircle>
             <Markdown>{img3Subtext}</Markdown>
           </DivStepText>
-          <GatsbyImageStepImage image={image3} alt="intro step 3" />
+          <GatsbyImageStepImage image={image3} alt="" />
         </DivStep>
       </DivSteps>
       <V4InstallButton color="secondary" size="medium" causeId={causeId} />

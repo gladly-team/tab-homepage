@@ -148,7 +148,7 @@ function Landing({ landingData, causeId, moneyRaised }) {
           <V4InstallButton causeId={causeId} fullWidth />
         </DivHalfScreenLeft>
         <DivHalfScreenRight>
-          <GatsbyImage image={ctaImage} alt="call to action" />
+          <GatsbyImage image={ctaImage} alt="" />
         </DivHalfScreenRight>
         <DivWave>
           <Wave color={theme.palette.primary.main} />
