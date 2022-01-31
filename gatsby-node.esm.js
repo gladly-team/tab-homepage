@@ -183,22 +183,46 @@ exports.createPages = async ({ actions, graphql }) => {
                   }
                   q1Img {
                     childImageSharp {
-                      gatsbyImageData(width: 103, height: 100, quality: 20)
+                      gatsbyImageData(
+                        height: 100
+                        width: 103
+                        quality: 100
+                        backgroundColor: "white"
+                        transformOptions: { fit: CONTAIN, cropFocus: SOUTHEAST }
+                      )
                     }
                   }
                   q2Img {
                     childImageSharp {
-                      gatsbyImageData(width: 103, height: 100, quality: 20)
+                      gatsbyImageData(
+                        height: 100
+                        width: 103
+                        quality: 100
+                        backgroundColor: "white"
+                        transformOptions: { fit: CONTAIN, cropFocus: SOUTHEAST }
+                      )
                     }
                   }
                   q3Img {
                     childImageSharp {
-                      gatsbyImageData(width: 103, height: 100, quality: 20)
+                      gatsbyImageData(
+                        height: 100
+                        width: 103
+                        quality: 100
+                        backgroundColor: "white"
+                        transformOptions: { fit: CONTAIN, cropFocus: SOUTHEAST }
+                      )
                     }
                   }
                   q4Img {
                     childImageSharp {
-                      gatsbyImageData(width: 103, height: 100, quality: 20)
+                      gatsbyImageData(
+                        height: 100
+                        width: 103
+                        quality: 100
+                        backgroundColor: "white"
+                        transformOptions: { fit: CONTAIN, cropFocus: SOUTHEAST }
+                      )
                     }
                   }
                 }

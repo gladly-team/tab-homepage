@@ -84,7 +84,13 @@ function SecuritySection({ securityData }) {
         </TypographySubtitle>
         <TypographySubtitleTwo paragraph>
           Don’t just take our word for it—our code is{' '}
-          <AnchorLink href={githubOrganizationURL}>open source!</AnchorLink>
+          <AnchorLink
+            href={githubOrganizationURL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            open source!
+          </AnchorLink>
         </TypographySubtitleTwo>
       </DivColumn>
     </DivParent>

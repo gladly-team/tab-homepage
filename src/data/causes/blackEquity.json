@@ -32,7 +32,7 @@
         "moneyImg": "../../img/blackEquity/moneyRaised.png"
       },
       "charityIntro": {
-        "title": "Stop wasting tabs, start changing the world.",
+        "title": "Stop wasting tabs, start changing the world",
         "subTitle": "Little actions can have big results. With Tab for Black Equity, you can support charities uplifting Black communities just by opening more browser tabs.",
         "steps": [
           {
@@ -51,7 +51,7 @@
       },
       "TFACIntro": {
         "titleImg": "../../img/blackEquity/introCTA.png",
-        "title": "Make an impact toward Black equity.",
+        "title": "Promote Black equity",
         "subtitle": "Turn your daily habits into a positive change. Do good, feel good.",
         "img1": "../../img/blackEquity/intro1.png",
         "img1Subtext": "##### Open new tabs on your browser.",
@@ -76,10 +76,10 @@
         "text": "Every tab makes an impact. Check out how much we've raised together.",
         "buttonText": "See All Financials",
         "ctaImg": "../../img/blackEquity/financials.png",
-        "q1Img": "../../img/causeshared/q1.png",
-        "q2Img": "../../img/causeshared/q2.png",
-        "q3Img": "../../img/causeshared/q3.png",
-        "q4Img": "../../img/causeshared/q4.png"
+        "q1Img": "../../img/causeshared/q1-heart.png",
+        "q2Img": "../../img/causeshared/q2-heart.png",
+        "q3Img": "../../img/causeshared/q3-heart.png",
+        "q4Img": "../../img/causeshared/q4-heart.png"
       },
       "Endorsements": {
         "disableCenterEndorsement": true,
