@@ -206,10 +206,7 @@ const Endorsements = ({ endorsementsData, causeId }) => {
       </DivTitleSectionWrapper>
       {quote ? (
         <DivEndorserContainer>
-          <GatsbyImageEndorserImage
-            alt="endorser image"
-            image={endorserImage}
-          />
+          <GatsbyImageEndorserImage alt="" image={endorserImage} />
           <DivEndorserTextContainer>
             <TypographyTextSpacing variant="h3" color="primary">
               {headerQuote}
@@ -252,7 +249,7 @@ const Endorsements = ({ endorsementsData, causeId }) => {
               <StyledPaper elevation={3}>
                 <DivEndorsementPaperTitleContainer>
                   <GatsbyImage
-                    alt="endorsement image"
+                    alt=""
                     image={getImage(formatImg(endorsement.img))}
                     style={{
                       height: '43px',

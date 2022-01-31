@@ -157,7 +157,7 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
               mb: 0,
             }}
           >
-            <GatsbyImage image={ctaImage} alt="call to action" />
+            <GatsbyImage image={ctaImage} alt="" />
           </Box>
         </PageContentBox>
         <DivWave>

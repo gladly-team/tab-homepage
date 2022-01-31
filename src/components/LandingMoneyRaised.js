@@ -62,7 +62,7 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
             },
           }}
         >
-          <GatsbyImageTitleImage alt="money raised" image={moneyImage} />
+          <GatsbyImageTitleImage alt="" image={moneyImage} />
           <div>
             <MoneyRaisedDisplay
               color="textSecondary"

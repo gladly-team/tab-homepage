@@ -111,7 +111,7 @@ const FAQ = ({ faqData }) => {
     <DivParent>
       <DivRow>
         <GatsbyImageTitleImage
-          alt="faq image"
+          alt=""
           imgStyle={{
             objectFit: 'scale-down',
           }}
