@@ -14,6 +14,8 @@ export const TABLET_WIDTH_PX = 834
 export const DESKTOP_WIDTH_PX = 1400
 export const WIDE_MONITOR_WIDTH_PX = 1800 // Chromatic max is 1800px
 
+export const defaultChromaticViewports = [LARGE_MOBILE_WIDTH_PX, DESKTOP_WIDTH_PX]
+
 export const mobile = (template) => (props, loaders) =>
     <div style={{ width: 414 }}>{template(props, loaders)}</div>
 
