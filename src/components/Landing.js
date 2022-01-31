@@ -116,6 +116,7 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
             },
           }}
         >
+          {/* TODO: potentially create reusable for other sections */}
           <Box
             data-test-id="title-wrapper"
             sx={{
@@ -124,7 +125,8 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
               flexDirection: 'column',
               justifyContent: 'center',
               pl: {
-                md: theme.spacing(18),
+                lg: theme.spacing(16),
+                md: theme.spacing(8),
                 xs: theme.spacing(4),
               },
               pr: 4,
@@ -154,7 +156,8 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
               pl: 0,
               pr: 0,
               mt: 0,
-              mb: 0,
+              mb: 2,
+              maxWidth: 660,
             }}
           >
             <GatsbyImage image={ctaImage} alt="" />
