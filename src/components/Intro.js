@@ -36,8 +36,10 @@ const DivTitleText = styled('div')(({ theme }) => ({
 const DivSteps = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
-  paddingTop: theme.spacing(6),
-  padding: theme.spacing(4),
+  paddingTop: theme.spacing(2),
+  paddingBottom: theme.spacing(2),
+  paddingLeft: theme.spacing(4),
+  paddingRight: theme.spacing(4),
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     padding: theme.spacing(2),
