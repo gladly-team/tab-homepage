@@ -120,10 +120,14 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
           <Box
             data-test-id="title-wrapper"
             sx={{
-              flex: 4,
+              flex: 1,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
+              alignSelf: {
+                md: 'center',
+                xs: 'flex-start',
+              },
               pl: {
                 lg: theme.spacing(16),
                 md: theme.spacing(8),
@@ -137,6 +141,10 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
                 md: 0,
                 xs: 8,
               },
+              maxWidth: {
+                md: 'unset',
+                xs: 600,
+              },
             }}
           >
             <Typography variant="h1" color="primary">
@@ -149,7 +157,7 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
           </Box>
           <Box
             sx={{
-              flex: 5,
+              flex: 1,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
