@@ -110,7 +110,7 @@ const TypographyPaperText = styled(Typography)(({ theme }) => ({
 
 const DivArrowButton = styled('div')(({ theme }) => ({
   position: 'absolute',
-  right: 8,
+  right: '1%',
 
   [theme.breakpoints.down('md')]: {
     display: 'none',
@@ -184,8 +184,8 @@ const Endorsements = ({ endorsementsData, causeId }) => {
               display: 'flex',
               flexWrap: 'wrap',
               mt: {
-                md: 4,
-                xs: 2,
+                md: 6,
+                xs: 4,
               },
               mb: {
                 md: 0,

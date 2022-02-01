@@ -165,25 +165,23 @@ const Mission = ({ missionData, causeId }) => {
           },
         }}
       >
-        <Box>
-          <DivTextContainer>
-            <Typography variant="h1" color="primary">
-              {titleText}
-            </Typography>
+        <DivTextContainer>
+          <Typography variant="h1" color="primary">
+            {titleText}
+          </Typography>
 
-            <TypographySubtitle variant="h5" color="primary">
-              {subtitleText}
-            </TypographySubtitle>
-            <Box
-              sx={{
-                // TODO: reusable for left-aligned sections
-                // Matches landing page
-                mr: { lg: 14, md: 4, xs: 2 },
-              }}
-            >
-              <Markdown>{bodyText}</Markdown>
-            </Box>
-          </DivTextContainer>
+          <TypographySubtitle variant="h5" color="primary">
+            {subtitleText}
+          </TypographySubtitle>
+          <Box
+            sx={{
+              // TODO: reusable for left-aligned sections
+              // Matches landing page
+              mr: { lg: 14, md: 4, xs: 2 },
+            }}
+          >
+            <Markdown>{bodyText}</Markdown>
+          </Box>
           <Box
             sx={{
               // TODO: reusable
@@ -199,7 +197,7 @@ const Mission = ({ missionData, causeId }) => {
               style={{ minWidth: 240 }}
             />
           </Box>
-        </Box>
+        </DivTextContainer>
         <GatsbyImageMissionImage
           image={missionImage}
           alt=""
