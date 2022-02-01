@@ -48,10 +48,6 @@ const DivStarsContainer = styled('div')(({ theme }) => ({
   margin: theme.spacing(0.5),
 }))
 
-const TypographyRatingsText = styled(Typography)(({ theme }) => ({
-  margin: theme.spacing(0.5),
-}))
-
 const DivTitleSectionWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   textAlign: 'center',
@@ -177,9 +173,9 @@ const Endorsements = ({ endorsementsData, causeId }) => {
               <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
               <StarHalf style={{ color: '#ffc533', width: 18, height: 18 }} />
             </DivStarsContainer>
-            <TypographyRatingsText>
+            <Typography sx={{ margin: 1 }}>
               215,000+ people are Tabbing on Chrome
-            </TypographyRatingsText>
+            </Typography>
           </DivRatingContainer>
         </DivTitleSectionWrapper>
         {quote ? (
