@@ -15,10 +15,12 @@ import {
 const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
   maxWidth: 500,
   marginRight: theme.spacing(4),
+  marginLeft: theme.spacing(4),
 
   [theme.breakpoints.down('md')]: {
-    minWidth: 'unset',
-    marginRight: 'unset',
+    maxWidth: 400,
+    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(0),
     marginBottom: theme.spacing(3),
   },
 }))

@@ -28,12 +28,12 @@ const CharityIntro = ({ charityIntroData }) => {
           ml: {
             md: 2,
             sm: 4,
-            xs: 0,
+            xs: 1,
           },
           mr: {
             md: 2,
             sm: 4,
-            xs: 0,
+            xs: 1,
           },
           mt: {
             md: 2,
