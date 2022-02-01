@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
+import PageContentBox from 'src/components/PageContentBox'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 import { githubOrganizationURL } from 'src/utils/navigation.js'
@@ -28,32 +30,13 @@ const AnchorLink = styled('a')(({ theme }) => ({
   textDecoration: 'none',
 }))
 
-const DivColumn = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  width: '80%',
-
-  [theme.breakpoints.down('md')]: {
-    width: '90%',
-  },
-}))
-
-const TypographyTitle = styled(Typography)(({ theme }) => ({
-  paddingTop: theme.spacing(4),
-  paddingBottom: theme.spacing(4),
-  textAlign: 'center',
-}))
-
 const TypographySubtitle = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
-  width: '80%',
 }))
 
 const TypographySubtitleTwo = styled(Typography)(({ theme }) => ({
   margin: '0 auto',
   textAlign: 'center',
-  width: '80%',
 }))
 
 const GatsbyImageTitleImg = styled(GatsbyImage)(({ theme }) => ({
@@ -65,7 +48,25 @@ const SecuritySection = ({ securityData }) => {
   const image = getImage(formatImg(titleImg))
   return (
     <DivParent>
-      <DivColumn>
+      <PageContentBox
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          paddingLeft: {
+            lg: 12, // matches other sections
+            md: 8, // matches other sections
+            sm: 6, // matches other sections
+            xs: 3, // matches other sections
+          },
+          paddingRight: {
+            md: 12,
+            lg: 8, // matches other sections
+            sm: 6, // matches other sections
+            xs: 3,
+          },
+        }}
+      >
         <GatsbyImageTitleImg
           imgStyle={{
             objectFit: 'scale-down',
@@ -75,24 +76,58 @@ const SecuritySection = ({ securityData }) => {
           alt=""
           placeholder="none"
         />
-        <TypographyTitle color="primary" variant="h1">
-          Secure, private, and open source
-        </TypographyTitle>
-        <TypographySubtitle paragraph>
-          We are serious about privacy. That’s why our browser extension will
-          not (and cannot) access any private data beyond our new tab page.
-        </TypographySubtitle>
-        <TypographySubtitleTwo paragraph>
-          Don’t just take our word for it—our code is{' '}
-          <AnchorLink
-            href={githubOrganizationURL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            open source!
-          </AnchorLink>
-        </TypographySubtitleTwo>
-      </DivColumn>
+        <Box
+          sx={{
+            // TODO: reusable
+            pl: {
+              md: 2,
+              xs: 0,
+            },
+            pr: {
+              md: 2,
+              xs: 0,
+            },
+            pt: 4,
+            pb: 4,
+            maxWidth: {
+              md: '90%',
+              sm: '100%',
+            },
+          }}
+        >
+          <Typography color="primary" variant="h1" align="center">
+            Secure, private, and open source
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            // TODO: reusable
+            // Matches landing page, divided by two
+            pr: { lg: 8, md: 2, xs: 1 },
+            pl: { lg: 8, md: 2, xs: 1 },
+            maxWidth: {
+              md: '70%',
+              sm: '100%',
+            },
+          }}
+        >
+          <TypographySubtitle paragraph>
+            We are serious about privacy. That’s why our browser extension will
+            not (and cannot) access any private data beyond our new tab page.
+          </TypographySubtitle>
+          <TypographySubtitleTwo paragraph>
+            Don’t just take our word for it—our code is{' '}
+            <AnchorLink
+              href={githubOrganizationURL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              open source
+            </AnchorLink>
+            !
+          </TypographySubtitleTwo>
+        </Box>
+      </PageContentBox>
     </DivParent>
   )
 }

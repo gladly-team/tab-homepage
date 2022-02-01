@@ -122,11 +122,18 @@ const CharityIntro = ({ charityIntroData }) => {
             </Typography>
           </Box>
           <Box
+            // TODO: reusable for Security section
             sx={{
-              p: {
+              pt: {
                 md: 4,
                 xs: 1,
               },
+              pb: {
+                md: 4,
+                xs: 1,
+              },
+              pr: { lg: 8, md: 2, xs: 1 },
+              pl: { lg: 8, md: 2, xs: 1 },
               maxWidth: {
                 md: '70%',
                 sm: '100%',

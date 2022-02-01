@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
 import Markdown from 'src/components/Markdown'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
@@ -168,10 +169,19 @@ const Mission = ({ missionData, causeId }) => {
           <Typography variant="h1" color="primary">
             {titleText}
           </Typography>
+
           <TypographySubtitle variant="h5" color="primary">
             {subtitleText}
           </TypographySubtitle>
-          <Markdown>{bodyText}</Markdown>
+          <Box
+            sx={{
+              // TODO: reusable for left-aligned sections
+              // Matches landing page
+              mr: { lg: 14, md: 4, xs: 2 },
+            }}
+          >
+            <Markdown>{bodyText}</Markdown>
+          </Box>
           <V4InstallButton causeId={causeId} fullWidth />
         </DivTextContainer>
         <GatsbyImageMissionImage

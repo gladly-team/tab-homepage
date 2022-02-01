@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { styled } from '@mui/material/styles'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
 import PageContentBox from 'src/components/PageContentBox'
@@ -149,7 +150,14 @@ const Intro = ({ causeId, introData }) => {
           <TypographyTitleTypography variant="h1" color="primary">
             {title}
           </TypographyTitleTypography>
-          <Markdown>{subtitle}</Markdown>
+          <Box
+            sx={{
+              // Matches landing page
+              mr: { lg: 14, md: 4, xs: 2 },
+            }}
+          >
+            <Markdown>{subtitle}</Markdown>
+          </Box>
         </DivTitleText>
         <GatsbyImageTitleImage image={titleImage} alt="" />
       </DivTitle>
