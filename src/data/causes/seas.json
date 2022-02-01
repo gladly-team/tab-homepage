@@ -57,11 +57,11 @@
         "title": "The simplest way to make an impact",
         "subtitle": "Turn your daily habits into a cleaner planet for all. Do good, feel good.",
         "img1": "../../img/seas/intro1.png",
-        "img1Subtext": "##### Open new tabs on your browser.",
+        "img1Subtext": "###### Open new tabs on your browser.",
         "img2": "../../img/seas/intro2.png",
-        "img2Subtext": "##### Earn money to clean up our oceans, rivers, and lakes.",
+        "img2Subtext": "###### Earn money to clean up our oceans, rivers, and lakes.",
         "img3": "../../img/seas/intro3.png",
-        "img3Subtext": "##### Help protect our planet and create a better world for all."
+        "img3Subtext": "###### Help protect our planet and create a better world for all."
       },
       "Mission": {
         "canonicalURL": "/seas/",

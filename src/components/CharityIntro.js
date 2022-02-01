@@ -8,11 +8,6 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import PageContentBox from 'src/components/PageContentBox'
 import { formatImg } from 'src/utils/formatting'
 
-const TypographyStepText = styled(Typography)(({ theme }) => ({
-  textAlign: 'center',
-  fontWeight: 'bold',
-}))
-
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
   maxWidth: 400,
   aspectRatio: 1.333,
@@ -59,7 +54,15 @@ const CharityIntro = ({ charityIntroData }) => {
           alt=""
           image={image}
         />
-        <TypographyStepText variant="body1">{step.text}</TypographyStepText>
+        <Box>
+          <Typography
+            variant="caption"
+            align="center"
+            sx={{ display: 'block', mt: 1 }}
+          >
+            {step.text}
+          </Typography>
+        </Box>
       </Box>
     )
   }
