@@ -29,7 +29,9 @@ module.exports = {
         short_name: `Tab`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#9d4ba3`,
+        // Disabling this to allow individual pages to set their own
+        // theme color via meta tags.
+        // theme_color: `#9d4ba3`,
         display: `browser`,
         icon: `src/img/logo32x32.png`,
       },

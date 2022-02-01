@@ -56,7 +56,7 @@ const V4HomePage = ({
     data: {
       path,
       causeId,
-      styles,
+      styles: { colors: { primary: primaryColor } = {} } = {},
       causeLaunch: { enabled },
       metadata: {
         title,
@@ -136,6 +136,7 @@ const V4HomePage = ({
         ogImage={ogImgURLAbsolute}
         keywords={KEY_WORDS.concat(causeSpecificKeywords)}
         pageURL={absolutePageURL}
+        themeColor={primaryColor}
       />
       <Helmet>
         <link rel="canonical" href={getAbsoluteURL(path)} />

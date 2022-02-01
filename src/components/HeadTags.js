@@ -17,6 +17,7 @@ const HeadTags = ({
   keywords,
   twitterHandle,
   pageURL,
+  themeColor,
 }) => {
   const absolutePageURL = getAbsoluteURL(pageURL)
   return (
@@ -45,6 +46,7 @@ const HeadTags = ({
       <meta name="twitter:creator" content={twitterHandle} />
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:domain" content={domain} />
+      {themeColor ? <meta name="theme-color" content={themeColor} /> : null}
     </Helmet>
   )
 }
@@ -59,6 +61,7 @@ HeadTags.propTypes = {
   keywords: PropTypes.string,
   twitterHandle: PropTypes.string,
   pageURL: PropTypes.string.isRequired,
+  themeColor: PropTypes.string,
 }
 
 HeadTags.defaultProps = {
@@ -72,6 +75,7 @@ HeadTags.defaultProps = {
   keywords:
     'tab for a cause, charity, tab, cause, giving, extension, browser, advertising',
   twitterHandle: '@TabForACause',
+  themeColor: undefined,
 }
 
 export default HeadTags

@@ -10,6 +10,7 @@ import Helmet from 'react-helmet'
 import Snackbar from '@mui/material/Snackbar'
 import Footer from 'src/components/FooterV2'
 import GoogleChrome from 'mdi-material-ui/GoogleChrome'
+import HeadTags from 'src/components/HeadTags'
 import { flushAllPromises } from 'src/utils/test-utils'
 
 data.data.sections.Financials.pdfs = [
@@ -47,6 +48,7 @@ jest.mock('src/utils/local-storage')
 jest.mock('src/utils/redirect')
 jest.mock('src/utils/location')
 jest.mock('src/utils/navigation')
+jest.mock('src/components/HeadTags', () => () => <span />)
 jest.mock('gatsby')
 
 Helmet.canUseDOM = false
@@ -311,5 +313,13 @@ describe('home page', () => {
     wrapper.find(Footer).find(GoogleChrome).simulate('click')
     wrapper.update()
     expect(localStorageMgr.setItem).toHaveBeenCalled()
+  })
+
+  it('passes the primary theme color to HeadTags', () => {
+    const HomePageWrapper = require('../V4HomePage').default
+    const mockProps = getMockProps()
+    const expectedColor = data.data.styles.colors.primary
+    const wrapper = mount(<HomePageWrapper {...mockProps} />)
+    expect(wrapper.find(HeadTags).prop('themeColor')).toEqual(expectedColor)
   })
 })
