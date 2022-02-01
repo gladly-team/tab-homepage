@@ -141,8 +141,16 @@ export const tabForTeamSeasTheme = createTheme({
       color: '#5094FB',
       fontFamily: 'Poppins',
       fontStyle: 'normal',
-      lineHeight: 1,
+      lineHeight: 1.15,
       fontSize: '4rem',
+    },
+    h3: {
+      fontWeight: 800,
+      color: '#5094FB',
+      fontFamily: 'Poppins',
+      fontStyle: 'normal',
+      lineHeight: 1.2,
+      fontSize: '2.5rem',
     },
     subtitle1: {
       fontWeight: 300,
@@ -214,7 +222,7 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
         color: primary,
         fontFamily: 'Poppins',
         fontStyle: 'normal',
-        lineHeight: 1,
+        lineHeight: 1.15,
         fontSize: '4rem',
       },
       h3: {
@@ -222,7 +230,7 @@ export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
         color: primary,
         fontFamily: 'Poppins',
         fontStyle: 'normal',
-        lineHeight: 1,
+        lineHeight: 1.2,
         fontSize: '2.5rem',
       },
       subtitle1: {
