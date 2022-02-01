@@ -184,8 +184,7 @@ exports.createPages = async ({ actions, graphql }) => {
                   q1Img {
                     childImageSharp {
                       gatsbyImageData(
-                        height: 100
-                        width: 103
+                        width: 92
                         quality: 100
                         backgroundColor: "white"
                         transformOptions: { fit: CONTAIN, cropFocus: SOUTHEAST }

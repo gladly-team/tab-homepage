@@ -10,9 +10,6 @@ import PageContentBox from 'src/components/PageContentBox'
 import { formatImg } from 'src/utils/formatting'
 import FinancialsQuartersButton from 'src/components/FinancialsHomePageButton'
 import { financialsURL } from 'src/utils/navigation'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 
 const DivWrapper = styled('div')(({ theme }) => ({
   margin: '0 auto',
@@ -24,29 +21,21 @@ const DivWrapper = styled('div')(({ theme }) => ({
   paddingTop: theme.spacing(12),
   paddingBottom: theme.spacing(12),
   [theme.breakpoints.down('md')]: {
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(10),
+  },
+  [theme.breakpoints.down('sm')]: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
   },
 }))
 
 const DivReportsContainer = styled('div')(({ theme }) => ({
   display: 'flex',
+  flexWrap: 'wrap',
   justifyContent: 'space-between',
-  // width: '86%',
-  marginTop: theme.spacing(4),
-  [theme.breakpoints.down('lg')]: {
-    display: 'none',
-  },
-}))
-
-const DivReportsSlider = styled('div')(({ theme }) => ({
-  display: 'none',
-  justifyContent: 'space-between',
-  width: '100%',
-  marginTop: theme.spacing(4),
-  [theme.breakpoints.down('lg')]: {
-    display: 'flex',
-  },
+  marginTop: theme.spacing(2),
+  marginBottom: theme.spacing(2),
 }))
 
 const DivTitleSectionWrapper = styled('div')(({ theme }) => ({
@@ -93,7 +82,7 @@ const TypographySubtitle = styled(Typography)(({ theme }) => ({
 }))
 
 const ButtonButtonStyles = styled(Button)(({ theme }) => ({
-  marginTop: 64,
+  marginTop: theme.spacing(0),
   minWidth: 240, // matches other buttons. TODO: reusable
 
   [theme.breakpoints.down('md')]: {
@@ -155,51 +144,6 @@ const Financials = ({ financialsData }) => {
             </Box>
           ))}
         </DivReportsContainer>
-        <DivReportsSlider>
-          <Slider
-            centerMode
-            dots
-            focusOnSelect
-            arrows={false}
-            slidesToShow={3}
-            style={{ width: '100%' }}
-            responsive={[
-              {
-                breakpoint: 360,
-                settings: {
-                  centerMode: false,
-                  slidesToShow: 1,
-                },
-              },
-              {
-                breakpoint: 500,
-                settings: {
-                  centerMode: true,
-                  slidesToShow: 1,
-                },
-              },
-              {
-                breakpoint: 600,
-                settings: {
-                  centerMode: false,
-                  slidesToShow: 2,
-                },
-              },
-              {
-                breakpoint: 900,
-                settings: {
-                  slidesToShow: 2,
-                },
-              },
-            ]}
-          >
-            {pdfs.map((pdf) => (
-              <Box sx={{ m: 1 }} key={pdf.quarter}>
-                <FinancialsQuartersButton quarterData={pdf} />
-              </Box>
-            ))}
-          </Slider>
-        </DivReportsSlider>
         <Box
           sx={{
             display: 'flex',

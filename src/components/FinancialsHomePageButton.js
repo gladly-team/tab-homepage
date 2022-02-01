@@ -15,6 +15,8 @@ const classes = {
 }
 
 const Root = styled('div')(({ theme }) => ({
+  padding: theme.spacing(1),
+
   [`& .${classes.logoContainer}`]: {
     flex: 1,
     display: 'flex',
@@ -22,19 +24,20 @@ const Root = styled('div')(({ theme }) => ({
   },
 
   [`& .${classes.Paper}`]: {
-    width: 240,
-    height: 100,
+    // width: 240,
+    minWidth: 170,
+    maxWidth: 240,
+    height: 90,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingRight: theme.spacing(3),
+    paddingRight: theme.spacing(2),
     transition: 'transform .1s ease-in-out',
   },
 
   [`& .${classes.image}`]: {
-    alignSelf: 'end',
-    height: '100px',
-    width: '103px',
+    height: '90px',
+    width: '92px',
   },
 }))
 
