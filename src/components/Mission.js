@@ -13,7 +13,6 @@ import rightBubble from 'src/img/causeshared/blobRight.svg'
 import V4InstallButton from 'src/components/V4InstallButton'
 
 const DivWrapper = styled('div')(({ theme }) => ({
-  minHeight: '100vh',
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',
@@ -22,16 +21,15 @@ const DivWrapper = styled('div')(({ theme }) => ({
   width: '100%',
   backgroundColor: '#FFFFFF',
   overflow: 'hidden',
-  paddingTop: theme.spacing(8),
-  paddingBottom: theme.spacing(8),
-
-  [theme.breakpoints.down('lg')]: {
-    paddingTop: theme.spacing(0),
-    paddingBottom: theme.spacing(4),
-  },
+  paddingTop: theme.spacing(6), // smaller b/c of img
+  paddingBottom: theme.spacing(12),
   [theme.breakpoints.down('md')]: {
-    paddingTop: theme.spacing(0),
-    paddingBottom: theme.spacing(4),
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(10),
+  },
+  [theme.breakpoints.down('sm')]: {
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(8),
   },
 }))
 
@@ -69,13 +67,6 @@ const DivTextContainer = styled('div')(({ theme }) => ({
   },
   color: theme.palette.primary.main,
   zIndex: 1,
-}))
-
-const GatsbyImageMissionImage = styled(GatsbyImage)(({ theme }) => ({
-  maxHeight: '90%',
-  maxWidth: 500,
-  flex: '1',
-  margin: theme.spacing(2),
 }))
 
 const TypographySubtitle = styled(Typography)(({ theme }) => ({
@@ -198,12 +189,23 @@ const Mission = ({ missionData, causeId }) => {
             />
           </Box>
         </DivTextContainer>
-        <GatsbyImageMissionImage
-          image={missionImage}
-          alt=""
-          placeholder="none"
-          backgroundColor="transparent"
-        />
+        <Box
+          sx={{
+            maxWidth: {
+              lg: '500px',
+              xs: '440px', // TODO: make reusable
+            },
+            flex: '1',
+            m: 2,
+          }}
+        >
+          <GatsbyImage
+            image={missionImage}
+            alt=""
+            placeholder="none"
+            backgroundColor="transparent"
+          />
+        </Box>
       </PageContentBox>
     </DivWrapper>
   )

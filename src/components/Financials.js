@@ -17,14 +17,12 @@ import 'slick-carousel/slick/slick-theme.css'
 const DivWrapper = styled('div')(({ theme }) => ({
   margin: '0 auto',
   display: 'flex',
-  minHeight: '100vh',
   flexDirection: 'column',
   width: '100%',
   justifyContent: 'center',
   alignItems: 'center',
-  paddingTop: theme.spacing(10),
-  paddingBottom: theme.spacing(10),
-
+  paddingTop: theme.spacing(12),
+  paddingBottom: theme.spacing(12),
   [theme.breakpoints.down('md')]: {
     paddingTop: theme.spacing(6),
     paddingBottom: theme.spacing(6),

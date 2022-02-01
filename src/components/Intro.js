@@ -33,8 +33,9 @@ const DivTitleText = styled('div')(({ theme }) => ({
 }))
 
 const DivSteps = styled('div')(({ theme }) => ({
-  marginLeft: 0,
-  marginRight: 'auto',
+  // Try centering content.
+  // marginLeft: 0,
+  // marginRight: 'auto',
   display: 'flex',
   flexDirection: 'row',
   marginTop: theme.spacing(2),
@@ -54,11 +55,6 @@ const DivStep = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     margin: theme.spacing(2),
   },
-}))
-
-const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: 500,
-  height: 'auto',
 }))
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
@@ -162,7 +158,16 @@ const Intro = ({ causeId, introData }) => {
             <Markdown>{subtitle}</Markdown>
           </Box>
         </DivTitleText>
-        <GatsbyImageTitleImage image={titleImage} alt="" />
+        <Box
+          sx={{
+            maxWidth: {
+              lg: '500px',
+              xs: '440px', // TODO: make reusable
+            },
+          }}
+        >
+          <GatsbyImage image={titleImage} alt="" />
+        </Box>
       </DivTitle>
       <DivSteps>
         <DivStep>
