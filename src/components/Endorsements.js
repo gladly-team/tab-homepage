@@ -328,7 +328,6 @@ const Endorsements = ({ endorsementsData, causeId }) => {
         <Box
           sx={{
             // TODO: reusable
-            mt: 2,
             display: 'flex',
             justifyContent: 'center',
             mt: 4,
