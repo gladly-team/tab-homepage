@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Paper from '@mui/material/Paper'
+import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
 import { formatImg } from 'src/utils/formatting'
 import Slider from 'react-slick'
@@ -57,34 +58,6 @@ const DivTitleSectionWrapper = styled('div')(({ theme }) => ({
   alignItems: 'center',
   flexDirection: 'column',
   width: '80%',
-}))
-
-const DivEndorserContainer = styled('div')(({ theme }) => ({
-  display: 'flex',
-  width: '90%',
-  flexWrap: 'wrap',
-  marginTop: theme.spacing(9),
-  justifyContent: 'center',
-
-  [theme.breakpoints.down('md')]: {
-    marginTop: theme.spacing(7),
-  },
-}))
-
-const DivEndorserTextContainer = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  width: '70%',
-
-  [theme.breakpoints.down('md')]: {
-    width: '90%',
-  },
-}))
-
-const GatsbyImageEndorserImage = styled(GatsbyImage)(({ theme }) => ({
-  width: '240px',
-  marginLeft: theme.spacing(2),
-  marginRight: theme.spacing(2),
 }))
 
 const DivEndorsementsSlider = styled('div')(({ theme }) => ({
@@ -141,7 +114,7 @@ const TypographyPaperText = styled(Typography)(({ theme }) => ({
 
 const DivArrowButton = styled('div')(({ theme }) => ({
   position: 'absolute',
-  right: '1%',
+  right: 8,
 
   [theme.breakpoints.down('md')]: {
     display: 'none',
@@ -210,21 +183,91 @@ const Endorsements = ({ endorsementsData, causeId }) => {
           </DivRatingContainer>
         </DivTitleSectionWrapper>
         {quote ? (
-          <DivEndorserContainer>
-            <GatsbyImageEndorserImage alt="" image={endorserImage} />
-            <DivEndorserTextContainer>
-              <TypographyTextSpacing variant="h3" color="primary">
-                {headerQuote}
-              </TypographyTextSpacing>
-              <TypographyTextSpacing variant="subtitle1">
-                {quote}
-              </TypographyTextSpacing>
-              <Typography variant="caption" color="primary">
-                {endorser}
-              </Typography>
-              <Typography>{endorserTitle}</Typography>
-            </DivEndorserTextContainer>
-          </DivEndorserContainer>
+          <Box
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              mt: 8,
+              mb: {
+                md: 0,
+                xs: 2,
+              },
+              ml: {
+                md: 4,
+                xs: 0,
+              },
+              mr: {
+                md: 4,
+                xs: 0,
+              },
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Box
+              sx={{
+                width: '240px',
+                ml: {
+                  xl: 6,
+                  lg: 6,
+                  md: 4,
+                  sm: 2,
+                  xs: 1,
+                },
+                mr: {
+                  xl: 6,
+                  lg: 6,
+                  md: 4,
+                  sm: 2,
+                  xs: 1,
+                },
+              }}
+            >
+              <GatsbyImage alt="" image={endorserImage} />
+            </Box>
+            <Box
+              sx={{
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                minWidth: '70%',
+                maxWidth: {
+                  md: '85%',
+                  sm: '100%',
+                },
+                pl: {
+                  md: 2,
+                  sm: 6,
+                  xs: 3,
+                },
+                pr: {
+                  md: 2,
+                  sm: 6,
+                  xs: 3,
+                },
+                m: 0,
+              }}
+            >
+              <Box>
+                <TypographyTextSpacing variant="h3" color="primary">
+                  {headerQuote}
+                </TypographyTextSpacing>
+              </Box>
+              <Box
+                sx={{
+                  pr: { lg: 8, md: 2, xs: 1 },
+                }}
+              >
+                <TypographyTextSpacing variant="subtitle1">
+                  {quote}
+                </TypographyTextSpacing>
+                <Typography variant="caption" color="primary">
+                  {endorser}
+                </Typography>
+                <Typography>{endorserTitle}</Typography>
+              </Box>
+            </Box>
+          </Box>
         ) : null}
         <DivEndorsementsSlider>
           <Slider
