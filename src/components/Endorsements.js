@@ -263,7 +263,7 @@ const Endorsements = ({ endorsementsData, causeId }) => {
                 <Typography variant="caption" color="primary">
                   {endorser}
                 </Typography>
-                <Typography>{endorserTitle}</Typography>
+                <Typography variant="body2">{endorserTitle}</Typography>
               </Box>
             </Box>
           </Box>
