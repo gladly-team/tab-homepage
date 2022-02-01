@@ -23,30 +23,11 @@ const DivLogoContainer = styled('div')(({ theme }) => ({
 
 const DivWave = styled('div')(({ theme }) => ({
   position: 'absolute',
+  width: '100%',
+  zIndex: -1,
 
   // avoids a gap appearing on some resolutions
   bottom: -2,
-
-  width: '100%',
-  zIndex: -1,
-
-  [theme.breakpoints.down('md')]: {
-    display: 'none',
-  },
-}))
-
-const DivWaveMobile = styled('div')(({ theme }) => ({
-  // avoids a gap appearing on some resolutions
-  marginBottom: -2,
-
-  display: 'none',
-  position: 'static',
-  width: '100%',
-  zIndex: -1,
-
-  [theme.breakpoints.down('md')]: {
-    display: 'block',
-  },
 }))
 
 const Landing = ({ landingData, causeId, moneyRaised }) => {
@@ -99,15 +80,15 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
           sx={{
             display: 'flex',
             flex: 1,
-            minHeight: 'calc(100vh - 64px)',
             alignItems: 'center',
             paddingTop: {
-              md: 0,
-              xs: 3,
+              md: 4,
+              xs: 6,
             },
             paddingBottom: {
-              md: 10,
-              xs: 3,
+              md: 18,
+              sm: 18,
+              xs: 12,
             },
 
             flexDirection: {
@@ -172,7 +153,10 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
               pr: 0,
               mt: 0,
               mb: 2,
-              maxWidth: 660,
+              maxWidth: {
+                lg: 660,
+                xs: 520,
+              },
             }}
           >
             <GatsbyImage image={ctaImage} alt="" />
@@ -182,9 +166,6 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
           <Wave color={theme.palette.primary.main} />
         </DivWave>
       </Box>
-      <DivWaveMobile>
-        <Wave color={theme.palette.primary.main} />
-      </DivWaveMobile>
     </div>
   )
 }
