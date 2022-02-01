@@ -40,8 +40,16 @@ const CharityIntro = ({ charityIntroData }) => {
             sm: 4,
             xs: 0,
           },
-          mt: 2,
-          mb: 2,
+          mt: {
+            md: 2,
+            sm: 4,
+            xs: 3,
+          },
+          mb: {
+            md: 2,
+            sm: 4,
+            xs: 3,
+          },
         }}
       >
         <GatsbyImageStepImage

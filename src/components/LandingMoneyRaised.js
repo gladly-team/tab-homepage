@@ -107,7 +107,7 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
                   lg: '4.6rem',
                   md: '3rem',
                   sm: '3.5rem',
-                  xs: '2.8rem',
+                  xs: '2.4rem',
                 },
               }}
             >

@@ -25,9 +25,13 @@ const DivWrapper = styled('div')(({ theme }) => ({
   paddingTop: theme.spacing(8),
   paddingBottom: theme.spacing(8),
 
+  [theme.breakpoints.down('lg')]: {
+    paddingTop: theme.spacing(0),
+    paddingBottom: theme.spacing(4),
+  },
   [theme.breakpoints.down('md')]: {
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
+    paddingTop: theme.spacing(0),
+    paddingBottom: theme.spacing(4),
   },
 }))
 
@@ -72,10 +76,6 @@ const GatsbyImageMissionImage = styled(GatsbyImage)(({ theme }) => ({
   maxWidth: 500,
   flex: '1',
   margin: theme.spacing(2),
-
-  [theme.breakpoints.down('md')]: {
-    maxWidth: 'unset',
-  },
 }))
 
 const TypographySubtitle = styled(Typography)(({ theme }) => ({
