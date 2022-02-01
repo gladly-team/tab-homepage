@@ -1,6 +1,5 @@
 var isRunningStorybook = process.env.RUNNING_STORYBOOK === 'true'
 var useLooseMode = isRunningStorybook
-var browserTargets = ['> 0.5%', 'not dead', 'last 2 versions']
 module.exports = {
   presets: [
     // Storybook requires loose mode enabled.
@@ -13,7 +12,7 @@ module.exports = {
       'babel-preset-gatsby',
       {
         targets: {
-          browsers: browserTargets,
+          browsers: ['> 0.5%, last 2 versions, not dead, not IE 11'],
         },
       },
     ],
