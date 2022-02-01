@@ -104,7 +104,7 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
                   // couldn't get it work as expected. Unclear if an MUI
                   // bug or if I don't understand the precedence rules.
                   xl: '5rem',
-                  lg: '4.2rem',
+                  lg: '4.6rem',
                   md: '3rem',
                   sm: '3.5rem',
                   xs: '2.8rem',

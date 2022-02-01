@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography'
 import Markdown from 'src/components/Markdown'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
+import PageContentBox from 'src/components/PageContentBox'
 import heartSquiggle from 'src/img/causeshared/mission_squiggle.png'
 import leftBubble from 'src/img/causeshared/blobLeft.svg'
 import rightBubble from 'src/img/causeshared/blobRight.svg'
@@ -29,19 +30,27 @@ const DivWrapper = styled('div')(({ theme }) => ({
   },
 }))
 
-const DivColumn = styled('div')(({ theme }) => ({
-  position: 'relative',
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: '85%',
-  height: '100%',
-
-  [theme.breakpoints.down('md')]: {
-    flexDirection: 'column-reverse',
-  },
-}))
+// const DivColumn = styled('div')(({ theme }) => ({
+//   position: 'relative',
+//   display: 'flex',
+//   flexDirection: 'row',
+//   alignItems: 'center',
+//   justifyContent: 'center',
+//   height: '100%',
+//   paddingLeft: theme.spacing(3), // matches other sections
+//   paddingRight: theme.spacing(3),
+//
+//   [theme.breakpoints.down('md')]: {
+//     flexDirection: 'column-reverse',
+//     paddingLeft: theme.spacing(6), // matches other sections
+//     paddingRight: theme.spacing(6),
+//   },
+//   [theme.breakpoints.down('sm')]: {
+//     flexDirection: 'column-reverse',
+//     paddingLeft: theme.spacing(3), // matches other sections
+//     paddingRight: theme.spacing(3),
+//   },
+// }))
 
 const DivTextContainer = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -49,13 +58,17 @@ const DivTextContainer = styled('div')(({ theme }) => ({
   flex: '1',
   marginTop: theme.spacing(2),
   marginBottom: theme.spacing(2),
+  marginRight: theme.spacing(4),
+  [theme.breakpoints.down('md')]: {
+    marginRight: theme.spacing(0),
+  },
   color: theme.palette.primary.main,
   zIndex: 1,
 }))
 
 const GatsbyImageMissionImage = styled(GatsbyImage)(({ theme }) => ({
   maxHeight: '90%',
-  maxWidth: '50%',
+  maxWidth: 500,
   flex: '1',
   margin: theme.spacing(2),
 
@@ -120,7 +133,37 @@ const Mission = ({ missionData, causeId }) => {
       <ImgSquiggle src={heartSquiggle} />
       <ImgLeftBubble src={leftBubble} />
       <ImgRightBubble src={rightBubble} />
-      <DivColumn>
+      <PageContentBox
+        sx={{
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: {
+            md: 'row',
+            xs: 'column-reverse',
+          },
+          paddingLeft: {
+            lg: 12, // matches other sections
+            md: 8, // matches other sections
+            sm: 6, // matches other sections
+            xs: 3, // matches other sections
+          },
+          paddingRight: {
+            md: 12,
+            lg: 8, // matches other sections
+            sm: 6, // matches other sections
+            xs: 3,
+          },
+          paddingTop: {
+            md: 8,
+            xs: 6,
+          },
+          paddingBottom: {
+            md: 8,
+            xs: 6,
+          },
+        }}
+      >
         <DivTextContainer>
           <Typography variant="h1" color="primary">
             {titleText}
@@ -137,7 +180,7 @@ const Mission = ({ missionData, causeId }) => {
           placeholder="none"
           backgroundColor="transparent"
         />
-      </DivColumn>
+      </PageContentBox>
     </DivWrapper>
   )
 }

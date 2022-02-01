@@ -18,8 +18,6 @@ const DivTitle = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column-reverse',
   },
-
-  width: '80%',
 }))
 
 const DivTitleText = styled('div')(({ theme }) => ({
@@ -36,22 +34,19 @@ const DivTitleText = styled('div')(({ theme }) => ({
 const DivSteps = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
-  paddingTop: theme.spacing(2),
-  paddingBottom: theme.spacing(2),
-  paddingLeft: theme.spacing(4),
-  paddingRight: theme.spacing(4),
+  marginTop: theme.spacing(2),
+  marginBottom: theme.spacing(2),
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
-    padding: theme.spacing(2),
   },
 }))
 
 const DivStep = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  margin: theme.spacing(8),
+  margin: theme.spacing(4),
   [theme.breakpoints.down('lg')]: {
-    margin: theme.spacing(4),
+    margin: theme.spacing(2),
   },
   [theme.breakpoints.down('md')]: {
     margin: theme.spacing(2),
@@ -59,7 +54,7 @@ const DivStep = styled('div')(({ theme }) => ({
 }))
 
 const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: 550,
+  maxWidth: 500,
   height: 'auto',
 }))
 
@@ -128,6 +123,17 @@ const Intro = ({ causeId, introData }) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        paddingLeft: {
+          lg: 12, // matches other sections
+          md: 8, // matches other sections
+          sm: 6, // matches other sections
+          xs: 3, // matches other sections
+        },
+        paddingRight: {
+          md: 8,
+          sm: 6, // matches other sections
+          xs: 3,
+        },
         paddingTop: {
           md: 8,
           xs: 6,

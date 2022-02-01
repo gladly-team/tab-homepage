@@ -78,21 +78,23 @@ const CharityIntro = ({ charityIntroData }) => {
             alignItems: 'center',
             pt: {
               lg: 10,
-              s: 8,
+              sm: 8,
               xs: 6,
             },
             pb: {
               lg: 10,
-              s: 8,
+              sm: 8,
               xs: 6,
             },
             pl: {
-              md: 4,
-              xs: 2,
+              md: 3, // matches other sections
+              sm: 6, // matches other sections
+              xs: 3, // matches other sections
             },
             pr: {
-              md: 4,
-              xs: 2,
+              md: 3,
+              sm: 6,
+              xs: 3,
             },
           }}
         >
@@ -111,7 +113,7 @@ const CharityIntro = ({ charityIntroData }) => {
               pb: 1,
               maxWidth: {
                 md: '90%',
-                xs: '95%',
+                sm: '100%',
               },
             }}
           >
@@ -127,7 +129,7 @@ const CharityIntro = ({ charityIntroData }) => {
               },
               maxWidth: {
                 md: '70%',
-                xs: '85%',
+                sm: '100%',
               },
             }}
           >
@@ -143,11 +145,11 @@ const CharityIntro = ({ charityIntroData }) => {
                 xs: 'column',
               },
               pl: {
-                md: 12,
+                md: 10,
                 xs: 0,
               },
               pr: {
-                md: 12,
+                md: 10,
                 xs: 0,
               },
               pt: 2,

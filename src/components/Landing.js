@@ -129,15 +129,15 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
                 xs: 'flex-start',
               },
               pl: {
-                lg: theme.spacing(16),
-                md: theme.spacing(8),
-                sm: theme.spacing(6),
-                xs: theme.spacing(4),
+                lg: 12,
+                md: 8,
+                sm: 6,
+                xs: 3,
               },
               pr: {
                 lg: 4,
                 md: 1,
-                xs: 2,
+                xs: 3,
               },
               marginTop: {
                 xs: 0,
