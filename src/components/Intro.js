@@ -59,7 +59,8 @@ const DivStep = styled('div')(({ theme }) => ({
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
   maxWidth: 400,
-  height: 'auto',
+  marginLeft: theme.spacing(2),
+  marginRight: theme.spacing(2),
 }))
 
 const AvatarNumberCircle = styled(Avatar)(({ theme }) => ({
