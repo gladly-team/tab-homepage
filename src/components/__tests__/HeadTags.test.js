@@ -16,6 +16,7 @@ const getMockProps = () => ({
   keywords: 'here, are, keywords',
   twitterHandle: '@example',
   pageURL: 'http://example.com/page/',
+  themeColor: '#dedede',
 })
 
 describe('index layout page', () => {
@@ -64,5 +65,21 @@ describe('index layout page', () => {
     const wrapper = shallow(<HeadTags {...getMockProps()} />)
     const elem = wrapper.find('meta[property="og:image"]')
     expect(elem.prop('content')).toBe('http://example.com/some/img.png')
+  })
+
+  it('sets the theme color, if provided', () => {
+    const HeadTags = require('src/components/HeadTags').default
+    const mockProps = { ...getMockProps(), themeColor: '#ccc' }
+    const wrapper = shallow(<HeadTags {...mockProps} />)
+    const elem = wrapper.find('meta[name="theme-color"]')
+    expect(elem.prop('content')).toEqual('#ccc')
+  })
+
+  it('does not set the theme color if not provided', () => {
+    const HeadTags = require('src/components/HeadTags').default
+    const mockProps = { ...getMockProps(), themeColor: null }
+    const wrapper = shallow(<HeadTags {...mockProps} />)
+    const elem = wrapper.find('meta[name="theme-color"]')
+    expect(elem.exists()).toBe(false)
   })
 })
