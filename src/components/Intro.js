@@ -3,8 +3,10 @@ import PropTypes from 'prop-types'
 import { styled } from '@mui/material/styles'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
+import PageContentBox from 'src/components/PageContentBox'
 import V4InstallButton from 'src/components/V4InstallButton'
 import Markdown from './Markdown'
 
@@ -17,8 +19,6 @@ const DivTitle = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column-reverse',
   },
-
-  width: '80%',
 }))
 
 const DivTitleText = styled('div')(({ theme }) => ({
@@ -33,40 +33,36 @@ const DivTitleText = styled('div')(({ theme }) => ({
 }))
 
 const DivSteps = styled('div')(({ theme }) => ({
+  marginLeft: 0,
+  marginRight: 'auto',
   display: 'flex',
   flexDirection: 'row',
-  paddingTop: theme.spacing(6),
-  padding: theme.spacing(4),
-
+  marginTop: theme.spacing(2),
+  marginBottom: theme.spacing(2),
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
-    padding: theme.spacing(2),
   },
 }))
 
 const DivStep = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-
-  '& img': {
-    maxWidth: '100%',
-    height: 'auto',
+  margin: theme.spacing(4),
+  [theme.breakpoints.down('lg')]: {
+    margin: theme.spacing(2),
   },
-
-  margin: theme.spacing(3),
+  [theme.breakpoints.down('md')]: {
+    margin: theme.spacing(2),
+  },
 }))
 
 const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: '45%',
+  maxWidth: 500,
   height: 'auto',
-
-  [theme.breakpoints.down('md')]: {
-    maxWidth: '100%',
-  },
 }))
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: '100%',
+  maxWidth: 400,
   height: 'auto',
 }))
 
@@ -83,20 +79,6 @@ const AvatarNumberCircle = styled(Avatar)(({ theme }) => ({
   marginRight: theme.spacing(2),
   fontFamily: 'Poppins',
   alignSelf: 'start',
-}))
-
-const DivWrapper = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  paddingTop: theme.spacing(8),
-  paddingBottom: theme.spacing(8),
-
-  [theme.breakpoints.down('md')]: {
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
-  },
 }))
 
 const DivStepText = styled('div')(({ theme }) => ({
@@ -138,13 +120,46 @@ const Intro = ({ causeId, introData }) => {
   const image2 = getImage(formatImg(img2))
   const image3 = getImage(formatImg(img3))
   return (
-    <DivWrapper>
+    <PageContentBox
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingLeft: {
+          lg: 12, // matches other sections
+          md: 8, // matches other sections
+          sm: 6, // matches other sections
+          xs: 3, // matches other sections
+        },
+        paddingRight: {
+          md: 8,
+          sm: 6, // matches other sections
+          xs: 3,
+        },
+        paddingTop: {
+          md: 8,
+          xs: 6,
+        },
+        paddingBottom: {
+          md: 8,
+          xs: 6,
+        },
+      }}
+    >
       <DivTitle>
         <DivTitleText>
           <TypographyTitleTypography variant="h1" color="primary">
             {title}
           </TypographyTitleTypography>
-          <Markdown>{subtitle}</Markdown>
+          <Box
+            sx={{
+              // Matches landing page
+              mr: { lg: 14, md: 4, xs: 2 },
+            }}
+          >
+            <Markdown>{subtitle}</Markdown>
+          </Box>
         </DivTitleText>
         <GatsbyImageTitleImage image={titleImage} alt="" />
       </DivTitle>
@@ -171,8 +186,23 @@ const Intro = ({ causeId, introData }) => {
           <GatsbyImageStepImage image={image3} alt="" />
         </DivStep>
       </DivSteps>
-      <V4InstallButton color="secondary" size="medium" causeId={causeId} />
-    </DivWrapper>
+      <Box
+        sx={{
+          // TODO: reusable
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <V4InstallButton
+          color="secondary"
+          size="medium"
+          causeId={causeId}
+          fullWidth
+          style={{ minWidth: 240 }}
+        />
+      </Box>
+    </PageContentBox>
   )
 }
 Intro.propTypes = {

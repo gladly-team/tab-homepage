@@ -14,10 +14,4 @@ describe('landing money raised component', () => {
     const LandingMoneyRaised = require('../LandingMoneyRaised').default
     mount(<LandingMoneyRaised {...getMockProps()} />)
   })
-
-  it('renders a MoneyRaisedDisplay', () => {
-    const LandingMoneyRaised = require('../LandingMoneyRaised').default
-    const wrapper = mount(<LandingMoneyRaised {...getMockProps()} />)
-    expect(wrapper.find(MoneyRaisedDisplay)).toHaveLength(1)
-  })
 })

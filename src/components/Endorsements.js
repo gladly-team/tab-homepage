@@ -4,9 +4,11 @@ import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Paper from '@mui/material/Paper'
+import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
 import { formatImg } from 'src/utils/formatting'
 import Slider from 'react-slick'
+import PageContentBox from 'src/components/PageContentBox'
 
 // Icons
 import Star from '@mui/icons-material/Star'
@@ -18,11 +20,8 @@ import V4InstallButton from './V4InstallButton'
 
 const DivWrapper = styled('div')(({ theme }) => ({
   margin: '0 auto',
-  display: 'flex',
-  flexDirection: 'column',
   paddingTop: theme.spacing(15.5),
   width: '100%',
-  alignItems: 'center',
   background: '#FAFAFA',
   paddingBottom: theme.spacing(9),
 
@@ -49,44 +48,12 @@ const DivStarsContainer = styled('div')(({ theme }) => ({
   margin: theme.spacing(0.5),
 }))
 
-const TypographyRatingsText = styled(Typography)(({ theme }) => ({
-  margin: theme.spacing(0.5),
-}))
-
 const DivTitleSectionWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   textAlign: 'center',
   alignItems: 'center',
   flexDirection: 'column',
   width: '80%',
-}))
-
-const DivEndorserContainer = styled('div')(({ theme }) => ({
-  display: 'flex',
-  width: '90%',
-  flexWrap: 'wrap',
-  marginTop: theme.spacing(9),
-  justifyContent: 'center',
-
-  [theme.breakpoints.down('md')]: {
-    marginTop: theme.spacing(7),
-  },
-}))
-
-const DivEndorserTextContainer = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  width: '70%',
-
-  [theme.breakpoints.down('md')]: {
-    width: '90%',
-  },
-}))
-
-const GatsbyImageEndorserImage = styled(GatsbyImage)(({ theme }) => ({
-  width: '240px',
-  marginLeft: theme.spacing(2),
-  marginRight: theme.spacing(2),
 }))
 
 const DivEndorsementsSlider = styled('div')(({ theme }) => ({
@@ -187,98 +154,204 @@ const Endorsements = ({ endorsementsData, causeId }) => {
 
   return (
     <DivWrapper>
-      <DivTitleSectionWrapper>
-        <Typography variant="h2" color="primary">
-          {title}
-        </Typography>
-        <DivRatingContainer>
-          <DivStarsContainer>
-            <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
-            <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
-            <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
-            <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
-            <StarHalf style={{ color: '#ffc533', width: 18, height: 18 }} />
-          </DivStarsContainer>
-          <TypographyRatingsText>
-            215,000+ people are Tabbing on Chrome
-          </TypographyRatingsText>
-        </DivRatingContainer>
-      </DivTitleSectionWrapper>
-      {quote ? (
-        <DivEndorserContainer>
-          <GatsbyImageEndorserImage alt="" image={endorserImage} />
-          <DivEndorserTextContainer>
-            <TypographyTextSpacing variant="h3" color="primary">
-              {headerQuote}
-            </TypographyTextSpacing>
-            <TypographyTextSpacing variant="subtitle1">
-              {quote}
-            </TypographyTextSpacing>
-            <Typography variant="caption" color="primary">
-              {endorser}
+      <PageContentBox
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <DivTitleSectionWrapper>
+          <Typography variant="h2" color="primary">
+            {title}
+          </Typography>
+          <DivRatingContainer>
+            <DivStarsContainer>
+              <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+              <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+              <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+              <Star style={{ color: '#ffc533', width: 18, height: 18 }} />
+              <StarHalf style={{ color: '#ffc533', width: 18, height: 18 }} />
+            </DivStarsContainer>
+            <Typography sx={{ margin: 1 }}>
+              215,000+ people are Tabbing on Chrome
             </Typography>
-            <Typography>{endorserTitle}</Typography>
-          </DivEndorserTextContainer>
-        </DivEndorserContainer>
-      ) : null}
-      <DivEndorsementsSlider>
-        <Slider
-          dots
-          ref={sliderRef}
-          focusOnSelect
-          arrows={false}
-          style={{ width: '100%' }}
-          slidesToShow={3}
-          responsive={[
-            {
-              breakpoint: 800,
-              settings: {
-                slidesToShow: 1,
+          </DivRatingContainer>
+        </DivTitleSectionWrapper>
+        {quote ? (
+          <Box
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              mt: {
+                md: 6,
+                xs: 4,
               },
-            },
-            {
-              breakpoint: 1000,
-              settings: {
-                slidesToShow: 2,
+              mb: {
+                md: 0,
+                xs: 2,
               },
-            },
-          ]}
-        >
-          {smallEndorsements.map((endorsement) => (
-            <DivEndorsementPaper key={endorsement.endorser}>
-              <StyledPaper elevation={3}>
-                <DivEndorsementPaperTitleContainer>
-                  <GatsbyImage
-                    alt=""
-                    image={getImage(formatImg(endorsement.img))}
-                    style={{
-                      height: '43px',
-                      width: '43px',
-                      marginRight: '16px',
-                      borderRadius: '50%',
-                    }}
-                  />
-                  <Typography variant="caption" color="primary">
-                    {endorsement.endorser}
-                  </Typography>
-                </DivEndorsementPaperTitleContainer>
-                <TypographyPaperText>
-                  {endorsement.endorsement}
-                </TypographyPaperText>
-              </StyledPaper>
-            </DivEndorsementPaper>
-          ))}
-        </Slider>
-        <DivArrowButton>
-          <IconButton
-            onClick={() => sliderRef.current.slickNext()}
-            size="large"
+              ml: {
+                md: 4,
+                xs: 0,
+              },
+              mr: {
+                md: 4,
+                xs: 0,
+              },
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
           >
-            <Arrow />
-          </IconButton>
-        </DivArrowButton>
-      </DivEndorsementsSlider>
-      <V4InstallButton causeId={causeId} />
+            <Box
+              sx={{
+                width: '240px',
+                ml: {
+                  xl: 6,
+                  lg: 6,
+                  md: 4,
+                  sm: 2,
+                  xs: 1,
+                },
+                mr: {
+                  xl: 6,
+                  lg: 6,
+                  md: 4,
+                  sm: 2,
+                  xs: 1,
+                },
+              }}
+            >
+              <GatsbyImage alt="" image={endorserImage} />
+            </Box>
+            <Box
+              sx={{
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                minWidth: '70%',
+                maxWidth: {
+                  md: '85%',
+                  sm: '100%',
+                },
+                pl: {
+                  md: 2,
+                  sm: 6,
+                  xs: 3,
+                },
+                pr: {
+                  md: 2,
+                  sm: 6,
+                  xs: 3,
+                },
+                m: 0,
+              }}
+            >
+              <Box>
+                <TypographyTextSpacing variant="h3" color="primary">
+                  {headerQuote}
+                </TypographyTextSpacing>
+              </Box>
+              <Box
+                sx={{
+                  pr: { lg: 8, md: 2, xs: 1 },
+                }}
+              >
+                <TypographyTextSpacing variant="subtitle1">
+                  {quote}
+                </TypographyTextSpacing>
+                <Typography variant="caption" color="primary">
+                  {endorser}
+                </Typography>
+                <Typography variant="body2">{endorserTitle}</Typography>
+              </Box>
+            </Box>
+          </Box>
+        ) : null}
+        <DivEndorsementsSlider>
+          <Slider
+            dots
+            ref={sliderRef}
+            focusOnSelect
+            arrows={false}
+            style={{ width: '100%' }}
+            slidesToShow={3}
+            responsive={[
+              {
+                breakpoint: 800,
+                settings: {
+                  slidesToShow: 1,
+                },
+              },
+              {
+                breakpoint: 1000,
+                settings: {
+                  slidesToShow: 2,
+                },
+              },
+            ]}
+          >
+            {smallEndorsements.map((endorsement) => (
+              <DivEndorsementPaper key={endorsement.endorser}>
+                <StyledPaper elevation={3}>
+                  <DivEndorsementPaperTitleContainer>
+                    <GatsbyImage
+                      alt=""
+                      image={getImage(formatImg(endorsement.img))}
+                      style={{
+                        height: '43px',
+                        width: '43px',
+                        marginRight: '16px',
+                        borderRadius: '50%',
+                      }}
+                    />
+                    <Typography variant="caption" color="primary">
+                      {endorsement.endorser}
+                    </Typography>
+                  </DivEndorsementPaperTitleContainer>
+                  <TypographyPaperText>
+                    {endorsement.endorsement}
+                  </TypographyPaperText>
+                </StyledPaper>
+              </DivEndorsementPaper>
+            ))}
+          </Slider>
+          <DivArrowButton>
+            <IconButton
+              onClick={() => sliderRef.current.slickNext()}
+              size="large"
+            >
+              <Arrow />
+            </IconButton>
+          </DivArrowButton>
+        </DivEndorsementsSlider>
+        <Box
+          sx={{
+            // TODO: reusable
+            display: 'flex',
+            justifyContent: 'center',
+            mt: 4,
+            pl: {
+              md: 0,
+              xs: 3, // matches other buttons
+            },
+            pr: {
+              md: 0,
+              xs: 3,
+            },
+            width: {
+              md: 'inherit',
+              xs: '100%',
+            },
+          }}
+        >
+          <V4InstallButton
+            causeId={causeId}
+            fullWidth
+            style={{ minWidth: 240 }}
+          />
+        </Box>
+      </PageContentBox>
     </DivWrapper>
   )
 }

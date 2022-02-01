@@ -9,127 +9,174 @@ import MuiAccordion, { accordionClasses } from '@mui/material/Accordion'
 import MuiAccordionSummary from '@mui/material/AccordionSummary'
 import MuiAccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import Box from '@mui/material/Box'
 import Markdown from 'src/components/Markdown'
+import PageContentBox from 'src/components/PageContentBox'
 
 const ExpandMoreIconExpandIcon = styled(ExpandMoreIcon)(({ theme }) => ({
   color: theme.palette.secondary.main,
-}))
-
-const DivParent = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  width: '100%',
-  minHeight: '100vh',
-  background: 'white',
-  alignItems: 'center',
-  justifyContent: 'center',
-  paddingTop: theme.spacing(2),
-  paddingBottom: theme.spacing(2),
-
-  [theme.breakpoints.down('md')]: {
-    paddingTop: theme.spacing(0),
-    paddingBottom: theme.spacing(0),
-  },
-}))
-
-const DivRow = styled('div')(({ theme }) => ({
-  width: '90%',
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'flex-start',
-  marginTop: theme.spacing(8),
-  marginBottom: theme.spacing(8),
-
-  [theme.breakpoints.down('md')]: {
-    flexDirection: 'column',
-  },
-}))
-
-const DivFaqSection = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  paddingLeft: theme.spacing(3),
-
-  [theme.breakpoints.down('md')]: {
-    paddingLeft: theme.spacing(0),
-  },
-}))
-
-const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: '35%',
-
-  [theme.breakpoints.down('md')]: {
-    maxWidth: 'unset',
-  },
-}))
-
-const DivTitleAndPattern = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
 }))
 
 const ImgFaqPattern = styled('img')(({ theme }) => ({
   height: theme.spacing(12),
 }))
 
-const TypographyCopy = styled(Typography)(({ theme }) => ({
-  marginTop: theme.spacing(3),
-  marginBottom: theme.spacing(3),
-}))
-
 const FAQ = ({ faqData }) => {
   const { img, questions } = faqData
   const image = getImage(formatImg(img))
-  const questionComponents = questions.map((question, index) => (
-    <MuiAccordion
-      square
-      elevation={0}
-      key={question.question}
+  return (
+    <Box
       sx={{
-        '&::before': {
-          backgroundColor: 'transparent',
-          top: '0px',
-        },
-        [`& .${accordionClasses.root}`]: {
-          paddingTop: '0px',
-        },
-        borderBottom: '2px #F9EBDC solid',
+        width: '100%',
+        minHeight: '100vh',
+        background: 'white',
       }}
     >
-      <MuiAccordionSummary expandIcon={<ExpandMoreIconExpandIcon />}>
-        <Typography variant="caption" color="primary">
-          {question.question}
-        </Typography>
-      </MuiAccordionSummary>
-      <MuiAccordionDetails>
-        <Markdown>{question.answer}</Markdown>
-      </MuiAccordionDetails>
-    </MuiAccordion>
-  ))
-  return (
-    <DivParent>
-      <DivRow>
-        <GatsbyImageTitleImage
-          alt=""
-          imgStyle={{
-            objectFit: 'scale-down',
+      <PageContentBox
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          pt: {
+            md: 2,
+            xs: 0,
+          },
+          pb: {
+            md: 2,
+            xs: 0,
+          },
+        }}
+      >
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: {
+              md: 'row',
+              xs: 'column',
+            },
+            alignItems: 'flex-start',
+            mt: 8,
+            mb: 8,
           }}
-          image={image}
-        />
-        <DivFaqSection>
-          <DivTitleAndPattern>
-            <Typography variant="h1">FAQ</Typography>
-            <ImgFaqPattern src={faqPattern} />
-          </DivTitleAndPattern>
-          <TypographyCopy>
-            Check out some of our frequently asked questions. We think you’ll
-            find what you’re looking for.
-          </TypographyCopy>
-          {questionComponents}
-        </DivFaqSection>
-      </DivRow>
-    </DivParent>
+        >
+          <Box
+            sx={{
+              alignSelf: 'center',
+              maxWidth: 550,
+              margin: '0 auto',
+              ml: 2,
+              mr: 2,
+            }}
+          >
+            <GatsbyImage
+              alt=""
+              imgStyle={{
+                objectFit: 'scale-down',
+              }}
+              image={image}
+            />
+          </Box>
+          <Box
+            sx={{
+              maxWidth: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              paddingLeft: {
+                md: 3,
+                xs: 0,
+              },
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                overflow: 'hidden',
+                maxWidth: '100%',
+                ml: {
+                  sm: 3,
+                  xs: 2,
+                },
+                mr: {
+                  sm: 3,
+                  xs: 0,
+                },
+              }}
+            >
+              <Typography variant="h1">FAQ</Typography>
+              <ImgFaqPattern src={faqPattern} />
+            </Box>
+            <Box
+              sx={{
+                ml: {
+                  sm: 3,
+                  xs: 2,
+                },
+                mr: {
+                  sm: 3,
+                  xs: 2,
+                },
+                mb: 2,
+                mt: 2,
+              }}
+            >
+              <Typography>
+                Check out some of our frequently asked questions. We think
+                you’ll find what you’re looking for.
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                mr: {
+                  md: 6,
+                  sm: 3,
+                  xs: 0,
+                },
+                ml: {
+                  md: 0,
+                  sm: 3,
+                  xs: 0,
+                },
+              }}
+            >
+              {questions.map((question, index) => (
+                <MuiAccordion
+                  key={question.question}
+                  square
+                  elevation={0}
+                  sx={{
+                    maxWidth: '100%',
+                    '&::before': {
+                      backgroundColor: 'transparent',
+                      top: '0px',
+                    },
+                    [`& .${accordionClasses.root}`]: {
+                      paddingTop: '0px',
+                    },
+                    borderBottom: '2px #F9EBDC solid',
+                  }}
+                >
+                  <MuiAccordionSummary
+                    expandIcon={<ExpandMoreIconExpandIcon />}
+                  >
+                    <Typography variant="caption" color="primary">
+                      {question.question}
+                    </Typography>
+                  </MuiAccordionSummary>
+                  <MuiAccordionDetails>
+                    <Markdown>{question.answer}</Markdown>
+                  </MuiAccordionDetails>
+                </MuiAccordion>
+              ))}
+            </Box>
+          </Box>
+        </Box>
+      </PageContentBox>
+    </Box>
   )
 }
 

@@ -50,11 +50,11 @@
         "title": "The simplest way to make an impact",
         "subtitle": "Turn your daily habits into a new life for shelter cats. Do good, feel good.",
         "img1": "../../img/cats/intro1.png",
-        "img1Subtext": "##### Open new tabs on your browser.",
+        "img1Subtext": "###### Open new tabs on your browser.",
         "img2": "../../img/cats/intro2.png",
-        "img2Subtext": "##### Earn money for cat training programs.",
+        "img2Subtext": "###### Earn money for cat training programs.",
         "img3": "../../img/cats/intro3.png",
-        "img3Subtext": "##### Help get more cats adopted."
+        "img3Subtext": "###### Help get more cats adopted."
       },
       "Mission": {
         "missionURL": "/cats/",

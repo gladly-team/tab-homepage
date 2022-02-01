@@ -2,9 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
 import Markdown from 'src/components/Markdown'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { formatImg } from 'src/utils/formatting'
+import PageContentBox from 'src/components/PageContentBox'
 import heartSquiggle from 'src/img/causeshared/mission_squiggle.png'
 import leftBubble from 'src/img/causeshared/blobLeft.svg'
 import rightBubble from 'src/img/causeshared/blobRight.svg'
@@ -23,25 +25,37 @@ const DivWrapper = styled('div')(({ theme }) => ({
   paddingTop: theme.spacing(8),
   paddingBottom: theme.spacing(8),
 
+  [theme.breakpoints.down('lg')]: {
+    paddingTop: theme.spacing(0),
+    paddingBottom: theme.spacing(4),
+  },
   [theme.breakpoints.down('md')]: {
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
+    paddingTop: theme.spacing(0),
+    paddingBottom: theme.spacing(4),
   },
 }))
 
-const DivColumn = styled('div')(({ theme }) => ({
-  position: 'relative',
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: '85%',
-  height: '100%',
-
-  [theme.breakpoints.down('md')]: {
-    flexDirection: 'column-reverse',
-  },
-}))
+// const DivColumn = styled('div')(({ theme }) => ({
+//   position: 'relative',
+//   display: 'flex',
+//   flexDirection: 'row',
+//   alignItems: 'center',
+//   justifyContent: 'center',
+//   height: '100%',
+//   paddingLeft: theme.spacing(3), // matches other sections
+//   paddingRight: theme.spacing(3),
+//
+//   [theme.breakpoints.down('md')]: {
+//     flexDirection: 'column-reverse',
+//     paddingLeft: theme.spacing(6), // matches other sections
+//     paddingRight: theme.spacing(6),
+//   },
+//   [theme.breakpoints.down('sm')]: {
+//     flexDirection: 'column-reverse',
+//     paddingLeft: theme.spacing(3), // matches other sections
+//     paddingRight: theme.spacing(3),
+//   },
+// }))
 
 const DivTextContainer = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -49,19 +63,19 @@ const DivTextContainer = styled('div')(({ theme }) => ({
   flex: '1',
   marginTop: theme.spacing(2),
   marginBottom: theme.spacing(2),
+  marginRight: theme.spacing(4),
+  [theme.breakpoints.down('md')]: {
+    marginRight: theme.spacing(0),
+  },
   color: theme.palette.primary.main,
   zIndex: 1,
 }))
 
 const GatsbyImageMissionImage = styled(GatsbyImage)(({ theme }) => ({
   maxHeight: '90%',
-  maxWidth: '50%',
+  maxWidth: 500,
   flex: '1',
   margin: theme.spacing(2),
-
-  [theme.breakpoints.down('md')]: {
-    maxWidth: 'unset',
-  },
 }))
 
 const TypographySubtitle = styled(Typography)(({ theme }) => ({
@@ -120,16 +134,69 @@ const Mission = ({ missionData, causeId }) => {
       <ImgSquiggle src={heartSquiggle} />
       <ImgLeftBubble src={leftBubble} />
       <ImgRightBubble src={rightBubble} />
-      <DivColumn>
+      <PageContentBox
+        sx={{
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: {
+            md: 'row',
+            xs: 'column-reverse',
+          },
+          paddingLeft: {
+            lg: 12, // matches other sections
+            md: 8, // matches other sections
+            sm: 6, // matches other sections
+            xs: 3, // matches other sections
+          },
+          paddingRight: {
+            md: 12,
+            lg: 8, // matches other sections
+            sm: 6, // matches other sections
+            xs: 3,
+          },
+          paddingTop: {
+            md: 6,
+            xs: 0,
+          },
+          paddingBottom: {
+            md: 6,
+            xs: 0,
+          },
+        }}
+      >
         <DivTextContainer>
           <Typography variant="h1" color="primary">
             {titleText}
           </Typography>
+
           <TypographySubtitle variant="h5" color="primary">
             {subtitleText}
           </TypographySubtitle>
-          <Markdown>{bodyText}</Markdown>
-          <V4InstallButton causeId={causeId} fullWidth />
+          <Box
+            sx={{
+              // TODO: reusable for left-aligned sections
+              // Matches landing page
+              mr: { lg: 14, md: 4, xs: 2 },
+            }}
+          >
+            <Markdown>{bodyText}</Markdown>
+          </Box>
+          <Box
+            sx={{
+              // TODO: reusable
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'flex-start',
+              mt: 4,
+            }}
+          >
+            <V4InstallButton
+              causeId={causeId}
+              fullWidth
+              style={{ minWidth: 240 }}
+            />
+          </Box>
         </DivTextContainer>
         <GatsbyImageMissionImage
           image={missionImage}
@@ -137,7 +204,7 @@ const Mission = ({ missionData, causeId }) => {
           placeholder="none"
           backgroundColor="transparent"
         />
-      </DivColumn>
+      </PageContentBox>
     </DivWrapper>
   )
 }
