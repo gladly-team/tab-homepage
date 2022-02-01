@@ -6,6 +6,7 @@ import Box from '@mui/material/Box'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Link from 'src/components/Link'
 import Button from '@mui/material/Button'
+import PageContentBox from 'src/components/PageContentBox'
 import { formatImg } from 'src/utils/formatting'
 import FinancialsQuartersButton from 'src/components/FinancialsHomePageButton'
 import { financialsURL } from 'src/utils/navigation'
@@ -42,8 +43,7 @@ const DivReportsContainer = styled('div')(({ theme }) => ({
 const DivReportsSlider = styled('div')(({ theme }) => ({
   display: 'none',
   justifyContent: 'space-between',
-  width: '96%',
-  maxWidth: '800px',
+  width: '100%',
   marginTop: theme.spacing(4),
   [theme.breakpoints.down('lg')]: {
     display: 'flex',
@@ -115,66 +115,80 @@ const Financials = ({ financialsData }) => {
   const { title, text, buttonText, ctaImg, pdfs } = financialsData
   const Image = getImage(formatImg(ctaImg))
   return (
-    <DivWrapper>
-      <DivTitleSectionWrapper>
-        <DivHalfScreenLeft>
-          <GatsbyImage
-            image={Image}
-            alt=""
-            placeholder="none"
-            backgroundColor="transparent"
-          />
-        </DivHalfScreenLeft>
-        <DivHalfScreenRight>
-          <Typography variant="h2" color="primary">
-            {title}
-          </Typography>
-          <TypographySubtitle>{text}</TypographySubtitle>
-        </DivHalfScreenRight>
-      </DivTitleSectionWrapper>
-      <DivReportsContainer>
-        {pdfs.map((pdf) => (
-          <Box sx={{ m: 1 }} key={pdf.quarter}>
-            <FinancialsQuartersButton quarterData={pdf} />
-          </Box>
-        ))}
-      </DivReportsContainer>
-      <DivReportsSlider>
-        <Slider
-          centerMode
-          dots
-          focusOnSelect
-          arrows={false}
-          slidesToShow={2}
-          style={{ width: '100%' }}
-          responsive={[
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 1,
-              },
-            },
-            {
-              breakpoint: 1200,
-              settings: {
-                slidesToShow: 2,
-              },
-            },
-          ]}
-        >
+    <PageContentBox>
+      <DivWrapper>
+        <DivTitleSectionWrapper>
+          <DivHalfScreenLeft>
+            <GatsbyImage
+              image={Image}
+              alt=""
+              placeholder="none"
+              backgroundColor="transparent"
+            />
+          </DivHalfScreenLeft>
+          <DivHalfScreenRight>
+            <Typography variant="h2" color="primary">
+              {title}
+            </Typography>
+            <TypographySubtitle>{text}</TypographySubtitle>
+          </DivHalfScreenRight>
+        </DivTitleSectionWrapper>
+        <DivReportsContainer>
           {pdfs.map((pdf) => (
             <Box sx={{ m: 1 }} key={pdf.quarter}>
               <FinancialsQuartersButton quarterData={pdf} />
             </Box>
           ))}
-        </Slider>
-      </DivReportsSlider>
-      <LinkLinkStyles to={financialsURL}>
-        <ButtonButtonStyles variant="contained" color="secondary" size="large">
-          {buttonText}
-        </ButtonButtonStyles>
-      </LinkLinkStyles>
-    </DivWrapper>
+        </DivReportsContainer>
+        <DivReportsSlider>
+          <Slider
+            centerMode
+            dots
+            focusOnSelect
+            arrows={false}
+            slidesToShow={3}
+            style={{ width: '100%' }}
+            responsive={[
+              {
+                breakpoint: 400,
+                settings: {
+                  centerMode: true,
+                  slidesToShow: 1,
+                },
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  centerMode: false,
+                  slidesToShow: 2,
+                },
+              },
+              {
+                breakpoint: 900,
+                settings: {
+                  slidesToShow: 2,
+                },
+              },
+            ]}
+          >
+            {pdfs.map((pdf) => (
+              <Box sx={{ m: 1 }} key={pdf.quarter}>
+                <FinancialsQuartersButton quarterData={pdf} />
+              </Box>
+            ))}
+          </Slider>
+        </DivReportsSlider>
+        <LinkLinkStyles to={financialsURL}>
+          <ButtonButtonStyles
+            variant="contained"
+            color="secondary"
+            size="large"
+          >
+            {buttonText}
+          </ButtonButtonStyles>
+        </LinkLinkStyles>
+      </DivWrapper>
+    </PageContentBox>
   )
 }
 Financials.propTypes = {
