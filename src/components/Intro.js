@@ -184,7 +184,22 @@ const Intro = ({ causeId, introData }) => {
           <GatsbyImageStepImage image={image3} alt="" />
         </DivStep>
       </DivSteps>
-      <V4InstallButton color="secondary" size="medium" causeId={causeId} />
+      <Box
+        sx={{
+          // TODO: reusable
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <V4InstallButton
+          color="secondary"
+          size="medium"
+          causeId={causeId}
+          fullWidth
+          style={{ minWidth: 240 }}
+        />
+      </Box>
     </PageContentBox>
   )
 }

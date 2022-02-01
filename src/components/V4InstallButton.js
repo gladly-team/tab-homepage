@@ -21,7 +21,7 @@ const classes = {
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
 const Root = styled('div')(({ theme }) => ({
   [`& .${classes.buttonStyles}`]: {
-    maxWidth: theme.spacing(30),
+    maxWidth: 240,
     marginTop: theme.spacing(4),
     [theme.breakpoints.down('md')]: {
       maxWidth: 'unset',
@@ -30,8 +30,7 @@ const Root = styled('div')(({ theme }) => ({
   },
 
   [`& .${classes.buttonStylesFullWidth}`]: {
-    maxWidth: theme.spacing(30),
-    marginTop: theme.spacing(4),
+    maxWidth: 240,
     [theme.breakpoints.down('md')]: {
       maxWidth: 'unset',
       width: '100%',
@@ -39,7 +38,7 @@ const Root = styled('div')(({ theme }) => ({
   },
 }))
 
-const V4InstallButton = ({ causeId, fullWidth, buttonClassName }) => {
+const V4InstallButton = ({ causeId, fullWidth, buttonClassName, style }) => {
   // Don't run if a cause ID is missing.
   if (!causeId) {
     throw new Error('A cause ID is missing in an install button.')
@@ -69,6 +68,7 @@ const V4InstallButton = ({ causeId, fullWidth, buttonClassName }) => {
         onUnsupportedBrowserInstallClick={() => {
           setShowUnsupportedBrowserMessage(true)
         }}
+        style={style}
       />
     </Root>
   )
@@ -78,8 +78,10 @@ V4InstallButton.propTypes = {
   causeId: PropTypes.string.isRequired,
   buttonClassName: PropTypes.string,
   fullWidth: PropTypes.bool,
+  style: PropTypes.object,
 }
 V4InstallButton.defaultProps = {
   fullWidth: false,
+  style: {},
 }
 export default V4InstallButton

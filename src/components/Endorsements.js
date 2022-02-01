@@ -325,7 +325,33 @@ const Endorsements = ({ endorsementsData, causeId }) => {
             </IconButton>
           </DivArrowButton>
         </DivEndorsementsSlider>
-        <V4InstallButton causeId={causeId} />
+        <Box
+          sx={{
+            // TODO: reusable
+            mt: 2,
+            display: 'flex',
+            justifyContent: 'center',
+            mt: 4,
+            pl: {
+              md: 0,
+              xs: 3, // matches other buttons
+            },
+            pr: {
+              md: 0,
+              xs: 3,
+            },
+            width: {
+              md: 'inherit',
+              xs: '100%',
+            },
+          }}
+        >
+          <V4InstallButton
+            causeId={causeId}
+            fullWidth
+            style={{ minWidth: 240 }}
+          />
+        </Box>
       </PageContentBox>
     </DivWrapper>
   )

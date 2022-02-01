@@ -156,34 +156,50 @@ const Mission = ({ missionData, causeId }) => {
             xs: 3,
           },
           paddingTop: {
-            md: 8,
-            xs: 6,
+            md: 6,
+            xs: 0,
           },
           paddingBottom: {
-            md: 8,
-            xs: 6,
+            md: 6,
+            xs: 0,
           },
         }}
       >
-        <DivTextContainer>
-          <Typography variant="h1" color="primary">
-            {titleText}
-          </Typography>
+        <Box>
+          <DivTextContainer>
+            <Typography variant="h1" color="primary">
+              {titleText}
+            </Typography>
 
-          <TypographySubtitle variant="h5" color="primary">
-            {subtitleText}
-          </TypographySubtitle>
+            <TypographySubtitle variant="h5" color="primary">
+              {subtitleText}
+            </TypographySubtitle>
+            <Box
+              sx={{
+                // TODO: reusable for left-aligned sections
+                // Matches landing page
+                mr: { lg: 14, md: 4, xs: 2 },
+              }}
+            >
+              <Markdown>{bodyText}</Markdown>
+            </Box>
+          </DivTextContainer>
           <Box
             sx={{
-              // TODO: reusable for left-aligned sections
-              // Matches landing page
-              mr: { lg: 14, md: 4, xs: 2 },
+              // TODO: reusable
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'flex-start',
+              mt: 4,
             }}
           >
-            <Markdown>{bodyText}</Markdown>
+            <V4InstallButton
+              causeId={causeId}
+              fullWidth
+              style={{ minWidth: 240 }}
+            />
           </Box>
-          <V4InstallButton causeId={causeId} fullWidth />
-        </DivTextContainer>
+        </Box>
         <GatsbyImageMissionImage
           image={missionImage}
           alt=""

@@ -96,15 +96,10 @@ const TypographySubtitle = styled(Typography)(({ theme }) => ({
 
 const ButtonButtonStyles = styled(Button)(({ theme }) => ({
   marginTop: 64,
+  minWidth: 240, // matches other buttons. TODO: reusable
 
   [theme.breakpoints.down('md')]: {
     width: '100%',
-  },
-}))
-
-const LinkLinkStyles = styled(Link)(({ theme }) => ({
-  [theme.breakpoints.down('md')]: {
-    width: '85%',
   },
 }))
 
@@ -207,15 +202,35 @@ const Financials = ({ financialsData }) => {
             ))}
           </Slider>
         </DivReportsSlider>
-        <LinkLinkStyles to={financialsURL}>
-          <ButtonButtonStyles
-            variant="contained"
-            color="secondary"
-            size="large"
-          >
-            {buttonText}
-          </ButtonButtonStyles>
-        </LinkLinkStyles>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            mt: 2,
+            pl: {
+              md: 0,
+              xs: 3, // matches other buttons
+            },
+            pr: {
+              md: 0,
+              xs: 3,
+            },
+            width: {
+              md: 'inherit',
+              xs: '100%',
+            },
+          }}
+        >
+          <Link to={financialsURL}>
+            <ButtonButtonStyles
+              variant="contained"
+              color="secondary"
+              size="large"
+            >
+              {buttonText}
+            </ButtonButtonStyles>
+          </Link>
+        </Box>
       </DivWrapper>
     </PageContentBox>
   )

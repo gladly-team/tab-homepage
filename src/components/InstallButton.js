@@ -135,6 +135,7 @@ class InstallButton extends React.Component {
     const {
       onBeforeInstall, // eslint-disable-line no-unused-vars
       onUnsupportedBrowserInstallClick, // eslint-disable-line no-unused-vars
+      style,
       ...otherProps
     } = this.props
     const buttonText = this.getButtonText()
@@ -145,6 +146,7 @@ class InstallButton extends React.Component {
         size="large"
         style={{
           minWidth: 200,
+          ...style,
         }}
         {...otherProps}
         onClick={this.onClick.bind(this)}
@@ -158,11 +160,13 @@ class InstallButton extends React.Component {
 InstallButton.propTypes = {
   onBeforeInstall: PropTypes.func,
   onUnsupportedBrowserInstallClick: PropTypes.func,
+  style: PropTypes.object,
 }
 
 InstallButton.defaultProps = {
   onBeforeInstall: null,
   onUnsupportedBrowserInstallClick: () => {},
+  style: {},
 }
 
 export default InstallButton
