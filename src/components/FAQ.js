@@ -28,8 +28,17 @@ const FAQ = ({ faqData }) => {
     <Box
       sx={{
         width: '100%',
-        minHeight: '100vh',
         background: 'white',
+        pt: {
+          md: 6,
+          sm: 4,
+          xs: 2,
+        },
+        pb: {
+          md: 6,
+          sm: 4,
+          xs: 2,
+        },
       }}
     >
       <PageContentBox
