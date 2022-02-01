@@ -12,7 +12,7 @@ module.exports = {
       'babel-preset-gatsby',
       {
         targets: {
-          browsers: ['>0.5%, last 3 versions'],
+          browsers: ['>0.5%, last 2 versions, not dead'],
         },
       },
     ],
