@@ -187,7 +187,10 @@ const Endorsements = ({ endorsementsData, causeId }) => {
             sx={{
               display: 'flex',
               flexWrap: 'wrap',
-              mt: 8,
+              mt: {
+                md: 4,
+                xs: 2,
+              },
               mb: {
                 md: 0,
                 xs: 2,
