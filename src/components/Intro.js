@@ -33,6 +33,8 @@ const DivTitleText = styled('div')(({ theme }) => ({
 }))
 
 const DivSteps = styled('div')(({ theme }) => ({
+  marginLeft: 0,
+  marginRight: 'auto',
   display: 'flex',
   flexDirection: 'row',
   marginTop: theme.spacing(2),
