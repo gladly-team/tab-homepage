@@ -162,6 +162,8 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
           </Box>
           <Box
             sx={{
+              marginLeft: 'auto',
+              marginRight: 'flex-end',
               flex: 1,
               display: 'flex',
               flexDirection: 'column',
