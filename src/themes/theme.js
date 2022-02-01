@@ -34,6 +34,7 @@ const theme = createTheme({
     padding: '0px',
   },
   palette: {
+    mode: 'light',
     background: {
       // This value changes the HTML background color:
       // https://material-ui.com/api/css-baseline/
@@ -97,6 +98,7 @@ export default theme
 
 export const tabForTeamSeasTheme = createTheme({
   palette: {
+    mode: 'light',
     background: {
       // This value changes the HTML background color:
       // https://material-ui.com/api/css-baseline/
@@ -184,6 +186,7 @@ export const tabForTeamSeasTheme = createTheme({
 export const createCauseTheme = ({ primary, secondary, primaryContrast }) =>
   createTheme({
     palette: {
+      mode: 'light',
       background: {
         // This value changes the HTML background color:
         // https://material-ui.com/api/css-baseline/
