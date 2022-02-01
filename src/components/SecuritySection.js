@@ -9,19 +9,21 @@ import { formatImg } from 'src/utils/formatting'
 import { githubOrganizationURL } from 'src/utils/navigation.js'
 
 const DivParent = styled('div')(({ theme }) => ({
-  minHeight: '100vh',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   width: '100%',
   backgroundColor: '#fafafa',
   justifyContent: 'center',
-  paddingTop: theme.spacing(8),
-  paddingBottom: theme.spacing(8),
-
+  paddingTop: theme.spacing(12),
+  paddingBottom: theme.spacing(12),
   [theme.breakpoints.down('md')]: {
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(10),
+  },
+  [theme.breakpoints.down('sm')]: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
   },
 }))
 
