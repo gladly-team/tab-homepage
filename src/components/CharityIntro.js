@@ -64,7 +64,7 @@ const CharityIntro = ({ charityIntroData }) => {
           <Typography
             variant="caption"
             align="center"
-            sx={{ display: 'block', mt: 2 }}
+            sx={{ display: 'block', mt: { lg: 3, md: 3, sm: 2, xs: 2 } }}
           >
             {step.text}
           </Typography>
