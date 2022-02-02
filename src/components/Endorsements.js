@@ -75,22 +75,6 @@ const DivEndorsementPaperTitleContainer = styled('div')(({ theme }) => ({
   height: 'fit-content',
 }))
 
-const StyledPaper = styled(Paper)(({ theme }) => ({
-  width: 456,
-  height: 240,
-  display: 'flex',
-  flexDirection: 'column',
-  paddingTop: theme.spacing(2),
-  padddingBottom: theme.spacing(2),
-  paddingLeft: theme.spacing(2.5),
-  paddingRight: theme.spacing(2.5),
-  transition: 'transform .1s ease-in-out',
-
-  [theme.breakpoints.down('md')]: {
-    maxWidth: 340,
-  },
-}))
-
 const TypographyPaperText = styled(Typography)(({ theme }) => ({
   marginTop: theme.spacing(3),
 }))
@@ -299,26 +283,51 @@ const Endorsements = ({ endorsementsData, causeId }) => {
           >
             {smallEndorsements.map((endorsement) => (
               <DivEndorsementPaper key={endorsement.endorser}>
-                <StyledPaper elevation={3}>
-                  <DivEndorsementPaperTitleContainer>
-                    <GatsbyImage
-                      alt=""
-                      image={getImage(formatImg(endorsement.img))}
-                      style={{
-                        height: '43px',
-                        width: '43px',
-                        marginRight: '16px',
-                        borderRadius: '50%',
-                      }}
-                    />
-                    <Typography variant="caption" color="primary">
-                      {endorsement.endorser}
-                    </Typography>
-                  </DivEndorsementPaperTitleContainer>
-                  <TypographyPaperText>
-                    {endorsement.endorsement}
-                  </TypographyPaperText>
-                </StyledPaper>
+                <Box>
+                  <Paper
+                    elevation={3}
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      maxWidth: {
+                        lg: '456px',
+                        md: '456px',
+                        sm: '456px',
+                        xs: '340px',
+                      },
+                      height: {
+                        lg: '240px',
+                        md: '240px',
+                        sm: '260px',
+                        xs: '260px',
+                      },
+                      pt: 2,
+                      pb: 2,
+                      pl: 2.5,
+                      pr: 2.5,
+                      transition: 'transform .1s ease-in-out',
+                    }}
+                  >
+                    <DivEndorsementPaperTitleContainer>
+                      <GatsbyImage
+                        alt=""
+                        image={getImage(formatImg(endorsement.img))}
+                        style={{
+                          height: '43px',
+                          width: '43px',
+                          marginRight: '16px',
+                          borderRadius: '50%',
+                        }}
+                      />
+                      <Typography variant="caption" color="primary">
+                        {endorsement.endorser}
+                      </Typography>
+                    </DivEndorsementPaperTitleContainer>
+                    <TypographyPaperText>
+                      {endorsement.endorsement}
+                    </TypographyPaperText>
+                  </Paper>
+                </Box>
               </DivEndorsementPaper>
             ))}
           </Slider>
