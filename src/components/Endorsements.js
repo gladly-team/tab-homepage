@@ -289,7 +289,12 @@ const Endorsements = ({ endorsementsData, causeId }) => {
                     sx={{
                       display: 'flex',
                       flexDirection: 'column',
-                      maxWidth: '340px',
+                      maxWidth: {
+                        lg: '456px',
+                        md: '456px',
+                        sm: '456px',
+                        xs: '340px',
+                      },
                       height: {
                         lg: '240px',
                         md: '240px',
