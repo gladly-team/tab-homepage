@@ -58,8 +58,6 @@ const DivStep = styled('div')(({ theme }) => ({
 }))
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
-  marginLeft: theme.spacing(2),
-  marginRight: theme.spacing(2),
   marginLeft: 'auto',
   marginRight: 'auto',
 
