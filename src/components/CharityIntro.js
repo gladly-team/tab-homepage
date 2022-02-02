@@ -9,7 +9,8 @@ import PageContentBox from 'src/components/PageContentBox'
 import { formatImg } from 'src/utils/formatting'
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: 400,
+  maxWidth: '400px',
+  maxHeight: '240px',
   aspectRatio: 1.333,
   display: 'flex',
   flexDirection: 'column',
@@ -58,7 +59,7 @@ const CharityIntro = ({ charityIntroData }) => {
           <Typography
             variant="caption"
             align="center"
-            sx={{ display: 'block', mt: 1 }}
+            sx={{ display: 'block', mt: 2 }}
           >
             {step.text}
           </Typography>
