@@ -58,8 +58,9 @@ const DivStep = styled('div')(({ theme }) => ({
 }))
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
-  marginLeft: 'auto',
-  marginRight: 'auto',
+  marginLeft: theme.spacing(2),
+  marginRight: theme.spacing(2),
+  alignSelf: 'center',
 
   // TODO: create reusable for CharityIntro section
   maxHeight: '240px',

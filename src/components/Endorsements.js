@@ -149,13 +149,13 @@ const Endorsements = ({ endorsementsData, causeId }) => {
           lg: 14,
           md: 10,
           sm: 8,
-          xs: 4,
+          xs: 8,
         },
         pb: {
           lg: 14,
           md: 10,
           sm: 8,
-          xs: 4,
+          xs: 8,
         },
       }}
     >
