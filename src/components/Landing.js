@@ -155,6 +155,7 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
               mb: 2,
               maxWidth: {
                 lg: 660,
+                sm: 580,
                 xs: 520,
               },
             }}

@@ -130,14 +130,14 @@ const Endorsements = ({ endorsementsData, causeId }) => {
         width: '100%',
         background: '#FAFAFA',
         pt: {
-          lg: 14,
-          md: 10,
+          lg: 16,
+          md: 12,
           sm: 8,
           xs: 8,
         },
         pb: {
-          lg: 14,
-          md: 10,
+          lg: 16,
+          md: 12,
           sm: 8,
           xs: 8,
         },

@@ -94,12 +94,14 @@ const CharityIntro = ({ charityIntroData }) => {
             flexDirection: 'column',
             alignItems: 'center',
             pt: {
-              lg: 12,
+              lg: 14,
+              md: 10,
               sm: 8,
               xs: 6,
             },
             pb: {
-              lg: 12,
+              lg: 14,
+              md: 10,
               sm: 8,
               xs: 6,
             },

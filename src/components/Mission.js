@@ -21,10 +21,14 @@ const DivWrapper = styled('div')(({ theme }) => ({
   width: '100%',
   backgroundColor: '#FFFFFF',
   overflow: 'hidden',
-  paddingTop: theme.spacing(6), // smaller b/c of img
-  paddingBottom: theme.spacing(12),
+  paddingTop: theme.spacing(12), // smaller b/c of img
+  paddingBottom: theme.spacing(14),
+  [theme.breakpoints.down('lg')]: {
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(12),
+  },
   [theme.breakpoints.down('md')]: {
-    paddingTop: theme.spacing(4),
+    paddingTop: theme.spacing(6),
     paddingBottom: theme.spacing(10),
   },
   [theme.breakpoints.down('sm')]: {

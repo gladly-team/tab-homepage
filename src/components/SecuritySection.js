@@ -15,8 +15,12 @@ const DivParent = styled('div')(({ theme }) => ({
   width: '100%',
   backgroundColor: '#fafafa',
   justifyContent: 'center',
-  paddingTop: theme.spacing(12),
-  paddingBottom: theme.spacing(12),
+  paddingTop: theme.spacing(14),
+  paddingBottom: theme.spacing(14),
+  [theme.breakpoints.down('lg')]: {
+    paddingTop: theme.spacing(12),
+    paddingBottom: theme.spacing(12),
+  },
   [theme.breakpoints.down('md')]: {
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
