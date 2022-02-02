@@ -42,7 +42,7 @@ const TypographySubtitleTwo = styled(Typography)(({ theme }) => ({
 }))
 
 const GatsbyImageTitleImg = styled(GatsbyImage)(({ theme }) => ({
-  maxHeight: '300px',
+  maxWidth: '550px',
 }))
 
 const SecuritySection = ({ securityData }) => {

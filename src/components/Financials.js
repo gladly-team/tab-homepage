@@ -122,12 +122,14 @@ const Financials = ({ financialsData }) => {
       <DivWrapper>
         <DivTitleSectionWrapper>
           <DivHalfScreenLeft>
-            <GatsbyImage
-              image={Image}
-              alt=""
-              placeholder="none"
-              backgroundColor="transparent"
-            />
+            <Box sx={{ maxWidth: '550px' }}>
+              <GatsbyImage
+                image={Image}
+                alt=""
+                placeholder="none"
+                backgroundColor="transparent"
+              />
+            </Box>
           </DivHalfScreenLeft>
           <DivHalfScreenRight>
             <Box
