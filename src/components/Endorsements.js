@@ -18,19 +18,6 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import V4InstallButton from './V4InstallButton'
 
-const DivWrapper = styled('div')(({ theme }) => ({
-  margin: '0 auto',
-  paddingTop: theme.spacing(15.5),
-  width: '100%',
-  background: '#FAFAFA',
-  paddingBottom: theme.spacing(9),
-
-  [theme.breakpoints.down('md')]: {
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
-  },
-}))
-
 const DivRatingContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
@@ -153,7 +140,25 @@ const Endorsements = ({ endorsementsData, causeId }) => {
   const sliderRef = useRef()
 
   return (
-    <DivWrapper>
+    <Box
+      sx={{
+        margin: '0 auto',
+        width: '100%',
+        background: '#FAFAFA',
+        pt: {
+          lg: 14,
+          md: 10,
+          sm: 8,
+          xs: 4,
+        },
+        pb: {
+          lg: 14,
+          md: 10,
+          sm: 8,
+          xs: 4,
+        },
+      }}
+    >
       <PageContentBox
         sx={{
           display: 'flex',
@@ -206,6 +211,7 @@ const Endorsements = ({ endorsementsData, causeId }) => {
             <Box
               sx={{
                 width: '240px',
+                height: '240px',
                 ml: {
                   xl: 6,
                   lg: 6,
@@ -352,7 +358,7 @@ const Endorsements = ({ endorsementsData, causeId }) => {
           />
         </Box>
       </PageContentBox>
-    </DivWrapper>
+    </Box>
   )
 }
 

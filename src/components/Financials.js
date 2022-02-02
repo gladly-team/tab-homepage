@@ -105,7 +105,20 @@ const Financials = ({ financialsData }) => {
   const { title, text, buttonText, ctaImg, pdfs } = financialsData
   const Image = getImage(formatImg(ctaImg))
   return (
-    <PageContentBox>
+    <PageContentBox
+      sx={{
+        paddingTop: {
+          lg: 10,
+          md: 6,
+          xs: 0,
+        },
+        paddingBottom: {
+          lg: 10,
+          md: 6,
+          xs: 0,
+        },
+      }}
+    >
       <DivWrapper>
         <DivTitleSectionWrapper>
           <DivHalfScreenLeft>

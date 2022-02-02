@@ -132,21 +132,24 @@ const Intro = ({ causeId, introData }) => {
         alignItems: 'center',
         justifyContent: 'center',
         paddingLeft: {
-          lg: 12, // matches other sections
+          lg: 10,
           md: 8, // matches other sections
           sm: 6, // matches other sections
           xs: 3, // matches other sections
         },
         paddingRight: {
+          lg: 10,
           md: 8,
           sm: 6, // matches other sections
           xs: 3,
         },
         paddingTop: {
+          lg: 12,
           md: 8,
           xs: 6,
         },
         paddingBottom: {
+          lg: 12,
           md: 8,
           xs: 6,
         },

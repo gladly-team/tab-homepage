@@ -30,11 +30,13 @@ const FAQ = ({ faqData }) => {
         width: '100%',
         background: 'white',
         pt: {
+          lg: 10,
           md: 6,
           sm: 4,
           xs: 2,
         },
         pb: {
+          lg: 10,
           md: 6,
           sm: 4,
           xs: 2,
