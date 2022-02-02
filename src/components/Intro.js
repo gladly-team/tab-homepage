@@ -58,9 +58,17 @@ const DivStep = styled('div')(({ theme }) => ({
 }))
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: 400,
   marginLeft: theme.spacing(2),
   marginRight: theme.spacing(2),
+  marginLeft: 'auto',
+  marginRight: 'auto',
+
+  // TODO: create reusable for CharityIntro section
+  maxHeight: '240px',
+  [theme.breakpoints.down('md')]: {
+    maxHeight: 'unset',
+    maxWidth: '400px',
+  },
 }))
 
 const AvatarNumberCircle = styled(Avatar)(({ theme }) => ({

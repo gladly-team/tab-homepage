@@ -193,7 +193,7 @@ const Mission = ({ missionData, causeId }) => {
           sx={{
             maxWidth: {
               lg: '500px',
-              xs: '440px', // TODO: make reusable
+              xs: '350px', // TODO: make reusable
             },
             flex: '1',
             m: 2,

@@ -18,10 +18,10 @@ const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
   marginLeft: theme.spacing(4),
 
   [theme.breakpoints.down('md')]: {
-    maxWidth: 400,
-    marginRight: theme.spacing(2),
-    marginLeft: theme.spacing(0),
-    marginBottom: theme.spacing(3),
+    maxWidth: 340,
+    marginRight: theme.spacing(4),
+    marginLeft: theme.spacing(1),
+    marginBottom: theme.spacing(2),
   },
 }))
 
@@ -61,7 +61,7 @@ const LandingMoneyRaised = ({ moneyRaisedData, moneyRaised }) => {
             },
             pb: {
               md: 0,
-              xs: 6,
+              xs: 4,
             },
             pl: {
               md: 12,
