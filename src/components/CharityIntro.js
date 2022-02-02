@@ -9,12 +9,17 @@ import PageContentBox from 'src/components/PageContentBox'
 import { formatImg } from 'src/utils/formatting'
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: '400px',
-  maxHeight: '240px',
   aspectRatio: 1.333,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+
+  maxWidth: '400px',
+  maxHeight: '240px',
+  [theme.breakpoints.down('md')]: {
+    maxHeight: 'unset',
+    maxWidth: '400px',
+  },
 }))
 
 const CharityIntro = ({ charityIntroData }) => {
@@ -29,12 +34,12 @@ const CharityIntro = ({ charityIntroData }) => {
           ml: {
             md: 2,
             sm: 4,
-            xs: 1,
+            xs: 4,
           },
           mr: {
             md: 2,
             sm: 4,
-            xs: 1,
+            xs: 4,
           },
           mt: {
             md: 2,
@@ -89,12 +94,12 @@ const CharityIntro = ({ charityIntroData }) => {
             flexDirection: 'column',
             alignItems: 'center',
             pt: {
-              lg: 10,
+              lg: 12,
               sm: 8,
               xs: 6,
             },
             pb: {
-              lg: 10,
+              lg: 12,
               sm: 8,
               xs: 6,
             },

@@ -30,11 +30,13 @@ const FAQ = ({ faqData }) => {
         width: '100%',
         background: 'white',
         pt: {
+          lg: 10,
           md: 6,
           sm: 4,
           xs: 2,
         },
         pb: {
+          lg: 10,
           md: 6,
           sm: 4,
           xs: 2,
@@ -73,7 +75,10 @@ const FAQ = ({ faqData }) => {
           <Box
             sx={{
               alignSelf: 'center',
-              maxWidth: 550,
+              maxWidth: {
+                lg: '500px',
+                xs: '350px', // TODO: make reusable
+              },
               margin: '0 auto',
               ml: 2,
               mr: 2,

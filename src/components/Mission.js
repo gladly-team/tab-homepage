@@ -141,16 +141,18 @@ const Mission = ({ missionData, causeId }) => {
             xs: 3, // matches other sections
           },
           paddingRight: {
-            md: 12,
-            lg: 8, // matches other sections
+            lg: 12,
+            md: 8, // matches other sections
             sm: 6, // matches other sections
             xs: 3,
           },
           paddingTop: {
+            lg: 10,
             md: 6,
             xs: 0,
           },
           paddingBottom: {
+            lg: 10,
             md: 6,
             xs: 0,
           },
@@ -193,7 +195,7 @@ const Mission = ({ missionData, causeId }) => {
           sx={{
             maxWidth: {
               lg: '500px',
-              xs: '440px', // TODO: make reusable
+              xs: '350px', // TODO: make reusable
             },
             flex: '1',
             m: 2,

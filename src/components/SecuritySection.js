@@ -67,6 +67,16 @@ const SecuritySection = ({ securityData }) => {
             sm: 6, // matches other sections
             xs: 3,
           },
+          paddingTop: {
+            lg: 10,
+            md: 6,
+            xs: 0,
+          },
+          paddingBottom: {
+            lg: 10,
+            md: 6,
+            xs: 0,
+          },
         }}
       >
         <GatsbyImageTitleImg

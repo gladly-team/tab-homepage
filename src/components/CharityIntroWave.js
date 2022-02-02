@@ -9,6 +9,7 @@ const CharityIntroWave = ({ color }) => (
         // Fix bad layout on Safari.
         width: 'calc(100% + 20px)',
         height: 'inherit',
+        marginTop: '-4px',
         marginLeft: '-10px',
         marginRight: '-10px',
       }}

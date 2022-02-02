@@ -58,9 +58,16 @@ const DivStep = styled('div')(({ theme }) => ({
 }))
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: 400,
   marginLeft: theme.spacing(2),
   marginRight: theme.spacing(2),
+  alignSelf: 'center',
+
+  // TODO: create reusable for CharityIntro section
+  maxHeight: '240px',
+  [theme.breakpoints.down('md')]: {
+    maxHeight: 'unset',
+    maxWidth: '400px',
+  },
 }))
 
 const AvatarNumberCircle = styled(Avatar)(({ theme }) => ({
@@ -124,21 +131,24 @@ const Intro = ({ causeId, introData }) => {
         alignItems: 'center',
         justifyContent: 'center',
         paddingLeft: {
-          lg: 12, // matches other sections
+          lg: 10,
           md: 8, // matches other sections
           sm: 6, // matches other sections
           xs: 3, // matches other sections
         },
         paddingRight: {
+          lg: 10,
           md: 8,
           sm: 6, // matches other sections
           xs: 3,
         },
         paddingTop: {
+          lg: 12,
           md: 8,
           xs: 6,
         },
         paddingBottom: {
+          lg: 12,
           md: 8,
           xs: 6,
         },
