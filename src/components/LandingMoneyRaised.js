@@ -13,7 +13,7 @@ import {
 } from 'src/utils/formatting'
 
 const GatsbyImageTitleImage = styled(GatsbyImage)(({ theme }) => ({
-  maxWidth: 500,
+  maxWidth: 360,
   marginRight: theme.spacing(4),
   marginLeft: theme.spacing(4),
 
