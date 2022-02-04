@@ -66,6 +66,7 @@
   "license": "MPL-2.0",
   "scripts": {
     "build": "GATSBY_TELEMETRY_DISABLED=1 gatsby build",
+    "dev": "yarn run develop",
     "develop": "SHOW_CATS_PAGE=true GATSBY_TELEMETRY_DISABLED=1 GATSBY_GENERATE_CAUSE_PAGES=true gatsby develop",
     "format": "yarn run eslint --fix",
     "lint": "eslint \"{src,plugins}/**/*.{js,jsx}\"",

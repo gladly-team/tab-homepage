@@ -9,7 +9,6 @@ import { secondaryMainColor } from 'src/themes/theme'
 import imgAlex from 'src/img/team/alex.jpg'
 import imgKevin from 'src/img/team/kevin.jpg'
 import imgMiranda from 'src/img/team/miranda.jpg'
-import imgAlec from 'src/img/team/alec.jpg'
 import imgIlana from 'src/img/team/Ilana.jpg'
 import Layout from 'src/components/Layout'
 
@@ -29,11 +28,6 @@ const TeamPage = ({ location }) => {
       name: 'Miranda Escobar',
       img: imgMiranda,
       title: 'Marketing Manager',
-    },
-    {
-      name: 'Alec Maliwanag',
-      img: imgAlec,
-      title: 'Senior Web Developer',
     },
     {
       name: 'Ilana Degann',
