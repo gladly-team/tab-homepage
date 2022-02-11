@@ -1,4 +1,5 @@
 /* globals process */
+/* eslint react/no-danger: 0 */
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
  *
@@ -17,7 +18,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
         key="gtag-ga4"
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-LDFLQCKVHG"
-      ></script>,
+      />,
       <script
         key="gtag-ga4-config"
         dangerouslySetInnerHTML={{
@@ -28,7 +29,8 @@ export const onRenderBody = ({ setHeadComponents }) => {
             gtag('config', 'G-LDFLQCKVHG');
             gtag('config', 'G-LDFLQCKVHG',{'tfac_app_version':'homepage'});`,
         }}
-      ></script>,
+      />,
+      <script src="https://www.googleoptimize.com/optimize.js?id=OPT-PDTTMLD" />,
     ])
   }
 }
