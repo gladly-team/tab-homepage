@@ -7,14 +7,16 @@ ad-generation.jp,12474,RESELLER,7f4ea9029ac04e53
 admanmedia.com,726,RESELLER
 appnexus.com,1356,RESELLER,f5ab79cb980f11d1
 appnexus.com,3663,RESELLER,f5ab79cb980f11d1
-# appnexus.com,7707,DIRECT,f5ab79cb980f11d1 -- Defined in AppNexus section below.
+# appnexus.com,7707,DIRECT,f5ab79cb980f11d1 ### Defined in AppNexus section below.
 aps.amazon.com,ea374841-51b0-4335-9960-99200427f7c8,DIRECT
+beachfront.com,14804,RESELLER,e2541279e8e2ca4d
 contextweb.com,562541,RESELLER,89ff185a4c4e857c
 emxdgt.com,2009,RESELLER,1e1d41537f7cad7f
 gumgum.com,14141,RESELLER,ffdef49475d318a9
 indexexchange.com,192410,RESELLER,50b1c356f2c5c8fc
-# lijit.com,240713,DIRECT,fafdf38b16bf6b2b -- Defined in Sovrn section below.
-# lijit.com,375328,DIRECT,fafdf38b16bf6b2b -- Defined in Sovrn section below.
+# lijit.com,240713,DIRECT,fafdf38b16bf6b2b ### Defined in Sovrn section below.
+# lijit.com,375328,DIRECT,fafdf38b16bf6b2b ### Defined in Sovrn section below.
+lijit.com,375328,RESELLER,fafdf38b16bf6b2b ### Outbrain via Amazon
 openx.com,540191398,RESELLER,6a698e2ec38604c6
 pubmatic.com,157150,RESELLER,5d62403b186f2ace
 pubmatic.com,160006,RESELLER,5d62403b186f2ace
@@ -22,10 +24,12 @@ pubmatic.com,160096,RESELLER,5d62403b186f2ace
 rhythmone.com,74229,DIRECT,a670c89d4a324e47
 rubiconproject.com,18020,RESELLER,0bfd66d529a55807
 sharethrough.com,7144eb80,RESELLER
+sharethrough.com,7144eb80,RESELLER,d53b998a7bd4ecd2 ### Outbrain via Amazon
 smaato.com,1100044650,RESELLER,07bcf65f187117b4
 smartadserver.com,4125,RESELLER,060d053dcf45cbf3
-# sovrn.com,240713,DIRECT,fafdf38b16bf6b2b -- Defined in Sovrn section below.
-# sovrn.com,375328,DIRECT,fafdf38b16bf6b2b -- Defined in Sovrn section below.
+# sovrn.com,240713,DIRECT,fafdf38b16bf6b2b ### Defined in Sovrn section below.
+# sovrn.com,375328,DIRECT,fafdf38b16bf6b2b ### Defined in Sovrn section below.
+sovrn.com,375328,RESELLER,fafdf38b16bf6b2b ### Outbrain via amazon
 themediagrid.com,JTQKMP,RESELLER,35d5010d7789b49d
 yahoo.com,55029,RESELLER,e1a5b5b6e3255540
 yieldmo.com,2719019867620450718,RESELLER
@@ -56,6 +60,10 @@ indexexchange.com,189509,DIRECT,50b1c356f2c5c8fc
 indexexchange.com,189508,DIRECT,50b1c356f2c5c8fc
 indexexchange.com,196902,DIRECT,50b1c356f2c5c8fc
 
+# Magnite (Rubicon)
+rubiconproject.com,24314,DIRECT,0bfd66d529a55807
+rubiconproject.com,24314,RESELLER,0bfd66d529a55807
+
 # Media.net
 media.net,8CUH6Y44N,DIRECT
 
@@ -69,7 +77,7 @@ pubmatic.com,159855,DIRECT,5d62403b186f2ace
 contextweb.com,560174,DIRECT,89ff185a4c4e857c
 
 # RhythmOne
-#   Direct relationship:
+### Direct relationship:
 advertising.com,28605,RESELLER
 appnexus.com,6849,RESELLER,f5ab79cb980f11d1
 improvedigital.com,1699,RESELLER
@@ -81,7 +89,7 @@ rubiconproject.com,15268,RESELLER,0bfd66d529a55807
 spotx.tv,285547,RESELLER,7842df1d2fe2db34
 spotxchange.com,285547,RESELLER,7842df1d2fe2db34
 video.unrulymedia.com,1398004509,DIRECT
-#   RhythmOne via Amazon:
+### RhythmOne via Amazon:
 rhythmone.com,4155644243,DIRECT,a670c89d4a324e47
 video.unrulymedia.com,4155644243,DIRECT
 
@@ -109,7 +117,7 @@ lijit.com,375328,DIRECT,fafdf38b16bf6b2b
 # Verizon
 yahoo.com,56944,DIRECT
 
-#Yieldmo
+# Yieldmo
 admanmedia.com,746,RESELLER
 appnexus.com,7911,RESELLER,f5ab79cb980f11d1
 contextweb.com,561118,RESELLER,89ff185a4c4e857c
