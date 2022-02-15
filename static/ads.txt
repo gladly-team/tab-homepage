@@ -68,6 +68,7 @@ media.net,8CUH6Y44N,DIRECT
 
 # OpenX
 openx.com,537145035,DIRECT,6a698e2ec38604c6
+openx.com,556670098,DIRECT,6a698e2ec38604c6 ### Via Google Exchange Bidding
 
 # Pubmatic
 pubmatic.com,159855,DIRECT,5d62403b186f2ace
