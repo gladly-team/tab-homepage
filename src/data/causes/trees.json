@@ -164,7 +164,7 @@
         ]
       },
       "Footer": {
-        "img": null,
+        "img": "../../img/trees/footer.png",
         "bubbleColor": "#05A575"
       }
     }
