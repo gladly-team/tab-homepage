@@ -106,7 +106,7 @@ exports.createPages = async ({ actions, graphql }) => {
                   bodyText
                   image {
                     childImageSharp {
-                      gatsbyImageData(quality: 20)
+                      gatsbyImageData(quality: 80)
                     }
                   }
                 }
@@ -119,20 +119,20 @@ exports.createPages = async ({ actions, graphql }) => {
                   img1Subtext
                   img2 {
                     childImageSharp {
-                      gatsbyImageData(quality: 20)
+                      gatsbyImageData(quality: 80)
                     }
                   }
                   img2Subtext
                   img3 {
                     childImageSharp {
-                      gatsbyImageData(quality: 20)
+                      gatsbyImageData(quality: 80)
                     }
                   }
                   img3Subtext
                   title
                   titleImg {
                     childImageSharp {
-                      gatsbyImageData(quality: 20)
+                      gatsbyImageData(quality: 80)
                     }
                   }
                   subtitle
@@ -141,7 +141,7 @@ exports.createPages = async ({ actions, graphql }) => {
                   steps {
                     img {
                       childImageSharp {
-                        gatsbyImageData(quality: 20)
+                        gatsbyImageData(quality: 80)
                       }
                     }
                     text
@@ -154,21 +154,21 @@ exports.createPages = async ({ actions, graphql }) => {
                   title
                   ctaImg {
                     childImageSharp {
-                      gatsbyImageData(quality: 20)
+                      gatsbyImageData(quality: 80)
                     }
                   }
                 }
                 moneyRaised {
                   moneyImg {
                     childImageSharp {
-                      gatsbyImageData(quality: 20)
+                      gatsbyImageData(quality: 80)
                     }
                   }
                 }
                 Security {
                   titleImg {
                     childImageSharp {
-                      gatsbyImageData(quality: 20)
+                      gatsbyImageData(quality: 80)
                     }
                   }
                 }
@@ -178,7 +178,7 @@ exports.createPages = async ({ actions, graphql }) => {
                   title
                   ctaImg {
                     childImageSharp {
-                      gatsbyImageData(quality: 20)
+                      gatsbyImageData(quality: 80)
                     }
                   }
                   q1Img {
@@ -229,7 +229,7 @@ exports.createPages = async ({ actions, graphql }) => {
                 Footer {
                   img {
                     childImageSharp {
-                      gatsbyImageData(quality: 20)
+                      gatsbyImageData(quality: 80)
                     }
                   }
                   bubbleColor
@@ -258,7 +258,7 @@ exports.createPages = async ({ actions, graphql }) => {
                 faq {
                   img {
                     childImageSharp {
-                      gatsbyImageData(quality: 20)
+                      gatsbyImageData(quality: 80)
                     }
                   }
                   questions {
