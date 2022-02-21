@@ -1,5 +1,6 @@
 import catsData from 'src/data/causes/cats.json'
 import seasData from 'src/data/causes/seas.json'
+import treesData from 'src/data/causes/trees.json'
 import set from 'lodash/set'
 import get from 'lodash/get'
 import { useImageData } from './useImageData'
@@ -36,6 +37,9 @@ export const useCauseData = async (cause = 'cats') => {
       break
     case 'seas':
       data = JSON.parse(JSON.stringify(seasData))
+      break
+    case 'trees':
+      data = JSON.parse(JSON.stringify(treesData))
       break
     default:
       data = JSON.parse(JSON.stringify(catsData))
