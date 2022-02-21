@@ -5,6 +5,7 @@ import HomePageWrapper from './V4HomePage'
 import {
   seas,
   cats,
+  trees,
   defaultChromaticViewports,
   SMALL_MOBILE_WIDTH_PX,
   TABLET_WIDTH_PX,
@@ -56,6 +57,19 @@ CatsCause.loaders = [
   }),
 ]
 CatsCause.parameters = {
+  chromatic: {
+    viewports: [DESKTOP_WIDTH_PX],
+    delay: 1500,
+  },
+}
+
+export const TreesCause = trees(Template.bind({}))
+TreesCause.loaders = [
+  async () => ({
+    data: await useCauseData('trees'),
+  }),
+]
+TreesCause.parameters = {
   chromatic: {
     viewports: [DESKTOP_WIDTH_PX],
     delay: 1500,

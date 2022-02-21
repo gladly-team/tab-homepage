@@ -4,9 +4,11 @@ import { createCauseTheme } from 'src/themes/theme'
 import CssBaseline from '@mui/material/CssBaseline'
 import catsData from 'src/data/causes/cats.json'
 import seasData from 'src/data/causes/seas.json'
+import treesData from 'src/data/causes/trees.json'
 
 const seasTheme = createCauseTheme(seasData.data.styles.colors)
 const catsTheme = createCauseTheme(catsData.data.styles.colors)
+const treesTheme = createCauseTheme(treesData.data.styles.colors)
 
 export const seas = (template) => (props, loaders) =>
   (
@@ -18,6 +20,13 @@ export const seas = (template) => (props, loaders) =>
 export const cats = (template) => (props, loaders) =>
   (
     <ThemeProvider theme={responsiveFontSizes(catsTheme)}>
+      <CssBaseline>{template(props, loaders)}</CssBaseline>
+    </ThemeProvider>
+  )
+
+export const trees = (template) => (props, loaders) =>
+  (
+    <ThemeProvider theme={responsiveFontSizes(treesTheme)}>
       <CssBaseline>{template(props, loaders)}</CssBaseline>
     </ThemeProvider>
   )
