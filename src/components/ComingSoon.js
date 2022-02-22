@@ -121,7 +121,7 @@ const ComingSoon = ({
 }) => {
   const absolutePageURL = getAbsoluteURL(location.pathname || '')
   const ogImgURLAbsolute = getAbsoluteURL(
-    get(ogImage, 'childImageSharp.gatsbyImageData.images.sources[0].srcSet', '')
+    get(ogImage, 'childImageSharp.gatsbyImageData.images.fallback.src', '')
   )
   let countdownDate = null
   if (launchDate) {
