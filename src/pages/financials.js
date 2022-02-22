@@ -44,10 +44,11 @@ const FinancialsPage = ({ data, location }) => {
 
               // classes={{ icon: classes.alertIcon, root: classes.alertRoot }}
             >
-              <AlertTitle>Looking for cats?</AlertTitle>
+              <AlertTitle>Can't find a nonprofit?</AlertTitle>
               <div>
-                Our cats nonprofit partner, the Jackson Galaxy Project, is a
-                recent addition. They'll show up in Q2 2021 financials.
+                Our nonprofit partners for Global Health, Trees, and Ending
+                Hunger are recent additions. They'll show up in future
+                financials.
               </div>
             </Alert>
           </div>
