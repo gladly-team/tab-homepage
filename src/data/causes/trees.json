@@ -65,7 +65,7 @@
         "missionURL": "/trees/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
-        "bodyText": "We believe everyone should make a difference to protect our planet. Through our partnership with The Eden Reforestation Projects, you can be sure your tabs are changing the world for the better - one tree at a time.",
+        "bodyText": "We believe everyone should make a difference to protect our planet. Through our partnership with Eden Reforestation Projects, you can be sure your tabs are changing the world for the better - one tree at a time.",
         "image": "../../img/trees/mission.png"
       },
       "Security": {
@@ -151,7 +151,7 @@
           },
           {
             "question": "What nonprofit does Tab for Trees support?",
-            "answer": "Tab for Trees supports [The Eden Reforestation Projects](https://www.edenprojects.org/). We are proud to support this incredible organization that has already planted **over 700 million trees**."
+            "answer": "Tab for Trees supports [Eden Reforestation Projects](https://www.edenprojects.org/). We are proud to support this incredible organization that has already planted **over 700 million trees**."
           },
           {
             "question": "How can I find out about new updates and announcements?",
