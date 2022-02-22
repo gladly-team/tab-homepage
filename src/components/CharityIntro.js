@@ -9,6 +9,7 @@ import PageContentBox from 'src/components/PageContentBox'
 import { formatImg } from 'src/utils/formatting'
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
+  flex: 4,
   aspectRatio: 1.333,
   display: 'flex',
   flexDirection: 'column',
@@ -31,6 +32,9 @@ const CharityIntro = ({ charityIntroData }) => {
         key={`step${index}`}
         sx={{
           flex: '1',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-around',
           ml: {
             md: 2,
             sm: 4,
@@ -60,11 +64,18 @@ const CharityIntro = ({ charityIntroData }) => {
           alt=""
           image={image}
         />
-        <Box>
+        <Box
+          sx={{
+            flex: 1,
+          }}
+        >
           <Typography
             variant="caption"
             align="center"
-            sx={{ display: 'block', mt: { lg: 3, md: 3, sm: 2, xs: 2 } }}
+            sx={{
+              display: 'block',
+              mt: { lg: 3, md: 3, sm: 2, xs: 2 },
+            }}
           >
             {step.text}
           </Typography>
