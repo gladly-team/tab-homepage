@@ -25,7 +25,7 @@
     "sections": {
       "landing": {
         "title": "Support accessible global health care",
-        "subtitle": "Every tab opened raises to provide quality health care to those who need it most. Yes, it really is that easy!",
+        "subtitle": "Every tab opened raises money to provide quality health care to those who need it most. Yes, it really is that easy!",
         "ctaImg": "../../img/globalHealth/landing.png"
       },
       "moneyRaised": {
@@ -152,6 +152,10 @@
           {
             "question": "How can I find out about new updates and announcements?",
             "answer": "Stay in touch with us on social media! Follow us @tabforacause on [TikTok](https://www.tiktok.com/@tabforacause), [Instagram](https://www.instagram.com/tabforacause/), [Twitter](https://twitter.com/TabForACause), and [Facebook](https://www.facebook.com/TabForACause)."
+          },
+          {
+            "question": "This all sounds amazing! How else can I help?",
+            "answer": "Invite your friends and family to join in! Everybody who joins is helping do even more to promote healthcare access around the world."
           }
         ]
       },
