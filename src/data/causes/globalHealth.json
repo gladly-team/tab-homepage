@@ -16,20 +16,20 @@
     },
     "causeId": "sPFpWRT7q",
     "metadata": {
-      "title": "Support Accessible Healthcare - Tab for a Cause",
-      "ogTitle": "Support Accessible Healthcare by Surfing the Web | Tab for a Cause",
+      "title": "Support Accessible Health Care - Tab for a Cause",
+      "ogTitle": "Support Accessible Health Care by Surfing the Web | Tab for a Cause",
       "ogDescription": "Open new tabs, raise money to train and support community healthcare workers - for free.",
       "ogImage": "../../img/globalHealth/landing.png",
-      "causeSpecificKeywords": "charity, healthcare, healthy, community, healthcare worker, accessible healthcare, community resources, medical, training, empowerment, partners in health, global, doctor, safety, maternity, maternal, mental health, tuberculosis, emergency response, cancer, HIV, AIDS, child health, chronic, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
+      "causeSpecificKeywords": "charity, health care, healthy, community, healthcare worker, accessible health care, community resources, medical, training, empowerment, partners in health, global, doctor, safety, maternity, maternal, mental health, tuberculosis, emergency response, cancer, HIV, AIDS, child health, chronic, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
     },
     "sections": {
       "landing": {
-        "title": "Support accessible healthcare around the world",
-        "subtitle": "Every tab opened raises to provide quality healthcare to those who need it most. Yes, it really is that easy!",
+        "title": "Support accessible health care around the world",
+        "subtitle": "Every tab opened raises to provide quality health care to those who need it most. Yes, it really is that easy!",
         "ctaImg": "../../img/globalHealth/landing.png"
       },
       "moneyRaised": {
-        "moneyImg": "../../img/globalHealth/moneyRaised.png"
+        "moneyImg": "../../img/globalHealth/moneyRaiseds.png"
       },
       "charityIntro": {
         "title": "Stop wasting tabs, start changing the world",
@@ -41,7 +41,7 @@
           },
           {
             "img": "../../img/globalHealth/charityIntro2.png",
-            "text": "Better access to healthcare where it is most needed"
+            "text": "Better access to health care where it is most needed"
           },
           {
             "img": "../../img/globalHealth/charityIntro3.png",
@@ -58,14 +58,14 @@
         "img2": "../../img/globalHealth/intro2.png",
         "img2Subtext": "###### Help employ community healthcare workers.",
         "img3": "../../img/globalHealth/intro3.png",
-        "img3Subtext": "###### Support accessible healthcare around the world."
+        "img3Subtext": "###### Support accessible health care around the world."
       },
 
       "Mission": {
         "missionURL": "/globalHealth/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
-        "bodyText": "We believe everyone deserves access to great healthcare. Through our partnership with [Partners In Health](https://www.pih.org/), you can be sure each tab you open is supporting community healthcare workers who create strong healthcare systems around the globe.",
+        "bodyText": "We believe everyone deserves access to great health care. Through our partnership with [Partners In Health](https://www.pih.org/), you can be sure each tab you open is supporting community healthcare workers who create strong healthcare systems around the globe.",
         "image": "../../img/globalHealth/mission.png"
       },
       "Security": {
@@ -147,7 +147,7 @@
           },
           {
             "question": "What nonprofit does Tab for Global Health support?",
-            "answer": "Tab for Global Health supports [Partners In Health](https://www.pih.org/). We are proud to support this incredible organization working to save lives and promote long-term healthcare to those with limited access around the world."
+            "answer": "Tab for Global Health supports [Partners In Health](https://www.pih.org/). We are proud to support this incredible organization working to save lives and promote long-term health care to those with limited access around the world."
           },
           {
             "question": "How can I find out about new updates and announcements?",
