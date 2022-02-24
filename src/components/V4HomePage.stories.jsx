@@ -3,6 +3,7 @@ import React from 'react'
 import { useCauseData } from 'src/utils/storybookHelpers/useCauseData'
 import HomePageWrapper from './V4HomePage'
 import {
+  wrapInTheme,
   seas,
   cats,
   trees,
@@ -70,6 +71,19 @@ TreesCause.loaders = [
   }),
 ]
 TreesCause.parameters = {
+  chromatic: {
+    viewports: [DESKTOP_WIDTH_PX],
+    delay: 1500,
+  },
+}
+
+export const GlobalHealthCause = wrapInTheme('globalHealth')(Template.bind({}))
+GlobalHealthCause.loaders = [
+  async () => ({
+    data: await useCauseData('globalHealth'),
+  }),
+]
+GlobalHealthCause.parameters = {
   chromatic: {
     viewports: [DESKTOP_WIDTH_PX],
     delay: 1500,

@@ -1,9 +1,11 @@
 import catsData from 'src/data/causes/cats.json'
 import seasData from 'src/data/causes/seas.json'
 import treesData from 'src/data/causes/trees.json'
+import globalHealthData from 'src/data/causes/globalHealth.json'
 import set from 'lodash/set'
 import get from 'lodash/get'
-import { useImageData } from './useImageData'
+import { useImageData } from 'src/utils/storybookHelpers/useImageData'
+import getCauseDataFromName from 'src/utils/storybookHelpers/getCauseDataFromName'
 
 /**
  * util function
@@ -28,22 +30,7 @@ const keyify = (obj, prefix = '') =>
  * @returns
  */
 export const useCauseData = async (cause = 'cats') => {
-  // a default is provided so component types can treat it as defined
-  // deep cloning data
-  let data
-  switch (cause) {
-    case 'cats':
-      data = JSON.parse(JSON.stringify(catsData))
-      break
-    case 'seas':
-      data = JSON.parse(JSON.stringify(seasData))
-      break
-    case 'trees':
-      data = JSON.parse(JSON.stringify(treesData))
-      break
-    default:
-      data = JSON.parse(JSON.stringify(catsData))
-  }
+  const data = getCauseDataFromName(cause)
   const keys = keyify(data)
 
   // replace image paths with mock gatsby image data
