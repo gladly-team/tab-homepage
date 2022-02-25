@@ -102,3 +102,16 @@ EndingHungerCause.parameters = {
     delay: 1500,
   },
 }
+
+export const UkraineCause = wrapInTheme('ukraine')(Template.bind({}))
+UkraineCause.loaders = [
+  async () => ({
+    data: await useCauseData('ukraine'),
+  }),
+]
+UkraineCause.parameters = {
+  chromatic: {
+    viewports: [DESKTOP_WIDTH_PX],
+    delay: 1500,
+  },
+}

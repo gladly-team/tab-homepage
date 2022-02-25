@@ -1,0 +1,168 @@
+{
+  "path": "ukraine",
+  "data": {
+    "styles": {
+      "colors": {
+        "primary": "#FB5050",
+        "secondary": "#29BEBA",
+        "primaryContrast": "#FFF"
+      }
+    },
+    "causeLaunch": {
+      "comingSoonTitle": "Tab for Ukraine",
+      "launchDate": "2022-02-25T21:00:00.000Z",
+      "preview": true,
+      "enabled": false
+    },
+    "causeId": "JmClR7bmy",
+    "metadata": {
+      "title": "Support Ukrainian Families - Tab for a Cause",
+      "ogTitle": "Support Ukrainian Families | Tab for a Cause",
+      "ogDescription": "Open new tabs, and raise money to support Ukrainian Families - for free",
+      "ogImage": "../../img/ukraine/landing.png",
+      "causeSpecificKeywords": "Ukraine, Ukrainian, families, war relief, shelter, medical supplies, food, water, resources, save the children,  humanitarian aid, education, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
+    },
+    "sections": {
+      "landing": {
+        "title": "Support Ukrainian Families",
+        "subtitle": "Every tab opened raises money to provide humanitarian aid to families in Ukraine.",
+        "ctaImg": "../../img/ukraine/landing.png"
+      },
+      "moneyRaised": {
+        "moneyImg": "../../img/ukraine/moneyRaised.png"
+      },
+      "charityIntro": {
+        "title": "Stop wasting tabs, start changing the world",
+        "subTitle": "Little actions can have big results. With Tab for Ukraine, you will directly contribute to providing ongoing humanitarian aid, just by opening browser tabs.",
+        "steps": [
+          {
+            "img": "../../img/ukraine/charityIntro1.png",
+            "text": "Food and Water"
+          },
+          {
+            "img": "../../img/ukraine/charityIntro2.png",
+            "text": "Shelter"
+          },
+          {
+            "img": "../../img/ukraine/charityIntro3.png",
+            "text": "Education"
+          }
+        ]
+      },
+      "TFACIntro": {
+        "titleImg": "../../img/ukraine/introMain.png",
+        "title": "Support the Ukrainian people",
+        "subtitle": "Turn your internet browsing into charitable giving.",
+        "img1": "../../img/ukraine/intro1.png",
+        "img1Subtext": "###### Open new tabs on your browser",
+        "img2": "../../img/ukraine/intro2.png",
+        "img2Subtext": "###### Help provide essential supplies and services",
+        "img3": "../../img/ukraine/intro3.png",
+        "img3Subtext": "###### Support families most affected by war"
+      },
+
+      "Mission": {
+        "missionURL": "/ukraine/",
+        "titleText": "Our Mission",
+        "subtitleText": "To make giving back easier than ever",
+        "bodyText": "We believe the people of Ukraine deserve ongoing and comprehensive support in the wake of war. Through our support of [Save the Children](https://ukraine.savethechildren.net/), you can be sure each tab you open is helping to provide essential services and supplies to Ukrainian families.",
+        "image": "../../img/ukraine/mission.png"
+      },
+      "Security": {
+        "titleImg": "../../img/causeshared/security.png"
+      },
+      "Financials": {
+        "title": "Transparent Financials",
+        "text": "Every tab makes an impact. Check out how much we've raised together.",
+        "buttonText": "See All Financials",
+        "ctaImg": "../../img/causeshared/financials.png",
+        "q1Img": "../../img/ukraine/q1-heart.png",
+        "q2Img": "../../img/ukraine/q2-heart.png",
+        "q3Img": "../../img/ukraine/q3-heart.png",
+        "q4Img": "../../img/ukraine/q4-heart.png"
+      },
+      "Endorsements": {
+        "disableCenterEndorsement": true,
+        "title": "People are saying good things",
+        "smallEndorsements": [
+          {
+            "endorser": "Shayne W.",
+            "endorsement": "“FANTASTIC app that lets you do a lot of good things while doing your day to day work, studying for finals, or just surfing the web!”",
+            "img": "../../img/reviews/shayne_w.png"
+          },
+          {
+            "endorser": "Benjamin K.",
+            "endorsement": "“Raise money for charity by browsing the internet. Perfectly executed!”",
+            "img": "../../img/reviews/benjamin_k.png"
+          },
+          {
+            "endorser": "Cameron B.",
+            "endorsement": "“As a person who frequently enters wikipedia holes opening 20 tabs at a time.. its great to know that my procrastination can be of some use! Great app, brilliant idea”",
+            "img": "../../img/reviews/cameron_b.png"
+          },
+          {
+            "endorser": "Chase R.",
+            "endorsement": "“It's wonderful. Unobtrusive, useful, well designed, easy to navigate, and actually pretty fun! There is no reason to not have this extension. It has not affected performance and is never an inconvenience.”",
+            "img": "../../img/reviews/chase_r.png"
+          },
+
+          {
+            "endorser": "Jonathon B.",
+            "endorsement": "“Love that this gives me, a fool with no money, a way to donate to charity. :)”",
+            "img": "../../img/reviews/johnathan_b.png"
+          },
+          {
+            "endorser": "Ana L.",
+            "endorsement": "“It's a great way to raise money for charity when you don't have a lot of money ... Plus I can decide what charity to donate to, and do it on my own time. I love it!”",
+            "img": "../../img/reviews/ana_l.png"
+          },
+          {
+            "endorser": "Alfonzo G.",
+            "endorsement": "“Wonderful service that does great things for people in need, and all you have to do is click a button... Way better than the default chrome new tab page. So what do you have to lose?”",
+            "img": "../../img/reviews/alfonzo_g.png"
+          },
+          {
+            "endorser": "Abby H.",
+            "endorsement": "“Wonderful and thoughtful idea for an extension! Helping save the world one tab at a time.”",
+            "img": "../../img/reviews/abby_h.png"
+          },
+          {
+            "endorser": "Lucas N.",
+            "endorsement": "“Awesome way to give back while browsing, with absolutely no effort on your end!”",
+            "img": "../../img/reviews/lucas_n.png"
+          },
+          {
+            "endorser": "Toby S.",
+            "endorsement": "“Amazing extension. Such an awesome idea to use ad revenue from people's new tab to donate to charity. I'd rate 6 stars if I could.”",
+            "img": "../../img/reviews/toby_s.png"
+          }
+        ]
+      },
+      "faq": {
+        "img": "../../img/ukraine/faq.png",
+        "questions": [
+          {
+            "question": "How does opening tabs raise money for charity?",
+            "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
+          },
+          {
+            "question": "What nonprofit does Tab for Ukraine support?",
+            "answer": "Tab for Ukraine supports [Save the Children](https://ukraine.savethechildren.net/). We are proud to support this incredible organization working to save lives and provide support to Ukrainian families affected by war."
+          },
+          {
+            "question": "How can I find out about new updates and announcements?",
+            "answer": "Stay in touch with us on social media! Follow us @tabforacause on [TikTok](https://www.tiktok.com/@tabforacause), [Instagram](https://www.instagram.com/tabforacause/), [Twitter](https://twitter.com/TabForACause), and [Facebook](https://www.facebook.com/TabForACause)."
+          },
+          {
+            "question": "This all sounds amazing! How else can I help?",
+            "answer": "Invite your friends and family to join in. Everybody who joins will support the humanitarian aid efforts in Ukraine. Additionally, if you are looking to make an immediate monetary impact, donations to Save the Children can be made [here](https://support.savethechildren.org/site/Donation2?df_id=1620&1620.donation=form1)."
+          }
+        ]
+      },
+      "Footer": {
+        "img": "../../img/ukraine/footer.png",
+        "bubbleColor": "#E73C3C"
+      }
+    }
+  }
+}
