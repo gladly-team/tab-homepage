@@ -3,6 +3,7 @@ import catsData from 'src/data/causes/cats.json'
 import seasData from 'src/data/causes/seas.json'
 import treesData from 'src/data/causes/trees.json'
 import globalHealthData from 'src/data/causes/globalHealth.json'
+import endingHungerData from 'src/data/causes/endingHunger.json'
 
 const getCauseDataFromName = (causeName) => {
   let data
@@ -18,6 +19,9 @@ const getCauseDataFromName = (causeName) => {
       break
     case 'globalHealth':
       data = JSON.parse(JSON.stringify(globalHealthData))
+      break
+    case 'endingHunger':
+      data = JSON.parse(JSON.stringify(endingHungerData))
       break
     default:
       // a default is provided so component types can treat it as defined

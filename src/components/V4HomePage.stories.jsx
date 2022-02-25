@@ -89,3 +89,16 @@ GlobalHealthCause.parameters = {
     delay: 1500,
   },
 }
+
+export const EndingHungerCause = wrapInTheme('endingHunger')(Template.bind({}))
+EndingHungerCause.loaders = [
+  async () => ({
+    data: await useCauseData('endingHunger'),
+  }),
+]
+EndingHungerCause.parameters = {
+  chromatic: {
+    viewports: [DESKTOP_WIDTH_PX],
+    delay: 1500,
+  },
+}
