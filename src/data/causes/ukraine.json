@@ -9,64 +9,64 @@
       }
     },
     "causeLaunch": {
-      "comingSoonTitle": "Tab for Global Health",
+      "comingSoonTitle": "Tab for Ukraine",
       "launchDate": "2022-02-25T21:00:00.000Z",
       "preview": true,
       "enabled": false
     },
-    "causeId": "sPFpWRT7q",
+    "causeId": "JmClR7bmy",
     "metadata": {
-      "title": "Support Accessible Health Care - Tab for a Cause",
-      "ogTitle": "Support Accessible Health Care by Surfing the Web | Tab for a Cause",
-      "ogDescription": "Open new tabs, raise money to train and support community healthcare workers - for free.",
-      "ogImage": "../../img/globalHealth/landing.png",
-      "causeSpecificKeywords": "charity, health care, healthy, community, healthcare worker, accessible health care, community resources, medical, training, empowerment, partners in health, global, doctor, safety, maternity, maternal, mental health, tuberculosis, emergency response, cancer, HIV, AIDS, child health, chronic, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
+      "title": "Support Ukrainian Families - Tab for a Cause",
+      "ogTitle": "Support Ukrainian Families | Tab for a Cause",
+      "ogDescription": "Open new tabs, and raise money to support Ukrainian Families - for free",
+      "ogImage": "../../img/ukraine/landing.png",
+      "causeSpecificKeywords": "Ukraine, Ukrainian, families, war relief, shelter, medical supplies, food, water, resources, save the children,  humanitarian aid, education, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
     },
     "sections": {
       "landing": {
-        "title": "Support accessible global health care",
-        "subtitle": "Every tab opened raises money to provide quality health care to those who need it most. Yes, it really is that easy!",
-        "ctaImg": "../../img/globalHealth/landing.png"
+        "title": "Support Ukrainian Families",
+        "subtitle": "Every tab opened raises money to provide humanitarian aid to families in Ukraine.",
+        "ctaImg": "../../img/ukraine/landing.png"
       },
       "moneyRaised": {
-        "moneyImg": "../../img/globalHealth/moneyRaised.png"
+        "moneyImg": "../../img/ukraine/moneyRaised.png"
       },
       "charityIntro": {
         "title": "Stop wasting tabs, start changing the world",
-        "subTitle": "Little actions can have big results. With Tab for Global Health, you will directly contribute to the training of healthcare professionals, just by opening browser tabs.",
+        "subTitle": "Little actions can have big results. With Tab for Ukraine, you will directly contribute to providing ongoing humanitarian aid, just by opening browser tabs.",
         "steps": [
           {
-            "img": "../../img/globalHealth/charityIntro1.png",
-            "text": "More trained healthcare professionals"
+            "img": "../../img/ukraine/charityIntro1.png",
+            "text": "Food and Water"
           },
           {
-            "img": "../../img/globalHealth/charityIntro2.png",
-            "text": "Better access to health care where it is most needed"
+            "img": "../../img/ukraine/charityIntro2.png",
+            "text": "Shelter"
           },
           {
-            "img": "../../img/globalHealth/charityIntro3.png",
-            "text": "Healthier and happier communities around the world"
+            "img": "../../img/ukraine/charityIntro3.png",
+            "text": "Education"
           }
         ]
       },
       "TFACIntro": {
-        "titleImg": "../../img/globalHealth/introMain.png",
-        "title": "Be a part of the change",
-        "subtitle": "Turn your internet browsing into charitable giving. Do good, feel good.",
-        "img1": "../../img/globalHealth/intro1.png",
-        "img1Subtext": "###### Open new tabs on your browser.",
-        "img2": "../../img/globalHealth/intro2.png",
-        "img2Subtext": "###### Help employ community healthcare workers.",
-        "img3": "../../img/globalHealth/intro3.png",
-        "img3Subtext": "###### Support accessible health care around the world."
+        "titleImg": "../../img/ukraine/introMain.png",
+        "title": "Support the Ukrainian people",
+        "subtitle": "Turn your internet browsing into charitable giving.",
+        "img1": "../../img/ukraine/intro1.png",
+        "img1Subtext": "###### Open new tabs on your browser",
+        "img2": "../../img/ukraine/intro2.png",
+        "img2Subtext": "###### Help provide essential supplies and services",
+        "img3": "../../img/ukraine/intro3.png",
+        "img3Subtext": "###### Support families most affected by war"
       },
 
       "Mission": {
-        "missionURL": "/global-health/",
+        "missionURL": "/ukraine/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
-        "bodyText": "We believe everyone deserves access to great health care. Through our partnership with [Partners In Health](https://www.pih.org/), you can be sure each tab you open is supporting community healthcare workers who create strong healthcare systems around the globe.",
-        "image": "../../img/globalHealth/mission.png"
+        "bodyText": "We believe the people of Ukraine deserve ongoing and comprehensive support in the wake of war. Through our support of [Save the Children](https://ukraine.savethechildren.net/), you can be sure each tab you open is helping to provide essential services and supplies to Ukrainian families.",
+        "image": "../../img/ukraine/mission.png"
       },
       "Security": {
         "titleImg": "../../img/causeshared/security.png"
@@ -76,10 +76,10 @@
         "text": "Every tab makes an impact. Check out how much we've raised together.",
         "buttonText": "See All Financials",
         "ctaImg": "../../img/causeshared/financials.png",
-        "q1Img": "../../img/causeshared/q1-heart.png",
-        "q2Img": "../../img/causeshared/q2-heart.png",
-        "q3Img": "../../img/causeshared/q3-heart.png",
-        "q4Img": "../../img/causeshared/q4-heart.png"
+        "q1Img": "../../img/ukraine/q1-heart.png",
+        "q2Img": "../../img/ukraine/q2-heart.png",
+        "q3Img": "../../img/ukraine/q3-heart.png",
+        "q4Img": "../../img/ukraine/q4-heart.png"
       },
       "Endorsements": {
         "disableCenterEndorsement": true,
@@ -139,15 +139,15 @@
         ]
       },
       "faq": {
-        "img": "../../img/globalHealth/faq.png",
+        "img": "../../img/ukraine/faq.png",
         "questions": [
           {
             "question": "How does opening tabs raise money for charity?",
             "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
           },
           {
-            "question": "What nonprofit does Tab for Global Health support?",
-            "answer": "Tab for Global Health supports [Partners In Health](https://www.pih.org/). We are proud to support this incredible organization working to save lives and promote long-term health care to those with limited access around the world."
+            "question": "What nonprofit does Tab for Ukraine support?",
+            "answer": "Tab for Ukraine supports [Save the Children](https://ukraine.savethechildren.net/). We are proud to support this incredible organization working to save lives and provide support to Ukrainian families affected by war."
           },
           {
             "question": "How can I find out about new updates and announcements?",
@@ -155,12 +155,12 @@
           },
           {
             "question": "This all sounds amazing! How else can I help?",
-            "answer": "Invite your friends and family to join in! Everybody who joins is helping do even more to promote healthcare access around the world."
+            "answer": "Invite your friends and family to join in. Everybody who joins will support the humanitarian aid efforts in Ukraine.\n\nAdditionally, if you are looking to make an immediate monetary impact, donations to Save the Children can be made [here](https://support.savethechildren.org/site/Donation2?df_id=1620&1620.donation=form1)."
           }
         ]
       },
       "Footer": {
-        "img": "../../img/globalHealth/footer.png",
+        "img": "../../img/ukraine/footer.png",
         "bubbleColor": "#E73C3C"
       }
     }
