@@ -1,5 +1,5 @@
 {
-  "path": "global-health",
+  "path": "ending-hunger",
   "data": {
     "styles": {
       "colors": {
@@ -9,64 +9,64 @@
       }
     },
     "causeLaunch": {
-      "comingSoonTitle": "Tab for Global Health",
-      "launchDate": "2022-02-25T21:00:00.000Z",
+      "comingSoonTitle": "Tab for Ending Hunger",
+      "launchDate": "2022-02-28T16:00:00.000Z",
       "preview": true,
-      "enabled": true
+      "enabled": false
     },
-    "causeId": "sPFpWRT7q",
+    "causeId": "1HCq9sFTp",
     "metadata": {
-      "title": "Support Accessible Health Care - Tab for a Cause",
-      "ogTitle": "Support Accessible Health Care by Surfing the Web | Tab for a Cause",
-      "ogDescription": "Open new tabs, raise money to train and support community healthcare workers - for free.",
-      "ogImage": "../../img/globalHealth/landing.png",
-      "causeSpecificKeywords": "charity, health care, healthy, community, healthcare worker, accessible health care, community resources, medical, training, empowerment, partners in health, global, doctor, safety, maternity, maternal, mental health, tuberculosis, emergency response, cancer, HIV, AIDS, child health, chronic, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
+      "title": "Help End World Hunger  - Tab for a Cause",
+      "ogTitle": "Help End World Hunger by Surfing the Web | Tab for a Cause ",
+      "ogDescription": "Open new tabs, raise money to help people facing severe hunger - for free.",
+      "ogImage": "../../img/endingHunger/landing.png",
+      "causeSpecificKeywords": "charity, equity, food, hungry, malnourished, nutrition, severe hunger, therapeutic, food, world hunger, ending hunger, therapeutic formula, community, resources, health, healthy, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
     },
     "sections": {
       "landing": {
-        "title": "Support accessible global health care",
-        "subtitle": "Every tab opened raises money to provide quality health care to those who need it most. Yes, it really is that easy!",
-        "ctaImg": "../../img/globalHealth/landing.png"
+        "title": "Help end hunger around the world",
+        "subtitle": "Every tab opened provides quality nutrition to those who need it most. Yes, it really is that easy!",
+        "ctaImg": "../../img/endingHunger/landing.png"
       },
       "moneyRaised": {
-        "moneyImg": "../../img/globalHealth/moneyRaised.png"
+        "moneyImg": "../../img/endingHunger/moneyRaised.png"
       },
       "charityIntro": {
         "title": "Stop wasting tabs, start changing the world",
-        "subTitle": "Little actions can have big results. With Tab for Global Health, you will directly contribute to the training of healthcare professionals, just by opening browser tabs.",
+        "subTitle": "Little actions can have big results. With Tab for Ending Hunger, you will directly contribute to preventing and treating malnutrition, just by opening browser tabs.",
         "steps": [
           {
-            "img": "../../img/globalHealth/charityIntro1.png",
-            "text": "More trained healthcare professionals"
+            "img": "../../img/endingHunger/charityIntro1.png",
+            "text": "Faster distribution of emergency nutrition where it is most needed"
           },
           {
-            "img": "../../img/globalHealth/charityIntro2.png",
-            "text": "Better access to health care where it is most needed"
+            "img": "../../img/endingHunger/charityIntro2.png",
+            "text": "Fewer people facing severe hunger"
           },
           {
-            "img": "../../img/globalHealth/charityIntro3.png",
+            "img": "../../img/endingHunger/charityIntro3.png",
             "text": "Healthier and happier communities around the world"
           }
         ]
       },
       "TFACIntro": {
-        "titleImg": "../../img/globalHealth/introMain.png",
-        "title": "Be a part of the change.",
+        "titleImg": "../../img/endingHunger/introMain.png",
+        "title": "Be a part of the change",
         "subtitle": "Turn your internet browsing into charitable giving. Do good, feel good.",
-        "img1": "../../img/globalHealth/intro1.png",
-        "img1Subtext": "###### Open new tabs on your browser.",
-        "img2": "../../img/globalHealth/intro2.png",
-        "img2Subtext": "###### Help employ community healthcare workers.",
-        "img3": "../../img/globalHealth/intro3.png",
-        "img3Subtext": "###### Support accessible health care around the world."
+        "img1": "../../img/endingHunger/intro1.png",
+        "img1Subtext": "###### Open new tabs on your browser",
+        "img2": "../../img/endingHunger/intro2.png",
+        "img2Subtext": "###### Earn money to provide ready-to-use therapeutic formula",
+        "img3": "../../img/endingHunger/intro3.png",
+        "img3Subtext": "###### Help treat and prevent malnutrition"
       },
 
       "Mission": {
-        "missionURL": "/globalHealth/",
+        "missionURL": "/ending-hunger/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
-        "bodyText": "We believe everyone deserves access to great health care. Through our partnership with [Partners In Health](https://www.pih.org/), you can be sure each tab you open is supporting community healthcare workers who create strong healthcare systems around the globe.",
-        "image": "../../img/globalHealth/mission.png"
+        "bodyText": "We believe everyone deserves access to quality food and long-term nutrition. Through our partnership with Action Against Hunger, you can be sure each tab you open is supporting initiatives to prevent and treat malnutrition across nearly 50 countries.",
+        "image": "../../img/endingHunger/mission.png"
       },
       "Security": {
         "titleImg": "../../img/causeshared/security.png"
@@ -139,15 +139,15 @@
         ]
       },
       "faq": {
-        "img": "../../img/globalHealth/faq.png",
+        "img": "../../img/endingHunger/faq.png",
         "questions": [
           {
             "question": "How does opening tabs raise money for charity?",
             "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
           },
           {
-            "question": "What nonprofit does Tab for Global Health support?",
-            "answer": "Tab for Global Health supports [Partners In Health](https://www.pih.org/). We are proud to support this incredible organization working to save lives and promote long-term health care to those with limited access around the world."
+            "question": "What nonprofit does Tab for Ending Hunger support?",
+            "answer": "Tab for Ending Hunger supports [Action Against Hunger](https://www.actionagainsthunger.org/). We are proud to support this incredible organization working to save lives and create long-term solutions for people facing severe malnutrition."
           },
           {
             "question": "How can I find out about new updates and announcements?",
@@ -160,7 +160,7 @@
         ]
       },
       "Footer": {
-        "img": "../../img/globalHealth/footer.png",
+        "img": "../../img/endingHunger/footer.png",
         "bubbleColor": "#E73C3C"
       }
     }

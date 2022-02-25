@@ -51,7 +51,7 @@
       },
       "TFACIntro": {
         "titleImg": "../../img/globalHealth/introMain.png",
-        "title": "Be a part of the change.",
+        "title": "Be a part of the change",
         "subtitle": "Turn your internet browsing into charitable giving. Do good, feel good.",
         "img1": "../../img/globalHealth/intro1.png",
         "img1Subtext": "###### Open new tabs on your browser.",
@@ -62,7 +62,7 @@
       },
 
       "Mission": {
-        "missionURL": "/globalHealth/",
+        "missionURL": "/global-health/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
         "bodyText": "We believe everyone deserves access to great health care. Through our partnership with [Partners In Health](https://www.pih.org/), you can be sure each tab you open is supporting community healthcare workers who create strong healthcare systems around the globe.",
