@@ -62,6 +62,8 @@ indexexchange.com,196902,DIRECT,50b1c356f2c5c8fc
 
 # Magnite (Rubicon)
 rubiconproject.com,24314,DIRECT,0bfd66d529a55807
+rubiconproject.com,24312,DIRECT,0bfd66d529a55807 ### Via Google Exchange Bidding
+rubiconproject.com,24312,RESELLER,0bfd66d529a55807 ### Via Google Exchange Bidding
 
 # Media.net
 media.net,8CUH6Y44N,DIRECT
