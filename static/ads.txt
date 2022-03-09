@@ -62,15 +62,27 @@ indexexchange.com,196902,DIRECT,50b1c356f2c5c8fc
 
 # Magnite (Rubicon)
 rubiconproject.com,24314,DIRECT,0bfd66d529a55807
-rubiconproject.com,24312,DIRECT,0bfd66d529a55807 ### Via Google Exchange Bidding
-rubiconproject.com,24312,RESELLER,0bfd66d529a55807 ### Via Google Exchange Bidding
+rubiconproject.com,24312,DIRECT,0bfd66d529a55807 ### For Google Open Bidding
+rubiconproject.com,24312,RESELLER,0bfd66d529a55807 ### For Google Open Bidding
 
 # Media.net
-media.net,8CUH6Y44N,DIRECT
+media.net,8CUH6Y44N,DIRECT ### For Google Open Bidding
+media.net,8CU5J4251,DIRECT
+openx.com,537100188,RESELLER,6a698e2ec38604c6
+pubmatic.com,159463,RESELLER,5d62403b186f2ace
+emxdgt.com,1759,RESELLER,1e1d41537f7cad7f
+# appnexus.com,1356,RESELLER,f5ab79cb980f11d1 ### Defined in Amazon section
+google.com,pub-7439041255533808,RESELLER,f08c47fec0942fa0
+rubiconproject.com,19396,RESELLER,0bfd66d529a55807
+onetag.com,5d49f482552c9b6,RESELLER
+sonobi.com,83729e979b,RESELLER
+33across.com,0010b00002cGp2AAAS,RESELLER,bbea06d9c4d2853c
+rhythmone.com,3611299104,RESELLER,a670c89d4a324e47
+lemmatechnologies.com,399,RESELLER,7829010c5bebd1fb #LEMMA
 
 # OpenX
 openx.com,537145035,DIRECT,6a698e2ec38604c6
-openx.com,556670098,DIRECT,6a698e2ec38604c6 ### Via Google Exchange Bidding
+openx.com,556670098,DIRECT,6a698e2ec38604c6 ### For Google Open Bidding
 
 # Pubmatic
 pubmatic.com,159855,DIRECT,5d62403b186f2ace
