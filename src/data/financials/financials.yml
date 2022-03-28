@@ -128,3 +128,9 @@
 - quarter: 2
   year: 2021
   pdfUrl: '/financials/2021-Q2.pdf'
+- quarter: 3
+  year: 2021
+  pdfUrl: '/financials/2021-Q3.pdf'
+- quarter: 4
+  year: 2021
+  pdfUrl: '/financials/2021-Q4.pdf'
