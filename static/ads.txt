@@ -13,10 +13,13 @@ beachfront.com,14804,RESELLER,e2541279e8e2ca4d
 contextweb.com,562541,RESELLER,89ff185a4c4e857c
 emxdgt.com,2009,RESELLER,1e1d41537f7cad7f
 gumgum.com,14141,RESELLER,ffdef49475d318a9
+improvedigital.com,2050,RESELLER
 indexexchange.com,192410,RESELLER,50b1c356f2c5c8fc
 # lijit.com,240713,DIRECT,fafdf38b16bf6b2b ### Defined in Sovrn section below.
 # lijit.com,375328,DIRECT,fafdf38b16bf6b2b ### Defined in Sovrn section below.
 lijit.com,375328,RESELLER,fafdf38b16bf6b2b ### Outbrain via Amazon
+mintegral.com,10043,RESELLER,0aeed750c80d6423
+onetag.com,770a440e65869c2,RESELLER
 openx.com,540191398,RESELLER,6a698e2ec38604c6
 pubmatic.com,157150,RESELLER,5d62403b186f2ace
 pubmatic.com,160006,RESELLER,5d62403b186f2ace
@@ -29,6 +32,7 @@ smaato.com,1100044650,RESELLER,07bcf65f187117b4
 smartadserver.com,4125,RESELLER,060d053dcf45cbf3
 # sovrn.com,240713,DIRECT,fafdf38b16bf6b2b ### Defined in Sovrn section below.
 # sovrn.com,375328,DIRECT,fafdf38b16bf6b2b ### Defined in Sovrn section below.
+sonobi.com,7f5fa520f8,RESELLER,d1a215d9eb5aee9e
 sovrn.com,375328,RESELLER,fafdf38b16bf6b2b ### Outbrain via amazon
 themediagrid.com,JTQKMP,RESELLER,35d5010d7789b49d
 yahoo.com,55029,RESELLER,e1a5b5b6e3255540
