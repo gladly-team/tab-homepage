@@ -76,10 +76,10 @@
         "text": "Every tab makes an impact. Check out how much we've raised together.",
         "buttonText": "See All Financials",
         "ctaImg": "../../img/causeshared/financials.png",
-        "q1Img": "../../img/causeshared/q1-heart.png",
-        "q2Img": "../../img/causeshared/q2-heart.png",
-        "q3Img": "../../img/causeshared/q3-heart.png",
-        "q4Img": "../../img/causeshared/q4-heart.png"
+        "q1Img": "../../img/causeshared/q1-heart-no-face.png",
+        "q2Img": "../../img/causeshared/q2-heart-no-face.png",
+        "q3Img": "../../img/causeshared/q3-heart-no-face.png",
+        "q4Img": "../../img/causeshared/q4-heart-no-face.png"
       },
       "Endorsements": {
         "disableCenterEndorsement": true,
@@ -139,7 +139,7 @@
         ]
       },
       "faq": {
-        "img": "../../img/health-generic/faq.png",
+        "img": "../../img/causeshared/faq-no-face.png",
         "questions": [
           {
             "question": "How does opening tabs raise money for charity?",
