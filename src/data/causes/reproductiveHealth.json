@@ -16,56 +16,56 @@
     },
     "causeId": "4mC9rt2rb",
     "metadata": {
-      "title": "Support Accessible Health Care - Tab for a Cause",
-      "ogTitle": "Support Accessible Health Care by Surfing the Web | Tab for a Cause",
-      "ogDescription": "Open new tabs, raise money to train and support community healthcare workers - for free.",
+      "title": "Support Reproductive Health - Tab for a Cause ",
+      "ogTitle": "Support Reproductive Health by Surfing the Web | Tab for a Cause",
+      "ogDescription": "Open new tabs, raise money for nonprofits supporting access to reproductive health care - for free.",
       "ogImage": "../../img/health-generic/landing.png",
-      "causeSpecificKeywords": "charity, health care, healthy, community, healthcare worker, accessible health care, community resources, medical, training, empowerment, partners in health, global, doctor, safety, maternity, maternal, mental health, tuberculosis, emergency response, cancer, HIV, AIDS, child health, chronic, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
+      "causeSpecificKeywords": "charity, equity, reproductive rights, community, pregnancy, educational, abortion access, health, support, empowerment, equity, gender, WOC, trans, women, nonbinary, Roe v. Wade, reproductive health, Planned Parenthood, abortion, womens health, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
     },
     "sections": {
       "landing": {
-        "title": "Support accessible global health care",
-        "subtitle": "Every tab opened raises money to provide quality health care to those who need it most. Yes, it really is that easy!",
+        "title": "Support reproductive health every day",
+        "subtitle": "Every tab opened raises money for nonprofit organizations protecting and providing access to reproductive health care.",
         "ctaImg": "../../img/health-generic/landing.png"
       },
       "moneyRaised": {
         "moneyImg": "../../img/health-generic/moneyRaised.png"
       },
       "charityIntro": {
-        "title": "Stop wasting tabs, start changing the world",
-        "subTitle": "Little actions can have big results. With Tab for Global Health, you will directly contribute to the training of healthcare professionals, just by opening browser tabs.",
+        "title": "Health care is under attack. Put your tabs into the fight.",
+        "subTitle": "We need to act to protect access to abortion and other critical health services. One step? Open some browser tabs.\n\nWith Tab for Reproductive Health, you can support nonprofits providing reproductive health services and advocating for policy change just by opening browser tabs.",
         "steps": [
           {
             "img": "../../img/health-generic/charityIntro1.png",
-            "text": "More trained healthcare professionals"
+            "text": "More widespread access to reproductive health care"
           },
           {
             "img": "../../img/health-generic/charityIntro2.png",
-            "text": "Better access to health care where it is most needed"
+            "text": "Advocacy for protecting reproductive rights by law"
           },
           {
             "img": "../../img/health-generic/charityIntro3.png",
-            "text": "Healthier and happier communities around the world"
+            "text": "Reproductive equity for all"
           }
         ]
       },
       "TFACIntro": {
         "titleImg": "../../img/health-generic/introMain.png",
         "title": "Be a part of the change",
-        "subtitle": "Turn your internet browsing into charitable giving. Do good, feel good.",
+        "subtitle": "Use your daily habits to protect reproductive rights and provide reproductive health care.",
         "img1": "../../img/health-generic/intro1.png",
         "img1Subtext": "###### Open new tabs on your browser.",
         "img2": "../../img/health-generic/intro2.png",
-        "img2Subtext": "###### Help employ community healthcare workers.",
+        "img2Subtext": "###### Earn money for Planned Parenthood and Center for Reproductive Rights.",
         "img3": "../../img/health-generic/intro3.png",
-        "img3Subtext": "###### Support accessible health care around the world."
+        "img3Subtext": "###### Protect access to safe reproductive health care."
       },
 
       "Mission": {
         "missionURL": "/reproductive-health/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
-        "bodyText": "We believe everyone deserves access to great health care. Through our partnership with [Partners In Health](https://www.pih.org/), you can be sure each tab you open is supporting community healthcare workers who create strong healthcare systems around the globe.",
+        "bodyText": "We believe everyone should be able to support access to safe reproductive health care like abortion and contraception. Through our support of Planned Parenthood and Center for Reproductive Rights, you can be sure each tab you open is protecting reproductive rights and providing healthcare services.",
         "image": "../../img/health-generic/mission.png"
       },
       "Security": {
@@ -146,8 +146,8 @@
             "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
           },
           {
-            "question": "What nonprofit does Tab for Global Health support?",
-            "answer": "Tab for Global Health supports [Partners In Health](https://www.pih.org/). We are proud to support this incredible organization working to save lives and promote long-term health care to those with limited access around the world."
+            "question": "What nonprofits does Tab for Reproductive Health support?",
+            "answer": "Tab for Reproductive Health supports [Planned Parenthood](https://www.plannedparenthood.org) and [Center for Reproductive Rights](https://reproductiverights.org)."
           },
           {
             "question": "How can I find out about new updates and announcements?",
