@@ -115,3 +115,18 @@ UkraineCause.parameters = {
     delay: 1500,
   },
 }
+
+export const ReproductiveHealthCause = wrapInTheme('reproductiveHealth')(
+  Template.bind({})
+)
+ReproductiveHealthCause.loaders = [
+  async () => ({
+    data: await useCauseData('reproductiveHealth'),
+  }),
+]
+ReproductiveHealthCause.parameters = {
+  chromatic: {
+    viewports: [DESKTOP_WIDTH_PX],
+    delay: 1500,
+  },
+}
