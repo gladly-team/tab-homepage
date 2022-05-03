@@ -1,0 +1,168 @@
+{
+  "path": "global-health",
+  "data": {
+    "styles": {
+      "colors": {
+        "primary": "#FB5050",
+        "secondary": "#29BEBA",
+        "primaryContrast": "#FFF"
+      }
+    },
+    "causeLaunch": {
+      "comingSoonTitle": "Tab for Global Health",
+      "launchDate": "2022-02-25T21:00:00.000Z",
+      "preview": true,
+      "enabled": true
+    },
+    "causeId": "sPFpWRT7q",
+    "metadata": {
+      "title": "Support Accessible Health Care - Tab for a Cause",
+      "ogTitle": "Support Accessible Health Care by Surfing the Web | Tab for a Cause",
+      "ogDescription": "Open new tabs, raise money to train and support community healthcare workers - for free.",
+      "ogImage": "../../img/globalHealth/landing.png",
+      "causeSpecificKeywords": "charity, health care, healthy, community, healthcare worker, accessible health care, community resources, medical, training, empowerment, partners in health, global, doctor, safety, maternity, maternal, mental health, tuberculosis, emergency response, cancer, HIV, AIDS, child health, chronic, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
+    },
+    "sections": {
+      "landing": {
+        "title": "Support accessible global health care",
+        "subtitle": "Every tab opened raises money to provide quality health care to those who need it most. Yes, it really is that easy!",
+        "ctaImg": "../../img/globalHealth/landing.png"
+      },
+      "moneyRaised": {
+        "moneyImg": "../../img/globalHealth/moneyRaised.png"
+      },
+      "charityIntro": {
+        "title": "Stop wasting tabs, start changing the world",
+        "subTitle": "Little actions can have big results. With Tab for Global Health, you will directly contribute to the training of healthcare professionals, just by opening browser tabs.",
+        "steps": [
+          {
+            "img": "../../img/globalHealth/charityIntro1.png",
+            "text": "More trained healthcare professionals"
+          },
+          {
+            "img": "../../img/globalHealth/charityIntro2.png",
+            "text": "Better access to health care where it is most needed"
+          },
+          {
+            "img": "../../img/globalHealth/charityIntro3.png",
+            "text": "Healthier and happier communities around the world"
+          }
+        ]
+      },
+      "TFACIntro": {
+        "titleImg": "../../img/globalHealth/introMain.png",
+        "title": "Be a part of the change",
+        "subtitle": "Turn your internet browsing into charitable giving. Do good, feel good.",
+        "img1": "../../img/globalHealth/intro1.png",
+        "img1Subtext": "###### Open new tabs on your browser.",
+        "img2": "../../img/globalHealth/intro2.png",
+        "img2Subtext": "###### Help employ community healthcare workers.",
+        "img3": "../../img/globalHealth/intro3.png",
+        "img3Subtext": "###### Support accessible health care around the world."
+      },
+
+      "Mission": {
+        "missionURL": "/global-health/",
+        "titleText": "Our Mission",
+        "subtitleText": "To make giving back easier than ever",
+        "bodyText": "We believe everyone deserves access to great health care. Through our partnership with [Partners In Health](https://www.pih.org/), you can be sure each tab you open is supporting community healthcare workers who create strong healthcare systems around the globe.",
+        "image": "../../img/globalHealth/mission.png"
+      },
+      "Security": {
+        "titleImg": "../../img/causeshared/security.png"
+      },
+      "Financials": {
+        "title": "Transparent Financials",
+        "text": "Every tab makes an impact. Check out how much we've raised together.",
+        "buttonText": "See All Financials",
+        "ctaImg": "../../img/causeshared/financials.png",
+        "q1Img": "../../img/causeshared/q1-heart.png",
+        "q2Img": "../../img/causeshared/q2-heart.png",
+        "q3Img": "../../img/causeshared/q3-heart.png",
+        "q4Img": "../../img/causeshared/q4-heart.png"
+      },
+      "Endorsements": {
+        "disableCenterEndorsement": true,
+        "title": "People are saying good things",
+        "smallEndorsements": [
+          {
+            "endorser": "Shayne W.",
+            "endorsement": "“FANTASTIC app that lets you do a lot of good things while doing your day to day work, studying for finals, or just surfing the web!”",
+            "img": "../../img/reviews/shayne_w.png"
+          },
+          {
+            "endorser": "Benjamin K.",
+            "endorsement": "“Raise money for charity by browsing the internet. Perfectly executed!”",
+            "img": "../../img/reviews/benjamin_k.png"
+          },
+          {
+            "endorser": "Cameron B.",
+            "endorsement": "“As a person who frequently enters wikipedia holes opening 20 tabs at a time.. its great to know that my procrastination can be of some use! Great app, brilliant idea”",
+            "img": "../../img/reviews/cameron_b.png"
+          },
+          {
+            "endorser": "Chase R.",
+            "endorsement": "“It's wonderful. Unobtrusive, useful, well designed, easy to navigate, and actually pretty fun! There is no reason to not have this extension. It has not affected performance and is never an inconvenience.”",
+            "img": "../../img/reviews/chase_r.png"
+          },
+
+          {
+            "endorser": "Jonathon B.",
+            "endorsement": "“Love that this gives me, a fool with no money, a way to donate to charity. :)”",
+            "img": "../../img/reviews/johnathan_b.png"
+          },
+          {
+            "endorser": "Ana L.",
+            "endorsement": "“It's a great way to raise money for charity when you don't have a lot of money ... Plus I can decide what charity to donate to, and do it on my own time. I love it!”",
+            "img": "../../img/reviews/ana_l.png"
+          },
+          {
+            "endorser": "Alfonzo G.",
+            "endorsement": "“Wonderful service that does great things for people in need, and all you have to do is click a button... Way better than the default chrome new tab page. So what do you have to lose?”",
+            "img": "../../img/reviews/alfonzo_g.png"
+          },
+          {
+            "endorser": "Abby H.",
+            "endorsement": "“Wonderful and thoughtful idea for an extension! Helping save the world one tab at a time.”",
+            "img": "../../img/reviews/abby_h.png"
+          },
+          {
+            "endorser": "Lucas N.",
+            "endorsement": "“Awesome way to give back while browsing, with absolutely no effort on your end!”",
+            "img": "../../img/reviews/lucas_n.png"
+          },
+          {
+            "endorser": "Toby S.",
+            "endorsement": "“Amazing extension. Such an awesome idea to use ad revenue from people's new tab to donate to charity. I'd rate 6 stars if I could.”",
+            "img": "../../img/reviews/toby_s.png"
+          }
+        ]
+      },
+      "faq": {
+        "img": "../../img/globalHealth/faq.png",
+        "questions": [
+          {
+            "question": "How does opening tabs raise money for charity?",
+            "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
+          },
+          {
+            "question": "What nonprofit does Tab for Global Health support?",
+            "answer": "Tab for Global Health supports [Partners In Health](https://www.pih.org/). We are proud to support this incredible organization working to save lives and promote long-term health care to those with limited access around the world."
+          },
+          {
+            "question": "How can I find out about new updates and announcements?",
+            "answer": "Stay in touch with us on social media! Follow us @tabforacause on [TikTok](https://www.tiktok.com/@tabforacause), [Instagram](https://www.instagram.com/tabforacause/), [Twitter](https://twitter.com/TabForACause), and [Facebook](https://www.facebook.com/TabForACause)."
+          },
+          {
+            "question": "This all sounds amazing! How else can I help?",
+            "answer": "Invite your friends and family to join in! Everybody who joins is helping do even more to promote healthcare access around the world."
+          }
+        ]
+      },
+      "Footer": {
+        "img": "../../img/globalHealth/footer.png",
+        "bubbleColor": "#E73C3C"
+      }
+    }
+  }
+}
