@@ -32,8 +32,8 @@
         "moneyImg": "../../img/health-generic/moneyRaised.png"
       },
       "charityIntro": {
-        "title": "Health care is under attack. Put your tabs into the fight.",
-        "subTitle": "We need to act to protect access to abortion and other critical health services. One step? Open some browser tabs.\n\nWith Tab for Reproductive Health, you can support nonprofits providing reproductive health services and advocating for policy change just by opening browser tabs.",
+        "title": "Health care is under attack.",
+        "subTitle": "We need to act to protect access to abortion and other critical health services.\n\nWith Tab for Reproductive Health, you can support nonprofits providing reproductive health services and advocating for policy change.",
         "steps": [
           {
             "img": "../../img/reproductiveHealth/charityIntro1.png",
@@ -50,9 +50,9 @@
         ]
       },
       "TFACIntro": {
-        "titleImg": "../../img/health-generic/introMain.png",
-        "title": "Be a part of the change",
-        "subtitle": "Use your daily habits to protect reproductive rights and provide reproductive health care.",
+        "titleImg": "../../img/causeshared/monitor-tab-page.png",
+        "title": "Your tabs can make a difference",
+        "subtitle": "Just by opening brower tabs, you can protect reproductive rights and provide reproductive health care.",
         "img1": "../../img/health-generic/intro1.png",
         "img1Subtext": "###### Open new tabs on your browser.",
         "img2": "../../img/reproductiveHealth/intro2.png",
@@ -155,7 +155,7 @@
           },
           {
             "question": "This all sounds amazing! How else can I help?",
-            "answer": "Invite your friends and family to join in! Everybody who joins is helping do even more to promote healthcare access around the world."
+            "answer": "Invite your friends and family to join in! Everybody who joins is helping do even more to promote access to safe reproductive health care."
           }
         ]
       },
