@@ -19,12 +19,12 @@
       "title": "Support Reproductive Health - Tab for a Cause ",
       "ogTitle": "Support Reproductive Health by Surfing the Web | Tab for a Cause",
       "ogDescription": "Open new tabs, raise money for nonprofits supporting access to reproductive health care - for free.",
-      "ogImage": "../../img/health-generic/landing.png",
+      "ogImage": "../../img/reproductiveHealth/landing.png",
       "causeSpecificKeywords": "charity, equity, reproductive rights, community, pregnancy, educational, abortion access, health, support, empowerment, equity, gender, WOC, trans, women, nonbinary, Roe v. Wade, reproductive health, Planned Parenthood, abortion, womens health, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
     },
     "sections": {
       "landing": {
-        "title": "Support reproductive health every day",
+        "title": "Support reproductive health care",
         "subtitle": "Every tab opened raises money for nonprofit organizations protecting and providing access to reproductive health care.",
         "ctaImg": "../../img/health-generic/landing.png"
       },
