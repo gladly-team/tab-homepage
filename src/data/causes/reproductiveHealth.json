@@ -1,5 +1,5 @@
 {
-  "path": "global-health",
+  "path": "reproductive-health",
   "data": {
     "styles": {
       "colors": {
@@ -9,64 +9,64 @@
       }
     },
     "causeLaunch": {
-      "comingSoonTitle": "Tab for Global Health",
-      "launchDate": "2022-02-25T21:00:00.000Z",
-      "preview": true,
+      "comingSoonTitle": "Tab for Reproductive Health",
+      "launchDate": "2022-05-03T21:00:00.000Z",
+      "preview": false,
       "enabled": true
     },
-    "causeId": "sPFpWRT7q",
+    "causeId": "4mC9rt2rb",
     "metadata": {
       "title": "Support Accessible Health Care - Tab for a Cause",
       "ogTitle": "Support Accessible Health Care by Surfing the Web | Tab for a Cause",
       "ogDescription": "Open new tabs, raise money to train and support community healthcare workers - for free.",
-      "ogImage": "../../img/globalHealth/landing.png",
+      "ogImage": "../../img/health-generic/landing.png",
       "causeSpecificKeywords": "charity, health care, healthy, community, healthcare worker, accessible health care, community resources, medical, training, empowerment, partners in health, global, doctor, safety, maternity, maternal, mental health, tuberculosis, emergency response, cancer, HIV, AIDS, child health, chronic, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
     },
     "sections": {
       "landing": {
         "title": "Support accessible global health care",
         "subtitle": "Every tab opened raises money to provide quality health care to those who need it most. Yes, it really is that easy!",
-        "ctaImg": "../../img/globalHealth/landing.png"
+        "ctaImg": "../../img/health-generic/landing.png"
       },
       "moneyRaised": {
-        "moneyImg": "../../img/globalHealth/moneyRaised.png"
+        "moneyImg": "../../img/health-generic/moneyRaised.png"
       },
       "charityIntro": {
         "title": "Stop wasting tabs, start changing the world",
         "subTitle": "Little actions can have big results. With Tab for Global Health, you will directly contribute to the training of healthcare professionals, just by opening browser tabs.",
         "steps": [
           {
-            "img": "../../img/globalHealth/charityIntro1.png",
+            "img": "../../img/health-generic/charityIntro1.png",
             "text": "More trained healthcare professionals"
           },
           {
-            "img": "../../img/globalHealth/charityIntro2.png",
+            "img": "../../img/health-generic/charityIntro2.png",
             "text": "Better access to health care where it is most needed"
           },
           {
-            "img": "../../img/globalHealth/charityIntro3.png",
+            "img": "../../img/health-generic/charityIntro3.png",
             "text": "Healthier and happier communities around the world"
           }
         ]
       },
       "TFACIntro": {
-        "titleImg": "../../img/globalHealth/introMain.png",
+        "titleImg": "../../img/health-generic/introMain.png",
         "title": "Be a part of the change",
         "subtitle": "Turn your internet browsing into charitable giving. Do good, feel good.",
-        "img1": "../../img/globalHealth/intro1.png",
+        "img1": "../../img/health-generic/intro1.png",
         "img1Subtext": "###### Open new tabs on your browser.",
-        "img2": "../../img/globalHealth/intro2.png",
+        "img2": "../../img/health-generic/intro2.png",
         "img2Subtext": "###### Help employ community healthcare workers.",
-        "img3": "../../img/globalHealth/intro3.png",
+        "img3": "../../img/health-generic/intro3.png",
         "img3Subtext": "###### Support accessible health care around the world."
       },
 
       "Mission": {
-        "missionURL": "/global-health/",
+        "missionURL": "/reproductive-health/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
         "bodyText": "We believe everyone deserves access to great health care. Through our partnership with [Partners In Health](https://www.pih.org/), you can be sure each tab you open is supporting community healthcare workers who create strong healthcare systems around the globe.",
-        "image": "../../img/globalHealth/mission.png"
+        "image": "../../img/health-generic/mission.png"
       },
       "Security": {
         "titleImg": "../../img/causeshared/security.png"
@@ -139,7 +139,7 @@
         ]
       },
       "faq": {
-        "img": "../../img/globalHealth/faq.png",
+        "img": "../../img/health-generic/faq.png",
         "questions": [
           {
             "question": "How does opening tabs raise money for charity?",
@@ -160,7 +160,7 @@
         ]
       },
       "Footer": {
-        "img": "../../img/globalHealth/footer.png",
+        "img": "../../img/health-generic/footer.png",
         "bubbleColor": "#E73C3C"
       }
     }
