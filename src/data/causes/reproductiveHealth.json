@@ -36,15 +36,15 @@
         "subTitle": "We need to act to protect access to abortion and other critical health services. One step? Open some browser tabs.\n\nWith Tab for Reproductive Health, you can support nonprofits providing reproductive health services and advocating for policy change just by opening browser tabs.",
         "steps": [
           {
-            "img": "../../img/health-generic/charityIntro1.png",
+            "img": "../../img/reproductiveHealth/charityIntro1.png",
             "text": "More widespread access to reproductive health care"
           },
           {
-            "img": "../../img/health-generic/charityIntro2.png",
+            "img": "../../img/reproductiveHealth/charityIntro2.png",
             "text": "Advocacy for protecting reproductive rights by law"
           },
           {
-            "img": "../../img/health-generic/charityIntro3.png",
+            "img": "../../img/reproductiveHealth/charityIntro3.png",
             "text": "Reproductive equity for all"
           }
         ]
@@ -55,9 +55,9 @@
         "subtitle": "Use your daily habits to protect reproductive rights and provide reproductive health care.",
         "img1": "../../img/health-generic/intro1.png",
         "img1Subtext": "###### Open new tabs on your browser.",
-        "img2": "../../img/health-generic/intro2.png",
+        "img2": "../../img/reproductiveHealth/intro2.png",
         "img2Subtext": "###### Earn money for Planned Parenthood and Center for Reproductive Rights.",
-        "img3": "../../img/health-generic/intro3.png",
+        "img3": "../../img/reproductiveHealth/intro3.png",
         "img3Subtext": "###### Protect access to safe reproductive health care."
       },
 
