@@ -56,7 +56,7 @@
         "img1": "../../img/health-generic/intro1.png",
         "img1Subtext": "###### Open new tabs on your browser.",
         "img2": "../../img/reproductiveHealth/intro2.png",
-        "img2Subtext": "###### Earn money for Planned Parenthood and Center for Reproductive Rights.",
+        "img2Subtext": "###### Earn money for Planned Parenthood and the Center for Reproductive Rights.",
         "img3": "../../img/reproductiveHealth/intro3.png",
         "img3Subtext": "###### Protect access to safe reproductive health care."
       },
@@ -65,7 +65,7 @@
         "missionURL": "/reproductive-health/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
-        "bodyText": "We believe everyone should be able to support access to safe reproductive health care, including abortion and contraception. Through our support of Planned Parenthood and Center for Reproductive Rights, you can be sure each tab you open is protecting reproductive rights and providing healthcare services.",
+        "bodyText": "We believe everyone should be able to support access to safe reproductive health care, including abortion and contraception. Through our support of Planned Parenthood and the Center for Reproductive Rights, you can be sure each tab you open is protecting reproductive rights and providing healthcare services.",
         "image": "../../img/health-generic/mission.png"
       },
       "Security": {
@@ -147,7 +147,7 @@
           },
           {
             "question": "What nonprofits does Tab for Reproductive Health support?",
-            "answer": "Tab for Reproductive Health supports [Planned Parenthood](https://www.plannedparenthood.org) and [Center for Reproductive Rights](https://reproductiverights.org)."
+            "answer": "Tab for Reproductive Health supports [Planned Parenthood](https://www.plannedparenthood.org) and the [Center for Reproductive Rights](https://reproductiverights.org)."
           },
           {
             "question": "How can I find out about new updates and announcements?",
