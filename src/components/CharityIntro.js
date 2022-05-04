@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import PageContentBox from 'src/components/PageContentBox'
 import { formatImg } from 'src/utils/formatting'
+import Markdown from './Markdown'
 
 const GatsbyImageStepImage = styled(GatsbyImage)(({ theme }) => ({
   flex: 4,
@@ -168,11 +169,10 @@ const CharityIntro = ({ charityIntroData }) => {
                 md: '70%',
                 sm: '100%',
               },
+              textAlign: 'center',
             }}
           >
-            <Typography variant="body1" align="center">
-              {subTitle}
-            </Typography>
+            <Markdown>{subTitle}</Markdown>
           </Box>
           <Box
             sx={{

@@ -52,7 +52,7 @@ const processor = unified()
       h6: (props) => (
         <Typography {...props} variant="caption" sx={{ display: 'block' }} />
       ),
-      p: (props) => <Typography {...props} variant="body1" />,
+      p: (props) => <Typography {...props} variant="body1" paragraph />,
       a: MarkdownLink,
     },
   })
