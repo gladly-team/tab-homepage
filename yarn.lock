@@ -9570,6 +9570,11 @@ gatsby-plugin-page-creator@^4.6.0:
     globby "^11.0.4"
     lodash "^4.17.21"
 
+gatsby-plugin-quantcast-tag@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-quantcast-tag/-/gatsby-plugin-quantcast-tag-0.1.1.tgz#3cb093e776183bc0140b9166e9d06a4e2c671469"
+  integrity sha512-L9dxq8FPVN+op3FLtpg711u0hZbtC5TdxVwPaFgVHbr1eMkc5L9ucHQC8NFUOjLAUKrLnO43nCiNSMGWZ0Wy3Q==
+
 gatsby-plugin-react-helmet@^5.5.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-5.6.0.tgz#9757d9164d66fc1201f1cf9af751c63fdb740420"

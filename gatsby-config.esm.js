@@ -114,6 +114,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-quantcast-tag',
+      options: {
+        acccountId: 'p-FPBLJYpJgR9Zu',
+        head: false,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sentry',
       options: {
         dsn: 'https://8cb64ec80165437b98905b07296ddc3f@sentry.io/1232334',
