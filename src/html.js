@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/html-has-lang, react/no-danger, react/function-component-definition */
 import React from 'react'
 import PropTypes from 'prop-types'
 
