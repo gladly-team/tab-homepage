@@ -1,6 +1,8 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
+// Gladly team modified to:
+// * add Quantcast Measure tag
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
@@ -16,11 +18,44 @@ export default function HTML(props) {
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
         <div
-          key={`body`}
+          key="body"
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+
+        {/* Begin: Quantcast Measure */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window._qevents = window._qevents || [];
+              (function() {
+              var elem = document.createElement('script');
+              elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+              elem.async = true;
+              elem.type = "text/javascript";
+              var scpt = document.getElementsByTagName('script')[0];
+              scpt.parentNode.insertBefore(elem, scpt);
+              })();
+              window._qevents.push({
+              qacct:"p-FPBLJYpJgR9Zu",
+              uid:"__INSERT_EMAIL_HERE__"
+              });
+            `,
+          }}
+        />
+        <noscript>
+          <div style={{ display: 'none' }}>
+            <img
+              src="//pixel.quantserve.com/pixel/p-FPBLJYpJgR9Zu.gif"
+              border="0"
+              height="1"
+              width="1"
+              alt=""
+            />
+          </div>
+        </noscript>
+        {/* End: Quantcast Measure */}
       </body>
     </html>
   )
