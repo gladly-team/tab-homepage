@@ -44,13 +44,9 @@ const FinancialsPage = ({ data, location }) => {
             >
               our deep-dive article on the topic
             </Link>
-            —but for a summary: investing in the future of Tab for a Cause
+            —but the quick answer is: investing in the future of Tab for a Cause
             better fulfills our mission and increases the total amount of money
-            our community can raise for nonprofits.
-          </p>
-          <p>
-            Financials are available about 3 months after the end of a quarter,
-            because our ad partners pay us on a delayed schedule.
+            our community can raise for nonprofits!
           </p>
           <div style={{ marginBottom: 16 }}>
             <Alert
@@ -58,11 +54,13 @@ const FinancialsPage = ({ data, location }) => {
 
               // classes={{ icon: classes.alertIcon, root: classes.alertRoot }}
             >
-              <AlertTitle>Can't find a nonprofit?</AlertTitle>
+              <AlertTitle>Can't find something?</AlertTitle>
               <div>
                 Our nonprofit partners for Global Health, Trees, and Ending
                 Hunger are recent additions. They'll show up in future
-                financials.
+                financials. Financials are available about 3 months after the
+                end of a quarter, because our ad partners pay us on a delayed
+                schedule.
               </div>
             </Alert>
           </div>
