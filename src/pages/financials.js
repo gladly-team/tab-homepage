@@ -8,6 +8,7 @@ import TextPageHeader from 'src/components/TextPageHeader'
 import { orderBy } from 'lodash/collection'
 import FinancialsQuarterButton from 'src/components/FinancialsQuarterButton'
 import Layout from 'src/components/Layout'
+import Link from 'src/components/Link'
 
 const FinancialsPage = ({ data, location }) => {
   const financialsEdges = data.allFinancialsYaml.edges
@@ -33,6 +34,19 @@ const FinancialsPage = ({ data, location }) => {
           <p>
             We know we have to earn your trust. That's why we've published
             detailed financial reports for years.
+          </p>
+          <p>
+            A common question about our financials is why we don't we give 100%
+            of the money we earn to nonprofits. We encourage you to check out{' '}
+            <Link
+              to="https://medium.com/for-a-cause/why-tab-for-a-cause-doesnt-give-100-of-its-money-to-nonprofits-4ebd540b219c"
+              target="_blank"
+            >
+              our deep-dive article on the topic
+            </Link>
+            —but for a summary: investing in the future of Tab for a Cause
+            better fulfills our mission and increases the total amount of money
+            our community can raise for nonprofits.
           </p>
           <p>
             Financials are available about 3 months after the end of a quarter,
