@@ -6,10 +6,12 @@ import {
   FIREFOX_BROWSER,
   UNSUPPORTED_BROWSER,
   SEARCH_STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
+  EDGE_BROWSER,
 } from 'src/utils/constants'
 import {
   homeURL,
   searchChromeExtensionPage,
+  searchEdgeExtensionPage,
   searchFirefoxExtensionPage,
 } from 'src/utils/navigation'
 import redirect from 'src/utils/redirect'
@@ -42,6 +44,9 @@ class GetSearchExtensionRedirectPage extends React.Component {
         case CHROME_BROWSER:
           redirect(searchChromeExtensionPage)
           break
+        case EDGE_BROWSER:
+          redirect(searchEdgeExtensionPage)
+          break
         case FIREFOX_BROWSER:
           redirect(searchFirefoxExtensionPage)
           break
@@ -66,6 +71,8 @@ class GetSearchExtensionRedirectPage extends React.Component {
     let browser
     if (browserInfo.isChrome()) {
       browser = CHROME_BROWSER
+    } else if (browserInfo.isEdge()) {
+      browser = EDGE_BROWSER
     } else if (browserInfo.isFirefox()) {
       browser = FIREFOX_BROWSER
     } else {
