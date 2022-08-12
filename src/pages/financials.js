@@ -8,6 +8,7 @@ import TextPageHeader from 'src/components/TextPageHeader'
 import { orderBy } from 'lodash/collection'
 import FinancialsQuarterButton from 'src/components/FinancialsQuarterButton'
 import Layout from 'src/components/Layout'
+import Link from 'src/components/Link'
 
 const FinancialsPage = ({ data, location }) => {
   const financialsEdges = data.allFinancialsYaml.edges
@@ -35,8 +36,17 @@ const FinancialsPage = ({ data, location }) => {
             detailed financial reports for years.
           </p>
           <p>
-            Financials are available about 3 months after the end of a quarter,
-            because our ad partners pay us on a delayed schedule.
+            A common question about our financials is why we don't we give 100%
+            of the money we earn to nonprofits. We encourage you to check out{' '}
+            <Link
+              to="https://medium.com/for-a-cause/why-tab-for-a-cause-doesnt-give-100-of-its-money-to-nonprofits-4ebd540b219c"
+              target="_blank"
+            >
+              our deep-dive article on the topic
+            </Link>
+            —but the quick answer is: investing in the future of Tab for a Cause
+            better fulfills our mission and increases the total amount of money
+            our community can raise for nonprofits!
           </p>
           <div style={{ marginBottom: 16 }}>
             <Alert
@@ -44,11 +54,13 @@ const FinancialsPage = ({ data, location }) => {
 
               // classes={{ icon: classes.alertIcon, root: classes.alertRoot }}
             >
-              <AlertTitle>Can't find a nonprofit?</AlertTitle>
+              <AlertTitle>Can't find something?</AlertTitle>
               <div>
                 Our nonprofit partners for Global Health, Trees, and Ending
                 Hunger are recent additions. They'll show up in future
-                financials.
+                financials. Financials are available about 3 months after the
+                end of a quarter, because our ad partners pay us on a delayed
+                schedule.
               </div>
             </Alert>
           </div>
