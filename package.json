@@ -37,7 +37,7 @@
     "gatsby-transformer-yaml": "^4.5.0",
     "lodash": "^4.17.21",
     "mdi-material-ui": "^7.1.0",
-    "moment": "^2.29.2",
+    "moment": "^2.29.4",
     "qs": "^6.10.3",
     "react": "^17.0.2",
     "react-alice-carousel": "^2.4.0",
