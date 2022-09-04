@@ -5,6 +5,7 @@ import redirect from 'src/utils/redirect'
 import {
   homeURL,
   searchChromeExtensionPage,
+  searchEdgeExtensionPage,
   searchFirefoxExtensionPage,
 } from 'src/utils/navigation'
 import localStorageMgr from 'src/utils/local-storage'
@@ -76,6 +77,24 @@ describe('GetSearchExtensionRedirectPage', () => {
     const mockProps = getMockProps()
     shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
     expect(redirect).toHaveBeenCalledWith(searchFirefoxExtensionPage)
+  })
+
+  it('redirects to the Edge Add-ons page when the browser is Edge on desktop', () => {
+    expect.assertions(1)
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('edge', false))
+    const GetSearchExtensionRedirectPage = require('../get-search').default
+    const mockProps = getMockProps()
+    shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
+    expect(redirect).toHaveBeenCalledWith(searchEdgeExtensionPage)
+  })
+
+  it('redirects to the Edge Add-ons page when the browser is Edge on mobile', () => {
+    expect.assertions(1)
+    getBrowserInfo.mockReturnValue(createMockBrowserInfo('edge', true))
+    const GetSearchExtensionRedirectPage = require('../get-search').default
+    const mockProps = getMockProps()
+    shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
+    expect(redirect).toHaveBeenCalledWith(searchEdgeExtensionPage)
   })
 
   it('redirects to the homepage when it is an unsupported browser', () => {

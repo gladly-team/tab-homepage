@@ -36,6 +36,8 @@ export const searchFirefoxExtensionPage =
   'https://addons.mozilla.org/en-US/firefox/addon/search-for-a-cause/'
 export const searchChromeExtensionPage =
   'https://chrome.google.com/webstore/detail/search-for-a-cause/eeiiknnphladbapfamiamfimnnnodife/'
+export const searchEdgeExtensionPage =
+  'https://microsoftedge.microsoft.com/addons/detail/search-for-a-cause/fmlahiedhhflgenodnimoahkgnkhafif'
 
 // Zendesk
 export const externalHelpAllAppsURL = 'https://gladly.zendesk.com/hc/en-us'
