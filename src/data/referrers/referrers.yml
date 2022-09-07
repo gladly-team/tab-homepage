@@ -616,3 +616,11 @@
   path: carletoncollege
 - referrerId: 952
   path: rpi
+- referrerId: 953
+  path: umaine
+- referrerId: 954
+  path: wlu
+- referrerId: 955
+  path: uf
+- referrerId: 956
+  path: ucla
