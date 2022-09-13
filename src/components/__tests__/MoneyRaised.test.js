@@ -12,6 +12,8 @@ afterEach(() => {
   jest.clearAllMocks()
 })
 
+const MONEY_RAISED_HISTORICAL = 1487105.0
+
 describe('MoneyRaised', () => {
   it('renders without error', () => {
     const MoneyRaised = require('../MoneyRaised').default
@@ -30,7 +32,9 @@ describe('MoneyRaised', () => {
     const MoneyRaised = require('../MoneyRaised').default
     const moneyRaisedComponent = shallow(<MoneyRaised />)
     expect(setInterval).not.toHaveBeenCalled()
-    expect(moneyRaisedComponent.state().moneyRaised).toEqual(1057100.0)
+    expect(moneyRaisedComponent.state().moneyRaised).toEqual(
+      MONEY_RAISED_HISTORICAL
+    )
   })
 
   it('advances in non-chromatic environment', () => {
@@ -38,6 +42,8 @@ describe('MoneyRaised', () => {
     const MoneyRaised = require('../MoneyRaised').default
     const moneyRaisedComponent = shallow(<MoneyRaised />)
     expect(setInterval).toHaveBeenCalled()
-    expect(moneyRaisedComponent.state().moneyRaised).not.toEqual(1057100.0)
+    expect(moneyRaisedComponent.state().moneyRaised).not.toEqual(
+      MONEY_RAISED_HISTORICAL
+    )
   })
 })
