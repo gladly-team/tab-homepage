@@ -640,3 +640,13 @@
   path: tufts
 - referrerId: 964
   path: loyolachicago
+- referrerId: 965
+  path: osu
+- referrerId: 966
+  path: georgiatech
+- referrerId: 967
+  path: elon
+- referrerId: 968
+  path: cal
+- referrerId: 969
+  path: harvard
