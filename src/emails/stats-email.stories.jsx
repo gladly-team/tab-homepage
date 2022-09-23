@@ -18,7 +18,11 @@ const iframeStyle = {
 function Template() {
   return (
     <div style={containerStyle}>
-      <iframe srcDoc={html} style={iframeStyle} />
+      <iframe
+        srcDoc={html}
+        style={iframeStyle}
+        title="Stats email page iframe"
+      />
     </div>
   )
 }
