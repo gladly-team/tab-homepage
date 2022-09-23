@@ -11,11 +11,12 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     'storybook-addon-gatsby',
+    '@storybook/html',
   ],
   core: {
     builder: 'webpack5',
   },
-    webpackFinal: async (config) => {
+  webpackFinal: async (config) => {
     return {
       ...config,
       resolve: {
