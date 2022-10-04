@@ -35,6 +35,7 @@ import {
   getAbsoluteURL,
   homeURL,
   instagramPageURL,
+  tiktokPageURL,
   millionHalfRaisedURL,
   millionHalfRaisedRainforestImpactURL,
   millionHalfRaisedWaterImpactURL,
@@ -368,7 +369,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url("${conservationInternationalImg}")`,
 
     // backgroundColor: fade(darken(green[900], 0.1), 0.7),
-    backgroundColor: 'rgba(0, 0, 0, 0.40)',
+    backgroundColor: 'rgba(0, 0, 0, 0.25)',
   },
   actionAgainstHungerBackgroundImg: {
     backgroundImage: `url("${actionAgainstHungerImg}")`,
@@ -635,6 +636,7 @@ const MillionHalfPage = ({
   const SECTION_ID_TOP = 'top'
   const SECTION_ID_IMPACT = 'impact'
   const SECTION_ID_THANKS = 'thanks'
+  const SECTION_ID_SOCIAL = 'social'
   const SECTION_ID_FOOTER = 'footer-section'
   const FOOTER_ID = 'footer'
 
@@ -681,6 +683,11 @@ const MillionHalfPage = ({
       id: SECTION_ID_IMPACT,
       dark: true,
       activeMenuId: MENU_ITEM_IMPACT_ID,
+    },
+    {
+      id: SECTION_ID_SOCIAL,
+      dark: true,
+      activeMenuId: MENU_ITEM_THANKS_ID,
     },
     {
       id: SECTION_ID_THANKS,
@@ -1200,6 +1207,49 @@ const MillionHalfPage = ({
             />
           </ArrowButtonContainer>
         </>
+      ),
+    },
+    [SECTION_ID_SOCIAL]: {
+      className: classes.topBackground,
+      content: (
+        <div
+          className={clsx(classes.sectionContent, classes.topBackgroundInner)}
+        >
+          <Center>
+            <Typography
+              variant="h5"
+              className={clsx(classes.moneyRaisedText)}
+              style={{ maxWidth: 840, marginBottom: 24 }}
+            >
+              <Link
+                to={tiktokPageURL}
+                target="_blank"
+                style={{ color: 'white', textDecoration: 'underline' }}
+              >
+                Celebrate with us on TikTok
+              </Link>
+              —we're giving extra money to charity when you interact with videos
+              like this one 👇! 👀🤩
+            </Typography>
+            <div>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/FcjUku7ohBU"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </Center>
+          <ArrowButtonContainer>
+            <ArrowButton
+              arrowDirection="down"
+              onClick={() => window.fullpage_api.moveSectionDown()}
+            />
+          </ArrowButtonContainer>
+        </div>
       ),
     },
     [SECTION_ID_THANKS]: {
