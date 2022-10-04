@@ -1009,7 +1009,7 @@ const MillionHalfPage = ({
                       }
                       RedditShareButtonProps={{
                         title:
-                          'Browser tabs transformed into education for over 200 girls',
+                          'I helped provide over 70,000 books to children just by opening browser tabs',
                       }}
                       TumblrShareButtonProps={{
                         title:
