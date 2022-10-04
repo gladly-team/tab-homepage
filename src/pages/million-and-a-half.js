@@ -562,7 +562,7 @@ Center.defaultProps = {
   className: undefined,
 }
 
-const MillionPage = ({
+const MillionHalfPage = ({
   location: { pathname },
   pageContext: { impactStat } = {},
 }) => {
@@ -626,7 +626,6 @@ const MillionPage = ({
   const MENU_ID = 'nav-menu'
   const MENU_ITEM_1M_ID = 'top'
   const MENU_ITEM_1M_TEXT = '$1M'
-  const SECTION_ID_IMPACT_INTRO = 'impact-intro'
   const MENU_ITEM_IMPACT_ID = 'impact'
   const MENU_ITEM_IMPACT_TEXT = 'Your Impact'
   const MENU_ITEM_THANKS_ID = 'thanks'
@@ -684,11 +683,6 @@ const MillionPage = ({
       id: SECTION_ID_TOP,
       dark: true,
       activeMenuId: MENU_ITEM_1M_ID,
-    },
-    {
-      id: SECTION_ID_IMPACT_INTRO,
-      dark: false,
-      activeMenuId: MENU_ITEM_IMPACT_ID,
     },
     {
       id: SECTION_ID_IMPACT,
@@ -755,54 +749,7 @@ const MillionPage = ({
                 className={classes.arrowText}
                 style={{ margin: '0px 12px' }}
               >
-                How we got here
-              </Typography>
-            </ArrowButton>
-          </ArrowButtonContainer>
-        </div>
-      ),
-    },
-    [SECTION_ID_IMPACT_INTRO]: {
-      className: clsx(classes.lightBackground, classes.hiddenUntilPageRendered),
-      content: (
-        <div className={classes.sectionContent}>
-          <Center>
-            <Typography
-              variant="h5"
-              className={clsx(classes.moneyRaisedText)}
-              gutterBottom
-            >
-              We never imagined we would
-            </Typography>
-            <Typography
-              variant="h1"
-              className={clsx(classes.moneyRaised, classes.bottomThankYouText)}
-              gutterBottom
-            >
-              #TabForAMillion
-            </Typography>
-            <Typography variant="body2" style={{ maxWidth: 540 }} paragraph>
-              When we first launched Tab for a Cause, we thought it was a fun
-              idea to do a little good, for free.
-            </Typography>
-            <Typography variant="body2" style={{ maxWidth: 540 }} paragraph>
-              What we didn't expect was{' '}
-              <span style={{ fontWeight: 'bold' }}>you</span>. Soon, the little
-              good became a lot of good. And here we are.
-            </Typography>
-          </Center>
-          <ArrowButtonContainer className={classes.hiddenUntilPageRendered}>
-            <ArrowButton
-              className={classes.purpleBackground}
-              onClick={() => window.fullpage_api.moveSectionDown()}
-              dark
-            >
-              <Typography
-                variant="body1"
-                className={clsx(classes.arrowText, classes.whiteColor)}
-                style={{ margin: '0px 12px' }}
-              >
-                See the impact
+                Our impact
               </Typography>
             </ArrowButton>
           </ArrowButtonContainer>
@@ -1558,11 +1505,12 @@ const MillionPage = ({
             <div className={classes.installButtonContainer}>
               <InstallButton
                 size="medium"
-                color="primary"
+                color="secondary"
                 style={{
                   minWidth: 180,
                   paddingLeft: 10,
                   paddingRight: 10,
+                  borderRadius: 24,
                 }}
                 onUnsupportedBrowserInstallClick={() => {
                   redirect(homeURL)
@@ -1606,8 +1554,8 @@ const MillionPage = ({
     </div>
   )
 }
-MillionPage.displayName = 'MillionPage'
-MillionPage.propTypes = {
+MillionHalfPage.displayName = 'MillionHalfPage'
+MillionHalfPage.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
@@ -1625,7 +1573,7 @@ MillionPage.propTypes = {
     ]),
   }),
 }
-MillionPage.defaultProps = {
+MillionHalfPage.defaultProps = {
   pageContext: {
     impactStat: null,
   },
@@ -1633,12 +1581,23 @@ MillionPage.defaultProps = {
 
 // Can't create and use theme in same component (useStyles will not use
 // the custom theme).
-const MillionPageWithTheme = (props) => (
-  <ThemeProvider theme={responsiveFontSizes(defaultTheme, { factor: 3.4 })}>
-    <MillionPage {...props} />
+const millionHalfTheme = {
+  ...defaultTheme,
+  palette: {
+    ...defaultTheme.palette,
+    secondary: {
+      // ...defaultTheme.palette.secondary,
+      main: '#29BEBA', // v4 landing page teal color
+      contrastText: '#fff',
+    },
+  },
+}
+const MillionHalfPageWithTheme = (props) => (
+  <ThemeProvider theme={responsiveFontSizes(millionHalfTheme, { factor: 3.4 })}>
+    <MillionHalfPage {...props} />
   </ThemeProvider>
 )
 
-MillionPageWithTheme.displayName = 'MillionPageWithTheme'
+MillionHalfPageWithTheme.displayName = 'MillionHalfPageWithTheme'
 
-export default MillionPageWithTheme
+export default MillionHalfPageWithTheme
