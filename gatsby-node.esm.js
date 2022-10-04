@@ -66,6 +66,28 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
   })
+
+  // $1.5M
+  const millionHalfPage = path.resolve(`src/pages/million-and-a-half.js`)
+  const millionHalfSubpages = [
+    'rainforest',
+    'water',
+    'hunger',
+    'trees',
+    'cats',
+    'read',
+    'children',
+    'ocean',
+  ]
+  millionHalfSubpages.forEach((impactStat) => {
+    createPage({
+      path: `million-and-a-half/${impactStat}/`,
+      component: millionHalfPage,
+      context: {
+        impactStat,
+      },
+    })
+  })
   const dynamicDataQuery = await graphql(`
     {
       allCausesJson(limit: 1000) {
