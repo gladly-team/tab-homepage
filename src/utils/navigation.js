@@ -25,6 +25,19 @@ export const millionRaisedReadImpactURL = '/million/read/'
 export const millionRaisedChildrenImpactURL = '/million/children/'
 export const millionRaisedEducateImpactURL = '/million/educate/'
 
+// Million and a half raised
+export const millionHalfRaisedURL = '/million-and-a-half/'
+export const millionHalfRaisedRainforestImpactURL =
+  '/million-and-a-half/rainforest/'
+export const millionHalfRaisedWaterImpactURL = '/million-and-a-half/water/'
+export const millionHalfRaisedHungerImpactURL = '/million-and-a-half/hunger/'
+export const millionHalfRaisedTreesImpactURL = '/million-and-a-half/trees/'
+export const millionHalfRaisedCatsImpactURL = '/million-and-a-half/cats/'
+export const millionHalfRaisedReadImpactURL = '/million-and-a-half/read/'
+export const millionHalfRaisedChildrenImpactURL =
+  '/million-and-a-half/children/'
+export const millionHalfRaisedOceanImpactURL = '/million-and-a-half/ocean/'
+
 // New tab page app URLs.
 // Absolute URLs because it's outside of this Gatsby app.
 export const newTabPageURL = `${baseURL}/newtab/`

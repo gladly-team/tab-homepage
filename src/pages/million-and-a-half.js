@@ -35,12 +35,15 @@ import {
   getAbsoluteURL,
   homeURL,
   instagramPageURL,
-  millionRaisedURL,
-  millionRaisedRainforestImpactURL,
-  millionRaisedWaterImpactURL,
-  millionRaisedHungerImpactURL,
-  millionRaisedReadImpactURL,
-  millionRaisedChildrenImpactURL,
+  millionHalfRaisedURL,
+  millionHalfRaisedRainforestImpactURL,
+  millionHalfRaisedWaterImpactURL,
+  millionHalfRaisedTreesImpactURL,
+  millionHalfRaisedCatsImpactURL,
+  millionHalfRaisedHungerImpactURL,
+  millionHalfRaisedReadImpactURL,
+  millionHalfRaisedChildrenImpactURL,
+  millionHalfRaisedOceanImpactURL,
   twitterPageURL,
 } from 'src/utils/navigation'
 import Footer from 'src/components/Footer'
@@ -48,20 +51,24 @@ import Link from 'src/components/Link'
 import SocialShare from 'src/components/SocialShare'
 import logoWithText from 'src/img/logo-with-text.svg'
 import logoWithTextWhite from 'src/img/logo-with-text-white.svg'
-import waterImg from 'src/img/million/water.jpg'
-import forestImg from 'src/img/million/forest.jpg'
-import actionAgainstHungerImg from 'src/img/million/action-against-hunger.jpg'
-import giveDirectlyImg from 'src/img/million/give-directly.jpg'
-import roomToReadImg from 'src/img/million/room-to-read.jpg'
-import saveTheChildrenImg from 'src/img/million/save-the-children.jpg'
-import schoolImg from 'src/img/million/school.jpg'
-import openGraphImg1M from 'src/img/million/og-img-1M.png'
-import openGraphImg1MMatch from 'src/img/million/og-img-1M-match-v2.png'
-import openGraphImg1MWater from 'src/img/million/og-img-1M-water.png'
-import openGraphImg1MChildren from 'src/img/million/og-img-1M-children.png'
-import openGraphImg1MHunger from 'src/img/million/og-img-1M-hunger.png'
-import openGraphImg1MRainforestV2 from 'src/img/million/og-img-1M-rainforest-v2.png'
-import openGraphImg1MRead from 'src/img/million/og-img-1M-read.png'
+import waterImg from 'src/img/million-and-a-half/water.jpg'
+import conservationInternationalImg from 'src/img/million-and-a-half/conservation-international.jpg'
+import actionAgainstHungerImg from 'src/img/million-and-a-half/action-against-hunger.jpg'
+import roomToReadImg from 'src/img/million-and-a-half/room-to-read.jpg'
+import saveTheChildrenImg from 'src/img/million-and-a-half/save-the-children.jpg'
+import edenReforestationImg from 'src/img/million-and-a-half/eden-reforestation-projects.jpg'
+import jacksonGalaxyImg from 'src/img/million-and-a-half/jackson-galaxy.jpg'
+import oceanCleanupImg from 'src/img/million-and-a-half/ocean-cleanup.jpg'
+
+import openGraphImg1M from 'src/img/million-and-a-half/og-img-1.5M.png'
+import openGraphImgConservationInternational from 'src/img/million-and-a-half/og-img-1.5M-conservation-international.png'
+import openGraphImgWaterOrg from 'src/img/million-and-a-half/og-img-1.5M-water.png'
+import openGraphImgSaveTheChildren from 'src/img/million-and-a-half/og-img-1.5M-save-the-children.png'
+import openGraphImgEdenReforestationProjects from 'src/img/million-and-a-half/og-img-1.5M-eden-reforestation-projects.png'
+import openGraphImgJacksonGalaxy from 'src/img/million-and-a-half/og-img-1.5M-jackson-galaxy.png'
+import openGraphImgRoomToRead from 'src/img/million-and-a-half/og-img-1.5M-room-to-read.png'
+import openGraphImgActionAgainstHunger from 'src/img/million-and-a-half/og-img-1.5M-action-against-hunger.png'
+import openGraphImgOceanCleanup from 'src/img/million-and-a-half/og-img-1.5M-the-ocean-cleanup.png'
 
 import { grey, green, blue } from '@mui/material/colors'
 
@@ -71,9 +78,11 @@ const LIGHT_BACKGROUND = grey['50']
 const RAINFOREST = 'rainforest'
 const WATER = 'water'
 const HUNGER = 'hunger'
+const TREES = 'trees'
+const CATS = 'cats'
 const READ = 'read'
 const CHILDREN = 'children'
-const MATCH = 'match' // millionaire matching subpage
+const OCEAN = 'ocean'
 
 // Don't use makeStyles or clsx for new components. This page
 // was not updated when migrating to MUI v5.
@@ -349,46 +358,46 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     position: 'relative',
   },
-  waterImgBackground: {
+  waterBackgroundImg: {
     backgroundImage: `url("${waterImg}")`,
 
     // backgroundColor: fade(blue[700], 0.8),
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
-  forestImgBackground: {
-    backgroundImage: `url("${forestImg}")`,
+  conservationInternationalBackgroundImg: {
+    backgroundImage: `url("${conservationInternationalImg}")`,
 
     // backgroundColor: fade(darken(green[900], 0.1), 0.7),
-    backgroundColor: 'rgba(0, 0, 0, 0.55)',
+    backgroundColor: 'rgba(0, 0, 0, 0.40)',
   },
   actionAgainstHungerBackgroundImg: {
     backgroundImage: `url("${actionAgainstHungerImg}")`,
 
     // backgroundColor: fade(darken(red[900], 0.2), 0.6),
-    backgroundColor: 'rgba(0, 0, 0, 0.45)',
-  },
-  giveDirectlyBackgroundImg: {
-    backgroundImage: `url("${giveDirectlyImg}")`,
-
-    // backgroundColor: fade(teal[900], 0.7),
-    backgroundColor: 'rgba(0, 0, 0, 0.55)',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
   },
   roomToReadBackgroundImg: {
     backgroundImage: `url("${roomToReadImg}")`,
 
     // backgroundColor: fade(brown[700], 0.8),
-    backgroundColor: 'rgba(0, 0, 0, 0.55)',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   saveTheChildrenBackgroundImg: {
     backgroundImage: `url("${saveTheChildrenImg}")`,
 
     // backgroundColor: fade(darken(red[900], 0.4), 0.7),
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+  },
+  edenReforestationBackgroundImg: {
+    backgroundImage: `url("${edenReforestationImg}")`,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  jacksonGalaxyBackgroundImg: {
+    backgroundImage: `url("${jacksonGalaxyImg}")`,
     backgroundColor: 'rgba(0, 0, 0, 0.55)',
   },
-  schoolBackgroundImg: {
-    backgroundImage: `url("${schoolImg}")`,
-
-    // backgroundColor: fade(brown[900], 0.6),
+  oceanCleanupBackgroundImg: {
+    backgroundImage: `url("${oceanCleanupImg}")`,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   fullPageBackgroundImg: {
@@ -562,44 +571,52 @@ const MillionHalfPage = ({
 }) => {
   // We generate subpages to make each impact stat shareable.
   // Set the open graph info based on the specific impact stat.
-  let title = '$1M Raised'
-  let ogTitle = 'I helped raise $1,000,000 for charity by doing almost nothing'
-  let ogDescription =
+  let title = '$1.5M Raised'
+  const ogTitle =
+    'I helped raise $1,500,000 for charity by doing almost nothing'
+  const ogDescription =
     'Turn your internet browsing into positive impact with Tab for a Cause.'
   let ogImage = getAbsoluteURL(openGraphImg1M)
   switch (impactStat) {
     case RAINFOREST: {
       title = 'Protected over 7,000 acres of rainforest - $1.5M Raised'
-      ogImage = getAbsoluteURL(openGraphImg1MRainforestV2)
+      ogImage = getAbsoluteURL(openGraphImgConservationInternational)
       break
     }
     case WATER: {
       title = 'Access to clean water for over 15,000 people - $1.5M Raised'
-      ogImage = getAbsoluteURL(openGraphImg1MWater)
+      ogImage = getAbsoluteURL(openGraphImgWaterOrg)
       break
     }
     case HUNGER: {
       title = 'Over 350,000 packets of emergency nutrition - $1.5M Raised'
-      ogImage = getAbsoluteURL(openGraphImg1MHunger)
+      ogImage = getAbsoluteURL(openGraphImgActionAgainstHunger)
+      break
+    }
+    case TREES: {
+      title = 'Over 7,000 trees planted - $1.5M Raised'
+      ogImage = getAbsoluteURL(openGraphImgEdenReforestationProjects)
+      break
+    }
+    case CATS: {
+      title = 'Over 8,000 training programs for shelter cats - $1.5M Raised'
+      ogImage = getAbsoluteURL(openGraphImgJacksonGalaxy)
       break
     }
     case READ: {
       title = 'Provided over 70,000 books to children - $1.5M Raised'
-      ogImage = getAbsoluteURL(openGraphImg1MRead)
+      ogImage = getAbsoluteURL(openGraphImgRoomToRead)
       break
     }
     case CHILDREN: {
       title =
         'Provided over 130,000 children with essential vaccines - $1.5M Raised'
-      ogImage = getAbsoluteURL(openGraphImg1MChildren)
+      ogImage = getAbsoluteURL(openGraphImgSaveTheChildren)
       break
     }
-    case MATCH: {
-      title = '$1M Raised'
-      ogTitle = 'We raised $1,000,000 for charity. Your turn.'
-      ogDescription =
-        "We're not millionaires, but we turned our browser tabs into $1M for good. You can make it $2M right now."
-      ogImage = getAbsoluteURL(openGraphImg1MMatch)
+    case OCEAN: {
+      title = 'Removed over 7,000 lbs of plastic from the ocean - $1.5M Raised'
+      ogImage = getAbsoluteURL(openGraphImgOceanCleanup)
       break
     }
     default: {
@@ -753,7 +770,7 @@ const MillionHalfPage = ({
             <div
               className={clsx(
                 classes.fullPageBackgroundImg,
-                classes.forestImgBackground
+                classes.conservationInternationalBackgroundImg
               )}
             >
               <div className={classes.impactSlide}>
@@ -772,7 +789,7 @@ const MillionHalfPage = ({
                   </Typography>
                   <div className={classes.shareContainer}>
                     <SocialShare
-                      url={getAbsoluteURL(millionRaisedRainforestImpactURL)}
+                      url={getAbsoluteURL(millionHalfRaisedRainforestImpactURL)}
                       FacebookShareButtonProps={
                         {
                           // Disabling the quote so Facebook shares the large version
@@ -826,7 +843,7 @@ const MillionHalfPage = ({
                   </Typography>
                   <div className={classes.shareContainer}>
                     <SocialShare
-                      url={getAbsoluteURL(millionRaisedChildrenImpactURL)}
+                      url={getAbsoluteURL(millionHalfRaisedChildrenImpactURL)}
                       FacebookShareButtonProps={
                         {
                           // Disabling the quote so Facebook shares the large version
@@ -861,6 +878,112 @@ const MillionHalfPage = ({
             <div
               className={clsx(
                 classes.fullPageBackgroundImg,
+                classes.edenReforestationBackgroundImg
+              )}
+            >
+              <div className={classes.impactSlide}>
+                <Center className={classes.impactTextContainer}>
+                  <Typography
+                    variant="h2"
+                    className={classes.impactTextPrimary}
+                  >
+                    plant over 7,000 trees
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    className={classes.impactTextSupporting}
+                  >
+                    through Eden Reforestation Projects
+                  </Typography>
+                  <div className={classes.shareContainer}>
+                    <SocialShare
+                      url={getAbsoluteURL(millionHalfRaisedTreesImpactURL)}
+                      FacebookShareButtonProps={
+                        {
+                          // Disabling the quote so Facebook shares the large version
+                          // of the image, but leaving this prop so that SocialShare
+                          // will still show the Facebook button.
+                        }
+                      }
+                      RedditShareButtonProps={{
+                        title:
+                          'I helped plant over 7,000 trees just by opening browser tabs',
+                      }}
+                      TumblrShareButtonProps={{
+                        title:
+                          'A simple and free way to make the world a better place',
+                        caption:
+                          'I helped plant over 7,000 trees just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
+                      }}
+                      TwitterShareButtonProps={{
+                        title:
+                          'I helped plant over 7,000 trees just by opening tabs with @TabForACause. Join me!',
+                        related: ['@TabForACause'],
+                      }}
+                    />
+                  </div>
+                </Center>
+              </div>
+            </div>
+          </Slide>
+          <Slide>
+            <div
+              className={clsx(
+                classes.fullPageBackgroundImg,
+                classes.jacksonGalaxyBackgroundImg
+              )}
+            >
+              <div className={classes.impactSlide}>
+                <Center className={classes.impactTextContainer}>
+                  <Typography
+                    variant="h2"
+                    className={classes.impactTextPrimary}
+                  >
+                    provide over 8,000 training programs for shelter cats
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    className={classes.impactTextSupporting}
+                  >
+                    through The Jackson Galaxy Project
+                  </Typography>
+                  <div className={classes.shareContainer}>
+                    <SocialShare
+                      url={getAbsoluteURL(millionHalfRaisedCatsImpactURL)}
+                      FacebookShareButtonProps={
+                        {
+                          // Disabling the quote so Facebook shares the large version
+                          // of the image, but leaving this prop so that SocialShare
+                          // will still show the Facebook button.
+                          // quote:
+                          //   'I helped provide emergency nutrition to over 6,000 children just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                        }
+                      }
+                      RedditShareButtonProps={{
+                        title:
+                          'I helped provide over 8,000 training programs for shelter cats just by opening browser tabs',
+                      }}
+                      TumblrShareButtonProps={{
+                        title:
+                          'A simple and free way to make the world a better place',
+                        caption:
+                          'I helped provide over 8,000 training programs for shelter cats just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
+                      }}
+                      TwitterShareButtonProps={{
+                        title:
+                          'I helped provide over 8,000 training programs for shelter cats just by opening tabs with @TabForACause. Join me!',
+                        related: ['@TabForACause'],
+                      }}
+                    />
+                  </div>
+                </Center>
+              </div>
+            </div>
+          </Slide>
+          <Slide>
+            <div
+              className={clsx(
+                classes.fullPageBackgroundImg,
                 classes.roomToReadBackgroundImg
               )}
             >
@@ -870,8 +993,7 @@ const MillionHalfPage = ({
                     variant="h2"
                     className={classes.impactTextPrimary}
                   >
-                    provide over 70,000 books to children, increasing literacy
-                    around the world
+                    provide over 70,000 books to children
                   </Typography>
                   <Typography
                     variant="h5"
@@ -881,7 +1003,7 @@ const MillionHalfPage = ({
                   </Typography>
                   <div className={classes.shareContainer}>
                     <SocialShare
-                      url={getAbsoluteURL(millionRaisedReadImpactURL)}
+                      url={getAbsoluteURL(millionHalfRaisedReadImpactURL)}
                       FacebookShareButtonProps={
                         {
                           // Disabling the quote so Facebook shares the large version
@@ -916,7 +1038,7 @@ const MillionHalfPage = ({
             <div
               className={clsx(
                 classes.fullPageBackgroundImg,
-                classes.waterImgBackground
+                classes.waterBackgroundImg
               )}
             >
               <div className={classes.impactSlide}>
@@ -935,7 +1057,7 @@ const MillionHalfPage = ({
                   </Typography>
                   <div className={classes.shareContainer}>
                     <SocialShare
-                      url={getAbsoluteURL(millionRaisedWaterImpactURL)}
+                      url={getAbsoluteURL(millionHalfRaisedWaterImpactURL)}
                       FacebookShareButtonProps={
                         {
                           // Disabling the quote so Facebook shares the large version
@@ -989,7 +1111,7 @@ const MillionHalfPage = ({
                   </Typography>
                   <div className={classes.shareContainer}>
                     <SocialShare
-                      url={getAbsoluteURL(millionRaisedHungerImpactURL)}
+                      url={getAbsoluteURL(millionHalfRaisedHungerImpactURL)}
                       FacebookShareButtonProps={
                         {
                           // Disabling the quote so Facebook shares the large version
@@ -1012,6 +1134,60 @@ const MillionHalfPage = ({
                       TwitterShareButtonProps={{
                         title:
                           'I helped provide over 350,000 packets of emergency nutrition just by opening tabs with @TabForACause. Join me!',
+                        related: ['@TabForACause'],
+                      }}
+                    />
+                  </div>
+                </Center>
+              </div>
+            </div>
+          </Slide>
+          <Slide>
+            <div
+              className={clsx(
+                classes.fullPageBackgroundImg,
+                classes.oceanCleanupBackgroundImg
+              )}
+            >
+              <div className={classes.impactSlide}>
+                <Center className={classes.impactTextContainer}>
+                  <Typography
+                    variant="h2"
+                    className={classes.impactTextPrimary}
+                  >
+                    remove over 7,000 lbs of plastic from the ocean
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    className={classes.impactTextSupporting}
+                  >
+                    through Ocean Conservancy and The Ocean Cleanup
+                  </Typography>
+                  <div className={classes.shareContainer}>
+                    <SocialShare
+                      url={getAbsoluteURL(millionHalfRaisedOceanImpactURL)}
+                      FacebookShareButtonProps={
+                        {
+                          // Disabling the quote so Facebook shares the large version
+                          // of the image, but leaving this prop so that SocialShare
+                          // will still show the Facebook button.
+                          // quote:
+                          //   'I helped provide emergency nutrition to over 6,000 children just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                        }
+                      }
+                      RedditShareButtonProps={{
+                        title:
+                          'I helped remove over 7,000 lbs of plastic from the ocean just by opening browser tabs',
+                      }}
+                      TumblrShareButtonProps={{
+                        title:
+                          'A simple and free way to make the world a better place',
+                        caption:
+                          'I helped remove over 7,000 lbs of plastic from the ocean just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
+                      }}
+                      TwitterShareButtonProps={{
+                        title:
+                          'I helped remove over 7,000 lbs of plastic from the ocean just by opening tabs with @TabForACause. Join me!',
                         related: ['@TabForACause'],
                       }}
                     />
@@ -1282,7 +1458,7 @@ const MillionHalfPage = ({
                   Share this achievement:
                 </Typography>
                 <SocialShare
-                  url={getAbsoluteURL(millionRaisedURL)}
+                  url={getAbsoluteURL(millionHalfRaisedURL)}
                   FacebookShareButtonProps={
                     {
                       // Disabling the quote so Facebook shares the large version
@@ -1441,9 +1617,11 @@ MillionHalfPage.propTypes = {
       RAINFOREST,
       WATER,
       HUNGER,
+      TREES,
+      CATS,
       READ,
       CHILDREN,
-      MATCH,
+      OCEAN,
     ]),
   }),
 }
