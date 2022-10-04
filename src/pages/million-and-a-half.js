@@ -631,13 +631,10 @@ const MillionHalfPage = ({
   const MENU_ITEM_IMPACT_TEXT = 'Your Impact'
   const MENU_ITEM_THANKS_ID = 'thanks'
   const MENU_ITEM_THANKS_TEXT = 'Thanks'
-  const MENU_ITEM_CELEBRATION_ID = 'celebration'
-  const MENU_ITEM_CELEBRATION_TEXT = 'Celebration'
 
   const SECTION_ID_TOP = 'top'
   const SECTION_ID_IMPACT = 'impact'
   const SECTION_ID_THANKS = 'thanks'
-  const SECTION_ID_CELEBRATION = 'celebration'
   const SECTION_ID_FOOTER = 'footer-section'
   const FOOTER_ID = 'footer'
 
@@ -663,11 +660,6 @@ const MillionHalfPage = ({
       linkTo: SECTION_ID_IMPACT,
     },
     {
-      id: MENU_ITEM_CELEBRATION_ID,
-      text: MENU_ITEM_CELEBRATION_TEXT,
-      linkTo: SECTION_ID_CELEBRATION,
-    },
-    {
       id: MENU_ITEM_THANKS_ID,
       text: MENU_ITEM_THANKS_TEXT,
       linkTo: SECTION_ID_THANKS,
@@ -689,11 +681,6 @@ const MillionHalfPage = ({
       id: SECTION_ID_IMPACT,
       dark: true,
       activeMenuId: MENU_ITEM_IMPACT_ID,
-    },
-    {
-      id: SECTION_ID_CELEBRATION,
-      dark: true,
-      activeMenuId: MENU_ITEM_CELEBRATION_ID,
     },
     {
       id: SECTION_ID_THANKS,
@@ -1215,226 +1202,6 @@ const MillionHalfPage = ({
         </>
       ),
     },
-    [SECTION_ID_CELEBRATION]: {
-      className: clsx(classes.darkBackground, classes.hiddenUntilPageRendered),
-      content: (
-        <>
-          <div className={classes.slidesFixedHeader}>
-            <Typography variant="h5" className={clsx(classes.slideHeaderText)}>
-              Join us as we celebrate each day leading up to $1M.
-            </Typography>
-          </div>
-          <Slide
-            className={classes.scheduleSlide}
-            // Background color matches aurora effect.
-            style={{ background: '#32a6ff' }}
-          >
-            <Center className={classes.scheduleSlideTextContainer}>
-              <Typography
-                variant="h4"
-                className={clsx(
-                  classes.whiteColor,
-                  classes.impactTextSupporting
-                )}
-                gutterBottom
-              >
-                #MillionaireMonday
-              </Typography>
-              <Typography variant="body2" className={classes.whiteColor}>
-                For us, it was as easy as opening tabs. For multi-millionaires,
-                it’s as easy as writing a check. Join us each Monday on{' '}
-                <Link
-                  to={twitterPageURL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#fff', textDecoration: 'underline' }}
-                >
-                  Twitter
-                </Link>{' '}
-                and{' '}
-                <Link
-                  to={instagramPageURL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#fff', textDecoration: 'underline' }}
-                >
-                  Instagram
-                </Link>{' '}
-                as we ask the uber-wealthy to match with a $1M donation. We’re
-                looking at you @google...
-              </Typography>
-            </Center>
-          </Slide>
-          <Slide
-            className={classes.scheduleSlide}
-            // A blend of the first two colors in the aurora effect.
-            style={{ background: '#398BFF' }}
-          >
-            <Center className={classes.scheduleSlideTextContainer}>
-              <Typography
-                variant="h4"
-                className={clsx(
-                  classes.whiteColor,
-                  classes.impactTextSupporting
-                )}
-                gutterBottom
-              >
-                #TabberTuesday
-              </Typography>
-              <Typography variant="body2" className={classes.whiteColor}>
-                Tab for a Cause would not be possible without you. We would love
-                to hear why you use it! DM us on{' '}
-                <Link
-                  to={instagramPageURL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#fff', textDecoration: 'underline' }}
-                >
-                  Instagram
-                </Link>
-                ,{' '}
-                <Link
-                  to={facebookPageURL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#fff', textDecoration: 'underline' }}
-                >
-                  Facebook
-                </Link>
-                , and{' '}
-                <Link
-                  to={twitterPageURL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#fff', textDecoration: 'underline' }}
-                >
-                  Twitter
-                </Link>{' '}
-                (or post why you tab to your feed with #TabForAMillion and
-                @tabforacause) and you might be featured!
-              </Typography>
-            </Center>
-          </Slide>
-          <Slide
-            className={classes.scheduleSlide}
-            // Background color matches aurora effect.
-            style={{ background: '#3f6fff' }}
-          >
-            <Center className={classes.scheduleSlideTextContainer}>
-              <Typography
-                variant="h4"
-                className={clsx(
-                  classes.whiteColor,
-                  classes.impactTextSupporting
-                )}
-                gutterBottom
-              >
-                #WelcomeWednesday
-              </Typography>
-              <Typography variant="body2" className={classes.whiteColor}>
-                Despite this incredible milestone, most people haven't heard of
-                Tab for a Cause. Make sure your friends' tabs aren't going to
-                waste. Text, email, call, DM, Snap, whatever it takes, make sure
-                everyone knows that they can be part of this incredible
-                movement!
-              </Typography>
-            </Center>
-          </Slide>
-          <Slide
-            className={classes.scheduleSlide}
-            // A blend of the second two colors in the aurora effect.
-            style={{ background: '#6662FF' }}
-          >
-            <Center className={classes.scheduleSlideTextContainer}>
-              <Typography
-                variant="h4"
-                className={clsx(
-                  classes.whiteColor,
-                  classes.impactTextSupporting
-                )}
-                gutterBottom
-              >
-                #ThankfulThursday
-              </Typography>
-              <Typography variant="body2" className={classes.whiteColor}>
-                On social media, share which Tab for a Cause nonprofit partner
-                or spotlight campaign you're most thankful for with
-                #TabForAMillion and #ThankfulThursday.
-              </Typography>
-            </Center>
-          </Slide>
-          <Slide
-            className={classes.scheduleSlide}
-            // Background color matches aurora effect.
-            style={{ background: '#8d54ff' }}
-          >
-            <Center className={classes.scheduleSlideTextContainer}>
-              <Typography
-                variant="h4"
-                className={clsx(
-                  classes.whiteColor,
-                  classes.impactTextSupporting
-                )}
-                gutterBottom
-              >
-                #FriendFriday
-              </Typography>
-              <Typography variant="body2" className={classes.whiteColor}>
-                We are proud to support nine incredible nonprofit partners who
-                turn our tabs into concrete impact. Check out what they have to
-                say about Tab for a Cause on{' '}
-                <Link
-                  to={instagramPageURL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={classes.link}
-                  style={{ color: '#fff', textDecoration: 'underline' }}
-                >
-                  Instagram
-                </Link>
-                ,{' '}
-                <Link
-                  to={facebookPageURL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={classes.link}
-                  style={{ color: '#fff', textDecoration: 'underline' }}
-                >
-                  Facebook
-                </Link>
-                , and{' '}
-                <Link
-                  to={twitterPageURL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={classes.link}
-                  style={{ color: '#fff', textDecoration: 'underline' }}
-                >
-                  Twitter
-                </Link>
-                .
-              </Typography>
-            </Center>
-          </Slide>
-          <ArrowButtonContainer>
-            <ArrowButton
-              arrowDirection="left"
-              className={classes.leftRightArrowButton}
-              onClick={() => window.fullpage_api.moveSlideLeft()}
-            />
-            <ArrowButton
-              arrowDirection="down"
-              onClick={() => window.fullpage_api.moveSectionDown()}
-            />
-            <ArrowButton
-              arrowDirection="right"
-              className={classes.leftRightArrowButton}
-              onClick={() => window.fullpage_api.moveSlideRight()}
-            />
-          </ArrowButtonContainer>
-        </>
-      ),
-    },
     [SECTION_ID_THANKS]: {
       className: clsx(classes.lightBackground, classes.hiddenUntilPageRendered),
       content: (
@@ -1455,7 +1222,8 @@ const MillionHalfPage = ({
               </Typography>
               <div className={classes.thanksShareWrapper}>
                 <Typography variant="body2" gutterBottom>
-                  Share this achievement:
+                  Share this achievement & invite your friends to join us in
+                  doing good:
                 </Typography>
                 <SocialShare
                   url={getAbsoluteURL(millionHalfRaisedURL)}
