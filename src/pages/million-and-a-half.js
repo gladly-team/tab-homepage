@@ -39,10 +39,8 @@ import {
   millionRaisedRainforestImpactURL,
   millionRaisedWaterImpactURL,
   millionRaisedHungerImpactURL,
-  millionRaisedGiveImpactURL,
   millionRaisedReadImpactURL,
   millionRaisedChildrenImpactURL,
-  millionRaisedEducateImpactURL,
   twitterPageURL,
 } from 'src/utils/navigation'
 import Footer from 'src/components/Footer'
@@ -61,8 +59,6 @@ import openGraphImg1M from 'src/img/million/og-img-1M.png'
 import openGraphImg1MMatch from 'src/img/million/og-img-1M-match-v2.png'
 import openGraphImg1MWater from 'src/img/million/og-img-1M-water.png'
 import openGraphImg1MChildren from 'src/img/million/og-img-1M-children.png'
-import openGraphImg1MEducate from 'src/img/million/og-img-1M-educate.png'
-import openGraphImg1MGive from 'src/img/million/og-img-1M-give.png'
 import openGraphImg1MHunger from 'src/img/million/og-img-1M-hunger.png'
 import openGraphImg1MRainforestV2 from 'src/img/million/og-img-1M-rainforest-v2.png'
 import openGraphImg1MRead from 'src/img/million/og-img-1M-read.png'
@@ -75,10 +71,8 @@ const LIGHT_BACKGROUND = grey['50']
 const RAINFOREST = 'rainforest'
 const WATER = 'water'
 const HUNGER = 'hunger'
-const GIVE = 'give'
 const READ = 'read'
 const CHILDREN = 'children'
-const EDUCATE = 'educate'
 const MATCH = 'match' // millionaire matching subpage
 
 // Don't use makeStyles or clsx for new components. This page
@@ -575,39 +569,29 @@ const MillionHalfPage = ({
   let ogImage = getAbsoluteURL(openGraphImg1M)
   switch (impactStat) {
     case RAINFOREST: {
-      title = 'Protected over 5,000 acres of rainforest - $1M Raised'
+      title = 'Protected over 7,000 acres of rainforest - $1.5M Raised'
       ogImage = getAbsoluteURL(openGraphImg1MRainforestV2)
       break
     }
     case WATER: {
-      title = 'Access to clean water for 12,000 people - $1M Raised'
+      title = 'Access to clean water for over 15,000 people - $1.5M Raised'
       ogImage = getAbsoluteURL(openGraphImg1MWater)
       break
     }
     case HUNGER: {
-      title = 'Live-saving treatment for 1,500 children - $1M Raised'
+      title = 'Over 350,000 packets of emergency nutrition - $1.5M Raised'
       ogImage = getAbsoluteURL(openGraphImg1MHunger)
       break
     }
-    case GIVE: {
-      title = 'Over $41,000 in cash transfers - $1M Raised'
-      ogImage = getAbsoluteURL(openGraphImg1MGive)
-      break
-    }
     case READ: {
-      title = 'Kept over 200 girls in school - $1M Raised'
+      title = 'Provided over 70,000 books to children - $1.5M Raised'
       ogImage = getAbsoluteURL(openGraphImg1MRead)
       break
     }
     case CHILDREN: {
       title =
-        'A month of emergency nutrition for over 6,000 children - $1M Raised'
+        'Provided over 130,000 children with essential vaccines - $1.5M Raised'
       ogImage = getAbsoluteURL(openGraphImg1MChildren)
-      break
-    }
-    case EDUCATE: {
-      title = 'Learning materials for over 3,500 children - $1M Raised'
-      ogImage = getAbsoluteURL(openGraphImg1MEducate)
       break
     }
     case MATCH: {
@@ -778,7 +762,7 @@ const MillionHalfPage = ({
                     variant="h2"
                     className={classes.impactTextPrimary}
                   >
-                    protect 5,000 acres of rainforest
+                    protect 7,000 acres of rainforest
                   </Typography>
                   <Typography
                     variant="h5"
@@ -795,22 +779,22 @@ const MillionHalfPage = ({
                           // of the image, but leaving this prop so that SocialShare
                           // will still show the Facebook button.
                           // quote:
-                          //   'I helped protect over 5,000 acres of rainforest just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                          //   'I helped protect over 7,000 acres of rainforest just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
                         }
                       }
                       RedditShareButtonProps={{
                         title:
-                          '5,000 acres of rainforest protected just by opening browser tabs',
+                          '7,000 acres of rainforest protected just by opening browser tabs',
                       }}
                       TumblrShareButtonProps={{
                         title:
                           'A simple and free way to make the world a better place',
                         caption:
-                          'I helped protect 5,000 acres of rainforest just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
+                          'I helped protect 7,000 acres of rainforest just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'I helped protect over 5,000 acres of rainforest just by opening tabs with @TabForACause. Join me! #TabForAMillion',
+                          'I helped protect over 7,000 acres of rainforest just by opening tabs with @TabForACause. Join me!',
                         related: ['@TabForACause'],
                       }}
                     />
@@ -832,7 +816,7 @@ const MillionHalfPage = ({
                     variant="h2"
                     className={classes.impactTextPrimary}
                   >
-                    give over 6,000 children a month of emergency nutrition
+                    provide over 130,000 children with essential vaccines
                   </Typography>
                   <Typography
                     variant="h5"
@@ -854,17 +838,17 @@ const MillionHalfPage = ({
                       }
                       RedditShareButtonProps={{
                         title:
-                          '6,000 children provided emergency nutrition just by opening browser tabs',
+                          '130,000 children provided essential vaccines just by opening browser tabs',
                       }}
                       TumblrShareButtonProps={{
                         title:
                           'A simple and free way to make the world a better place',
                         caption:
-                          'I helped  provide emergency nutrition to over 6,000 children just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
+                          'I helped provide essential vaccines to over 130,000 children just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'I helped provide emergency nutrition to over 6,000 children just by opening tabs with @TabForACause. Join me! #TabForAMillion',
+                          'I helped provide essential vaccines to over 130,000 children just by opening tabs with @TabForACause. Join me!',
                         related: ['@TabForACause'],
                       }}
                     />
@@ -886,7 +870,8 @@ const MillionHalfPage = ({
                     variant="h2"
                     className={classes.impactTextPrimary}
                   >
-                    keep over 200 girls in school
+                    provide over 70,000 books to children, increasing literacy
+                    around the world
                   </Typography>
                   <Typography
                     variant="h5"
@@ -903,7 +888,7 @@ const MillionHalfPage = ({
                           // of the image, but leaving this prop so that SocialShare
                           // will still show the Facebook button.
                           // quote:
-                          //   'I helped keep over 200 girls in school just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                          //   'I helped provide over 70,000 books to children just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
                         }
                       }
                       RedditShareButtonProps={{
@@ -914,11 +899,11 @@ const MillionHalfPage = ({
                         title:
                           'A simple and free way to make the world a better place',
                         caption:
-                          'I helped keep over 200 girls in school just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause.',
+                          'I helped provide over 70,000 books to children just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause.',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'I helped keep over 200 girls in school just by opening tabs with @TabForACause. Join me! #TabForAMillion',
+                          'I helped provide over 70,000 books to children just by opening tabs with @TabForACause. Join me!',
                         related: ['@TabForACause'],
                       }}
                     />
@@ -940,7 +925,7 @@ const MillionHalfPage = ({
                     variant="h2"
                     className={classes.impactTextPrimary}
                   >
-                    provide access to clean water to over 12,000 people
+                    provide access to clean water to over 15,000 people
                   </Typography>
                   <Typography
                     variant="h5"
@@ -957,22 +942,22 @@ const MillionHalfPage = ({
                           // of the image, but leaving this prop so that SocialShare
                           // will still show the Facebook button.
                           // quote:
-                          //   'I helped provide access to clean water for over 12,000 people just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
+                          //   'I helped provide access to clean water for over 15,000 people just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
                         }
                       }
                       RedditShareButtonProps={{
                         title:
-                          'Access to clean water for over 12,000 people just by opening browser tabs',
+                          'Access to clean water for over 15,000 people just by opening browser tabs',
                       }}
                       TumblrShareButtonProps={{
                         title:
                           'A simple and free way to make the world a better place',
                         caption:
-                          'I helped provide access to clean water for over 12,000 people just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
+                          'I helped provide access to clean water for over 15,000 people just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'I helped provide access to clean water for over 12,000 people just by opening tabs with @TabForACause. Join me! #TabForAMillion',
+                          'I helped provide access to clean water for over 15,000 people just by opening tabs with @TabForACause. Join me!',
                         related: ['@TabForACause'],
                       }}
                     />
@@ -994,8 +979,7 @@ const MillionHalfPage = ({
                     variant="h2"
                     className={classes.impactTextPrimary}
                   >
-                    provide life-saving malnutrition treatment to over 1,500
-                    children
+                    provide over 350,000 packets of emergency nutrition
                   </Typography>
                   <Typography
                     variant="h5"
@@ -1017,125 +1001,17 @@ const MillionHalfPage = ({
                       }
                       RedditShareButtonProps={{
                         title:
-                          '1,500 children fed just by opening browser tabs',
+                          '350,000 packets of emergency nutrition just by opening browser tabs',
                       }}
                       TumblrShareButtonProps={{
                         title:
                           'A simple and free way to make the world a better place',
                         caption:
-                          'I helped provide food to over 1,500 children just by opening tabs with @TabForACause. Join me! #TabForAMillion',
+                          'I helped provide over 350,000 packets of emergency nutrition just by opening tabs with @TabForACause. Join me!',
                       }}
                       TwitterShareButtonProps={{
                         title:
-                          'I helped provide food to over 1,500 children just by opening tabs with @TabForACause. Join me! #TabForAMillion',
-                        related: ['@TabForACause'],
-                      }}
-                    />
-                  </div>
-                </Center>
-              </div>
-            </div>
-          </Slide>
-          <Slide>
-            <div
-              className={clsx(
-                classes.fullPageBackgroundImg,
-                classes.giveDirectlyBackgroundImg
-              )}
-            >
-              <div className={classes.impactSlide}>
-                <Center className={classes.impactTextContainer}>
-                  <Typography
-                    variant="h2"
-                    className={classes.impactTextPrimary}
-                  >
-                    fund over $41,000 in direct cash transfers
-                  </Typography>
-                  <Typography
-                    variant="h5"
-                    className={classes.impactTextSupporting}
-                  >
-                    through GiveDirectly
-                  </Typography>
-                  <div className={classes.shareContainer}>
-                    <SocialShare
-                      url={getAbsoluteURL(millionRaisedGiveImpactURL)}
-                      FacebookShareButtonProps={
-                        {
-                          // Disabling the quote so Facebook shares the large version
-                          // of the image, but leaving this prop so that SocialShare
-                          // will still show the Facebook button.
-                          // quote:
-                          //   'I helped transfer over $41,000 to those in need just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
-                        }
-                      }
-                      RedditShareButtonProps={{
-                        title:
-                          '$41,000 in direct cash transfer to those in need just by opening browser tabs',
-                      }}
-                      TumblrShareButtonProps={{
-                        title:
-                          'A simple and free way to make the world a better place',
-                        caption:
-                          'I helped transfer over $41,000 to those in need just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
-                      }}
-                      TwitterShareButtonProps={{
-                        title:
-                          'I helped transfer over $41,000 to those in need just by opening tabs with @TabForACause. Join me! #TabForAMillion',
-                        related: ['@TabForACause'],
-                      }}
-                    />
-                  </div>
-                </Center>
-              </div>
-            </div>
-          </Slide>
-          <Slide>
-            <div
-              className={clsx(
-                classes.fullPageBackgroundImg,
-                classes.schoolBackgroundImg
-              )}
-            >
-              <div className={classes.impactSlide}>
-                <Center className={classes.impactTextContainer}>
-                  <Typography
-                    variant="h2"
-                    className={classes.impactTextPrimary}
-                  >
-                    give learning materials to over 3,500 students
-                  </Typography>
-                  <Typography
-                    variant="h5"
-                    className={classes.impactTextSupporting}
-                  >
-                    through Educate!
-                  </Typography>
-                  <div className={classes.shareContainer}>
-                    <SocialShare
-                      url={getAbsoluteURL(millionRaisedEducateImpactURL)}
-                      FacebookShareButtonProps={
-                        {
-                          // Disabling the quote so Facebook shares the large version
-                          // of the image, but leaving this prop so that SocialShare
-                          // will still show the Facebook button.
-                          // quote:
-                          //   'I helped provide learning materials to over 3,500 students just by opening tabs! Join me in turning your internet browsing into a force for good with @TabForACause',
-                        }
-                      }
-                      RedditShareButtonProps={{
-                        title:
-                          'Browser tabs transformed into learning materials for over 3,500 students',
-                      }}
-                      TumblrShareButtonProps={{
-                        title:
-                          'A simple and free way to make the world a better place',
-                        caption:
-                          'I helped provide learning materials to over 3,500 students just by opening tabs! Join me in turning your internet browsing into a force for good with Tab for a Cause',
-                      }}
-                      TwitterShareButtonProps={{
-                        title:
-                          'I helped provide learning materials to over 3,500 students just by opening tabs with @TabForACause. Join me! #TabForAMillion',
+                          'I helped provide over 350,000 packets of emergency nutrition just by opening tabs with @TabForACause. Join me!',
                         related: ['@TabForACause'],
                       }}
                     />
@@ -1428,7 +1304,7 @@ const MillionHalfPage = ({
                   }}
                   TwitterShareButtonProps={{
                     title:
-                      'Turn your internet browsing into a force for good with @TabForACause. Join me! #TabForAMillion',
+                      'Turn your internet browsing into a force for good with @TabForACause. Join me!',
                     related: ['@TabForACause'],
                   }}
                 />
@@ -1565,10 +1441,8 @@ MillionHalfPage.propTypes = {
       RAINFOREST,
       WATER,
       HUNGER,
-      GIVE,
       READ,
       CHILDREN,
-      EDUCATE,
       MATCH,
     ]),
   }),
