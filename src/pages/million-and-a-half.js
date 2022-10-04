@@ -369,7 +369,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url("${conservationInternationalImg}")`,
 
     // backgroundColor: fade(darken(green[900], 0.1), 0.7),
-    backgroundColor: 'rgba(0, 0, 0, 0.25)',
+    backgroundColor: 'rgba(0, 0, 0, 0.40)',
   },
   actionAgainstHungerBackgroundImg: {
     backgroundImage: `url("${actionAgainstHungerImg}")`,
