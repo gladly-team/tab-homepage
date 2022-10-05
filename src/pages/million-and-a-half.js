@@ -53,14 +53,15 @@ import Link from 'src/components/Link'
 import SocialShare from 'src/components/SocialShare'
 import logoWithText from 'src/img/logo-with-text.svg'
 import logoWithTextWhite from 'src/img/logo-with-text-white.svg'
-import waterImg from 'src/img/million-and-a-half/water.jpg'
-import conservationInternationalImg from 'src/img/million-and-a-half/conservation-international.jpg'
-import actionAgainstHungerImg from 'src/img/million-and-a-half/action-against-hunger.jpg'
-import roomToReadImg from 'src/img/million-and-a-half/room-to-read.jpg'
-import saveTheChildrenImg from 'src/img/million-and-a-half/save-the-children.jpg'
-import edenReforestationImg from 'src/img/million-and-a-half/eden-reforestation-projects.jpg'
-import jacksonGalaxyImg from 'src/img/million-and-a-half/jackson-galaxy.jpg'
-import oceanCleanupImg from 'src/img/million-and-a-half/ocean-cleanup.jpg'
+
+import waterImg from 'src/img/million-and-a-half/water-v2.jpg'
+import conservationInternationalImg from 'src/img/million-and-a-half/conservation-international-v2.jpg'
+import actionAgainstHungerImg from 'src/img/million-and-a-half/action-against-hunger-v2.jpg'
+import roomToReadImg from 'src/img/million-and-a-half/room-to-read-v2.jpg'
+import saveTheChildrenImg from 'src/img/million-and-a-half/save-the-children-v2.jpg'
+import edenReforestationImg from 'src/img/million-and-a-half/eden-reforestation-projects-v2.jpg'
+import jacksonGalaxyImg from 'src/img/million-and-a-half/jackson-galaxy-v2.jpg'
+import oceanCleanupImg from 'src/img/million-and-a-half/ocean-cleanup-v2.jpg'
 
 import openGraphImg1M from 'src/img/million-and-a-half/og-img-1.5M.png'
 import openGraphImgConservationInternational from 'src/img/million-and-a-half/og-img-1.5M-conservation-international.png'
@@ -370,37 +371,37 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url("${conservationInternationalImg}")`,
 
     // backgroundColor: fade(darken(green[900], 0.1), 0.7),
-    backgroundColor: 'rgba(0, 0, 0, 0.40)',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
   },
   actionAgainstHungerBackgroundImg: {
     backgroundImage: `url("${actionAgainstHungerImg}")`,
 
     // backgroundColor: fade(darken(red[900], 0.2), 0.6),
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    backgroundColor: 'rgba(0, 0, 0, 0.44)',
   },
   roomToReadBackgroundImg: {
     backgroundImage: `url("${roomToReadImg}")`,
 
     // backgroundColor: fade(brown[700], 0.8),
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
   },
   saveTheChildrenBackgroundImg: {
     backgroundImage: `url("${saveTheChildrenImg}")`,
 
     // backgroundColor: fade(darken(red[900], 0.4), 0.7),
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    backgroundColor: 'rgba(0, 0, 0, 0.35)',
   },
   edenReforestationBackgroundImg: {
     backgroundImage: `url("${edenReforestationImg}")`,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.45)',
   },
   jacksonGalaxyBackgroundImg: {
     backgroundImage: `url("${jacksonGalaxyImg}")`,
-    backgroundColor: 'rgba(0, 0, 0, 0.55)',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   oceanCleanupBackgroundImg: {
     backgroundImage: `url("${oceanCleanupImg}")`,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
   },
   fullPageBackgroundImg: {
     width: '100%',
