@@ -1274,6 +1274,7 @@ const MillionHalfPage = ({
               <iframe
                 width="560"
                 height="315"
+                style={{ maxWidth: '90vw', minWidth: 200 }}
                 src="https://www.youtube.com/embed/FcjUku7ohBU"
                 title="YouTube video player"
                 frameBorder="0"
