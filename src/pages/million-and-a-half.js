@@ -3,14 +3,10 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import ReactFullpage from '@fullpage/react-fullpage'
 import {
-  // fade,
   ThemeProvider,
   lighten,
   responsiveFontSizes,
 } from '@mui/material/styles'
-// import red from '@mui/material/colors/red'
-// import teal from '@mui/material/colors/teal'
-// import brown from '@mui/material/colors/brown'
 import Button from '@mui/material/Button'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import ArrowLeftIcon from '@mui/icons-material/ArrowBack'
