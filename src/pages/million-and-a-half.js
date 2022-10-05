@@ -46,6 +46,7 @@ import {
   millionHalfRaisedChildrenImpactURL,
   millionHalfRaisedOceanImpactURL,
   twitterPageURL,
+  youtubePageURL,
 } from 'src/utils/navigation'
 import Footer from 'src/components/Footer'
 import Link from 'src/components/Link'
@@ -1219,14 +1220,51 @@ const MillionHalfPage = ({
             <Typography
               variant="h5"
               className={clsx(classes.moneyRaisedText)}
-              style={{ maxWidth: 840, marginBottom: 24 }}
+              style={{ maxWidth: 880, marginBottom: 24 }}
             >
+              Celebrate with us on{' '}
               <Link
                 to={tiktokPageURL}
                 target="_blank"
                 style={{ color: 'white', textDecoration: 'underline' }}
               >
-                Celebrate with us on TikTok
+                TikTok
+              </Link>
+              ,{' '}
+              <Link
+                to={instagramPageURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'white', textDecoration: 'underline' }}
+              >
+                Instagram
+              </Link>
+              ,{' '}
+              <Link
+                to={youtubePageURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'white', textDecoration: 'underline' }}
+              >
+                YouTube
+              </Link>
+              ,{' '}
+              <Link
+                to={twitterPageURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'white', textDecoration: 'underline' }}
+              >
+                Twitter
+              </Link>
+              , &{' '}
+              <Link
+                to={facebookPageURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'white', textDecoration: 'underline' }}
+              >
+                Facebook
               </Link>
               —we're giving extra money to charity when you interact with videos
               like this one 👇! 👀🤩
