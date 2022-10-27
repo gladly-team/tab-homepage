@@ -8,7 +8,6 @@ import { jobsURL } from 'src/utils/navigation'
 import { secondaryMainColor } from 'src/themes/theme'
 import imgAlex from 'src/img/team/alex.jpg'
 import imgKevin from 'src/img/team/kevin.jpg'
-import imgMiranda from 'src/img/team/miranda.jpg'
 import imgIlana from 'src/img/team/Ilana.jpg'
 import Layout from 'src/components/Layout'
 
@@ -20,19 +19,14 @@ const TeamPage = ({ location }) => {
       title: 'Co-Founder & CEO',
     },
     {
+      name: 'Ilana Degann',
+      img: imgIlana,
+      title: 'Content Strategist',
+    },
+    {
       name: 'Kevin Jennison',
       img: imgKevin,
       title: 'Co-Founder & CTO',
-    },
-    {
-      name: 'Miranda Escobar',
-      img: imgMiranda,
-      title: 'Marketing Manager',
-    },
-    {
-      name: 'Ilana Degann',
-      img: imgIlana,
-      title: 'Social Media Intern',
     },
   ]
   const openGraphTitle = 'Our Team - Tab for a Cause'
@@ -49,10 +43,9 @@ const TeamPage = ({ location }) => {
         <TextPageContent>
           <TextPageHeader>Team</TextPageHeader>
           <p>
-            Hi there! We're a small team working in the sunny San Francisco Bay
-            Area, California. We're humbled by the Tab for a Cause and Search
-            for a Cause communities and are thrilled that we get to spend our
-            time helping them grow.
+            Hi there! We're a small team working from California and beyond.
+            We're humbled by the Tab for a Cause community and are thrilled that
+            we get to spend our time helping them grow.
           </p>
           <p>
             Want to join in? Check out our <Link to={jobsURL}>open jobs</Link>.
