@@ -138,3 +138,6 @@
 - quarter: 1
   year: 2022
   pdfUrl: '/financials/2022-Q1.pdf'
+- quarter: 2
+  year: 2022
+  pdfUrl: '/financials/2022-Q2.pdf'
