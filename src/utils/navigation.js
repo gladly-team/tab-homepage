@@ -62,7 +62,7 @@ export const facebookPageURL = 'https://www.facebook.com/TabForACause'
 export const instagramPageURL = 'https://www.instagram.com/tabforacause/'
 export const twitterPageURL = 'https://twitter.com/TabForACause'
 export const tiktokPageURL = 'https://www.tiktok.com/@tabforacause'
-export const youtubePageURL = 'https://www.youtube.com/c/TabforaCause1'
+export const youtubePageURL = 'https://www.youtube.com/@tabforacause'
 
 // Github
 export const githubOrganizationURL = 'https://github.com/gladly-team/'
