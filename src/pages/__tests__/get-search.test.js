@@ -3,7 +3,7 @@ import React from 'react'
 import { shallow } from 'src/utils/testHelpers/componentTesting'
 import redirect from 'src/utils/redirect'
 import {
-  homeURL,
+  searchHomeURL,
   searchChromeExtensionPage,
   searchFirefoxExtensionPage,
 } from 'src/utils/navigation'
@@ -78,25 +78,25 @@ describe('GetSearchExtensionRedirectPage', () => {
     expect(redirect).toHaveBeenCalledWith(searchFirefoxExtensionPage)
   })
 
-  it('redirects to the homepage when it is an unsupported browser', () => {
+  it('redirects to the search homepage when it is an unsupported browser', () => {
     expect.assertions(1)
     getBrowserInfo.mockReturnValue(createMockBrowserInfo('safari', false))
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
-    expect(redirect).toHaveBeenCalledWith(homeURL)
+    expect(redirect).toHaveBeenCalledWith(searchHomeURL)
   })
 
-  it('redirects to the homepage when the browser value is null', () => {
+  it('redirects to the search homepage when the browser value is null', () => {
     expect.assertions(1)
     getBrowserInfo.mockReturnValue(createMockBrowserInfo(null, false))
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
-    expect(redirect).toHaveBeenCalledWith(homeURL)
+    expect(redirect).toHaveBeenCalledWith(searchHomeURL)
   })
 
-  it('redirects to the homepage if browser detection throws an error', () => {
+  it('redirects to the search homepage if browser detection throws an error', () => {
     expect.assertions(1)
 
     // Suppress expected console error.
@@ -108,7 +108,7 @@ describe('GetSearchExtensionRedirectPage', () => {
     const GetSearchExtensionRedirectPage = require('../get-search').default
     const mockProps = getMockProps()
     shallow(<GetSearchExtensionRedirectPage {...mockProps} />)
-    expect(redirect).toHaveBeenCalledWith(homeURL)
+    expect(redirect).toHaveBeenCalledWith(searchHomeURL)
   })
 
   it('stores the referrer ID in local storage if it exists', () => {
