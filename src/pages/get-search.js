@@ -8,7 +8,7 @@ import {
   SEARCH_STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
 } from 'src/utils/constants'
 import {
-  homeURL,
+  searchHomeURL,
   searchChromeExtensionPage,
   searchFirefoxExtensionPage,
 } from 'src/utils/navigation'
@@ -46,12 +46,12 @@ class GetSearchExtensionRedirectPage extends React.Component {
           redirect(searchFirefoxExtensionPage)
           break
         default:
-          redirect(homeURL)
+          redirect(searchHomeURL)
           break
       }
     } catch (e) {
       console.error(e)
-      redirect(homeURL)
+      redirect(searchHomeURL)
     }
   }
 
