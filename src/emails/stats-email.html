@@ -4,13 +4,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+    />
     <style type="text/css">
+      h1, h2 {
+        font-weight: 900;
+      }
       body, p, div {
-        font-family: arial,helvetica,sans-serif;
+        font-family: Roboto,arial,helvetica,sans-serif;
         font-size: 14px;
       }
       body {
         color: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       body a {
         color: #1188E6;
@@ -28,6 +38,55 @@
       }
       .column.of-4 {
         width: 25%;
+      }
+      .footer {
+        margin-top: 32px;
+        width: 100%;
+        background-color: #FFD747;
+        height: 144px;
+        display: flex;
+        align-items: center;
+      }
+      .stats {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      .stats-row {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .stats-box {
+        width: 232px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 112px;
+        background-color: #FBF3E9;
+        border-radius: 8px;
+      }
+      .stats-box-text {
+        font-weight: 700;
+      }
+      .main-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 56px;
+        padding-right: 56px;
+        width: 500px;
+        text-align: center;
+      }
+      .orange {
+        color: #FF7616
       }
       @media screen and (max-width:480px) {
         img.max-width {
@@ -49,7 +108,40 @@
     </style>
   </head>
   <body>
-    <h1>TODO</h1>
-    <p>Let's design the email here.</p>
+    <div class="main-div">
+      <h1>Hey Nat333, check out your stats</h1>
+      <h2 class="orange">You’re in the top 10% of all tabbers!</h2>
+      <p>Every time you open a tab you’re aiding non-profits in the causes you care most about</p>
+      <div class="stats">
+        <div class="stats-row">
+          <div class="stats-box">
+            <p class="stats-box-text">Number of Tabs Opened</p>
+            <h1 class="stats-box-number orange">104</h1>
+          </div>
+          <div class="stats-box">
+            <p class="stats-box-text">Number of Searches</p>
+            <h1 class="stats-box-number orange">2329</h1>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="stats-box">
+            <p class="stats-box-text">Percentile of tabs opened</p>
+            <h1 class="stats-box-number orange">104</h1>
+          </div>
+          <div class="stats-box">
+            <p class="stats-box-text">Total Money Raised by Tabbers</p>
+            <h1 class="stats-box-number orange">2329</h1>
+          </div>
+        </div>
+      </div>
+      <p>Keep it going! We’ll see ya next week.</p>
+    </div>
+    <div class="footer">
+      <div class="footer-text">
+        <p>Gladly, Inc.</p>
+        <p>204 E 2nd Ave</p>
+        <p>San Mateo, CA 94401</p>
+      </div>
+    </div>
   </body>
 </html>
