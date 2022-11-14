@@ -20,6 +20,7 @@ import Layout from 'src/components/Layout'
 import Divider from '@mui/material/Divider'
 
 import Button from '@mui/material/Button'
+import Link from 'src/components/Link'
 
 const teamValues = [
   {
@@ -102,11 +103,28 @@ class JobsPage extends React.Component {
           <TextPageHeader>Jobs</TextPageHeader>
           <div>
             <p>
-              We are a small team that prioritizes collaboration, positivity,
-              work-life balance, and social impact (we've given over $1M to
-              charity!).
+              Welcome! We're building a company that reflects the same values
+              internally that we project externally. We prioritize open
+              dialogue, trust, and learning. We strive to make working at Tab
+              for a Cause rewarding, purposeful, and fun.
             </p>
           </div>
+
+          <Paper style={jobPaperStyle}>
+            <h2>Founding Engineer</h2>
+            <p>Remote – Full time</p>
+            <p>
+              As the founding engineer at Tab for a Cause, you’ll change the way
+              GenZ does social impact. This is an incredible opportunity to be
+              an early, foundational leader on a social-good consumer product
+              with real revenue and substantial impact.
+            </p>
+            <Link to="https://angel.co/company/tabforacause/jobs/2457095-founding-engineer">
+              <Button variant="contained" color="primary" size="medium">
+                See Job
+              </Button>
+            </Link>
+          </Paper>
 
           {/*           <Paper style={jobPaperStyle}> */}
           {/*             <h2>UI/UX Designer</h2> */}
@@ -204,166 +222,15 @@ class JobsPage extends React.Component {
           {/*             <ApplyButton email="jobs@tabforacause.org">Apply</ApplyButton> */}
           {/*           </Paper> */}
 
-          {/*           <Paper style={jobPaperStyle}> */}
-          {/*             <h2>Senior Full Stack Web Developer</h2> */}
-          {/*             <p>Remote – Full time or part time</p> */}
-          {/*             <p> */}
-          {/*               We're looking to hire a driven, experienced, and thoughtful full */}
-          {/*               stack engineer. The person in this position will help take Tab for */}
-          {/*               a Cause from $1M raised for charity to $10M and beyond! */}
-          {/*             </p> */}
-          {/*             <p> */}
-          {/*               We're a small team that values collaboration, positivity, social */}
-          {/*               impact, and work-life balance. If that's your kind of team—and you */}
-          {/*               love having agency over your work and diving in to build web apps */}
-          {/*               for real users—you'll thrive here. */}
-          {/*             </p> */}
-          {/*             <p style={{ fontStyle: 'italic' }}> */}
-          {/*               Please note: while this role is remote, it does require U.S. work */}
-          {/*               authorization, and we unfortunately cannot sponsor visas */}
-          {/*             </p> */}
-          {/*  */}
-          {/*             <p style={{ marginBottom: 16, fontWeight: 500 }}>You:</p> */}
-          {/*             <ul> */}
-          {/*               <li>Are ready on day 1</li> */}
-          {/*               <ul> */}
-          {/*                 <li> */}
-          {/*                   Are proficient with JavaScript and React.js (bonus: experience */}
-          {/*                   with GraphQL, DynamoDB, Firebase, Next.js, serverless */}
-          {/*                   infrastructure) */}
-          {/*                 </li> */}
-          {/*                 <li> */}
-          {/*                   Have previously owned substantial projects and features of a */}
-          {/*                   production web app, working across all aspects of the stack */}
-          {/*                 </li> */}
-          {/*                 <li>Are competent at data modeling and component design</li> */}
-          {/*                 <li>Are excellent at writing tests and value clean code</li> */}
-          {/*                 <li> */}
-          {/*                   Are incredibly resourceful: you rely on Google and reasonable */}
-          {/*                   workarounds to remove barriers */}
-          {/*                 </li> */}
-          {/*                 <li> */}
-          {/*                   Thrive on individual accountability yet prioritize overarching */}
-          {/*                   team goals */}
-          {/*                 </li> */}
-          {/*               </ul> */}
-          {/*  */}
-          {/*               <li>Think on a high level</li> */}
-          {/*               <ul> */}
-          {/*                 <li>Understand how your work fits into company goals</li> */}
-          {/*                 <li>Are comfortable speccing features</li> */}
-          {/*                 <li> */}
-          {/*                   Don't get bogged down in unimportant problems or perfectionism */}
-          {/*                 </li> */}
-          {/*                 <li> */}
-          {/*                   Maintain a balance between rapid, minimum-viable feature */}
-          {/*                   development and avoiding technical debt and app instability */}
-          {/*                 </li> */}
-          {/*                 <li>Communicate well with non-engineers</li> */}
-          {/*               </ul> */}
-          {/*  */}
-          {/*               <li>Love the work</li> */}
-          {/*               <ul> */}
-          {/*                 <li> */}
-          {/*                   Enjoy working across the stack, from designing database schema */}
-          {/*                   to tweaking component styling to launching new web services */}
-          {/*                 </li> */}
-          {/*                 <li> */}
-          {/*                   Don't shy away from tedious or hard tasks when those are the */}
-          {/*                   most important */}
-          {/*                 </li> */}
-          {/*                 <li> */}
-          {/*                   Understand a small team environment comes with both good */}
-          {/*                   things (nimbleness, agency, flexibility) and challenges */}
-          {/*                   (wearing many hats, limited resources), and you're okay with */}
-          {/*                   that */}
-          {/*                 </li> */}
-          {/*                 <li>Believe in Tab for a Cause's potential</li> */}
-          {/*               </ul> */}
-          {/*               <li>Align with our values</li> */}
-          {/*             </ul> */}
-          {/*  */}
-          {/*             <p style={{ marginBottom: 16, fontWeight: 500 }}>What you'd do:</p> */}
-          {/*             <ul> */}
-          {/*               <li> */}
-          {/*                 Design and build features that increase our users' happiness, */}
-          {/*                 help new people discover Tab for a Cause, and raise more money */}
-          {/*                 for charity */}
-          {/*               </li> */}
-          {/*               <li> */}
-          {/*                 Work with marketing and business teams to iterate on growth */}
-          {/*                 strategies */}
-          {/*               </li> */}
-          {/*               <li> */}
-          {/*                 As needed, launch exploratory products that carry Tab for a */}
-          {/*                 Cause's vision beyond the new tab page and into mobile or the */}
-          {/*                 broader web */}
-          {/*               </li> */}
-          {/*               <li> */}
-          {/*                 Bring creative energy to help guide product and company */}
-          {/*                 direction */}
-          {/*               </li> */}
-          {/*             </ul> */}
-          {/*  */}
-          {/*             <p style={{ marginBottom: 16, fontWeight: 500 }}> */}
-          {/*               Why you'll love your job: */}
-          {/*             </p> */}
-          {/*             <ul> */}
-          {/*               <li> */}
-          {/*                 <b>Autonomy:</b> You'll own projects from birth to deployment */}
-          {/*                 and have a ton of latitude to determine how they get done. */}
-          {/*               </li> */}
-          {/*               <li> */}
-          {/*                 <b>Impact:</b> As a critical part of our small team, you'll be a */}
-          {/*                 major voice in the direction of Tab for a Cause. Zooming out, */}
-          {/*                 your work will ultimately support critical, on-the-ground */}
-          {/*                 nonprofit work. */}
-          {/*               </li> */}
-          {/*               <li> */}
-          {/*                 <b>Values:</b> We don't lose sight of what matters: treating */}
-          {/*                 each other well, enjoying our work, and doing good. We support */}
-          {/*                 each other, help each other learn, and take pride in what we do. */}
-          {/*               </li> */}
-          {/*             </ul> */}
-          {/*  */}
-          {/*             <p style={{ marginBottom: 16, fontWeight: 500 }}>Nuts and bolts:</p> */}
-          {/*             <ul> */}
-          {/*               <li> */}
-          {/*                 If full time: $100k-120k salary + 1-2% equity + 401(k) matching */}
-          {/*                 up to 4% + health benefits */}
-          {/*               </li> */}
-          {/*               <li>If part time: $65/hour</li> */}
-          {/*               <li>Remote, collaboration on Slack + Github + video</li> */}
-          {/*               <li> */}
-          {/*                 Flexible schedule: besides a good cadence of collaboration (we */}
-          {/*                 aim to have working hour overlaps from about 10am – 2pm PT), */}
-          {/*                 work when you’d like! */}
-          {/*               </li> */}
-          {/*             </ul> */}
-          {/*  */}
-          {/*             <p style={{ marginBottom: 16, fontWeight: 500 }}> */}
-          {/*               Sound great? Get in touch! */}
-          {/*             </p> */}
-          {/*             <p> */}
-          {/*               Please email <b>job.2ooa6@funded.recruitee.com</b> with 1) a */}
-          {/*               resume, and 2) a quick description of some full stack work you're */}
-          {/*               proud of. We look forward to meeting you! */}
-          {/*             </p> */}
-          {/*  */}
-          {/*             <ApplyButton email="job.2ooa6@funded.recruitee.com"> */}
-          {/*               Apply */}
-          {/*             </ApplyButton> */}
-          {/*           </Paper> */}
+          {/* <Paper style={jobPaperStyle}> */}
+          {/*   <h2>No Open Positions at the Moment</h2> */}
+          {/*   <p> */}
+          {/*     Think you'd be a fit for a job we haven't listed? Email us at: */}
+          {/*     jobs@tabforacause.org */}
+          {/*   </p> */}
+          {/*   <ApplyButton>Get in Touch</ApplyButton> */}
+          {/* </Paper> */}
 
-          <Paper style={jobPaperStyle}>
-            {/* <h2>Something else?</h2> */}
-            <h2>No Open Positions at the Moment</h2>
-            <p>
-              Think you'd be a fit for a job we haven't listed? Email us at:
-              jobs@tabforacause.org
-            </p>
-            <ApplyButton>Get in Touch</ApplyButton>
-          </Paper>
           <h1 style={{ marginTop: 48, marginBottom: 10 }}>Our Values</h1>
           <Divider
             style={{

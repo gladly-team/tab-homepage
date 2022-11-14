@@ -37,6 +37,7 @@ sovrn.com,375328,RESELLER,fafdf38b16bf6b2b ### Outbrain via amazon
 themediagrid.com,JTQKMP,RESELLER,35d5010d7789b49d
 yahoo.com,55029,RESELLER,e1a5b5b6e3255540
 yieldmo.com,2719019867620450718,RESELLER
+Media.net, 8CUZ1MK22, RESELLER
 
 # Amazon (legacy)
 appnexus.com,1908,RESELLER,f5ab79cb980f11d1
@@ -116,6 +117,7 @@ contextweb.com,560606,RESELLER,89ff185a4c4e857c
 coxmt.com,2000067997702,RESELLER
 rhythmone.com,1059622079,RESELLER,a670c89d4a324e47
 sonobi.com,5695c92f04,DIRECT
+yahoo.com, 59875, RESELLER
 
 # Sovrn
 appnexus.com,1360,RESELLER,f5ab79cb980f11d1
