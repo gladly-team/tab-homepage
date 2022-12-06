@@ -660,3 +660,7 @@
   path: sdm
 - referrerId: 974
   path: extracredits
+- referrerId: 975
+  path: palebluepod
+- referrerId: 976
+  path: tellme
