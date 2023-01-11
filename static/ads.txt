@@ -38,6 +38,7 @@ themediagrid.com,JTQKMP,RESELLER,35d5010d7789b49d
 yahoo.com,55029,RESELLER,e1a5b5b6e3255540
 yieldmo.com,2719019867620450718,RESELLER
 Media.net, 8CUZ1MK22, RESELLER
+risecodes.com, 63832beef8189a00015cb6d3, RESELLER
 
 # Amazon (legacy)
 appnexus.com,1908,RESELLER,f5ab79cb980f11d1
