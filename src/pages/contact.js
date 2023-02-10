@@ -56,7 +56,7 @@ const ContactPage = ({ location }) => {
             Want to say hi on social media? We're on{' '}
             <Link to={instagramPageURL}>Instagram</Link>,{' '}
             <Link to={facebookPageURL}>Facebook</Link>,{' '}
-            <Link to={tiktokPageURL}>TikTok</Link>,{' '}and{' '}
+            <Link to={tiktokPageURL}>TikTok</Link>, and{' '}
             <Link to={twitterPageURL}>Twitter</Link>.
           </p>
           <p>
