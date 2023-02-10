@@ -10,8 +10,12 @@ import {
   adblockerWhitelistingURL,
   externalHelpAllAppsURL,
   financialsURL,
+  tiktokPageURL,
   facebookPageURL,
   twitterPageURL,
+  instagramPageURL,
+  suggestForm,
+  suggestFeatureForm,
 } from 'src/utils/navigation'
 import Layout from 'src/components/Layout'
 
@@ -50,12 +54,22 @@ const ContactPage = ({ location }) => {
           <h2>Let's Socialize</h2>
           <p>
             Want to say hi on social media? We're on{' '}
-            <Link to={facebookPageURL}>Facebook</Link> and{' '}
-            <Link to={twitterPageURL}>Twitter</Link> from time to time.
+            <Link to={instagramPageURL}>Instagram</Link>{' '}
+            <Link to={facebookPageURL}>Facebook</Link>{' '}
+            <Link to={tiktokPageURL}>TikTok</Link>and{' '}
+            <Link to={twitterPageURL}>Twitter</Link>.
           </p>
           <p>
-            If you have questions, feedback, or tasty cookie recipe suggestions,
-            feel free to email us at contact@gladly.io.
+            If you’d like to request a specific non-profit organization, you can
+            do that <Link to={suggestForm}>here</Link>.
+          </p>
+          <p>
+            To suggest a specific feature on Tab for a Cause, please fill out{' '}
+            <Link to={suggestFeatureForm}>this form</Link>.
+          </p>
+          <p>
+            For any other questions, feedback, or tasty cookie recipe
+            suggestions, feel free to email us at contact@gladly.io.
           </p>
           <Divider style={{ marginBottom: 20 }} />
           <div>

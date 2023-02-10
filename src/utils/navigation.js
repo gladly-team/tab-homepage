@@ -72,6 +72,12 @@ export const githubTabExtensionsRepoURL =
 export const githubTabHomepageRepoURL =
   'https://github.com/gladly-team/tab-homepage'
 
+// Forms
+export const suggestForm =
+  'https://docs.google.com/forms/d/e/1FAIpQLSeA5d2T2c6YsqoW_ROIKOujmRw-RGPowg-ReHfUBX0yO2QMQA/viewform'
+export const suggestFeatureForm =
+  'https://docs.google.com/forms/d/e/1FAIpQLScs7kAadAI_PKi7gZx39MzJ1nwKkE6Fn-xbrf9ZoiOOX4bztA/viewform'
+
 // Press
 export const pressHuffingtonPostURL =
   'https://www.huffingtonpost.com/2012/10/17/tab-for-a-cause_n_1971515.html'
