@@ -135,6 +135,10 @@ sovrn.com,240713,DIRECT,fafdf38b16bf6b2b
 sovrn.com,375328,DIRECT,fafdf38b16bf6b2b
 lijit.com,375328,DIRECT,fafdf38b16bf6b2b
 
+# Triplelift
+triplelift.com, 13552, DIRECT, 6c33edb13117fd86
+triplelift.com, 13552-EB, DIRECT, 6c33edb13117fd86
+
 # Verizon
 yahoo.com,56944,DIRECT
 
