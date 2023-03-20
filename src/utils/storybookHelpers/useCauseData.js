@@ -1,7 +1,3 @@
-import catsData from 'src/data/causes/cats.json'
-import seasData from 'src/data/causes/seas.json'
-import treesData from 'src/data/causes/trees.json'
-import globalHealthData from 'src/data/causes/globalHealth.json'
 import set from 'lodash/set'
 import get from 'lodash/get'
 import { useImageData } from 'src/utils/storybookHelpers/useImageData'
