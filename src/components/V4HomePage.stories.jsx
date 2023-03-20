@@ -130,3 +130,16 @@ ReproductiveHealthCause.parameters = {
     delay: 1500,
   },
 }
+
+export const LGBTQCause = wrapInTheme('lgbtq')(Template.bind({}))
+LGBTQCause.loaders = [
+  async () => ({
+    data: await useCauseData('lgbtq'),
+  }),
+]
+LGBTQCause.parameters = {
+  chromatic: {
+    viewports: [DESKTOP_WIDTH_PX],
+    delay: 1500,
+  },
+}
