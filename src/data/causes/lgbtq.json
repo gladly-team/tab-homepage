@@ -62,7 +62,7 @@
       },
 
       "Mission": {
-        "missionURL": "/black-equity/",
+        "missionURL": "/lgbtq/",
         "titleText": "Our Mission",
         "subtitleText": "To make giving back easier than ever",
         "bodyText": "We believe everyone should make a difference for the LGBTQ+ community. Through our support of Point of Pride and Outright International, you can be sure each tab you open is uplifting community members.",
@@ -152,10 +152,6 @@
           {
             "question": "How can I find out about new updates and announcements?",
             "answer": "Stay in touch with us on social media! Follow us @tabforacause on [TikTok](https://www.tiktok.com/@tabforacause), [YouTube](https://www.youtube.com/@tabforacause), [Instagram](https://www.instagram.com/tabforacause/), [Twitter](https://twitter.com/TabForACause), and [Facebook](https://www.facebook.com/TabForACause)."
-          },
-          {
-            "question": "This all sounds amazing! How else can I help?",
-            "answer": "Invite your friends and family to join in! Everybody who joins helps advance Black equity."
           }
         ]
       },
