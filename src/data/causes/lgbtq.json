@@ -1,0 +1,168 @@
+{
+  "path": "lgbtq",
+  "data": {
+    "styles": {
+      "colors": {
+        "primary": "#A27DF8",
+        "secondary": "#29BEBA",
+        "primaryContrast": "#15AAA6"
+      }
+    },
+    "causeLaunch": {
+      "comingSoonTitle": "Tab for LGBTQ+",
+      "launchDate": "2022-03-27T16:00:00.000Z",
+      "preview": true,
+      "enabled": false
+    },
+    "causeId": "qoP35Uli6",
+    "metadata": {
+      "title": "Support the LGBTQ+ Community - Tab for a Cause",
+      "ogTitle": "Support the LGBTQ+ Community by Surfing the Web | Tab for a Cause",
+      "ogDescription": "Open new tabs, raise money for charities supporting the LGBTQ+ community - for free",
+      "ogImage": "../../img/lgbtq/og.png",
+      "causeSpecificKeywords": "charity, equity, LGBTQ+, community, support, empowerment, LGBTQ, lesbian, gay, bisexual, trans, transgender, queer, nonbinary, gender nonconforming, pride, gender affirming care, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
+    },
+    "sections": {
+      "landing": {
+        "title": "Support the LGBTQ+ community every day",
+        "subtitle": "Every tab opened raises money for nonprofit organizations working toward supporting the LGBTQ+ community and providing gender-affirming care.",
+        "ctaImg": "../../img/lgbtq/landing.png"
+      },
+      "moneyRaised": {
+        "moneyImg": "../../img/lgbtq/moneyRaised.png"
+      },
+      "charityIntro": {
+        "title": "Stop wasting tabs, start changing the world",
+        "subTitle": "Little actions can have big results. With Tab for LGBTQ+, you can support charities uplifting the LGBTQ+ community just by opening more browser tabs.",
+        "steps": [
+          {
+            "img": "../../img/lgbtq/charityIntro1.png",
+            "text": "Protection and empowerment of the LGBTQ+ community"
+          },
+          {
+            "img": "../../img/lgbtq/charityIntro2.png",
+            "text": "Gender-affirming care for those who wouldn't otherwise have it"
+          },
+          {
+            "img": "../../img/lgbtq/charityIntro3.png",
+            "text": "A better, more equitable planet"
+          }
+        ]
+      },
+      "TFACIntro": {
+        "titleImg": "../../img/lgbtq/introMain.png",
+        "title": "Support the LGBTQ+ community every day",
+        "subtitle": "By opening browser tabs, you can support and uplift the LGBTQ+ community.",
+        "img1": "../../img/lgbtq/intro1.png",
+        "img1Subtext": "###### Open new tabs on your browser.",
+        "img2": "../../img/lgbtq/intro2.png",
+        "img2Subtext": "###### Earn money for charities.",
+        "img3": "../../img/lgbtq/intro3.png",
+        "img3Subtext": "###### Help support the LGBTQ+ community and provide gender-affirming care."
+      },
+
+      "Mission": {
+        "missionURL": "/black-equity/",
+        "titleText": "Our Mission",
+        "subtitleText": "To make giving back easier than ever",
+        "bodyText": "We believe everyone should make a difference for the LGBTQ+ community. Through our support of Point of Pride and Outright International, you can be sure each tab you open is uplifting community members.",
+        "image": "../../img/lgbtq/mission.png"
+      },
+      "Security": {
+        "titleImg": "../../img/causeshared/security.png"
+      },
+      "Financials": {
+        "title": "Transparent Financials",
+        "text": "Every tab makes an impact. Check out how much we've raised together.",
+        "buttonText": "See All Financials",
+        "ctaImg": "../../img/causeshared/financials.png",
+        "q1Img": "../../img/causeshared/q1-heart.png",
+        "q2Img": "../../img/causeshared/q2-heart.png",
+        "q3Img": "../../img/causeshared/q3-heart.png",
+        "q4Img": "../../img/causeshared/q4-heart.png"
+      },
+      "Endorsements": {
+        "disableCenterEndorsement": true,
+        "title": "People are saying good things",
+        "smallEndorsements": [
+          {
+            "endorser": "Shayne W.",
+            "endorsement": "“FANTASTIC app that lets you do a lot of good things while doing your day to day work, studying for finals, or just surfing the web!”",
+            "img": "../../img/reviews/shayne_w.png"
+          },
+          {
+            "endorser": "Benjamin K.",
+            "endorsement": "“Raise money for charity by browsing the internet. Perfectly executed!”",
+            "img": "../../img/reviews/benjamin_k.png"
+          },
+          {
+            "endorser": "Cameron B.",
+            "endorsement": "“As a person who frequently enters wikipedia holes opening 20 tabs at a time.. its great to know that my procrastination can be of some use! Great app, brilliant idea”",
+            "img": "../../img/reviews/cameron_b.png"
+          },
+          {
+            "endorser": "Chase R.",
+            "endorsement": "“It's wonderful. Unobtrusive, useful, well designed, easy to navigate, and actually pretty fun! There is no reason to not have this extension. It has not affected performance and is never an inconvenience.”",
+            "img": "../../img/reviews/chase_r.png"
+          },
+
+          {
+            "endorser": "Jonathon B.",
+            "endorsement": "“Love that this gives me, a fool with no money, a way to donate to charity. :)”",
+            "img": "../../img/reviews/johnathan_b.png"
+          },
+          {
+            "endorser": "Ana L.",
+            "endorsement": "“It's a great way to raise money for charity when you don't have a lot of money ... Plus I can decide what charity to donate to, and do it on my own time. I love it!”",
+            "img": "../../img/reviews/ana_l.png"
+          },
+          {
+            "endorser": "Alfonzo G.",
+            "endorsement": "“Wonderful service that does great things for people in need, and all you have to do is click a button... Way better than the default chrome new tab page. So what do you have to lose?”",
+            "img": "../../img/reviews/alfonzo_g.png"
+          },
+          {
+            "endorser": "Abby H.",
+            "endorsement": "“Wonderful and thoughtful idea for an extension! Helping save the world one tab at a time.”",
+            "img": "../../img/reviews/abby_h.png"
+          },
+          {
+            "endorser": "Lucas N.",
+            "endorsement": "“Awesome way to give back while browsing, with absolutely no effort on your end!”",
+            "img": "../../img/reviews/lucas_n.png"
+          },
+          {
+            "endorser": "Toby S.",
+            "endorsement": "“Amazing extension. Such an awesome idea to use ad revenue from people's new tab to donate to charity. I'd rate 6 stars if I could.”",
+            "img": "../../img/reviews/toby_s.png"
+          }
+        ]
+      },
+      "faq": {
+        "img": "../../img/causeshared/FAQ.png",
+        "questions": [
+          {
+            "question": "How does opening tabs raise money for charity?",
+            "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
+          },
+          {
+            "question": "What nonprofit does Tab for LGBTQ+ support?",
+            "answer": "Tab for LGBTQ+ supports [Point of Pride](https://www.pointofpride.org/) and [Outright International](https://outrightinternational.org/). We are proud to support these incredible organizations that work to uplift their communities toward paths of empowerment and gender-affirming care. "
+          },
+          {
+            "question": "How can I find out about new updates and announcements?",
+            "answer": "Stay in touch with us on social media! Follow us @tabforacause on [TikTok](https://www.tiktok.com/@tabforacause), [YouTube](https://www.youtube.com/@tabforacause), [Instagram](https://www.instagram.com/tabforacause/), [Twitter](https://twitter.com/TabForACause), and [Facebook](https://www.facebook.com/TabForACause)."
+          },
+          {
+            "question": "This all sounds amazing! How else can I help?",
+            "answer": "Invite your friends and family to join in! Everybody who joins helps advance Black equity."
+          }
+        ]
+      },
+      "Footer": {
+        "img": "../../img/lgbtq/footer.png",
+        "bubbleColor": "#8450FB"
+      }
+    }
+  }
+}
