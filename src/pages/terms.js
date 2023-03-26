@@ -28,19 +28,20 @@ const TermsPage = ({ location }) => (
           use.
         </h2>
         <p>
-          Gladly is the creator and owner of Tab for a Cause and Search for a
-          Cause (collectively, "Gladly").
+          Gladly is the creator and owner of Tab for a Cause, Search for a
+          Cause, and Shop for a Cause (collectively, "Gladly").
         </p>
         <p>
           Below are our Terms and Conditions of Use ("Terms") that govern
           Gladly's relationship with its users and others who interact with
-          gladly.io, tab.gladly.io, search.gladly.io, or other *.gladly.io
-          subdomains (collectively, the "Website") and any information, text,
-          graphics, photos or other materials uploaded, downloaded or appearing
-          on the Website (collectively referred to as "Content"). This document
-          applies to Gladly ("Gladly", Tab for a Cause", "Search for a Cause",
-          "us", "our", or "we"), and by using the Website in any way, you agree
-          to these Terms in their entirety. If you have any questions, please{' '}
+          gladly.io, tab.gladly.io, search.gladly.io, shop.gladly.io, or other
+          *.gladly.io subdomains (collectively, the "Website") and any
+          information, text, graphics, photos or other materials uploaded,
+          downloaded or appearing on the Website (collectively referred to as
+          "Content"). This document applies to Gladly ("Gladly", Tab for a
+          Cause", "Search for a Cause", “Shop for a Cause”, "us", "our", or
+          "we"), and by using the Website in any way, you agree to these Terms
+          in their entirety. If you have any questions, please{' '}
           <Link to={contactUsURL}>contact the Gladly Team</Link>.
         </p>
 
