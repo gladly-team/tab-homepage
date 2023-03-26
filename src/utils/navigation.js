@@ -43,6 +43,9 @@ export const millionHalfRaisedOceanImpactURL = '/million-and-a-half/ocean/'
 export const newTabPageURL = `${baseURL}/newtab/`
 export const accountPageURL = `${baseURL}/newtab/account/`
 
+// Shop
+export const shopHomeURL = 'https://shop.gladly.io'
+
 // Search
 export const searchHomeURL = 'https://search.gladly.io'
 export const searchFirefoxExtensionPage =

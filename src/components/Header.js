@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'src/components/Link'
 import logoWithText from 'src/img/logo-with-text.svg'
+import shopLogoWithText from 'src/img/shop-logo-with-text.png'
 import searchLogoWithText from 'src/img/search-logo-with-text.svg'
-import { homeURL, searchHomeURL } from 'src/utils/navigation'
+import { homeURL, searchHomeURL, shopHomeURL } from 'src/utils/navigation'
 
 const Header = (props) => {
   const { brand } = props
@@ -41,6 +42,18 @@ const Header = (props) => {
             <img
               data-test-id="search-logo-with-text"
               src={searchLogoWithText}
+              style={{ height: 40 }}
+            />
+          </Link>
+        ) : null}
+        {brand === 'all' ? (
+          <h3 style={{ margin: '0px 12px 8px 12px' }}>+</h3>
+        ) : null}
+        {brand === 'shop' || brand === 'all' ? (
+          <Link to={shopHomeURL}>
+            <img
+              data-test-id="shop-logo-with-text"
+              src={shopLogoWithText}
               style={{ height: 40 }}
             />
           </Link>

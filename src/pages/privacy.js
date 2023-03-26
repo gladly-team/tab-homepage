@@ -145,9 +145,11 @@ const PrivacyPolicyPage = ({ location }) => (
             companies with whom we have contracted when it is with legitimate
             interest to maintain and develop our product.
           </li>
-          <li>
-            <b>Shop for a Cause only</b>
-          </li>
+        </ul>
+
+        <h3>Shop for a Cause only</h3>
+
+        <ul>
           <li>
             <b>Shopping and Usage Data.</b> On retail sites, Shop for a Cause
             collects the name of the retailer, pageviews, and, when needed,
