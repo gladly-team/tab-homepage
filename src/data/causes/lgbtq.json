@@ -10,9 +10,9 @@
     },
     "causeLaunch": {
       "comingSoonTitle": "Tab for LGBTQ+",
-      "launchDate": "2023-03-27T16:00:00.000Z",
+      "launchDate": "2023-03-28T16:00:00.000Z",
       "preview": true,
-      "enabled": false
+      "enabled": true
     },
     "causeId": "qoP35Uli6",
     "metadata": {

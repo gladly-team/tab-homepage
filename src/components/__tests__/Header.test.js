@@ -62,6 +62,9 @@ describe('Header', () => {
     expect(
       wrapper.find(getTestIdSelector('search-logo-with-text')).exists()
     ).toBe(false)
+    expect(
+      wrapper.find(getTestIdSelector('shop-logo-with-text')).exists()
+    ).toBe(false)
   })
 
   it('[brand=tab] navigates to the Tab for a Cause home on header icon click', () => {
@@ -87,6 +90,25 @@ describe('Header', () => {
     expect(wrapper.find(getTestIdSelector('tab-logo-with-text')).exists()).toBe(
       false
     )
+    expect(
+      wrapper.find(getTestIdSelector('shop-logo-with-text')).exists()
+    ).toBe(false)
+  })
+
+  it('[brand=shop] only renders the Shop for a Cause logo', () => {
+    const Header = require('../Header').default
+    const mockProps = getMockProps()
+    mockProps.brand = 'shop'
+    const wrapper = shallow(<Header {...mockProps} />)
+    expect(
+      wrapper.find(getTestIdSelector('shop-logo-with-text')).exists()
+    ).toBe(true)
+    expect(wrapper.find(getTestIdSelector('tab-logo-with-text')).exists()).toBe(
+      false
+    )
+    expect(
+      wrapper.find(getTestIdSelector('search-logo-with-text')).exists()
+    ).toBe(false)
   })
 
   it('[brand=search] navigates to the Search for a Cause home on header icon click', () => {
@@ -112,6 +134,9 @@ describe('Header', () => {
     expect(
       wrapper.find(getTestIdSelector('search-logo-with-text')).exists()
     ).toBe(true)
+    expect(
+      wrapper.find(getTestIdSelector('shop-logo-with-text')).exists()
+    ).toBe(true)
   })
 
   it('[brand=all] renders a plus sign between the logos', () => {
@@ -124,5 +149,7 @@ describe('Header', () => {
     expect(logoContainerElem.childAt(1).type()).toEqual('h3')
     expect(logoContainerElem.childAt(1).text()).toEqual('+')
     expect(logoContainerElem.childAt(2).type()).toEqual(Link)
+    expect(logoContainerElem.childAt(3).text()).toEqual('+')
+    expect(logoContainerElem.childAt(4).type()).toEqual(Link)
   })
 })

@@ -23,8 +23,8 @@ const PrivacyPolicyPage = ({ location }) => (
       <TextPageContent>
         <TextPageHeader>Privacy Policy</TextPageHeader>
         <p>
-          Gladly is the creator and owner of Tab for a Cause and Search for a
-          Cause (collectively, "Gladly").
+          Gladly is the creator and owner of Tab for a Cause, Search for a
+          Cause, and Shop for a Cause (collectively, "Gladly").
         </p>
         <p>
           Your privacy is very important to us. At Gladly, we have a few
@@ -44,12 +44,13 @@ const PrivacyPolicyPage = ({ location }) => (
         <p>
           Below is our privacy policy which incorporates these principles. This
           document applies to Gladly ("Gladly", Tab for a Cause", "Search for a
-          Cause", "us", "our", or "we") and is part of Gladly's{' '}
-          <Link to={termsURL}>Terms of Service</Link>. By using gladly.io,
-          tab.gladly.io, search.gladly.io, or other *.gladly.io subdomains
-          (collectively, the "Website"), you agree to the terms of this Privacy
-          Policy and the Terms of Service. We collectively refer to the Website
-          and its related services, apps, and websites as our "Services".
+          Cause", “Shop for a Cause”, "us", "our", or "we") and is part of
+          Gladly's <Link to={termsURL}>Terms of Service</Link>. By using
+          gladly.io, tab.gladly.io, search.gladly.io, or other *.gladly.io
+          subdomains (collectively, the "Website"), you agree to the terms of
+          this Privacy Policy and the Terms of Service. We collectively refer to
+          the Website and its related services, apps, and websites as our
+          "Services".
         </p>
         <p>
           If you have any questions, please{' '}
@@ -138,11 +139,36 @@ const PrivacyPolicyPage = ({ location }) => (
             </p>
           </li>
           <li>
-            <b>Data from contracted partners: </b>
-            We work with partners who provide hardware and software services,
-            such as as cloud storage and server services. We may store data
-            collected by third party companies with whom we have contracted when
-            it is with legitimate interest to maintain and develop our product.
+            <b>Data from contracted partners:</b> We work with partners who
+            provide hardware and software services, such as as cloud storage and
+            server services. We may store data collected by third party
+            companies with whom we have contracted when it is with legitimate
+            interest to maintain and develop our product.
+          </li>
+        </ul>
+
+        <h3>Shop for a Cause only</h3>
+
+        <ul>
+          <li>
+            <b>Shopping and Usage Data.</b> On retail sites, Shop for a Cause
+            collects the name of the retailer, pageviews, and, when needed,
+            collect information regarding your purchases (for example, the
+            transaction value, and the fact that an order was completed or
+            returned) to make sure we credit the correct non-profit with the
+            correct amount. . This information is never shared or sold or used
+            for any other purpose than is necessary to provide the service.
+          </li>
+          <li>
+            This information is never shared or sold or used for any other
+            purpose than is necessary to provide the service.
+          </li>
+          <li>
+            <b>Information we do NOT collect.</b> We only collect information
+            that is necessary for the service. This does not include, and we do
+            not collect, any information from your search engine history,
+            emails, payment details, or anything from websites that are not
+            retail sites.
           </li>
         </ul>
         <p>
