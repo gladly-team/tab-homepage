@@ -137,9 +137,19 @@ const listItems = offers.map((offer) => (
 ))
 
 const MothersDay2023 = ({ location }) => {
-  const params = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop),
-  })
+  const isBrowser = typeof window !== 'undefined'
+
+  let params = {
+    nolayout: 'false',
+    cause_name: 'Charity',
+    user_id: '0',
+  }
+
+  if (isBrowser) {
+    params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    })
+  }
 
   const boxStyle = {
     marginLeft: 'auto',
