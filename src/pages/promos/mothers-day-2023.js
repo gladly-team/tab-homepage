@@ -133,7 +133,22 @@ Header.propTypes = {
 }
 
 const listItems = offers.map((offer) => {
-  const uuid = params.user_id || ''
+  const onClick = () => {
+    let p = {
+      nolayout: 'false',
+      cause_name: 'Charity',
+      user_id: '0',
+    }
+
+    if (isBrowser) {
+      p = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+      })
+    }
+
+    const url = `${baseUrl}&c=${offer.merchantId}&UUID=${p.user_id}&url=${offer.link}`
+    window.location = url
+  }
 
   return (
     <Card
@@ -176,11 +191,7 @@ const listItems = offers.map((offer) => {
             justifyContent: 'center',
           }}
         >
-          <Button
-            variant="contained"
-            href={`${baseUrl}&c=${offer.merchantId}&UUID=${uuid}&url=${offer.link}`}
-            target="_blank"
-          >
+          <Button variant="contained" onClick={onClick} target="_blank">
             Click to Shop and Raise
           </Button>
         </CardActions>
