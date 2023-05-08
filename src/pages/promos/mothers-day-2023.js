@@ -135,7 +135,10 @@ const Header = ({ cause }) => (
       sx={{ width: 1100, marginLeft: 'auto', marginRight: 'auto' }}
     >
       Raise money for {cause} when you shop at any of our partner stores linked
-      below. Powered by <Link to="http://shop.gladly.io">Shop for a Cause</Link>
+      below. Powered by{' '}
+      <a href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+        Shop for a Cause
+      </a>
       , our newest extension that will help you save money and direct up to 5%
       of all your online shopping to {cause}.
     </Typography>
