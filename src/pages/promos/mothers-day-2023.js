@@ -12,10 +12,27 @@ import Typography from '@mui/material/Typography'
 const openGraphTitle = "Mother's Day 2023 | Tab for a Cause"
 const openGraphDescription = ''
 
+const isBrowser = typeof window !== 'undefined'
+
+let params = {
+  nolayout: 'false',
+  cause_name: 'Charity',
+  user_id: '0',
+}
+
+if (isBrowser) {
+  params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  })
+}
+
+const baseUrl = 'https://wild.link/e?d=54321'
+
 const offers = [
   {
     title: 'Smiles and Sunshine Bouquet from FTD',
     tag: 'Flowers',
+    merchantId: '5478029',
     image:
       'https://cdn.shopify.com/s/files/1/0507/3754/5401/t/1/assets/FB337_LOL_preset_ftd-mx-hero-lv-new.jpeg',
     link: 'https://www.ftd.com/product/smiles-sunshine-prd-smsn?cid=ftdseo&prid=ftdseo&variation=FB337',
@@ -25,6 +42,7 @@ const offers = [
   {
     title: '12 Chocolate Covered Strawberries from ProFlowers',
     tag: 'Strawberries',
+    merchantId: '5481382',
     image:
       'https://cdn.shopify.com/s/files/1/0507/3754/5401/t/1/assets/GE032_LOL_preset_proflowers-mx-hero-lv-new.jpeg',
     link: 'https://www.proflowers.com/product/mom-mother-day-berry-gram-belgian-chocolate-covered-strawberries-12pc-prd-ge032?cid=pfdts&prid=pfdtsssv&ref=SRCHsmftbrand_361521917&utm_campaign=CP%20%7C%20LF%20%7C%20BNG%20%7C%20TXT%20%7C%20_Brand_%20Core&utm_content=Proflowers%20-%20Exact&utm_medium=cpc&utm_source=bing&utm_term=proflowers&variation=GE032',
@@ -34,6 +52,7 @@ const offers = [
   {
     title: 'Custom Photobook from Shutterfly',
     tag: 'Photobooks',
+    merchantId: '75330',
     image:
       'https://c4.staticsfly.com/asset/fetch/rec_sfly_simply-gallery_store-cover-preview_hard-01/store.sample.preview/v1',
     link: 'https://www.shutterfly.com/photo-books/styles/simply-gallery-photo-book/?categoryCode=1503351&productCode=1632912&skuCode=1641906',
@@ -43,6 +62,7 @@ const offers = [
   {
     title: 'Chocolate gift basket from Ghirardelli',
     tag: 'Chocolate',
+    merchantId: '5478201',
     image:
       'https://www.ghirardelli.com/media/catalog/product/1/0/10747599853590_pi_ecom1.jpg',
     link: 'https://www.ghirardelli.com/chocolate-caramel-trio-squares-gift-bag-85359',
@@ -52,6 +72,7 @@ const offers = [
   {
     title: 'Petit Meyer Lemon tree from FTD',
     tag: 'Lemon Trees',
+    merchantId: '5478029',
     image:
       'https://cdn.shopify.com/s/files/1/0507/3754/5401/t/1/assets/P4083_LOL_preset_ftd-mx-hero-lv-new.jpeg',
     link: 'https://www.ftd.com/product/petite-meyer-lemon-tree-prd-p4083?utm_source=Skimlinks.com&utm_medium=affiliate&utm_content=1&utm_campaign=1323503&ranMID=49253&ranEAID=TnL5HPStwNw&ranSiteID=TnL5HPStwNw-HGx1eiRHADuwpYQVIH3lWw',
@@ -61,6 +82,7 @@ const offers = [
   {
     title: '“World’s Cheesiest Mom” cheese gift box',
     tag: 'Cheeses',
+    merchantId: '128129',
     image:
       'https://cdn.shopify.com/s/files/1/1312/3351/products/mothers-day-1_2000x.jpg',
     link: 'https://www.cheesebros.com/products/mothers-day-cheese',
@@ -70,6 +92,7 @@ const offers = [
   {
     title: 'Meditation Candle Gift Set from Brooklyn Candles',
     tag: 'Candles',
+    merchantId: '138007',
     image:
       'https://cdn.shopify.com/s/files/1/0315/2749/products/meditation-candle-gift-set-84-value-brooklyn-candle-studio-932017_900x.jpg',
     link: 'https://brooklyncandlestudio.com/products/meditation-minimalist-candle-gift-set-84-value',
@@ -79,6 +102,7 @@ const offers = [
   {
     title: 'Mother’s Day Cookie Tin from Mrs. Fields',
     tag: 'Cookies',
+    merchantId: '5478029',
     image:
       'https://cdn.shopify.com/s/files/1/0507/3754/5401/t/1/assets/X1140_LOL_preset_ftd-mx-hero-lv-new.jpeg',
     link: 'https://www.ftd.com/product/mrs-fields-mother-day-floral-cookie-tin-prd-x1140?cid=ftdseo&prid=ftdseo&variation=X1140',
@@ -99,8 +123,7 @@ const Header = ({ cause }) => (
       Mother's Day Gift Ideas
     </Typography>
     <Typography align="center">
-      Buy an amazing mother a special gift and proceeds of the purchased will
-      raise money for {cause}.
+      8 great gift suggestions that will also raise money for {cause}.
     </Typography>
   </>
 )
@@ -109,70 +132,64 @@ Header.propTypes = {
   cause: PropTypes.string,
 }
 
-const listItems = offers.map((offer) => (
-  <Card
-    key={offer.title}
-    sx={{
-      position: 'relative',
-      width: '28%',
-      height: '645px',
-      padding: '2px',
-      marginLeft: '25px',
-      marginRight: '25px',
-      marginBottom: '25px',
-    }}
-  >
-    <CardMedia
-      component="img"
-      alt={offer.title}
-      image={offer.image}
-      sx={{ height: '300px' }}
-    />
+const listItems = offers.map((offer) => {
+  const uuid = params.user_id || ''
 
-    <CardContent>
-      <Typography gutterBottom variant="h5" component="div">
-        {offer.title}
-      </Typography>
-      <Typography variant="body2">{offer.description}</Typography>
-    </CardContent>
-
-    <Box
+  return (
+    <Card
+      key={offer.title}
       sx={{
-        position: 'absolute',
-        bottom: '15px',
-        left: '0',
-        right: '0',
+        position: 'relative',
+        width: '28%',
+        height: '645px',
+        padding: '2px',
+        marginLeft: '25px',
+        marginRight: '25px',
+        marginBottom: '25px',
       }}
     >
-      <CardActions
+      <CardMedia
+        component="img"
+        alt={offer.title}
+        image={offer.image}
+        sx={{ height: '300px' }}
+      />
+
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {offer.title}
+        </Typography>
+        <Typography variant="body2">{offer.description}</Typography>
+      </CardContent>
+
+      <Box
         sx={{
-          display: 'flex',
-          justifyContent: 'center',
+          position: 'absolute',
+          bottom: '15px',
+          left: '0',
+          right: '0',
         }}
       >
-        <Button variant="contained" href={offer.link} target="_blank">
-          Shop {offer.tag} for Mom
-        </Button>
-      </CardActions>
-    </Box>
-  </Card>
-))
+        <CardActions
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <Button
+            variant="contained"
+            href={`${baseUrl}&c=${offer.merchantId}&UUID=${uuid}&url=${offer.link}`}
+            target="_blank"
+          >
+            Click to Shop and Raise
+          </Button>
+        </CardActions>
+      </Box>
+    </Card>
+  )
+})
 
 const MothersDay2023 = ({ location }) => {
-  const isBrowser = typeof window !== 'undefined'
-
-  let params = {
-    nolayout: 'false',
-    cause_name: 'Charity',
-    user_id: '0',
-  }
-
-  if (isBrowser) {
-    params = new Proxy(new URLSearchParams(window.location.search), {
-      get: (searchParams, prop) => searchParams.get(prop),
-    })
-  }
-
   const boxStyle = {
     marginLeft: 'auto',
     marginRight: 'auto',
