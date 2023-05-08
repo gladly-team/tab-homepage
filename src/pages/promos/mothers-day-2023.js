@@ -184,18 +184,22 @@ const MothersDay2023 = ({ location }) => {
 
   return (
     <>
-      {params.nolayout === 'true' ? (
-        <>
-          <Header cause={params.cause_name} />
-          <Box sx={boxStyle}>{listItems}</Box>
-        </>
-      ) : (
-        <Layout brand="all" location={location}>
-          <Header cause={params.cause_name} />
-          <Box sx={boxStyle}>{listItems}</Box>
-        </Layout>
-      )}
+      <Header cause={params.cause_name} />
+      <Box sx={boxStyle}>{listItems}</Box>
     </>
+    // <>
+    //   {params.nolayout === 'true' ? (
+    //     <>
+    //       <Header cause={params.cause_name} />
+    //       <Box sx={boxStyle}>{listItems}</Box>
+    //     </>
+    //   ) : (
+    //     <Layout brand="all" location={location}>
+    //       <Header cause={params.cause_name} />
+    //       <Box sx={boxStyle}>{listItems}</Box>
+    //     </Layout>
+    //   )}
+    // </>
   )
 }
 
