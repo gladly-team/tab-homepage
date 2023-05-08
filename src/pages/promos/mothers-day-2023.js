@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from 'src/components/Layout'
+//import Layout from 'src/components/Layout'
+import Link from 'src/components/Link'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
@@ -30,8 +31,9 @@ const baseUrl = 'https://wild.link/e?d=54321'
 
 const offers = [
   {
-    title: 'Smiles and Sunshine Bouquet from FTD',
+    title: 'Smiles and Sunshine Bouquet',
     tag: 'Flowers',
+    percentOff: ' 2.1',
     merchantId: '5478029',
     image:
       'https://cdn.shopify.com/s/files/1/0507/3754/5401/t/1/assets/FB337_LOL_preset_ftd-mx-hero-lv-new.jpeg',
@@ -40,8 +42,9 @@ const offers = [
       'Bring a rainbow of color to any home with this bouquet. Blooming with an assortment of alstroemeria and roses, this vibrant beauty makes the perfect expression for all your special occasions this season.',
   },
   {
-    title: '12 Chocolate Covered Strawberries from ProFlowers',
+    title: '12 Chocolate Covered Strawberries',
     tag: 'Strawberries',
+    percentOff: '2.1',
     merchantId: '5481382',
     image:
       'https://cdn.shopify.com/s/files/1/0507/3754/5401/t/1/assets/GE032_LOL_preset_proflowers-mx-hero-lv-new.jpeg',
@@ -50,8 +53,9 @@ const offers = [
       'A delightful treat that is sure to impress, our twelve-piece chocolate covered strawberries are hand dipped (and drizzled!) in the finest Belgian chocolate and delivered straight to whomever you want to celebrate this Mother’s Day.',
   },
   {
-    title: 'Custom Photobook from Shutterfly',
+    title: 'Custom Photobook',
     tag: 'Photobooks',
+    percentOff: '0.5',
     merchantId: '75330',
     image:
       'https://c4.staticsfly.com/asset/fetch/rec_sfly_simply-gallery_store-cover-preview_hard-01/store.sample.preview/v1',
@@ -60,8 +64,9 @@ const offers = [
       "You can't freeze time, but you can make the best photo books with Shutterfly. You can start from scratch or grab a professionally designed template that inspires you, then customize every last detail to tell your story, your way.",
   },
   {
-    title: 'Chocolate gift basket from Ghirardelli',
+    title: 'Chocolate Gift Basket',
     tag: 'Chocolate',
+    percentOff: '2.1',
     merchantId: '5478201',
     image:
       'https://www.ghirardelli.com/media/catalog/product/1/0/10747599853590_pi_ecom1.jpg',
@@ -70,8 +75,9 @@ const offers = [
       "Girardelli's signature chocolate SQUARES deliver the perfect balance of intense, slow-melting chocolate and rich ingredients in a variety of flavors. Take time to slow down and feel yourself melt with each bite.",
   },
   {
-    title: 'Petit Meyer Lemon tree from FTD',
+    title: 'Petit Meyer Lemon Tree',
     tag: 'Lemon Trees',
+    percentOff: '2.1',
     merchantId: '5478029',
     image:
       'https://cdn.shopify.com/s/files/1/0507/3754/5401/t/1/assets/P4083_LOL_preset_ftd-mx-hero-lv-new.jpeg',
@@ -80,8 +86,9 @@ const offers = [
       'Grow citrus fruits right at home with our Petite Meyer Lemon Tree. Whether planted in the ground or left potted on the patio or in a sunny kitchen, our versatile and adaptable tree is one everyone will enjoy all year long. Arriving as a 1 year old, this tree will not yet have fruit, but will begin to produce within 1–2 seasons.',
   },
   {
-    title: '“World’s Cheesiest Mom” cheese gift box',
+    title: '“World’s Cheesiest Mom” Cheese',
     tag: 'Cheeses',
+    percentOff: '2.6',
     merchantId: '128129',
     image:
       'https://cdn.shopify.com/s/files/1/1312/3351/products/mothers-day-1_2000x.jpg',
@@ -90,8 +97,9 @@ const offers = [
       "The world's best mom deserves the world's best cheese! This lovingly curated gift collection combines our finest Wisconsin cheeses with award winning jam and artisan honey made by small local producers.",
   },
   {
-    title: 'Meditation Candle Gift Set from Brooklyn Candles',
+    title: 'Meditation Candle Gift Set',
     tag: 'Candles',
+    percentOff: '2.6',
     merchantId: '138007',
     image:
       'https://cdn.shopify.com/s/files/1/0315/2749/products/meditation-candle-gift-set-84-value-brooklyn-candle-studio-932017_900x.jpg',
@@ -100,8 +108,9 @@ const offers = [
       'Find your inner peace with this set of calming candles. Light up Japanese Citrus to boost your mood and help you focus with energizing notes of yuzu.',
   },
   {
-    title: 'Mother’s Day Cookie Tin from Mrs. Fields',
+    title: 'Mother’s Day Cookie Tin',
     tag: 'Cookies',
+    percentOff: '2.1',
     merchantId: '5478029',
     image:
       'https://cdn.shopify.com/s/files/1/0507/3754/5401/t/1/assets/X1140_LOL_preset_ftd-mx-hero-lv-new.jpeg',
@@ -122,8 +131,15 @@ const Header = ({ cause }) => (
     >
       Mother's Day Gift Ideas
     </Typography>
-    <Typography align="center">
-      8 great gift suggestions that will also raise money for {cause}.
+    <Typography
+      align="center"
+      sx={{ width: 1100, marginLeft: 'auto', marginRight: 'auto' }}
+    >
+      Raise money for {cause} when you shop at any of our partner stores linked
+      below. Powered by{' '}
+      <Link to={'http://shop.gladly.io'}>Shop for a Cause</Link>, our newest
+      extension that will help you save money and direct up to 5% of all your
+      online shopping to {cause}.
     </Typography>
   </>
 )
@@ -147,7 +163,23 @@ const listItems = offers.map((offer) => {
     }
 
     const url = `${baseUrl}&c=${offer.merchantId}&UUID=${p.user_id}&url=${offer.link}`
-    window.location = url
+    window.open(url, '_blank')
+  }
+
+  const getCauseName = () => {
+    let p = {
+      nolayout: 'false',
+      cause_name: 'Charity',
+      user_id: '0',
+    }
+
+    if (isBrowser) {
+      p = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+      })
+    }
+
+    return p.cause_name
   }
 
   return (
@@ -192,7 +224,7 @@ const listItems = offers.map((offer) => {
           }}
         >
           <Button variant="contained" onClick={onClick} target="_blank">
-            Click to Shop and Raise
+            Shop and send {offer.percentOff}% to {getCauseName()}
           </Button>
         </CardActions>
       </Box>
