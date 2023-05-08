@@ -87,6 +87,28 @@ const offers = [
   },
 ]
 
+const Header = ({ cause }) => (
+  <>
+    <Typography
+      gutterBottom
+      variant="h4"
+      component="h4"
+      align="center"
+      sx={{ paddingTop: 5 }}
+    >
+      Mother's Day Gift Ideas
+    </Typography>
+    <Typography align="center">
+      Buy an amazing mother a special gift and proceeds of the purchased will
+      raise money for {cause}.
+    </Typography>
+  </>
+)
+
+Header.propTypes = {
+  cause: PropTypes.string,
+}
+
 const listItems = offers.map((offer) => (
   <Card
     key={offer.title}
@@ -162,24 +184,14 @@ const MothersDay2023 = ({ location }) => {
 
   return (
     <>
-      <Typography
-        gutterBottom
-        variant="h4"
-        component="h4"
-        align="center"
-        sx={{ paddingTop: 5 }}
-      >
-        Mother's Day Gift Ideas
-      </Typography>
-
-      <Typography align="center">
-        Buy an amazing mother a special gift and proceeds of the purchased will
-        raise money for {params.cause_name}.
-      </Typography>
       {params.nolayout === 'true' ? (
-        <Box sx={boxStyle}>{listItems}</Box>
+        <>
+          <Header cause={params.cause_name} />
+          <Box sx={boxStyle}>{listItems}</Box>
+        </>
       ) : (
         <Layout brand="all" location={location}>
+          <Header cause={params.cause_name} />
           <Box sx={boxStyle}>{listItems}</Box>
         </Layout>
       )}
