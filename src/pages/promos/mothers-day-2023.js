@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-//import Layout from 'src/components/Layout'
 import Link from 'src/components/Link'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -136,10 +135,9 @@ const Header = ({ cause }) => (
       sx={{ width: 1100, marginLeft: 'auto', marginRight: 'auto' }}
     >
       Raise money for {cause} when you shop at any of our partner stores linked
-      below. Powered by{' '}
-      <Link to={'http://shop.gladly.io'}>Shop for a Cause</Link>, our newest
-      extension that will help you save money and direct up to 5% of all your
-      online shopping to {cause}.
+      below. Powered by <Link to="http://shop.gladly.io">Shop for a Cause</Link>
+      , our newest extension that will help you save money and direct up to 5%
+      of all your online shopping to {cause}.
     </Typography>
   </>
 )
