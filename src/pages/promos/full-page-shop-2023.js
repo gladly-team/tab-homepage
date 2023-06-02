@@ -28,9 +28,9 @@ if (isBrowser) {
 const Version1 = ({ cause, onClick, onClose }) => (
   <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-      <a href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
         <img src={shopDemo} style={{ width: 400 }} />
-      </a>
+      </Link>
     </Box>
 
     <Typography
@@ -40,16 +40,16 @@ const Version1 = ({ cause, onClick, onClose }) => (
       align="center"
       sx={{ paddingTop: 5 }}
     >
-      Raise money for {cause} as you shop online
+      Raise money for {cause} as you shop online (v1)
     </Typography>
     <Typography
       align="center"
       sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}
     >
       We think you’ll love{' '}
-      <a href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
         Shop for a Cause
-      </a>
+      </Link>
       , our newest app that automatically raises money for charity when you shop
       at one of our over 10,000 partner stores. Just like Tabbing, it’s free,
       easy, impactful ❤️
@@ -77,9 +77,9 @@ Version1.propTypes = {
 const Version2 = ({ cause, onClick, onClose }) => (
   <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-      <a href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
         <img src={shopDemo} style={{ width: 400 }} />
-      </a>
+      </Link>
     </Box>
 
     <Typography
@@ -89,7 +89,7 @@ const Version2 = ({ cause, onClick, onClose }) => (
       align="center"
       sx={{ paddingTop: 5 }}
     >
-      Raise money for {cause} as you shop online
+      Raise money for {cause} as you shop online (v2)
     </Typography>
     <Typography
       align="center"
@@ -100,18 +100,18 @@ const Version2 = ({ cause, onClick, onClose }) => (
       }}
     >
       When Amazon{' '}
-      <a
+      <Link
         href="https://www.npr.org/2023/01/19/1149993013/amazon-amazonsmile-charity-donation-program"
         target="_blank"
         rel="noreferrer"
       >
         shutdown their Smile program
-      </a>{' '}
+      </Link>{' '}
       to focus on more profit, it was a huge loss to charities. In response, we
       are proud to present{' '}
-      <a href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
         Shop for a Cause
-      </a>
+      </Link>
       , our newest extension that raises money for charity as you shop online at
       over 10,000 partner stores. It is simple, free, and impactful ♥.
     </Typography>
