@@ -26,10 +26,10 @@ if (isBrowser) {
 
 // Version 1
 const Version1 = ({ cause, onClick, onClose }) => (
-  <Box sx={{ width: 1100, marginLeft: 'auto', marginRight: 'auto' }}>
+  <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <a href="https://shop.gladly.io" target="_blank" rel="noreferrer">
-        <img src={shopDemo} style={{ width: 550 }} />
+        <img src={shopDemo} style={{ width: 400 }} />
       </a>
     </Box>
 
@@ -44,7 +44,7 @@ const Version1 = ({ cause, onClick, onClose }) => (
     </Typography>
     <Typography
       align="center"
-      sx={{ width: 1100, marginLeft: 'auto', marginRight: 'auto' }}
+      sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}
     >
       We think you’ll love{' '}
       <a href="https://shop.gladly.io" target="_blank" rel="noreferrer">
@@ -75,10 +75,10 @@ Version1.propTypes = {
 
 // Version 2
 const Version2 = ({ cause, onClick, onClose }) => (
-  <Box sx={{ width: 1100, marginLeft: 'auto', marginRight: 'auto' }}>
+  <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <a href="https://shop.gladly.io" target="_blank" rel="noreferrer">
-        <img src={shopDemo} style={{ width: 550 }} />
+        <img src={shopDemo} style={{ width: 400 }} />
       </a>
     </Box>
 
@@ -93,7 +93,11 @@ const Version2 = ({ cause, onClick, onClose }) => (
     </Typography>
     <Typography
       align="center"
-      sx={{ width: 1100, marginLeft: 'auto', marginRight: 'auto' }}
+      sx={{
+        width: 900,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      }}
     >
       When Amazon{' '}
       <a
