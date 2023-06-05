@@ -40,7 +40,7 @@ const Version1 = ({ cause, onClick, onClose }) => (
       align="center"
       sx={{ paddingTop: 5 }}
     >
-      Raise money for {cause} as you shop online (v1a)
+      Raise money for {cause} as you shop online (v1b)
     </Typography>
     <Typography
       align="center"
@@ -75,13 +75,51 @@ Version1.propTypes = {
 
 // Version 2
 const Version2 = ({ cause, onClick, onClose }) => (
-  <Link
-    href="https://www.npr.org/2023/01/19/1149993013/amazon-amazonsmile-charity-donation-program"
-    target="_blank"
-    rel="noreferrer"
-  >
-    shutdown their Smile program
-  </Link>
+  <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
+    <Typography
+      gutterBottom
+      variant="h4"
+      component="h4"
+      align="center"
+      sx={{ paddingTop: 5 }}
+    >
+      Raise money for {cause} as you shop online (v2b)
+    </Typography>
+    <Typography
+      align="center"
+      sx={{
+        width: 900,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      }}
+    >
+      When Amazon{' '}
+      <Link
+        href="https://www.npr.org/2023/01/19/1149993013/amazon-amazonsmile-charity-donation-program"
+        target="_blank"
+        rel="noreferrer"
+      >
+        shutdown their Smile program
+      </Link>{' '}
+      to focus on more profit, it was a huge loss to charities. In response, we
+      are proud to present{' '}
+      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+        Shop for a Cause
+      </Link>
+      , our newest extension that raises money for charity as you shop online at
+      over 10,000 partner stores. It is simple, free, and impactful ♥.
+    </Typography>
+    <Box
+      sx={{ display: 'flex', justifyContent: 'space-between', marginTop: 5 }}
+    >
+      <Button sx={{ fontSize: 16, marginTop: 3 }} onClick={onClose}>
+        Not Right Now
+      </Button>
+      <Button variant="contained" onClick={onClick} target="_blank">
+        Get Started
+      </Button>
+    </Box>
+  </Box>
 )
 
 Version2.propTypes = {
