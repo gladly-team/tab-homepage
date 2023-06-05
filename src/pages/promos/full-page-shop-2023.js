@@ -10,7 +10,7 @@ const isBrowser = typeof window !== 'undefined'
 
 const params = {
   user_id: '0',
-  version: 'Version2',
+  version: 'Version0',
   cause_name: 'Charity',
 }
 
@@ -20,7 +20,7 @@ if (isBrowser) {
   })
 
   params.user_id = p.user_id || '0'
-  params.version = p.version || 'Version1'
+  params.version = p.version || 'Version0'
   params.cause_name = p.cause_name || 'Charity'
 }
 
@@ -108,9 +108,12 @@ const Version2 = ({ cause, onClick, onClose }) => (
         shutdown their Smile program
       </Link>{' '}
       to focus on more profit, it was a huge loss to charities. In response, we
-      are proud to present , our newest extension that raises money for charity
-      as you shop online at over 10,000 partner stores. It is simple, free, and
-      impactful ♥.
+      are proud to present{' '}
+      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+        Shop for a Cause
+      </Link>
+      , our newest extension that raises money for charity as you shop online at
+      over 10,000 partner stores. It is simple, free, and impactful ♥.
     </Typography>
     <Box
       sx={{ display: 'flex', justifyContent: 'space-between', marginTop: 5 }}
