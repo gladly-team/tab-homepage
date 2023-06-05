@@ -76,6 +76,12 @@ Version1.propTypes = {
 // Version 2
 const Version2 = ({ cause, onClick, onClose }) => (
   <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+        <img src={shopDemo} style={{ width: 400 }} />
+      </Link>
+    </Box>
+
     <Typography
       gutterBottom
       variant="h4"
@@ -102,12 +108,9 @@ const Version2 = ({ cause, onClick, onClose }) => (
         shutdown their Smile program
       </Link>{' '}
       to focus on more profit, it was a huge loss to charities. In response, we
-      are proud to present{' '}
-      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
-        Shop for a Cause
-      </Link>
-      , our newest extension that raises money for charity as you shop online at
-      over 10,000 partner stores. It is simple, free, and impactful ♥.
+      are proud to present , our newest extension that raises money for charity
+      as you shop online at over 10,000 partner stores. It is simple, free, and
+      impactful ♥.
     </Typography>
     <Box
       sx={{ display: 'flex', justifyContent: 'space-between', marginTop: 5 }}
