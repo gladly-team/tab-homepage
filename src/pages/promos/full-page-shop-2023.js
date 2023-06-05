@@ -40,7 +40,7 @@ const Version1 = ({ cause, onClick, onClose }) => (
       align="center"
       sx={{ paddingTop: 5 }}
     >
-      Raise money for {cause} as you shop online
+      Raise money for {cause} as you shop online (v1)
     </Typography>
     <Typography
       align="center"
@@ -89,7 +89,7 @@ const Version2 = ({ cause, onClick, onClose }) => (
       align="center"
       sx={{ paddingTop: 5 }}
     >
-      Raise money for {cause} as you shop online
+      Raise money for {cause} as you shop online (v2)
     </Typography>
     <Typography
       align="center"
