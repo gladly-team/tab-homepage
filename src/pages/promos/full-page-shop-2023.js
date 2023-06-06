@@ -8,6 +8,20 @@ import shopDemo from 'src/img/shop-demo.png'
 
 const isBrowser = typeof window !== 'undefined'
 
+const getStartedBtn = { width: 150, height: 40 }
+
+const bodyStyle = {
+  width: 900,
+  fontSize: '16px !important',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+}
+
+const titleStyle = {
+  paddingTop: 5,
+  fontSize: '28px !important',
+}
+
 const params = {
   user_id: '0',
   version: 'Version0',
@@ -38,14 +52,11 @@ const Version1 = ({ cause, onClick, onClose }) => (
       variant="h4"
       component="h4"
       align="center"
-      sx={{ paddingTop: 5 }}
+      sx={titleStyle}
     >
       Raise money for {cause} as you shop online
     </Typography>
-    <Typography
-      align="center"
-      sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}
-    >
+    <Typography align="center" sx={bodyStyle}>
       We think you’ll love{' '}
       <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
         Shop for a Cause
@@ -60,7 +71,12 @@ const Version1 = ({ cause, onClick, onClose }) => (
       <Button sx={{ fontSize: 16, marginTop: 3 }} onClick={onClose}>
         Not Right Now
       </Button>
-      <Button variant="contained" onClick={onClick} target="_blank">
+      <Button
+        variant="contained"
+        onClick={onClick}
+        target="_blank"
+        sx={getStartedBtn}
+      >
         Get Started
       </Button>
     </Box>
@@ -78,7 +94,7 @@ const Version2 = ({ cause, onClick, onClose }) => (
   <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
-        <img src={shopDemo} style={{ width: 400 }} />
+        <img src={shopDemo} style={{ width: 300 }} />
       </Link>
     </Box>
 
@@ -87,18 +103,11 @@ const Version2 = ({ cause, onClick, onClose }) => (
       variant="h4"
       component="h4"
       align="center"
-      sx={{ paddingTop: 5 }}
+      sx={titleStyle}
     >
       Raise money for {cause} as you shop online
     </Typography>
-    <Typography
-      align="center"
-      sx={{
-        width: 900,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-      }}
-    >
+    <Typography align="center" sx={bodyStyle}>
       When Amazon{' '}
       <Link
         href="https://www.npr.org/2023/01/19/1149993013/amazon-amazonsmile-charity-donation-program"
@@ -121,7 +130,12 @@ const Version2 = ({ cause, onClick, onClose }) => (
       <Button sx={{ fontSize: 16, marginTop: 3 }} onClick={onClose}>
         Not Right Now
       </Button>
-      <Button variant="contained" onClick={onClick} target="_blank">
+      <Button
+        variant="contained"
+        onClick={onClick}
+        target="_blank"
+        sx={getStartedBtn}
+      >
         Get Started
       </Button>
     </Box>
