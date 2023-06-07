@@ -170,8 +170,8 @@ const FullPageShop2023 = () => {
     window.open(url, '_blank')
 
     // eslint-disable-next-line no-undef
-    gtag('event', 'full_page_shop_promo_2023_get_started_click', {
-      variation: params.version,
+    gtag('event', 'shop_full_page_2023_get_started_click', {
+      version: params.version,
     })
   }
 
