@@ -114,7 +114,7 @@ const Version2 = ({ cause, onClick, onClose }) => (
         target="_blank"
         rel="noreferrer"
       >
-        shutdown their Smile program
+        shut down their Smile program
       </Link>{' '}
       to focus on more profit, it was a huge loss to charities. In response, we
       are proud to present{' '}
@@ -170,8 +170,8 @@ const FullPageShop2023 = () => {
     window.open(url, '_blank')
 
     // eslint-disable-next-line no-undef
-    gtag('event', 'full_page_shop_promo_2023_get_started_click', {
-      variation: params.version,
+    gtag('event', 'shop_full_page_2023_get_started_click', {
+      version: params.version,
     })
   }
 
