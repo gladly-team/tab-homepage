@@ -114,7 +114,7 @@ const Version2 = ({ cause, onClick, onClose }) => (
         target="_blank"
         rel="noreferrer"
       >
-        shutdown their Smile program
+        shut down their Smile program
       </Link>{' '}
       to focus on more profit, it was a huge loss to charities. In response, we
       are proud to present{' '}
