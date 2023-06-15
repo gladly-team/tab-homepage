@@ -39,6 +39,7 @@ yahoo.com,55029,RESELLER,e1a5b5b6e3255540
 yieldmo.com,2719019867620450718,RESELLER
 Media.net, 8CUZ1MK22, RESELLER
 risecodes.com, 63832beef8189a00015cb6d3, RESELLER
+indexexchange.com, 205941, DIRECT, 50b1c356f2c5c8fc
 
 # Amazon (legacy)
 appnexus.com,1908,RESELLER,f5ab79cb980f11d1
