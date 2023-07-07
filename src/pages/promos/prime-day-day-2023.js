@@ -113,7 +113,7 @@ const listItems = offers.map((offer) => {
       })
     }
 
-    const url = `${baseUrl}&c=${offer.merchantId}&UUID=${p.user_id}&url=${offer.link}`
+    const url = `${baseUrl}&c=${offer.merchantId}&tc=${p.user_id}&url=${offer.link}`
     window.open(url, '_blank')
     // eslint-disable-next-line no-undef
     gtag('event', 'prime_day_2023_product_click', { offer: offer.title })
