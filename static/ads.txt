@@ -140,8 +140,8 @@ lijit.com,375328,DIRECT,fafdf38b16bf6b2b
 themediagrid.com,117954434eff,DIRECT,35d5010d7789b49d
 
 # Triplelift
-triplelift.com, 13552, DIRECT, 6c33edb13117fd86
-triplelift.com, 13552-EB, DIRECT, 6c33edb13117fd86
+triplelift.com, 13566, DIRECT, 6c33edb13117fd86
+triplelift.com, 13566-EB, DIRECT, 6c33edb13117fd86
 
 # Verizon
 yahoo.com,56944,DIRECT
@@ -157,3 +157,30 @@ rhythmone.com,3463482822,RESELLER,a670c89d4a324e47
 rubiconproject.com,17070,RESELLER,0bfd66d529a55807
 video.unrulymedia.com,3463482822,RESELLER
 yieldmo.com,2854391618578882886,DIRECT
+
+# Connatix
+connatix.com, 1412307362904577, DIRECT, 2af98acdee0e81ed
+pubmatic.com, 156592, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 19564, RESELLER, 0bfd66d529a55807
+google.com,pub-1929615694373103,RESELLER,f08c47fec0942fa0
+indexexchange.com, 190549, RESELLER, 50b1c356f2c5c8fc
+openx.com, 539496816, RESELLER, 6a698e2ec38604c6
+triplelift.com, 12200, RESELLER, 6c33edb13117fd86
+google.com, pub-5717092533913515, RESELLER, f08c47fec0942fa0 #NPMpartners
+gannett.com, 22597229605, RESELLER
+freewheel.tv, 1064705, RESELLER
+contextweb.com, 561340, RESELLER, 89ff185a4c4e857c
+imds.tv, 82461, RESELLER, ae6c32151e71f19d
+media.net, 8CUP5F2LD, RESELLER
+media.net, 8CU95X561, RESELLER
+pubmatic.com, 163106, RESELLER, 5d62403b186f2ace
+appnexus.com, 9733, RESELLER
+inmobi.com, 64d831e7ed4840ac8ea2283745f07d75, RESELLER, 83e75a7ae333ca9d
+33across.com, 0015a00002y7TWTAA2, RESELLER, bbea06d9c4d2853c #33Across #hb #tag
+supply.colossusssp.com, 332, RESELLER, 6c5b49d96ec1b458
+smartadserver.com, 3630, RESELLER
+lkqd.net, 593, RESELLER, 59c49fa9598a0117
+conversantmedia.com, 42111, RESELLER, 03113cd04947736d
+improvedigital.com, 1845, RESELLER
+admixer.net, 75141817-049f-4603-9a63-fe9a6f956bff, RESELLER
+loopme.com, 11186, RESELLER, 6c8d5f95897a5a3b
