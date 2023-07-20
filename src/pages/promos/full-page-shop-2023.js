@@ -44,7 +44,7 @@ const Version1 = ({ cause, onClick, onClose }) => (
   <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
-        <img src={balloonHands} style={{ width: 400 }} />
+        <img src={balloonHands} style={{ width: 400 }} alt="balloon hands" />
       </Link>
     </Box>
 
@@ -103,7 +103,11 @@ const Version2 = ({ cause, onClick, onClose }) => (
   <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
-        <img src={piggyBankWithBackgroundBlob} style={{ width: 400 }} />
+        <img
+          src={piggyBankWithBackgroundBlob}
+          style={{ width: 400 }}
+          alt="piggy bank with background blob"
+        />
       </Link>
     </Box>
 
