@@ -43,7 +43,11 @@ if (isBrowser) {
 const Version1 = ({ cause, onClick, onClose }) => (
   <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+      <Link
+        href="https://shop.gladly.io?version=1"
+        target="_blank"
+        rel="noreferrer"
+      >
         <img src={balloonHands} style={{ width: 400 }} alt="balloon hands" />
       </Link>
     </Box>
@@ -68,11 +72,15 @@ const Version1 = ({ cause, onClick, onClose }) => (
       </Link>{' '}
       to focus on more profit, it was a huge loss to charities. In response, we
       are proud to present{' '}
-      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+      <Link
+        href="https://shop.gladly.io?version=1"
+        target="_blank"
+        rel="noreferrer"
+      >
         Shop for a Cause
       </Link>
       , our newest extension that raises money for charity as you shop online at
-      over 10,000 partner stores. It is simple, free, and impactful ♥!
+      over 10,000 partner stores. It is simple, free, and impactful ♥.
     </Typography>
     <Box
       sx={{ display: 'flex', justifyContent: 'space-between', marginTop: 5 }}
@@ -102,7 +110,11 @@ Version1.propTypes = {
 const Version2 = ({ cause, onClick, onClose }) => (
   <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+      <Link
+        href="https://shop.gladly.io?version=2"
+        target="_blank"
+        rel="noreferrer"
+      >
         <img
           src={piggyBankWithBackgroundBlob}
           style={{ width: 400 }}
@@ -131,7 +143,11 @@ const Version2 = ({ cause, onClick, onClose }) => (
       </Link>{' '}
       to focus on more profit, it was a huge loss to charities. In response, we
       are proud to present{' '}
-      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+      <Link
+        href="https://shop.gladly.io?version=2"
+        target="_blank"
+        rel="noreferrer"
+      >
         Shop for a Cause
       </Link>
       , our newest extension that raises money for charity as you shop online at
@@ -196,7 +212,11 @@ const Version3 = ({ cause, onClick, onClose }) => (
       </Link>{' '}
       to focus on more profit, it was a huge loss to charities. In response, we
       are proud to present{' '}
-      <Link href="https://shop.gladly.io" target="_blank" rel="noreferrer">
+      <Link
+        href="https://shop.gladly.io?version=3"
+        target="_blank"
+        rel="noreferrer"
+      >
         Shop for a Cause
       </Link>
       , our newest extension that raises money for charity as you shop online at
