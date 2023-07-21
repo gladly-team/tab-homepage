@@ -40,7 +40,7 @@ if (isBrowser) {
 
 // Version 1
 const Version1 = ({ cause, onClick, onClose }) => (
-  <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
+  <Box sx={{ width: 901, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <a
         href="https://shop.gladly.io?version=1"
@@ -107,7 +107,7 @@ Version1.propTypes = {
 
 // Version 2
 const Version2 = ({ cause, onClick, onClose }) => (
-  <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
+  <Box sx={{ width: 902, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <a
         href="https://shop.gladly.io?version=2"
@@ -178,7 +178,7 @@ Version2.propTypes = {
 
 // Version 3
 const Version3 = ({ cause, onClick, onClose }) => (
-  <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
+  <Box sx={{ width: 903, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <iframe
         width="784"
