@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Box from '@mui/material/Box'
-import Link from '@mui/material/Link'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import balloonHands from 'src/img/promos/prime-day-day-2023/full-page-shop/balloon-hands.png'
@@ -43,13 +42,13 @@ if (isBrowser) {
 const Version1 = ({ cause, onClick, onClose }) => (
   <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-      <Link
+      <a
         href="https://shop.gladly.io?version=1"
         target="_blank"
         rel="noreferrer"
       >
         <img src={balloonHands} style={{ width: 400 }} alt="balloon hands" />
-      </Link>
+      </a>
     </Box>
 
     <Typography
@@ -63,22 +62,22 @@ const Version1 = ({ cause, onClick, onClose }) => (
     </Typography>
     <Typography align="center" sx={bodyStyle}>
       When Amazon{' '}
-      <Link
+      <a
         href="https://www.npr.org/2023/01/19/1149993013/amazon-amazonsmile-charity-donation-program"
         target="_blank"
         rel="noreferrer"
       >
         shut down their Smile program
-      </Link>{' '}
+      </a>{' '}
       to focus on more profit, it was a huge loss to charities. In response, we
       are proud to present{' '}
-      <Link
+      <a
         href="https://shop.gladly.io?version=1"
         target="_blank"
         rel="noreferrer"
       >
         Shop for a Cause
-      </Link>
+      </a>
       , our newest extension that raises money for charity as you shop online at
       over 10,000 partner stores. It is simple, free, and impactful ♥.
     </Typography>
@@ -110,7 +109,7 @@ Version1.propTypes = {
 const Version2 = ({ cause, onClick, onClose }) => (
   <Box sx={{ width: 900, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-      <Link
+      <a
         href="https://shop.gladly.io?version=2"
         target="_blank"
         rel="noreferrer"
@@ -120,7 +119,7 @@ const Version2 = ({ cause, onClick, onClose }) => (
           style={{ width: 400 }}
           alt="piggy bank with background blob"
         />
-      </Link>
+      </a>
     </Box>
 
     <Typography
@@ -134,22 +133,22 @@ const Version2 = ({ cause, onClick, onClose }) => (
     </Typography>
     <Typography align="center" sx={bodyStyle}>
       When Amazon{' '}
-      <Link
+      <a
         href="https://www.npr.org/2023/01/19/1149993013/amazon-amazonsmile-charity-donation-program"
         target="_blank"
         rel="noreferrer"
       >
         shut down their Smile program
-      </Link>{' '}
+      </a>{' '}
       to focus on more profit, it was a huge loss to charities. In response, we
       are proud to present{' '}
-      <Link
+      <a
         href="https://shop.gladly.io?version=2"
         target="_blank"
         rel="noreferrer"
       >
         Shop for a Cause
-      </Link>
+      </a>
       , our newest extension that raises money for charity as you shop online at
       over 10,000 partner stores. It is simple, free, and impactful ♥.
     </Typography>
@@ -203,22 +202,22 @@ const Version3 = ({ cause, onClick, onClose }) => (
     </Typography>
     <Typography align="center" sx={bodyStyle}>
       When Amazon{' '}
-      <Link
+      <a
         href="https://www.npr.org/2023/01/19/1149993013/amazon-amazonsmile-charity-donation-program"
         target="_blank"
         rel="noreferrer"
       >
         shut down their Smile program
-      </Link>{' '}
+      </a>{' '}
       to focus on more profit, it was a huge loss to charities. In response, we
       are proud to present{' '}
-      <Link
+      <a
         href="https://shop.gladly.io?version=3"
         target="_blank"
         rel="noreferrer"
       >
         Shop for a Cause
-      </Link>
+      </a>
       , our newest extension that raises money for charity as you shop online at
       over 10,000 partner stores. It is simple, free, and impactful ♥.
     </Typography>
