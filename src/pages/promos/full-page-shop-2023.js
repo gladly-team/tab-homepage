@@ -72,7 +72,7 @@ const Version1 = ({ cause, onClick, onClose }) => (
         Shop for a Cause
       </Link>
       , our newest extension that raises money for charity as you shop online at
-      over 10,000 partner stores. It is simple, free, and impactful ♥.
+      over 10,000 partner stores. It is simple, free, and impactful ♥!
     </Typography>
     <Box
       sx={{ display: 'flex', justifyContent: 'space-between', marginTop: 5 }}
