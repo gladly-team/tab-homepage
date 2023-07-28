@@ -40,6 +40,12 @@ yieldmo.com,2719019867620450718,RESELLER
 Media.net, 8CUZ1MK22, RESELLER
 risecodes.com, 63832beef8189a00015cb6d3, RESELLER
 indexexchange.com, 205941, DIRECT, 50b1c356f2c5c8fc
+video.unrulymedia.com,74229,DIRECT,a670c89d4a324e47
+mediago.io,045ac24b888bcf59a09731e7f0f2084f,RESELLER
+adyoulike.com,7463c359225e043c111036d7a29affa5,RESELLER
+minutemedia.com,01gya4708ddm,RESELLER
+visiblemeasures.com,1052,RESELLER
+admedia.com,AM1601,RESELLER
 
 # Amazon (legacy)
 appnexus.com,1908,RESELLER,f5ab79cb980f11d1
