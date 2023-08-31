@@ -24,7 +24,7 @@ const titleStyle = {
 
 const params = {
   user_id: '0',
-  version: 'Version1',
+  version: '',
   cause_name: 'Charity',
 }
 
@@ -34,7 +34,7 @@ if (isBrowser) {
   })
 
   params.user_id = p.user_id || '0'
-  params.version = p.version || 'Version1'
+  params.version = p.version || ''
   params.cause_name = p.cause_name || 'Charity'
 }
 
@@ -212,6 +212,11 @@ Version3.propTypes = {
 }
 
 const FullPageShop2023 = () => {
+  // Show nothing until we have a version
+  if (params.version === '') {
+    return null
+  }
+
   const boxStyle = {
     marginLeft: 'auto',
     marginRight: 'auto',
