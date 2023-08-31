@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
+import saveAsYouShop from 'src/img/promos/full-page-shop/save-as-you-shop.png'
 import balloonHands from 'src/img/promos/prime-day-day-2023/full-page-shop/balloon-hands.png'
 import piggyBankWithBackgroundBlob from 'src/img/promos/prime-day-day-2023/full-page-shop/piggy-bank-with-background-blob.png'
 
@@ -114,15 +115,11 @@ const Version2 = ({ cause, onClick, onClose }) => (
         target="_blank"
         rel="noreferrer"
       >
-        <img
-          src={piggyBankWithBackgroundBlob}
-          style={{ width: 400 }}
-          alt="piggy bank with background blob"
-        />
+        <img src={saveAsYouShop} alt="shop for a cause" />
       </a>
     </Box>
 
-    <Typography
+    {/* <Typography
       gutterBottom
       variant="h4"
       component="h4"
@@ -151,7 +148,7 @@ const Version2 = ({ cause, onClick, onClose }) => (
       </a>
       , our newest extension that raises money for charity as you shop online at
       over 10,000 partner stores. It is simple, free, and impactful ♥.
-    </Typography>
+    </Typography> */}
     <Box
       sx={{ display: 'flex', justifyContent: 'space-between', marginTop: 5 }}
     >
