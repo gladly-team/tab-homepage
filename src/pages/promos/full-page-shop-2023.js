@@ -5,7 +5,6 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import saveAsYouShop from 'src/img/promos/full-page-shop/save-as-you-shop.png'
 import balloonHands from 'src/img/promos/prime-day-day-2023/full-page-shop/balloon-hands.png'
-import piggyBankWithBackgroundBlob from 'src/img/promos/prime-day-day-2023/full-page-shop/piggy-bank-with-background-blob.png'
 
 const isBrowser = typeof window !== 'undefined'
 
@@ -119,36 +118,6 @@ const Version2 = ({ cause, onClick, onClose }) => (
       </a>
     </Box>
 
-    {/* <Typography
-      gutterBottom
-      variant="h4"
-      component="h4"
-      align="center"
-      sx={titleStyle}
-    >
-      Raise money for {cause} as you shop online
-    </Typography>
-    <Typography align="center" sx={bodyStyle}>
-      When Amazon{' '}
-      <a
-        href="https://www.npr.org/2023/01/19/1149993013/amazon-amazonsmile-charity-donation-program"
-        target="_blank"
-        rel="noreferrer"
-      >
-        shut down their Smile program
-      </a>{' '}
-      to focus on more profit, it was a huge loss to charities. In response, we
-      are proud to present{' '}
-      <a
-        href="https://shop.gladly.io?version=2"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Shop for a Cause
-      </a>
-      , our newest extension that raises money for charity as you shop online at
-      over 10,000 partner stores. It is simple, free, and impactful ♥.
-    </Typography> */}
     <Box
       sx={{ display: 'flex', justifyContent: 'space-between', marginTop: 5 }}
     >
