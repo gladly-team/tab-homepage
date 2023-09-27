@@ -35,8 +35,10 @@ import UnsupportedBrowserDialog from 'src/components/UnsupportedBrowserDialog'
 import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import localStorageMgr from 'src/utils/local-storage'
 import {
+  STORAGE_NEW_USER_CAUSE_ID,
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
+  STORAGE_REFERRAL_DATA_REFERRING_CAMPAIGN,
 } from 'src/utils/constants'
 import { getUrlParameterValue } from 'src/utils/location'
 
@@ -84,6 +86,21 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
+    // Store cause if provided in URL parameter.
+    const causeId = getUrlParameterValue('c')
+    if (causeId !== null && causeId !== undefined) {
+      localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
+    }
+
+    // Store campaign if provided in URL parameter.
+    const campaign = getUrlParameterValue('m')
+    if (campaign !== null && campaign !== undefined) {
+      localStorageMgr.setItem(
+        STORAGE_REFERRAL_DATA_REFERRING_CAMPAIGN,
+        campaign
+      )
+    }
+
     // Check if the user came from referring channel (a non-user
     // referral source); if so, and store the referrer ID.
     if (this.isReferralFromChannel()) {
