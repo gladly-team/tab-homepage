@@ -36,6 +36,7 @@ import MoneyRaisedDisplay from 'src/components/MoneyRaisedDisplay'
 import localStorageMgr from 'src/utils/local-storage'
 import {
   STORAGE_NEW_USER_CAUSE_ID,
+  STORAGE_NEW_USER_IS_TAB_V4_BETA,
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
   STORAGE_REFERRAL_DATA_REFERRING_USER,
   STORAGE_REFERRAL_DATA_REFERRING_CAMPAIGN,
@@ -90,6 +91,7 @@ class IndexPage extends React.Component {
     const causeId = getUrlParameterValue('c')
     if (causeId !== null && causeId !== undefined) {
       localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
+      localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
     }
 
     // Store campaign if provided in URL parameter.
