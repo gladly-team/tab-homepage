@@ -1,0 +1,168 @@
+{
+  "path": "ending-poverty",
+  "data": {
+    "styles": {
+      "colors": {
+        "primary": "#A27DF8",
+        "secondary": "#29BEBA",
+        "primaryContrast": "#15AAA6"
+      }
+    },
+    "causeLaunch": {
+      "comingSoonTitle": "Tab for Ending Poverty",
+      "launchDate": "2023-10-06T16:00:00.000Z",
+      "preview": true,
+      "enabled": true
+    },
+    "causeId": "p7HGxRbQZ",
+    "metadata": {
+      "title": "Help End Extreme Poverty - Tab for a Cause",
+      "ogTitle": "Help End Extreme Poverty by Surfing the Web | Tab for a Cause",
+      "ogDescription": "Open new tabs, raise money to help end extreme poverty - for free",
+      "ogImage": "../../img/endingPoverty/og-v2.png",
+      "causeSpecificKeywords": "charity, equity, extreme poverty, GiveDirectly, cash transfer, empowerment, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
+    },
+    "sections": {
+      "landing": {
+        "title": "Help end extreme poverty",
+        "subtitle": "Every tab helps send life-changing cash directly to people living in extreme poverty.",
+        "ctaImg": "../../img/endingPoverty/landing.png"
+      },
+      "moneyRaised": {
+        "moneyImg": "../../img/endingPoverty/moneyRaised.png"
+      },
+      "charityIntro": {
+        "title": "Stop wasting tabs, start changing the world",
+        "subTitle": "With Tab for Ending Poverty, you can help put life-changing funds into the hands of families in extreme poverty across Africa. People in poverty deserve the dignity to choose for themselves how best to improve their lives – cash enables that choice.",
+        "steps": [
+          {
+            "img": "../../img/endingPoverty/charityIntro1.png",
+            "text": "Send cash directly to people who need it most"
+          },
+          {
+            "img": "../../img/endingPoverty/charityIntro2.png",
+            "text": "Trust families in poverty to know best what they need"
+          },
+          {
+            "img": "../../img/endingPoverty/charityIntro3.png",
+            "text": "Help accelerate the end of extreme poverty"
+          }
+        ]
+      },
+      "TFACIntro": {
+        "titleImg": "../../img/endingPoverty/introCTA.png",
+        "title": "Your tabs can make a difference in somebody’s life",
+        "subtitle": "By opening browser tabs, you can help end extreme poverty",
+        "img1": "../../img/endingPoverty/intro1.png",
+        "img1Subtext": "###### Open new tabs on your browser.",
+        "img2": "../../img/endingPoverty/intro2.png",
+        "img2Subtext": "###### Earn money for non-profit organizations.",
+        "img3": "../../img/endingPoverty/intro3.png",
+        "img3Subtext": "###### Help support GiveDirectly in their quest to eradicate extreme poverty"
+      },
+
+      "Mission": {
+        "missionURL": "/ending-poverty/",
+        "titleText": "Our Mission",
+        "subtitleText": "To make giving back easier than ever",
+        "bodyText": "We believe everyone should be able to help eradicate extreme poverty. Through our support of GiveDirectly, you can be sure each tab is supporting direct cash transfers to those in need.",
+        "image": "../../img/endingPoverty/mission.png"
+      },
+      "Security": {
+        "titleImg": "../../img/endingPoverty/security.png"
+      },
+      "Financials": {
+        "title": "Transparent Financials",
+        "text": "Every tab makes an impact. Check out how much we've raised together.",
+        "buttonText": "See All Financials",
+        "ctaImg": "../../img/endingPoverty/financials.png",
+        "q1Img": "../../img/endingPoverty/q1.png",
+        "q2Img": "../../img/endingPoverty/q2.png",
+        "q3Img": "../../img/endingPoverty/q3.png",
+        "q4Img": "../../img/endingPoverty/q4.png"
+      },
+      "Endorsements": {
+        "disableCenterEndorsement": true,
+        "title": "People are saying good things",
+        "smallEndorsements": [
+          {
+            "endorser": "Shayne W.",
+            "endorsement": "“FANTASTIC app that lets you do a lot of good things while doing your day to day work, studying for finals, or just surfing the web!”",
+            "img": "../../img/reviews/shayne_w.png"
+          },
+          {
+            "endorser": "Benjamin K.",
+            "endorsement": "“Raise money for charity by browsing the internet. Perfectly executed!”",
+            "img": "../../img/reviews/benjamin_k.png"
+          },
+          {
+            "endorser": "Cameron B.",
+            "endorsement": "“As a person who frequently enters wikipedia holes opening 20 tabs at a time.. its great to know that my procrastination can be of some use! Great app, brilliant idea”",
+            "img": "../../img/reviews/cameron_b.png"
+          },
+          {
+            "endorser": "Chase R.",
+            "endorsement": "“It's wonderful. Unobtrusive, useful, well designed, easy to navigate, and actually pretty fun! There is no reason to not have this extension. It has not affected performance and is never an inconvenience.”",
+            "img": "../../img/reviews/chase_r.png"
+          },
+
+          {
+            "endorser": "Jonathon B.",
+            "endorsement": "“Love that this gives me, a fool with no money, a way to donate to charity. :)”",
+            "img": "../../img/reviews/johnathan_b.png"
+          },
+          {
+            "endorser": "Ana L.",
+            "endorsement": "“It's a great way to raise money for charity when you don't have a lot of money ... Plus I can decide what charity to donate to, and do it on my own time. I love it!”",
+            "img": "../../img/reviews/ana_l.png"
+          },
+          {
+            "endorser": "Alfonzo G.",
+            "endorsement": "“Wonderful service that does great things for people in need, and all you have to do is click a button... Way better than the default chrome new tab page. So what do you have to lose?”",
+            "img": "../../img/reviews/alfonzo_g.png"
+          },
+          {
+            "endorser": "Abby H.",
+            "endorsement": "“Wonderful and thoughtful idea for an extension! Helping save the world one tab at a time.”",
+            "img": "../../img/reviews/abby_h.png"
+          },
+          {
+            "endorser": "Lucas N.",
+            "endorsement": "“Awesome way to give back while browsing, with absolutely no effort on your end!”",
+            "img": "../../img/reviews/lucas_n.png"
+          },
+          {
+            "endorser": "Toby S.",
+            "endorsement": "“Amazing extension. Such an awesome idea to use ad revenue from people's new tab to donate to charity. I'd rate 6 stars if I could.”",
+            "img": "../../img/reviews/toby_s.png"
+          }
+        ]
+      },
+      "faq": {
+        "img": "../../img/endingPoverty/FAQ.png",
+        "questions": [
+          {
+            "question": "How does opening tabs raise money for charity?",
+            "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It’s completely free!"
+          },
+          {
+            "question": "What nonprofit does Tab for Ending Poverty support?",
+            "answer": "Tab for Ending Poverty supports [GiveDirectly](https://www.givedirectly.org/?utm_source=tabforcause). We are proud to support this incredible organization that provides direct cash transfers to people living in extreme poverty"
+          },
+          {
+            "question": "How can I find out about new updates and announcements?",
+            "answer": "Stay in touch with us on social media! Follow us @tabforacause on [TikTok](https://www.tiktok.com/@tabforacause), [YouTube](https://www.youtube.com/@tabforacause), [Instagram](https://www.instagram.com/tabforacause/), [Twitter](https://twitter.com/TabForACause), and [Facebook](https://www.facebook.com/TabForACause)."
+          },
+          {
+            "question": "This all sounds amazing! How else can I help?",
+            "answer": "Invite your friends and family to join in! Everybody who joins helps advance the mission of ending poverty."
+          }
+        ]
+      },
+      "Footer": {
+        "img": null,
+        "bubbleColor": "#8450FB"
+      }
+    }
+  }
+}
