@@ -26,6 +26,7 @@ import Alert from '@mui/material/Alert'
 import AlertTitle from '@mui/material/AlertTitle'
 import { navigate } from 'gatsby'
 import {
+  STORAGE_REFERRAL_DATA_REFERRING_CAMPAIGN,
   STORAGE_NEW_USER_IS_TAB_V4_BETA,
   STORAGE_NEW_USER_CAUSE_ID,
   STORAGE_REFERRAL_DATA_REFERRING_CHANNEL,
@@ -113,6 +114,18 @@ const V4HomePage = ({
       )
     }
   }, [])
+
+  // store campaign id
+  useEffect(() => {
+    const campaign = getUrlParameterValue('m')
+    if (campaign !== null && campaign !== undefined) {
+      localStorageMgr.setItem(
+        STORAGE_REFERRAL_DATA_REFERRING_CAMPAIGN,
+        campaign
+      )
+    }
+  }, [])
+
   useEffect(() => {
     if (enabled && previewPage) {
       navigate(previewPage.path)
