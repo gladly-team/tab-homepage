@@ -217,3 +217,20 @@ imds.tv, 82302, RESELLER, ae6c32151e71f19d
 improvedigital.com, 2073, RESELLER
 betweendigital.com, 44808, RESELLER
 adyoulike.com, 53264963677efeda057eef7db2cb305f, RESELLER
+
+#Kueez 10-18-2023
+kueez.com,8d106fa5a8e4ce622b7fca4ad6ab6796, DIRECT
+themediagrid.com, UOT45Z, RESELLER, 35d5010d7789b49d
+rubiconproject.com, 16920, RESELLER, 0bfd66d529a55807
+openx.com, 557564833, RESELLER, 6a698e2ec38604c6 
+Pubmatic.com, 162110, RESELLER, 5d62403b186f2ace
+lijit.com, 407406, RESELLER, fafdf38b16bf6b2b #SOVRN
+sharethrough.com, n98xDzeL, RESELLER, d53b998a7bd4ecd2
+sonobi.com, 4c4fba1717, RESELLER, d1a215d9eb5aee9e
+appnexus.com, 8826,RESELLER, f5ab79cb980f11d1
+Disqus.com, 108, RESELLER
+Media.net,8CU4JTRF9, RESELLER
+onetag.com,6e053d779444c00, RESELLER
+yieldmo.com, 3133660606033240149, RESELLER
+33across.com, 0010b00002ODU4HAAX, RESELLER, bbea06d9c4d2853c
+video.unrulymedia.com, 3486482593, RESELLER
