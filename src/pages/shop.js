@@ -38,10 +38,10 @@ class ShopPage extends React.Component {
       )
     }
 
-    // Redirect to the shop url.
-    setTimeout(() => {
-      navigate(shopHomeURL)
-    }, 500)
+    // // Redirect to the shop url.
+    // setTimeout(() => {
+    //   navigate(shopHomeURL)
+    // }, 500)
   }
 
   render() {
