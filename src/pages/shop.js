@@ -39,11 +39,13 @@ class ShopPage extends React.Component {
     }
 
     // Redirect to the shop url.
-    navigate(shopHomeURL)
+    setTimeout(() => {
+      navigate(shopHomeURL)
+    }, 500)
   }
 
   render() {
-    return null
+    return <p>Loading...</p>
   }
 }
 
