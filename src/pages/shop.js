@@ -12,9 +12,42 @@ import { shopHomeURL } from 'src/utils/navigation'
 import { getUrlParameterValue } from 'src/utils/location'
 
 class ShopPage extends React.Component {
-  componentDidMount() {
+  // componentDidMount() {
+  //   // Store cause if provided in URL parameter.
+  //   const causeId = getUrlParameterValue('c')
+
+  //   if (causeId !== null && causeId !== undefined) {
+  //     localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
+  //     localStorageMgr.setItem(STORAGE_NEW_USER_IS_TAB_V4_BETA, 'true')
+  //   }
+
+  //   // Store user referral
+  //   const referral = getUrlParameterValue('r')
+
+  //   if (referral !== null && referral !== undefined) {
+  //     localStorageMgr.setItem(STORAGE_REFERRAL_DATA_REFERRING_CHANNEL, referral)
+  //   }
+
+  //   // Store campaign if provided in URL parameter.
+  //   const campaign = getUrlParameterValue('m')
+
+  //   if (campaign !== null && campaign !== undefined) {
+  //     localStorageMgr.setItem(
+  //       STORAGE_REFERRAL_DATA_REFERRING_CAMPAIGN,
+  //       campaign
+  //     )
+  //   }
+
+  //   // // Redirect to the shop url.
+  //   // setTimeout(() => {
+  //   //   navigate(shopHomeURL)
+  //   // }, 500)
+  // }
+
+  render() {
     // Store cause if provided in URL parameter.
     const causeId = getUrlParameterValue('c')
+    console.log('causeId', causeId)
 
     if (causeId !== null && causeId !== undefined) {
       localStorageMgr.setItem(STORAGE_NEW_USER_CAUSE_ID, causeId)
@@ -23,6 +56,7 @@ class ShopPage extends React.Component {
 
     // Store user referral
     const referral = getUrlParameterValue('r')
+    console.log('referral', referral)
 
     if (referral !== null && referral !== undefined) {
       localStorageMgr.setItem(STORAGE_REFERRAL_DATA_REFERRING_CHANNEL, referral)
@@ -30,6 +64,7 @@ class ShopPage extends React.Component {
 
     // Store campaign if provided in URL parameter.
     const campaign = getUrlParameterValue('m')
+    console.log('campaign', campaign)
 
     if (campaign !== null && campaign !== undefined) {
       localStorageMgr.setItem(
@@ -38,13 +73,6 @@ class ShopPage extends React.Component {
       )
     }
 
-    // Redirect to the shop url.
-    setTimeout(() => {
-      navigate(shopHomeURL)
-    }, 500)
-  }
-
-  render() {
     return <p>Loading...</p>
   }
 }
