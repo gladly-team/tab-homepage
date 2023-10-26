@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
+import shopDemoImg from 'src/img/shop-demo.png'
 import saveAsYouShop from 'src/img/promos/full-page-shop/save-as-you-shop.png'
 import balloonHands from 'src/img/promos/prime-day-day-2023/full-page-shop/balloon-hands.png'
 
@@ -47,7 +48,7 @@ const Version1 = ({ cause, onClick, onClose }) => (
         target="_blank"
         rel="noreferrer"
       >
-        <img src={balloonHands} style={{ width: 400 }} alt="balloon hands" />
+        <img src={shopDemoImg} style={{ width: 400 }} alt="shop demo" />
       </a>
     </Box>
 
@@ -107,17 +108,42 @@ Version1.propTypes = {
 
 // Version 2
 const Version2 = ({ cause, onClick, onClose }) => (
-  <Box sx={{ width: 902, marginLeft: 'auto', marginRight: 'auto' }}>
+  <Box sx={{ width: 901, marginLeft: 'auto', marginRight: 'auto' }}>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <a
         href="https://shop.gladly.io?version=2"
         target="_blank"
         rel="noreferrer"
       >
-        <img src={saveAsYouShop} alt="shop for a cause" />
+        <img src={shopDemoImg} style={{ width: 400 }} alt="shop demo" />
       </a>
     </Box>
 
+    <Typography
+      gutterBottom
+      variant="h4"
+      component="h4"
+      align="center"
+      sx={titleStyle}
+    >
+      Raise money for {cause} as you shop online
+    </Typography>
+    <Typography align="center" sx={bodyStyle}>
+      This holiday season, it is likely that over $200 Billion will be spent in
+      online shopping. With our newest extension,{' '}
+      <a
+        href="https://shop.gladly.io?version=2"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Shop for a Cause
+      </a>
+      , anyone can both get great deals and raise money for amazing non-profits.
+      When you have Shop for a Cause and make a purchase at our over 10,000
+      partner stores, up to 5% will be donated to your favorite cause (and it
+      doesn’t cost you a thing!). Join us in making a difference this holiday
+      season ♥.
+    </Typography>
     <Box
       sx={{ display: 'flex', justifyContent: 'space-between', marginTop: 5 }}
     >

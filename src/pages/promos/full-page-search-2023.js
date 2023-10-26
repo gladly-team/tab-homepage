@@ -56,12 +56,14 @@ const Version1 = ({ cause, onClick, onClose }) => (
       Raise money for {cause} with every search
     </Typography>
     <Typography align="center" sx={bodyStyle}>
-      Say goodbye to search engines that prioritize profit over purpose. Use{' '}
+      While we may not have all the bells and whistles of Google,{' '}
       <a href="https://search.gladly.io/" target="_blank" rel="noreferrer">
         Search for a Cause
-      </a>
-      , and your searches will fund charitable endeavors instead of further
-      enriching Google. It is simple, free, and impactful ♥.
+      </a>{' '}
+      offers something more valuable: a chance to give back. Your searches will
+      support important causes, making a small difference with every click. Join
+      us in our mission to make the world a better place, one search at a time
+      ♥.
     </Typography>
     <Box
       sx={{ display: 'flex', justifyContent: 'space-between', marginTop: 5 }}
@@ -106,14 +108,15 @@ const Version2 = ({ cause, onClick, onClose }) => (
       Raise money for {cause} with every search
     </Typography>
     <Typography align="center" sx={bodyStyle}>
-      While we may not have all the bells and whistles of Google,{' '}
+      Did you know, Google makes 10s of billions in profit from your searches?
+      With{' '}
       <a href="https://search.gladly.io/" target="_blank" rel="noreferrer">
         Search for a Cause
-      </a>{' '}
-      offers something more valuable: a chance to give back. Your searches will
-      support important causes, making a small difference with every click. Join
-      us in our mission to make the world a better place, one search at a time
-      ♥.
+      </a>
+      , you can redirect a part of that wealth to meaningful causes. By turning
+      your searches into a powerful force for good, you’ll have 5 times the
+      impact you are having just by opening tabs. Join us in our mission to make
+      the world a better place, one search at a time ♥.
     </Typography>
     <Box
       sx={{ display: 'flex', justifyContent: 'space-between', marginTop: 5 }}
