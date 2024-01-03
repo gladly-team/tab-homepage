@@ -48,7 +48,8 @@ const FinancialsPage = ({ data, location }) => {
             better fulfills our mission and increases the total amount of money
             our community can raise for nonprofits!
           </p>
-          <div style={{ marginBottom: 16 }}>
+
+          {/* <div style={{ marginBottom: 16 }}>
             <Alert
               severity="info"
 
@@ -63,7 +64,7 @@ const FinancialsPage = ({ data, location }) => {
                 schedule.
               </div>
             </Alert>
-          </div>
+          </div> */}
           <div
             style={{
               display: 'flex',
