@@ -13,26 +13,26 @@ const getMockProps = () => ({
 
 describe('privacy policy page', () => {
   it('renders without error', () => {
-    const PrivacyPage = require('../privacy').default
+    const PrivacyPage = require('../privacy-policy').default
     shallow(<PrivacyPage {...getMockProps()} />)
   })
 
   it('sets the page title using Helmet', () => {
-    const PrivacyPage = require('../privacy').default
+    const PrivacyPage = require('../privacy-policy').default
     const wrapper = shallow(<PrivacyPage {...getMockProps()} />)
     const elem = wrapper.find(Helmet)
     expect(elem.prop('title')).toBe('Privacy Policy')
   })
 
   it('sets the open graph title', () => {
-    const PrivacyPage = require('../privacy').default
+    const PrivacyPage = require('../privacy-policy').default
     const wrapper = shallow(<PrivacyPage {...getMockProps()} />)
     const elem = wrapper.find('meta[property="og:title"]')
     expect(elem.prop('content')).toBe('Privacy Policy - Tab for a Cause')
   })
 
   it('sets the open graph description', () => {
-    const PrivacyPage = require('../privacy').default
+    const PrivacyPage = require('../privacy-policy').default
     const wrapper = shallow(<PrivacyPage {...getMockProps()} />)
     const elem = wrapper.find('meta[property="og:description"]')
     expect(elem.prop('content')).toBe(
@@ -41,7 +41,7 @@ describe('privacy policy page', () => {
   })
 
   it('renders the Layout component with "brand=all"', () => {
-    const PrivacyPage = require('../privacy').default
+    const PrivacyPage = require('../privacy-policy').default
     const wrapper = shallow(<PrivacyPage {...getMockProps()} />)
     expect(wrapper.find(Layout).prop('brand')).toEqual('all')
   })

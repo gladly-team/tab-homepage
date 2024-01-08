@@ -240,6 +240,27 @@ const PrivacyPolicyPage = ({ location }) => (
           of us or our assets may continue to use your personal information as
           set forth in this policy.
         </p>
+        <h2>Advertising</h2>
+        <p>
+          This Site is affiliated with CMI Marketing, Inc., d/b/a Raptive
+          (“Raptive”) for the purposes of placing advertising on the Site, and
+          Raptive will collect and use certain data for advertising purposes. To
+          learn more about Raptive’s data usage, click here:
+          <Link to="https://raptive.com/creator-advertising-privacy-statement/">
+            https://raptive.com/creator-advertising-privacy-statement/
+          </Link>
+        </p>
+        <h2>Google Analytics</h2>
+        <p>
+          We use Google Analytics to analyze the use of our website. Google
+          Analytics gathers information about website use by means of cookies.
+          The information gathered relating to our website is used to create
+          reports about the use of our website. Google's privacy policy is
+          available at:{' '}
+          <Link to="https://policies.google.com/privacy">
+            https://policies.google.com/privacy
+          </Link>
+        </p>
         <h2>Changes to the Privacy Policy</h2>
         <p>
           We may amend this Privacy Policy from time to time. Use of information
@@ -251,16 +272,6 @@ const PrivacyPolicyPage = ({ location }) => (
         <p>
           If you have any questions or concerns, please{' '}
           <Link to={contactUsURL}>contact us</Link>.
-        </p>
-        <h2>Advertising</h2>
-        <p>
-          This Site is affiliated with CMI Marketing, Inc., d/b/a Raptive
-          (“Raptive”) for the purposes of placing advertising on the Site, and
-          Raptive will collect and use certain data for advertising purposes. To
-          learn more about Raptive’s data usage, click here:
-          <Link to="https://raptive.com/creator-advertising-privacy-statement/">
-            https://raptive.com/creator-advertising-privacy-statement/
-          </Link>
         </p>
       </TextPageContent>
     </div>
