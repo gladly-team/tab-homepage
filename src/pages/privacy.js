@@ -56,7 +56,6 @@ const PrivacyPolicyPage = ({ location }) => (
           If you have any questions, please{' '}
           <Link to={contactUsURL}>contact us</Link>.
         </p>
-
         <h2>Basis to Collect and Use Personal Data</h2>
         <p>
           We process personal data consistent with our disclosures in this
@@ -66,7 +65,6 @@ const PrivacyPolicyPage = ({ location }) => (
           providing the Services where those interests do not override your
           fundamental rights and freedoms related to data privacy.
         </p>
-
         <h2>Data Collected</h2>
         <p>We may collect and store different types of data:</p>
         <ul>
@@ -146,9 +144,7 @@ const PrivacyPolicyPage = ({ location }) => (
             interest to maintain and develop our product.
           </li>
         </ul>
-
         <h3>Shop for a Cause only</h3>
-
         <ul>
           <li>
             <b>Shopping and Usage Data.</b> On retail sites, Shop for a Cause
@@ -177,7 +173,6 @@ const PrivacyPolicyPage = ({ location }) => (
           <Link to={contactUsURL}>contact us</Link> and we will follow up as
           soon as possible.
         </p>
-
         <h2>Children's Information </h2>
         <p>
           The Services are not intended for children under 13 years of age.
@@ -191,7 +186,6 @@ const PrivacyPolicyPage = ({ location }) => (
           information of a child under the age of 13 without parental consent,
           please notify us immediately.
         </p>
-
         <h2>Sharing of Data</h2>
         <p>
           We do not share information you have provided to us without your
@@ -246,7 +240,6 @@ const PrivacyPolicyPage = ({ location }) => (
           of us or our assets may continue to use your personal information as
           set forth in this policy.
         </p>
-
         <h2>Changes to the Privacy Policy</h2>
         <p>
           We may amend this Privacy Policy from time to time. Use of information
@@ -258,6 +251,16 @@ const PrivacyPolicyPage = ({ location }) => (
         <p>
           If you have any questions or concerns, please{' '}
           <Link to={contactUsURL}>contact us</Link>.
+        </p>
+        <h2>Advertising</h2>
+        <p>
+          This Site is affiliated with CMI Marketing, Inc., d/b/a Raptive
+          (“Raptive”) for the purposes of placing advertising on the Site, and
+          Raptive will collect and use certain data for advertising purposes. To
+          learn more about Raptive’s data usage, click here:
+          <Link to="https://raptive.com/creator-advertising-privacy-statement/">
+            https://raptive.com/creator-advertising-privacy-statement/
+          </Link>
         </p>
       </TextPageContent>
     </div>
