@@ -271,7 +271,7 @@ const PrivacyPolicyPage = ({ location }) => (
         </p>
         <p>
           If you have any questions or concerns, please{' '}
-          <Link to={contactUsURL}>contact usd</Link>.
+          <Link to={contactUsURL}>contact us</Link>.
         </p>
       </TextPageContent>
     </div>
