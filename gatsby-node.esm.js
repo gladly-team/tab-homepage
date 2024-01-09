@@ -16,7 +16,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   createRedirect({
     fromPath: '/privacy',
-    toPath: '/privacypolicy',
+    toPath: '/docs/privacy-policy',
     isPermanent: true,
   })
 
