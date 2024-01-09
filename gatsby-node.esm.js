@@ -16,7 +16,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   createRedirect({
     fromPath: '/privacy',
-    toPath: '/docs/privacy-policy',
+    toPath: 'https://tab.gladly.io/docs/privacy-policy',
     isPermanent: true,
   })
 
