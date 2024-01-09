@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { navigate } from 'gatsby'
+import { privacyPolicyURL } from 'src/utils/navigation'
 
 const MyComponent = () => {
   useEffect(() => {
-    navigate('/docs/privacy-policy/')
+    navigate(privacyPolicyURL)
   }, [])
 
   return null

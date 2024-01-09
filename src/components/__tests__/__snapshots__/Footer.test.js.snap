@@ -148,7 +148,7 @@ exports[`Footer matches expected snapshot 1`] = `
               "margin": 20,
             }
           }
-          to="/docs/privacy-policy/"
+          to="/privacy-policy/"
         >
           Privacy
         </Link>
