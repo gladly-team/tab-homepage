@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { navigate } from 'gatsby'
 import { privacyPolicyURL } from 'src/utils/navigation'
 
-const MyComponent = () => {
+const Privacy = () => {
   useEffect(() => {
     navigate(privacyPolicyURL)
   }, [])
@@ -10,4 +10,4 @@ const MyComponent = () => {
   return null
 }
 
-export default MyComponent
+export default Privacy
