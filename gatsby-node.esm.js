@@ -18,6 +18,7 @@ exports.createPages = async ({ actions, graphql }) => {
     fromPath: '/privacy',
     toPath: '/privacy-policy',
     isPermanent: true,
+    redirectInBrowser: true,
   })
 
   // Create landing page variants for referrers.
