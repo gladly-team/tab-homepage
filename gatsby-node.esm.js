@@ -12,7 +12,13 @@ import generatePagesForCause from './generatePagesForCause'
 // Implement the Gatsby API "createPages". This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
 exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+
+  createRedirect({
+    fromPath: '/privacy',
+    toPath: '/privacy-policy',
+    isPermanent: true,
+  })
 
   // Create landing page variants for referrers.
   const homepage = path.resolve(`src/pages/index.js`)
