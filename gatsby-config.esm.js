@@ -5,17 +5,6 @@ const protocol = 'https'
 const baseURL = `${protocol}://${domain}`
 
 module.exports = {
-  headers: [
-    {
-      source: `/`,
-      headers: [
-        {
-          key: `Access-Control-Allow-Origin`,
-          value: `*`,
-        },
-      ],
-    },
-  ],
   siteMetadata: {
     domain: `${domain}`,
     siteUrl: `https://${domain}`, // Used in gatsby-plugin-sitemap
