@@ -8,7 +8,7 @@ import { jobsURL } from 'src/utils/navigation'
 import { secondaryMainColor } from 'src/themes/theme'
 import imgAlex from 'src/img/team/alex.jpg'
 import imgKevin from 'src/img/team/kevin.jpg'
-import imgIlana from 'src/img/team/Ilana.jpg'
+import imgSpicer from 'src/img/team/spicer.jpg'
 import Layout from 'src/components/Layout'
 
 const TeamPage = ({ location }) => {
@@ -19,14 +19,14 @@ const TeamPage = ({ location }) => {
       title: 'Co-Founder & CEO',
     },
     {
-      name: 'Ilana Degann',
-      img: imgIlana,
-      title: 'Content Strategist',
+      name: 'Spicer Matthews',
+      img: imgSpicer,
+      title: 'Founding Engineer',
     },
     {
       name: 'Kevin Jennison',
       img: imgKevin,
-      title: 'Co-Founder & CTO',
+      title: 'Co-Founder & Board Member',
     },
   ]
   const openGraphTitle = 'Our Team - Tab for a Cause'

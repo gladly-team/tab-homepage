@@ -110,7 +110,7 @@ class JobsPage extends React.Component {
             </p>
           </div>
 
-          <Paper style={jobPaperStyle}>
+          {/* <Paper style={jobPaperStyle}>
             <h2>Founding Engineer</h2>
             <p>Remote – Full time</p>
             <p>
@@ -124,7 +124,7 @@ class JobsPage extends React.Component {
                 See Job
               </Button>
             </Link>
-          </Paper>
+          </Paper> */}
 
           {/*           <Paper style={jobPaperStyle}> */}
           {/*             <h2>UI/UX Designer</h2> */}
@@ -222,14 +222,14 @@ class JobsPage extends React.Component {
           {/*             <ApplyButton email="jobs@tabforacause.org">Apply</ApplyButton> */}
           {/*           </Paper> */}
 
-          {/* <Paper style={jobPaperStyle}> */}
-          {/*   <h2>No Open Positions at the Moment</h2> */}
-          {/*   <p> */}
-          {/*     Think you'd be a fit for a job we haven't listed? Email us at: */}
-          {/*     jobs@tabforacause.org */}
-          {/*   </p> */}
-          {/*   <ApplyButton>Get in Touch</ApplyButton> */}
-          {/* </Paper> */}
+          <Paper style={jobPaperStyle}>
+            <h2>No Open Positions at the Moment</h2>
+            <p>
+              Think you'd be a fit for a job we haven't listed? Email us at:
+              jobs@tabforacause.org
+            </p>
+            <ApplyButton>Get in Touch</ApplyButton>
+          </Paper>
 
           <h1 style={{ marginTop: 48, marginBottom: 10 }}>Our Values</h1>
           <Divider

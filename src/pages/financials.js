@@ -49,6 +49,12 @@ const FinancialsPage = ({ data, location }) => {
             our community can raise for nonprofits!
           </p>
 
+          <p>
+            Financial reports will be posted every 6 months for the 2 quarters
+            ending 6 months before the most recent posting. For example in July
+            2024 we will post Q3 and Q4 2023 financials.
+          </p>
+
           {/* <div style={{ marginBottom: 16 }}>
             <Alert
               severity="info"
