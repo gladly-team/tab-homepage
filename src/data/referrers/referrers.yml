@@ -682,3 +682,7 @@
   path: purpleinsider
 - referrerId: 990
   path: important
+- referrerId: 1005
+  path: voteamerica
+- referrerId: 1004
+  path: wanderingpath
