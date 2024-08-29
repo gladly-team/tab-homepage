@@ -230,6 +230,13 @@ const TermsPage = ({ location }) => (
             such websites or resources.
           </p>
 
+          <p>
+            <i>Shop for a Cause Only</i> <br />
+            Note, Gladly may get paid commissions on products purchased through
+            the links to retailer sites using this browser extension. Those
+            commissions are used to support our non-profit partners.
+          </p>
+
           <h2>C. Limitation of Liability</h2>
           <p>
             TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE GLADLY
