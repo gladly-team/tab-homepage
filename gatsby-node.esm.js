@@ -1,7 +1,7 @@
 /* globals exports */
 
 import path from 'path'
-import   from './generatePagesForCause'
+import generatePagesForCause from './generatePagesForCause'
 
 /**
  * Implement Gatsby's Node APIs in this file.
