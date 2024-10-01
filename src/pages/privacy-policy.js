@@ -6,10 +6,17 @@ import TextPageHeader from 'src/components/TextPageHeader'
 import Link from 'src/components/Link'
 import { accountPageURL, contactUsURL, termsURL } from 'src/utils/navigation'
 import Layout from 'src/components/Layout'
+import Divider from '@mui/material/Divider'
 
 const openGraphTitle = 'Privacy Policy - Tab for a Cause'
 const openGraphDescription =
   'Read our Privacy Policy. Tab for a Cause raises money for charity with every browser tab you open.'
+
+const addressStyle = {
+  margin: 0,
+  fontStyle: 'italic',
+  fontSize: 12,
+}
 
 const PrivacyPolicyPage = ({ location }) => (
   <Layout brand="all" location={location}>
@@ -273,6 +280,17 @@ const PrivacyPolicyPage = ({ location }) => (
           If you have any questions or concerns, please{' '}
           <Link to={contactUsURL}>contact us</Link>.
         </p>
+        <Divider style={{ marginBottom: 20 }} />
+        <div>
+          <div>
+            <p style={{ ...addressStyle, marginBottom: 10 }}>
+              Tab for a Cause is built with love at:
+            </p>
+            <p style={addressStyle}>Gladly, Inc.</p>
+            <p style={addressStyle}>204 E 2nd Ave</p>
+            <p style={addressStyle}>San Mateo, CA 94401</p>
+          </div>
+        </div>
       </TextPageContent>
     </div>
   </Layout>
