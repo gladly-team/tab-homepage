@@ -3,9 +3,9 @@
   "data": {
     "styles": {
       "colors": {
-        "primary": "#A27DF8",
+        "primary": "#FB5050",
         "secondary": "#29BEBA",
-        "primaryContrast": "#15AAA6"
+        "primaryContrast": "#FFF"
       }
     },
     "causeLaunch": {
