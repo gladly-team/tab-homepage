@@ -1,0 +1,168 @@
+{
+  "path": "disaster-relief",
+  "data": {
+    "styles": {
+      "colors": {
+        "primary": "#FB5050",
+        "secondary": "#29BEBA",
+        "primaryContrast": "#FFF"
+      }
+    },
+    "causeLaunch": {
+      "comingSoonTitle": "Tab for Disaster Relief",
+      "launchDate": "2024-07-11T16:00:00.000Z",
+      "preview": true,
+      "enabled": true
+    },
+    "causeId": "w3ZvQrMnB",
+    "metadata": {
+      "title": "Provide Disaster Relief - Tab for a Cause",
+      "ogTitle": "Provide Disaster Relief by Surfing the Web | Tab for a Cause",
+      "ogDescription": "Open new tabs, raise money to provide disaster relief - for free",
+      "ogImage": "../../img/disaster-relief/og.png",
+      "causeSpecificKeywords": "charity, equity, disaster, hurricane, wildfire, food, medical supplies, earthquake, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
+    },
+    "sections": {
+      "landing": {
+        "title": "Provide Disaster Relief",
+        "subtitle": "Every tab provides food, medical help, and supplies to people affected by natural disasters",
+        "ctaImg": "../../img/disaster-relief/landing.png"
+      },
+      "moneyRaised": {
+        "moneyImg": "../../img/disaster-relief/moneyRaised.png"
+      },
+      "charityIntro": {
+        "title": "Stop wasting tabs, start changing the world",
+        "subTitle": "With Tab for Disaster Relief, you are supporting organizations that are crucial responders to disasters around the world.",
+        "steps": [
+          {
+            "img": "../../img/disaster-relief/charityIntro1a.png",
+            "text": "Food and Water"
+          },
+          {
+            "img": "../../img/disaster-relief/charityIntro2.png",
+            "text": "Medical Supplies and Care"
+          },
+          {
+            "img": "../../img/disaster-relief/charityIntro3.png",
+            "text": "Help support victims of natural disasters"
+          }
+        ]
+      },
+      "TFACIntro": {
+        "titleImg": "../../img/disaster-relief/introMain.png",
+        "title": "Your tabs can make a difference",
+        "subtitle": "",
+        "img1": "../../img/disaster-relief/intro1.png",
+        "img1Subtext": "###### Open new tabs on your browser.",
+        "img2": "../../img/disaster-relief/intro2.png",
+        "img2Subtext": "###### Earn money for non-profit organizations.",
+        "img3": "../../img/disaster-relief/intro3.png",
+        "img3Subtext": "###### Help support World Central Kitchen and Direct Relief in their disaster relief efforts."
+      },
+
+      "Mission": {
+        "missionURL": "/disaster-relief/",
+        "titleText": "Our Mission",
+        "subtitleText": "To make giving back easier than ever",
+        "bodyText": "We believe in helping people around the world when disaster strikes. Through our support of World Central Kitchen and Direct Relief, you can be sure each tab is supporting victims of natural disasters.",
+        "image": "../../img/disaster-relief/mission.png"
+      },
+      "Security": {
+        "titleImg": "../../img/causeshared/security.png"
+      },
+      "Financials": {
+        "title": "Transparent Financials",
+        "text": "Every tab makes an impact. Check out how much we've raised together.",
+        "buttonText": "See All Financials",
+        "ctaImg": "../../img/causeshared/financials.png",
+        "q1Img": "../../img/causeshared/q1-heart.png",
+        "q2Img": "../../img/causeshared/q2-heart.png",
+        "q3Img": "../../img/causeshared/q3-heart.png",
+        "q4Img": "../../img/causeshared/q4-heart.png"
+      },
+      "Endorsements": {
+        "disableCenterEndorsement": true,
+        "title": "People are saying good things",
+        "smallEndorsements": [
+          {
+            "endorser": "Shayne W.",
+            "endorsement": "“FANTASTIC app that lets you do a lot of good things while doing your day to day work, studying for finals, or just surfing the web!”",
+            "img": "../../img/reviews/shayne_w.png"
+          },
+          {
+            "endorser": "Benjamin K.",
+            "endorsement": "“Raise money for charity by browsing the internet. Perfectly executed!”",
+            "img": "../../img/reviews/benjamin_k.png"
+          },
+          {
+            "endorser": "Cameron B.",
+            "endorsement": "“As a person who frequently enters wikipedia holes opening 20 tabs at a time.. its great to know that my procrastination can be of some use! Great app, brilliant idea”",
+            "img": "../../img/reviews/cameron_b.png"
+          },
+          {
+            "endorser": "Chase R.",
+            "endorsement": "“It's wonderful. Unobtrusive, useful, well designed, easy to navigate, and actually pretty fun! There is no reason to not have this extension. It has not affected performance and is never an inconvenience.”",
+            "img": "../../img/reviews/chase_r.png"
+          },
+
+          {
+            "endorser": "Jonathon B.",
+            "endorsement": "“Love that this gives me, a fool with no money, a way to donate to charity. :)”",
+            "img": "../../img/reviews/johnathan_b.png"
+          },
+          {
+            "endorser": "Ana L.",
+            "endorsement": "“It's a great way to raise money for charity when you don't have a lot of money ... Plus I can decide what charity to donate to, and do it on my own time. I love it!”",
+            "img": "../../img/reviews/ana_l.png"
+          },
+          {
+            "endorser": "Alfonzo G.",
+            "endorsement": "“Wonderful service that does great things for people in need, and all you have to do is click a button... Way better than the default chrome new tab page. So what do you have to lose?”",
+            "img": "../../img/reviews/alfonzo_g.png"
+          },
+          {
+            "endorser": "Abby H.",
+            "endorsement": "“Wonderful and thoughtful idea for an extension! Helping save the world one tab at a time.”",
+            "img": "../../img/reviews/abby_h.png"
+          },
+          {
+            "endorser": "Lucas N.",
+            "endorsement": "“Awesome way to give back while browsing, with absolutely no effort on your end!”",
+            "img": "../../img/reviews/lucas_n.png"
+          },
+          {
+            "endorser": "Toby S.",
+            "endorsement": "“Amazing extension. Such an awesome idea to use ad revenue from people's new tab to donate to charity. I'd rate 6 stars if I could.”",
+            "img": "../../img/reviews/toby_s.png"
+          }
+        ]
+      },
+      "faq": {
+        "img": "../../img/disaster-relief/FAQ.png",
+        "questions": [
+          {
+            "question": "How does opening tabs raise money for charity?",
+            "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
+          },
+          {
+            "question": "What nonprofit does Tab for Democracy support?",
+            "answer": "Tab for Democracy supports [VoteAmerica](https://about.voteamerica.com/). We are proud to support this incredible organization that increases voter participation in our democracy."
+          },
+          {
+            "question": "Does the money raised only support specific disasters?",
+            "answer": "No. The money raised by Tab for Disaster Relief will go to where WCK and Direct Relief feel it will be most impactful. This is because often, the organizations need money not limited to specific disasters to be prepared and able to respond quickly. For instance, both organizations will strategically place resources and volunteers near incoming hurricanes days before the storm lands to ensure they are ready to respond as soon as it is safe. <br /> The reality is that the majority of donations to disaster relief organizations happen in the immediate days following the disaster, well after the money has its most impactful use (being prepared and on the ground before the disaster strikes). We want to help these organizations be ready to respond quickly to unforeseen events." 
+          },
+          {
+            "question": "How can I find out about new updates and announcements?",
+            "answer": "Stay in touch with us on social media! Follow us @tabforacause on [TikTok](https://www.tiktok.com/@tabforacause), [YouTube](https://www.youtube.com/@tabforacause), [Instagram](https://www.instagram.com/tabforacause/), [Twitter](https://twitter.com/TabForACause), and [Facebook](https://www.facebook.com/TabForACause)."
+          }
+        ]
+      },
+      "Footer": {
+        "img": "",
+        "bubbleColor": "#8450FB"
+      }
+    }
+  }
+}
