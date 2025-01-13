@@ -160,3 +160,9 @@
 - quarter: 4
   year: 2023
   pdfUrl: '/financials/2023-Q4.pdf'
+- quarter: 1
+  year: 2024
+  pdfUrl: '/financials/2024-Q1.pdf'
+- quarter: 2
+  year: 2024
+  pdfUrl: '/financials/2024-Q2.pdf'
