@@ -6,9 +6,9 @@ import { isChromaticEnv } from '../utils/featureFlags'
 
 // These must match the new tab page's numbers.
 // Eventually call the API instead of hard-coding.
-const MONEY_RAISED = 1487105.0 // Also update in useMoneyRaised.js
-const MONEY_RAISED_UPDATE_TIME = moment('2022-09-13T21:00:00.000Z')
-const DOLLARS_PER_DAY_RATE = 563.71
+const MONEY_RAISED = 1900000.0 // Also update in useMoneyRaised.js
+const MONEY_RAISED_UPDATE_TIME = moment('2025-03-11T21:00:00.000Z')
+const DOLLARS_PER_DAY_RATE = 380.0
 
 // todo: Turn this into a functional component so we can just reuse the hook here
 class MoneyRaised extends React.Component {

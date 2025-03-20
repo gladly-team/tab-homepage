@@ -12,7 +12,7 @@ afterEach(() => {
   jest.clearAllMocks()
 })
 
-const MONEY_RAISED_HISTORICAL = 1487105.0
+const MONEY_RAISED_HISTORICAL = 1900000.0
 
 describe('MoneyRaised', () => {
   it('renders without error', () => {
