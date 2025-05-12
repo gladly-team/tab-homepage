@@ -1,0 +1,11 @@
+{
+	"applinks": {
+		"apps": [],
+		"details": [
+			{
+				"appID": "839867Y5K7.io.gladly.appforacause",
+				"paths": ["/mobile", "/mobile/*"]
+			}
+		]
+	}
+}
