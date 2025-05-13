@@ -367,3 +367,8 @@ exports.onCreatePage = async ({ page, actions: { deletePage } }) => {
     }
   }
 }
+
+exports.onPostBuild = ({ store }) => {
+  const { program } = store.getState()
+  console.log('/.well-known/apple-app-site-association will be served with Content-Type: application/json')
+}

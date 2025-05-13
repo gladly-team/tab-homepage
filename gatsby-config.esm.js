@@ -131,6 +131,11 @@ module.exports = {
               bucketName: process.env.GATSBY_S3_BUCKET_NAME,
               removeNonexistentObjects: false,
               acl: null,
+              params: {
+                '/.well-known/apple-app-site-association': {
+                  ContentType: 'application/json',
+                },
+              },
             },
           },
         ]
