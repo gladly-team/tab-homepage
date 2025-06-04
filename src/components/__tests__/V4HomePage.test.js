@@ -65,6 +65,10 @@ const getMockProps = () => ({
   },
 })
 
+beforeEach(() => {
+  // Setup any necessary mocks
+})
+
 afterEach(() => {
   jest.clearAllMocks()
   localStorageMgr.clear()

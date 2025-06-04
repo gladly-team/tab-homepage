@@ -23,3 +23,12 @@ export const STORAGE_CATS_CAUSE_ID = 'CA6A5C2uj'
 export const STORAGE_SEAS_CAUSE_ID = 'SGa6zohkY'
 export const KEY_WORDS =
   'charity, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, free, best, home, youtube, safe, volunteer, internet, tab for a cause, impact, legitimate, food, facebook, twitter, reddit, instagram, tumblr, '
+
+// Mobile app link
+export const MOBILE_APP_REDIRECT_URL = 'https://azy26.app.link'
+
+// Mobile app store URLs
+export const GOOGLE_PLAY_STORE_URL =
+  'https://play.google.com/store/apps/details?id=io.gladly.appforacause'
+export const APPLE_APP_STORE_URL =
+  'https://apps.apple.com/gb/app/app-for-a-cause/id6740837141?uo=2'

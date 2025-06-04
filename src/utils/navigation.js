@@ -1,4 +1,6 @@
 /* globals process */
+import { MOBILE_APP_REDIRECT_URL } from 'src/utils/constants'
+
 export const domain = process.env.GATSBY_DOMAIN || 'tab.gladly.io'
 export const protocol = 'https'
 export const baseURL = `${protocol}://${domain}`
@@ -129,4 +131,19 @@ export const getAbsoluteURL = (path) => {
     path = `${path}/`
   }
   return `${baseURL}${path}`
+}
+
+/**
+ * Build the mobile app redirect URL with campaign parameters
+ * @param {string} r - The referrer parameter
+ * @param {string} u - The user parameter
+ * @param {string} m - The campaign parameter
+ * @return {string} The mobile app redirect URL with campaign parameters
+ */
+export const buildMobileAppRedirectURL = (r = '', u = '', m = '') => {
+  // Build campaign parameter in format r:{string}:u:{string}:m:{string}
+  const campaignParam = `r:${r}:u:${u}:m:${m}`
+  return `${MOBILE_APP_REDIRECT_URL}?campaign=${encodeURIComponent(
+    campaignParam
+  )}`
 }

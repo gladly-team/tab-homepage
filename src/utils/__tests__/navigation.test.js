@@ -64,4 +64,32 @@ describe('navigation utils', () => {
       'https://tab.gladly.io/blah/'
     )
   })
+
+  test('buildMobileAppRedirectURL builds correct URL with all parameters', () => {
+    const { buildMobileAppRedirectURL } = require('../navigation')
+    expect(buildMobileAppRedirectURL('abc123', 'user456', 'campaign789')).toBe(
+      'https://azy26.app.link?campaign=r%3Aabc123%3Au%3Auser456%3Am%3Acampaign789'
+    )
+  })
+
+  test('buildMobileAppRedirectURL builds correct URL with empty parameters', () => {
+    const { buildMobileAppRedirectURL } = require('../navigation')
+    expect(buildMobileAppRedirectURL('', '', '')).toBe(
+      'https://azy26.app.link?campaign=r%3A%3Au%3A%3Am%3A'
+    )
+  })
+
+  test('buildMobileAppRedirectURL builds correct URL with no parameters', () => {
+    const { buildMobileAppRedirectURL } = require('../navigation')
+    expect(buildMobileAppRedirectURL()).toBe(
+      'https://azy26.app.link?campaign=r%3A%3Au%3A%3Am%3A'
+    )
+  })
+
+  test('buildMobileAppRedirectURL builds correct URL with partial parameters', () => {
+    const { buildMobileAppRedirectURL } = require('../navigation')
+    expect(buildMobileAppRedirectURL('ref123', '', 'camp456')).toBe(
+      'https://azy26.app.link?campaign=r%3Aref123%3Au%3A%3Am%3Acamp456'
+    )
+  })
 })
