@@ -106,7 +106,7 @@ const Arrow = () => (
   </svg>
 )
 
-const Endorsements = ({ endorsementsData, causeId }) => {
+const Endorsements = ({ endorsementsData, causeId, pageContext }) => {
   const {
     title,
     endorser,
@@ -364,6 +364,7 @@ const Endorsements = ({ endorsementsData, causeId }) => {
             causeId={causeId}
             fullWidth
             style={{ minWidth: 240 }}
+            pageContext={pageContext}
           />
         </Box>
       </PageContentBox>
@@ -381,6 +382,11 @@ Endorsements.propTypes = {
     headerQuote: PropTypes.string,
     quote: PropTypes.string,
     smallEndorsements: PropTypes.any,
+  }),
+  pageContext: PropTypes.shape({
+    referrer: PropTypes.shape({
+      id: PropTypes.number,
+    }),
   }),
 }
 

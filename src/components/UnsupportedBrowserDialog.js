@@ -46,9 +46,20 @@ class UnsupportedBrowserDialog extends React.Component {
 
   handleMobileAppClick() {
     // Get query parameters
-    const r = getUrlParameterValue('r') || ''
+    let r = getUrlParameterValue('r') || ''
     const u = getUrlParameterValue('u') || ''
     const m = getUrlParameterValue('m') || ''
+
+    // Check if we're on a vanity URL page by looking for referrer in page context
+    // If pageContext exists and has a referrer, use that referrer ID
+    if (
+      !r &&
+      this.props.pageContext &&
+      this.props.pageContext.referrer &&
+      this.props.pageContext.referrer.id
+    ) {
+      r = this.props.pageContext.referrer.id
+    }
 
     // Build and redirect to mobile app URL with campaign parameters
     const redirectUrl = buildMobileAppRedirectURL(r, u, m)
@@ -104,6 +115,11 @@ class UnsupportedBrowserDialog extends React.Component {
 
 UnsupportedBrowserDialog.propTypes = {
   onClose: PropTypes.func.isRequired,
+  pageContext: PropTypes.shape({
+    referrer: PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  }),
 }
 
 export default UnsupportedBrowserDialog

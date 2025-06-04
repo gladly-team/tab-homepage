@@ -38,7 +38,13 @@ const Root = styled('div')(({ theme }) => ({
   },
 }))
 
-const V4InstallButton = ({ causeId, fullWidth, buttonClassName, style }) => {
+const V4InstallButton = ({
+  causeId,
+  fullWidth,
+  buttonClassName,
+  style,
+  pageContext,
+}) => {
   // Don't run if a cause ID is missing.
   if (!causeId) {
     throw new Error('A cause ID is missing in an install button.')
@@ -53,6 +59,7 @@ const V4InstallButton = ({ causeId, fullWidth, buttonClassName, style }) => {
         onClose={() => {
           setShowUnsupportedBrowserMessage(false)
         }}
+        pageContext={pageContext}
       />
       <InstallButton
         className={clsx(
@@ -79,6 +86,11 @@ V4InstallButton.propTypes = {
   buttonClassName: PropTypes.string,
   fullWidth: PropTypes.bool,
   style: PropTypes.object,
+  pageContext: PropTypes.shape({
+    referrer: PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  }),
 }
 V4InstallButton.defaultProps = {
   fullWidth: false,

@@ -30,7 +30,7 @@ const DivWave = styled('div')(({ theme }) => ({
   bottom: -2,
 }))
 
-const Landing = ({ landingData, causeId, moneyRaised }) => {
+const Landing = ({ landingData, causeId, moneyRaised, pageContext }) => {
   const { title, subtitle, ctaImg } = landingData
   const theme = useTheme()
   const ctaImage = getImage(formatImg(ctaImg))
@@ -139,7 +139,7 @@ const Landing = ({ landingData, causeId, moneyRaised }) => {
             <Box sx={{ mt: 2, mr: { lg: 14, md: 4, xs: 2 }, mb: 0, ml: 0 }}>
               <Typography>{subtitle}</Typography>
             </Box>
-            <V4InstallButton causeId={causeId} />
+            <V4InstallButton causeId={causeId} pageContext={pageContext} />
           </Box>
           <Box
             sx={{
@@ -179,6 +179,11 @@ Landing.propTypes = {
     ctaImg: PropTypes.any,
   }),
   moneyRaised: PropTypes.number,
+  pageContext: PropTypes.shape({
+    referrer: PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  }),
 }
 
 export default Landing

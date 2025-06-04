@@ -259,6 +259,7 @@ function Seas({ pageContext, location }) {
         onClose={() => {
           setShowUnsupportedBrowserMessage(false)
         }}
+        pageContext={pageContext}
       />
       <Footer onBeforeInstall={onBeforeInstall} footerData={{ img: {}, bubbleColor: 'grey' }} />
     </div>

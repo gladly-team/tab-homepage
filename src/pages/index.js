@@ -669,6 +669,7 @@ class IndexPage extends React.Component {
           <UnsupportedBrowserDialog
             open={this.state.showUnsupportedBrowserMessage}
             onClose={this.hideUnsupportedBrowserMessage.bind(this)}
+            pageContext={this.props.pageContext}
           />
         </div>
       </Layout>

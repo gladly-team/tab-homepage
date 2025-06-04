@@ -107,7 +107,7 @@ const TypographyTitleTypography = styled(Typography)(({ theme }) => ({
   },
 }))
 
-const Intro = ({ causeId, introData }) => {
+const Intro = ({ causeId, introData, pageContext }) => {
   const {
     title,
     titleImg,
@@ -216,6 +216,7 @@ const Intro = ({ causeId, introData }) => {
           causeId={causeId}
           fullWidth
           style={{ minWidth: 240 }}
+          pageContext={pageContext}
         />
       </Box>
     </PageContentBox>
@@ -233,6 +234,11 @@ Intro.propTypes = {
     img2: PropTypes.any,
     img3Subtext: PropTypes.string,
     img3: PropTypes.any,
+  }),
+  pageContext: PropTypes.shape({
+    referrer: PropTypes.shape({
+      id: PropTypes.number,
+    }),
   }),
 }
 export default Intro
