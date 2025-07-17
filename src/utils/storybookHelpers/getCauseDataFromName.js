@@ -1,5 +1,6 @@
 import path from 'path'
 import catsData from 'src/data/causes/cats.json'
+import dogsData from 'src/data/causes/dogs.json'
 import seasData from 'src/data/causes/seas.json'
 import treesData from 'src/data/causes/trees.json'
 import globalHealthData from 'src/data/causes/globalHealth.json'
@@ -13,6 +14,9 @@ const getCauseDataFromName = (causeName) => {
   switch (causeName) {
     case 'cats':
       data = JSON.parse(JSON.stringify(catsData))
+      break
+    case 'dogs':
+      data = JSON.parse(JSON.stringify(dogsData))
       break
     case 'seas':
       data = JSON.parse(JSON.stringify(seasData))
