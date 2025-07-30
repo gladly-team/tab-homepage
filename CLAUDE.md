@@ -95,3 +95,8 @@ Each cause (cats, trees, seas, etc.) has:
 - Image optimization via Gatsby's image processing
 - Sitemap and robots.txt generation
 - Facebook Pixel and Sentry integration
+
+## Tools and Utilities
+
+### Jira CLI
+- When accessing Jira we have https://github.com/ankitpokhrel/jira-cli installed. you can access it from the command line with jira. Whenever you are asked to read a jira task, comment on one, or change that status this tool is helpful. --raw will giave you JSON output (example: jira issue view TFAC-1424 --raw)
