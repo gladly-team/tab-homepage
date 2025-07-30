@@ -33,19 +33,15 @@
       },
       "charityIntro": {
         "title": "Stop wasting tabs, start changing the world",
-        "subTitle": "With Tab for Ending Animal Suffering, you'll power The Humane League's fight for a world where animals are treated as living, feeling beings—free from human exploitation.",
+        "subTitle": "Every animal deserves a life free from suffering. With Tab for Ending Animal Suffering, you can help end the abuse of animals on factory farms all by opening browser tabs. It's free, easy, and supports animals in need.",
         "steps": [
           {
             "img": "../../img/animals/rescuedAnimal1.png",
-            "text": "Mobilize corporations, lawmakers, and the public to create lasting change for animals"
+            "text": "More animals rescued from factory farms"
           },
           {
             "img": "../../img/animals/rescuedAnimal2.png",
-            "text": "Drive systemic change for animals trapped on factory farms"
-          },
-          {
-            "img": "../../img/animals/happyAnimals1.png",
-            "text": "Join the movement to transform the lives of billions of animals in our food system"
+            "text": "More animals living free from suffering"
           }
         ]
       },
