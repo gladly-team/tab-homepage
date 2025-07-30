@@ -1,0 +1,162 @@
+{
+  "path": "animals",
+  "data": {
+    "styles": {
+      "colors": {
+        "primary": "#FF6A08",
+        "secondary": "#FF7616",
+        "primaryContrast": "#E55A07"
+      }
+    },
+    "causeLaunch": {
+      "comingSoonTitle": "Tab for Animals",
+      "launchDate": "2022-03-01T16:00:00.000Z",
+      "preview": true,
+      "enabled": true
+    },
+    "causeId": "animals",
+    "metadata": {
+      "title": "End Animal Suffering - Tab for a Cause",
+      "ogTitle": "End Animal Suffering by Surfing the Web | Tab for a Cause",
+      "ogDescription": "Open new tabs, raise money to end animal suffering - for free",
+      "ogImage": "../../img/animals/og.png",
+      "causeSpecificKeywords": "charity, animals, animal welfare, end factory farming, humane league, cows, pigs, chickens, extension, new tab, chrome, help, donation, raise money, money, easy, ways to donate, volunteer, internet, tab for a cause"
+    },
+    "sections": {
+      "landing": {
+        "title": "Help End Animal Suffering",
+        "subtitle": "Every tab you open helps end suffering for animals trapped on factory farms.",
+        "ctaImg": "../../img/animals/introMain.png"
+      },
+      "moneyRaised": {
+        "moneyImg": "../../img/animals/moneyRaised.png"
+      },
+      "charityIntro": {
+        "title": "Stop wasting tabs, start changing the world",
+        "subTitle": "Every animal deserves a life free from suffering. With Tab for Ending Animal Suffering, you can help end the abuse of animals on factory farms all by opening browser tabs. It's free, easy, and supports animals in need.",
+        "steps": [
+          {
+            "img": "../../img/animals/rescuedAnimal1.png",
+            "text": "More animals rescued from factory farms"
+          },
+          {
+            "img": "../../img/animals/rescuedAnimal2.png",
+            "text": "More animals living free from suffering"
+          }
+        ]
+      },
+      "TFACIntro": {
+        "titleImg": "../../img/animals/makeADifference.png",
+        "title": "Your tabs can make a difference",
+        "subtitle": "By opening browser tabs, you can help end animal suffering",
+        "img1": "../../img/animals/intro1.png",
+        "img1Subtext": "###### Open new tabs on your browser.",
+        "img2": "../../img/animals/intro2.png",
+        "img2Subtext": "###### Earn money for non-profit organizations.",
+        "img3": "../../img/animals/intro3.png",
+        "img3Subtext": "###### Help support a world where animals are living beings."
+      },
+      "Mission": {
+        "missionURL": "/animals/",
+        "titleText": "Our Mission",
+        "subtitleText": "To make giving back easier than ever",
+        "bodyText": "We believe in a world free from suffering. Through our support of The Humane League, you can be sure each tab is supporting the fight to end the cruelty of factory farming.",
+        "image": "../../img/animals/mission.png"
+      },
+      "Security": {
+        "titleImg": "../../img/animals/securePrivate.png"
+      },
+      "Financials": {
+        "title": "Transparent Financials",
+        "text": "Every tab makes an impact. Check out how much we've raised together.",
+        "buttonText": "See All Financials",
+        "ctaImg": "../../img/animals/financials.png",
+        "q1Img": "../../img/animals/q1.png",
+        "q2Img": "../../img/animals/q2.png",
+        "q3Img": "../../img/animals/q3.png",
+        "q4Img": "../../img/animals/q4.png"
+      },
+      "Endorsements": {
+        "disableCenterEndorsement": true,
+        "title": "People are saying good things",
+        "smallEndorsements": [
+          {
+            "endorser": "Shayne W.",
+            "endorsement": "\"FANTASTIC app that lets you do a lot of good things while doing your day to day work, studying for finals, or just surfing the web!\"",
+            "img": "../../img/reviews/shayne_w.png"
+          },
+          {
+            "endorser": "Benjamin K.",
+            "endorsement": "\"Raise money for charity by browsing the internet. Perfectly executed!\"",
+            "img": "../../img/reviews/benjamin_k.png"
+          },
+          {
+            "endorser": "Cameron B.",
+            "endorsement": "\"As a person who frequently enters wikipedia holes opening 20 tabs at a time.. its great to know that my procrastination can be of some use! Great app, brilliant idea\"",
+            "img": "../../img/reviews/cameron_b.png"
+          },
+          {
+            "endorser": "Chase R.",
+            "endorsement": "\"It's wonderful. Unobtrusive, useful, well designed, easy to navigate, and actually pretty fun! There is no reason to not have this extension. It has not affected performance and is never an inconvenience.\"",
+            "img": "../../img/reviews/chase_r.png"
+          },
+          {
+            "endorser": "Jonathon B.",
+            "endorsement": "\"Love that this gives me, a fool with no money, a way to donate to charity. :)\"",
+            "img": "../../img/reviews/johnathan_b.png"
+          },
+          {
+            "endorser": "Ana L.",
+            "endorsement": "\"It's a great way to raise money for charity when you don't have a lot of money ... Plus I can decide what charity to donate to, and do it on my own time. I love it!\"",
+            "img": "../../img/reviews/ana_l.png"
+          },
+          {
+            "endorser": "Alfonzo G.",
+            "endorsement": "\"Wonderful service that does great things for people in need, and all you have to do is click a button... Way better than the default chrome new tab page. So what do you have to lose?\"",
+            "img": "../../img/reviews/alfonzo_g.png"
+          },
+          {
+            "endorser": "Abby H.",
+            "endorsement": "\"Wonderful and thoughtful idea for an extension! Helping save the world one tab at a time.\"",
+            "img": "../../img/reviews/abby_h.png"
+          },
+          {
+            "endorser": "Lucas N.",
+            "endorsement": "\"Awesome way to give back while browsing, with absolutely no effort on your end!\"",
+            "img": "../../img/reviews/lucas_n.png"
+          },
+          {
+            "endorser": "Toby S.",
+            "endorsement": "\"Amazing extension. Such an awesome idea to use ad revenue from people's new tab to donate to charity. I'd rate 6 stars if I could.\"",
+            "img": "../../img/reviews/toby_s.png"
+          }
+        ]
+      },
+      "faq": {
+        "img": "../../img/animals/faq.png",
+        "questions": [
+          {
+            "question": "How does opening tabs raise money for charity?",
+            "answer": "Every time you open a new tab, there will be a few ads in the corner of your new tab page. These ads generate the revenue that funds our charitable impact. And the best part? It's completely free!"
+          },
+          {
+            "question": "What nonprofit does Tab for Animals support?",
+            "answer": "Tab for Ending Animal Suffering partners with [The Humane League](https://thehumaneleague.org/)—champions for animals trapped on factory farms. In 2024 alone, their campaigns impacted 86 million hens around the world, driving large-scale change for animals on factory farms. The Humane League works through corporate negotiations, legislative advocacy, and coalition building to create lasting change for animals worldwide. The Humane League's evidence-based approach has made them a top-rated animal protection charity for over a decade. Join us in backing real progress for chickens, pigs, and cows—one tab at a time."
+          },
+          {
+            "question": "Where are all the cute animals in the background images from?",
+            "answer": "With Tab for Ending Animal Suffering, each day, you'll be greeted by a beautiful photo of animals that have been rescued and given a second chance at life :)"
+          },
+          {
+            "question": "How can I find out about new updates and announcements?",
+            "answer": "Stay in touch with us on social media! Follow us @tabforacause on [TikTok](https://www.tiktok.com/@tabforacause), [YouTube](https://www.youtube.com/@tabforacause), [Instagram](https://www.instagram.com/tabforacause/), [Twitter](https://twitter.com/TabForACause), and [Facebook](https://www.facebook.com/TabForACause)."
+          }
+        ]
+      },
+      "Footer": {
+        "img": "../../img/animals/footer.png",
+        "bubbleColor": "#FF7616"
+      }
+    }
+  }
+}
