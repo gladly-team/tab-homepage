@@ -71,10 +71,10 @@
         "text": "Every tab makes an impact. Check out how much we've raised together.",
         "buttonText": "See All Financials",
         "ctaImg": "../../img/animals/financials.png",
-        "q1Img": "../../img/causeshared/q1-heart.png",
-        "q2Img": "../../img/causeshared/q2-heart.png",
-        "q3Img": "../../img/causeshared/q3-heart.png",
-        "q4Img": "../../img/causeshared/q4-heart.png"
+        "q1Img": "../../img/animals/q1.png",
+        "q2Img": "../../img/animals/q2.png",
+        "q3Img": "../../img/animals/q3.png",
+        "q4Img": "../../img/animals/q4.png"
       },
       "Endorsements": {
         "disableCenterEndorsement": true,
