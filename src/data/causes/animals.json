@@ -37,11 +37,11 @@
         "steps": [
           {
             "img": "../../img/animals/rescuedAnimal1.png",
-            "text": "More animals rescued from factory farms"
+            "text": "Push the world's biggest companies to spare animals from cruelty"
           },
           {
             "img": "../../img/animals/rescuedAnimal2.png",
-            "text": "More animals living free from suffering"
+            "text": "Mobilize grassroots campaigns to help cows, chickens, pigs, and more"
           }
         ]
       },
@@ -54,7 +54,7 @@
         "img2": "../../img/animals/intro2.png",
         "img2Subtext": "###### Earn money for non-profit organizations.",
         "img3": "../../img/animals/intro3.png",
-        "img3Subtext": "###### Help support a world where animals are living beings."
+        "img3Subtext": "###### Help support a world where animals are treated as living, feeling beings."
       },
       "Mission": {
         "missionURL": "/animals/",
@@ -142,10 +142,6 @@
           {
             "question": "What nonprofit does Tab for Animals support?",
             "answer": "Tab for Ending Animal Suffering partners with [The Humane League](https://thehumaneleague.org/)—champions for animals trapped on factory farms. In 2024 alone, their campaigns impacted 86 million hens around the world, driving large-scale change for animals on factory farms. The Humane League works through corporate negotiations, legislative advocacy, and coalition building to create lasting change for animals worldwide. The Humane League's evidence-based approach has made them a top-rated animal protection charity for over a decade. Join us in backing real progress for chickens, pigs, and cows—one tab at a time."
-          },
-          {
-            "question": "Where are all the cute animals in the background images from?",
-            "answer": "With Tab for Ending Animal Suffering, each day, you'll be greeted by a beautiful photo of animals that have been rescued and given a second chance at life :)"
           },
           {
             "question": "How can I find out about new updates and announcements?",
