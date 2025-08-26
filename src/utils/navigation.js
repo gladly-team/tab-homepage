@@ -138,11 +138,12 @@ export const getAbsoluteURL = (path) => {
  * @param {string} r - The referrer parameter
  * @param {string} u - The user parameter
  * @param {string} m - The campaign parameter
+ * @param {string} c - The causeId parameter
  * @return {string} The mobile app redirect URL with campaign parameters
  */
-export const buildMobileAppRedirectURL = (r = '', u = '', m = '') => {
-  // Build campaign parameter in format r:{string}:u:{string}:m:{string}
-  const campaignParam = `r:${r}:u:${u}:m:${m}`
+export const buildMobileAppRedirectURL = (r = '', u = '', m = '', c = '') => {
+  // Build campaign parameter in format r:{string}:u:{string}:m:{string}:c:{string}
+  const campaignParam = `r:${r}:u:${u}:m:${m}:c:${c}`
   return `${MOBILE_APP_REDIRECT_URL}?campaign=${encodeURIComponent(
     campaignParam
   )}`
