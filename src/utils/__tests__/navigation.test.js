@@ -67,29 +67,53 @@ describe('navigation utils', () => {
 
   test('buildMobileAppRedirectURL builds correct URL with all parameters', () => {
     const { buildMobileAppRedirectURL } = require('../navigation')
-    expect(buildMobileAppRedirectURL('abc123', 'user456', 'campaign789')).toBe(
-      'https://azy26.app.link?campaign=r%3Aabc123%3Au%3Auser456%3Am%3Acampaign789'
+    expect(
+      buildMobileAppRedirectURL('abc123', 'user456', 'campaign789', 'CA6A5C2uj')
+    ).toBe(
+      'https://azy26.app.link?campaign=r%3Aabc123%3Au%3Auser456%3Am%3Acampaign789%3Ac%3ACA6A5C2uj'
     )
   })
 
   test('buildMobileAppRedirectURL builds correct URL with empty parameters', () => {
     const { buildMobileAppRedirectURL } = require('../navigation')
-    expect(buildMobileAppRedirectURL('', '', '')).toBe(
-      'https://azy26.app.link?campaign=r%3A%3Au%3A%3Am%3A'
+    expect(buildMobileAppRedirectURL('', '', '', '')).toBe(
+      'https://azy26.app.link?campaign=r%3A%3Au%3A%3Am%3A%3Ac%3A'
     )
   })
 
   test('buildMobileAppRedirectURL builds correct URL with no parameters', () => {
     const { buildMobileAppRedirectURL } = require('../navigation')
     expect(buildMobileAppRedirectURL()).toBe(
-      'https://azy26.app.link?campaign=r%3A%3Au%3A%3Am%3A'
+      'https://azy26.app.link?campaign=r%3A%3Au%3A%3Am%3A%3Ac%3A'
     )
   })
 
   test('buildMobileAppRedirectURL builds correct URL with partial parameters', () => {
     const { buildMobileAppRedirectURL } = require('../navigation')
-    expect(buildMobileAppRedirectURL('ref123', '', 'camp456')).toBe(
-      'https://azy26.app.link?campaign=r%3Aref123%3Au%3A%3Am%3Acamp456'
+    expect(buildMobileAppRedirectURL('ref123', '', 'camp456', '')).toBe(
+      'https://azy26.app.link?campaign=r%3Aref123%3Au%3A%3Am%3Acamp456%3Ac%3A'
+    )
+  })
+
+  test('buildMobileAppRedirectURL builds correct URL with only causeId', () => {
+    const { buildMobileAppRedirectURL } = require('../navigation')
+    expect(buildMobileAppRedirectURL('', '', '', 'CA6A5C2uj')).toBe(
+      'https://azy26.app.link?campaign=r%3A%3Au%3A%3Am%3A%3Ac%3ACA6A5C2uj'
+    )
+  })
+
+  test('buildMobileAppRedirectURL builds correct URL with causeId and referrer only', () => {
+    const { buildMobileAppRedirectURL } = require('../navigation')
+    expect(buildMobileAppRedirectURL('ref123', '', '', 'SGa6zohkY')).toBe(
+      'https://azy26.app.link?campaign=r%3Aref123%3Au%3A%3Am%3A%3Ac%3ASGa6zohkY'
+    )
+  })
+
+  test('buildMobileAppRedirectURL maintains backward compatibility with 3 params', () => {
+    const { buildMobileAppRedirectURL } = require('../navigation')
+    // When called with only 3 params, causeId should be empty
+    expect(buildMobileAppRedirectURL('abc123', 'user456', 'campaign789')).toBe(
+      'https://azy26.app.link?campaign=r%3Aabc123%3Au%3Auser456%3Am%3Acampaign789%3Ac%3A'
     )
   })
 })

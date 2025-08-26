@@ -12,6 +12,8 @@ import AppleIcon from '@mui/icons-material/Apple'
 import AndroidIcon from '@mui/icons-material/Android'
 import { buildMobileAppRedirectURL } from 'src/utils/navigation'
 import { getUrlParameterValue } from 'src/utils/location'
+import localStorageMgr from 'src/utils/local-storage'
+import { STORAGE_NEW_USER_CAUSE_ID } from 'src/utils/constants'
 
 const StoreButton = styled(Button)(({ theme }) => ({
   margin: theme.spacing(1),
@@ -61,8 +63,11 @@ class UnsupportedBrowserDialog extends React.Component {
       r = this.props.pageContext.referrer.id
     }
 
-    // Build and redirect to mobile app URL with campaign parameters
-    const redirectUrl = buildMobileAppRedirectURL(r, u, m)
+    // Get causeId from localStorage if it exists
+    const causeId = localStorageMgr.getItem(STORAGE_NEW_USER_CAUSE_ID) || ''
+
+    // Build and redirect to mobile app URL with campaign parameters including causeId
+    const redirectUrl = buildMobileAppRedirectURL(r, u, m, causeId)
     window.location.href = redirectUrl
   }
 
