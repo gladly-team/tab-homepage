@@ -333,7 +333,7 @@ yieldmo.com, 3133660606033240149, RESELLER
 33across.com, 0010b00002ODU4HAAX, RESELLER, bbea06d9c4d2853c
 video.unrulymedia.com, 3486482593, RESELLER
 
-#BuySellAds Inc 8-7-25
+#BuySellAds Inc
 #https://optimizeads.net/
 #AppNexus
 appnexus.com, 8394, DIRECT, f5ab79cb980f11d1
@@ -591,31 +591,41 @@ insticator.com, 4ec3ed85-2830-4174-9f7f-f545620598b9, RESELLER
 sharethrough.com, Q9IzHdvp, RESELLER, d53b998a7bd4ecd2
 #Adyoulike
 adyoulike.com, c88421dae358597b6441f855c46bf1f7, DIRECT
-rubiconproject.com, 20736, RESELLER, 0bfd66d529a55807
-pubmatic.com, 160925, RESELLER, 5d62403b186f2ace
-lijit.com, 408376, RESELLER, fafdf38b16bf6b2b
-risecodes.com, 64c7a4acd6298f0001a7d867, RESELLER
 appnexus.com, 7664, RESELLER
-nativo.com, 5848, RESELLER, 59521ca7cc5e9fee
-33across.com, 0010b00002Xbn7QAAR, RESELLER, bbea06d9c4d2853c
-video.unrulymedia.com, 297618916, RESELLER
-onetag.com, 7a07370227fc000, RESELLER
-smartadserver.com, 4144, RESELLER
-videoheroes.tv, 212690, RESELLER, 064bc410192443d8
+pubmatic.com, 160925, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 20736, RESELLER, 0bfd66d529a55807
+adform.com, 3296, RESELLER, 9f5210a2f0999e32
 richaudience.com, JAHJ4YZq4O, RESELLER
+lijit.com, 408376, RESELLER, fafdf38b16bf6b2b
+Media.net, 8CU1G827Y, Reseller
+smilewanted.com, 1494, RESELLER
+onetag.com, 7a07370227fc000, RESELLER
+risecodes.com, 64c7a4acd6298f0001a7d867, RESELLER
+nativo.com, 5848, RESELLER, 59521ca7cc5e9fee
 nobid.io, 50603, RESELLER
-loopme.com, 11362, RESELLER, 6c8d5f95897a5a3b
-adform.com, 1942, RESELLER
-vistarsagency.com, cqqccatc23j9v5bv3fv0, RESELLER, 8db795910158017c
-aniview.com, 5e0e296628a061270b21ccab, RESELLER, 78b21b97965ec3f8
-google.com, pub-6346866704322274, RESELLER, f08c47fec0942fa0
-Xapads.com, 196344, RESELLER
-152media.info, 152M1024,RESELLER
-appnexus.com, 3153, RESELLER, f5ab79cb980f11d1
-bidinfluence.com, 501573, RESELLER
-gamoshi.io, 267-b6098 ,DIRECT ,20e30b2ae1f670f2
-trustedstack.com, TSNC78R17, DIRECT
+adipolosolutions.com, 23015084430, RESELLER
+smartadserver.com, 4144, RESELLER
 copper6.com, 766102, RESELLER
+video.unrulymedia.com, 297618916, RESELLER
+33across.com, 0010b00002Xbn7QAAR, RESELLER, bbea06d9c4d2853c
+thebrave.io, 1234679, RESELLER, c25b2154543746ac
+indexexchange.com, 190532, RESELLER, 50b1c356f2c5c8fc
+triplelift.com, 10504, RESELLER, 6c33edb13117fd86
+sharethrough.com, UN5mGpO8, RESELLER, d53b998a7bd4ecd2
+amxrtb.com, 105199830, RESELLER
+loopme.com, 11362, RESELLER, 6c8d5f95897a5a3b
+openx.com, 539466082, RESELLER, 6a698e2ec38604c6
+trustedstack.com, TSNC78R17, RESELLER
+gamoshi.io, 267-b6098, RESELLER, 20e30b2ae1f670f2
+videoheroes.tv, 212690, RESELLER, 064bc410192443d8
+yieldmo.com, 3482865003332051270, RESELLER
+video.unrulymedia.com, 639501697, RESELLER
+strongmetrics.io, 219562, RESELLER
+vistarsagency.com, cqqccatc23j9v5bv3fv0, RESELLER, 8db795910158017c
+screencore.io, 276, RESELLER
+eskimi.com, 2020000792, RESELLER
+advertising.com, 82643, RESELLER
+conversantmedia.com, 100292, RESELLER, 03113cd04947736d
 #OneTag
 onetag.com, 73d67396a1b6e18, DIRECT
 onetag.com, 73d67396a1b6e18-OB, DIRECT
@@ -755,6 +765,7 @@ inmobi.com, 9e311c7a68e94888aac7fbb4272381e2, RESELLER, 83e75a7ae333ca9d
 sharethrough.com, 0LoRfyl5, RESELLER, d53b998a7bd4ecd2
 yieldmo.com, 2742950233506783940, RESELLER
 gumgum.com, 16112, RESELLER, ffdef49475d318a9
+conversantmedia.com, 100242, RESELLER, 03113cd04947736d
 #Sharethrough
 indexexchange.com, 186046, RESELLER
 spotxchange.com, 212457, RESELLER
@@ -909,6 +920,8 @@ adform.com,2996,RESELLER
 pmc.com,1242710,DIRECT,8dd52f825890bb44
 rubiconproject.com,10278,RESELLER,0bfd66d529a55807
 smaato.com,1100058355,DIRECT,07bcf65f187117b4
+themediagrid.com,DQ6AMB,DIRECT,35d5010d7789b49d  
+triplelift.com,6998,DIRECT,6c33edb13117fd86  
 #GumGum
 gumgum.com,15682,DIRECT,ffdef49475d318a9
 rubiconproject.com,23434,RESELLER,0bfd66d529a55807
@@ -1001,6 +1014,14 @@ rubiconproject.com, 17960, RESELLER, 0bfd66d529a55807
 improvedigital.com, 1680, DIRECT
 #Unruly
 video.unrulymedia.com, 264402266, RESELLER
+#AdaptMX
+amxrtb.com, 105199946, DIRECT
+pubmatic.com, 158355, RESELLER
+appnexus.com, 12290, RESELLER
+lijit.com, 260380, RESELLER
+rubiconproject.com, 23844, RESELLER
+openx.com, 559680764, RESELLER
+sharethrough.com, a6a34444, RESELLER
 #TradeDesk
 buysellads.com, 1, DIRECT
 #Alkimi
@@ -1009,5 +1030,4 @@ alkimi.org, 9905, DIRECT
 buysellads.com, 20541, DIRECT
 MANAGERDOMAIN=buysellads.com
 OWNERDOMAIN=gladly.io
-
 
