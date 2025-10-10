@@ -23,7 +23,7 @@ describe('useMoneyRaised', () => {
     let moneyRaised
     renderHook(() => (moneyRaised = useMoneyRaised()))
     expect(setInterval).not.toHaveBeenCalled()
-    expect(moneyRaised).toEqual(1900000)
+    expect(moneyRaised).toEqual(1980856)
   })
 
   it('advances in non-chromatic environment', () => {
@@ -32,6 +32,6 @@ describe('useMoneyRaised', () => {
     let moneyRaised
     renderHook(() => (moneyRaised = useMoneyRaised()))
     expect(setInterval).toHaveBeenCalled()
-    expect(moneyRaised).not.toEqual(1900000)
+    expect(moneyRaised).not.toEqual(1980856)
   })
 })
