@@ -539,7 +539,7 @@ krushmedia.com, AJxF6R572a9M6CaTvK, RESELLER,
 axonix.com, 59143, reseller, bc385f2b4a87b721
 motorik.io, 100463, RESELLER
 smaato.com, 1100056344, RESELLER, 07bcf65f187117b4
-#Smart
+#Smart-Equativ
 smartadserver.com, 3835, DIRECT
 smartadserver.com, 3835-OB, RESELLER, 060d053dcf45cbf3
 smartadserver.com, 4194-OB, RESELLER, 060d053dcf45cbf3
@@ -562,6 +562,8 @@ adyoulike.com, b4bf4fdd9b0b915f746f6747ff432bde, RESELLER
 axonix.com, 57264, RESELLER
 sharethrough.com, OAW69Fon, RESELLER, d53b998a7bd4ecd2
 ogury.com, ede8d6ba-5a3f-4dfa-85aa-8cfb3c42f970, RESELLER
+sharethrough.com, 3835-OB, RESELLER, d53b998a7bd4ecd2
+sharethrough.com, 3835, RESELLER, d53b998a7bd4ecd2
 #Criteo
 criteo.com, B-058814, DIRECT, 9fac4a4a87c2a44f
 themediagrid.com, ZANK5X, DIRECT, 35d5010d7789b49d
@@ -712,7 +714,7 @@ rubiconproject.com, 20416, RESELLER, 0bfd66d529a55807
 onomagic.com, 203601, DIRECT
 lijit.com, 374814, RESELLER, fafdf38b16bf6b2b
 amxrtb.com, 105199514, RESELLER
-pubmatic.com, 161332, RESELLER, 5d62403b186f2ace
+pubmatic.com, 161332, RESELLER, 5d62403b186f2ace  
 Media.net, 8CUB46Z7R, RESELLER
 openx.com, 537153209, RESELLER, 6a698e2ec38604c6
 sharethrough.com, LxFeZvU4, RESELLER, d53b998a7bd4ecd2
@@ -733,6 +735,7 @@ appnexus.com, 15127, RESELLER
 loopme.com, 12733, RESELLER, 6c8d5f95897a5a3b
 adform.com, 3251, RESELLER, 9f5210a2f0999e32
 smartadserver.com, 4253, RESELLER
+inmobi.com, 0a9d875916034437b220eba9df2adfa3, RESELLER, 83e75a7ae333ca9d
 #rise
 risecodes.com, 64d8986b534fd000016358c2, DIRECT
 pubmatic.com, 160295, RESELLER, 5d62403b186f2ace
@@ -883,6 +886,8 @@ Xapads.com, 204666, RESELLER
 google.com, pub-3990748024667386, RESELLER, f08c47fec0942fa0
 triplelift.com, 11883, RESELLER, 6c33edb13117fd86
 yieldmo.com, 3624960084913628105, RESELLER
+google.com, pub-5717092533913515, RESELLER, f08c47fec0942fa0 
+gannett.com, 22978544679, RESELLER
 #PubVentures
 appnexus.com, 1922, RESELLER, f5ab79cb980f11d1
 risecodes.com, 64c290167304e80001e3edd3, RESELLER
@@ -1061,6 +1066,27 @@ adyoulike.com, dc900ec8491c694744e32ccbb5fa3d5a, RESELLER
 amxrtb.com, 105199881, RESELLER
 #Alkimi
 alkimi.org, 9905, DIRECT
+#Omnidex/Dexerto
+omni-dex.io, 100022, DIRECT
+pubmatic.com, 165321, DIRECT, 5d62403b186f2ace
+rubiconproject.com, 21274, DIRECT, 0bfd66d529a55807
+onlinemediasolutions.com, 21159, DIRECT, b3868b187e4b6402
+onomagic.com, 211591, DIRECT
+XANDR.COM,11201,DIRECT
+risecodes.com, 636cc1381c35e10001b200c7, DIRECT
+triplelift.com, 12465, RESELLER, 6c33edb13117fd86
+smaato.com, 1100059219, DIRECT, 07bcf65f187117b4
+pubmatic.com, 156425, RESELLER, 5d62403b186f2ace
+pubmatic.com, 156177, RESELLER, 5d62403b186f2ace
+conversantmedia.com, 100346, RESELLER, 03113cd04947736d
+video.unrulymedia.com, 460076256, DIRECT
+kueez.com,d8e29c8b0e85683f6d50ecbf6f030b25,direct
+appnexus.com,8826,reseller
+pgamssp.com, 65c4dab8199399cda607f238, DIRECT
+rubiconproject.com, 24852, RESELLER, 0bfd66d529a55807
+pubmatic.com, 162623, RESELLER, 5d62403b186f2ace
+insticator.com,5062ba28-80ed-416e-86c0-5c05b7dbd10a,DIRECT,b3511ffcafb23a32
+smartadserver.com,3262,RESELLER,060d053dcf45cbf3
 #BuySellAds Inc
 buysellads.com, 20541, DIRECT
 MANAGERDOMAIN=buysellads.com
