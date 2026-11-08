@@ -8,6 +8,18 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
+        {/* Feasible analytics. Same site as the other Gladly properties. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'window.feasible=window.feasible||function(){(window.feasible.q=window.feasible.q||[]).push(arguments)};',
+          }}
+        />
+        <script
+          defer
+          src="https://cdn.feasible.lol/js/fs-tnf3fqu3tywrgusw.js"
+        />
+
         {/* Google tag (gtag.js) */}
         <script
           async
